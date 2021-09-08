@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Purchase Orders</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='purchases-purchase-orders-new.html';"><i class="uil-plus mr-1"></i> Create New Purchase Order</button>
+                                    <!--<button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='purchases-purchase-orders-submit.html';"><i class="uil-plus mr-1"></i> Submit Purchase Order</button>-->
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="basic-datatable" class="table dt-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>P.O.</th>
+                                                    <th>Vendor</th>
+                                                    <th class="text-right">Amount</th>
+                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>30/9/2020</td>
+                                                    <td><a href="purchases-purchase-orders-edit-sentapproval.html">BC-00003</a></td>
+                                                    <td>Advance Seatech Sdn Bhd</td>
+                                                    <td class="text-right">RM100,000.00</td>
+                                                    <td class="text-center"><span class="badge badge-info badge-pill width-lg">Submitted for Approval</span></td>
+                                                    <td class="text-right">
+                                                        <a href="" data-toggle="modal" data-target="#sendreminder">Send a Reminder</a>
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">Cancel P.O.</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30/9/2020</td>
+                                                    <td><a href="purchases-purchase-orders-edit-approved.html">BC-00002</a></td>
+                                                    <td>Advance Seatech Sdn Bhd</td>
+                                                    <td class="text-right">RM100,000.00</td>
+                                                    <td class="text-center"><span class="badge badge-info badge-pill width-lg">Approved</span></td>
+                                                    <td class="text-right">
+                                                        <a href="" data-toggle="modal" data-target="#sendtovendor">Send to Vendor</a>
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">Cancel P.O.</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30/9/2020</td>
+                                                    <td><a href="purchases-purchase-orders-edit-senttovendor.html">BC-00001</a></td>
+                                                    <td>Advance Seatech Sdn Bhd</td>
+                                                    <td class="text-right">RM100,000.00</td>
+                                                    <td class="text-center"><span class="badge badge-info badge-pill width-lg">Sent to Vendor</span></td>
+                                                    <td class="text-right">
+                                                        <a href="" data-toggle="modal" data-target="#sendtovendor">Send to Vendor Again</a>
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#">Cancel P.O.</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30/9/2020</td>
+                                                    <td><a href="purchases-purchase-orders-edit-cancelled.html">BC-00005</a></td>
+                                                    <td>Advance Seatech Sdn Bhd</td>
+                                                    <td class="text-right">RM100,000.00</td>
+                                                    <td class="text-center"><span class="badge badge-info badge-pill width-lg">Cancelled</span></td>
+                                                    <td class="text-right">
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30/9/2020</td>
+                                                    <td><a href="purchases-purchase-orders-edit-completed.html">BC-00008</a></td>
+                                                    <td>Advance Seatech Sdn Bhd</td>
+                                                    <td class="text-right">RM100,000.00</td>
+                                                    <td class="text-center"><span class="badge badge-info badge-pill width-lg">Completed</span></td>
+                                                    <td class="text-right">
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <div class="modal fade" id="sendtovendor" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Send to Vendor</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="form-horizontal">
+                                                            <div class="row">
+                                                                <div class="col text-color-black">
+                                                                   
+
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">P.O. #</div>
+                                                                        <div class="col-md-8">BC-00002</div>
+                                                                    </div>
+
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Price</div>
+                                                                        <div class="col-md-8">RM 2,000.00</div>
+                                                                    </div>
+                                                                    <div class="form-group row border-top">
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Services</div>
+                                                                        <div class="col-md-8">Management Firm</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Vendor Name</div>
+                                                                        <div class="col-md-8">Advance Seatech Sdn Bhd</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Co. Reg. No.</div>
+                                                                        <div class="col-md-8">52645-F</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">GST / VAT No.</div>
+                                                                        <div class="col-md-8">466363</div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="form-group row border-bottom">
+                                                                    </div>
+
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Contract Status</div>
+                                                                        <div class="col-md-8">Active</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Type</div>
+                                                                        <div class="col-md-8">
+                                                                            Contract
+                                                                            <br>2018-10-03 to 2018-10-10
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row border-top">
+                                                                    </div>
+
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Address 1</div>
+                                                                        <div class="col-md-8">Address 1</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Address 2</div>
+                                                                        <div class="col-md-8">Address 2</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Postcode</div>
+                                                                        <div class="col-md-8">12345</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">City / Town</div>
+                                                                        <div class="col-md-8">12345</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Country</div>
+                                                                        <div class="col-md-8">Malaysia</div>
+                                                                    </div>
+
+                                                                    <div class="form-group row border-top">
+                                                                    </div>
+
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Contact Person</div>
+                                                                        <div class="col-md-8">Mr. Chong</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Contact No.</div>
+                                                                        <div class="col-md-8">012 3049506</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Fax No.</div>
+                                                                        <div class="col-md-8">2345678</div>
+                                                                    </div>
+                                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                                        <div class="col-md-4 font-weight-bold">Email</div>
+                                                                        <div class="col-md-8">email@email.com</div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm">Notify Vendor</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

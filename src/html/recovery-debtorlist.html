@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Debtor Listing</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <!-- <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='servicing-report-new.html';"><i class="uil-plus mr-1"></i> New Servicing Report</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <!-- <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="26 May 2021">
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                <option value="0">No. of Days</option>
+                                                                <option>0 - 30 Days</option>
+                                                                <option>31 - 90 Days</option>
+                                                                <option>91 - 180 Days</option>
+                                                                <option selected>> 180 Days</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                <option value="0">Select Total</option>
+                                                                <option>exact amount</option>
+                                                                <option>more than</option>
+                                                                <option>less than</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" placeholder="Amount (RM)">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-3">
+                                                        <div class="form-group mb-1">
+                                                            <input data-toggle="touchspin" type="text" data-bts-prefix="RM">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group mb-1">
+                                                            <label>to</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group mb-1">
+                                                            <input data-toggle="touchspin" type="text" data-bts-prefix="RM">
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-12">
+                                                <small class="font-size-12">Extracted on 26-May-2021 at 11:39:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;> 180 Days AND more than RM 3,000.00</small> <a href="" class="ml-3" data-toggle="modal" data-target="#"><i class="uil uil-cloud-download"></i> Download Report</a>
+                                            </div>
+                                            <!-- <div class="col-md-4 text-right">
+                                                <a href="" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Download Report</a>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="form-group row border-bottom pt-2"></div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-12">
+                                                <a href="#" data-toggle="modal" data-target="#sendbatchreminder" class="btn btn-outline-secondary btn-sm btn-rounded">Send Batch Reminder (7 selected)</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="1%">
+                                                            <input type="checkbox" id="" name="" value="">
+                                                        </th>
+                                                        <th width="1%">Unit No.</th>
+                                                        <th class="text-right">0 - 30<br>Days</th>
+                                                        <th class="text-right">31 - 90<br>Days</th>
+                                                        <th class="text-right">91 - 180<br>Days</th>
+                                                        <th class="text-right">> 180<br>Days</th>
+                                                        <th class="text-right">Total</th>
+                                                        <th width="1%" class="text-right font-size-12">Prepayment</th>
+                                                        <th class="text-right">Open<br>Credit</th>
+                                                        <th class="text-right">Net<br>Due</th>
+                                                        <th class="text-center">Latest Activity</th>
+                                                        <th class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-01-07</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">195.8</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">195.8</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">195.8</td>
+                                                        <td class="text-left font-size-12">
+                                                            1st Reminder sent on 15 Jul 2019 by Sarah
+                                                            <div class="border-bottom-gray300"></div>
+                                                            Called on 23 Jul 2019, 3:20pm by Eric
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <a href="#" target="_blank" data-toggle="modal" data-target="#sendreminder">Send 2nd Reminder</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                        <!-- <td>
+                                                            <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#sendreminder">Send 1st Reminder</button>
+                                                            <button class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#reportError"><i class="uil uil-exclamation-triangle"></i></button>
+                                                        </td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-01-08</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">138.6</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">138.6</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">138.6</td>
+                                                        <td class="text-left font-size-12">
+                                                            1st Reminder sent on 15 Jul 2019 by Sarah
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send 2nd Reminder</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                        <!-- <td>
+                                                            <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#sendreminder">Send 1st Reminder</button>
+                                                            <button class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#reportError"><i class="uil uil-exclamation-triangle"></i></button>
+                                                        </td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-02-01</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">1.54</td>
+                                                        <td class="text-right">1.54</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">1.54</td>
+                                                        <td class="text-left font-size-12"></td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send 1st Reminder</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-02-07</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-left font-size-12"></td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send 1st Reminder</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-02-07</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">359.2</td>
+                                                        <td class="text-left font-size-12"></td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send NOD</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-02-3A</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">947.76</td>
+                                                        <td class="text-right">288.2</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">1,235.96</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">1,235.96</td>
+                                                        <td class="text-left font-size-12"></td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send 1st Reminder</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                                        <td><a href="data-units-detail.html">6-14-01</a></td>                                                   
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">1,094.11</td>
+                                                        <td class="text-right">1,001.96</td>
+                                                        <td class="text-right">944.3</td>
+                                                        <td class="text-right">3,040.37</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-right">3,040.37</td>
+                                                        <td class="text-left font-size-12"></td>
+                                                        <td class="text-right">
+                                                            <a href="#" data-toggle="modal" data-target="#sendreminder">Send NOD</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendreminder">Send NOD</a> -->
+                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- modal Send reminder-->
+                                        <div class="modal fade" id="sendreminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Send Reminder</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5 class="text-center">
+                                                            Send reminder to the owner to settle the bill accordingly.
+                                                            <br><br>
+                                                            <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Send Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal Send reminder end-->
+
+                                        <!-- modal Send Batch reminder-->
+                                        <div class="modal fade" id="sendbatchreminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Send Batch Reminder</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row mb-4">
+                                                            <div class="col-md-12">
+                                                                <small class="font-size-12">Extracted on 26-May-2021 at 11:39:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;> 180 Days AND more than RM 3,000.00</small> <a href="" class="ml-3" data-toggle="modal" data-target="#"><i class="uil uil-print"></i> Print All Reminders</a>
+                                                            </div>
+                                                        </div>
+                                                        <table id="basic-datatable2" class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="1%">Unit No.</th>
+                                                                    <th class="text-right"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>6-01-07</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-01-08</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-02-01</td>                                                   
+                                                                    <td class="text-right">
+                                                                       <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-02-07</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-02-07</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-02-3A</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6-14-01</td>                                                   
+                                                                    <td class="text-right">
+                                                                        <a href="pdf-reminder.html" class="btn btn-outline-primary btn-rounded" target="_blank">View Reminder</a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('','_blank')" data-dismiss="modal">Send All Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal Send Batch reminder end-->
+
+                                        <!-- modal Report Error-->
+                                        <div class="modal fade" id="reportError" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Report Error</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="form-horizontal">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-12 col-form-label"
+                                                                            for="simpleinput">Remarks</label>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <div class="col-lg-12">
+                                                                            <textarea class="form-control" rows="5"
+                                                                                id="example-textarea"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal Report Error end-->
+
+                                        <!-- modal Call -->
+                                        <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Call This Unit Owner</h5> -->
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body text-center mt-2 mb-2">
+                                                        <h5 class="modal-title mb-4" id="exampleModalScrollableTitle">Call Unit Owner<br>(6-14-01)</h5>
+                                                        <div class="col-lg-12">
+                                                            <h4><a href="tel:123-456-7890" class="btn btn-rounded btn-soft-primary">123-456-7890</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Called</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal Call end-->
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+    </body>
+</html>

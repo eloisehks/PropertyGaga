@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Edit Handover Checklist</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal">
+                                            <div class="form-group row">
+                                                <label class="col-3 col-form-label"
+                                                   for="simpleinput">Project Name</label>
+                                               <div class="col-5">
+                                                    <select class="form-control custom-select">
+                                                        <option>Select Project Name</option>
+                                                        <option selected>Project Name 1</option>
+                                                        <option>Project Name 2</option>
+                                                        <option>Project Name 3</option>
+                                                    </select>
+                                               </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-3 col-form-label"
+                                                    for="simpleinput">Ref. No.</label>
+                                                <div class="col-5">
+                                                    <input type="text" class="form-control" id="simpleinput"
+                                                        value="HC9303">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-3 col-form-label"
+                                                   for="simpleinput">Prepared To</label>
+                                               <div class="col-5">
+                                                    <select class="form-control custom-select">
+                                                        <option>Select Name</option>
+                                                        <option selected>Name 1</option>
+                                                        <option>Name 2</option>
+                                                        <option>Name 3</option>
+                                                    </select>
+                                               </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label" for="simpleinput">Remarks</label>
+                                                <div class="col-lg-9">
+                                                    <textarea class="form-control" rows="2" id="example-textarea">Write something</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><h5 class="text-color-propertygaga">Items To Be Handed Over</h5></div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Updated Strata Roll (Updated Owner’s List and
+                                                                    correspondence address and contact no.) and strata plan
+                                                                    and list all accessories parcels.</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Fire Insurance Policy and any other insurance policies include certificates of individual owners.</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">House Rules / By-Laws</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Approved building plans, M&E, sanitation and plumbing,
+                                                                    amended as built plans etc…</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Sinking fund statement / renewal slips</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Audited Statement of Account as at</div>
+                                                                <div class="col-auto"><input type="text" class="form-control"></div>
+                                                                <div class="col-auto">(or the latest)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">All legal documents, notices and demand letters
+                                                                    affecting the perbadanan and pending cases</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Budget preparation for year</div>
+                                                                <div class="col-auto"><input type="text" class="form-control"></div>
+                                                                <div class="col-auto">(or the latest)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Latest Debtors aging report specifying current, due and
+                                                                    prepaid maintenance funds as at</div>
+                                                                <div class="col-auto"><input type="text" class="form-control"></div>
+                                                                <div class="col-auto">(or the latest)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Car park plan and allotment / open and covered</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Contracts and agreements in force lift licenses, gen- set
+                                                                    licenses, extinguishers license</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Inventory list of common assets, such as keys, office
+                                                                    assets, fire extinguishers, purchases, guard house assets.
+                                                                    To date any missing nozzles canvas hoses and no. of
+                                                                    extinguishers</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Accounting records and books, receipts and vouchers,
+                                                                    trial balance cheque books, ledgers, financial statements,
+                                                                    bank statements and bank reconciliation, due debtors
+                                                                    and accrual creditors as at</div>
+                                                                <div class="col-auto"><input type="text" class="form-control"></div>
+                                                                <div class="col-auto">include
+                                                                    opening and closing balance</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Quit rent receipts and assessment Geran Master Title</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Computer equipment and printer, faxes, communication
+                                                                    sets office equipments</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Computerization codes, Control card access system,
+                                                                    intercom / software etc</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Receipts books under MC or Clients A/C No:</div>
+                                                                <div class="col-auto"><input type="text" class="form-control"></div>
+                                                                <div class="col-auto">Cheque books and rubber stamp/
+                                                                    chops</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Credit card facilities change of name to MC</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Chop or common seal, Car parking stickers balances,
+                                                                    records of income from rental car parks</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Any other documents in your possession to be</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Vendor List (Name & Contact)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Document file for outstanding work (reno, major issue
+                                                                    repairing and etc…)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">AGM Minutes</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Monthly Council Minutes</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Award Tender Documents</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Payment Voucher File</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Bank-in Slip File</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Petty Cash Balance amount (Opening & Closing amount)</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Warranties & Manuals</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-color-black">
+                                                    <div class="card border-gray-light">
+                                                        <div class="card-body pb-0">
+                                                            <div class="form-group row align-items-center font-md">
+                                                                <div class="col-auto">Pending Case Up-to-date</div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Descriptions & Comments</label>
+                                                                <div class="col-lg-9">
+                                                                    <textarea class="form-control" rows="2" id="example-textarea">Descriptions....... some comments.....</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-3 col-form-label"
+                                                                    for="simpleinput">Checking Date</label>
+                                                                <div class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group text-right"><a href="" class="btn btn-dark btn-rounded mr-1">Save Item</a></div>
+                                                        </div>
+                                                    </div> <!-- end card-->
+                                                </div><!-- end col-->
+                                            </div>
+                                            
+                                            <!--<div class="form-group text-center"><a href="" class="btn btn-outline-info btn-rounded mr-1">Add an Item</a></div>-->
+
+                                        </form>
+
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Done</button>
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

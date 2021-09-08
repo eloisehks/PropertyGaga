@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Payment Vouchers</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='purchases-purchase-invoices-submit.html';"><i class="uil-plus mr-1"></i> Submit Purchase Invoice</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 col-xl-12">
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3">
+                                            <div class="media-body">
+                                                <span class="text-muted text-uppercase font-size-12 font-weight-bold">Owing</span>
+                                                <h4 class="mb-0 mt-0">RM2,100.00</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#pending" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-none d-sm-block">Pending</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#allpv" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none"><i class="uil-user"></i></span>
+                                                    <span class="d-none d-sm-block">All Payment Vouchers</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="pending">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <table id="basic-datatable" class="table dt-responsive">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Status</th>
+                                                                            <th>PV No.</th>
+                                                                            <th>Payment Acc.</th>
+                                                                            <th>Method</th>
+                                                                            <th>Cheque #</th>
+                                                                            <th>Collection</th>
+                                                                            <th>Ref. No.</th>
+                                                                            <th>Amt. (RM)</th>
+                                                                            <th></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td><span class="badge badge-warning width-xs">Unpaid</span></td>
+                                                                            <td><a href="#">PV00001</a></td>
+                                                                            <td>37903384435</td>
+                                                                            <td>Cash</td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td>Pending</td>
+                                                                            <td>-</td>
+                                                                            <td>RM20,000.00</td>
+                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
+                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                            </div></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><span class="badge badge-warning width-xs">Unpaid</span></td>
+                                                                            <td><a href="#">PV00002</a></td>
+                                                                            <td>37903384435</td>
+                                                                            <td>Cheque</td>
+                                                                            <td>3759626</td>
+                                                                            <td>Collected</td>
+                                                                            <td>3574858</td>
+                                                                            <td>RM20,000.00</td>
+                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
+                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                            </div></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="allpv">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <table id="basic-datatable2" class="table dt-responsive full-width">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Status</th>
+                                                                            <th>PV No.</th>
+                                                                            <th>Payment Acc.</th>
+                                                                            <th>Method</th>
+                                                                            <th>Cheque #</th>
+                                                                            <th>Collection</th>
+                                                                            <th>Ref. No.</th>
+                                                                            <th>Amt. (RM)</th>
+                                                                            <th></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td><span class="badge badge-success width-xs">Paid</span></td>
+                                                                            <td><a href="#">PV00003</a></td>
+                                                                            <td>37903384435</td>
+                                                                            <td>Online Transfer</td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td>3574858</td>
+                                                                            <td>RM20,000.00</td>
+                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
+                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                            </div></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal updatepaymentvoucher -->
+                        <div class="modal fade" id="updatepaymentvoucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Update PV00001</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Payment Collection</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio4" name="customRadio4"
+                                                                            class="custom-control-input" checked>
+                                                                        <label class="custom-control-label" for="customRadio4">Pending</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio4" name="customRadio4"
+                                                                            class="custom-control-input">
+                                                                        <label class="custom-control-label" for="customRadio4">Collected by Vendor</label>
+                                                                        <div class="form-group">
+                                                                            <input type="text" id="basic-datepicker2" class="form-control col-6" placeholder="Select Date">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group row border-bottom-gray400">
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Payment Status</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio3" name="customRadio3"
+                                                                            class="custom-control-input">
+                                                                        <label class="custom-control-label" for="customRadio3">Paid</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio3" name="customRadio3"
+                                                                            class="custom-control-input" checked>
+                                                                        <label class="custom-control-label" for="customRadio3">Unpaid</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Ref. No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id=""
+                                                                value="">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group row border-bottom-gray400">
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Notes</label>
+                                                        <div class="col-lg-8">
+                                                        <textarea class="form-control" rows="2"
+                                                        id="example-textarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

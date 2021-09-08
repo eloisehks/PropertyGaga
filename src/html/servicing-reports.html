@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Servicing Reports</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='servicing-report-new.html';"><i class="uil-plus mr-1"></i> New Servicing Report</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
+
+                                        <table id="basic-datatable" class="table table-hover nowrap dt-responsive full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Title</th>
+                                                    <th>Service Provider</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>12 Aug 2020</td>                                                   
+                                                    <td>Lift Maintenance</td>
+                                                    <td><a href="servicing-report-edit.html">Company 22</a></td>
+                                                    <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12 Jul 2020</td>
+                                                    <td>Cleaning Services</td>
+                                                    <td><a href="servicing-report-edit.html">Company 2</a></td>
+                                                    <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12 Jun 2020</td>
+                                                    <td>Pool Maintenance</td>
+                                                    <td><a href="servicing-report-edit.html">Company 52</a></td>
+                                                    <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12 May 2020</td>
+                                                    <td>Pest Control</td>
+                                                    <td><a href="servicing-report-edit.html">Company 12</a></td>
+                                                    <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!-- modal Send meeting reminder-->
+                                        <div class="modal fade" id="sendreminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Send a Meeting Reminder</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="form-horizontal">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-3 col-form-label text-right" for="">From</label>
+                                                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">email@email.com</label>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-3 col-form-label text-right" for="">To</label>
+                                                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">email@email.com, email@email.com, email@email.com, email4@email.com, email6@email.com, email@email.com</label>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-3 col-form-label text-right" for="">Subject</label>
+                                                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">Reminder:  4th Committee Meeting</label>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-3 col-form-label text-right" for="">Message</label>
+                                                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">
+                                                                            Dear Committee Members,<br><br>
+                                                                            Just a friendly reminder that 4th Committee Meeting is on 12 Aug 2020, 10:30am at Meeting Room 3. Please submit your response if you haven't done so.
+                                                                            <br><br>
+                                                                            Thank you.
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Send Reminder Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- modal Send meeting reminder end-->
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

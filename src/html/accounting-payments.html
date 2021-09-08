@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Payments</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='accounting-payment-new.html';"><i class="uil-plus mr-1"></i> New Payment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" placeholder="Payment No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" placeholder="Cheque No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="">Pay From A/c</option>
+                                                                <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
+                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                                <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                <option value="Cash on Hand|None">Cash on Hand</option>
+                                                                <option value="Petty Cash|None">Petty Cash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Payment Mode</option>
+                                                                <option value="1">Cash</option>
+                                                                <option value="2">Cheque</option>
+                                                                <option value="3">Online</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="10%">Payment No.</th>
+                                                        <th width="10%">Date</th>
+                                                        <th width="10%">Payee</th>
+                                                        <th width="10%" class="text-right">Amount (RM)</th>
+                                                        <th width="10%" class="text-center">Cheque/Ref No.</th>
+                                                        <th width="10%" class="text-center">Cancelled</th>
+                                                        <th width="10%" class="text-center">Returned</th>
+                                                        <th width="9%" class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1131</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>EAD Property Management Sdn Bhd</td>     
+                                                        <td class="text-right">680.10</td>
+                                                        <td class="text-center">Petty Cash</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1130</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>Tenaga Nasional Berhad</td>     
+                                                        <td class="text-right">15,205.20</td>
+                                                        <td class="text-center">214246</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1128</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>Syarikat Sinaran Fire Engineering & Services</td>     
+                                                        <td class="text-right">300.00</td>
+                                                        <td class="text-center">214245</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1127</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>ADVANCE SEATECH SDN BHD</td>     
+                                                        <td class="text-right">1,600.00</td>
+                                                        <td class="text-center">214235</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1126</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>CQ Engineering Services</td>     
+                                                        <td class="text-right">260.00</td>
+                                                        <td class="text-center">214236</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>       
+                                                        <td><a href="accounting-payment-detail.html">1125</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td>Techplanet Security Control Sdn Bhd</td>     
+                                                        <td class="text-right">900.00</td>
+                                                        <td class="text-center">214238</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">View</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a> -->
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel Payment</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

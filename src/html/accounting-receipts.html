@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Receipts</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='accounting-receipt-new.html';"><i class="uil-plus mr-1"></i> New Receipt</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Unit No.</option>
+                                                                <option selected>All Units</option>
+                                                                <option>6-13-01</option>
+                                                                <option>6-02-09</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Receipt Date">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Status</option>
+                                                                <option value="1">Approved</option>
+                                                                <option value="2">Pending</option>
+                                                            </select>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" placeholder="Receipt No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-12">
+                                                <small class="font-size-12">Extracted on 26-May-2021 at 11:39:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Receipt Date on 13 Aug 2021</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row border-bottom pt-2"></div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-12">
+                                                <a href="#" data-toggle="modal" data-target="#sendbatchreminder" class="btn btn-outline-secondary btn-sm btn-rounded">Print Batch (6 selected)</a>
+                                                <a href="#" data-toggle="modal" data-target="#sendbatchreminder" class="btn btn-outline-secondary btn-sm btn-rounded">Email Batch (6 selected)</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="1%">
+                                                            <input type="checkbox" id="" name="" value="">
+                                                        </th>
+                                                        <th width="10%">Receipt No.</th>
+                                                        <th width="10%">Date</th>
+                                                        <th width="10%">Unit No.</th>
+                                                        <th width="20%">Received From</th>
+                                                        <th width="10%" class="text-center">Payment Mode</th>
+                                                        <th width="10%" class="text-center">Cancelled</th>
+                                                        <th width="10%" class="text-center">Returned</th>
+                                                        <th width="10%" class="text-right">Amount (RM)</th>
+                                                        <th width="9%" class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>     
+                                                        <td><input type="checkbox" id="" name="" value=""></td>        
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02609</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Online</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">140.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>           
+                                                        <td><input type="checkbox" id="" name="" value=""></td>  
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02667</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Cheque</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">195.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>    
+                                                        <td><input type="checkbox" id="" name="" value=""></td>         
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02609</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Online</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">140.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>     
+                                                        <td><input type="checkbox" id="" name="" value=""></td>        
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02667</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Cheque</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">195.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>     
+                                                        <td><input type="checkbox" id="" name="" value=""></td>        
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02609</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Online</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">140.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>    
+                                                        <td><input type="checkbox" id="" name="" value=""></td>         
+                                                        <td><a href="accounting-receipt-detail.html">SE21-02667</a></td>
+                                                        <td class="text-center">13 Aug 2021</td>
+                                                        <td><a href="data-units-detail.html">6-08-12A</a></td>     
+                                                        <td>Chong Company Sdn Bhd</td>
+                                                        <td class="text-center">Cheque</td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-center"></td>
+                                                        <td class="text-right">195.80</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#print">Print</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#email">Email</a>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Cancel</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

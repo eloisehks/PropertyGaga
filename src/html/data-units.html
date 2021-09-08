@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Units</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-units-new.html';"><i class="uil-plus mr-1"></i> New Unit </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
+
+                                        <table id="basic-datatable" class="table table-hover nowrap dt-responsive full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Unit No.</th>
+                                                    <th>Legal Owner</th>
+                                                    <th>Legal Owner Contact</th>
+                                                    <th>Payment</th>
+                                                    <th>Process</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td><a href="data-units-detail.html">6-02-01</a></td>
+                                                    <td>Alfred Ong Ley Wei</td>
+                                                    <td>013 475 5643</td>
+                                                    <td>
+                                                        <span class="badge badge-warning width-xs mb-2">Partial</span>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Amount due <span class="bold text-color-black">RM 21.00</span></small></div>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Due on 31 Jul 2020</small></div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Called"><i class='uil uil-outgoing-call text-primary'></i>
+                                                        <span class="sr-only" for="">Called</span></button>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="First Reminder"><i class='uil uil-bell text-warning'></i>
+                                                            <span class="sr-only" for="">First Reminder</span></button>
+                                                    </td>
+                                                    <td class="text-center"><button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='data-units-edit.html';">Edit</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td><a href="data-units-detail.html">6-13-01</a></td>
+                                                    <td>Alicia Tan Su Sian</td>
+                                                    <td>013 475 5643</td>
+                                                    <td>
+                                                        <span class="badge badge-success width-xs mb-2">Paid</span>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Amount due <span class="bold text-color-black">RM 0.00</span></small></div>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Due on 31 Aug 2020</small></div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Called"><i class='uil uil-outgoing-call text-primary'></i>
+                                                            <span class="sr-only" for="">Called</span></button>
+                                                    </td>
+                                                    <td class="text-center"><button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='data-units-edit.html';">Edit</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td><a href="data-units-detail.html">6-02-09</a></td>
+                                                    <td>Chong Company Sdn Bhd</td>
+                                                    <td>013 475 5643</td>
+                                                    <td>
+                                                        <span class="badge badge-danger width-xs mb-2">Overdue</span>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Amount due <span class="bold text-color-redBright">RM 31.00</span></small></div>
+                                                        <div class="mb-0 pb-0"><small class="text-muted">Due on 31 Aug 2020</small></div>                                                        
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Called"><i class='uil uil-outgoing-call text-primary'></i>
+                                                            <span class="sr-only" for="">Called</span></button>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="First Reminder"><i class='uil uil-bell text-warning'></i>
+                                                            <span class="sr-only" for="">First Reminder</span></button>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Called"><i class='uil uil-outgoing-call text-primary'></i>
+                                                            <span class="sr-only" for="">Called</span></button>
+                                                        <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="NOD"><i class='uil uil-file-exclamation-alt text-danger'></i>
+                                                            <span class="sr-only" for="">NOD</span></button>
+                                                    </td>
+                                                    <td class="text-center"><button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='data-units-edit.html';">Edit</button></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        
+                                        <div class="modal fade" id="vendordetail" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Unit</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="form-horizontal">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Vendor Name <span class="text-danger">*</span></label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id="simpleinput"
+                                                                                value="Advance Seatech Sdn Bhd">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="example-email">Co. Reg. No.</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" id="" name=""
+                                                                                class="form-control" value="52645-F">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Tax No.</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id=""
+                                                                                value="466363">
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="form-group row border-bottom">
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Type</label>
+                                                                            <div class="col-lg-8">
+                                                                                <div class="">
+                                                                                    <div class="custom-control custom-radio mb-2">
+                                                                                        <input type="radio" id="customRadio2" name="customRadio"
+                                                                                            class="custom-control-input" checked>
+                                                                                        <label class="custom-control-label" for="customRadio2">Ad Hoc</label>
+                                                                                    </div>
+                                                                                    <div class="custom-control custom-radio">
+                                                                                        <input type="radio" id="customRadio1" name="customRadio"
+                                                                                            class="custom-control-input">
+                                                                                        <label class="custom-control-label" for="customRadio1">Contract</label>
+                                                                                        <div class="form-group pt-1 mb-0">
+                                                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="2018-10-03 to 2018-10-10">
+                                                                                        </div>
+                                                                                        <div class="form-group pt-1 mb-0">
+                                                                                            <input type="file" class="form-control" id="example-fileinput">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row border-top">
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                           for="simpleinput">Address</label>
+                                                                       <div class="col-lg-8">
+                                                                        <textarea class="form-control" rows="2"
+                                                                        id="example-textarea">address ....</textarea>
+                                                                       </div>
+                                                                   </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Contact Person</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id=""
+                                                                                value="Tan">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Contact No.</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id=""
+                                                                                value="013-3821224">
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Email</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id=""
+                                                                                value="email@email.com">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-lg-4 col-form-label"
+                                                                            for="simpleinput">Fax</label>
+                                                                        <div class="col-lg-8">
+                                                                            <input type="text" class="form-control" id=""
+                                                                                value="03-3821224">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

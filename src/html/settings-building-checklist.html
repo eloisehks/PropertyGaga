@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Building Checklist</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='settings-building-checklist-new.html';"><i class="uil-plus mr-1"></i> Add Checklist</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4>-->
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group mt-3 mt-sm-0">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Category</option>
+                                                                <option value="1">Cleaning</option>
+                                                                <option value="2">Security</option>
+                                                                <option value="3">Switchroom</option>
+                                                                <option value="4">Generator</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group mt-3 mt-sm-0">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Item</option>
+                                                                <option value="1">Log Book</option>
+                                                                <option value="2">Visitors & Contractor's Book</option>
+                                                                <option value="3">Condition of G/House</option>
+                                                                <option value="4">Attendance Book</option>
+                                                                <option value="4">Carpark</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group mt-3 mt-sm-0">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Type</option>
+                                                                <option value="1">Daily</option>
+                                                                <option value="2">Weekly</option>
+                                                                <option value="3">Monthly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="col-auto">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+                                                        </div>
+                                                    </div>-->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <table id="basic-datatable" class="table table-hover nowrap dt-responsive full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Items</th>
+                                                    <th>Type</th>
+                                                    <th>Check Date</th>
+                                                    <th>Next Check Date</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Security</td>
+                                                    <td>Log Book</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Generator</td>
+                                                    <td>Diesel Oil Level</td>
+                                                    <td>Weekly</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>8 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-weekly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Generator</td>
+                                                    <td>Battery Water / Voltage</td>
+                                                    <td>Weekly</td>
+                                                    <td>3 Dec 2020</td>
+                                                    <td>10 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-weekly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>Heat Detectors</td>
+                                                    <td>Monthly</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>1 Jan 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>Smoke Detectors</td>
+                                                    <td>Monthly</td>
+                                                    <td>5 Dec 2020</td>
+                                                    <td>5 Jan 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>Cleanliness</td>
+                                                    <td>Monthly</td>
+                                                    <td>1 Jan 2021</td>
+                                                    <td>1 Feb 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>CO2</td>
+                                                    <td>Monthly</td>
+                                                    <td>1 Feb 2021</td>
+                                                    <td>1 Mar 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>Rubbermat</td>
+                                                    <td>Monthly</td>
+                                                    <td>1 Jan 2021</td>
+                                                    <td>1 Feb 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Switchroom</td>
+                                                    <td>Schematic Diagram</td>
+                                                    <td>Monthly</td>
+                                                    <td>1 Jan 2021</td>
+                                                    <td>1 Feb 2021</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-monthly.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Security</td>
+                                                    <td>Visitors & Contractor's Book</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Security</td>
+                                                    <td>Condition of G/House</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Security</td>
+                                                    <td>Attendance Book</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Security</td>
+                                                    <td>Guard/s Uniform Etc.</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Carpark</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Corridor</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Staircase</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Gym Room</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Roads</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Wash/Rest Room</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Function Room</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Management Office</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Refuse Chamber</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Swimming Pool Area</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Children Playground</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Mailbox</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cleaning</td>
+                                                    <td>Lobby</td>
+                                                    <td>Daily</td>
+                                                    <td>1 Dec 2020</td>
+                                                    <td>2 Dec 2020</td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='settings-building-checklist-daily.html';">Edit</button>
+                                                        &nbsp;<a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

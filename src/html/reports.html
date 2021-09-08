@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Reports</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <!-- <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-committee-new-committee-members.html';"><i class="uil-plus mr-1"></i> Add Committee Member</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- tasks panel -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="accordion custom-accordionwitharrow" id="accordionExample">
+                                                <div class="card mb-1 shadow-none border">
+
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        <div class="card-header" id="headingOne">
+                                                            <h5 class="m-0 font-size-16">
+                                                                Data <span class="text-muted font-size-14">(10)</span><i class="uil uil-angle-down float-right accordion-arrow"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body text-muted">
+                                                            <!-- start -->
+                                                            <div class="border-bottom mb-3">
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group mb-0">
+                                                                                <label>Service Providers</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">Download</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end -->
+
+                                                            <!-- start -->
+                                                            <!-- <div class="border-bottom mb-3">
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group mb-0">
+                                                                                <label>Service Providers</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <select class="form-control">
+                                                                                    <option value="0">No. of Days</option>
+                                                                                    <option>0 - 30 Days</option>
+                                                                                    <option>31 - 90 Days</option>
+                                                                                    <option>91 - 180 Days</option>
+                                                                                    <option selected>> 180 Days</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <select class="form-control">
+                                                                                    <option value="0">Select Total</option>
+                                                                                    <option>exact amount</option>
+                                                                                    <option>more than</option>
+                                                                                    <option>less than</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="26 May 2021">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">Download</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
+                                                            <!-- end -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-1 shadow-none border">
+                                                    <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                        data-target="#collapseTwo" aria-expanded="false"
+                                                        aria-controls="collapseTwo">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <h5 class="m-0 font-size-16">
+                                                                Operations <span class="text-muted font-size-14">(2)</span><i
+                                                                    class="uil uil-angle-down float-right accordion-arrow"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body text-muted">
+                                                            <!-- start -->
+                                                            <div class="border-bottom mb-3">
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group mb-0">
+                                                                                <label>Checklist</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <!-- <div class="col">
+                                                                            <div class="form-group">
+                                                                                <select class="form-control">
+                                                                                    <option value="0">Type</option>
+                                                                                    <option>Daily</option>
+                                                                                    <option>Weekly</option>
+                                                                                    <option>Monthly</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div> -->
+                                                                        <!-- <div class="col">
+                                                                            <div class="form-group">
+                                                                                <input type="text" id="basic-datepicker2" class="form-control" placeholder="Date">
+                                                                            </div>
+                                                                        </div> -->
+                                                                        <div class="col-8 col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <a href="pdf-report-checklistBreakdown.html" class="btn btn-primary btn-sm btn-rounded" target="_blank">Download</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-0 shadow-none border">
+
+                                                    <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                        data-target="#collapseThree" aria-expanded="false"
+                                                        aria-controls="collapseThree">
+                                                        <div class="card-header" id="headingThree">
+                                                            <h5 class="m-0 font-size-16">
+                                                                Finance <span class="text-muted font-size-14">(4)</span><i
+                                                                    class="uil uil-angle-down float-right accordion-arrow"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body text-muted">
+                                                            <!-- start -->
+                                                            <div class="border-bottom mb-3">
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group mb-0">
+                                                                                <label>Title</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="justify-content-sm-between">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">Download</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- end -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end row -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

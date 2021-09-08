@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Checklist</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='settings-building-checklist-new.html';"><i class="uil-plus mr-1"></i> Add Checklist</button>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-1">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-auto col-form-label" for="">Project</label>
+                                                        <div class="col-auto">
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Project</option>
+                                                                <option selected>Gurney Villa</option>
+                                                                <option>Eden Fairway Condominium</option>
+                                                                <option>Ferringhi Mutiara Apartment </option>
+                                                                <option>Indahria Apartments</option>
+                                                                <option>Villamas Apartments</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#daily" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none font-size-12">Daily</span>
+                                                    <span class="d-none d-sm-block">Daily</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#weekly" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Weekly <span class="badge badge-info badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="In Progress">2</span> <span class="badge badge-warning badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="Upcoming">6</span></span>
+
+                                                    <span class="d-none d-sm-block">Weekly <span class="badge badge-info badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="In Progress">2</span> <span class="badge badge-warning badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="Upcoming">6</span></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#monthly" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Monthly <span class="badge badge-info badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="In Progress">2</span> <span class="badge badge-warning badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="Upcoming">6</span></span>
+
+                                                    <span class="d-none d-sm-block">Monthly  <span class="badge badge-info badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="In Progress">1</span> <span class="badge badge-warning badge-pill" title="" data-toggle="tooltip" data-placement="top" data-content="" data-original-title="Upcoming">1</span></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="daily">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="" class="form-control" placeholder="Checklist ID">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Date">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Assigned To</option>
+                                                                                        <option value="1">Tay Cheng Cheng</option>
+                                                                                        <option value="2">Raymond</option>
+                                                                                        <option value="3">James</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="checklist-daily" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Assigned To</th>
+                                                                                <th class="text-center">Action Needed</th>
+                                                                                <th class="text-center">Status</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">12 Oct 2020 (Today)</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-info width-xs">In Progress ( 33 / 40 )</span></td>
+                                                                                <!--<td class="text-center">
+                                                                                    <button class="btn btn-outline-primary btn-sm btn-rounded" onclick="location.href='checklist-daily.html';">Edit</button>
+                                                                                </td>-->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">11 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center">2<br><small class="text-muted">Checklist ID: D123, D458</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">10 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">9 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">8 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">7 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">6 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">5 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">4 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center">1<br><small class="text-muted">Checklist ID: D402</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">3 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">2 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-daily.html">1 Oct 2020</a></td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="weekly">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="Date">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Category</option>
+                                                                                        <option value="1">Cleaning</option>
+                                                                                        <option value="2">Security</option>
+                                                                                        <option value="3">Switchroom</option>
+                                                                                        <option value="4">Generator</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Item</option>
+                                                                                        <option value="1">Log Book</option>
+                                                                                        <option value="2">Visitors & Contractor's Book</option>
+                                                                                        <option value="3">Condition of G/House</option>
+                                                                                        <option value="4">Attendance Book</option>
+                                                                                        <option value="4">Carpark</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Assigned To</option>
+                                                                                        <option value="1">Tay Cheng Cheng</option>
+                                                                                        <option value="2">Raymond</option>
+                                                                                        <option value="3">James</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--<div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Select Work Week</option>
+                                                                                        <option value="1">WK 1</option>
+                                                                                        <option value="2">WK 2</option>
+                                                                                        <option value="2">...</option>
+                                                                                        <option value="3">WK 42</option>
+                                                                                        <option value="3">WK 43</option>
+                                                                                        <option value="2">...</option>
+                                                                                        <option value="3">WK 53</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>-->
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Status</option>
+                                                                                        <option value="1">In Progress</option>
+                                                                                        <option value="2">Upcoming</option>
+                                                                                        <option value="3">Done</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--<div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+                                                                                </div>
+                                                                            </div>-->
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="checklist-weekly" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Category</th>
+                                                                                <th>Item</th>
+                                                                                <th>Assigned To</th>
+                                                                                <th class="text-center">Action Needed</th>
+                                                                                <th class="text-center">Status</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Fire Fighting</td>
+                                                                                <td>Hosereel</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Fire Fighting</td>
+                                                                                <td>Break Glass</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Fire Fighting</td>
+                                                                                <td>Smoke Detectors</td>
+                                                                                <td>Raymond</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Fire Fighting</td>
+                                                                                <td>Alarm Panel</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>AMF Switchboard "Off" Mode</td>
+                                                                                <td>Raymond</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">13 Oct 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>Ignition Key "Off" Mode</td>
+                                                                                <td>James</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">12 Oct 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>Emergency Stop "Off" Mode</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-info width-xs">In Progress</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">12 Oct 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>"Auto" Mode</td>
+                                                                                <td>James</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-info width-xs">In Progress</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">5 Oct 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>Battery Water / Voltage</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center">Yes<br><small class="text-muted">Checklist ID: D125</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">28 Sep 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>Radiator Water Level</td>
+                                                                                <td>James</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-weekly.html">21 Sep 2020</a></td>
+                                                                                <td>Generator</td>
+                                                                                <td>Engine Oil Level</td>
+                                                                                <td>Raymond</td>
+                                                                                <td class="text-center">Yes<br><small class="text-muted">Checklist ID: D125</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="monthly">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <input class="form-control" id="example-month" type="month" name="month">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="basic-datepicker2" class="form-control" placeholder="Date">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Category</option>
+                                                                                        <option value="1">Water Pump Room</option>
+                                                                                        <option value="2">Rooftop</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Item</option>
+                                                                                        <option value="1">"Auto" Mode</option>
+                                                                                        <option value="2">Condition of Tank</option>
+                                                                                        <option value="3">Indicators & Accessories</option>
+                                                                                        <option value="4">Cleanliness / Leakages</option>
+                                                                                        <option value="4">Test Pump on Manual Mode</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Assigned To</option>
+                                                                                        <option value="1">Tay Cheng Cheng</option>
+                                                                                        <option value="2">Raymond</option>
+                                                                                        <option value="3">James</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Status</option>
+                                                                                        <option value="1">In Progress</option>
+                                                                                        <option value="2">Upcoming</option>
+                                                                                        <option value="3">Done</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="checklist-monthly" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Category</th>
+                                                                                <th>Item</th>
+                                                                                <th>Assigned To</th>
+                                                                                <th class="text-center">Action Needed</th>
+                                                                                <th class="text-center">Status</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="checklist-monthly.html">13 Dec 2020</a></td>
+                                                                                <td>Water Pump Room</td>
+                                                                                <td>Test Pump on Manual Mode</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-warning width-xs">Upcoming</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-monthly.html">12 Dec 2020</a></td>
+                                                                                <td>Water Pump Room</td>
+                                                                                <td>Indicators & Accessories</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-info width-xs">In Progress</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-monthly.html">12 Dec 2020</a></td>
+                                                                                <td>Water Pump Room</td>
+                                                                                <td>Cleanliness / Leakages</td>
+                                                                                <td>James</td>
+                                                                                <td class="text-center">Yes<br><small class="text-muted">Checklist ID: D125</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-monthly.html">11 Dec 2020</a></td>
+                                                                                <td>Water Pump Room</td>
+                                                                                <td>"Auto" Mode</td>
+                                                                                <td>Raymond</td>
+                                                                                <td class="text-center"></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="checklist-monthly.html">11 Dec 2020</a></td>
+                                                                                <td>Water Pump Room</td>
+                                                                                <td>Condition of Tank</td>
+                                                                                <td>Tay Cheng Cheng</td>
+                                                                                <td class="text-center">Yes<br><small class="text-muted">Checklist ID: D125</small></td>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Done</span></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+    </body>
+</html>

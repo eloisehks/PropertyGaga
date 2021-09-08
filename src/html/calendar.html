@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/fullcalendar-core/main.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/fullcalendar-daygrid/main.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/fullcalendar-bootstrap/main.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/fullcalendar-timegrid/main.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/fullcalendar-list/main.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <div class="row page-title align-items-center">
+                        <div class="col-md-3 col-xl-6">
+                            <h3 class="mb-1 mt-0">Calendar</h3>
+                        </div>
+                        <div class="col-md-9 col-xl-6 text-md-right">
+                            <div class="mt-4 mt-md-0">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body mb-0 pb-0">
+                                    <button class="btn btn-primary mt-0 mr-1" id="btn-new-event"><i class="uil-plus-circle"></i> Create New Event</button>
+                                    <!--<button class="btn btn-white mt-2"><i class="uil-sync"></i> Link Calendars</button>-->
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div id="calendar"></div>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div>
+                        <!-- end col-12 -->
+                    </div> <!-- end row -->
+
+                    <!-- modals -->
+                    <!-- Add New Event MODAL -->
+                    <div class="modal fade" id="event-modal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header py-3 px-4 border-bottom-0 d-block">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h5 class="modal-title" id="modal-title">Event</h5>
+                                </div>
+                                <div class="modal-body p-4">
+                                    <form class="needs-validation" name="event-form" id="form-event" novalidate>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Event Name</label>
+                                                    <input class="form-control" placeholder="Insert Event Name"
+                                                        type="text" name="title" id="event-title" required />
+                                                    <div class="invalid-feedback">Please provide a valid event name</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Remarks</label>
+                                                    <input class="form-control" placeholder="Insert Event Description"
+                                                        type="text" name="title" id="event-description" />
+                                                    <div class="invalid-feedback">Please provide remarks</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Category</label>
+                                                    <select class="form-control custom-select" name="category"
+                                                        id="event-category" required>
+                                                        <option value="bg-danger" selected>Danger</option>
+                                                        <option value="bg-success">Success</option>
+                                                        <option value="bg-primary">Primary</option>
+                                                        <option value="bg-info">Info</option>
+                                                        <option value="bg-dark">Dark</option>
+                                                        <option value="bg-warning">Warning</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">Please select a valid event category</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                <button type="button" class="btn btn-danger" id="btn-delete-event">Delete</button>
+                                            </div>
+                                            <div class="col-6 text-right">
+                                                <button type="button" class="btn btn-outline-primary btn-rounded mr-1" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded" id="btn-save-event">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> <!-- end modal-content-->
+                        </div> <!-- end modal dialog-->
+                    </div>
+                    <!-- end modal-->
+                </div> <!-- container-fluid -->
+
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/right-sidebar.html')
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/moment/moment.min.js"></script>
+
+    <!-- Calendar js-->
+    <script src="assets/libs/fullcalendar-core/main.min.js"></script>
+    <script src="assets/libs/fullcalendar-bootstrap/main.min.js"></script>
+    <script src="assets/libs/fullcalendar-daygrid/main.min.js"></script>
+    <script src="assets/libs/fullcalendar-timegrid/main.min.js"></script>
+    <script src="assets/libs/fullcalendar-list/main.min.js"></script>
+    <script src="assets/libs/fullcalendar-interaction/main.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+    
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- Calendar init -->
+    <script src="assets/js/pages/calendar.init.js"></script>
+    
+</body>
+</html>

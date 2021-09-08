@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            <!--
+                function toggle_visibility(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'block')
+                      e.style.display = 'none';
+                   else
+                      e.style.display = 'block';
+                }
+            //-->
+            </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                    
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Service Provider : Company 1</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="data-service-providers.html" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back to List</a>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#spinfo" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none font-size-12">Info</span>
+                                                    <span class="d-none d-sm-block">Info</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#accounts" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Accounts</span>
+                                                    <span class="d-none d-sm-block">Accounts</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#invoices" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Invoices</span>
+                                                    <span class="d-none d-sm-block">Invoices</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#payments" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Payments</span>
+                                                    <span class="d-none d-sm-block">Payments</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane mt-4 show active" id="spinfo">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="card border-gray-light mb-4">
+                                                            <div class="card-body pb-4">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-3 col-xl-6">
+                                                                        <h4>Service Provider Info</h4>
+                                                                    </div>
+                                                                    <div class="col-md-9 col-xl-6 text-md-right">
+                                                                        <div class="mt-4 mt-md-0">
+                                                                            <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers-edit.html';"><i class="uil-edit mr-1"></i> Edit Info</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- <div class="col-lg-12">
+                                                                        <h4>Service Provider Info</h4>
+                                                                    </div> -->
+                                                                    
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Services</div>
+                                                                    <div class="col-md-8">Management Firm</div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Vendor</div>
+                                                                    <div class="col-md-8">
+                                                                       Company 1
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Address 1</div>
+                                                                    <div class="col-md-8">
+                                                                        Address 1
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Address 2</div>
+                                                                    <div class="col-md-8">
+                                                                        Address 2
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Postcode</div>
+                                                                    <div class="col-md-8">
+                                                                        34567
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">City / Town</div>
+                                                                    <div class="col-md-8">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Country</div>
+                                                                    <div class="col-md-8">
+                                                                        Malaysia
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">State</div>
+                                                                    <div class="col-md-8">
+                                                                        Penang
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Contact No.</div>
+                                                                    <div class="col-md-8">
+                                                                        012 345 6789
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Fax No.</div>
+                                                                    <div class="col-md-8">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Email</div>
+                                                                    <div class="col-md-8">
+                                                                        email@email.com
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Contract Status</div>
+                                                                    <div class="col-md-8">
+                                                                        <span class="text-success font-weight-bold font-size-13">Active</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Expiry of Contract</div>
+                                                                    <div class="col-md-8">
+                                                                        2018-10-03 to 2018-10-10
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Upload Contract</div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="p-2 border rounded mb-2">
+                                                                            <div class="media">
+                                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <a href="#" class="d-inline-block mt-2">contract 1.psd</a>
+                                                                                </div>
+                                                                                <div class="float-right mt-1">
+                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Monthly Fees</div>
+                                                                    <div class="col-md-8">
+                                                                        RM 1,000.00
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Outstanding Payment</div>
+                                                                    <div class="col-md-8">
+                                                                        RM 0.00
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end card-->
+                                                    
+                                                    </div><!-- end col-->
+                                                    
+                                                </div>
+                                                
+                                                <!-- end row-->
+                                                <!-- <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card mt-4">
+                                                            <div class="card-body">
+                                                                <div class="float-left">
+                                                                    <small class="text-muted">Last saved by Danny on 23 Mar 2020 at 2:30 PM</small>
+                                                                </div>
+                                                                <div class="float-right">
+                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+
+                                            <div class="tab-pane mt-4" id="accounts">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card border-gray-light">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-12">
+                                                                        <h4>Accounts</h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-row align-items-center mb-4">
+                                                                    <div class="col-auto col-md-4">
+                                                                        <label class="sr-only" for="">Range</label>
+                                                                        <input type="text" id="range-datepicker" class="form-control mb-2" placeholder="Range">
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <label class="sr-only" for="">Bills</label>
+                                                                        <select class="form-control custom-select mb-2">
+                                                                            <option>All</option>
+                                                                            <option>Owner Bills</option>
+                                                                            <option>Tenant Bills</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded mb-2">View</button>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-12">
+                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded float-right" data-toggle="modal" data-target="#">Excel</a>
+
+                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded mr-1 float-right" data-toggle="modal" data-target="#">PDF</a>
+                                                                        &nbsp;
+                                                                        <small>Last refreshed: 22 Aug 2020, 12:22pm</small>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-hover mb-0">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th width="30%">Description</th>
+                                                                                <th>Reference No.</th>
+                                                                                <th class="text-right">Debit</th>
+                                                                                <th class="text-right">Credit</th>
+                                                                                <th class="text-right">Balance</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>Balance b/f</td>
+                                                                                <td>2345</td>
+                                                                                <td class="text-right">RM 6,369.34</td>
+                                                                                <td class="text-right">RM 6,367.80</td>
+                                                                                <td class="text-right">RM 0.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>To replace the swimming pool underwater light - 8 nos x $800.00</td>
+                                                                                <td>456</td>
+                                                                                <td class="text-right">RM 1,296.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 1,297.54</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>Payment: PV #0654</td>
+                                                                                <td>355</td>
+                                                                                <td class="text-right">RM 1,129.60</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 1,129.60</td>
+                                                                            </tr>
+                                                                            <tr class="bold text-color-black">
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="text-right">Total</td>
+                                                                                <td class="text-right">RM 9,229.60</td>
+                                                                                <td class="text-right">RM 6,367.80</td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                            <tr class="bold text-color-black">
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="text-right">Balance Due</td>
+                                                                                <td class="text-right">RM 0.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+
+                                                        <div class="card pb-0">
+                                                            <div class="card-body">
+                                                                <h4 class="mb-1 header-title mt-0">Notes</h4>
+                        
+                                                                <p class="sub-header">
+                                                                    <ol>
+                                                                        <li>All cheques/TT should made payable to "BADAN PENGURUSAN BERSAMA  SIERRA EAST". Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.</li>
+                                                                        <li>Payment can be made during office hours at our site management office.</li>
+                                                                        <li>Online payment transfer or direct cash/cheque deposit via ATM can be made to 
+                                                                            BADAN PENGURUSAN BERSAMA SIERRA EAST  (Public Bank Bhd A/C No. 3211486126)<br>
+                                                                            Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.<br>
+
+                                                                            Email: sierraeast.mgmt@gmail.com<br>
+                                                                            Tel  : 04-3702065
+                                                                        </li>
+                                                                        <li>Kindly ignore this statement if payment has been made.</li>
+                                                                    </ol>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            
+                                            <div class="tab-pane mt-4" id="invoices">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card border-gray-light">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-12">
+                                                                        <h4>Invoices</h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable6" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Invoice No.</th>
+                                                                                <th>Total Amount</th>
+                                                                                <th>Status</th>
+                                                                                <th class="text-right">Due Date</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>16 Oct 20</td>
+                                                                                <td><a href="#">AST/PM/QTN/0918/613</a></td>
+                                                                                <td class="text-right">130.00</td>
+                                                                                <td>PAID</td>
+                                                                                <td>31 Oct 2020</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Edit</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>26 Oct 20</td>
+                                                                                <td><a href="#">5050</a></td>
+                                                                                <td class="text-right">130.00</td>
+                                                                                <td>PAID</td>
+                                                                                <td></td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Edit</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            
+                                            <div class="tab-pane mt-4" id="payments">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card border-gray-light">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-12">
+                                                                        <h4>Payments</h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable7" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Payment No.</th>
+                                                                                <th>Date</th>
+                                                                                <th class="text-right">Total Amount</th>
+                                                                                <th class="text-center">Cheque / Ref. No.</th>
+                                                                                <th>Cancelled / Returned</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>234</td>
+                                                                                <td>13 Oct 2020</td>
+                                                                                <td class="text-right">132.00</td>
+                                                                                <td class="text-center">66676</td>
+                                                                                <td></td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">View</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Update</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Cancel</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>234</td>
+                                                                                <td>13 Oct 2020</td>
+                                                                                <td class="text-right">132.00</td>
+                                                                                <td class="text-center">66676</td>
+                                                                                <td></td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">View</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Update</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Cancel</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+        
+
+
+    </body>
+</html>
