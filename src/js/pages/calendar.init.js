@@ -19,7 +19,8 @@ File: Calendar init js
         this.$btnNewEvent = $("#btn-new-event"),
         this.$btnDeleteEvent = $("#btn-delete-event"),
         this.$btnSaveEvent = $("#btn-save-event"),
-        this.$modalTitle = $("#modal-title"),
+        this.$modalTitle = null,
+        //this.$modalTitle = $("#modal-title"),
         this.$calendarObj = null,
         this.$selectedEvent = null,
         this.$newEventData = null
@@ -50,7 +51,7 @@ File: Calendar init js
         this.$selectedEvent = null;
         this.$newEventData = info;
         this.$btnDeleteEvent.hide();
-        this.$modalTitle.text('Add New Event');
+       // this.$modalTitle.text('Add New Event');
 
         this.$modal.modal({
             backdrop: 'static'
