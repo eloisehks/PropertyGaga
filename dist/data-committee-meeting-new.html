@@ -22,6 +22,7 @@
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/dropzone/dropzone.min.css" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -362,6 +363,25 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span>Renovation</span>
                                 </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-car-sideview"></i>
+            
+                                    <span>Visitor Parking</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="visitorparking-booking-listing.html">Visitor Parking Booking Listing
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
 
                             <li>
@@ -721,6 +741,17 @@
                             <li class="menu-title">Security</li>
                             <li>
                                 <a href="security-visitor.html">
+                                    <i class="uil uil-user-square"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Visitor </span>
+                                </a>
+                            </li>
+    
+                            <br><br>
+
+                            <li class="menu-title">Occupant</li>
+                            <li>
+                                <a href="occupant-visitor.html">
                                     <i class="uil uil-user-square"></i>
                                     <span class="badge badge-success float-right"></span>
                                     <span> Visitor </span>
@@ -1175,10 +1206,10 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
-                            <div class="col-md-3 col-xl-6">
+                            <div class="col-md-6 col-xl-6">
                                 <h3 class="mb-1 mt-0">Create New Meeting</h3>
                             </div>
-                            <div class="col-md-9 col-xl-6 text-md-right">
+                            <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
                                     <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
                                 </div>
@@ -1189,7 +1220,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form class="form-horizontal">
+                                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone">
                                             <div class="row mb-2">
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
@@ -1223,7 +1254,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label" for="">Meeting Agenda</label>
                                                         <div class="col-lg-9">
-                                                            <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                            <textarea class="form-control" rows="4" id="example-textarea"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row align-items-center">
@@ -1250,25 +1281,19 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row mt-4">
+                                                        <label class="col-lg-3 col-form-label" for="">Upload Audio Files</label>
+                                                        <div class="col-lg-9">
+                                                            <input type="file" class="form-control" id="">
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group row align-items-center">
                                                         <label class="col-lg-3 col-form-label" for="">Upload New Minutes</label>
                                                         <div class="col-lg-9">
                                                             <input type="file" class="form-control" id="">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row align-items-center">
-                                                        <label class="col-lg-3 col-form-label" for="">Upload Documents</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="file" class="form-control" id="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row mt-4">
-                                                        <label class="col-lg-3 col-form-label" for="">Audio Recording</label>
-                                                        <div class="col-lg-9">
-                                                            <button class="btn btn-outline-primary btn-sm btn-rounded"><i class='uil uil-record-audio'></i> Start Record</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label" for="">Send Invitation</label>
                                                         <div class="col-auto ml-2 custom-control custom-checkbox">
                                                             <input type="checkbox" class="custom-control-input" id="checkmeout0">
@@ -1277,11 +1302,25 @@
                                                         <div class="col-auto">
                                                             <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-current-committee-members">Current Committee Members</a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label" for="">Minutes Review</label>
                                                         <div class="col-lg-9">
                                                             <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-comment-meeting-minutes">Comment Meeting Minutes</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-3 col-form-label" for="">Upload Documents</label>
+                                                        <div class="col-lg-9">
+                                                            <div class="fallback">
+                                                                <input name="file" type="file" multiple />
+                                                            </div>
+                            
+                                                            <div class="dz-message needsclick" style="border: 2px dashed #cccccc">
+                                                                <i class="h1 text-muted  uil-cloud-upload"></i>
+                                                                <h5 class="mt-0">Drop files here or click to upload.</h5>
+                                                            </div>
+                                                            <!-- <input type="file" class="form-control" id=""> -->
                                                         </div>
                                                     </div>
                                                     
@@ -1407,8 +1446,8 @@
 
                                         <div class="float-right">
                                             <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='email-new-meeting-notice.html';">Send Meeting Invite</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Draft</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='email-new-meeting-notice.html';">Send Meeting Invite to Committee Members</button>
                                         </div>
             
                                     </div> <!-- end card-body -->
@@ -1505,6 +1544,7 @@
         <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
         <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
         <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <script src="assets/libs/dropzone/dropzone.min.js"></script>
 
         <!-- Init js-->
         <script src="assets/js/pages/form-advanced.init.js"></script>
@@ -1529,6 +1569,6 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
+
     </body>
 </html>

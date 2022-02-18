@@ -173,6 +173,7 @@ $(document).ready(function() {
 
     // Default Datatable
     $('#basic-datatable').DataTable({
+        "scrollX": true,
         "language": {
             "paginate": {
                 "previous": "<i class='uil uil-angle-left'>",
@@ -182,7 +183,7 @@ $(document).ready(function() {
         },
         "drawCallback": function () {
             $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
-        }
+        },
     });
 
      // Default Datatable Second tab
