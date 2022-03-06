@@ -51,7 +51,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Create New Meeting</h3>
+                                <h3 class="mb-1 mt-0">Meeting: #7</h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -59,50 +59,43 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
+                        <form class="form-horizontal" id="">
+                        
+                            <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone">
+                                        
                                             <div class="row mb-2">
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Meeting No.</label>
-                                                        <label class="col-lg-3 col-form-label" for="">5</label>
+                                                        <label class="col-lg-2 col-form-label" for="">Meeting No.</label>
+                                                        <label class="col-lg-3 col-form-label" for="">7</label>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Meeting Title</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="">
-                                                        </div>
+                                                        <label class="col-lg-2 col-form-label" for="">Terms</label>
+                                                        <label class="col-lg-3 col-form-label" for="">1st</label>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="example-date">Date</label>
+                                                        <label class="col-lg-2 col-form-label" for="example-date">Date</label>
                                                         <div class="col-lg-4">
                                                             <input class="form-control" id="example-date" type="date" name="date">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="example-time">Time</label>
+                                                        <label class="col-lg-2 col-form-label" for="example-time">Time</label>
                                                         <div class="col-lg-4">
                                                             <input class="form-control" id="example-time" type="time" name="time">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Venue</label>
-                                                        <div class="col-lg-9">
+                                                        <label class="col-lg-2 col-form-label" for="">Venue</label>
+                                                        <div class="col-lg-10">
                                                             <input type="text" class="form-control" id="" placeholder="" value="">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Meeting Agenda</label>
-                                                        <div class="col-lg-9">
-                                                            <textarea class="form-control" rows="4" id="example-textarea"></textarea>
-                                                        </div>
-                                                    </div>
                                                     <div class="form-group row align-items-center">
-                                                        <label class="col-lg-3 col-form-label" for="">Past Minutes</label>
+                                                        <label class="col-lg-2 col-form-label" for="">Past Minutes</label>
                                                         <div class="col-auto">
                                                             <div class="card mb-2 shadow-none border">
                                                                 <div class="p-1 px-2">
@@ -125,180 +118,125 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row mt-4">
-                                                        <label class="col-lg-3 col-form-label" for="">Upload Audio Files</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="file" class="form-control" id="">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-2 col-form-label" for="">Meeting Agenda</label>
+                                                        <div class="col-lg-10">
+                                                            <textarea class="form-control" rows="2" id="example-textarea">Agenda
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-2 col-form-label" for=""></label>
+                                                        <div class="col-lg-10">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-comment-meeting-minutes">Add Agenda</a>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row align-items-center">
-                                                        <label class="col-lg-3 col-form-label" for="">Upload New Minutes</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="file" class="form-control" id="">
+                                                        <label class="col-lg-2 col-form-label" for="">Upload Documents</label>
+                                                        <div class="col-lg-10">
+                                                            <div class="">
+                                                                <input class="form-control" name="file" type="file" multiple />
+                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Send Invitation</label>
-                                                        <div class="col-auto ml-2 custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="checkmeout0">
-                                                            <label class="custom-control-label" for="checkmeout0">Send to All Committee Members</label>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-2 col-form-label" for=""><em class="text-muted">NOTE: Appear after choose files</em></label>
+                                                        <div class="col-auto">
+                                                            <div class="card mb-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">doc1.docx</a>
+                                                                            <p class="mb-0">1.6 MB</p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-current-committee-members">Current Committee Members</a>
-                                                        </div>
-                                                    </div> -->
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Minutes Review</label>
-                                                        <div class="col-lg-9">
-                                                            <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-comment-meeting-minutes">Comment Meeting Minutes</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row align-items-center">
-                                                        <label class="col-lg-3 col-form-label" for="">Upload Documents</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="fallback">
-                                                                <input name="file" type="file" multiple />
-                                                            </div>
-                            
-                                                            <div class="dz-message needsclick" style="border: 2px dashed #cccccc">
-                                                                <i class="h1 text-muted  uil-cloud-upload"></i>
-                                                                <h5 class="mt-0">Drop files here or click to upload.</h5>
-                                                            </div>
-                                                            <!-- <input type="file" class="form-control" id=""> -->
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </form>
-
-                                        <!-- modal current committee members -->
-                                        <div class="modal fade" id="modal-current-committee-members" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Current Committee Members</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                
-                                                                <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <h4><span class="mr-2">MC:</span> 2nd Term (Jan 2019 - Dec 2020)</h4>
+                                                            <div class="card mb-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">doc2.pdf</a>
+                                                                            <p class="mb-0">1 MB</p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-2 mt-2">
-                                                                    <div class="col-md-3 font-weight-bold text-color-black">Chairman:</div>
-                                                                    <div class="col-md-9"><span class="bold">Alice</span><br>
-                                                                        8-18-3A<br>
-                                                                        012 345 6789<br>
-                                                                        email@email.com</div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2">
-                                                                    <div class="col-md-3 font-weight-bold text-color-black">Secretary:</div>
-                                                                    <div class="col-md-9"><span class="bold">Tan Kian Ho</span><br>
-                                                                        8-19-03<br>
-                                                                        012 345 6789<br>
-                                                                        email@email.com)</div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2">
-                                                                    <div class="col-md-3 font-weight-bold text-color-black">Treasurer:</div>
-                                                                    <div class="col-md-9"><span class="bold">Foo Gaik Hoon</span><br>
-                                                                        8-20-3A<br>
-                                                                        012 345 6789<br>
-                                                                        email@email.com)</div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2">
-                                                                    <div class="col-md-3 font-weight-bold text-color-black">Ordinary Committee:</div>
-                                                                    <div class="col-md-9"><span class="bold">Tan Koon Aik</span><br>
-                                                                        8-21-03<br>
-                                                                        012 345 6789<br>
-                                                                        email@email.com)</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="card mb-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">doc3.docx</a>
+                                                                            <p class="mb-0">1.2 MB</p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- modal current committee members end -->
 
-                                        <!-- modal  comment committee minutes -->
-                                        <div class="modal fade" id="modal-comment-meeting-minutes" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Comment Meeting Minutes</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <!-- <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="">Committee Member</label>
-                                                                        <div class="col-lg-9">
-                                                                            <select class="form-control custom-select mb-2">
-                                                                                <option>Committee Member</option>
-                                                                                <option>Alice</option>
-                                                                                <option>Tan Kian Ho</option>
-                                                                                <option>Foo Gaik Hoon</option>
-                                                                                <option>Tan Koon Aik</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div> -->
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="">Minutes Item No.</label>
-                                                                        <div class="col-lg-9">
-                                                                            <input type="text" class="form-control" id="" value="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="">Minutes Subject</label>
-                                                                        <div class="col-lg-9">
-                                                                            <input type="text" class="form-control" id="" value="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="">Comment</label>
-                                                                        <div class="col-lg-9">
-                                                                        <textarea class="form-control" rows="3" id=""></textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
-                                                    </div>
-                                                </div>
+                                            <div class="float-right">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Send Invite to Committees</button>
                                             </div>
-                                        </div>
-                                        <!-- modal comment committee minutes end -->
-
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Draft</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='email-new-meeting-notice.html';">Send Meeting Invite to Committee Members</button>
-                                        </div>
             
                                     </div> <!-- end card-body -->
                                 </div> <!-- end card-->
                             </div><!-- end col -->
-                        </div>
-                        <!-- end row -->
+                            </div>
+                            <!-- end row -->
+
+                        </form>
 
                     </div> <!-- container-fluid -->
 
@@ -312,6 +250,153 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
+            <!-- modal edit comment committee minutes -->
+            <div class="modal fade" id="modal-edit-comment-meeting-minutes" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Comment Meeting Minutes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <i class='uil uil-comment-alt mr-2'></i> <span class="mr-2">Alice</span> <small>(Chairman) Commented on 20 Jan 2021, 3:04pm</small> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Minutes Item No.</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="2.3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Minutes Agenda</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="Property Manager Report">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Comment</label>
+                                            <div class="col-lg-9">
+                                            <textarea class="form-control" rows="3" id="">Comments goes here… Comments goes here...Comments goes here...Comments goes here...Comments goes here...Comments goes here...Comments goes here...</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal edit comment committee minutes end -->
+
+            <!-- modal  comment committee minutes -->
+            <div class="modal fade" id="modal-comment-meeting-minutes" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Comment Meeting Minutes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <!-- <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Committee Member</label>
+                                            <div class="col-lg-9">
+                                                <select class="form-control custom-select mb-2">
+                                                    <option>Committee Member</option>
+                                                    <option>Alice</option>
+                                                    <option>Tan Kian Ho</option>
+                                                    <option>Foo Gaik Hoon</option>
+                                                    <option>Tan Koon Aik</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Minutes Item No.</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Minutes Agenda</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="">Comment</label>
+                                            <div class="col-lg-9">
+                                            <textarea class="form-control" rows="3" id=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal comment committee minutes end -->
+
+            <!-- modal edit attendance -->
+            <!-- <div class="modal fade" id="modal-edit-attendance" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Attendance</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group row ml-1">
+                                    <div class="col-auto custom-control custom-radio mb-2">
+                                        <input type="radio" id="customRadio1" name="customRadio"
+                                            class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="customRadio1">Yes</label>
+                                    </div>
+                                    <div class="col-auto custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label pl-0" for="">Note</label>
+                                    <textarea class="form-control" rows="4" id=""></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- modal edit attendance end -->
 
         </div>
         <!-- END wrapper -->
@@ -353,6 +438,6 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-
+        
     </body>
 </html>
