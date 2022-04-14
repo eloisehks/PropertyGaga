@@ -61,13 +61,13 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-3 col-xl-6">
-                                <h3 class="mb-1 mt-0">Data - Meter Reading (Archive)</h3>
+                                <h3 class="mb-1 mt-0">Data - Utility</h3>
                             </div>
                             <div class="col-md-9 col-xl-6 text-md-right">
-                                <!-- <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='data-meter-reading-new-meter.html';"><i class="uil-plus mr-1"></i> Add New Meter</button>
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='data-utility-new-meter.html';"><i class="uil-plus mr-1"></i> Add New Meter</button>
                                 </div>
-                                 -->
+                                
                             </div>
                         </div>
 
@@ -79,14 +79,14 @@
                                             <div class="form-group">
                                                 <select class="form-control custom-select">
                                                     <option value="0">All</option>
-                                                    <option value="1">Electricity</option>
-                                                    <option value="2">Water</option>
+                                                    <option value="1">PBA</option>
+                                                    <option value="2">TNB</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-xl-10 col-sm-8">
                                             <div class="form-group float-right">
-                                                <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                                <a href="#" class="pb-3" data-toggle="modal" onclick="location.href='data-utility-archive.html';"><i class="uil-archive mr-1"></i> Archive</a>
                                             </div>
                                         </div>
                                     </div>
@@ -100,70 +100,31 @@
                             <div class="col-xl-4 col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="badge badge-info float-right">Water</div>
-                                        <p class="text-info text-uppercase font-size-12 mb-2">Common</p>
+                                        <div class="badge badge-info float-right">PBA</div>
+                                        <h3 class="text-info text-uppercase mt-0"><a href="data-utility-update-meter.html">PBA 1</a></h3>
                                         <div class="dropdown float-right">
                                             <a href="#" class="dropdown-toggle arrow-none text-muted"
                                                 data-toggle="dropdown" aria-expanded="false">
                                                 <i class='uil uil-ellipsis-h'></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
+                                                <!-- <div class="dropdown-divider"></div> -->
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-editreading">
-                                                    <i class="uil uil-edit mr-1"></i> Edit
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-statistic">
-                                                    <i class="uil uil-chart-line mr-1"></i> Statistic
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-table">
-                                                    <i class="uil uil-table mr-1"></i> Listing
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-downloadbill">
-                                                    <i class="uil uil-bill mr-1"></i> Download Bill
+                                                <a href="javascript:void(0);" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete">
+                                                    <i class='uil uil-archive mr-1'></i> Move to Archive
                                                 </a>
                                             </div> <!-- end dropdown menu-->
                                         </div> <!-- end dropdown-->
-                                        <h5 class="mb-4"><a href="#" class="text-dark">275-5543-0482</a></h5>
-
-
+                                        <h5><a href="#" class="text-dark">275-5543-0482</a><span class="ml-2 text-muted">(C3)</span></h5>
                                         <div class="row">
                                             <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-calender text-dark"></i> Reading Date
+                                                <i class="uil-calender text-dark"></i> Last Reading
                                             </div>
                                             <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">15 May, 2021</div>
+                                                <div class="text-dark text-right">15 May, 2021 <i class="uil uil-exclamation-octagon mr-1 text-color-redBright float-right" data-toggle="tooltip" data-placement="top" title="" data-original-title="Meter Reading Not Updated"></i></div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Previous
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">249606 L</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Current
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">249697 L</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-history-alt text-dark"></i> Usage
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">91 L <i class='uil uil-exclamation-octagon text-color-redBright'></i></div>
-                                            </div>
-                                        </div>
-                                        
                                     </div>
-                                    
                                 </div>
                                 <!-- end card -->
                             </div>
@@ -171,8 +132,8 @@
                             <div class="col-xl-4 col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="badge badge-danger float-right">Electricity</div>
-                                        <p class="text-danger text-uppercase font-size-12 mb-2">Common</p>
+                                        <div class="badge badge-danger float-right">TNB</div>
+                                        <h3 class="text-danger text-uppercase mt-0"><a href="data-utility-update-meter-2.html">TNB 1</a></h3>
                                         <div class="dropdown float-right">
                                             <a href="#" class="dropdown-toggle arrow-none text-muted"
                                                 data-toggle="dropdown" aria-expanded="false">
@@ -180,53 +141,18 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-editreading">
-                                                    <i class="uil uil-edit mr-1"></i> Edit
+                                                <a href="javascript:void(0);" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete">
+                                                    <i class='uil uil-archive mr-1'></i> Move to Archive
                                                 </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-statistic">
-                                                    <i class="uil uil-chart-line mr-1"></i> Statistic
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-table">
-                                                    <i class="uil uil-table mr-1"></i> Listing
-                                                </a>
-                                                
                                             </div> <!-- end dropdown menu-->
                                         </div> <!-- end dropdown-->
-                                        <h5 class="mb-4"><a href="#" class="text-dark">716516041</a></h5>
-
-
+                                        <h5><a href="#" class="text-dark">716516041</a><span class="ml-2 text-muted">(B1)</span></h5>
                                         <div class="row">
                                             <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-calender text-dark"></i> Reading Date
+                                                <i class="uil-calender text-dark"></i> Last Reading
                                             </div>
                                             <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">15 May, 2021</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Previous
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">1614666 kWh</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Current
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">1615769 kWh</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-history-alt text-dark"></i> Usage
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">1103 kWh</div>
+                                                <div class="text-dark text-right">15 May, 2021</div>
                                             </div>
                                         </div>
                                         
@@ -238,8 +164,8 @@
                             <div class="col-xl-4 col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="badge badge-info float-right">Water</div>
-                                        <p class="text-info text-uppercase font-size-12 mb-2">Common</p>
+                                        <div class="badge badge-info float-right">PBA</div>
+                                        <h3 class="text-info text-uppercase mt-0"><a href="data-utility-update-meter.html">PBA 1</a></h3>
                                         <div class="dropdown float-right">
                                             <a href="#" class="dropdown-toggle arrow-none text-muted"
                                                 data-toggle="dropdown" aria-expanded="false">
@@ -247,55 +173,20 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-editreading">
-                                                    <i class="uil uil-edit mr-1"></i> Edit
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-statistic">
-                                                    <i class="uil uil-chart-line mr-1"></i> Statistic
-                                                </a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#modal-table">
-                                                    <i class="uil uil-table mr-1"></i> Listing
+                                                <a href="javascript:void(0);" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete">
+                                                    <i class='uil uil-archive mr-1'></i> Move to Archive
                                                 </a>
                                             </div> <!-- end dropdown menu-->
                                         </div> <!-- end dropdown-->
-                                        <h5 class="mb-4"><a href="#" class="text-dark">275-5543-0482</a></h5>
-
-
+                                        <h5><a href="#" class="text-dark">275-5543-0482</a><span class="ml-2 text-muted">(C2)</span></h5>
                                         <div class="row">
                                             <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-calender text-dark"></i> Reading Date
+                                                <i class="uil-calender text-dark"></i> Last Reading
                                             </div>
                                             <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">15 May, 2021</div>
+                                                <div class="text-dark text-right">15 May, 2021</div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Previous
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">249606 L</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-tachometer-fast text-dark"></i> Current
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">249697 L</div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col col-lg-6 col-md-6 col-sm-5 col-xs-5">
-                                                <i class="uil-history-alt text-dark"></i> Usage
-                                            </div>
-                                            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                <div class="font-size-16 m-0 text-dark">91 L</div>
-                                            </div>
-                                        </div>
-                                     
                                     </div>
                                 </div>
                                 <!-- end card -->
@@ -476,7 +367,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="col-xl-3 col-sm-12">
+                        <div class="col-xl-4 col-sm-12">
                             <div class="form-group">
                                 <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
                             </div>
@@ -585,7 +476,7 @@
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Meter Reading : Common (Water) 275-5543-0482</h5>
+                        <h5 class="modal-title" id="exampleModalScrollableTitle"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -594,15 +485,15 @@
                         <form class="form-horizontal">
                             <div class="row">
                                 <div class="col-md-12 text-center mt-5 mb-5">
-                                    <h5>You are about to delete this meter</h5>
-                                    <h5>This record will be stored in Archive</h5>
+                                    <h3>PBA 1 -  275-5543-0482</h3>
+                                    <h5>Move this meter to Archive</h5>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger btn-rounded width-sm">Delete</button>
+                        <button type="button" class="btn btn-danger btn-rounded width-sm">Move Now</button>
                     </div>
                 </div>
             </div>
@@ -629,6 +520,32 @@
                                             <h5><a href="#"><i class="uil uil-bill mr-1"></i> Download Bill</a></h5>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-12">
+                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                <div class="p-1 px-2">
+                                                    <div class="row align-items-center">
+                                                        <div class="col pl-0">
+                                                            <a href="javascript:void(0);" class="text-muted font-weight-bold">may.pdf <small class="ml-2">2.3 MB</small></a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <!-- Button -->
+                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                data-placement="bottom" title="Delete"
+                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-12">
+                                            <input type="file" class="form-control" id="fileinput">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -647,7 +564,7 @@
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Meter Reading : Common (Water) 275-5543-0482</h5>
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Meter Reading : Common (Electricity) 716516041</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -657,7 +574,17 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label class="col-lg-12 col-form-label" for="">Upload Bill for this month</label>
+                                        <label class="col-lg-12 col-form-label" for="">Upload Bill for May 2021</label>
+                                        <div class="col-lg-12">
+                                            <input type="file" class="form-control" id="fileinput" value="January">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col-lg-12 col-form-label" for="">Upload Bill for Feb 2021</label>
                                         <div class="col-lg-12">
                                             <input type="file" class="form-control" id="fileinput">
                                         </div>
@@ -716,12 +643,58 @@
                                     <tr>
                                         <td>31 May 2021</td>
                                         <td>Building Supervisor - Diana</td>
-                                        <td><a href="#"><i class="uil uil-bill mr-1"></i> Download</a></td>
+                                        <!-- <td><a href="#"><i class="uil uil-bill mr-1"></i> Download</a></td> -->
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">may.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <a href=".html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                            &nbsp;
+                                            <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a> -->
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>30 Apr 2021</td>
                                         <td>Building Supervisor - Diana</td>
-                                        <td><a href="#"><i class="uil uil-bill mr-1"></i> Download</a></td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">apr.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>31 Mar 2021</td>
@@ -736,7 +709,28 @@
                                     <tr>
                                         <td>31 Jan 2021</td>
                                         <td>Building Supervisor - Diana</td>
-                                        <td><a href="#"><i class="uil uil-bill mr-1"></i> Download</a></td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">jan.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                     
                                 </tbody>
@@ -750,6 +744,191 @@
             </div>
         </div>
         <!-- modal download bill end -->
+
+        <!-- modal download bill all-->
+        <div class="modal fade" id="modal-downloadbillall" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Bills : Common (Water) 275-5543-0482</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <form>
+                                <div class="form-row align-items-center">
+                                    <div class="col-xl-3 col-sm-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Uploaded by</th>
+                                        <th>File</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>31 May 2021</td>
+                                        <td>Building Supervisor - Diana</td>
+                                        <!-- <td><a href="#"><i class="uil uil-bill mr-1"></i> Download</a></td> -->
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">may.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <a href=".html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                            &nbsp;
+                                            <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a> -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>30 Apr 2021</td>
+                                        <td>Building Supervisor - Diana</td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">apr.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>31 Mar 2021</td>
+                                        <td>Building Supervisor - Diana</td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">mar.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>29 Feb 2021</td>
+                                        <td>Building Supervisor - Diana</td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">feb.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>31 Jan 2021</td>
+                                        <td>Building Supervisor - Diana</td>
+                                        <td class="text-center">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">                                                   
+                                                    <div class="col pl-0">
+                                                        <i class="uil uil-bill mr-1"></i> <a href="javascript:void(0);" class="text-muted font-weight-bold">jan.pdf <small class="ml-2">2.3 MB</small></a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal download bill all end -->
 
         @@include('./partials/right-sidebar.html')
 
