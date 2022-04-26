@@ -368,7 +368,7 @@
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-car-sideview"></i>
             
-                                    <span>Visitor Parking</span>
+                                    <span>Visitor</span>
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -377,7 +377,30 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
-                                        <a href="visitorparking-booking-listing.html">Visitor Parking Booking Listing
+                                        <a href="visitor-with-parking.html">Visitor With Parking
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="visitor-without-parking.html">Visitor Without Parking
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-car"></i>
+            
+                                    <span>Rental Parking</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="rentalparking-settings.html">Rental Parking Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="rentalparking-listing.html">Rental Parking Listing
                                         </a>
                                     </li>
                                 </ul>
@@ -434,14 +457,6 @@
                                     </li>
                                 </ul>
                             </li>
-    
-                            <!-- <li>
-                                <a href="tasksheet-task-new.html">
-                                    <i data-feather="plus"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Add Ticket / Task </span>
-                                </a>
-                            </li> -->
 
                             <li>
                                 <a href="servicing-reports.html">
@@ -451,12 +466,19 @@
                                 </a>
                             </li>
 
+                            <!-- <li>
+                                <a href="tasksheet-open-task.html">
+                                    <i class="uil uil-clipboard-alt"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Tasks </span>
+                                </a>
+                            </li> -->
+
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-clipboard-alt"></i>
             
                                     <span>Tasks <i class="uil uil-lightbulb-alt ml-0 text-color-greenBright font-xs"></i></span>
-                                    <!--<i class="uil-check-circle text-success float-right mr-4 mt-1"></i>-->
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -1146,6 +1168,11 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span> Dashboard </span>
                                 </a>
+                                <a href="committee-meetings.html">
+                                    <i data-feather="home"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Meetings </span>
+                                </a>
                             </li>
 
                             <br><br>
@@ -1206,11 +1233,11 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Add Facility</h3>
+                                <h3 class="mb-3 mt-0">Facility Settings</h3>    
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3" onclick="location.href='facility-settings-add.html';"><i class="uil-plus mr-1"></i> Add Facility</button>
                                 </div>
                             </div>
                         </div>
@@ -1219,97 +1246,320 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form class="form-horizontal">
-                                            <div class="row mb-2">
-                                                <div class="col">
-                                                    <!--<div class="form-group row">
-                                                        <label class="col-lg-2 col-form-label"
-                                                            for="">Project</label>
-                                                        <div class="col-lg-5">
-                                                            <select class="form-control custom-select">
-                                                                <option>Select Project</option>
-                                                                <option selected>Gurney Villa</option>
-                                                                <option>Eden Fairway Condominium</option>
-                                                                <option>Ferringhi Mutiara Apartment </option>
-                                                                <option>Indahria Apartments</option>
-                                                                <option>Villamas Apartments</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>-->
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                            <div class="card border-gray-light">
-                                                                <div class="card-body pb-0">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-2 col-form-label" for="">Facility Name</label>
-                                                                        <div class="col-lg-5">
-                                                                            <input type="text" id="" name="item" class="form-control" placeholder="">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-2 col-form-label" for="">Day</label>
-                                                                        <div class="col-lg-5">
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                                                <label class="custom-control-label" for="customCheck1">Monday</label>
+                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#facility" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none"><i class="uil-car-sideview"></i></span>
+                                                    <span class="d-none d-sm-block">Facility Listing</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#maintenance" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none"><i class="uil-no-entry"></i> <div class="badge badge-danger float-right ml-2">4</div></span>
+                                                    <span class="d-none d-sm-block">Maintenance Listing <div class="badge badge-danger float-right ml-2">4</div></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content p-0 text-muted">
+                                          
+                                            <div class="tab-pane show active" id="facility">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-3 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">All Facilities</option>
+                                                                                        <option>Swimming Pool</option>
+                                                                                        <option>Games Room</option>
+                                                                                        <option>Squash Room</option>
+                                                                                        <option>Badminton Court 1</option>
+                                                                                        <option>Badminton Court 2</option>
+                                                                                    </select>
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                                                <label class="custom-control-label" for="customCheck2">Tuesday</label>
-                                                                            </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                                                <label class="custom-control-label" for="customCheck2">Wednesday</label>
-                                                                            </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                                                <label class="custom-control-label" for="customCheck2">Thursday</label>
-                                                                            </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                                                <label class="custom-control-label" for="customCheck2">Friday</label>
-                                                                            </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                                                                <label class="custom-control-label" for="customCheck2">Saturday</label>
-                                                                            </div>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                                                                <label class="custom-control-label" for="customCheck2">Sunday</label>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-2 col-form-label" for="">Time</label>
-                                                                        <div class="col-lg-3">
-                                                                            <input type="text" id="minmax-timepicker" class="form-control" placeholder="Time">
-                                                                        </div>
-                                                                        <div class="col-auto mt-2">
-                                                                            To
-                                                                        </div>
-                                                                        <div class="col-lg-3">
-                                                                            <input type="text" id="minmax-timepicker" class="form-control" placeholder="Time">
-                                                                        </div>
-                                                                    </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No.</th>
+                                                                                <th>Facility Name</th>
+                                                                                <!-- <th class="text-center">Closure of Facility</th> -->
+                                                                                <th class="text-center">Operating Hours</th>
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Swimming Pool</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    9:00am - 9:00pm
+                                                                                </td>
+                                                                                <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Games Room</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Close</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    8:00am - 8:00pm
+                                                                                </td>
+                                                                                <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Squash Room</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch2">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    24 hours
+                                                                                </td>
+                                                                                <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>4</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Badminton Court 1</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch3">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    9:00am - 9:00pm
+                                                                                </td>
+                                                                                <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>5</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Badminton Court 2</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch4">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    9:00am - 9:00pm
+                                                                                </td>
+                                                                                <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
                                                             </div>
-                                                        </div><!-- end col-->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
 
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
-                                        </div>
-            
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div><!-- end col -->
+                                            <div class="tab-pane show" id="maintenance">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-3 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">All Facilities</option>
+                                                                                        <option>Swimming Pool</option>
+                                                                                        <option>Games Room</option>
+                                                                                        <option>Squash Room</option>
+                                                                                        <option>Badminton Court 1</option>
+                                                                                        <option>Badminton Court 2</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No.</th>
+                                                                                <th>Facility Name</th>
+                                                                                <!-- <th class="text-center">Closure of Facility</th> -->
+                                                                                <th class="text-center">Close Date</th>
+                                                                                <th class="text-center">Close Operating Hours</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Swimming Pool</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    30 Mar 2022
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    9:00am - 10:00am
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Games Room</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Close</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    30 Mar 2022
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    8:00am - 9:00am
+                                                                                </td>
+                                                                                <!-- <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Squash Room</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch2">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    30 Mar 2022
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    7:00am - 9:00am
+                                                                                </td>
+                                                                                <!-- <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>4</td>
+                                                                                <td>
+                                                                                    <a href="facility-settings-edit.html">Badminton Court 1</a>
+                                                                                </td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <div class="custom-control custom-switch">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch3">Open</label>
+                                                                                    </div>
+                                                                                </td> -->
+                                                                                <td class="text-center">
+                                                                                    30 Mar 2022
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    3:00pm - 4:00pm
+                                                                                </td>
+                                                                                <!-- <td class="text-right pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td> -->
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
                         </div>
-                        <!-- end row -->
-
+                        <!-- end row-->
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -1422,6 +1672,26 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <!-- <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#facility').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script> -->
         
     </body>
 </html>

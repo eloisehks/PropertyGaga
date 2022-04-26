@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Property Gaga</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="" name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
@@ -21,17 +21,13 @@
         <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />       
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />     
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-        <style type="text/css" class="init">
-	
-            
-        </style>
 
     </head>
 
@@ -373,7 +369,7 @@
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-car-sideview"></i>
             
-                                    <span>Visitor Parking</span>
+                                    <span>Visitor</span>
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -382,7 +378,30 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
-                                        <a href="visitorparking-booking-listing.html">Visitor Parking Booking Listing
+                                        <a href="visitor-with-parking.html">Visitor With Parking
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="visitor-without-parking.html">Visitor Without Parking
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-car"></i>
+            
+                                    <span>Rental Parking</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="rentalparking-settings.html">Rental Parking Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="rentalparking-listing.html">Rental Parking Listing
                                         </a>
                                     </li>
                                 </ul>
@@ -439,14 +458,6 @@
                                     </li>
                                 </ul>
                             </li>
-    
-                            <!-- <li>
-                                <a href="tasksheet-task-new.html">
-                                    <i data-feather="plus"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Add Ticket / Task </span>
-                                </a>
-                            </li> -->
 
                             <li>
                                 <a href="servicing-reports.html">
@@ -456,12 +467,19 @@
                                 </a>
                             </li>
 
+                            <!-- <li>
+                                <a href="tasksheet-open-task.html">
+                                    <i class="uil uil-clipboard-alt"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Tasks </span>
+                                </a>
+                            </li> -->
+
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-clipboard-alt"></i>
             
                                     <span>Tasks <i class="uil uil-lightbulb-alt ml-0 text-color-greenBright font-xs"></i></span>
-                                    <!--<i class="uil-check-circle text-success float-right mr-4 mt-1"></i>-->
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -1151,6 +1169,11 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span> Dashboard </span>
                                 </a>
+                                <a href="committee-meetings.html">
+                                    <i data-feather="home"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Meetings </span>
+                                </a>
                             </li>
 
                             <br><br>
@@ -1211,11 +1234,11 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-3 mt-0">Visitor Parking Booking Listing</h3>    
+                                <h3 class="mb-1 mt-0">Edit Facility Booking</h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3" onclick="location.href='visitorparking-booking-add.html';"><i class="uil-plus mr-1"></i> Book a Visitor Parking</button>
+                                    <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back </a>
                                 </div>
                             </div>
                         </div>
@@ -1224,95 +1247,120 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
-                                        <form class="">
-
-                                            <table id="bookinglist" class="table table-hover nowrap full-width">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No.</th>
-                                                        <th>Unit to Visit</th>
-                                                        <th>Visitor</th>
-                                                        <th>Registered by</th>
-                                                        <th>Parking Type</th>
-                                                        <th>Parking Lot Name</th>
-                                                        <th>Parking Slot</th>
-                                                        <th>Car Plate No.</th>
-                                                        <th>Check-in</th>
-                                                        <th>Check-out</th>
-                                                        <th class="text-center">Note</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>6-10-02</td>
-                                                        <td><a href="visitorparking-booking-edit.html">Eugene<br>012 345 6789</a></td>
-                                                        <td>Visitor</td>
-                                                        <td>Visitor Parking</td>
-                                                        <td>Parking Lot Name 1</td>
-                                                        <td>Slot 1, Slot 2, Slot 3</td>
-                                                        <td class="text-center">PDD 3456</td>
-                                                        <td>5 Nov 2021<br>10:00am</td>
-                                                        <td>5 Nov 2021<br>12:30pm</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#note">Note</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>6-10-02</td>
-                                                        <td><a href="visitorparking-booking-edit.html">Eugene<br>012 345 6789</a></td>
-                                                        <td>Occupant</td>
-                                                        <td>Visitor Parking</td>
-                                                        <td>Parking Lot Name 1</td>
-                                                        <td>Slot 1, Slot 2, Slot 3</td>
-                                                        <td class="text-center">PDD 7777</td>
-                                                        <td>5 Nov 2021<br>10:00am</td>
-                                                        <td>5 Nov 2021<br>12:30pm</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#note">Note</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>6-10-02</td>
-                                                        <td><a href="visitorparking-booking-edit.html">Eugene<br>012 345 6789</a></td>
-                                                        <td>Security</td>
-                                                        <td>Loading Bay Parking</td>
-                                                        <td>Loading Bay 2</td>
-                                                        <td>Slot 4, Slot 5, Slot 6</td>
-                                                        <td class="text-center">PDD 1111</td>
-                                                        <td>5 Nov 2021<br>10:00am</td>
-                                                        <td></td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#note">Note</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>6-13-02</td>
-                                                        <td><a href="visitorparking-booking-edit.html">Eugene<br>012 345 6789</a></td>
-                                                        <td>Management</td>
-                                                        <td>Visitor Parking</td>
-                                                        <td>Parking Lot Name 4</td>
-                                                        <td>Slot 11, Slot 12, Slot 13</td>
-                                                        <td class="text-center">PDD 8888</td>
-                                                        <td>5 Nov 2021<br>10:00am</td>
-                                                        <td>5 Nov 2021<br>12:30pm</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#note">Note</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Unit No.</label>
+                                                        <div class="col-lg-5">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Unit No.</option>
+                                                                <option value="1" selected>8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Occupant Name</label>
+                                                        <div class="col-lg-5">
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Name</option>
+                                                                <option selected>Eugene</option>
+                                                                <option>Allie</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Facility</label>
+                                                        <div class="col-lg-5">
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Facility</option>
+                                                                <option selected>Swimming Pool</option>
+                                                                <option>Games Room</option>
+                                                                <option>Squash Room</option>
+                                                                <option>Badminton Court 1</option>
+                                                                <option>Badminton Court 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Date</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row" id="affected">
+                                                        <label class="col-lg-3 col-form-label" for="simpleinput"></label>
+                                                        <div class="col-auto">
+                                                            <div class="card border-gray400">
+                                                                <div class="card-body">
+                                                                     <h4 class="header-title mt-0 mb-2">Select Slot</h4>
+                                                                     <input type="checkbox" name="Slot1" title="Slot 1 (00.01-01:00)">
+                                                                     <input type="checkbox" name="Slot2" title="Slot 2 (01.01-02:00)">
+                                                                     <input type="checkbox" name="Slot3" title="Slot 3 (02.01-03:00)">
+                                                                     <input type="checkbox" name="Slot4" title="Slot 4 (03.01-04:00)">
+                                                                     <input type="checkbox" name="Slot5" title="Slot 5 (04.01-05:00)">
+                                                                     <input type="checkbox" name="Slot6" title="Slot 6 (05.01-06:00)">
+                                                                     <input type="checkbox" name="Slot7" title="Slot 7 (06.01-07:00)">
+                                                                     <input type="checkbox" name="Slot8" title="Slot 8 (07.01-08:00)" checked>
+                                                                     <input type="checkbox" name="Slot9" title="Slot 9 (08.01-09:00)" checked>
+                                                                     <input type="checkbox" name="Slot10" title="Slot 10 (09.01-10:00)" checked>
+                                                                     <input type="checkbox" name="Slot11" title="Slot 11 (10.01-11:00)">
+                                                                     <input type="checkbox" name="Slot12" title="Slot 12 (11.01-12:00)">
+                                                                     <input type="checkbox" name="Slot13" title="Slot 13 (12.01-13:00)">
+                                                                     <input type="checkbox" name="Slot14" title="Slot 14 (13.01-14:00)">
+                                                                     <input type="checkbox" name="Slot15" title="Slot 15 (14.01-15:00)">
+                                                                     <input type="checkbox" name="Slot16" title="Slot 16 (15.01-16:00)">
+                                                                     <input type="checkbox" name="Slot17" title="Slot 17 (16.01-17:00)">
+                                                                     <input type="checkbox" name="Slot18" title="Slot 18 (17.01-18:00)">
+                                                                     <input type="checkbox" name="Slot19" title="Slot 19 (18.01-19:00)">
+                                                                     <input type="checkbox" name="Slot20" title="Slot 20 (19.01-20:00)">
+                                                                     <input type="checkbox" name="Slot21" title="Slot 21 (20.01-21:00)">
+                                                                     <input type="checkbox" name="Slot22" title="Slot 22 (21.01-22:00)">
+                                                                     <input type="checkbox" name="Slot23" title="Slot 23 (22.01-23:00)">
+                                                                     <input type="checkbox" name="Slot24" title="Slot 24 (23.01-24:00)">
+                                                                </div> <!-- end card body-->
+                                                            </div> <!-- end card -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </form>
 
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                            <button type="submit" class="btn btn-danger btn-rounded mr-1" onclick="window.history.go(-1);">Cancel Booking</button>
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
                         </div>
-                        <!-- end row-->
+                        <!-- end row -->
+
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -1338,32 +1386,22 @@
             <!-- ============================================================== -->
 
             <!-- modal update mailing address-->
-            <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal fade" id="parkinglot" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Parking Lot Location</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                            <textarea class="form-control" rows="4"
-                                            id="example-textarea"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                            <div class="text-center">
+                                <img src="assets/images/propertygaga/parkinglotlocation.jpg">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -1458,25 +1496,31 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-       
-        <script type="text/javascript" class="init">
-	
-            $(document).ready(function() {
-                $('#bookinglist').DataTable( {
-                    "language": {
-                        "paginate": {
-                            "previous": "<i class='uil uil-angle-left'>",
-                            "next": "<i class='uil uil-angle-right'>"
-                        }
 
-                    },
-                    "drawCallback": function () {
-                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
-                    },
-                    "scrollX": true
-                } );
-            } );
+        <!-- <script>
+            $("#demo").zInput();
+        </script>
+             -->
+        <script src="assets/libs/zInput/zInput.js"></script>
+             
+
+             <script>
+                 $(function(){ 
+                 
+                 $("input[name='css_selector']").change(function(){
+                     $newStyle = $(this).attr("value");
+                     $('#stylesheet').attr("href", $newStyle);
+                 });
+                 
+             });
+             </script>
+             
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
             
+            $("#affected").zInput();
         </script>
         
     </body>

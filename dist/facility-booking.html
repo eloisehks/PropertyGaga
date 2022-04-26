@@ -11,12 +11,6 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <link href="assets/libs/fullcalendar-core/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-daygrid/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-bootstrap/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-timegrid/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-list/main.min.css" rel="stylesheet" type="text/css" />
-
         <!-- plugin css -->
         <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -28,11 +22,16 @@
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
 
     </head>
 
@@ -374,7 +373,7 @@
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-car-sideview"></i>
             
-                                    <span>Visitor Parking</span>
+                                    <span>Visitor</span>
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -383,7 +382,30 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
-                                        <a href="visitorparking-booking-listing.html">Visitor Parking Booking Listing
+                                        <a href="visitor-with-parking.html">Visitor With Parking
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="visitor-without-parking.html">Visitor Without Parking
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-car"></i>
+            
+                                    <span>Rental Parking</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="rentalparking-settings.html">Rental Parking Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="rentalparking-listing.html">Rental Parking Listing
                                         </a>
                                     </li>
                                 </ul>
@@ -440,14 +462,6 @@
                                     </li>
                                 </ul>
                             </li>
-    
-                            <!-- <li>
-                                <a href="tasksheet-task-new.html">
-                                    <i data-feather="plus"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Add Ticket / Task </span>
-                                </a>
-                            </li> -->
 
                             <li>
                                 <a href="servicing-reports.html">
@@ -457,12 +471,19 @@
                                 </a>
                             </li>
 
+                            <!-- <li>
+                                <a href="tasksheet-open-task.html">
+                                    <i class="uil uil-clipboard-alt"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Tasks </span>
+                                </a>
+                            </li> -->
+
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-clipboard-alt"></i>
             
                                     <span>Tasks <i class="uil uil-lightbulb-alt ml-0 text-color-greenBright font-xs"></i></span>
-                                    <!--<i class="uil-check-circle text-success float-right mr-4 mt-1"></i>-->
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -1152,6 +1173,11 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span> Dashboard </span>
                                 </a>
+                                <a href="committee-meetings.html">
+                                    <i data-feather="home"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Meetings </span>
+                                </a>
                             </li>
 
                             <br><br>
@@ -1212,11 +1238,11 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Facility Booking</h3>
+                                <h3 class="mb-3 mt-0">Facility Booking Listing</h3>    
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-committee-meeting-new.html';"><i class="uil-plus mr-1"></i> New Facility Booking</button> -->
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='facility-booking-add.html';"><i class="uil-plus mr-1"></i> Book a Facility Slot</button>
                                 </div>
                             </div>
                         </div>
@@ -1224,80 +1250,115 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-body mb-0 pb-0">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <select class="form-control custom-select">
-                                                    <option>All</option>
-                                                    <option value="bg-danger">Table Tennis</option>
-                                                    <option value="bg-success">Basketball Court</option>
-                                                    <option value="bg-info">Badminton Court</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body pt-2">
-                                        <div class="row calendar-widget">
-                                            <div class="col-sm-8">
-                                                <div id="calendar"></div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="ml-sm-3 pl-sm-5 mt-4 mt-sm-0">
-                                                    <button class="btn btn-primary mt-0 mr-1" id="btn-new-event"><i class="uil-plus-circle"></i> Book a Slot</button>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="slimscroll" style="max-height: 300px">
-                                                            <div class=" ml-sm-3 pl-sm-5 mt-4 mt-sm-0">
-                                                                <div class="border-bottom-gray300 mb-3"><h5>14 Nov 2021</h5></div>
-                                                                <div class="mb-4">
-                                                                    <p class="text-muted mb-0 font-size-13">
-                                                                        <i class="uil uil-calender mr-1"></i>5:00 PM - 7:00 PM
-                                                                    </p>
-                                                                    <h6 class="mt-1 font-size-16">Badminton Court</h6>
-                                                                    <h6 class="mt-1 font-size-16">(6-02-01)</h6>
-                                                                </div>
-                                                                <div class="mb-4">
-                                                                    <p class="text-muted mb-0 font-size-13">
-                                                                        <i class="uil uil-calender mr-1"></i>8:00 PM - 9:00 PM
-                                                                    </p>
-                                                                    <h6 class="mt-1 font-size-16">Table Tennis</h6>
-                                                                    <h6 class="mt-1 font-size-16">(6-06-01)</h6>
-                                                                </div>                                                              
-                                                              
-                                                                <!-- <li>
-                                                                    <a href="" class="btn btn-primary btn-block w-75 mb-0"><i class="uil uil-focus-add mr-2"></i>Add Event</a>
-                                                                </li> -->
-                                                            </div>
-                                                            <!-- <ul class="list-unstyled ml-sm-3 pl-sm-5 mt-4 mt-sm-0">
-                                                                <li class="border-bottom-gray300 mb-3"><h5>14 October 2021</h5></li>
-                                                                <li class="mb-4">
-                                                                    <p class="text-muted mb-0 font-size-13">
-                                                                        <i class="uil uil-calender mr-1"></i>5:00 PM - 7:00 PM
-                                                                    </p>
-                                                                    <h6 class="mt-1 font-size-16">Badminton Court</h6>
-                                                                    <h6 class="mt-1 font-size-16">(6-02-01)</h6>
-                                                                </li>
-                                                                <li class="mb-4">
-                                                                    <p class="text-muted mb-0 font-size-13">
-                                                                        <i class="uil uil-calender mr-1"></i>8:00 PM - 9:00 PM
-                                                                    </p>
-                                                                    <h6 class="mt-1 font-size-16">Badminton Court</h6>
-                                                                    <h6 class="mt-1 font-size-16">(6-06-01)</h6>
-                                                                </li>
-                                                            </ul> -->
+                                    <div class="card-body">
+                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
+                                        <form class="">
+                                            <div class="mb-2">
+                                                <div class="form-row align-items-center">
+                                                    
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">All Facilities</option>
+                                                                <option>Swimming Pool</option>
+                                                                <option>Games Room</option>
+                                                                <option>Squash Room</option>
+                                                                <option>Badminton Court 1</option>
+                                                                <option>Badminton Court 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
                                             </div>
-                                        </div>
+
+                                            <table id="bookinglist" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <th>Booking ID</th>
+                                                        <th>Unit No.</th>
+                                                        <th>Booked By</th>
+                                                        <th>Facility</th>
+                                                        <th>Booking Date</th>
+                                                        <th>Slot</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><a href="facility-booking-edit.html">132</a></td>
+                                                        <td>6-10-02</td>
+                                                        <td>Eugene</td>
+                                                        <td>Badminton Court 2</td>
+                                                        <td>5 Nov 2021</td>
+                                                        <td>Slot 2, Slot 3</td>
+                                                        <td class="text-center pb-1">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Cancel Booking</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><a href="facility-booking-edit.html">152</a></td>
+                                                        <td>6-10-02</td>
+                                                        <td>Eugene</td>
+                                                        <td>Badminton Court 1</td>
+                                                        <td>15 Nov 2021</td>
+                                                        <td>Slot 5, Slot 6</td>
+                                                        <td class="text-center pb-1">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Cancel Booking</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><a href="facility-booking-edit.html">302</a></td>
+                                                        <td>6-10-02</td>
+                                                        <td>Eugene</td>
+                                                        <td>Swimming Pool</td>
+                                                        <td>25 Nov 2021</td>
+                                                        <td>Slot 8, Slot 9, Slot 10</td>
+                                                        <td class="text-center pb-1">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Cancel Booking</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td><a href="facility-booking-edit.html">152</a></td>
+                                                        <td>6-10-02</td>
+                                                        <td>Eugene</td>
+                                                        <td>Squash Room</td>
+                                                        <td>2 Dec 2021</td>
+                                                        <td>Slot 5, Slot 6</td>
+                                                        <td class="text-center pb-1">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Cancel Booking</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td><a href="facility-booking-edit.html">602</a></td>
+                                                        <td>6-10-02</td>
+                                                        <td>Eugene</td>
+                                                        <td>Games Room</td>
+                                                        <td>10 Dec 2021</td>
+                                                        <td>Slot 8, Slot 9, Slot 10</td>
+                                                        <td class="text-center pb-1">
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Cancel Booking</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+
                                     </div> <!-- end card body-->
                                 </div> <!-- end card -->
-                            </div>
-                            <!-- end col-12 -->
-                        </div> <!-- end row -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -1322,98 +1383,39 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- Facility booking MODAL -->
-        <div class="modal fade" id="event-modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header py-3 px-4 border-bottom-0 d-block">
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
-                        <h5 class="modal-title">Book a Slot</h5>
-                        <!-- <h5 class="modal-title" id="modal-title">Facility Booking</h5> -->
+            <!-- modal update mailing address-->
+            <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                            <textarea class="form-control" rows="4"
+                                            id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
                     </div>
-                    <div class="modal-body p-4">
-                        <form class="needs-validation" name="event-form" id="form-event" novalidate>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <!-- <label class="control-label">Date</label> -->
-                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <!-- <label class="control-label">Select Facility</label> -->
-                                        <select class="form-control custom-select" name="category"
-                                            id="event-category" required>
-                                            <option selected>Select Facility</option>
-                                            <option value="bg-danger">Table Tennis</option>
-                                            <option value="bg-success">Basketball Court</option>
-                                            <option value="bg-info">Badminton Court</option>
-                                        </select>
-                                        <div class="invalid-feedback">Please select a valid event category</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-xl-4 col-sm-4"><div class="form-group"><input type="text" id="minmax-timepicker" class="form-control" placeholder="Time"></div></div>
-                                        <div class="col-xl-2 col-sm-2 text-center mt-2">To</div>
-                                        <div class="col-xl-4 col-sm-4"><div class="form-group"><input type="text" id="minmax-timepicker" class="form-control" placeholder="Time"></div></div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <!-- <label class="control-label">Event Name</label> -->
-                                        <select data-plugin="customselect" class="form-control">
-                                            <option value="0">Select Unit No.</option>
-                                            <option selected>6-02-01</option>
-                                            <option>6-13-01</option>
-                                            <option>6-02-09</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                            <option value="1">8-18-3A</option>
-                                            <option value="2">8-19-03</option>
-                                            <option value="3">8-20-3A</option>
-                                            <option value="4">8-21-03</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-6">
-                                    <button type="button" class="btn btn-danger btn-rounded" id="btn-delete-event">Delete</button>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-light btn-rounded mr-1" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary btn-rounded" id="btn-save-event">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> <!-- end modal-content-->
-            </div> <!-- end modal dialog-->
-        </div>
-        <!-- end modal-->
+                </div>
+            </div>
+            <!-- -->
+
 
         </div>
         <!-- END wrapper -->
@@ -1479,14 +1481,6 @@
         <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
         <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
-        <!-- Calendar js-->
-        <script src="assets/libs/fullcalendar-core/main.min.js"></script>
-        <script src="assets/libs/fullcalendar-bootstrap/main.min.js"></script>
-        <script src="assets/libs/fullcalendar-daygrid/main.min.js"></script>
-        <script src="assets/libs/fullcalendar-timegrid/main.min.js"></script>
-        <script src="assets/libs/fullcalendar-list/main.min.js"></script>
-        <script src="assets/libs/fullcalendar-interaction/main.min.js"></script>
-
         <!-- Init js-->
         <script src="assets/js/pages/form-advanced.init.js"></script>
 
@@ -1510,9 +1504,26 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+       
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#bookinglist').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
 
-        <!-- Calendar init -->
-        <script src="assets/js/pages/calendar.init.js"></script>
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script>
         
     </body>
 </html>

@@ -373,7 +373,7 @@
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-car-sideview"></i>
             
-                                    <span>Visitor Parking</span>
+                                    <span>Visitor</span>
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -382,7 +382,30 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
-                                        <a href="visitorparking-booking-listing.html">Visitor Parking Booking Listing
+                                        <a href="visitor-with-parking.html">Visitor With Parking
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="visitor-without-parking.html">Visitor Without Parking
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-car"></i>
+            
+                                    <span>Rental Parking</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="rentalparking-settings.html">Rental Parking Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="rentalparking-listing.html">Rental Parking Listing
                                         </a>
                                     </li>
                                 </ul>
@@ -439,14 +462,6 @@
                                     </li>
                                 </ul>
                             </li>
-    
-                            <!-- <li>
-                                <a href="tasksheet-task-new.html">
-                                    <i data-feather="plus"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Add Ticket / Task </span>
-                                </a>
-                            </li> -->
 
                             <li>
                                 <a href="servicing-reports.html">
@@ -456,12 +471,19 @@
                                 </a>
                             </li>
 
+                            <!-- <li>
+                                <a href="tasksheet-open-task.html">
+                                    <i class="uil uil-clipboard-alt"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Tasks </span>
+                                </a>
+                            </li> -->
+
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="uil uil-clipboard-alt"></i>
             
                                     <span>Tasks <i class="uil uil-lightbulb-alt ml-0 text-color-greenBright font-xs"></i></span>
-                                    <!--<i class="uil-check-circle text-success float-right mr-4 mt-1"></i>-->
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -1151,6 +1173,11 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span> Dashboard </span>
                                 </a>
+                                <a href="committee-meetings.html">
+                                    <i data-feather="home"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Meetings </span>
+                                </a>
                             </li>
 
                             <br><br>
@@ -1214,180 +1241,262 @@
                                 <h3 class="mb-3 mt-0">Visitor Parking Settings</h3>    
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
-                                <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3" onclick="location.href='visitorparking-settings-add.html';"><i class="uil-plus mr-1"></i> Add Visitor Parking</button>
+                                <div class="mt-0 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-0" onclick="location.href='visitorparking-settings-add.html';"><i class="uil-plus mr-1"></i> Add Visitor Parking</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
-                                        <form class="">
-                                            <div class="form-row align-items-center mb-3">
-                                                <div class="col-auto col-sm-2 mr-1 pr-0">
-                                                    <div class="input-group mb-2">
-                                                        <div class="input-group-prepend">
-                                                            <div class="input-group-text mb-0">Duplicate</div>
-                                                        </div>
-                                                        <input type="text" class="form-control col-auto" id="inlineFormInputGroup" placeholder="Qty">
-                                                    </div>
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#visitorparking" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none"><i class="uil-car-sideview"></i></span>
+                                                    <span class="d-none d-sm-block">Visitor Parking Listing</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#maintenance" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none"><i class="uil-no-entry"></i> <div class="badge badge-danger float-right ml-2">2</div></span>
+                                                    <span class="d-none d-sm-block">Maintenance Listing <div class="badge badge-danger float-right ml-2">2</div></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                          
+                                            <div class="tab-pane show active" id="visitorparking">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">All Types</option>
+                                                                                        <option value="1">Visitor</option>
+                                                                                        <option value="2">Loading Bay</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No.</th>
+                                                                                <th>Parking<br>Type</th>
+                                                                                <th>Parking<br>Lot Name</th>
+                                                                                <th>Parking<br>Slot</th>
+                                                                                <th>Overnight<br>Parking</th>
+                                                                                <th>Advance<br>Booking<br>(Days)</th>
+                                                                                <th>Lot Allowed to<br>Book Per Unit</th>
+                                                                                <th>No. of Slot Limit<br>per Parking Bay</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>Visitor</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Parking Lot Name 1</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 24</td>
+                                                                                <td class="text-center">No</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>Visitor</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Parking Lot Name 2</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 24</td>
+                                                                                <td class="text-center">Yes</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td>Loading Bay</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Loading Bay 1</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 12</td>
+                                                                                <td class="text-center">Yes</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="bg-color-lighterred">
+                                                                                <td>4</td>
+                                                                                <td>Visitor</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 24</td>
+                                                                                <td class="text-center">Yes</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="bg-color-lighterred">
+                                                                                <td>5</td>
+                                                                                <td>Visitor</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy Copy</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 24</td>
+                                                                                <td class="text-center">No</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="bg-color-lighterred">
+                                                                                <td>6</td>
+                                                                                <td>Visitor</td>
+                                                                                <td>
+                                                                                    <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy Copy Copy</a>
+                                                                                </td>
+                                                                                <td>Slot 1 - Slot 24</td>
+                                                                                <td class="text-center">No</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center">2</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td class="text-center pb-1">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
+                                                                                    &nbsp;
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
                                                 </div>
-                                                <div class="col-auto ml-1 pl-0">
-                                                    <button type="submit" class="btn btn-outline-primary mb-2 btn-rounded">Go</button>
-                                                </div>
-                                                <div class="col-auto pb-2">
-                                                    |
-                                                </div>
-                                                <div class="col-auto">
-                                                    <button type="submit" class="btn btn-outline-primary mb-2 btn-rounded">Delete</button>
-                                                </div>
+                                                <!-- end row-->
                                             </div>
+                                           
+                                            <div class="tab-pane show" id="maintenance">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">All Types</option>
+                                                                                        <option value="1">Visitor</option>
+                                                                                        <option value="2">Loading Bay</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
 
-                                            <table id="visitorparking" class="table table-hover nowrap full-width">
-                                                <thead>
-                                                    <tr>
-                                                        <th><input type="checkbox" id="" name="" value=""></th>
-                                                        <th>No.</th>
-                                                        <th>Parking<br>Type</th>
-                                                        <th>Parking<br>Lot Name</th>
-                                                        <th>Parking<br>Slot</th>
-                                                        <th>Overnight<br>Parking</th>
-                                                        <th>Advance<br>Booking<br>(Days)</th>
-                                                        <th>Lot Allowed to<br>Book Per Unit</th>
-                                                        <th>No. of Slot Limit<br>per Parking Bay</th>
-                                                        <th class="text-center">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="" name="" value=""></td>
-                                                        <td>1</td>
-                                                        <td>Visitor</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Parking Lot Name 1</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 24</td>
-                                                        <td class="text-center">No</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" id="" name="" value="">
-                                                        </td>
-                                                        <td>2</td>
-                                                        <td>Visitor</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Parking Lot Name 2</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 24</td>
-                                                        <td class="text-center">Yes</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" id="" name="" value="">
-                                                        </td>
-                                                        <td>3</td>
-                                                        <td>Loading Bay</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Loading Bay 1</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 12</td>
-                                                        <td class="text-center">Yes</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-color-lighterred">
-                                                        <td>
-                                                            <input type="checkbox" id="" name="" value="">
-                                                        </td>
-                                                        <td>4</td>
-                                                        <td>Visitor</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 24</td>
-                                                        <td class="text-center">Yes</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-color-lighterred">
-                                                        <td>
-                                                            <input type="checkbox" id="" name="" value="">
-                                                        </td>
-                                                        <td>5</td>
-                                                        <td>Visitor</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy Copy</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 24</td>
-                                                        <td class="text-center">No</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-color-lighterred">
-                                                        <td>
-                                                            <input type="checkbox" id="" name="" value="">
-                                                        </td>
-                                                        <td>6</td>
-                                                        <td>Visitor</td>
-                                                        <td>
-                                                            <a href="visitorparking-settings-edit.html">Parking Lot Name 2 Copy Copy Copy</a>
-                                                        </td>
-                                                        <td>Slot 1 - Slot 24</td>
-                                                        <td class="text-center">No</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-center pb-1">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded">Duplicate</a>
-                                                            &nbsp;
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </form>
-
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>No.</th>
+                                                                            <th>Parking Type</th>
+                                                                            <th>Parking Lot Name</th>
+                                                                            <th>Close Date</th>
+                                                                            <th>Close Hours</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>Visitor</td>
+                                                                            <td>
+                                                                                <a href="visitorparking-settings-edit.html">Parking Lot Name 1</a>
+                                                                            </td>
+                                                                            <td>3 Dec 2021</td>
+                                                                            <td>9:00am - 10:00am</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2</td>
+                                                                            <td>Loading Bay</td>
+                                                                            <td>
+                                                                                <a href="visitorparking-settings-edit.html">Loading Bay 1</a>
+                                                                            </td>
+                                                                            <td>3 Jan 2022</td>
+                                                                            <td>9:00am - 10:00am</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        
                         <!-- end row-->
                     </div> <!-- container-fluid -->
 
@@ -1501,7 +1610,7 @@
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
        
-        <script type="text/javascript" class="init">
+        <!-- <script type="text/javascript" class="init">
 	
             $(document).ready(function() {
                 $('#visitorparking').DataTable( {
@@ -1519,7 +1628,9 @@
                 } );
             } );
             
-        </script>
+        </script> -->
+
+       
         
     </body>
 </html>
