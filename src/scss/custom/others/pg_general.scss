@@ -17,7 +17,7 @@
 // dashboard settings
 // calendar
 // popover
-// images
+// images, avatar
 // alignment
 // btn
 // marquee
@@ -80,7 +80,8 @@ table.dataTable {
 }
 .card.border-propertygaga,
 .border-propertygaga {
-    border: 1px solid #415baa;
+    border: 1px solid #1967ca;
+    //border: 1px solid #415baa;
     border-radius: 0.25rem;
 }
 .card.border-pinklight,
@@ -159,6 +160,10 @@ hr.solid-gray400 {
     border: 1px solid #e2e7f1 !important;
 }
 
+.border-left-gray400 {
+    border-left: 5px solid $gray-400 !important;
+}
+
 // structure setting
 .full-width {
     width: 100% !important;
@@ -211,7 +216,8 @@ input[type=text].pixel150 {
 
 // text setting
 .text-color-propertygaga {
-    color: #415baa !important;
+    color: #1967ca !important;
+    //color: #415baa !important;
 }
 .text-color-black {
     color: black
@@ -315,16 +321,21 @@ background-color: transparent; // Remove the gray background on active links in 
     background-color: #00b872;
 }
 .bg-color-propertygaga {
-    background-color: #415baa !important;
+    background-color: #1967ca !important;
+    //background-color: #415baa !important;
 }
 .bg-color-propertygagaLight {
-    background-color: #b4c6fb !important;
+    background-color: #b4d9fb !important;
+    //background-color: #b4c6fb !important;
 }
 .bg-color-propertygagaLighter {
-    background-color: #d6e0fd !important;
+    background-color: #d6f7fd !important;
+    //background-color: #d6e0fd !important;
+    
 }
 .bg-color-propertygagaLightest {
-    background-color: #f2f6ff !important;
+    background-color: #f2faff !important;
+    //background-color: #f2f6ff !important;
 }
 .bg-color-lightred {
     background-color: #ffd3d3 !important;
@@ -536,11 +547,23 @@ a.fc-more {
     border-top-color: #222;
 }
 
-// images
+// images, avatar
 .responsiveimg{
     max-width:100% !important;
     height:auto !important;
 }
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+.avatar-xxs {
+    height: 1rem;
+    width: 1rem; }
 
 // alignment
 .f-right {
@@ -681,4 +704,12 @@ div.dataTables_wrapper {
 .sharelink .copylink-input {
     padding-left: 0px;
     z-index: 10;
+}
+
+
+/* fix column */
+th, td { white-space: nowrap; }
+div.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
 }
