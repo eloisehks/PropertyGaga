@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Property Gaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @@include('./partials/topbar.html')
+
+        @@include('./partials/left-sidebar.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-md-6 col-xl-6">
+                            <h3 class="mb-1 mt-0">Credit Notes</h3>
+                        </div>
+                        <div class="col-md-6 col-xl-6 text-md-right">
+                            <div class="mt-4 mt-md-0">
+                                <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0"
+                                    onclick="location.href='accounting-creditnote-new.html';">Create Credit
+                                    Note</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <form>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Status</option>
+                                                            <option>Draft</option>
+                                                            <option>Open</option>
+                                                            <option>Closed</option>
+                                                            <option>Void</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-2 col-sm-4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Credit Note No.">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-2 col-sm-4">
+                                                    <div class="form-group">
+                                                        <input type="text" id="basic-datepicker" class="form-control"
+                                                            placeholder="Credit Note Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit"
+                                                            class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="table-responsive pb-3">
+                                        <table id="basic-datatable" class="table table-hover nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>CN No.</th>
+                                                    <th>CN Date</th>
+                                                    <th>Unit No.</th>
+                                                    <th>Invoice</th>
+                                                    <th>Total Credit</th>
+                                                    <th class="text-right">Credit Amt. (RM)</th>
+                                                    <th class="text-right">Balance (RM)</th>
+                                                    <th width="9%" class="text-center">Actions</th>
+                                                    <th class="text-center">No. of Print</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge badge-info width-xs">Open</span></td>
+                                                    <td><a href="accounting-creditnote-details.html">CN245</a></td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>6-08-12A</td>
+                                                    <td>
+                                                    </td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#refund">Refund</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#applycredit">Apply to Invoices</a>
+                                                                <a class="dropdown-item"
+                                                                    href="accounting-creditnote-details.html">Edit</a>
+                                                                <!-- <a class="dropdown-item" href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#printcopies">Print</a>
+                                                                    <a class="dropdown-item" href="#">Send Email</a> -->
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#void">Void</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge badge-info width-xs">Open</span></td>
+                                                    <td><a href="accounting-creditnote-details-2.html">CN247</a></td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>6-10-12A</td>
+                                                    <td>INV-00044
+                                                        <button type="button" class="btn btn-light btn-sm btn-rounded"
+                                                            data-container="body" title="" data-toggle="popover"
+                                                            data-placement="right" data-content="INV-333, INV-555"
+                                                            data-original-title="">
+                                                            +2
+                                                        </button>
+                                                    </td>
+                                                    <!-- <td>Credit Note for<br>Late payment interest overdue (March 2023)</td>    -->
+                                                    <!-- <td class="text-center">Interest</td> -->
+                                                    <td class="text-right">800</td>
+                                                    <td class="text-right">400</td>
+                                                    <td class="text-right">400</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#refund">Refund</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#applycredit">Apply to Invoices</a>
+                                                                <a class="dropdown-item"
+                                                                    href="accounting-creditnote-details-2.html">Edit</a>
+                                                                <a class="dropdown-item"
+                                                                    href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#printcopies">Print</a>
+                                                                <a class="dropdown-item" href="#">Send Email</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#void">Void</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        1
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge badge-success width-xs">Closed</span></td>
+                                                    <td><a href="accounting-creditnote-details-closed.html">CN222</a>
+                                                    </td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>6-08-1</td>
+                                                    <td>INV-12345
+                                                    </td>
+                                                    <!-- <td>Waive Interest for<br>Late payment interest overdue (March 2023)</td>    -->
+                                                    <!-- <td class="text-center">Interest</td> -->
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item"
+                                                                    href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#printcopies">Print</a>
+                                                                <a class="dropdown-item" href="#">Send Email</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge badge-success width-xs">Closed</span></td>
+                                                    <td><a href="accounting-creditnote-details-closed.html">CN246</a>
+                                                    </td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>6-08-4</td>
+                                                    <td>INV-0001</td>
+                                                    <!-- <td>Credit Note for<br>Quit Rent (2023)</td>    -->
+                                                    <!-- <td class="text-center">Quit Rent</td> -->
+                                                    <td class="text-right">9.00</td>
+                                                    <td class="text-right">9.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item"
+                                                                    href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#printcopies">Print</a>
+                                                                <a class="dropdown-item" href="#">Send Email</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        2
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge badge-danger width-xs">Void</span></td>
+                                                    <td><a href="#">CN625</a></td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>5-02-01</td>
+                                                    <td>
+                                                    </td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#converttodraft">Convert to Draft</a>
+                                                                <!-- <a class="dropdown-item" href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#printcopies">Print</a>
+                                                                    <a class="dropdown-item" href="#">Send Email</a> -->
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge badge-warning width-xs">Draft</span></td>
+                                                    <td><a href="#">CN445</a></td>
+                                                    <td class="text-center">12 Jan 2023</td>
+                                                    <td>7-08-21</td>
+                                                    <td>
+                                                    </td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td class="text-right">4.00</td>
+                                                    <td width="15%" class="text-center">
+                                                        <div class="btn-group dropleft">
+                                                            <button type="button"
+                                                                class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false"><i class="icon"><span
+                                                                        data-feather="chevron-down"></span></i></button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#refund">Refund</a>
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#applycredit">Apply to Invoices</a>
+                                                                <a class="dropdown-item"
+                                                                    href="accounting-creditnote-details.html">Edit</a>
+                                                                <!-- <a class="dropdown-item" href="pdf-creditnote-statement.html">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#printcopies">Print</a>
+                                                                    <a class="dropdown-item" href="#">Send Email</a> -->
+                                                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                                                    data-target="#void">Void</a>
+                                                            </div>
+                                                        </div><!-- /btn-group -->
+                                                    </td>
+                                                    <td class="text-center">
+                                                        0
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+                </div> <!-- container-fluid -->
+
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+        <!-- refund  -->
+        <div class="modal fade" id="refund" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Refund Credit Note</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="form-group row mb-1">
+                            <label class="col-3 col-lg-3 col-form-label" for="">Unit No.</label>
+                           
+                            <label class="col-3 col-lg-3 col-form-label" for="">7-08-21</label>
+                            
+                            <label class="col-3 col-lg-3 col-form-label" for="">Credit Note No.</label>
+                           
+                            <label class="col-3 col-lg-3 col-form-label" for="">CN445</label>
+                            
+                        </div>
+                        <div class="form-group row pt-2 pb-2 bg-color-grayLighter">
+                            <label class="col-lg-3 col-form-label">Amount <span class="text-danger">*</span></label>
+                            <div class="col-lg-3">
+                                <label class="sr-only" for="inlineFormInputGroup">Amount</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">RM</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="200.00">
+                                </div>
+                              
+                            </div>
+                            <label class="col-lg-6 col-form-label">Balance: <span class="text-info">RM300.00</span></label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label">Refunded on <span class="text-danger">*</span></label>
+                            <div class="col-lg-3">
+                                <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                            </div>
+                            <label class="col-lg-3 col-form-label" for="">Payment Mode</label>
+                            <div class="col-lg-3">
+                                <select class="form-control custom-select">
+                                    <option value="0">Select</option>
+                                    <option value="1" selected>Cash</option>
+                                    <option value="2">Cheque</option>
+                                    <option value="3">Card</option>
+                                    <option value="4">Online CDM</option>
+                                    <option value="4">Online IBG</option>
+                                    <option value="5">Contra Reno Deposit</option>
+                                    <option value="6">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label">Ref. No.</label>
+                            <div class="col-lg-3">
+                                <input type="text" id="" class="form-control" placeholder="">
+                            </div>
+                            <label class="col-lg-3 col-form-label" for="">Decscription</label>
+                            <div class="col-lg-3">
+                                <textarea class="form-control" rows="3" id="example-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm"
+                            data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- refund end -->
+
+        <!-- convert to draft cn  -->
+        <div class="modal fade" id="converttodraft" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Convert to Draft</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Reason</label>
+                                    <textarea class="form-control" rows="4"
+                                        id="example-textarea">Reason........hsdljgsdj</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm"
+                            data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- convert to draft end -->
+
+        <!-- Print copies -->
+        <div class="modal fade" id="printcopies" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Number of Copies</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="">
+                            <div class="custom-control custom-radio mb-2">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">One Copy</label>
+                                <p>A client copy will be printed.</p>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Two Copies</label>
+                                <p>A client copy and office copy will be printed.</p>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input"
+                                    checked>
+                                <label class="custom-control-label" for="customRadio3">Three Copies</label>
+                                <p>A client copy, office copy and accounts copy will be printed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Cancel</button>
+                        <a href="pdf-creditnote-statement.html" target="_blank"
+                            class="btn btn-primary btn-rounded width-sm">Print</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Print copies end -->
+
+        <!-- void cn  -->
+        <div class="modal fade" id="void" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Void Credit Note: CN245</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Reason</label>
+                                    <textarea class="form-control" rows="4"
+                                        id="example-textarea">Reason........hsdljgsdj</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm"
+                            data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- void cn end -->
+
+        <!-- modal apply credits -->
+        <div class="modal fade" id="applycredit" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Apply Credits from CN245</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="float-right text-info"><span class="font-weight-semibold font-md">Available Credits:
+                                RM200.00</span></h6>
+                        <div class="table-responsive">
+                            <table id="basic-datatable2" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Inv. No.</th>
+                                        <th class="text-center">Inv. Date</th>
+                                        <th class="text-right">Inv. Amt. (RM)</th>
+                                        <th class="text-right">Inv. Balance (RM)</th>
+                                        <th class="text-right">Credit to Apply (RM)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">INV-12345</td>
+                                        <td class="text-center">30/9/2023</td>
+                                        <td class="text-right">400.00</td>
+                                        <td class="text-right">400.00</td>
+                                        <td class="text-right"><input type="text" class="form-control text-right"
+                                                id="simpleinput" placeholder="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">INV-1235</td>
+                                        <td class="text-center">30/8/2023</td>
+                                        <td class="text-right">1,300.00</td>
+                                        <td class="text-right">1,300.00</td>
+                                        <td class="text-right"><input type="text" class="form-control text-right"
+                                                id="simpleinput" placeholder="0.00"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-center"></td>
+                                        <td class="text-right">Credits Applied</td>
+                                        <td class="text-right text-color-black font-weight-semibold">200.00</td>
+                                    </tr>
+                                    <tr class="bg-color-grayLight">
+                                        <td colspan="3" class="text-center"></td>
+                                        <td class="text-right">Remaining Credits</td>
+                                        <td class="text-right text-color-black font-weight-semibold">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-rounded width-sm"
+                            onclick="window.history.go(-1);">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal apply credits end -->
+
+        <!-- modal Invoice list -->
+        <div class="modal fade" id="invoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Call This Unit Owner</h5> -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center mt-2 mb-2">
+                        <h5 class="modal-title mb-4" id="exampleModalScrollableTitle">Invoice</h5>
+                        <div class="col-lg-12">
+                            <h4><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary">Call Now</a></h4>
+                            <small>Last successful called on 3 Jan 2023, 3:30pm</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm"
+                            data-dismiss="modal">Succesfully Called</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal Invoice list end-->
+
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/right-sidebar.html')
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+
+</html>

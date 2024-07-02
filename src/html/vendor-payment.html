@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-vendor.html')
+
+            @@include('./partials/left-sidebar-vendor.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Payment</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#pending" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-none d-sm-block">Pending</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#settled" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none"><i class="uil-user"></i></span>
+                                                    <span class="d-none d-sm-block">Payment Settled</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="pending">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Site Name</th>
+                                                                                <th>Payment Date</th>
+                                                                                <th>Payment No.</th>
+                                                                                <th class="text-right">Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th>Cheque # / <br>Ref No.</th>
+                                                                                <th class="text-center">Status</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>3 Resident</td>
+                                                                                <td>1 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending1.html">PV00001</a></td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td>3759626</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" data-toggle="modal" data-target="#collectcheque">Ready to collect</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3 Resident</td>
+                                                                                <td>1 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending2.html">PV00002</a></td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <!-- <td>EAD Property Management</td> -->
+                                                                                <td>Cheque</td>
+                                                                                <td>3759626</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" data-toggle="modal" data-target="#bankedin">Banked in</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Maya Residence</td>
+                                                                                <td>1 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending3.html">PV00003</a></td> 
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td>3759626</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" data-toggle="modal" data-target="#collected">Collected</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="settled">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Site Name</th>
+                                                                                <th>Payment Date</th>
+                                                                                <th>Payment No.</th>
+                                                                                <th class="text-right">Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th>Cheque # /<br>Ref No.</th>
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>3 Resident</td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending-cleared.html">PV000012</a></td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cash</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Maya Residence</td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending-cleared.html">PV000013</a></td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Online Transfer</td>
+                                                                                <td>365936678</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Maya Residence</td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="vendor-payment-pending-cleared.html">PV000016</a></td>
+                                                                                <td class="text-right">RM10,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td>325367</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal view status 1 -->
+            <div class="modal fade" id="collectcheque" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Ready to Collect</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="text-left">
+                                        <h5>
+                                            The cheque is ready to be collected at
+                                        </h5>
+                                    </div>
+                                    <div class="text-left">
+                                        EAD Property Management<br>
+                                            Level 1 Management Office, Persiaran Paya Terubong 4,<br>
+                                            11900 Bayan Lepas, Penang, Malaysia<br><br>
+                                            Tel: 04-3702065<br>
+                                            Email: sierraeast.mgmt@gmail.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal view status 1 end -->
+
+            <!-- modal view status 2 -->
+            <div class="modal fade" id="bankedin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cheque Banked in</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <h5>
+                                            The cheque was banked in by<br>
+                                            EAD Property Management<br>
+                                            on 2 Mar 2023<br><br>
+                                            <small>Notes: some notes goes here...</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal view status 2 end -->
+
+            <!-- modal view status 3 -->
+            <div class="modal fade" id="collected" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Collected</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <h5>
+                                            The cheque was collected by<br>
+                                            Vendor Name1 <br>
+                                            (ID No. /Passport No.: 960413-12-1234)<br>
+                                            on 2 Mar 2023<br><br>
+                                            <small>Notes: some notes goes here...</small>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal view status 3 end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

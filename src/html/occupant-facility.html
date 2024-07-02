@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-occupant.html')
+
+            @@include('./partials/left-sidebar-occupant.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center pb-0">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-3 mt-0">Facility</h3>     
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='occupant-facility-book.html';"><i class="uil-plus mr-1"></i>Book a Facility Slot</button> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center p-3">
+                                        <h5 class="text-color-greenBright">You have booked slots on 15 Dec 2023</h5>
+                                        <p class="text-dark bold">Basketball Court (Booking ID: 132)</p>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <div class="card bg-color-propertygagaLightest border-gray-light mb-2">
+                                                    <div class="card-body text-center p-2">
+                                                        <div class="bold">Slot 16</div>
+                                                        <small>03:01 - 04:00</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4">
+                                                <div class="card bg-color-propertygagaLightest border-gray-light mb-2">
+                                                    <div class="card-body text-center p-2">
+                                                        <div class="bold">Slot 17</div>
+                                                        <small>04:01 - 05:00</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4">
+                                                <div class="card bg-color-propertygagaLightest border-gray-light mb-2">
+                                                    <div class="card-body text-center p-2">
+                                                        <div class="bold">Slot 18</div>
+                                                        <small>05:01 - 06:00</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="margin-auto">
+                                            <!-- <button type="submit" class="btn btn-primary btn-rounded btn-sm mb-3 mt-2 mr-1 width-md" onclick="location.href='occupant-facility-edit.html';">Edit</button> -->
+                                            <button type="submit" class="btn btn-danger btn-rounded btn-sm mb-3 mt-2 ml-1" onclick="location.href='occupant-facility-edit.html';">Cancel Booking</button>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-basketball.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Basketball Court</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-success">Available Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <!-- <a href="#" data-toggle="modal" data-target="#book" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a>-->
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-hall.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Multipupose Hall</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-success">Available Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-pool.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Swimming Pool</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-danger">Closed Now</span>
+                                                    <i class="uil uil-info-circle text-color-redBright" data-toggle="tooltip" data-placement="bottom" title="Close for maintenance"></i>
+                                                </p>
+                                            </div>
+
+                                            <p class="mb-2">
+                                                <a href="#" data-toggle="modal" data-target="#book" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1 disabled">No Booking Required</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-badminton.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Badminton Court 1</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-success">Available Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-badminton.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Badminton Court 2</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-danger">Occupied Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="#" data-toggle="modal" data-target="#book" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-gym.png" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Gym Room</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-danger">Occupied Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-sauna.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Sauna Room</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-success">Available Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="text-center mt-2">
+                                            <div class="facility-list-container cursor-pointer">
+                                                <img src="assets/images/propertygaga/facility-tennis.jpg" alt="" class="avatar-xl rounded-circle hover-highlight facility-list-img" />
+                                                <div class="facility-list-img-middle">
+                                                    <button type="button" class="btn btn-dark btn-rounded btn-sm mb-1" data-toggle="modal" data-target="#centermodal">Operation Hours</button>
+                                                </div>
+                                                <h6 class="mt-2 mb-0">Tennis Court</h6>
+                                                <p class="mb-2">
+                                                    <span class="badge badge-soft-success">Available Now</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-2">
+                                                <a href="occupant-facility-book.html" class="btn btn-outline-primary btn-sm btn-block btn-rounded mr-1">Book</a> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal facility details -->
+            <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-labelledby="myCenterModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myCenterModalLabel">Basketball Court</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="assets/images/propertygaga/facility-basketball.jpg" alt="" class="responsiveimg" />
+                            <h5>Operation Hours</h5>
+                            <div class="table-responsive">
+                                <table class="table table-sm mb-0 font-sm">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" width="50%">Monday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuesday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Wednesday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Thursday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Friday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Saturday</th>
+                                            <td>6:00am - 10:00pm</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- <div class="card bg-color-grayLight mt-3 mb-0">
+                                <div class="card-body p-2">
+                                    <table class="table table-sm mb-0">
+                                        <tr>
+                                            <th class="border-0 text-right" scope="row" width="50%">Deposit Amount</th>
+                                            <td class="border-0">RM 30.00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <a href="occupant-facility-book.html" class="btn btn-primary btn-rounded mr-1 float-right align-self-center">Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal facility details end -->
+
+            <!-- modal book -->
+            <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Book a Facility Slot</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-color-black">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Occupant Name</label>
+                                            <div class="col-lg-5">
+                                                <select class="form-control custom-select">
+                                                    <option>Select Name</option>
+                                                    <option>Eugene</option>
+                                                    <option>Allie</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Date</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" id="" type="date" name="date" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Facility</label>
+                                            <div class="col-lg-5">
+                                                <select class="form-control custom-select">
+                                                    <option>Select Facility</option>
+                                                    <option>Swimming Pool</option>
+                                                    <option selected>Basketball Court</option>
+                                                    <option>Squash Room</option>
+                                                    <option>Badminton Court 1</option>
+                                                    <option>Badminton Court 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" id="affected">
+                                            <label class="col-lg-3 col-form-label" for="simpleinput"></label>
+                                            <div class="col-auto">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                         <h4 class="header-title mt-0 mb-2">Select Slot</h4>
+                                                         <input type="checkbox" name="Slot1" title="Slot 1 (00.01-01:00)">
+                                                         <input type="checkbox" name="Slot2" title="Slot 2 (01.01-02:00)">
+                                                         <input type="checkbox" name="Slot3" title="Slot 3 (02.01-03:00)">
+                                                         <input type="checkbox" name="Slot4" title="Slot 4 (03.01-04:00)">
+                                                         <input type="checkbox" name="Slot5" title="Slot 5 (04.01-05:00)">
+                                                         <input type="checkbox" name="Slot6" title="Slot 6 (05.01-06:00)">
+                                                         <input type="checkbox" name="Slot7" title="Slot 7 (06.01-07:00)">
+                                                         <input type="checkbox" name="Slot8" title="Slot 8 (07.01-08:00)">
+                                                         <input type="checkbox" name="Slot9" title="Slot 9 (08.01-09:00)">
+                                                         <input type="checkbox" name="Slot10" title="Slot 10 (09.01-10:00)">
+                                                         <input type="checkbox" name="Slot11" title="Slot 11 (10.01-11:00)">
+                                                         <input type="checkbox" name="Slot12" title="Slot 12 (11.01-12:00)">
+                                                         <input type="checkbox" name="Slot13" title="Slot 13 (12.01-13:00)">
+                                                         <input type="checkbox" name="Slot14" title="Slot 14 (13.01-14:00)">
+                                                         <input type="checkbox" name="Slot15" title="Slot 15 (14.01-15:00)">
+                                                         <input type="checkbox" name="Slot16" title="Slot 16 (15.01-16:00)">
+                                                         <input type="checkbox" name="Slot17" title="Slot 17 (16.01-17:00)">
+                                                         <input type="checkbox" name="Slot18" title="Slot 18 (17.01-18:00)">
+                                                         <input type="checkbox" name="Slot19" title="Slot 19 (18.01-19:00)">
+                                                         <input type="checkbox" name="Slot20" title="Slot 20 (19.01-20:00)">
+                                                         <input type="checkbox" name="Slot21" title="Slot 21 (20.01-21:00)">
+                                                         <input type="checkbox" name="Slot22" title="Slot 22 (21.01-22:00)">
+                                                         <input type="checkbox" name="Slot23" title="Slot 23 (22.01-23:00)">
+                                                         <input type="checkbox" name="Slot24" title="Slot 24 (23.01-24:00)">
+                                                    </div> <!-- end card body-->
+                                                </div> <!-- end card -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- book end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />       
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script src="assets/libs/zInput/zInput.js"></script>
+             
+
+             <script>
+                 $(function(){ 
+                 
+                 $("input[name='css_selector']").change(function(){
+                     $newStyle = $(this).attr("value");
+                     $('#stylesheet').attr("href", $newStyle);
+                 });
+                 
+             });
+             </script>
+             
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            
+            $("#affected").zInput();
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-3 mt-0">Journal</h3>    
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded" onclick="location.href='accounting-journal-edit.html';"><i class="uil-plus mr-1"></i> Create Journal</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="">
+                                            <div class="mb-2">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select" id="Categories" name="Categories"><option value="">Account</option>
+                                                                <optgroup label="Fixed Assets" value="10">
+                                                                <option value="Barrier Gate">Barrier Gate</option>
+                                                                <option value="Computer">Computer</option>
+                                                                <option value="Furniture">Furniture</option>
+                                                                <option value="Office equipment">Office equipment</option>
+                                                                <option value="Operating Equipment">Operating Equipment</option>
+                                                                <option value="Signboard">Signboard</option>
+                                                                </optgroup>
+                                                                <optgroup label="Current Assets" value="12">
+                                                                <option value="AMB SF 8881051393976 MC">AMB SF 8881051393976 MC</option>
+                                                                <option value="Bank -  SF  3250732926">Bank -  SF  3250732926</option>
+                                                                <option value="Bank MBB SF 507134515964">Bank MBB SF 507134515964</option>
+                                                                <option value="Bank PBB MF 3211486126">Bank PBB MF 3211486126</option>
+                                                                <option value="Bank PBB MF 3230386310 MC">Bank PBB MF 3230386310 MC</option>
+                                                                <option value="Cash on Hand">Cash on Hand</option>
+                                                                <option value="Fixed Deposit - MF">Fixed Deposit - MF</option>
+                                                                <option value="Fixed Deposit - SF">Fixed Deposit - SF</option>
+                                                                <option value="Petty Cash">Petty Cash</option>
+                                                                <option value="Sundry Deposits">Sundry Deposits</option>
+                                                                </optgroup>
+                                                                <optgroup label="Current Liabilities" value="20">
+                                                                <option value="Accrual - Audit Fee">Accrual - Audit Fee</option>
+                                                                <option value="Accruals">Accruals</option>
+                                                                <option value="Deposit">Deposit</option>
+                                                                <option value="Refund Contra">Refund Contra</option>
+                                                                <option value="Service Tax Payable">Service Tax Payable</option>
+                                                                <option value="WONG THEN FONG">WONG THEN FONG</option>
+                                                                </optgroup>
+                                                                <optgroup label="Equity" value="30">
+                                                                <option value="Sinking Fund">Sinking Fund</option>
+                                                                </optgroup>
+                                                                <optgroup label="Income" value="40">
+                                                                <option value="Discounts Received">Discounts Received</option>
+                                                                <option value="Insurance Claim Received">Insurance Claim Received</option>
+                                                                <option value="Reimbursement of Elec">Reimbursement of Elec</option>
+                                                                </optgroup>
+                                                                <optgroup label="Fixed Expenses" value="50">
+                                                                <option value="Fixed Services">Fixed Services</option>
+                                                                </optgroup>
+                                                                <optgroup label="Utilities" value="51">
+                                                                <option value="Utility Charges">Utility Charges</option>
+                                                                </optgroup>
+                                                                <optgroup label="Other Expenses" value="52">
+                                                                <option value="AGM Expenses">AGM Expenses</option>
+                                                                <option value="Audit Fee">Audit Fee</option>
+                                                                <option value="Bank Charges">Bank Charges</option>
+                                                                <option value="Bank Guarantee Charges">Bank Guarantee Charges</option>
+                                                                <option value="Common area expenses">Common area expenses</option>
+                                                                <option value="Decoration">Decoration</option>
+                                                                <option value="Depreciation Expense">Depreciation Expense</option>
+                                                                <option value="Discounts Allowed">Discounts Allowed</option>
+                                                                <option value="Equipment Hire">Equipment Hire</option>
+                                                                <option value="GST">GST</option>
+                                                                <option value="Insurance Charges">Insurance Charges</option>
+                                                                <option value="Insurance Claim Expenses">Insurance Claim Expenses</option>
+                                                                <option value="Legal Fee">Legal Fee</option>
+                                                                <option value="Licence fees">Licence fees</option>
+                                                                <option value="Maintenance Supplies">Maintenance Supplies</option>
+                                                                <option value="Meeting Allowances">Meeting Allowances</option>
+                                                                <option value="Mileage">Mileage</option>
+                                                                <option value="Phone">Phone</option>
+                                                                <option value="Postage">Postage</option>
+                                                                <option value="Printing (AND) Stationery">Printing &amp; Stationery</option>
+                                                                <option value="Quit Rent Charges">Quit Rent Charges</option>
+                                                                <option value="Repairs (AND) Maint">Repairs &amp; Maint</option>
+                                                                <option value="Salary">Salary</option>
+                                                                <option value="Service Tax">Service Tax</option>
+                                                                <option value="Signage">Signage</option>
+                                                                <option value="Sundry Expenses">Sundry Expenses</option>
+                                                                <option value="Tax Agent Fee">Tax Agent Fee</option>
+                                                                <option value="Tax Expenses">Tax Expenses</option>
+                                                                <option value="Wages">Wages</option>
+                                                                <option value="Waive Interest">Waive Interest</option>
+                                                                </optgroup>
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" id="" class="form-control" placeholder="Ref. No.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <table id="bookinglist" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <th>Date</th>
+                                                        <th>Description</th>
+                                                        <th>Account</th>
+                                                        <th>Ref. No.</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5 Sep 2023</td>
+                                                        <td>Accrual - Monthly Pest Control Services - Jul 2023</td>
+                                                        <td>Fixed Services</td>
+                                                        <td>JV2307/004</td>
+                                                        <td class="text-center align-self-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="accounting-journal-edit.html">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>5 Sep 2023</td>
+                                                        <td>Accrual - Monthly Pest Control Services - Jul 2023</td>
+                                                        <td>Fixed Services</td>
+                                                        <td>JV2307/004</td>
+                                                        <td class="text-center align-self-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="accounting-journal-edit.html">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>5 Sep 2023</td>
+                                                        <td>Accrual - Monthly Pest Control Services - Jul 2023</td>
+                                                        <td>Fixed Services</td>
+                                                        <td>JV2307/004</td>
+                                                        <td class="text-center align-self-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="accounting-journal-edit.html">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>5 Sep 2023</td>
+                                                        <td>Accrual - Monthly Pest Control Services - Jul 2023</td>
+                                                        <td>Fixed Services</td>
+                                                        <td>JV2307/004</td>
+                                                        <td class="text-center align-self-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="accounting-journal-edit.html">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                </div>
+                                                            </div><!-- /btn-group -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+       
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#bookinglist').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script>
+        
+    </body>
+</html>

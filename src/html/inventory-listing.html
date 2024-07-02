@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Inventory Listing</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='inventory-add.html';"><i class="uil-plus mr-1"></i>Add Inventory</button> -->
+                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" data-target="#book">Book Asset</button> 
+                                    <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" data-target="#depreciation">Depreciation</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#assets" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Assets</span>
+                                                    <span class="d-none d-sm-block">Assets</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#consumableitems" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Consumable Items</span>
+                                                    <span class="d-none d-sm-block">Consumable Items</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content p-3 text-muted">
+                                            <div class="tab-pane show active" id="assets">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-2">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">Status</option>
+                                                                        <option value="1">Available</option>
+                                                                        <option>Maintenance</option>
+                                                                        <option value="2">Booked</option>
+                                                                        <option>Booking Overdue</option>
+                                                                        <!-- <option>Decommission</option> -->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Assets</option>
+                                                                        <option value="1">Swimming Pool Pump #1</option>
+                                                                        <option value="2">Swimming Pool Pump #2</option>
+                                                                        <option value="3">Barrier Gate</option>
+                                                                        <option value="4">Water Pump #1</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Status</th>
+                                                                <th>Asset No.</th>
+                                                                <th>Category</th>
+                                                                <th>Asset Name</th>
+                                                                <th>Location</th>
+                                                                <th>Purchase Date</th>
+                                                                <th class="text-right">Price (RM)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><a href="#" class="btn btn-sm btn-outline-success btn-rounded" data-toggle="modal" data-target="#info-available">Available <i class="uil uil-info mr-0"></i></a></td>
+                                                                <td>001</td>
+                                                                <td>Pumps &amp; Motors</td>
+                                                                <td><a href="inventory-details.html">Swimming Pool Pump #1</a></td>
+                                                                <td>Location 1</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">3,000.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#" class="btn btn-sm btn-outline-primary btn-rounded" data-toggle="modal" data-target="#info-booked">Booked</a></td>
+                                                                <td>002</td>
+                                                                <td>Pumps &amp; Motors</td>
+                                                                <td><a href="inventory-details.html">Swimming Pool Pump #2</a></td>
+                                                                <td>Location 2</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">3,000.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#" class="btn btn-sm btn-outline-danger btn-rounded" data-toggle="modal" data-target="#info-maintenance">Maintenance</a></td>
+                                                                <td>003</td>
+                                                                <td>Others</td>
+                                                                <td><a href="inventory-details.html">12 Steps Ladder</a></td>
+                                                                <td>Location 1</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">100.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                            <!-- <tr class="table-danger"> -->
+                                                                <td><a href="#" class="btn btn-sm btn-outline-danger btn-rounded" data-toggle="modal" data-target="#info-overdue">Overdue</a></td>
+                                                                <td>004</td>
+                                                                <td>Upgrading Works</td>
+                                                                <td><a href="inventory-details.html">Maintenance Tools</a></td>
+                                                                <td>Location 2</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">3,000.00</td>
+                                                            </tr>
+                                                            <!-- <tr>
+                                                                <td><span class="badge badge-danger badge-pill">Decommssion</span></td>
+                                                                <td>003</td>
+                                                                <td>Others</td>
+                                                                <td><a href="inventory-details-decommission.html">12 Steps Ladder</a></td>
+                                                                <td>Location 1</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">100.00</td>
+                                                            </tr> -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="consumableitems">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Items</option>
+                                                                        <option value="1">Joint Pin - MS1462 - 36mm x 215mm x 2.2mm</option>
+                                                                        <option value="2">Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM	</option>
+                                                                        <option value="3">Jack Base - 600mm x 32mm</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Category</th>
+                                                                <th>Item Name</th>
+                                                                <th class="text-center">Quantity</th>
+                                                                <th>Location</th>
+                                                                <th>Purchase Date</th>
+                                                                <th class="text-right">Price (RM)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Small Tools</td>
+                                                                <td><a href="inventory-details-consumable.html" target="_self">Joint Pin - MS1462 - 36mm x 215mm x 2.2mm</a></td>
+                                                                <td class="text-center">3 / 20</td>
+                                                                <td>Location 1</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">22.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Small Tools</td>
+                                                                <td><a href="inventory-details-consumable.html" target="_self">Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM</a></td>
+                                                                <td class="text-center">30 / 30</td>
+                                                                <td>Location 2</td>
+                                                                <td>2 Apr 2021</td>
+                                                                <td class="text-right">30.00</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal info available -->
+            <div class="modal fade" id="info-available" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><span class="badge badge-success badge-pill">Available</span><br>#003 - 12 Steps Ladder</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable8" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Booker</th>
+                                        <th>Booked to</th>
+                                        <th>Book From</th>
+                                        <th>Return Date</th>
+                                        <th>Pick Up By</th>
+                                        <th>Return By</th>
+                                        <th>Booking Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman1</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman1</td>
+                                        <td>Handyman1</td>
+                                        <td>To repair...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman2</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman2</td>
+                                        <td>Handyman2</td>
+                                        <td>Task OT022 - Water ponding on facility floor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman3</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman3</td>
+                                        <td>Handyman3</td>
+                                        <td>Task OT044 - Task subject</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <a href="" class="btn btn-primary btn-rounded">Book this Asset</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal info available end -->
+
+            <!-- modal info booked -->
+            <div class="modal fade" id="info-booked" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><span class="badge badge-primary badge-pill">Booked</span><br>#003 - 12 Steps Ladder</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable3" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Booker</th>
+                                        <th>Booked to</th>
+                                        <th>Book From</th>
+                                        <th>Return Date</th>
+                                        <th>Pick Up By</th>
+                                        <th>Return By</th>
+                                        <th>Booking Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-color-propertygagaLightest">
+                                        <td><a href="inventory-booking-booked.html">IB787</a></td>
+                                        <td>Bob</td>
+                                        <td>Handyman1</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>17 Mar 2023, 3:00pm</td>
+                                        <td>Handyman1</td>
+                                        <td></td>
+                                        <td>To repair...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IB343</td>
+                                        <td>Bob</td>
+                                        <td>Handyman2</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman2</td>
+                                        <td>Handyman2</td>
+                                        <td>Task OT022 - Water ponding on facility floor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IB222</td>
+                                        <td>Bob</td>
+                                        <td>Handyman3</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman3</td>
+                                        <td>Handyman3</td>
+                                        <td>Task OT044 - Task subject</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal info booked end -->
+
+            <!-- modal info maintenance -->
+            <div class="modal fade" id="info-maintenance" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><span class="badge badge-danger badge-pill">Maintenance</span><br>#003 - 12 Steps Ladder</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable4" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Booker</th>
+                                        <th>Booked to</th>
+                                        <th>Book From</th>
+                                        <th>Return Date</th>
+                                        <th>Pick Up By</th>
+                                        <th>Return By</th>
+                                        <th>Booking Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman1</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman1</td>
+                                        <td>Handyman1</td>
+                                        <td>To repair...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman2</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman2</td>
+                                        <td>Handyman2</td>
+                                        <td>Task OT022 - Water ponding on facility floor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>Handyman3</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman3</td>
+                                        <td>Handyman3</td>
+                                        <td>Task OT044 - Task subject</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal info maintenance end -->
+
+             <!-- modal info overdue -->
+             <div class="modal fade" id="info-overdue" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><span class="badge badge-danger badge-pill">Overdue</span><br>#003 - 12 Steps Ladder</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable5" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Booker</th>
+                                        <th>Booked to</th>
+                                        <th>Book From</th>
+                                        <th>Return Date</th>
+                                        <th>Pick Up By</th>
+                                        <th>Return By</th>
+                                        <th>Booking Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-danger">
+                                        <td><a href="inventory-booking-overdue.html">IB333</a></td>
+                                        <td>Bob</td>
+                                        <td>Handyman1</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>17 Mar 2023, 3:00pm</td>
+                                        <td>Handyman1</td>
+                                        <td></td>
+                                        <td>To repair...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IB444</td>
+                                        <td>Bob</td>
+                                        <td>Handyman2</td>
+                                        <td>27 Feb 2023, 3:00pm</td>
+                                        <td>15 Mar 2023, 3:00pm</td>
+                                        <td>Handyman2</td>
+                                        <td>Handyman2</td>
+                                        <td>Task OT022 - Water ponding on facility floor</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal info overdue end -->
+
+            <!-- inventory booking -->
+            <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Book Asset</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Operating Equipment</option>
+                                            <option>Computer</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Assets</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>002 - 19" Toolbox</option>
+                                            <option>003 - 12 Steps Ladder</option>
+                                            <option>004 - 10" Spanner</option>
+                                            <option>005 - 12" Frame Hacksaw</option>
+                                            <option>006 - 12" Pipe Wrench</option>
+                                            <option>007 - 12" Spanner</option>
+                                            <option>008 - 14" Pipe Wrench</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-2">
+                                    <img src="assets/images/propertygaga/19Toolbox.png" class="responsiveimg mb-3">
+                                </div>
+                                <!-- <div class="col-xl-3">
+                                    <div class="form-group text-center">
+                                        <label>Total</label>
+                                        <input type="text" class="form-control text-center" id="simpleinput" value="2" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group text-center">
+                                        <label>Available</label>
+                                        <input type="text" class="form-control text-center" id="simpleinput" value="1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group text-center">
+                                        <label>To Book</label>
+                                        <input class="text-center" data-toggle="touchspin" type="text">
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="card bg-color-propertygagaLightest border-gray-light mb-3">
+                                <div class="card-body p-2">
+                                    <div class="row font-sm text-color-black">
+                                        <div class="col col-lg-12 text-center">
+                                            Available <span class="font-weight-bold">ACCEPT</span><br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Book From</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Return Date</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Book Assets to</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Me</option>
+                                            <option>Handyman 1</option>
+                                            <option>Handyman 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Tasks</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Select Task</option>
+                                            <option>OT044 - Task subject</option>
+                                            <option>OT022 - Water ponding on facility floor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Office 0</option>
+                                            <option>Office 1</option>
+                                            <option>Office 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Notes</label>
+                                        <textarea class="form-control" rows="2" id="example-textarea">Write something...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inventory booking end -->
+
+            <!-- depreciation -->
+            <div class="modal fade" id="depreciation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Depreciation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="">Category</label>
+                                        <div class="col-lg-9">
+                                            <select class="form-control custom-select">
+                                                <option>Select Category</option>
+                                                <option selected>Machinery</option>
+                                                <option>Computer</option>   
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="example-date">Asset No.</label>
+                                            <div class="col-9 col-lg-4">
+                                                <input type="text" id="" name="" class="form-control" placeholder="003">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="">Asset</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" id="" name="" class="form-control" value="Swimming Pool Pump #1">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="">Description</label>
+                                        <div class="col-lg-9">
+                                            <textarea class="form-control" rows="2" id="example-textarea">dagdsagdasg</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="example-date">Date</label>
+                                        <div class="col-6 col-xs-6 col-lg-6">
+                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"
+                                            for="">Depreciation Amount (RM)</label>
+                                        <div class="col-6 col-xs-6 col-lg-6">
+                                            <input type="text" id="" name="" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- depreciation end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

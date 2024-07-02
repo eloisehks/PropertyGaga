@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Receipts & Payments</h3>    
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card pb-0">
+                                    <div class="card-body">
+                                        <div class="form-row align-items-center">
+                                            <label class="col-lg-2 col-form-label" for="simpleinput">View by</label>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio2" name="customRadio"
+                                                        class="custom-control-input" value="monthly" checked>
+                                                    <label class="custom-control-label" for="customRadio2">Monthly</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio1" name="customRadio"
+                                                        class="custom-control-input" value="fy">
+                                                    <label class="custom-control-label" for="customRadio1">Financial Year</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="monthly box mt-3" style="display: block">
+                                            <div class="form-row align-items-center">
+                                                <label class="col-lg-2 col-form-label" for=""></label>
+                                                <div class="col-auto">
+                                                    <div class="form-group mb-3">
+                                                        <input class="form-control" id="example-month" type="month" name="month" placeholder="Year / Month" value="2023-08">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select" id="Categories" name="Categories"><option value="">Account</option>
+                                                            <option selected>All Consolidated Account</option>
+                                                            <option value="AMB SF 8881051393976 MC">AMB SF 8881051393976 MC</option>
+                                                            <option value="Bank -  SF  3250732926">Bank -  SF  3250732926</option>
+                                                            <option value="Bank MBB SF 507134515964">Bank MBB SF 507134515964</option>
+                                                            <option value="Bank PBB MF 3211486126">Bank PBB MF 3211486126</option>
+                                                            <option value="Bank PBB MF 3230386310 MC">Bank PBB MF 3230386310 MC</option>
+                                                            <option value="Cash on Hand">Cash on Hand</option>
+                                                            <option value="Fixed Deposit - MF">Fixed Deposit - MF</option>
+                                                            <option value="Fixed Deposit - SF">Fixed Deposit - SF</option>
+                                                            <option value="Petty Cash">Petty Cash</option>
+                                                            <option value="Sundry Deposits">Sundry Deposits</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded" onclick="location.href='accounting-rnp-monthly.html';">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="fy box mt-3" style="display: none">
+                                            <div class="form-row align-items-center">
+                                                <label class="col-lg-2 col-form-label" for=""></label>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option>Financial Year</option>
+                                                            <option>FY2023</option>
+                                                            <option>FY2022</option>
+                                                            <option>FY2021</option>
+                                                            <option>FY2020</option>
+                                                            <option>FY2019</option>
+                                                            <option>FY2018</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto pb-3">to</div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select" id="Categories" name="Categories"><option value="">Account</option>
+                                                            <option>All Consolidated Account</option>
+                                                            <option value="AMB SF 8881051393976 MC">AMB SF 8881051393976 MC</option>
+                                                            <option value="Bank -  SF  3250732926">Bank -  SF  3250732926</option>
+                                                            <option value="Bank MBB SF 507134515964">Bank MBB SF 507134515964</option>
+                                                            <option value="Bank PBB MF 3211486126">Bank PBB MF 3211486126</option>
+                                                            <option value="Bank PBB MF 3230386310 MC">Bank PBB MF 3230386310 MC</option>
+                                                            <option value="Cash on Hand">Cash on Hand</option>
+                                                            <option value="Fixed Deposit - MF">Fixed Deposit - MF</option>
+                                                            <option value="Fixed Deposit - SF">Fixed Deposit - SF</option>
+                                                            <option value="Petty Cash">Petty Cash</option>
+                                                            <option value="Sundry Deposits">Sundry Deposits</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded" onclick="location.href='accounting-rnp-fy.html';">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="col-lg-12">
+                                            <h5 class="text-primary">Monthly: August 2023</h5>
+                                            <div class="card shadow-none">
+                                                <div class="card-body p-0">
+                                                    <div class="accordion custom-accordionwitharrow m-0" id="accordionExample">
+                                                        <div class="card mb-1 shadow-none">
+    
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseOne" aria-expanded="true"
+                                                                aria-controls="collapseOne">
+                                                                <div class="card-header pb-2 pt-1" id="headingOne">
+                                                                    <h5 class="m-0 font-size-13">Account <i class="uil uil-angle-down text-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+            
+                                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted font-sm">
+                                                                        All Consolidated Account: <br>
+                                                                        0100-00 Bank - SF 3250732926 - Current Account<br>
+                                                                        0100-01 Bank - MF 3205732501 - Current Account<br>
+                                                                        0100-02 Bank PBB MF 3211486126<br>
+                                                                        0100-03 Bank MBB SF 507134515964<br>
+                                                                        0100-04 Bank PBB MF 3230386310 MC<br>
+                                                                        0100-05 AMB SF 8881051393976 MC - Current Account<br>
+                                                                        0200-00 Cash on Hand<br>
+                                                                        0210-00 Petty Cash
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="table-responsive pl-3 pr-3">
+                                            <table class="table table-sm mb-0 text-color-black">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left bg-color-propertygagaLighter font-size-16 font-weight-semibold">Balance b/f</td>
+                                                        <td class="text-right bg-color-propertygagaLighter bold">RM385,557.86</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Receipts</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Maintenance Charges</td>
+                                                        <td class="text-right">RM83,397.20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Sinking Fund</td>
+                                                        <td class="text-right">RM8,313.82</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Maintenance Charges</td>
+                                                        <td class="text-right">RM83,397.20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Insurance</td>
+                                                        <td class="text-right">RM257.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Interest</td>
+                                                        <td class="text-right">RM158.00</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="text-left">Access Card</td>
+                                                        <td class="text-right">RM500.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Deposit - Rental</td>
+                                                        <td class="text-right">RM257.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Receipts</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM97,179.36</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Payments</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLighter font-size-14 font-weight-semibold">Bal Sheet & Fixed Assets</td>
+                                                        <td class="text-right bg-color-grayLighter"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Refund Contra</td>
+                                                        <td class="text-right">RM9,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold">Sub-total</td>
+                                                        <td class="text-right font-weight-semibold">RM7,179.36</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Fixed Expenses</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Cleaning Services</td>
+                                                        <td class="text-right">RM9,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Fire Control System Maint</td>
+                                                        <td class="text-right">RM300.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Gen Set & Pump</td>
+                                                        <td class="text-right">RM560.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Landscaping</td>
+                                                        <td class="text-right">RM5,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold">Sub-total</td>
+                                                        <td class="text-right font-weight-semibold">RM7,179.36</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Utilities</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Electricity</td>
+                                                        <td class="text-right">RM19,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Water</td>
+                                                        <td class="text-right">RM1,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold">Sub-total</td>
+                                                        <td class="text-right font-weight-semibold">RM7,179.36</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Other Expenses</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">AGM Expenses</td>
+                                                        <td class="text-right">RM1,000.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Audit Fee</td>
+                                                        <td class="text-right">RM100.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold">Sub-total</td>
+                                                        <td class="text-right font-weight-semibold">RM1,100.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Payments</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM81,100.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Surplus / (Deficit)</td>
+                                                        <td class="text-right bg-color-grayLight bold">(RM23,983.78)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-propertygagaLighter font-size-16 font-weight-semibold">Balance c/f</td>
+                                                        <td class="text-right bg-color-propertygagaLighter bold">RM361,574.08</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded width-md mr-1" onclick="window.history.go(-1);">Print</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded width-md">Download</button>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

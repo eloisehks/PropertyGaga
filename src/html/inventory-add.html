@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-9 col-xl-9">
+                                <h3 class="mb-1 mt-0">Add Inventory</h3>
+                            </div>
+                            <div class="col-md-3 col-xl-3 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal">
+                                            <div class="form-row">
+                                                <div class="col col-lg-6">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio2" name="customRadio"
+                                                            class="custom-control-input" value="Asset">
+                                                        <label class="custom-control-label font-md" for="customRadio2">Asset</label>
+                                                        
+                                                        <div class="mt-2"><span class="help-block">An asset that can be booked and must be returned.<br>Eg. computer, ladder, toolbox, etc.</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-lg-6">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio1" name="customRadio"
+                                                            class="custom-control-input" value="ConsumableItem">
+                                                        <label class="custom-control-label font-md" for="customRadio1">Consumable Item</label>
+                                                        
+                                                        <div class="mt-2"><span class="help-block">An asset that can be booked but may not be returned.<br>Eg. joint pin, screws, cross brace L, etc.</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="Asset box" style="display: none">
+                                                <div class="row border-top-gray300 mt-4 mb-3"></div>
+                                                <h3>Add an Asset</h3>
+                                                <div class="row mb-2">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="example-date">Asset No.</label>
+                                                                <div class="col-4 col-xs-4 col-lg-3">
+                                                                    <input type="text" id="" name="" class="form-control" placeholder="004" disabled>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Category <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-4">
+                                                                <select class="form-control custom-select">
+                                                                    <option>Select Category</option>
+                                                                    <option value="Access Control System">Access Control System</option>
+                                                                    <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                    <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                    <option value="Computer">Computer</option>
+                                                                    <option value="Control Panel">Control Panel</option>
+                                                                    <option value="Furniture">Furniture</option>
+                                                                    <option value="Generator">Generator</option>
+                                                                    <option value="Gym Equipment">Gym Equipment</option>
+                                                                    <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                    <option value="Networking Equipment">Networking Equipment</option>
+                                                                    <option value="Office Equipment">Office Equipment</option>
+                                                                    <option value="Others">Others</option>
+                                                                    <option value="Phone">Phone</option>
+                                                                    <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                    <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                    <option value="Small Tools">Small Tools</option>
+                                                                    <option value="Unassigned">Unassigned</option>
+                                                                    <option value="Upgrading Work">Upgrading Work</option>
+                                                                    <option value="Vehicle">Vehicle</option>
+                                                                    <option value="Water Tank">Water Tank</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Asset Name <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Description <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-8">
+                                                                <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Location</label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border-top-gray300 mt-1 mb-3"></div>
+                                                        
+                                                        <div class="form-group row">
+                                                            Notes to developer: this section appears in the Accountant view
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="example-date">Purchase Date</label>
+                                                                <div class="col-4 col-xs-4 col-lg-4">
+                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Price (RM)</label>
+                                                            <div class="col-lg-4">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Net Book Value (RM)</label>
+                                                            <div class="col-lg-4">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Account</label>
+                                                            <div class="col-lg-4">
+                                                                <select class="form-control custom-select">
+                                                                    <option>Select Account</option>
+                                                                    <option value="Access Control System">Access Control System</option>
+                                                                    <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                    <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                    <option value="Computer">Computer</option>
+                                                                    <option value="Control Panel">Control Panel</option>
+                                                                    <option value="Furniture">Furniture</option>
+                                                                    <option value="Generator">Generator</option>
+                                                                    <option value="Gym Equipment">Gym Equipment</option>
+                                                                    <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                    <option value="Networking Equipment">Networking Equipment</option>
+                                                                    <option value="Office Equipment">Office Equipment</option>
+                                                                    <option value="Others">Others</option>
+                                                                    <option value="Phone">Phone</option>
+                                                                    <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                    <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                    <option value="Small Tools">Small Tools</option>
+                                                                    <option value="Unassigned">Unassigned</option>
+                                                                    <option value="Upgrading Work">Upgrading Work</option>
+                                                                    <option value="Vehicle">Vehicle</option>
+                                                                    <option value="Water Tank">Water Tank</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border-top-gray300 mt-1 mb-3"></div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="fileinput">Photo(s)</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="file" class="form-control" id="fileinput">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="fileinput">Document(s)</label>
+                                                            <div class="col-lg-6">
+                                                                
+                                                                <input type="file" class="form-control"
+                                                                    id="fileinput" multiple>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="ConsumableItem box" style="display: none">
+                                                <div class="row border-top-gray300 mt-4 mb-3"></div>
+                                                <h3>Add a Consumable Item</h3>
+                                                <div class="row mb-2">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Category <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-4">
+                                                                <select class="form-control custom-select">
+                                                                    <option>Select Category</option>
+                                                                    <option value="Access Control System">Access Control System</option>
+                                                                    <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                    <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                    <option value="Computer">Computer</option>
+                                                                    <option value="Control Panel">Control Panel</option>
+                                                                    <option value="Furniture">Furniture</option>
+                                                                    <option value="Generator">Generator</option>
+                                                                    <option value="Gym Equipment">Gym Equipment</option>
+                                                                    <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                    <option value="Networking Equipment">Networking Equipment</option>
+                                                                    <option value="Office Equipment">Office Equipment</option>
+                                                                    <option value="Others">Others</option>
+                                                                    <option value="Phone">Phone</option>
+                                                                    <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                    <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                    <option value="Small Tools">Small Tools</option>
+                                                                    <option value="Unassigned">Unassigned</option>
+                                                                    <option value="Upgrading Work">Upgrading Work</option>
+                                                                    <option value="Vehicle">Vehicle</option>
+                                                                    <option value="Water Tank">Water Tank</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Asset Name <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div> 
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Description <span class="text-danger">*</span></label>
+                                                            <div class="col-lg-8">
+                                                                <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Location</label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Total</label>
+                                                            <div class="col-lg-2">
+                                                                <input type="text" id="" name="" class="form-control" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Balance</label>
+                                                            <div class="col-lg-2">
+                                                                <input type="text" id="" name="" class="form-control" value="">
+                                                            </div>
+                                                            <div class="col-auto align-self-center">
+                                                                <div class="custom-control custom-checkbox mb-2">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                    <label class="custom-control-label" for="customCheck1">Send Reminder Email if less than 40% balance</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border-top-gray300 mt-1 mb-3"></div>
+
+                                                        <div class="form-group row">
+                                                            Notes to developer: this section appears in the Accountant view
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="example-date">Purchase Date</label>
+                                                                <div class="col-4 col-xs-4 col-lg-4">
+                                                                    <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Price (RM)</label>
+                                                            <div class="col-lg-4">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Net Book Value (RM)</label>
+                                                            <div class="col-lg-4">
+                                                                <input type="text" id="" name="" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="">Account</label>
+                                                            <div class="col-lg-4">
+                                                                <select class="form-control custom-select">
+                                                                    <option>Select Account</option>
+                                                                    <option value="Access Control System">Access Control System</option>
+                                                                    <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                    <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                    <option value="Computer">Computer</option>
+                                                                    <option value="Control Panel">Control Panel</option>
+                                                                    <option value="Furniture">Furniture</option>
+                                                                    <option value="Generator">Generator</option>
+                                                                    <option value="Gym Equipment">Gym Equipment</option>
+                                                                    <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                    <option value="Networking Equipment">Networking Equipment</option>
+                                                                    <option value="Office Equipment">Office Equipment</option>
+                                                                    <option value="Others">Others</option>
+                                                                    <option value="Phone">Phone</option>
+                                                                    <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                    <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                    <option value="Small Tools">Small Tools</option>
+                                                                    <option value="Unassigned">Unassigned</option>
+                                                                    <option value="Upgrading Work">Upgrading Work</option>
+                                                                    <option value="Vehicle">Vehicle</option>
+                                                                    <option value="Water Tank">Water Tank</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row border-top-gray300 mt-1 mb-3"></div>
+
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="fileinput">Photo(s)</label>
+                                                            <div class="col-lg-6">
+                                                                <input type="file" class="form-control" id="fileinput">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"
+                                                                for="fileinput">Document(s)</label>
+                                                            <div class="col-lg-6">
+                                                                
+                                                                <input type="file" class="form-control"
+                                                                    id="fileinput" multiple>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                                </div>
+                                            </div>
+                                            
+
+                                        </form>
+
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- inventory booking -->
+            <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Book Asset</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card bg-color-propertygagaLightest border-gray-light mb-3">
+                                <div class="card-body p-2">
+                                    <div class="row font-sm text-color-black">
+                                        <div class="col col-lg-12 text-center">
+                                            Available <span class="font-weight-bold">ACCEPT</span><br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Book From</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Return Date</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Book Assets to</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Me</option>
+                                            <option>Handyman 1</option>
+                                            <option>Handyman 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Office 0</option>
+                                            <option>Office 1</option>
+                                            <option>Office 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Tasks</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Select Task</option>
+                                            <option>OT022 - Water ponding in facility floor	</option>
+                                            <option>OT062 - No Light at P3 parking</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Notes</label>
+                                        <textarea class="form-control" rows="2" id="example-textarea">Write something...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inventory booking end -->
+
+            <!-- inventory edit booking -->
+            <div class="modal fade" id="editbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Book Asset</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Book From</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Return Date</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Book Assets to</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Me</option>
+                                            <option selected>Handyman 1</option>
+                                            <option>Handyman 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Office 0</option>
+                                            <option selected>Office 1</option>
+                                            <option>Office 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Tasks</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Select Task</option>
+                                            <option selected>OT022 - Water ponding in facility floor	</option>
+                                            <option>OT062 - No Light at P3 parking</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Notes</label>
+                                        <textarea class="form-control" rows="2" id="example-textarea">Write something...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inventory edit booking end -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

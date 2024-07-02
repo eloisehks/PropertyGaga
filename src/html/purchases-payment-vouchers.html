@@ -49,18 +49,18 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
-                            <div class="col-md-3 col-xl-6">
+                            <div class="col-md-6 col-xl-6">
                                 <h3 class="mb-1 mt-0">Payment Vouchers</h3>
                             </div>
-                            <div class="col-md-9 col-xl-6 text-md-right">
+                            <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='purchases-purchase-invoices-submit.html';"><i class="uil-plus mr-1"></i> Submit Purchase Invoice</button>
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='purchases-payment-voucher-submit.html';"><i class="uil-plus mr-1"></i> New Payment Voucher</button>
                                 </div>
                             </div>
                            
                         </div>
                         
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-12 col-xl-12">
                                 <div class="card">
                                     <div class="card-body p-0">
@@ -73,7 +73,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -88,10 +88,10 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#allpv" data-toggle="tab" aria-expanded="false"
+                                                <a href="#all" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link">
                                                     <span class="d-block d-sm-none"><i class="uil-user"></i></span>
-                                                    <span class="d-none d-sm-block">All Payment Vouchers</span>
+                                                    <span class="d-none d-sm-block">All Payments</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -101,90 +101,408 @@
                                                     <div class="col-12">
                                                         <div class="card">
                                                             <div class="card-body">
-                                                                <table id="basic-datatable" class="table dt-responsive">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Status</th>
-                                                                            <th>PV No.</th>
-                                                                            <th>Payment Acc.</th>
-                                                                            <th>Method</th>
-                                                                            <th>Cheque #</th>
-                                                                            <th>Collection</th>
-                                                                            <th>Ref. No.</th>
-                                                                            <th>Amt. (RM)</th>
-                                                                            <th></th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td><span class="badge badge-warning width-xs">Unpaid</span></td>
-                                                                            <td><a href="#">PV00001</a></td>
-                                                                            <td>37903384435</td>
-                                                                            <td>Cash</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td>Pending</td>
-                                                                            <td>-</td>
-                                                                            <td>RM20,000.00</td>
-                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
-                                                                            </div></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><span class="badge badge-warning width-xs">Unpaid</span></td>
-                                                                            <td><a href="#">PV00002</a></td>
-                                                                            <td>37903384435</td>
-                                                                            <td>Cheque</td>
-                                                                            <td>3759626</td>
-                                                                            <td>Collected</td>
-                                                                            <td>3574858</td>
-                                                                            <td>RM20,000.00</td>
-                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
-                                                                            </div></td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option selected>All Status</option>
+                                                                                        <option>Pending</option>
+                                                                                        <option>Cancelled</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Payees</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Select Unit No.</option>
+                                                                                        <option selected>All Units</option>
+                                                                                        <option>6-13-01</option>
+                                                                                        <option>6-02-09</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>Payment Date</th>
+                                                                                <th>PV No.</th>
+                                                                                <th>Payee</th>
+                                                                                <th>Ref. No.</th>
+                                                                                <th class="text-right">Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th class="text-center">Cheque No.</th> 
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                                                <td>13 Apr 2024</td>
+                                                                                <td><a href="purchases-payment-voucher-refunddeposit.html">PV00004</a></td>
+                                                                                <td>June Tan</td>
+                                                                                <td></td>
+                                                                                <td class="text-right">3,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">37596332</td>
+                                                                                <td class="text-right">
+                                                                                    <!-- <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</a> -->
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment-d">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment-d">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-1.html">PV00003</a></td>
+                                                                                <td>HSL Electrical Supply</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                    <!-- <div class="mt-3 mt-sm-0">
+                                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                                    </div> -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="strikethrough">
+                                                                                <td><span class="badge badge-danger width-xs">Cancelled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view.html">PV00002</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Cheque Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div> <!-- end card body-->
                                                         </div> <!-- end card -->
                                                     </div><!-- end col-->
                                                 </div>
                                                 <!-- end row-->
                                             </div>
-                                            <div class="tab-pane" id="allpv">
+                                            <div class="tab-pane" id="all">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card">
                                                             <div class="card-body">
-                                                                <table id="basic-datatable2" class="table dt-responsive full-width">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Status</th>
-                                                                            <th>PV No.</th>
-                                                                            <th>Payment Acc.</th>
-                                                                            <th>Method</th>
-                                                                            <th>Cheque #</th>
-                                                                            <th>Collection</th>
-                                                                            <th>Ref. No.</th>
-                                                                            <th>Amt. (RM)</th>
-                                                                            <th></th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td><span class="badge badge-success width-xs">Paid</span></td>
-                                                                            <td><a href="#">PV00003</a></td>
-                                                                            <td>37903384435</td>
-                                                                            <td>Online Transfer</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td>3574858</td>
-                                                                            <td>RM20,000.00</td>
-                                                                            <td class="text-center"><div class="mt-3 mt-sm-0">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
-                                                                            </div></td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option selected>All Status</option>
+                                                                                        <option>Pending</option>
+                                                                                        <option>Settled</option>
+                                                                                        <option>Returned</option>
+                                                                                        <option>Cancelled</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option selected>Select Option</option>
+                                                                                        <option>Cancelled</option>
+                                                                                        <option>Returned</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div> -->
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Payees</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                        <option value="0">Select Unit No.</option>
+                                                                                        <option selected>All Units</option>
+                                                                                        <option>6-13-01</option>
+                                                                                        <option>6-02-09</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                        <option value="1">8-18-3A</option>
+                                                                                        <option value="2">8-19-03</option>
+                                                                                        <option value="3">8-20-3A</option>
+                                                                                        <option value="4">8-21-03</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>Payment Date</th>
+                                                                                <th>PV No.</th>
+                                                                                <th>Payee</th>
+                                                                                <th>Ref. No.</th>
+                                                                                <th>Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th>Cheque No.</th>
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-1.html">PV00003</a></td>
+                                                                                <td>HSL Electrical Supply</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                    <!-- <div class="mt-3 mt-sm-0">
+                                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                                    </div> -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Cancelled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view.html">PV00002</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Cheque Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-success width-xs">Settled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000012</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cash</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-success width-xs">Settled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000013</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Online Transfer</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Cancelled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared-cancelled.html">PV000015</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>639735</td>
+                                                                                <td class="text-right">RM1,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759678</td>                                                                               
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Returned</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-returned.html">PV000033</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div> <!-- end card body-->
                                                         </div> <!-- end card -->
                                                     </div><!-- end col-->
@@ -193,95 +511,6 @@
                                             </div>
                                             
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- modal updatepaymentvoucher -->
-                        <div class="modal fade" id="updatepaymentvoucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Update PV00001</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="simpleinput">Payment Collection</label>
-                                                            <div class="col-lg-8">
-                                                                <div class="">
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio4" name="customRadio4"
-                                                                            class="custom-control-input" checked>
-                                                                        <label class="custom-control-label" for="customRadio4">Pending</label>
-                                                                    </div>
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio4" name="customRadio4"
-                                                                            class="custom-control-input">
-                                                                        <label class="custom-control-label" for="customRadio4">Collected by Vendor</label>
-                                                                        <div class="form-group">
-                                                                            <input type="text" id="basic-datepicker2" class="form-control col-6" placeholder="Select Date">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                    </div>
-                                                    
-                                                    <div class="form-group row border-bottom-gray400">
-                                                    </div>
-
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="simpleinput">Payment Status</label>
-                                                            <div class="col-lg-8">
-                                                                <div class="">
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio3" name="customRadio3"
-                                                                            class="custom-control-input">
-                                                                        <label class="custom-control-label" for="customRadio3">Paid</label>
-                                                                    </div>
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio3" name="customRadio3"
-                                                                            class="custom-control-input" checked>
-                                                                        <label class="custom-control-label" for="customRadio3">Unpaid</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="simpleinput">Ref. No.</label>
-                                                        <div class="col-lg-8">
-                                                            <input type="text" class="form-control" id=""
-                                                                value="">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="form-group row border-bottom-gray400">
-                                                    </div>
-
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="simpleinput">Notes</label>
-                                                        <div class="col-lg-8">
-                                                        <textarea class="form-control" rows="2"
-                                                        id="example-textarea"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -299,6 +528,499 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
+            <!-- modal update Cheque Status 1 -->
+            <div class="modal fade" id="updatepaymentvoucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Cheque Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect">
+                                                            <label class="custom-control-label" for="customRadio2">Cheque collected by Vendor</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin">
+                                                            <label class="custom-control-label" for="customRadio1">Cheque banked in by Staff</label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio3">Cheque collected by Vendor</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio3">Cheque banked in</label>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="collect box" style="display: none">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Name</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">ID No. / Passport No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bankin box" style="display: none">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label"
+                                                    for="fileinput">Staff Name</label>
+                                                <div class="col-lg-8">
+                                                    <select data-plugin="customselect" class="form-control">
+                                                        <option value="0">Banked in by</option>
+                                                        <option value="2">BM - Raymond</option>
+                                                        <option value="1">BS - Tay Cheng Cheng</option>
+                                                        <option value="2">Staff 1</option>
+                                                        <option value="2">Staff 2</option>
+                                                        <option value="2">Staff 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Username</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label"
+                                                    for="fileinput">Bank Receipt</label>
+                                                <div class="col-auto">
+                                                    <input type="file" class="form-control" id="fileinput">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save & send to Vendor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal update status 1 end -->
+
+            <!-- modal update Cheque Status 2 -->
+            <div class="modal fade" id="updatepaymentvoucher2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">View Cheque Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" checked>
+                                                            <label class="custom-control-label" for="customRadio2">Cheque collected by Vendor</label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin">
+                                                            <label class="custom-control-label" for="customRadio1">Cheque banked in</label>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio3">Cheque collected by Vendor</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio3">Cheque banked in</label>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="collect">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Name</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="vendor1">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">ID No. / Passport No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="960413-12-1234">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea">some notes goes here...</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary btn-rounded width-sm">Save & send to Vendor</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal update status 2 end -->
+
+            <!-- modal Return payment -->
+            <div class="modal fade" id="returnpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Return Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="HSL Electrical Supply" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="20,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Returned Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Return payment end -->
+
+            <!-- modal Cancel payment -->
+            <div class="modal fade" id="cancelpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Are you sure you want to cancel this payment?
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="HSL Electrical Supply" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="20,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Reason</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Yes, cancel this payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Cancel payment end -->
+
+            <!-- modal Return payment -->
+            <div class="modal fade" id="returnpayment-d" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Return Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00004" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="June Tan" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="3,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Returned Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea">Blah blah blah</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Return payment end -->
+
+            <!-- modal Cancel payment -->
+            <div class="modal fade" id="cancelpayment-d" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Are you sure you want to cancel this payment?
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="June Tan" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="3,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Reason</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Yes, cancel this payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Cancel payment end -->
 
         </div>
         <!-- END wrapper -->
@@ -339,6 +1061,17 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
         
     </body>
 </html>

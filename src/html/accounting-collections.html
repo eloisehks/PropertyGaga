@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Collections</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-4 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-5 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control wide" data-plugin="customselect" multiple>
+                                                                <option value="0" selected>All</option>
+                                                                <option value="0">Maintenance Fee</option>
+                                                                <option value="1">Sinking Fund</option>
+                                                                <option value="2">Interest</option>
+                                                                <option value="3">Annual Fire Insurance</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                                                <label class="custom-control-label mr-2" for="customSwitch2">Statement Date</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col-md-12">
+                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded mr-1 float-right" data-toggle="modal" data-target="#">Excel</a>
+                                                <h6>All collections from 1 Jan 2023 to 31 Dec 2023 with Statement Date</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="10%">No.</th>
+                                                        <th width="10%">Statement Date</th>
+                                                        <th width="10%">Description</th>
+                                                        <th width="10%">Period</th>
+                                                        <th class="text-center">Paid / Invoiced <i class="uil uil-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Total of unit paid / total of unit invoiced"></i></th>
+                                                        <th width="" class="text-right">Total Invoiced (RM)</th>
+                                                        <th width="20%" class="text-right">Total Paid (RM)</th>
+                                                        <th width="10%" class="text-right">Total Credit Note (RM)</th>
+                                                        <th width="10%" class="text-center">% Payment</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>        
+                                                        <td>1</td>
+                                                        <td>1 Jan 2024</td>
+                                                        <td>Maintenance Fee (Mar 2024)</td>
+                                                        <td>Mar 2024</td>
+                                                        <td class="text-center">200 / 300</td>
+                                                        <td class="text-right">112,962.00</td>
+                                                        <td class="text-right">23,931.68</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-center">21</td>
+                                                    </tr>
+                                                    <tr>        
+                                                        <td>2</td>
+                                                        <td>1 Jan 2024</td>
+                                                        <td>Sinking Fund (Mar 2024)</td>
+                                                        <td>Mar 2024</td>
+                                                        <td class="text-center">200 / 300</td>
+                                                        <td class="text-right">112,962.00</td>
+                                                        <td class="text-right">23,931.68</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-center">21</td>
+                                                    </tr>
+                                                    <tr>        
+                                                        <td>3</td>
+                                                        <td>1 Oct 2023</td>
+                                                        <td>Interest</td>
+                                                        <td>Jan 2024</td>
+                                                        <td class="text-center">100 / 300</td>
+                                                        <td class="text-right">999.29</td>
+                                                        <td class="text-right">108.07	</td>
+                                                        <td class="text-right">8.23</td>
+                                                        <td class="text-center">12</td>
+                                                    </tr>
+                                                    <tr>        
+                                                        <td>4</td>
+                                                        <td>1 Apr 2024</td>
+                                                        <td>Annual Fire Insurance Premium 23/24</td>
+                                                        <td>Apr 2024</td>
+                                                        <td class="text-center">290 / 300</td>
+                                                        <td class="text-right">28,932.00</td>
+                                                        <td class="text-right">28,640.00</td>
+                                                        <td class="text-right">0.00</td>
+                                                        <td class="text-center">99</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal invoice no. -->
+            <div class="modal fade" id="invoiceno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Invoices for 6-08-12A</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Due</th>
+                                        <th>Inv. No.</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td width="15%">
+                                            <span class="badge badge-danger width-xs">Overdue</span>
+                                            <br>
+                                            <small>Overdue by 15 days</small>
+                                        </td>
+                                        <td width="15%">30/9/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20201234</a></td>
+                                        <td width="20%">RM290.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%">
+                                            <span class="badge badge-danger width-xs">Overdue</span>
+                                            <br>
+                                            <small>Overdue by 15 days</small>
+                                        </td>
+                                        <td width="15%">31/10/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20201235</a></td>
+                                        <td width="20%">RM10.00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal invoice no. end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

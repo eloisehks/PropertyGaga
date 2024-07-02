@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+ 
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Petty Cash</h3> <a href="pettycash-staff.html">Go to Staff View</a> 
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="pettycash-admin-topup.html" class="btn btn-primary btn-rounded">Top Up</a> <a href="pettycash-admin-purchase.html" class="btn btn-primary btn-rounded">Purchase</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>Unclaim</h5>
+
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#pending" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Pending</span>
+                                                    <span class="d-none d-sm-block">Pending</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#rejected" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Rejected</span>
+                                                    <span class="d-none d-sm-block">Rejected</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-3 text-muted">
+                                            <div class="tab-pane show active" id="pending">
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable3" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th class="text-center">Petty Cash No.</th>
+                                                                <th>Description</th>
+                                                                <th class="text-center">Expensed By</th>
+                                                                <th class="text-right">Amt. (RM)</th>
+                                                                <th class="text-center">Receipt</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>5 Nov 2023</td>
+                                                                <td class="text-center"><a href="pettycash-admin-purchase-edit-pending.html">77731</a></td>
+                                                                <td>Petrol from Office to Client Office</td>
+                                                                <td class="text-center">Tim</td>
+                                                                <td class="text-right">200.00</td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-approve">Approve</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>5 Nov 2023</td>
+                                                                <td class="text-center"><a href="pettycash-admin-purchase-edit-pending.html">77731</a></td>
+                                                                <td>2 stacks of A4 paper</td>
+                                                                <td class="text-center">Tim</td>
+                                                                <td class="text-right">30.00</td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-approve">Approve</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="rejected">
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th class="text-center">Rejected on</th>
+                                                                <th class="text-center">Petty Cash No.</th>
+                                                                <th>Description</th>
+                                                                <th class="text-center">Expensed By</th>
+                                                                <th class="text-right">Amt. (RM)</th>
+                                                                <th class="text-center">Receipt</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>25 Nov 2023</td>
+                                                                <td class="text-center text-danger">25 Nov 2023 <i class="uil uil-notes" data-toggle="tooltip"
+                                                                    data-placement="top" title=""
+                                                                    data-original-title="Reason....blah blah....."></i></td>
+                                                                <td class="text-center"><a href="pettycash-admin-purchase-edit-rejected.html">77731</a></td>
+                                                                <td>Paid lunch for customer appointment</td>
+                                                                <td class="text-center">Tim</td>
+                                                                <td class="text-right">200.00</td>
+                                                                <td class="text-center">
+                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-approve">Approve</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-reverse">Reverse Rejected</a>
+                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                            
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h5>Approved</h5>
+                                        <form class="">
+                                            <div class="mb-2">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col col-md-3">
+                                                        <div class="form-group">
+                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Type</option>
+                                                                <option>Transportation</option>
+                                                                <option>Office Supplies</option>
+                                                                <option>Food & Beverages</option>
+                                                                <option>Postage and Shipping</option>
+                                                                <option>MISC</option>
+                                                            </select>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col col-md-1">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-md-8 text-right mb-3">
+                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Save as PDF</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="table-responsive">
+                                                <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Approved on</th>
+                                                            <th class="text-center">Petty Cash No.</th>
+                                                            <th>Description</th>
+                                                            <th>Expensed By</th>
+                                                            <th class="text-right">Debit</th>
+                                                            <th class="text-right">Credit</th>
+                                                            <!-- <th class="text-right">Balance</th> -->
+                                                            <th class="text-center">Receipt</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1 Nov 2023</td>
+                                                            <td></td>
+                                                            <td class="text-center"></td>
+                                                            <td>Balance Brought Forward</td>
+                                                            <td></td>
+                                                            <td class="text-right">300.00</td>
+                                                            <td class="text-right"></td>
+                                                            <!-- <td class="text-right">300.00</td> -->
+                                                            <td class="text-center">
+                                                            </td>
+                                                            <td class="text-center pb-1">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5 Nov 2023</td>
+                                                            <td>5 Nov 2023</td>
+                                                            <td class="text-center"><a href="pettycash-admin-purchase-edit-approved.html">77731</a></td>
+                                                            <td>Petrol from Office to Client Office</td>
+                                                            <td>Tim</td>
+                                                            <td class="text-right"></td>
+                                                            <td class="text-right">200.00</td>
+                                                            <!-- <td class="text-right">200.00</td> -->
+                                                            <td class="text-center">
+                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="btn-group dropleft">
+                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                        <a class="dropdown-item" href="#">Print</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5 Nov 2023</td>
+                                                            <td>12 Nov 2023</td>
+                                                            <td class="text-center"><a href="pettycash-admin-purchase-edit-approved.html">77731</a></td>
+                                                            <td>2 stacks of A4 paper</td>
+                                                            <td>Tim</td>
+                                                            <td class="text-right"></td>
+                                                            <td class="text-right">30.00</td>
+                                                            <!-- <td class="text-right">170.00</td> -->
+                                                            <td class="text-center">
+                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="btn-group dropleft">
+                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                        <a class="dropdown-item" href="#">Print</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-color-greenBright">15 Nov 2023</td>
+                                                            <td></td>
+                                                            <td class="text-center"><a href="pettycash-admin-topup-detail.html">77799</a></td>
+                                                            <td class="text-color-greenBright">Topped Up</td>
+                                                            <td></td>
+                                                            <td class="text-color-greenBright text-right">200.00</td>
+                                                            <td class="text-right"></td>
+                                                            <!-- <td class="text-right">300.00</td> -->
+                                                            <td class="text-center">
+                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                            </td>
+                                                            <td class="text-center pb-1">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+
+                                        <div class="mt-4">
+                                            <div class="row">
+                                                <div class="col-md-6"></div>
+                                                <div class="col-md-6 text-right">
+                                                    <div class="card">
+                                                        <div class="card-body border-gray-light bg-color-grayLighter text-color-black pt-3 pb-3 line-height-1dot8">
+                                                            <div class="row">
+                                                                <div class="col col-lg-7 text-right">
+                                                                    Balance b/f (RM)
+                                                                </div>
+                                                                <div class="col col-lg-5 text-right">
+                                                                    300.00
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col col-lg-7 text-right">
+                                                                    Topped Up (RM)
+                                                                </div>
+                                                                <div class="col col-lg-5 text-right">
+                                                                    + 200.00
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col col-lg-7 text-right">
+                                                                    Approved (RM)
+                                                                </div>
+                                                                <div class="col col-lg-5 text-right">
+                                                                    - 230.00
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="row text-color-orangeDark">
+                                                                <div class="col col-lg-7 text-right">
+                                                                    Pending (RM)
+                                                                </div>
+                                                                <div class="col col-lg-5 text-right">
+                                                                    - 400.00
+                                                                </div>
+                                                            </div> -->
+                                                            
+                                                            <div class="row bg-color-grayLight font-size-16 pt-2 pb-2 mt-2">
+                                                                <div class="col col-lg-7 text-right font-weight-semibold">
+                                                                    Balance (RM)
+                                                                </div>
+                                                                <div class="col col-lg-5 text-right font-weight-semibold">
+                                                                    270.00
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <div class="card bg-color-propertygagaLightest mb-0">
+                                                    <div class="card-body">
+                                                        <h5 class="m-0 text-right">Balance:  RM 470.00</h5>
+                                                        <div class="row">
+                                                            <div class="col col-lg-3">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- approve  -->
+           <div class="modal fade" id="modal-approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modaldialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Approve</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-color-black">
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Date</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    5 Nov 2023	
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Type</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Transportation
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Description</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Petrol from Office to Client Office
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Expensed By</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Tim
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Amount</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    RM 200.00
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Receipt</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal">Approve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- approve end -->
+
+            <!-- decline  -->
+           <div class="modal fade" id="modal-decline" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Reject</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Date</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                5 Nov 2023	
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Type</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Transportation
+                            </div>
+                        </div>
+                        <div class="row line-height-1dot7">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Description</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Petrol from Office to Client Office
+                            </div>
+                        </div>
+                        <div class="row line-height-1dot7">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Expensed By</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Tim
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Amount</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                RM 200.00
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Receipt</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Notes</label>
+                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger btn-rounded width-sm" data-dismiss="modal">Reject</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- decline end -->
+
+            <!-- reverse rejected  -->
+       <div class="modal fade" id="modal-reverse" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modaldialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Reverse Rejected</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-color-black">
+                    <div class="row">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Date</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            5 Nov 2023	
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Type</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            Transportation
+                        </div>
+                    </div> -->
+                    <div class="row line-height-1dot7">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Description</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            Petrol from Office to Client Office
+                        </div>
+                    </div>
+                    <div class="row line-height-1dot7">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Expensed By</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            Tim
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Amount</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            RM 200.00
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-4 col-lg-4">
+                            <label>Receipt</label>
+                        </div>
+                        <div class="col col-sm-8 col-lg-8">
+                            <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="form-group">
+                                <label>Notes</label>
+                                <textarea class="form-control" rows="2" id="example-textarea">Reason....blah blah.....</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Revert</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- reverse rejected end -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+       
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#bookinglist').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script>
+        
+    </body>
+</html>

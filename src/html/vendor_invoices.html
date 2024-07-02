@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-vendor.html')
+
+            @@include('./partials/left-sidebar-vendor.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid"> 
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Invoices</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="vendor_invoices-uploadinvoice.html" class="btn btn-primary btn-rounded mb-3 mb-sm-0"><i class="uil-upload-alt mr-1"></i> Upload Invoice</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#uploadeddoc" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-none d-sm-block">Uploaded Invoices</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#invoices" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none"><i class="uil-user"></i></span>
+                                                    <span class="d-none d-sm-block">Invoices by Mangement</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="uploadeddoc">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">All Status</option>
+                                                                                        <option>Pending</option>
+                                                                                        <option>Rejected</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-3 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select">
+                                                                                        <option>All Sites</option>      
+                                                                                        <option>3 Resident</option>
+                                                                                        <option>Emerald Residence</option>
+                                                                                        <option>Maya Residence</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>Inv. No. (Vendor)</th>
+                                                                                <th>Uploaded Inv. on</th>
+                                                                                <th>Site Name</th>
+                                                                                <th>Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <!-- <th class="text-center">Actions</th> -->
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                                                <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
+                                                                                <td>3 Feb 2023, 1:30pm</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td>OT022</td>
+                                                                                <td>BC-00005</td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#viewinvoice">View</a>
+                                                                                </td> -->
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Rejected</span></td>
+                                                                                <td><a href="" data-toggle="modal" data-target="#rejectedinvoice">23456763</a></td>
+                                                                                <td>2 Mar 2023, 1:30pm</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td>OT023</td>
+                                                                                <td>BC-00003</td>
+                                                                                <!-- <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#rejectedinvoice">View</a>
+                                                                                </td> -->
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="invoices">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">All Status</option>
+                                                                                        <option>Paid</option>
+                                                                                        <option>Overpaid</option>
+                                                                                        <option>Partially Paid</option>
+                                                                                        <option>Preparing</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-3 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select">
+                                                                                        <option>All Sites</option>      
+                                                                                        <option>3 Resident</option>
+                                                                                        <option>Emerald Residence</option>
+                                                                                        <option>Maya Residence</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>Date</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Purc. Inv. No.<br>(Mgmt.)</th>
+                                                                                <th>Site Name</th>
+                                                                                <th>Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Balance (RM)</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="text-center" width="1%"><span class="badge badge-primary width-xs">Preparing</span></td>
+                                                                                <td>13 Jun 2023</td>
+                                                                                <td>234567</td>
+                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                                                <td>3 Resident</td>
+                                                                                <td>OT023</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">500.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-center"><span class="badge badge-danger width-xs">Partially Paid</span></td>
+                                                                                <td>15 Jun 2023</td>
+                                                                                <td>234567</td>
+                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                                                <td>3 Resident</td>
+                                                                                <td>OT024</td>
+                                                                                <td>BC-00002</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Overpaid</span></td>
+                                                                                <td>15 Jun 2023</td>
+                                                                                <td>234567</td>
+                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                                                <td>Emerald Residence</td>
+                                                                                <td>OT022</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">+30.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="text-center"><span class="badge badge-success width-xs">Paid</span></td>
+                                                                                <td>15 Jun 2023</td>
+                                                                                <td>234567</td>
+                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                                                <td>Maya Residence</td>
+                                                                                <td>OT022</td>
+                                                                                <td>BC-00001</td>
+                                                                                <td class="text-right">0.00</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal view invoice -->
+            <div class="modal fade" id="viewinvoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">View Invoice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="">Site Name</label>
+                                            <div class="col-lg-9">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option selected>3 Resident</option>
+                                                    <option>Emerald Residence sdlgdsjg lsadgj ldagh.j d.a j</option>
+                                                    <option>Maya Residence</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Inv. No. (Vendor)</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="url" name="" value="234567">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Task ID</label>
+                                            <div class="col-lg-4">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option selected>OT022</option>
+                                                    <option>OT022</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Purchase Order No.</label>
+                                            <div class="col-lg-4">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option>BC-00001</option>
+                                                    <option selected>BC-00002</option>   
+                                                    <option>BC-00003</option>
+                                                    <option>BC-00004</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Attach Invoice</label>
+                                            <div class="col-lg-9">
+                                                <input type="file" class="form-control" id="fileinput">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for=""></label>
+                                            <div class="col-lg-9">
+                                                <div class="card mb-2 shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/projects/project-1.jpg"
+                                                                    class="avatar-sm rounded" alt="file-image">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">vendor-invoice.jpg</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label class="col-form-label"
+                                                for="">Attach Invoice</label>
+                                            <input type="file" class="form-control" id="fileinput">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="row">
+                                    <div class="col">
+                                        <div class="card mb-2 shadow-none border">
+                                            <div class="p-1 px-2">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <img src="assets/images/projects/project-1.jpg"
+                                                            class="avatar-sm rounded" alt="file-image">
+                                                    </div>
+                                                    <div class="col pl-0">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-muted font-weight-bold">vendor-invoice.jpg</a>
+                                                        <p class="mb-0">2.3 MB</p>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                       
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div> -->
+                             
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group m-0 p-0 mt-2">
+                                            <label class="col-form-label" for="">Comment</label>                                           
+                                        </div>
+                                        <div class="form-group m-0 p-0">
+                                            <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                <img src="assets/images/users/avatar-9.jpg"
+                                                alt="image"
+                                                class="avatar-xs rounded-circle p-1"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Arya S" />
+                                                <div class="media-body">
+                                                    <p class="mb-0 text-muted font-size-12">
+                                                        comment from vendor
+                                                    </p>
+                                                </div>
+                                                <div class="dropdown float-right mt-1">
+                                                    <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                        data-toggle="dropdown" aria-expanded="false">
+                                                        <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                        <a href="javascript:void(0);"
+                                                            class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-0 p-0">
+                                            <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                <img src="assets/images/users/avatar-4.jpg"
+                                                    alt="image"
+                                                    class="avatar-xs rounded-circle p-1"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Sammy" />
+                                                <div class="media-body">
+                                                    <p class="mb-0 text-muted font-size-12">
+                                                        comment from EAD Property Management
+                                                    </p>
+                                                </div>
+                                                <div class="dropdown float-right mt-1">
+                                                    <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                        data-toggle="dropdown" aria-expanded="false">
+                                                        <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                        <a href="javascript:void(0);"
+                                                            class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col">
+                                                <div class="border-gray-light rounded">
+                                                    <form action="#" class="comment-area-box">
+                                                        <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                        <div class="p-2 border">
+                                                            <div class="text-right">
+                                                                <button type="submit" class="btn btn-sm btn-rounded btn-outline-primary mb-0">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div> <!-- end .border-->
+                                            </div> <!-- end col-->
+                                        </div> <!-- end row-->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- view invoice end -->
+
+            <!-- modal rejected invoice -->
+            <div class="modal fade" id="rejectedinvoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">View Invoice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row pb-4">
+                                    <div class="col">
+                                        <div class="alert alert-danger mb-0 text-center" role="alert">
+                                                The invoice has been rejected on 4 Mar 2023, please submit your invoice again.<br>
+                                                Or call us at 604 123 4567. Thank you.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="">Site Name</label>
+                                            <div class="col-lg-9">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option selected>3 Resident</option>
+                                                    <option>Emerald Residence sdlgdsjg lsadgj ldagh.j d.a j</option>
+                                                    <option>Maya Residence</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Inv. No. (Vendor)</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="url" name="" value="234567">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Task ID</label>
+                                            <div class="col-lg-4">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option selected>OT022</option>
+                                                    <option>OT022</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Purchase Order No.</label>
+                                            <div class="col-lg-4">
+                                                <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                    <option></option>
+                                                    <option>BC-00001</option>
+                                                    <option selected>BC-00002</option>   
+                                                    <option>BC-00003</option>
+                                                    <option>BC-00004</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Attach Invoice</label>
+                                            <div class="col-lg-9">
+                                                <input type="file" class="form-control" id="fileinput">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for=""></label>
+                                            <div class="col-lg-9">
+                                                <div class="card mb-2 shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/projects/project-1.jpg"
+                                                                    class="avatar-sm rounded" alt="file-image">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">vendor-invoice.jpg</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <!-- <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label class="col-form-label"
+                                                        for="">Attach Invoice</label>
+                                                    <input type="file" class="form-control" id="fileinput">
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="row text-left">
+                                            <div class="col">
+                                                <div class="card mb-2 shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/projects/project-1.jpg"
+                                                                    class="avatar-sm rounded" alt="file-image">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">vendor-invoice.jpg</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                       
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group m-0 p-0 mt-4">
+                                                    <label class="col-form-label" for="">Comment</label>                                           
+                                                </div>
+                                                <div class="form-group m-0 p-0">
+                                                    <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                        <img src="assets/images/users/avatar-9.jpg"
+                                                        alt="image"
+                                                        class="avatar-xs rounded-circle p-1"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Arya S" />
+                                                        <div class="media-body">
+                                                            <p class="mb-0 text-muted font-size-12">
+                                                                Please upload the invoice again, file corrupted.
+                                                            </p>
+                                                        </div>
+                                                        <div class="dropdown float-right mt-1">
+                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-0 p-0">
+                                                    <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="image"
+                                                            class="avatar-xs rounded-circle p-1"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Sammy" />
+                                                        <div class="media-body">
+                                                            <p class="mb-0 text-muted font-size-12">
+                                                                Attached new invoice for your perusal.
+                                                            </p>
+                                                        </div>
+                                                        <div class="dropdown float-right mt-1">
+                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col">
+                                                        <div class="border-gray-light rounded">
+                                                            <form action="#" class="comment-area-box">
+                                                                <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                                <div class="p-2 border">
+                                                                    <div class="text-right">
+                                                                        <button type="submit" class="btn btn-sm btn-rounded btn-outline-primary mb-0">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div> <!-- end .border-->
+                                                    </div> <!-- end col-->
+                                                </div> <!-- end row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button> 
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- rejected invoice end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

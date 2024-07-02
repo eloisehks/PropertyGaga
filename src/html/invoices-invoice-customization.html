@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Property Gaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @@include('./partials/topbar.html')
+
+        @@include('./partials/left-sidebar.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-md-6 col-xl-6">
+                            <h3 class="mb-1 mt-0">Customization</h3>
+                        </div>
+                        <div class="col-md-6 col-xl-6 text-md-right">
+                            <div class="mt-4 mt-md-0">
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i
+                                        class="uil-arrow-left mr-1"></i> Back </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a href="#general" data-toggle="tab" aria-expanded="false"
+                                                class="nav-link active">
+                                                <span class="d-block d-sm-none">General</span>
+                                                <span class="d-none d-sm-block">General</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#invoice" data-toggle="tab" aria-expanded="false"
+                                                class="nav-link">
+                                                <span class="d-block d-sm-none">Invoice</span>
+                                                <span class="d-none d-sm-block">Invoice</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#receipt" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                                <span class="d-block d-sm-none">Receipt</span>
+                                                <span class="d-none d-sm-block">Receipt</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#paymentvoucher" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                                <span class="d-block d-sm-none">Payment Voucher</span>
+                                                <span class="d-none d-sm-block">Payment Voucher</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content p-3 text-muted">
+                                        <div class="tab-pane show active" id="general">
+                                            <form class="form-horizontal">
+                                                <div class="row mt-3" style="min-height:150px">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label">Logo</label>
+                                                            <div class="col-lg-4">
+                                                                <img src="assets/images/propertygaga/pg-inv-logo.png" alt="" class="img-fluid" />
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="uil uil-multiply"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"></label>
+                                                            <div class="col-lg-6">
+                                                                <span class="help-block"><small>Appears on each financial document for templates with a logo.</small></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label"></label>
+                                                            <div class="col-lg-5">
+                                                                <input type="file" class="form-control" id="example-fileinput">
+                                                                <span class="help-block"><small>Maximum file size: 5MB</small></span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="form-group row mb-3">
+                                                            <label class="col-lg-3 col-form-label">Accent Color</label>
+                                                            <div class="col-lg-5">
+                                                                <div id="component-colorpicker" class="input-group"
+                                                                    title="Using format option">
+                                                                    <input type="text" class="form-control input-lg"
+                                                                        value="#1967ca" />
+                                                                    <span class="input-group-append">
+                                                                        <span
+                                                                            class="input-group-text colorpicker-input-addon"><i></i></span>
+                                                                    </span>
+                                                                </div>
+                                                                <span class="help-block"><small>Choose an accent colour to use
+                                                                        in the invoice.</small></span>
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </form>
+        
+                                            <div class="float-right mt-3 mb-3">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1"
+                                                    onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1"
+                                                    onclick="location.href='';">Save</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="invoice">
+                                            <form class="form-horizontal">
+                                                <div class="row mt-3" style="min-height:150px">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label">Template</label>
+                                                            <div class="col-lg-3 bg-color-grayLight rounded-5 m-2">
+                                                                <div class="custom-control custom-radio mt-3">
+                                                                    <input type="radio" id="customRadio1" name="customRadio"
+                                                                        class="custom-control-input" checked>
+                                                                    <label class="custom-control-label font-weight-normal"
+                                                                        for="customRadio1">Modern</label>
+                                                                    <br>
+                                                                    <a href="" data-toggle="modal" data-target="#popuptemplate-invmodern"><img src="assets/images/propertygaga/invoice-modern.png" alt="" class="img-fluid ml-0 mr-0 mb-3 mt-3" /></a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="col-lg-3 bg-color-grayLight rounded-5 m-2">
+                                                                    <div class="custom-control custom-radio mt-3">
+                                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                                        <label class="custom-control-label font-weight-normal" for="customRadio1">Modern</label>
+                                                                        <br>
+                                                                        <img src="assets/images/propertygaga/invoice-modern.png" alt="" class="img-fluid ml-0 mr-0 mb-3 mt-3" />
+                                                                    </div>
+                                                                </div> -->
+                                                        </div>
+                                                        <div class="form-group row mb-3">
+                                                            <label class="col-lg-3 col-form-label">Notes / Terms</label>
+                                                            <div class="col-lg-9">
+                                                                <textarea class="form-control" rows="10" id="example-textarea">Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this invoice will be deemed correct. You may ignore this invoice if your payment has already been made.
+                                                                
+Please make payment with a crossed cheque to "EADProperty Management Sdn Bhd"
+Bank Name: CIMB 801-009-6393
+1) Payment is due on the last day of the month upon receiving of invoice.
+2) Interest at the rate of 1.5% per month may be charged on overdue accounts.
+3) Any legal costs and expenses incurred as a result of your delayed payment shall be borne by you.</textarea>
+                                                                <span class="help-block"><small>Appears on each Invoice. You can choose to override it when you create an invoice.</small></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="float-right mt-3 mb-3">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1"
+                                                    onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1"
+                                                    onclick="location.href='';">Save</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="receipt">
+                                            <form class="form-horizontal">
+                                                <div class="row mt-3" style="min-height:150px">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label">Template</label>
+                                                            <div class="col-lg-3 bg-color-grayLight rounded-5 m-2">
+                                                                <div class="custom-control custom-radio mt-3">
+                                                                    <input type="radio" id="customRadio-r1" name="customRadio"
+                                                                        class="custom-control-input" checked>
+                                                                    <label class="custom-control-label font-weight-normal"
+                                                                        for="customRadio-r1">Contemporary</label>
+                                                                    <br>
+                                                                    <a href="" data-toggle="modal" data-target="#popuptemplate-rcontem"><img src="assets/images/propertygaga/receipt-contemporary.png" alt="" class="img-fluid ml-0 mr-0 mb-3 mt-3" /></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-3">
+                                                            <label class="col-lg-3 col-form-label">Note</label>
+                                                            <div class="col-lg-9">
+                                                                <textarea class="form-control" rows="5" id="example-textarea">This official receipt is only valid upon clearance of the transaction</textarea>
+                                                                <span class="help-block"><small>Appears on each receipt. You can choose to override it when you create a receipt.</small></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="float-right mt-3 mb-3">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1"
+                                                    onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1"
+                                                    onclick="location.href='';">Save</button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="paymentvoucher">
+                                            <form class="form-horizontal">
+                                                <div class="row mt-3" style="min-height:150px">
+                                                    <div class="col">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label">Template</label>
+                                                            <div class="col-lg-3 bg-color-grayLight rounded-5 m-2">
+                                                                <div class="custom-control custom-radio mt-3">
+                                                                    <input type="radio" id="customRadio-r1" name="customRadio"
+                                                                        class="custom-control-input" checked>
+                                                                    <label class="custom-control-label font-weight-normal"
+                                                                        for="customRadio-r1">Modern</label>
+                                                                    <br>
+                                                                    <a href="" data-toggle="modal" data-target="#popuptemplate-pvmodern"><img src="assets/images/propertygaga/pv-modern.png" alt="" class="img-fluid ml-0 mr-0 mb-3 mt-3" /></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="float-right mt-3 mb-3">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1"
+                                                    onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1"
+                                                    onclick="location.href='';">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card-->
+                        </div><!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                </div> <!-- container-fluid -->
+
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+        <!-- pop up template-->
+        <div class="modal fade" id="popuptemplate-rcontem" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Template: Contemporary</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="assets/images/propertygaga/receipt-contemporary.png" class="img-fluid border-grayform">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pop up template end -->
+
+        <!-- pop up template-->
+        <div class="modal fade" id="popuptemplate-pvmodern" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Template: Modern</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="assets/images/propertygaga/pv-modern.png" class="img-fluid border-grayform">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pop up template end -->
+
+        <!-- pop up template-->
+        <div class="modal fade" id="popuptemplate-invmodern" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Template: Modern</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="assets/images/propertygaga/invoice-modern.png" class="img-fluid border-grayform">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pop up template end -->
+
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/right-sidebar.html')
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- <script>
+            $("#demo").zInput();
+        </script>
+             -->
+    <script src="assets/libs/zInput/zInput.js"></script>
+
+
+    <script>
+        $(function () {
+
+            $("input[name='css_selector']").change(function () {
+                $newStyle = $(this).attr("value");
+                $('#stylesheet').attr("href", $newStyle);
+            });
+
+        });
+    </script>
+
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+        });
+
+        $("#affected").zInput();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6 mb-2">
+                                <h3 class="mb-1 mt-0">Invoice:&nbsp;&nbsp;INV-20231234</h3>
+                                <span class="badge badge-danger width-sm mr-2">Overdue</span>
+                                <small>Overdue by 15 days</small>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <button type="submit" class="btn btn-primary btn-rounded" onclick="location.href='invoices-invoice-recurring-overdue-preview.html';">Preview</button>
+                                <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu"> 
+                                        <a class="dropdown-item" href="record-payment-new.html">Record Payment</a>
+                                        <a class="dropdown-item" href="#">Save as PDF</a>
+                                        <a class="dropdown-item" href="#">Send Email</a>
+                                        <a class="dropdown-item" href="#">Share Invoice Link</a>                                        
+                                        <a class="dropdown-item" href="#">Void</a>
+                                    </div>
+                                </div><!-- /btn-group -->
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="file"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Invoice Details</h4>
+                                                                <span class="text-muted font-size-13 font-weight-normal">Created by Andy Lim on 23 Apr 2023</span> <a href="" class="ml-2 font-weight-medium" data-toggle="modal" data-target="#createlog">more</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form class="form-horizontal">
+                                                                            <div class="row">
+                                                                                <div class="col">
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-lg-3 col-form-label">Unit No.</label>
+                                                                                        <div class="col-lg-9">
+                                                                                            <select data-plugin="customselect" class="form-control">
+                                                                                                <option value="0">Select Unit No.</option>
+                                                                                                <option value="1">All Units</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4" selected>8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-lg-3 col-form-label"
+                                                                                            for="example-date">Due Date</label>
+                                                                                        <div class="col-lg-9 align-self-center">
+                                                                                            <select class="form-control custom-select">
+                                                                                                <option></option>
+                                                                                                <option value="1">every 15 days</option>
+                                                                                                <option value="1">every 30 days</option>
+                                                                                                <option value="1">every 45 days</option>
+                                                                                                <option value="1">end of the month</option>
+                                                                                                <option value="1">end of next month</option>
+                                                                                                <option value="1">on Receipt</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-lg-3 col-form-label"
+                                                                                            for="example-date">Inv. No.</label>
+                                                                                        <div class="col-lg-9 align-self-center">
+                                                                                            <input class="form-control" id="" type="text"
+                                                                                                name="" value="20231234" disabled>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-lg-3 col-form-label"
+                                                                                            for="example-date">Inv. Date</label>
+                                                                                        <div class="col-lg-9 align-self-center">
+                                                                                            <input class="form-control" id="example-date" type="date" name="date">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                
+                                                                        <div class="card mt-3">
+                                                                            <div class="card-body p-0">
+                                                                                <div class="table-responsive">
+                                                                                    <table class="table table-centered m-0">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th width="25%"></th>
+                                                                                                <th width="24%">Description</th>
+                                                                                                <th width="10%">Qty.</th>
+                                                                                                <th width="14%">Price (RM)</th>
+                                                                                                <th width="14%">Tax (RM)</th>
+                                                                                                <th width="11%">Amt. (RM)</th>
+                                                                                                <th width="2%"></th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Category</option>
+                                                                                                            <option value="1" selected>Signboard</option>
+                                                                                                            <option value="2">Adv Maintenance Charges</option>
+                                                                                                            <option value="3">Adv Sinking Fund</option>
+                                                                                                            <option value="4">Prepaid Income</option>
+                                                                                                            <option>Singking Fund</option>
+                                                                                                            <option>Fix Deposit Interest</option>
+                                                                                                            <option>Insurance</option>
+                                                                                                            <option>Interest</option>
+                                                                                                            <option>Legal Fees</option>
+                                                                                                            <option>Maintenance Fees</option>
+                                                                                                            <option>Outstanding Balance</option>
+                                                                                                            <option>Quit Rent</option>
+                                                                                                            <option>Reimbursement of Elec</option>
+                                                                                                            <option>Utilities</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Sub Category</option>
+                                                                                                            <option value="1">Accumulated Depreciation</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <textarea class="form-control" rows="4" id="example-textarea"></textarea>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="1">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="" placeholder="Price">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td class="align-right">
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        4,597.50
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded"><i class='uil uil-trash-alt'></i></button>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="7"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="3"></td>
+                                                                                                <td colspan="2" class="align-right font-weight-bold">Total:</td>
+                                                                                                <td class="align-right font-weight-bold">4,597.50</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="3"></td>
+                                                                                                <td colspan="2" class="align-right font-weight-bold">Payment Made:</td>
+                                                                                                <td class="align-right font-weight-bold">- 4,000</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="3"></td>
+                                                                                                <td colspan="2" class="align-right font-weight-bold">Credits Applied:</td>
+                                                                                                <td class="align-right font-weight-bold">- 200.00</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="3"></td>
+                                                                                                <td colspan="2" class="align-right font-weight-bold">Balance Due:</td>
+                                                                                                <td class="align-right font-weight-bold">397.50</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <label class="col-lg-12 col-form-label"
+                                                                                for="">Notes / Terms</label>
+                                                                            <div class="col-lg-12">
+                                                                                <textarea class="form-control" rows="10" id="example-textarea">
+Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this invoice will be deemed correct. You may ignore this invoice if your payment has already been made.
+                                                                
+Please make payment with a crossed cheque to "EADProperty Management Sdn Bhd"
+Bank Name: CIMB 801-009-6393
+1) Payment is due on the last day of the month upon receiving of invoice.
+2) Interest at the rate of 1.5% per month may be charged on overdue accounts.
+3) Any legal costs and expenses incurred as a result of your delayed payment shall be borne by you.
+                                                                                </textarea>
+                                                                            </div>
+                                                                        </div>
+                                            
+                                                                    </div> <!-- end card-body -->
+                                                                </div> <!-- end card-->
+
+                                                                <div class="float-right">
+                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="">Save</button>
+                                                                </div>
+
+                                                            </div><!-- end col -->
+                                                        </div>
+                                                        <!-- end row -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-0 p-0">
+                                            <div class="col-lg-1 border-left-gray400 ml-5" style="margin-top: -25px">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body pb-0">
+                                                        
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="alert-circle"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Late Payment Interest</h4>
+                                                                <span class="text-muted font-size-13 font-weight-normal">% p.a is 10%</span>
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <!-- <div class="col text-right">
+                                                                <a href="invoices-invoice-waive.html" class="btn btn-primary btn-rounded">Waive Interest</a>
+                                                            </div> -->
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-centered m-0">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th width="85%">Interest Date Range</th>
+                                                                                        <th width="15%" class="align-right">Total (RM)</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>16 Sep - 30 Sep 2022</td>
+                                                                                        <td class="align-right">7.50</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>1 Oct - 31 Oct 2022</td>
+                                                                                        <td class="align-right">15.50</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>1 Nov - 30 Nov 2022</td>
+                                                                                        <td class="align-right">15.00</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>1 Dec - 12 Dec 2022</td>
+                                                                                        <td class="align-right">6.00</td>
+                                                                                    </tr>
+                                                                                    <tr class="font-weight-semibold">
+                                                                                        <td class="align-right">Total</td>
+                                                                                        <td class="align-right">44.00</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-0 p-0">
+                                            <div class="col-lg-1 border-left-gray400 ml-5" style="margin-top: -25px">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body pb-0">
+                                                        
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="send"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Send Reminders</h4>
+                                                                <!-- <span class="text-muted font-size-13 font-weight-normal">Invoice resent by Andy Lim on 23 Mar 2023</span><a href="" class="ml-2 font-weight-medium" data-toggle="modal" data-target="#sendlog">more</a> -->
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <div class="col text-right">
+                                                               <!--  <a href="" class="btn btn-primary btn-rounded">Resend Invoice</a> <a href="" class="btn btn-primary btn-rounded">Send a Reminder</a> -->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <ul class="list-unstyled activity-widget ml-5 mr-5 pl-4 pr-4">
+                                                            <li class="activity-list pt-1 pb-1">
+                                                                <div class="media">
+                                                                    <div class="text-center mr-3">
+                                                                        <div class="avatar-sm">
+                                                                            <span class="avatar-title rounded-circle bg-soft-info text-color-black">09</span>
+                                                                        </div>
+                                                                        <p class="text-muted font-size-13 mb-0">Jan</p>
+                                                                    </div>
+                                                                    <div class="media-body overflow-hidden">
+                                                                        <h5 class="font-size-15 mt-2 mb-1"><a href="#"
+                                                                                class="text-dark">Invoice Notice</a></h5>
+                                                                        <p class="text-muted font-size-13 text-truncate mb-0">Sent by system</p>
+                                                                    </div>
+                                                                </div>
+                
+                                                            </li>
+                                                            <li class="activity-list pt-1 pb-1">
+                                                                <div class="media">
+                                                                    <div class="text-center mr-3">
+                                                                        <div class="avatar-sm">
+                                                                            <span
+                                                                                class="avatar-title rounded-circle bg-soft-info text-color-black">
+                                                                                10
+                                                                            </span>
+                                                                        </div>
+                                                                        <p class="text-muted font-size-13 mb-0">Jan</p>
+                                                                    </div>
+                                                                    <div class="media-body overflow-hidden">
+                                                                        <h5 class="font-size-15 mt-2 mb-1"><a href="#"
+                                                                                class="text-dark">Notice of Reminder (NOR) #1</a></h5>
+                                                                        <p class="text-muted font-size-13 text-truncate mb-0">Sent by system</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="activity-list pt-1 pb-1">
+                                                                <div class="media">
+                                                                    <div class="text-center mr-3">
+                                                                        <div class="avatar-sm">
+                                                                            <span
+                                                                                class="avatar-title rounded-circle bg-soft-info text-color-black">
+                                                                                11
+                                                                            </span>
+                                                                        </div>
+                                                                        <p class="text-muted font-size-13 mb-0">Feb</p>
+                                                                    </div>
+                                                                    <div class="media-body overflow-hidden">
+                                                                        <h5 class="font-size-15 mt-2 mb-1"><a href="#"
+                                                                                class="text-dark">Notice of Reminder (NOR) #2</a></h5>
+                                                                        <p class="text-muted font-size-13 text-truncate mb-0">Sent by system</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="activity-list pt-1 pb-1">
+                                                                <div class="media">
+                                                                    <div class="text-center mr-3">
+                                                                        <div class="avatar-sm">
+                                                                            <span
+                                                                                class="avatar-title rounded-circle bg-soft-danger text-color-black">
+                                                                                08
+                                                                            </span>
+                                                                            <span class="text-muted font-size-13 mb-0">Mar</span>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                    <div class="media-body overflow-hidden">
+                                                                        <h5 class="font-size-15 mt-2 mb-1"><a href="#"
+                                                                                class="text-dark">Notice of Demand (NOD)</a></h5>
+                                                                        <p class="text-muted font-size-13 text-truncate mb-0">Sent by Dee</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="activity-list pt-1 pb-1">
+                                                                <div class="media">
+                                                                    <div class="text-center mr-3">
+                                                                        <div class="avatar-sm">
+                                                                            <span class="avatar-title rounded-circle bg-soft-danger text-color-black">09</span>
+                                                                        </div>
+                                                                        <p class="text-muted font-size-13 mb-0">Apr</p>
+                                                                    </div>
+                                                                    <div class="media-body overflow-hidden">
+                                                                        <h5 class="font-size-15 mt-2 mb-1"><a href="#"
+                                                                                class="text-dark">Tribunal</a></h5>
+                                                                        <p class="text-muted font-size-13 text-truncate mb-0">Sent by system</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+
+                                                        <!-- <div class="row board mb-0 pt-4 pb-5 pl-3 pr-3 align-items-center text-center">
+                                                            <div class="col-auto d-inline p-1">
+                                                                <a href="#" class="btn btn-soft-dark" data-toggle="modal" data-target="#invoicenotice" style="min-height:85px">
+                                                                    <div class="lead">Invoice Notice</div>
+                                                                    <small class="text-muted">Sent by system on 3 Dec 2023</small>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto d-inline p-1">
+                                                                <a href="#" class="btn btn-soft-dark" data-toggle="modal" data-target="#firstReminder" style="min-height:85px">
+                                                                    <div class="lead">First Reminder</div>
+                                                                    <small class="text-muted">Sent by system on 3 Jan 2021</small>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-auto d-inline p-1">
+                                                                <a href="#" class="btn btn-soft-dark" data-toggle="modal" data-target="#secondReminder" style="min-height:85px">
+                                                                    <div class="lead">Second Reminder</div>
+                                                                    <small class="text-muted">Sent by Andy Lim on 1 Jan 2021</small>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="col-auto d-inline p-1">
+                                                                <a href="#" class="btn btn-soft-primary" data-toggle="modal" data-target="#NOD" style="min-height:85px">
+                                                                    <div class="lead">Notice of Demand</div>
+                                                                    <small class="text-muted">Notification scheduled to be sent<br>14 days after the second reminder</small>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="col-auto d-inline p-1">
+                                                                <a href="#" class="btn btn-soft-primary" data-toggle="modal" data-target="#tribunal" style="min-height:85px">
+                                                                    <div class="lead">Tribunal</div>
+                                                                    <small class="text-muted">Notification scheduled to be sent<br>14 days after Notice of Demand</small>
+                                                                </a>
+                                                            </div>
+
+                                                        </div> -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-0 p-0">
+                                            <div class="col-lg-1 border-left-gray400 ml-5" style="margin-top: -25px">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="dollar-sign"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Get Paid</h4>
+                                                                <span class="text-muted font-size-13 font-weight-normal">Amount Due: RM4,597.50</span>
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                <a href="record-payment-new.html" class="btn btn-primary btn-rounded">Record Payment</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="header-title mt-0 mb-4">Payment</h4>
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-centered m-0">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Processed</th>
+                                                                                        <th>Pymt. Acc.</th>
+                                                                                        <th>Pymt. Method</th>
+                                                                                        <th>Cheque #</th>
+                                                                                        <th>OR No.</th>
+                                                                                        <th class="align-right">Amt. (RM)</th>
+                                                                                        <th class="text-center">Status</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>15/10/2023</td>
+                                                                                        <td>37903384435</td>
+                                                                                        <td>Cheque</td>
+                                                                                        <td>3759626</td>
+                                                                                        <td>3574858</td>
+                                                                                        <td class="align-right">20,000.00</td>
+                                                                                        <td class="text-center"><span class="badge badge-success width-xs">Paid</span></td>
+                                                                                    </tr>
+                                                                                    <tr class="text-danger">
+                                                                                        <td>25/11/2023</td>
+                                                                                        <td>37903384435</td>
+                                                                                        <td>Online Transfer</td>
+                                                                                        <td>-</td>
+                                                                                        <td>3574858</td>
+                                                                                        <td class="align-right">60,000.00</td>
+                                                                                        <td class="text-center"><span class="badge badge-danger width-xs">Voided</span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div> <!-- end card-body -->
+                                                                </div> <!-- end card-->
+                                                            </div><!-- end col -->
+                                                        </div>
+                                                        <!-- end row -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row m-0 p-0">
+                                            <div class="col-lg-1 border-left-gray400 ml-5" style="margin-top: -25px">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body pb-0">
+                                                        
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="file-minus"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Credit Note</h4>
+                                                                <span class="text-muted font-size-13 font-weight-normal">Last issued by support on 3 Aug 2022</span>
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <!-- <div class="col text-right">
+                                                                <a href="invoices-invoice-creditnote-new.html" class="btn btn-primary btn-rounded">Create Credit Note</a>
+                                                            </div> -->
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-centered m-0">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Credit Note No.</th>
+                                                                                        <th>Credit Note Date</th>
+                                                                                        <th>Description</th>
+                                                                                        <th class="align-right">Credit Amt. (RM)</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td><a href="invoices-invoice-creditnote.html">CN245</a></td>
+                                                                                        <td>30 Sep 2023</td>
+                                                                                        <td>Maintenance Fee (Apr 2023)</td>
+                                                                                        <td class="align-right">200.00</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div> <!-- end card-body -->
+                                                                </div> <!-- end card-->
+                                                            </div><!-- end col -->
+                                                        </div>
+                                                        <!-- end row -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="row m-0 p-0">
+                                            <div class="col-lg-1 border-left-gray400 ml-5" style="margin-top: -25px">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="x-square"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Void</h4>
+                                                                <span class="text-muted font-size-13 font-weight-normal">Invoice voided by Andy Lim on 23 Jul 2023</span>
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <div class="col text-right">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <!-- modal updatefirstpayment -->
+                        <div class="modal fade" id="updatefirstpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Record 1st Payment</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Payment Method</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio2" name="customRadio"
+                                                                            class="custom-control-input" checked disabled>
+                                                                        <label class="custom-control-label" for="customRadio2">Cash</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio2" name="customRadio"
+                                                                            class="custom-control-input" disabled>
+                                                                        <label class="custom-control-label" for="customRadio2">Online Transfer</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="customRadio2" name="customRadio"
+                                                                            class="custom-control-input" disabled>
+                                                                        <label class="custom-control-label" for="customRadio1">Cheque</label>
+                                                                        <div class="form-group">
+                                                                            <input type="text" id="" name="" class="form-control col-6" value="" placeholder="Cheque No." disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Amount (RM)</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id="simpleinput"
+                                                                value="RM20,000.00" disabled>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-email">Payment Account</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select" disabled>
+                                                                <option>Select Payment Account</option>
+                                                                <option>EAD Current Bank (MYR)</option>
+                                                                <option selected>37903384435</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Processed On</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date" value="30 Sep 2023" disabled>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group row border-bottom-gray400">
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Payment Status</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="disabled">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio3" name="customRadio3"
+                                                                            class="custom-control-input" checked disabled>
+                                                                        <label class="custom-control-label" for="customRadio3">Paid</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio3" name="customRadio3"
+                                                                            class="custom-control-input" disabled>
+                                                                        <label class="custom-control-label" for="customRadio3">Unpaid</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">OR No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input type="text" class="form-control" id=""
+                                                                value="3574457" disabled>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group row border-bottom-gray400">
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Notes</label>
+                                                        <div class="col-lg-8">
+                                                        <textarea class="form-control" rows="2"
+                                                        id="example-textarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-outline-danger btn-rounded width-sm">Void</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal preview Invoice Notice-->
+                        <div class="modal fade" id="invoicenotice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Invoice Notice</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card pb-2">
+                                                    <div class="card-body">
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Header</div>
+                                                            <div class="col-md-10">
+                                                                Badan Pengurusan Bersama Sierra East
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Email Subject:</div>
+                                                            <div class="col-md-10">Invoice Notice for 1A3-08-08:  #20231234</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 font-weight-bold">Message:</div>
+                                                            <div class="col-md-10">
+                                                                Dear Susan Teh,
+                                                                <br /><br />
+                                                                Enclosed is a bill for your kind attention:
+                                                                <br /><br />
+                                                                Acc. ID / Unit No.: 1A3-08-08<br />
+                                                                Bill #20040100<br />
+                                                                Bill Date: 1 Apr 2023<br />
+                                                                Due Date: 7-Jun-2023
+                                                                <br /><br />
+                                                                Kindly make full payment before the due date in order to avoid any overdue interest charges.
+                                                                <br /><br />
+                                                                Thank you.
+                                                                <br /><br />
+                                                                Badan Pengurusan Bersama Big Place<br />
+                                                                04-2966 114 / 016 2956 6114<br />
+                                                                bigplace.mgt@gmail.com
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Notes</div>
+                                                            <div class="col-md-10">
+                                                                1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
+<br><br>
+2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+<br><br>
+Email: sierraeast.mgmt@gmail.com
+<br>
+Tel: 04-12345679
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">E & O.E.</div>
+                                                            <div class="col-md-10">
+                                                                <ol class="m-0">
+                                                                    <li>
+                                                                        Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
+                                                                    </li>
+                                                                    <li>
+                                                                        Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
+                                                                    </li>
+                                                                    <li>
+                                                                        Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
+                                                                    </li>
+                                                                    <li>
+                                                                        All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
+                                                                    </li>
+                                                                    <li>
+                                                                        Payment can be made during office hours at our site management office.
+                                                                    </li>
+                                                                    <li>
+                                                                        Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+                                                                        <br>
+                                                                        Email: sierraeast.mgmt@gmail.com
+                                                                        <br>
+                                                                        Tel: 04-12345679
+                                                                    </li>
+                                                                    <li>
+                                                                        Kindly ignore this statement if payment has been made.
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end card-->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="float-left">
+                                                            <small class="text-muted">Sent by system on 3 Dec 2023</small>
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Resend Invoice</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div><!-- end col-->
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal preview First Reminder -->
+                        <div class="modal fade" id="firstReminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">First Reminder</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card pb-2">
+                                                    <div class="card-body">
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Header</div>
+                                                            <div class="col-md-10">
+                                                                Badan Pengurusan Bersama Sierra East
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Email Subject:</div>
+                                                            <div class="col-md-10">First Reminder for Bill #20231234</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 font-weight-bold">Message:</div>
+                                                            <div class="col-md-10">
+                                                                Dear Susan Teh,
+                                                                <br /><br />
+                                                                This is a First Reminder that Bill #20231234 issued on May 15, 2023 is overdue. This bill was due on May 30, 2023. Please make payment immediately.
+                                                                <br /><br />
+                                                                Thank you.
+                                                                <br /><br />
+                                                                Badan Pengurusan Bersama Big Place<br />
+                                                                04-2966 114 / 016 2956 6114<br />
+                                                                bigplace.mgt@gmail.com
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Notes</div>
+                                                            <div class="col-md-10">
+                                                                1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
+<br><br>
+2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+<br><br>
+Email: sierraeast.mgmt@gmail.com
+<br>
+Tel: 04-12345679
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">E & O.E.</div>
+                                                            <div class="col-md-10">
+                                                                <ol class="m-0">
+                                                                    <li>
+                                                                        Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
+                                                                    </li>
+                                                                    <li>
+                                                                        Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
+                                                                    </li>
+                                                                    <li>
+                                                                        Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
+                                                                    </li>
+                                                                    <li>
+                                                                        All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
+                                                                    </li>
+                                                                    <li>
+                                                                        Payment can be made during office hours at our site management office.
+                                                                    </li>
+                                                                    <li>
+                                                                        Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+                                                                        <br>
+                                                                        Email: sierraeast.mgmt@gmail.com
+                                                                        <br>
+                                                                        Tel: 04-12345679
+                                                                    </li>
+                                                                    <li>
+                                                                        Kindly ignore this statement if payment has been made.
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end card-->
+                                                
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="float-left">
+                                                            <small class="text-muted">Sent by system on 3 Jan 2021</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- end col-->
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal preview Second Reminder -->
+                        <div class="modal fade" id="secondReminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Second Reminder</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card pb-2">
+                                                    <div class="card-body">
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Header</div>
+                                                            <div class="col-md-10">
+                                                                Badan Pengurusan Bersama Sierra East
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Email Subject:</div>
+                                                            <div class="col-md-10">Second Reminder for Bill #20231234</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 font-weight-bold">Message:</div>
+                                                            <div class="col-md-10">
+                                                                Dear Susan Teh,
+                                                                <br /><br />
+                                                                This is a Second Reminder that Bill #20231234 issued on May 15, 2023 is overdue. This bill was due on May 30, 2023. Please make payment as soon as possible.
+                                                                <br /><br />
+                                                                Thank you.
+                                                                <br /><br />
+                                                                Badan Pengurusan Bersama Big Place<br />
+                                                                04-2966 114 / 016 2956 6114<br />
+                                                                bigplace.mgt@gmail.com
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Notes</div>
+                                                            <div class="col-md-10">
+                                                                1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
+<br><br>
+2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+<br><br>
+Email: sierraeast.mgmt@gmail.com
+<br>
+Tel: 04-12345679
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">E & O.E.</div>
+                                                            <div class="col-md-10">
+                                                                <ol class="m-0">
+                                                                    <li>
+                                                                        Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
+                                                                    </li>
+                                                                    <li>
+                                                                        Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
+                                                                    </li>
+                                                                    <li>
+                                                                        Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
+                                                                    </li>
+                                                                    <li>
+                                                                        All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
+                                                                    </li>
+                                                                    <li>
+                                                                        Payment can be made during office hours at our site management office.
+                                                                    </li>
+                                                                    <li>
+                                                                        Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+                                                                        <br>
+                                                                        Email: sierraeast.mgmt@gmail.com
+                                                                        <br>
+                                                                        Tel: 04-12345679
+                                                                    </li>
+                                                                    <li>
+                                                                        Kindly ignore this statement if payment has been made.
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end card-->
+                                                
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="float-left">
+                                                            <small class="text-muted">Sent by Andy Lim on 1 Jan 2021</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- end col-->
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal preview NOD -->
+                        <div class="modal fade" id="NOD" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Notice of Demand</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card pb-2">
+                                                    <div class="card-body">
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Header</div>
+                                                            <div class="col-md-10">
+                                                                Badan Pengurusan Bersama Sierra East
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Email Subject:</div>
+                                                            <div class="col-md-10">Notice of Demand for Bill #20231234</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 font-weight-bold">Message:</div>
+                                                            <div class="col-md-10">
+                                                                Dear Susan Teh,
+                                                                <br /><br />
+                                                                This is a Notice of Demand that Bill #20231234 issued on May 15, 2023 is overdue. This bill was due on May 30, 2023. Please make payment immediately.
+                                                                <br /><br />
+                                                                Thank you.
+                                                                <br /><br />
+                                                                Badan Pengurusan Bersama Big Place<br />
+                                                                04-2966 114 / 016 2956 6114<br />
+                                                                bigplace.mgt@gmail.com 
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">Notes</div>
+                                                            <div class="col-md-10">
+                                                                1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
+<br><br>
+2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+<br><br>
+Email: sierraeast.mgmt@gmail.com
+<br>
+Tel: 04-12345679
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 mt-2">
+                                                            <div class="col-md-2 font-weight-bold">E & O.E.</div>
+                                                            <div class="col-md-10">
+                                                                <ol class="m-0">
+                                                                    <li>
+                                                                        Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
+                                                                    </li>
+                                                                    <li>
+                                                                        Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
+                                                                    </li>
+                                                                    <li>
+                                                                        Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
+                                                                    </li>
+                                                                    <li>
+                                                                        All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
+                                                                    </li>
+                                                                    <li>
+                                                                        Payment can be made during office hours at our site management office.
+                                                                    </li>
+                                                                    <li>
+                                                                        Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+                                                                        <br>
+                                                                        Email: sierraeast.mgmt@gmail.com
+                                                                        <br>
+                                                                        Tel: 04-12345679
+                                                                    </li>
+                                                                    <li>
+                                                                        Kindly ignore this statement if payment has been made.
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end card-->
+                                                
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="float-left">
+                                                            <small class="text-muted">Notification scheduled to be sent 14 days after the second reminder</small>
+                                                            <!-- NOD will be automatically sent by system on 14 Jan 2021, you can choose to send manually by clicking the "Send Manually" button -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- end col-->
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- modal preview tribunal -->
+                        <div class="modal fade" id="tribunal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Tribunal</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        tribunal
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal create log -->
+            <div class="modal fade" id="createlog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Invoice Change Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>Edited by Andy Lim on 23 Apr 2023</div>
+                            <div>Created by Andy Lim on 23 Apr 2023</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal create log end -->
+
+            <!-- modal send log -->
+            <div class="modal fade" id="sendlog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Send Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>Invoice resent by Andy Lim on 23 Mar 2023</div>
+                            <div>Invoice sent by Andy Lim on 23 Apr 2023</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal send log end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

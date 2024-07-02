@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Booking</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='inventory-booking-add.html';"><i class="uil-plus mr-1"></i>Add New Booking</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#assets" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Assets</span>
+                                                    <span class="d-none d-sm-block">Assets</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#consumableitems" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Consumable Items</span>
+                                                    <span class="d-none d-sm-block">Consumable Items</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-3 text-muted">
+                                            <div class="tab-pane show active" id="assets">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-2">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">Status</option>
+                                                                        <option value="1">Available</option>
+                                                                        <option>Maintenance</option>
+                                                                        <option value="2">Booked</option>
+                                                                        <option>Booking Overdue</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Assets</option>
+                                                                        <option value="1">Swimming Pool Pump #1</option>
+                                                                        <option value="2">Swimming Pool Pump #2</option>
+                                                                        <option value="3">Barrier Gate</option>
+                                                                        <option value="4">Water Pump #1</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Status</th>
+                                                                <th>Booking ID</th>
+                                                                <th>Category</th>
+                                                                <th>Asset No.</th>
+                                                                <th>Asset Name</th>
+                                                                <th>Book By</th>
+                                                                <th>Book To</th>
+                                                                <th>Book From</th>
+                                                                <th>Return Date</th>
+                                                                <th class="text-right">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="badge badge-soft-primary badge-pill">Reserved</span></td>
+                                                                <!-- <td><a href="#" class="btn btn-sm btn-outline-primary btn-rounded" data-toggle="modal" data-target="#info-booked">Booked <i class="uil uil-info mr-0"></i></a></td> -->
+                                                                <td><a href="inventory-booking-reserved.html">IB123</a></td>
+                                                                <td>Pumps &amp; Motors</td>
+                                                                <td>001</td>
+                                                                <td>Swimming Pool Pump #1</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td></td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-reserved.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-overdue.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#pickup">Pick Up</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="">Cancel Booking</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span class="badge badge-primary badge-pill">Booked</span></td>
+                                                                <!-- <td><a href="#" class="btn btn-sm btn-outline-primary btn-rounded" data-toggle="modal" data-target="#info-booked">Booked <i class="uil uil-info mr-0"></i></a></td> -->
+                                                                <td><a href="inventory-booking-booked.html">IB123</a></td>
+                                                                <td>Small Tools</td>
+                                                                <td>002</td>
+                                                                <td>19" Toolbox</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td>3 Mar 2022, 1:30pm</td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-booked.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-overdue.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#return">Return</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="table-danger">
+                                                                <td><span class="badge badge-danger badge-pill">Overdue</span></td>
+                                                                <!-- <td><a href="#" class="btn btn-sm btn-outline-danger btn-rounded" data-toggle="modal" data-target="#info-overdue">Overdue <i class="uil uil-info mr-0"></i></a></td> -->
+                                                                <td><a href="inventory-booking-overdue.html">IB123</a></td>
+                                                                <td>Others</td>
+                                                                <td>001</td>
+                                                                <td>12 Steps Ladder</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td>3 Mar 2022, 1:30pm	</td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-overdue.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-overdue.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#return">Return</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>       
+                                                            <tr>
+                                                                <td><span class="badge badge-primary badge-pill">Booked</span></td>
+                                                                <!-- <td><a href="#" class="btn btn-sm btn-outline-primary btn-rounded" data-toggle="modal" data-target="#info-booked">Booked <i class="uil uil-info mr-0"></i></a></td> -->
+                                                                <td><a href="inventory-booking-booked.html">IB123</a></td>
+                                                                <td>Upgrading Works</td>
+                                                                <td>001</td>
+                                                                <td>Maintenance Tools</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td>3 Mar 2022, 1:30pm</td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-booked.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-overdue.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#return">Return</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>                                             
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="consumableitems">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Items</option>
+                                                                        <option value="1">Joint Pin - MS1462 - 36mm x 215mm x 2.2mm</option>
+                                                                        <option value="2">Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM	</option>
+                                                                        <option value="3">Jack Base - 600mm x 32mm</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Status</th>
+                                                                <th>Booking ID</th>
+                                                                <th>Category</th>
+                                                                <th>Asset Name</th>
+                                                                <th class="text-center">Qty. Booked</th>
+                                                                <th class="text-center">Available</th>
+                                                                <th>Book By</th>
+                                                                <th>Book To</th>
+                                                                <th>Book Date</th>
+                                                                <th class="text-right">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="badge badge-soft-primary badge-pill">Reserved</span></td>
+                                                                <td><a href="inventory-booking-consumable-reserved.html">IB123</a></td>
+                                                                <td>Small Tools</td>
+                                                                <td>Joint Pin - MS1462 - 36mm x 215mm x 2.2mm</td>
+                                                                <td class="text-center">3</td>
+                                                                <td class="text-center">10</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-reserved.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-consumable-reserved.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#pickup-consume">Pick Up</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="">Cancel Booking</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span class="badge badge-primary badge-pill">Booked</span></td>
+                                                                <td><a href="inventory-booking-consumable.html">IB123</a></td>
+                                                                <td>Small Tools</td>
+                                                                <td>Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM</td>
+                                                                <td class="text-center">3</td>
+                                                                <td class="text-center">20</td>
+                                                                <td>Soo</td>
+                                                                <td>Handyman1</td>
+                                                                <td>30 Feb 2022, 1:30pm</td>
+                                                                <td width="15%" class="text-right">
+                                                                    <!-- <a href="inventory-booking-reserved.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="inventory-booking-consumable.html">Edit</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#email">Send Email</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>                                          
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+           <!-- return  -->
+           <div class="modal fade" id="return" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Return Booking</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Return By</label>
+                                    <select class="form-control wide" data-plugin="customselect">
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Notes</label>
+                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- return end -->
+
+            <!-- Pick Up  -->
+           <div class="modal fade" id="pickup" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Pick Up Asset</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Pick Up By</label>
+                                    <select class="form-control wide" data-plugin="customselect">
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Pick Up end -->
+
+            <!-- Pick Up consumable  -->
+           <div class="modal fade" id="pickup-consume" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Pick Up Consumable Item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Pick Up By</label>
+                                    <select class="form-control wide" data-plugin="customselect">
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 1</option>
+                                        <option>Handyman 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Pick Up consumable end -->
+
+            <!-- Send email  -->
+            <div class="modal fade" id="email" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modaldialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Reminder Email</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input type="radio" id="customRadio1" name="customRadio"
+                                                class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="customRadio1">Booking Reminder (To: Asset Booked To; CC: Booker)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio2" name="customRadio"
+                                                class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio2">Booking Reminder (To: Building Manager; CC: Asset Booked To / Booker)</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Send Email</button>
+                                    </div>
+                                    
+                                    <div class="table-responsive mt-4">
+                                        <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sent To</th>
+                                                    <th>CC To</th>
+                                                    <th>Sent Date/ Time</th>
+                                                    <th>Sent By</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Handyman 1</td>
+                                                    <td>Mr Gan</td>
+                                                    <td>3 Feb 2023, 2:40pm</td>
+                                                    <td>Tammy</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Email end -->
+
+            <!-- inventory booking -->
+            <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Book Asset</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Category</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Operating Equipment</option>
+                                            <option>Computer</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Assets</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>002 - 19" Toolbox</option>
+                                            <option>003 - 12 Steps Ladder</option>
+                                            <option>004 - 10" Spanner</option>
+                                            <option>005 - 12" Frame Hacksaw</option>
+                                            <option>006 - 12" Pipe Wrench</option>
+                                            <option>007 - 12" Spanner</option>
+                                            <option>008 - 14" Pipe Wrench</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-2">
+                                    <img src="assets/images/propertygaga/19Toolbox.png" class="responsiveimg mb-3">
+                                </div>
+                                <!-- <div class="col-xl-3">
+                                    <div class="form-group text-center">
+                                        <label>Total</label>
+                                        <input type="text" class="form-control text-center" id="simpleinput" value="2" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group text-center">
+                                        <label>Available</label>
+                                        <input type="text" class="form-control text-center" id="simpleinput" value="1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4">
+                                    <div class="form-group text-center">
+                                        <label>To Book</label>
+                                        <input class="text-center" data-toggle="touchspin" type="text">
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="card bg-color-propertygagaLightest border-gray-light mb-3">
+                                <div class="card-body p-2">
+                                    <div class="row font-sm text-color-black">
+                                        <div class="col col-lg-12 text-center">
+                                            Available <span class="font-weight-bold">ACCEPT</span><br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                            from 30 Feb 2023, 1:30pm	to 3 Mar 2023, 1:30pm; <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Book From</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Return Date</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Book Assets to</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Me</option>
+                                            <option>Handyman 1</option>
+                                            <option>Handyman 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Tasks</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option>Select Task</option>
+                                            <option>OT044 - Task subject</option>
+                                            <option>OT022 - Water ponding on facility floor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <select class="form-control wide" data-plugin="customselect">
+                                            <option selected>Office 0</option>
+                                            <option>Office 1</option>
+                                            <option>Office 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Notes</label>
+                                        <textarea class="form-control" rows="2" id="example-textarea">Write something...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inventory booking end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

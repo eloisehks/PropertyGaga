@@ -30,14 +30,14 @@
 
     </head>
 
-    <body>
+    <body class="left-side-menu-dark">
 
         <!-- Begin page -->
         <div id="wrapper">
 
-            @@include('./partials/topbar.html')
+            @@include('./partials/topbar-occupant.html')
 
-            @@include('./partials/left-sidebar.html')
+            @@include('./partials/left-sidebar-occupant.html')
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -53,8 +53,6 @@
                                 <h3 class="mb-3 mt-0">Visitor</h3>     
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
-                                <div class="mt-4 mt-md-0">
-                                </div>
                             </div>
                         </div>
 
@@ -84,8 +82,8 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body text-center p-3">
-                                        <h5><div class="mb-2"><i class="uil-exclamation-circle font-size-20 mr-1 text-danger"></i></div>You have a New Visitor Registration Approval Request from Security Department</h5>
-                                        <div class="row width-md">
+                                        <h5 class="text-danger"><i class="uil-exclamation-circle font-size-20 mr-1"></i>You have a New Visitor Registration Approval Request from Security Department</h5>
+                                        <div class="row width-md mb-2">
                                             <div class="col-lg-6 col-sm-12 text-md-right">
                                                 Visitor: Wendy (012 345 6789)
                                             </div>
@@ -93,7 +91,7 @@
                                                 Date: 7 Jan 2022
                                             </div>
                                         </div>
-                                        <div class="margin-auto"><button type="submit" class="btn btn-success btn-rounded mb-3 mt-3" data-toggle="modal" data-target="#acceptrequest"><i class="uil-check"></i> ACCEPT REQUEST</button></div>
+                                        <div class="margin-auto"><button type="submit" class="btn btn-danger btn-sm btn-rounded mb-3" data-toggle="modal" data-target="#acceptrequest">Check out who is your visitor <i class="uil-smile-wink align-self-center"></i></button></div>
                                     </div> <!-- end card body-->
                                 </div> <!-- end card -->
                             </div><!-- end col-->
@@ -104,7 +102,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body text-center p-3">
-                                        <h5>You have 1 active visitor parking booking on 15 Dec 2021</h5>
+                                        <h5 class="text-color-greenBright">You have 1 active visitor parking booking on 15 Dec 2021</h5>
                                         <p class="text-dark bold">Parking Lot Name 3</p>
                                         <div class="row">
                                             <div class="col-lg-4 col-sm-4">
@@ -141,7 +139,7 @@
                                                 Visitor: Wendy (012 345 6789)
                                             </div> -->
                                         </div>
-                                        <div class="margin-auto"><button type="submit" class="btn btn-primary btn-rounded mb-3 mt-2" onclick="location.href='occupant-visitor-edit.html';"><i class="uil-check"></i> Edit</button></div>
+                                        <div class="margin-auto"><a href="occupant-visitor-edit.html" class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div>
 
                                     </div> <!-- end card body-->
                                 </div> <!-- end card -->
@@ -161,91 +159,90 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal accept request address-->
-            <div class="modal fade" id="acceptrequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Request</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-color-black">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Visitor
-                                </div>
-                                <div class="col-lg-8">
-                                    Wendy (012 345 6789)
-                                </div>
+            <!-- modal accept request -->
+        <div class="modal fade" id="acceptrequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Request for Parking Lot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Visitor
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Date
-                                </div>
-                                <div class="col-lg-8">
-                                    7 Jan 2022
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Note
-                                </div>
-                                <div class="col-lg-8">
-                                    -
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Need a parking?
-                                </div>
-                                <div class="col-lg-8">
-                                    Yes
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Car Plate No.
-                                </div>
-                                <div class="col-lg-8">
-                                    PPP 3546
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Parking Type
-                                </div>
-                                <div class="col-lg-8">
-                                    Visitor Parking
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Parking Lot
-                                </div>
-                                <div class="col-lg-8">
-                                    Parking Lot Name 2
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    Parking Slot
-                                </div>
-                                <div class="col-lg-8">
-                                    Slot 7, Slot 8, Slot 9
-                                </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                Wendy (012 345 6789)
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Accept Request Now</button>
-                            
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Date
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                7 Jan 2022
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Note
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                -
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Need a parking?
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                Yes
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Car Plate No.
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                PPP 3546
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Type
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                Visitor Parking
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Lot
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                Parking Lot Name 2
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-6 col-lg-4 text-right text-muted">
+                                Slot
+                            </div>
+                            <div class="col col-sm-6 col-lg-8">
+                                Slot 7, Slot 8, Slot 9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal"><i class="uil-check"></i> Accept Request</button>
                     </div>
                 </div>
             </div>
-            <!-- -->
+        </div>
+        <!-- -->
 
             <!-- modal update mailing address-->
             <div class="modal fade" id="sharelink" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">

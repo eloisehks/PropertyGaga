@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Inventory Settings</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <!--<button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='inventory-add.html';"><i class="uil-plus mr-1"></i>Add Inventory</button>
+                                     <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" data-target="#book">Book Asset</button> 
+                                    <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" data-target="#depreciation">Depreciation</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#category" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Inventory Category</span>
+                                                    <span class="d-none d-sm-block">Inventory Category</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#stock" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Inventory</span>
+                                                    <span class="d-none d-sm-block">Inventory</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#booking" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Asset Booking</span>
+                                                    <span class="d-none d-sm-block">Asset Booking</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content p-3 text-muted">
+                                            <div class="tab-pane show active" id="category">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <a href="" class="btn btn-outline-primary btn-rounded" data-toggle="modal" data-target="#addcat">Add Inventory Category</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Category</th>
+                                                                <th>Created Date</th>
+                                                                <th class="text-right">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Access Control System</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Air Cond/Chiller</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Books &amp; Manuals</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Computer</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Control Panel</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Furniture</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Generator</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gym Equipment</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Lifts &amp; Escalators</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Networking Equipment</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Office Equipment</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Others</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Phone</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pumps &amp; Motors</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Security Monitoring System</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Small Tools</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Unassigned</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Upgrading Work</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Vehicle</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Water Tank</td>
+                                                                <td>2 Apr 2023</td>
+                                                                <td class="text-right">
+                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded"  data-toggle="modal" data-target="#editcat">Edit</a>
+                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded"  data-toggle="modal" data-target="">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="stock">
+                                                <div class="mb-2">
+                                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='inventory-add.html';"><i class="uil-plus mr-1"></i>Add Inventory</button> -->
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <a href="inventory-add.html" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0">Add Inventory</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Types</option>
+                                                                        <option value="1">Assets</option>
+                                                                        <option value="2">Consumable Items</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Items</option>
+                                                                        <option value="1">Joint Pin - MS1462 - 36mm x 215mm x 2.2mm</option>
+                                                                        <option value="2">Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM	</option>
+                                                                        <option value="3">Jack Base - 600mm x 32mm</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Type</th>
+                                                                <th>Category</th>
+                                                                <th>Asset/Item Name</th>
+                                                                <th class="text-center">Qty. on Stock</th>
+                                                                <th>Min</th>
+                                                                <th>Target</th>
+                                                                <th></th>
+                                                                <th class="text-right">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Assets</td>
+                                                                <td>Pumps & Motors</td>
+                                                                <td><a href="inventory-details.html" target="_self">Swimming Pool Pump</a></td>
+                                                                <td class="text-center">3</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-right">
+                                                                    <div class="custom-control custom-switch">
+                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Reminder Email</label>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <!-- <a href="inventory-booking-reserved.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#">Purchase</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Consumable Items</td>
+                                                                <td>Small Tools</td>
+                                                                <td><a href="inventory-details-consumable.html" target="_self">Cross Brace L - MS1462 - 1829MM X 1219MM X 2.0MM</a></td>
+                                                                <td class="text-center">30</td>
+                                                                <td>15</td>
+                                                                <td>30</td>
+                                                                <td class="text-right">
+                                                                    <div class="custom-control custom-switch">
+                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch2">Reminder Email</label>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <!-- <a href="inventory-booking-reserved.html">Edit</a> -->
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#">Purchase</a>
+                                                                        </div>
+                                                                    </div><!-- /btn-group -->
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="booking">
+                                                <div class="mb-2">
+                                                    <form>
+                                                        <div class="form-row align-items-center">
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option selected>All Categories</option>
+                                                                        <option value="Access Control System">Access Control System</option>
+                                                                        <option value="Air Cond/Chiller">Air Cond/Chiller</option>
+                                                                        <option value="Books (AND) Manuals">Books &amp; Manuals</option>
+                                                                        <option value="Computer">Computer</option>
+                                                                        <option value="Control Panel">Control Panel</option>
+                                                                        <option value="Furniture">Furniture</option>
+                                                                        <option value="Generator">Generator</option>
+                                                                        <option value="Gym Equipment">Gym Equipment</option>
+                                                                        <option value="Lifts (AND) Escalators">Lifts &amp; Escalators</option>
+                                                                        <option value="Networking Equipment">Networking Equipment</option>
+                                                                        <option value="Office Equipment">Office Equipment</option>
+                                                                        <option value="Others">Others</option>
+                                                                        <option value="Phone">Phone</option>
+                                                                        <option value="Pumps (AND) Motors">Pumps &amp; Motors</option>
+                                                                        <option value="Security Monitoring Sys">Security Monitoring Sys</option>
+                                                                        <option value="Small Tools">Small Tools</option>
+                                                                        <option value="Unassigned">Unassigned</option>
+                                                                        <option value="Upgrading Work">Upgrading Work</option>
+                                                                        <option value="Vehicle">Vehicle</option>
+                                                                        <option value="Water Tank">Water Tank</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control custom-select">
+                                                                        <option value="0">All Assets</option>
+                                                                        <option value="1">Swimming Pool Pump #1</option>
+                                                                        <option value="2">Swimming Pool Pump #2</option>
+                                                                        <option value="3">Barrier Gate</option>
+                                                                        <option value="4">Water Pump #1</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-auto">
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable3" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Asset No.</th>
+                                                                <th>Category</th>
+                                                                <th>Asset Name</th>
+                                                                <th>Max. Book Time</th>
+                                                                <th>Overlap Time</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>001</td>
+                                                                <td>Pumps &amp; Motors</td>
+                                                                <td>Swimming Pool Pump #1</td>
+                                                                <td>20 days</td>
+                                                                <td>7 days</td>
+                                                                <td width="15%" class="text-center">
+                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#set-time">Edit</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>002</td>
+                                                                <td>Small Tools</td>
+                                                                <td>19" Toolbox</td>
+                                                                <td>20 days</td>
+                                                                <td>7 days</td>
+                                                                <td width="15%" class="text-center">
+                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#set-time">Edit</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>003</td>
+                                                                <td>Others</td>
+                                                                <td>12 Steps Ladder</td>
+                                                                <td>20 days</td>
+                                                                <td>7 days</td>
+                                                                <td width="15%" class="text-center">
+                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#set-time">Edit</a>
+                                                                </td>
+                                                            </tr>       
+                                                            <tr>
+                                                                <td>004</td>
+                                                                <td>Upgrading Works</td>
+                                                                <td>Maintenance Tools</td>
+                                                                <td>20 days</td>
+                                                                <td>7 days</td>
+                                                                <td width="15%" class="text-center">
+                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#set-time">Edit</a>
+                                                                </td>
+                                                            </tr>                                             
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- add inventory category -->
+            <div class="modal fade" id="addcat" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Inventory Category</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                            for="example-date">Category</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" id="" name="" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add inventory category end -->
+
+            <!-- add inventory category -->
+            <div class="modal fade" id="editcat" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Inventory Category</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row mb-0">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="example-date">Category</label>
+                                                <div class="col-lg-9">
+                                                    <input type="text" id="" name="" class="form-control" placeholder="" value="Access Control System">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add inventory category end -->
+
+            <!-- Set time -->
+            <div class="modal fade" id="set-time" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Asset Booking Setting</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row mb-0">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="example-date">Max Book Time</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" id="" name="" class="form-control" placeholder="" value="20">
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="form-group">
+                                                    <select class="form-control custom-select">
+                                                        <option value="0" selected>day(s)</option>
+                                                        <option>week(s)</option>
+                                                        <option value="1">month(s)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-0">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="example-date">Overlap Time</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" id="" name="" class="form-control" placeholder="" value="7">
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="form-group">
+                                                    <select class="form-control custom-select">
+                                                        <option value="0" selected>day(s)</option>
+                                                        <option>week(s)</option>
+                                                        <option value="1">month(s)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Set time end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

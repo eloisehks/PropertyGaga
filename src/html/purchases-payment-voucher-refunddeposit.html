@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            .image-upload>input {
+                display: none;
+              }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Payment Voucher - PV0004</h3>
+                                <span class="badge badge-warning width-sm mr-2">Pending</span>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-right">
+                                <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="purchases-payment-voucher-preview.html">Preview</a>
+                                        <a class="dropdown-item" href="#">Save as PDF</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment-d">Return Payment</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment-d">Cancel Payment</a>
+                                    </div>
+                                </div><!-- /btn-group -->
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                            </div>
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="col-12">
+                                <div class="card mb-0">
+                                    <div class="card-body bg-color-propertygagaLightest border-propertygaga-lighter rounded-5">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded mr-2 float-left" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">PV No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="PV00004" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row mb-1">
+                                                        <label class="col-lg-4 col-form-label" for="">Unit No.</label>
+                                                        <div class="col-lg-8">
+                                                            <div class="form-group">
+                                                                <select data-plugin="customselect" class="form-control" disabled>
+                                                                    <option value="0">Select Unit No.</option>
+                                                                    <option selected>6-02-01</option>
+                                                                    <option>6-13-01</option>
+                                                                    <option>6-02-09</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                    <option value="1">8-18-3A</option>
+                                                                    <option value="2">8-19-03</option>
+                                                                    <option value="3">8-20-3A</option>
+                                                                    <option value="4">8-21-03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group row border-bottom"></div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Payee</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="June Tan" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-date">Payment Date</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" id="example-date" type="date"
+                                                                name="date" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Reg. No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="url" value="" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Ref No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="url" value="3574858" disabled>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row border-bottom"></div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Payment Mode</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <!-- <option value="1">Cash</option> -->
+                                                                <option value="2" selected>Cheque</option>
+                                                                <!-- <option value="3">Card</option> -->
+                                                                <option value="4">Online CDM/IBG</option>
+                                                                <!-- <option value="5">Contra Reno Deposit</option>
+                                                                <option value="6">Others</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Pay from Account</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
+                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                                <option selected="selected" value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                <option value="Cash on Hand|None">Cash on Hand</option>
+                                                                <option value="Petty Cash|None">Petty Cash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Cheque / Ref No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="PBB 280831">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-textarea">Notes</label>
+                                                        <div class="col-lg-8">
+                                                            <textarea class="form-control" rows="3"
+                                                                id="example-textarea">Cheque collected on 14 Apr 2024</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="card mt-3">
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table table-centered m-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="18%">Receipt #</th>
+                                                                <th width="60%">Description</th>
+                                                                <th width="10%">Total Due (RM)</th>
+                                                                <th width="10%">Payment (RM)</th>
+                                                                <th width="2%"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <a href="accounting-receipt-view-deposit.html">SE21-02610</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <textarea class="form-control" rows="2" id="example-textarea">Refund #SE21-02610: Deposit, Utilities</textarea>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="3,000.00">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <button type="button" class="btn btn-outline-primary btn-rounded btn-sm"><i class='uil uil-trash-alt'></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                           <tr>
+                                                                <td colspan="2"></td>
+                                                                <td class="align-right font-weight-bold">Total Payment:</td>
+                                                                <td class="align-right font-weight-bold">3,000.00</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <!-- <tr>
+                                                                <td colspan="2"></td>
+                                                                <td class="align-right font-weight-bold">Balance:</td>
+                                                                <td class="align-right font-weight-bold">200.00</td>
+                                                                <td></td>
+                                                            </tr> -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col">
+
+                                                <h5>Attachments</h5>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Other Attachments</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput" multiple> -->
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-1.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">receipt.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-2.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">paymentrequisitionform.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-3.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">cheque.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="mt-2"></p>
+
+                                        <div class="float-left">
+                                            <div class="mb-3">
+                                                <div><small>Created by Cathryn Boey (boeyketchin) on 8 Apr 2024 3:56pm</small></div>
+                                                <div><small>Processed by Cathryn Boey (boeyketchin) on 14 Apr 2024 3:56pm</small></div>
+                                                <div><small>Updated by Cathryn Boey (boeyketchin) on 15 Apr 2024 3:56pm</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded">Save</button>
+                                            <!-- <button type="submit" class="btn btn-primary btn-rounded">Send to Vendor</button> -->
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal update Cheque Status 1 -->
+            <!-- <div class="modal fade" id="updatepaymentvoucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Cheque Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect">
+                                                            <label class="custom-control-label" for="customRadio2">Cheque collected by Owner</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label"
+                                                    for="fileinput">Name</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label"
+                                                    for="fileinput">ID No. / Passport No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label"
+                                                    for="fileinput">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- modal update Cheque Status 1 end -->
+                
+            <!-- modal Return payment -->
+            <div class="modal fade" id="returnpayment-d" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Return Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00004" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="June Tan" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="3,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Returned Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea">Blah blah blah</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Return payment end -->
+
+            <!-- modal Cancel payment -->
+            <div class="modal fade" id="cancelpayment-d" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Are you sure you want to cancel this payment?
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">PV No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="June Tan" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="3,000.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Reason</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Yes, cancel this payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Cancel payment end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

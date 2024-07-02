@@ -51,7 +51,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Edit Facility Booking</h3>
+                                <h3 class="mb-1 mt-0">Facility Booking</h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -110,30 +110,84 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Date</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Facility</label>
                                                         <div class="col-lg-5">
                                                             <select class="form-control custom-select">
                                                                 <option>Select Facility</option>
                                                                 <option>Swimming Pool</option>
                                                                 <option>Games Room</option>
-                                                                <option>Squash Room</option>
+                                                                <option selected>Squash Room</option>
                                                                 <option>Badminton Court 1</option>
                                                                 <option>Badminton Court 2</option>
+                                                                <option>Barbeque Area</option>
+                                                                <option>Multipurpose Hall</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Date</label>
-                                                        <div class="col-lg-5">
-                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                    <div class="form-group row align-items-center mb-3">
+                                                        <label class="col-lg-3 col-form-label pt-0 mt-0">Deposit & Pricing</label>
+                                                        <div class="col-lg-9 col-xl-9">
+                                                            <div class="card border-gray400 mb-0">
+                                                                <div class="card-body pt-0 pb-0">
+                                                                    <p class="card-text text-muted">
+                                                                        <small><i>(Note to developer: if no fees needed just indicate "No fees")</i></small>
+                                                                        <div class="row">
+                                                                            <div class="col-4">Deposit</div>
+                                                                            <div class="col-8">RM100.00</div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="row">
+                                                                            <div class="col-4">Booking Fee</div>
+                                                                            <div class="col-8">RM100.00 / hour</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-4">Cleaning Fee</div>
+                                                                            <div class="col-8">RM200.00</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-4">Cancellation Fee</div>
+                                                                            <div class="col-8">RM30.00</div>
+                                                                        </div>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row" id="affected">
+                                                    <div class="form-group row align-items-center mb-3">
+                                                        <label class="col-lg-3 col-form-label pt-0 mt-0">Closing</label>
+                                                        <div class="col-lg-9 col-xl-9">
+                                                            <div class="card border-pinklight mb-0">
+                                                                <div class="card-body pt-0 pb-0">
+                                                                    <p class="card-text text-muted">
+                                                                        <div class="row">
+                                                                            <div class="col-1"><i class='uil uil-calendar-alt text-danger'></i></div>
+                                                                            <div class="col-11">3 Dec 2023 / 4 Dec 2023 / 5 Dec 2023 / 3 Dec 2023 / 4 Dec 2023 / 5 Dec 2023 / 3 Dec 2023 / 4 Dec 2023 / 5 Dec 2023 / 3 Dec 2023 / 4 Dec 2023 / 5 Dec 2023</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-1"><i class='uil uil-clock-two text-danger'></i></div>
+                                                                            <div class="col-11">8:00am - 8:00pm</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-1"><i class='uil uil-comment-notes text-danger'></i></div>
+                                                                            <div class="col-11">Close for maintenance... <small><i>(Note to developer: Show only if notes are filled in the Facility Booking Settings page)</i></small></div>
+                                                                        </div>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-0" id="affected">
                                                         <label class="col-lg-3 col-form-label" for="simpleinput"></label>
                                                         <div class="col-auto">
                                                             <div class="card border-gray400">
                                                                 <div class="card-body">
-                                                                     <h4 class="header-title mt-0 mb-2">Select Slot</h4>
+                                                                     <h4 class="header-title mt-0 mb-2">Select Slots <small class="ml-3 text-secondary">(Maximum 3 slots)</small></h4>
                                                                      <input type="checkbox" name="Slot1" title="Slot 1 (00.01-01:00)">
                                                                      <input type="checkbox" name="Slot2" title="Slot 2 (01.01-02:00)">
                                                                      <input type="checkbox" name="Slot3" title="Slot 3 (02.01-03:00)">
@@ -162,13 +216,61 @@
                                                             </div> <!-- end card -->
                                                         </div>
                                                     </div>
+                                                    <div class="card border-gray400">
+                                                        <div class="card-body">
+                                                            <div class="form-row align-items-center mt-0 mb-2">
+                                                                <label class="col-lg-3 col-form-label" for="simpleinput">Bring guests?</label>
+                                                                <div class="col-auto ml-2">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="guests" name="guests"
+                                                                            class="custom-control-input">
+                                                                        <label class="custom-control-label" for="guests">No</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="guests2" name="guests"
+                                                                            class="custom-control-input" checked>
+                                                                        <label class="custom-control-label" for="guests2">Yes</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row align-items-center mt-0 mb-1">
+                                                                <div class="col col-lg-5 align-items-center">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="text" class="form-control" id="simpleinput" value="" placeholder="Guest Name 1">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col col-lg-3 align-items-center">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="text" class="form-control" id="simpleinput" value="" placeholder="Contact No.">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col col-lg-3 align-items-center">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="text" class="form-control" id="simpleinput" value="" placeholder="IC / Passport No.">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col col-lg-1 align-items-center">
+                                                                    <!-- <div class="form-group mb-0">
+                                                                        <a href="#" class="btn btn-link mb-3 mb-sm-0" data-toggle="modal" data-target="#qrcode"><img src="assets/images/qrcode-receipt.gif" class="responsive" width="30"></a>
+                                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row align-items-center mt-0 mb-1">
+                                                                <div class="col-lg-3 align-items-center">
+                                                                    <button type="button" class="btn btn-link mb-0 pl-0" onclick="location.href='';"><i class="uil uil-plus-square"></i>  Add Guest</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </form>
 
                                         <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                            <!-- <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button> -->
+                                            <a href="facility-booking-add2.html" class="btn btn-primary btn-rounded mr-1">Save & Next</a>
                                         </div>
             
                                     </div> <!-- end card-body -->
@@ -189,19 +291,19 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal update mailing address-->
-            <div class="modal fade" id="parkinglot" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <!-- modal QR code address-->
+            <div class="modal fade" id="qrcode" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Parking Lot Location</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Guest's QR code</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="text-center">
-                                <img src="assets/images/propertygaga/parkinglotlocation.jpg">
+                                <img src="assets/images/qrcode-receipt.gif">
                             </div>
                         </div>
                         <div class="modal-footer">

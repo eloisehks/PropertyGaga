@@ -35,9 +35,9 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            @@include('./partials/topbar.html')
+            @@include('./partials/topbar0.html')
 
-            @@include('./partials/left-sidebar.html')
+            @@include('./partials/left-sidebar-0.html')
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -63,87 +63,202 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <table id="basic-datatable" class="table table-hover nowrap dt-responsive full-width">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Name</th>
-                                                    <th>Role</th>
-                                                    <th>Email</th>
-                                                    <th>ID No. / Passwport No.</th>
-                                                    <th>Contact No.</th>
-                                                    <th class="text-center">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><a href="user-edit.html">Eugene Choong</a></td>
-                                                    <td>Super Admin</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td><a href="user-edit.html">Dickson Mah</a></td>
-                                                    <td>Admin</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td><a href="user-edit.html">Vivian Chin</a></td>
-                                                    <td>Accountant</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td><a href="user-edit.html">Nadan</a></td>
-                                                    <td>Building Manager</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td><a href="user-edit.html">Muthu</a></td>
-                                                    <td>Handyman</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td><a href="user-edit.html">Gordon Chua</a></td>
-                                                    <td>Committee</td>
-                                                    <td>email@email.com</td>
-                                                    <td>640223-10-2345</td>
-                                                    <td>013-3821224</td>
-                                                    <td class="text-center">
-                                                        <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                <option value="0">All Status</option>
+                                                                <option>Validated</option>
+                                                                <option>Not Validated</option>
+                                                                <option>Active</option>
+                                                                <option>Blocked</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <select class="form-control">
+                                                                <option value="0">All Sites</option>
+                                                                <option>Site Name 1</option>
+                                                                <option>Site Name 2</option>
+                                                                <option>Site Name 3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Full Name</th>
+                                                        <th class="text-center">Status</th>
+                                                        <th>Sites</th>
+                                                        <th>Role</th>
+                                                        <th>Last Login</th>
+                                                        <th>Email</th>
+                                                        <th>ID No. / Passwport No.</th>
+                                                        <th>Contact No.</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><a href="user-edit-validated.html">Eugene Choong</a></td>
+                                                        <td class="text-center"><span class="badge badge-soft-success width-sm">Validated</span></td>
+                                                        <td>
+                                                        </td>
+                                                        <td>Super Admin</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit-validated.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><a href="user-edit-validated.html">Dickson Mah</a></td>
+                                                        <td class="text-center"><span class="badge badge-soft-warning width-sm">Not Validated</span></td>
+                                                        <td>
+                                                        </td>
+                                                        <td>Admin</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit-validated.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><a href="user-edit.html">Vivian Chin</a></td>
+                                                        <td class="text-center"><span class="badge badge-success width-sm">Active</span></td>
+                                                        <td>
+                                                            <div class="dropdown d-inline">
+                                                                <a class="dropdown-toggle" href="#" role="button"
+                                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                    <span class="btn btn-outline-primary btn-sm btn-rounded mr-1">4</span>
+                                                                    3 Resident
+                                                                </a>
+                
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a class="dropdown-item" href="#">3 Resident</a>
+                                                                    <a class="dropdown-item" href="#">Mori Residence</a>
+                                                                    <a class="dropdown-item" href="#">Emerald Residence</a>
+                                                                    <a class="dropdown-item" href="#">Urband</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Accountant</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td><a href="user-edit.html">Nadan</a></td>
+                                                        <td class="text-center"><span class="badge badge-danger width-sm">Blocked</span></td>
+                                                        <td>
+                                                            <div class="dropdown d-inline">
+                                                                <a class="dropdown-toggle" href="#" role="button"
+                                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                    <span class="btn btn-outline-primary btn-sm btn-rounded mr-1">2</span>
+                                                                    Emerald Residence
+                                                                </a>
+                
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <span class="dropdown-item" href="#">Emerald Residence</span>
+                                                                    <span class="dropdown-item" href="#">Urband</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Building Manager</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td><a href="user-edit.html">Muthu</a></td>
+                                                        <td class="text-center"><span class="badge badge-success width-sm">Active</span></td>
+                                                        <td>
+                                                            <div class="dropdown d-inline">
+                                                                <a class="dropdown-toggle" href="#" role="button"
+                                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                    <span class="btn btn-outline-primary btn-sm btn-rounded mr-1">2</span>
+                                                                    Mori Residence
+                                                                </a>
+                
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a class="dropdown-item" href="#">Mori Residence</a>
+                                                                    <span class="dropdown-item" href="#">Urband</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Handyman</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td><a href="user-edit.html">Gordon Chua</a></td>
+                                                        <td class="text-center"><span class="badge badge-success width-sm">Active</span></td>
+                                                        <td>
+                                                            <div class="dropdown d-inline">
+                                                                <a class="dropdown-toggle" href="#" role="button"
+                                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                    <span class="btn btn-outline-primary btn-sm btn-rounded mr-1">2</span>
+                                                                    Emerald Residence ...
+                                                                </a>
+                
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <span class="dropdown-item" href="#">Emerald Residence</span>
+                                                                    <span class="dropdown-item" href="#">Urband</span>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Committee</td>
+                                                        <td>10 May 2024, 12:46 PM</td>
+                                                        <td>email@email.com</td>
+                                                        <td>640223-10-2345</td>
+                                                        <td>013-3821224</td>
+                                                        <td class="text-center">
+                                                            <a href="user-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         
                                     </div> <!-- end card body-->
                                 </div> <!-- end card -->

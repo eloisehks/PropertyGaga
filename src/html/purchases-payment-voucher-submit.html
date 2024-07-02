@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            .image-upload>input {
+                display: none;
+              }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">New Payment</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <!-- <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Save as PDF</a>
+                                        <a class="dropdown-item" href="#">Print</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Return Payment</a>
+                                        <a class="dropdown-item" href="#">Cancel Payment</a>
+                                    </div>
+                                </div> -->
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">PV No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="PV0002" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row border-grayform bg-color-propertygagaLightest p-2 mb-3 rounded-5">
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-12 mt-2">
+                                                            <div class="form-group">Select Task ID <b class="text-color-black ml-2 mr-2">OR</b> Vendor to proceed</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label">Task ID</label>
+                                                                <div class="col-lg-8">
+                                                                    <select class="form-control custom-select">
+                                                                        <option>Select</option>
+                                                                        <option>OT1324</option>
+                                                                        <option>OT33233</option>
+                                                                        <option>OT65657</option>
+                                                                        <option>OT65865</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label">Purchase Inv. No.</label>
+                                                                <div class="col-lg-8">
+                                                                    <select class="form-control custom-select">
+                                                                        <option>Select</option>
+                                                                        <option>3535</option>
+                                                                        <option>3535</option>
+                                                                        <option>3535</option>
+                                                                        <option>3535</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label">Vendor</label>
+                                                                <div class="col-lg-8">
+                                                                    <select class="form-control custom-select">
+                                                                        <option>Select</option>
+                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-lg-4 col-form-label">Service Report No.</label>
+                                                                <div class="col-lg-8">
+                                                                    <select class="form-control custom-select">
+                                                                        <option>Select</option>
+                                                                        <option>SR1</option>
+                                                                        <option>SR2</option>
+                                                                        <option>SR3</option>
+                                                                        <option>SR4</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- <div class="form-group row border-bottom"></div> -->
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Payee</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-date">Date</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" id="example-date" type="date"
+                                                                name="date" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Co. Reg. No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="url" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row border-bottom"></div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Payment Mode</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <!-- <option value="1">Cash</option> -->
+                                                                <option value="2" selected>Cheque</option>
+                                                                <!-- <option value="3">Card</option> -->
+                                                                <option value="4">Online CDM/IBG</option>
+                                                                <!-- <option value="5">Contra Reno Deposit</option>
+                                                                <option value="6">Others</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Pay from Account</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
+                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                                <option selected="selected" value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                <option value="Cash on Hand|None">Cash on Hand</option>
+                                                                <option value="Petty Cash|None">Petty Cash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Cheque / Ref No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-textarea">Notes</label>
+                                                        <div class="col-lg-8">
+                                                            <textarea class="form-control" rows="3"
+                                                                id="example-textarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                        <div class="card mt-3">
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table table-centered m-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="18%">PI# / SR#</th>
+                                                                <th width="60%">Description</th>
+                                                                <th width="10%">Total Due (RM)</th>
+                                                                <th width="10%">Payment (RM)</th>
+                                                                <th width="2%"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control" id="simpleinput" value="SR1">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <textarea class="form-control" rows="2" id="example-textarea">Description...</textarea>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="500">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="300">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <button type="button" class="btn btn-outline-primary btn-rounded btn-sm"><i class='uil uil-trash-alt'></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                           <tr>
+                                                               <td colspan="4"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                               <td></td>
+                                                           </tr>
+                                                           <tr>
+                                                                <td colspan="2"></td>
+                                                                <td class="align-right font-weight-bold">Total Payment:</td>
+                                                                <td class="align-right font-weight-bold">300.00</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2"></td>
+                                                                <td class="align-right font-weight-bold">Balance:</td>
+                                                                <td class="align-right font-weight-bold">200.00</td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- <div class="table-responsive">
+                                                    <table class="table table-centered m-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="21%">Description</th>
+                                                                <th width="9%">Qty</th>
+                                                                <th width="14%">Price (RM)</th>
+                                                                <th width="14%">Deposit (RM)</th>
+                                                                <th width="14%">Discount (RM)</th>
+                                                                <th width="12%">Tax (RM)</th>
+                                                                <th width="14%">Amt. (RM)</th>
+                                                                <th width="2%"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <textarea class="form-control" rows="2" id="example-textarea">Description...</textarea>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control" id="simpleinput" value="1">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="align-right">
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm"><i class='uil uil-trash-alt'></i></button>
+                                                                </div>
+                                                                </td>
+                                                            </tr>
+                                                           <tr>
+                                                               <td colspan="4"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                               <td colspan="2" class="align-right font-weight-bold">Total:</td>
+                                                               <td class="align-right font-weight-bold">0.00</td>
+                                                               <td></td>
+                                                           </tr>
+                                                           
+                                                        </tbody>
+                                                    </table>
+                                                </div> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col">
+                                                <div class="form-group row border-bottom"></div>
+
+                                                <h5>Attachments</h5>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Quotation</label>
+                                                        <div class="col-auto">
+                                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">quotation.pdf</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Approved Purchase Order</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput"> -->
+                                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">po.pdf</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Invoice</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput" multiple> -->
+                                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">inv-from-vendor.pdf</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Delivery Order</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput" multiple> -->
+                                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">do-from-vendor.pdf</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Other Attachments</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput" multiple> -->
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-1.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-2.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <img src="assets/images/projects/project-3.jpg"
+                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                        </div>
+                                                                        <div class="col pl-0">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="p-2 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-5 col-form-label text-lg-right"
+                                                            for="">Service Report</label>
+                                                        <div class="col-auto">
+                                                            <!-- <input type="file" class="form-control"
+                                                                id="fileinput" multiple>  -->
+                                                            <div class="card mb-2 mt-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">service-report.pdf</a>
+                                                                            <p class="mb-0">2.3 MB</p>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <!-- Button -->
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="mt-2"></p>
+
+                                        <div class="float-left">
+                                            <div class="mb-3">
+                                                <div><small>Created by Cathryn Boey (boeyketchin) on 8 Jul 2022 3:56pm</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded">Save</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded">Send to Vendor</button>
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

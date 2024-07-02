@@ -50,7 +50,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">TMB 1 - 716516041<span class="ml-2 text-muted">(B1)</span></h3>
+                                <h3 class="mb-1 mt-0">Electric 1 - 716516041<span class="ml-2 text-muted">(B1)</span></h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -69,6 +69,8 @@
                                             <div class="col-sm-6 col-md-6 col-xl-6">
                                                 <select class="custom-select mb-2 col-lg-3 col-md-5 col-sm-6">
                                                     <option>Year</option>
+                                                    <option value="1">2024</option>
+                                                    <option value="1">2023</option>
                                                     <option value="1">2022</option>
                                                     <option value="2" selected>2021</option>
                                                     <option value="3">2020</option>
@@ -80,7 +82,7 @@
                                                         <button type="button"
                                                             class="btn btn-outline-primary btn-rounded dropdown-toggle"
                                                             data-toggle="dropdown" aria-expanded="false">
-                                                            Receipt <i class="uil uil-angle-down"></i></button>
+                                                            Bill <i class="uil uil-angle-down"></i></button>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-edituploadreceipt">Jan 2021 <span class="badge badge-soft-primary badge-pill ml-2">Edit</span></a>
                                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-edituploadreceipt">Feb 2021 <span class="badge badge-soft-primary badge-pill ml-2">Edit</span></a>
@@ -123,7 +125,7 @@
 
             <!-- modal edit meter -->
             <div class="modal fade" id="modal-editmeter" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Meter</h5>
@@ -136,34 +138,55 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label"
-                                                for="">Meter Name <span class="text-danger">*</span></label>
-                                            <div class="col-lg-5">
-                                                <input type="text" id="" name="" class="form-control" value="TNB 1">
+                                            <label class="col-lg-4 col-form-label" for="example-date">Account Holder Name <span class="text-danger">*</span></label>
+                                            <div class="col-lg-8">
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Account Deposit Placement Amt. / Date <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <label class="sr-only" for="inlineFormInputGroup">Account Deposit Placement Amount</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">RM</div>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" id="example-date" type="date" name="date">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label"
                                                 for="">Meter Number <span class="text-danger">*</span></label>
-                                            <div class="col-lg-5">
+                                            <div class="col-lg-8">
                                                 <input type="text" id="" name="" class="form-control" value="275-5543-0482">
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="">Meter Name <span class="text-danger">*</span></label>
+                                            <div class="col-lg-8">
+                                                <input type="text" id="" name="" class="form-control" value="Electric 1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-lg-4 col-form-label">Area / Location<span class="text-danger">*</span></label>
-                                            <div class="col-lg-5">
+                                            <div class="col-lg-8">
                                                 <input type="text" id="" name="" class="form-control" value="location 1">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label">Location Plan</label>
-                                            <div class="col-lg-5">
+                                            <div class="col-lg-8">
                                                 <input type="file" class="form-control" id="">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="">Tariff</label>
-                                            <div class="col-lg-5">
+                                            <div class="col-lg-8">
                                                 <input type="text" id="" name="" class="form-control" value="B1">
                                             </div>
                                         </div>
@@ -230,12 +253,12 @@
             </div>
             <!-- modal note end -->
 
-            <!-- modal Upload receipt -->
+            <!-- modal Upload bill -->
             <div class="modal fade" id="modal-uploadreceipt" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Receipt</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Bill</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -260,7 +283,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-3 col-form-label"
-                                                for="example-fileinput">Upload Receipt</label>
+                                                for="example-fileinput">Upload Bill</label>
                                             <div class="col-lg-6">
                                                 <input type="file" class="form-control"
                                                     id="example-fileinput">
@@ -277,14 +300,14 @@
                     </div>
                 </div>
             </div>
-            <!-- modal Upload receipt end -->
+            <!-- modal Upload bill end -->
 
-            <!-- modal edit Upload receipt -->
+            <!-- modal edit Upload bill -->
             <div class="modal fade" id="modal-edituploadreceipt" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Receipt</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Bill</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -309,14 +332,14 @@
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-3 col-form-label"
-                                                for="example-fileinput">Upload Receipt</label>
+                                                for="example-fileinput">Upload Bill</label>
                                                 <div class="col-auto">
                                                     <div class="card mb-2 shadow-none border">
                                                         <div class="p-1 px-2">
                                                             <div class="row align-items-center">
                                                                 <div class="col-auto">
                                                                     <a href="javascript:void(0);"
-                                                                        class="text-muted font-weight-bold">Receipt.zip</a>
+                                                                        class="text-muted font-weight-bold">bill.zip</a>
                                                                     <p class="mb-0">1.6 MB</p>
                                                                 </div>
                                                                 <div class="col">
@@ -348,7 +371,7 @@
                     </div>
                 </div>
             </div>
-            <!-- modal edit Upload receipt end -->
+            <!-- modal edit Upload bill end -->
 
             <!-- modal add reading-->
             <div class="modal fade" id="modal-addreading" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">

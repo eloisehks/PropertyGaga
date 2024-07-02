@@ -28,8 +28,8 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript">
-            <!--
+        <!-- <script type="text/javascript">
+           
                 function toggle_visibility(id) {
                    var e = document.getElementById(id);
                    if(e.style.display == 'block')
@@ -37,9 +37,14 @@
                    else
                       e.style.display = 'block';
                 }
-            //-->
-            </script>
-
+            
+            </script> -->
+        <script>
+            function updateSelectedBlock(selectedBlock) {
+                // Update the button text with the selected block
+                $('#selectedBlockButton').html(selectedBlock + ' <i class="uil uil-angle-down"></i>');
+            }
+        </script>
     </head>
 
     <body>
@@ -75,14 +80,61 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xl-12">
+                            <div class="col col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2">
+                                <div class="mb-2">
+                                    <!-- <div class="btn-group btn-block">
+                                        <button type="button" class="btn btn-soft-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Select Block<i class="uil uil-angle-down"></i></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Block 1</a>
+                                            <a class="dropdown-item" href="#">Block 2</a>
+                                            <a class="dropdown-item" href="#">Block 3</a>
+                                            <a class="dropdown-item" href="#">Block 4</a>
+                                            <a class="dropdown-item" href="#">Block 5</a>
+                                            <a class="dropdown-item active" href="#">Block 6</a>
+                                        </div>
+                                    </div> -->
+                                    <div class="btn-group btn-block">
+                                        <button type="button" class="btn btn-soft-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="selectedBlockButton">Select Block <i class="uil uil-angle-down"></i></button>
+                                        <div class="dropdown-menu">
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 1')">Block 1</a>
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 2')">Block 2</a>
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 3')">Block 3</a>
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 4')">Block 4</a>
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 5')">Block 5</a>
+                                          <a class="dropdown-item" href="#" onclick="updateSelectedBlock('Block 6')">Block 6</a>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body p-0 slimscroll ml-0 mr-0 mb-2 mt-2" style="min-height: 400px">
+                                        <div class="list-group mt-2 pb-4 mb-2">
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-01</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary-active"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-02</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-03</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-04</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-05</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-06</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-07</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-08</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-09</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-10</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-11</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-08</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-09</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-10</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary"><span class="uil uil-angle-right font-size-12 mr-1"></span> 6-01-11</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-10 col-lg-10 col-md-9 col-sm-10 col-xs-10 pl-1">
                                 <div class="card">
                                     <div class="card-body">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
                                                 <a href="#unitinfo" data-toggle="tab" aria-expanded="true"
                                                     class="nav-link active">
-                                                    <span class="d-block d-sm-none font-size-12"><!-- <i class="uil-home-alt"></i> -->Unit Info</span>
+                                                    <span class="d-block d-sm-none font-size-12">Unit Info</span>
                                                     <span class="d-none d-sm-block">Unit Info</span>
                                                 </a>
                                             </li>
@@ -108,10 +160,17 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#billings" data-toggle="tab" aria-expanded="false"
+                                                <a href="#aparcel" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none font-size-12">Billings</span>
-                                                    <span class="d-none d-sm-block">Billings</span>
+                                                    <span class="d-block d-sm-none font-size-12">Accessory Parcels</span>
+                                                    <span class="d-none d-sm-block">Accessory Parcels</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#invoices" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Invoices</span>
+                                                    <span class="d-none d-sm-block">Invoices</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
@@ -119,6 +178,13 @@
                                                     class="nav-link">
                                                     <span class="d-block d-sm-none font-size-12">Accounts</span>
                                                     <span class="d-none d-sm-block">Accounts</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#notice" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">Notices</span>
+                                                    <span class="d-none d-sm-block">Notices</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -130,12 +196,25 @@
                                                             <div class="card-body pb-4 pt-3">
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
-                                                                        <h4>Unit Info <div class="float-right"><i class="uil uil-check-circle text-color-greenBright" data-toggle="tooltip" data-placement="top" title="" data-original-title="Vacant"></i></div></h4> 
+                                                                        <h4>Unit Info <div class="float-right font-size-15 font-weight-normal"><i class="uil uil-square-full text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Vacant"></i> Vacant</div></h4> 
                                                                     </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Unit Address:</div>
+                                                                    <div class="col-md-8">
+                                                                        6-01-02, Jalan Dato Keramat<br>
+                                                                        10150 Georgetown, Penang, Malaysia
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Strata Title:</div>
+                                                                    <div class="col-md-8">M1/1/1</div>
                                                                 </div>
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
                                                                     <div class="col-md-4 font-weight-bold">Block:</div>
                                                                     <div class="col-md-8">A</div>
+                            
+                            
                                                                 </div>
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
                                                                     <div class="col-md-4 font-weight-bold">Level:</div>
@@ -144,7 +223,7 @@
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
                                                                     <div class="col-md-4 font-weight-bold">Unit Type:</div>
                                                                     <div class="col-md-8">
-                                                                       Corner
+                                                                        Corner lot
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
@@ -159,14 +238,14 @@
                                                                         148.00
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
+                                                                <!-- <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
                                                                     <div class="col-md-4 font-weight-bold">E-Billing:</div>
                                                                     <div class="col-md-8">
                                                                         Yes
                                                                     </div>
-                                                                </div>
+                                                                </div> -->
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                                                    <div class="col-md-4 font-weight-bold">Maintenance Fees:</div>
+                                                                    <div class="col-md-4 font-weight-bold">Maintenance Fee:</div>
                                                                     <div class="col-md-8">
                                                                         RM 100.00
                                                                     </div>
@@ -190,16 +269,27 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                                                    <div class="col-md-4 font-weight-bold">Accessory Parcels:</div>
+                                                                    <div class="col-md-4 font-weight-bold">Sewerage:</div>
                                                                     <div class="col-md-8">
-                                                                        S01P07, S01P20, S01P34
+                                                                        RM 0.00
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Water Deposit:</div>
+                                                                    <div class="col-md-8">
+                                                                        RM 0.00
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
+                                                                    <div class="col-md-4 font-weight-bold">Electricity Deposit:</div>
+                                                                    <div class="col-md-8">
+                                                                        RM 0.00
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-2 mt-2 pt-2 pb-0">
-                                                                    <div class="col-md-4 font-weight-bold">Unit Address:</div>
+                                                                    <div class="col-md-4 font-weight-bold">Accessory Parcels:</div>
                                                                     <div class="col-md-8">
-                                                                        A-6-2, Jalan Dato Keramat<br>
-                                                                        10150 Georgetown, Penang, Malaysia
+                                                                        A1, A4
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -851,53 +941,55 @@
                                                                     </div>
                                                                 </div>
                                                                
-                                                                <table id="ownership-history" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Name</th>
-                                                                            <th>Purchase Date</th>
-                                                                            <th>Purchase Price</th>
-                                                                            <th class="text-center">Actions</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel2</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel22</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel2222</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
-                                                                                <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel22222</a></div>
-                                                                                <div class="mt-2">
-                                                                                    <a href="" class="" data-toggle="modal" data-target="#modal-additional-owner"><i class='uil uil-plus-square text-primary mr-2'></i> Add Additional Owner</a>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td>10 Aug 2020</td>
-                                                                            <td>RM 800,000.00</td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-sell">Sell</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-historyowner-samuel">Edit</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Loh Choon Tatt</td>
-                                                                            <td>10 Dec 2016</td>
-                                                                            <td>RM 500,000.00</td>
-                                                                            <td class="text-center">
-                                                                                <!-- <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-historyowner">Edit</a>
-                                                                                &nbsp; -->
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                                <div class="table-responsive">
+                                                                    <table id="ownership-history" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Name</th>
+                                                                                <th>Purchase Date</th>
+                                                                                <th>Purchase Price</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel</a> <i class="uil uil-info-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Key Owner"></i></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel2</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel22</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel2222</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel222</a></div>
+                                                                                    <div><a href="" class="" data-toggle="modal" data-target="#modal-edit-currentowner"><i class="uil uil-key-skeleton-alt text-primary mr-3"></i>Samuel22222</a></div>
+                                                                                    <div class="mt-2">
+                                                                                        <a href="" class="" data-toggle="modal" data-target="#modal-additional-owner"><i class='uil uil-plus-square text-primary mr-2'></i> Add Additional Owner</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>10 Aug 2020</td>
+                                                                                <td>RM 800,000.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-sell">Sell</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-historyowner-samuel">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Loh Choon Tatt</td>
+                                                                                <td>10 Dec 2016</td>
+                                                                                <td>RM 500,000.00</td>
+                                                                                <td class="text-center">
+                                                                                    <!-- <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-historyowner">Edit</a>
+                                                                                    &nbsp; -->
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
 
                                                                 <!-- modal history owner Samuel -->
                                                                 <div class="modal fade" id="modal-edit-historyowner-samuel" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -1803,17 +1895,17 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input" checked>
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -2690,7 +2782,7 @@
                                                                                             <label class="col-lg-4 col-form-label"
                                                                                                 for="">Occupant Type</label>
                                                                                             <div class="col-auto">
-                                                                                                <i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                <i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="form-group row mb-0">
@@ -3460,17 +3552,17 @@
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner1" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                            <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                         </div>
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner2" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                            <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                         </div>
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner3" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                            <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -4410,6 +4502,15 @@
                                                                                         for="">Samuel</label> -->
                                                                                 </div>
                                                                                 <div class="form-group row">
+                                                                                    <div class="col-lg-4 col-sm-4 col-auto text-color-black font-weight-semibold">Set as Main Owner</div>
+                                                                                    <div class="col-lg-8 col-sm-8 col-auto">
+                                                                                        <div class="custom-control custom-switch">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                                                            <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Yes</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
                                                                                     <label class="col-lg-4 col-form-label"
                                                                                         for="">Title</label>
                                                                                     <div class="col-lg-8">
@@ -4421,27 +4522,27 @@
                                                                                         </select>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="form-group row">
+                                                                                <!-- <div class="form-group row">
                                                                                     <label class="col-lg-4 col-form-label"
                                                                                         for="">Occupant Type</label>
                                                                                     <div class="col-lg-8">
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner1" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                            <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                         </div>
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner2" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                            <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                         </div>
                                                                                         <div class="custom-control custom-radio">
                                                                                             <input type="radio" id="owner3" name="owner"
                                                                                                 class="custom-control-input">
-                                                                                            <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                            <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> -->
                                                                                 <div class="form-group row">
                                                                                     <label class="col-lg-4 col-form-label">Unit Type</label>
                                                                                     <div class="col-lg-8">
@@ -5431,17 +5532,17 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -6055,48 +6156,50 @@
                                                                 </div>
                                                                 <!-- modal add occupant end -->
 
-                                                                <table id="basic-datatable4" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>No</th>
-                                                                            <th>Name</th>
-                                                                            <th>Contact No.</th>
-                                                                            <th>Email</th>
-                                                                            <th class="text-center">Occupant Type</th>
-                                                                            <th class="text-center">Actions</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td>Loh Choon Tatt</td>
-                                                                            <td>012 302 2945</td>
-                                                                            <td>email@email.com</td>
-                                                                            <td class="text-center">
-                                                                                <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Occupying Owners"><i class='uil uil-key-skeleton-alt text-primary'></i>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-occupant">Edit</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td>Alicia Tan Su Sian</td>
-                                                                            <td>012 302 2945</td>
-                                                                            <td>email@email.com</td>
-                                                                            <td class="text-center">
-                                                                                <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tenant"><i class='uil uil-bed text-primary'></i></button>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-occupant2">Edit</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable4" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No</th>
+                                                                                <th>Name</th>
+                                                                                <th>Contact No.</th>
+                                                                                <th>Email</th>
+                                                                                <th class="text-center">Occupant Type</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>Loh Choon Tatt</td>
+                                                                                <td>012 302 2945</td>
+                                                                                <td>email@email.com</td>
+                                                                                <td class="text-center">
+                                                                                    <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Owner Occupied"><i class='uil uil-key-skeleton-alt text-primary'></i>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-occupant">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>Alicia Tan Su Sian</td>
+                                                                                <td>012 302 2945</td>
+                                                                                <td>email@email.com</td>
+                                                                                <td class="text-center">
+                                                                                    <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tenant"><i class='uil uil-user-circle text-primary'></i></button>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-occupant2">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
 
                                                                 <!-- modal edit occupant -->
                                                                 <div class="modal fade" id="modal-edit-occupant" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -6112,14 +6215,28 @@
                                                                                 <form class="form-horizontal">
                                                                                     <div class="row">
                                                                                         <div class="col">
-                                                                                            <div class="form-group row mb-3">
+                                                                                            <div class="form-group row">
                                                                                                 <label for="name" class="col-4 col-form-label">Profile Image</label>
                                                                                                 <div class="col-auto align-self-center">
-                                                                                                    <div class="text-center mt-3">
+                                                                                                    <div class="text-center">
                                                                                                         <img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-md rounded-circle" />
                                                                                                     </div>
                                                                                                 </div>
-                                                                                                <div class="col-5 align-self-center">
+                                                                                                <div class="col-3 align-self-center">
+                                                                                                    <!-- <div class="dropdown d-inline-block">
+                                                                                                        <button class="btn btn-secondary btn-rounded dropdown-toggle" type="button"
+                                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                                            aria-expanded="false">
+                                                                                                            <i class='uil uil-focus-add'></i>
+                                                                                                        </button>
+                                                                                                        <div class="dropdown-menu dropdown-menu-left pt-0 pb-0">
+                                                                                                            <a class="dropdown-item bg-color-grayLighter pb-3 pt-3" href="#"><input type="file" class="form-control Inline" id="example-fileinput"></a>
+                                                                                                            <div class="dropdown-divider mb-0 mt-0"></div>
+                                                                                                            <a class="dropdown-item pb-3 pt-3" href="#"><i class='uil uil-camera-plus'></i> Take Photo</a>
+                                                                                                            <div class="dropdown-divider mb-0 mt-0"></div>
+                                                                                                            <a class="dropdown-item pb-3 pt-3" href="#"><i class='uil uil-selfie'></i> Move to the nearest Device</a>
+                                                                                                        </div>
+                                                                                                    </div> -->
                                                                                                     <input type="file" class="form-control"id="example-fileinput">
                                                                                                 </div>
                                                                                             </div>
@@ -6149,17 +6266,17 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input" checked>
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -7039,7 +7156,7 @@
 
                                                                 <!-- modal edit occupant - tenant -->
                                                                 <div class="modal fade" id="modal-edit-occupant2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
                                                                                 <h5 class="modal-title" id="exampleModalScrollableTitle">Add Occupant for <span class="text-color-black bold">6-02-01</span></h5>
@@ -7051,6 +7168,17 @@
                                                                                 <form class="form-horizontal">
                                                                                     <div class="row">
                                                                                         <div class="col">
+                                                                                            <div class="form-group row">
+                                                                                                <label for="name" class="col-4 col-form-label">Profile Image</label>
+                                                                                                <div class="col-auto align-self-center">
+                                                                                                    <div class="text-center">
+                                                                                                        <img src="assets/images/users/avatar-9.jpg" alt="" class="avatar-md rounded-circle" />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-3 align-self-center">
+                                                                                                    <input type="file" class="form-control"id="example-fileinput">
+                                                                                                </div>
+                                                                                            </div>
                                                                                             <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Name <span class="text-danger">*</span></label>
@@ -7077,17 +7205,17 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -8030,7 +8158,7 @@
                                                                                 <form class="form-horizontal">
                                                                                     <div class="row">
                                                                                         <div class="col">
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Vehicle Owner <span class="text-danger">*</span></label>
                                                                                                 <div class="col-lg-8">
@@ -8049,20 +8177,20 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input" checked>
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
                                                                                             <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Plate Number</label>
@@ -8079,7 +8207,7 @@
                                                                                                     </select>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label" for="">Parking Lot No.</label>
                                                                                                 <div class="col-lg-8">
                                                                                                     <select data-plugin="customselect" class="form-control">
@@ -8092,9 +8220,9 @@
                                                                                                         <option value="1">L2-4-7</option>
                                                                                                     </select>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="simpleinput">Taken Sticker?</label>
                                                                                                 <div class="col-lg-8">
@@ -8109,7 +8237,7 @@
                                                                                                         <label class="custom-control-label" for="customRadio1">No</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
                                                                                             
                                                                                         </div>
@@ -8124,56 +8252,62 @@
                                                                     </div>
                                                                 </div>
                                                                 <!-- modal add vehicle end -->
-
-                                                                <table id="basic-datatable5" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>No</th>
-                                                                            <th>Vehicle Owner</th>
-                                                                            <th class="text-center">Occupant Type</th>
-                                                                            <th class="text-center">Plate No.</th>
-                                                                            <th class="text-center">Type</th>
-                                                                            <th class="text-center">Parking Lot No.</th>
-                                                                            <th class="text-center">Sticker</th>
-                                                                            <th class="text-center">Actions</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td>Loh Choon Tatt</td>
-                                                                            <td class="text-center">
-                                                                                <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Occupying Owner's Family Members"><i class='uil uil-home-alt text-primary'></i>
-                                                                            </td>
-                                                                            <td class="text-center">PJQ 7887</td>
-                                                                            <td class="text-center">Car</td>
-                                                                            <td class="text-center">L2-4-3</td>
-                                                                            <td class="text-center"><i class="uil uil-check-circle text-color-greenBright"></i></td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-vehicle">Edit</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td>Alicia Tan Su Sian</td>
-                                                                            <td class="text-center">
-                                                                                <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tenant"><i class='uil uil-bed text-primary'></i>
-                                                                                    <span class="sr-only" for="">Tenant</span></button>
-                                                                            </td>
-                                                                            <td class="text-center">WJQ 4444</td>
-                                                                            <td class="text-center">Car</td>
-                                                                            <td class="text-center">L2-4-4</td>
-                                                                            <td class="text-center"><i class="uil uil-check-circle text-color-greenBright"></i></td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-vehicle2">Edit</a>
-                                                                                &nbsp;
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
+                                                                <div class="row mb-3 text-color-black">
+                                                                    <div class="col-md-6">
+                                                                        <b>Parking Lot No.:</b> L2-4-3, L2-4-4, L2-4-5
+                                                                    </div>
+                                                                    <div class="col-md-6 text-lg-right">
+                                                                        <b>Access ID:</b> 29050607208
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable5" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No</th>
+                                                                                <!-- <th>Vehicle Owner</th>
+                                                                                <th class="text-center">Occupant Type</th> -->
+                                                                                <th class="text-center">Plate No.</th>
+                                                                                <th class="text-center">Type</th>
+                                                                                <!-- <th class="text-center">Parking Lot No.</th> -->
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <!-- <td>Loh Choon Tatt</td>
+                                                                                <td class="text-center">
+                                                                                    <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Family Members"><i class='uil uil-user-square text-primary'></i>
+                                                                                </td> -->
+                                                                                <td class="text-center">PJQ 7887</td>
+                                                                                <td class="text-center">Car</td>
+                                                                                <!-- <td class="text-center">L2-4-3</td> -->
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-vehicle">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <!-- <td>Alicia Tan Su Sian</td>
+                                                                                <td class="text-center">
+                                                                                    <button type="button" class="btn btn-sm pl-0 pr-0" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tenant"><i class='uil uil-user-circle text-primary'></i>
+                                                                                        <span class="sr-only" for="">Tenant</span></button>
+                                                                                </td> -->
+                                                                                <td class="text-center">WJQ 4444</td>
+                                                                                <td class="text-center">Car</td>
+                                                                                <!-- <td class="text-center">L2-4-4</td> -->
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-vehicle2">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
 
                                                                 <!-- modal edit vehicle -->
                                                                 <div class="modal fade" id="modal-edit-vehicle" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -8189,7 +8323,7 @@
                                                                                 <form class="form-horizontal">
                                                                                     <div class="row">
                                                                                         <div class="col">
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Vehicle Owner <span class="text-danger">*</span></label>
                                                                                                 <div class="col-lg-8">
@@ -8203,20 +8337,20 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input" checked>
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
                                                                                             <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Plate Number</label>
@@ -8233,7 +8367,7 @@
                                                                                                     </select>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label" for="">Parking Lot No.</label>
                                                                                                 <div class="col-lg-8">
                                                                                                     <select data-plugin="customselect" class="form-control">
@@ -8246,9 +8380,9 @@
                                                                                                         <option value="1">L2-4-7</option>
                                                                                                     </select>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="simpleinput">Taken Sticker?</label>
                                                                                                 <div class="col-lg-8">
@@ -8263,7 +8397,7 @@
                                                                                                         <label class="custom-control-label" for="customRadio1">No</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
                                                                                             
                                                                                         </div>
@@ -8293,7 +8427,7 @@
                                                                                 <form class="form-horizontal">
                                                                                     <div class="row">
                                                                                         <div class="col">
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Vehicle Owner <span class="text-danger">*</span></label>
                                                                                                 <div class="col-lg-8">
@@ -8307,20 +8441,20 @@
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner1" name="owner"
                                                                                                             class="custom-control-input" checked>
-                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Occupying Owners</label>
+                                                                                                        <label class="custom-control-label" for="owner1"><i class='uil uil-key-skeleton-alt text-primary mr-2 ml-2'></i> Owner Occupied</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner2" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-home-alt text-primary mr-2 ml-2'></i> Occupying Owner's Family Members</label>
+                                                                                                        <label class="custom-control-label" for="owner2"><i class='uil uil-user-square text-primary mr-2 ml-2'></i> Family Members</label>
                                                                                                     </div>
                                                                                                     <div class="custom-control custom-radio">
                                                                                                         <input type="radio" id="owner3" name="owner"
                                                                                                             class="custom-control-input">
-                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-bed text-primary mr-2 ml-2'></i> Tenant</label>
+                                                                                                        <label class="custom-control-label" for="owner3"><i class='uil uil-user-circle text-primary mr-2 ml-2'></i> Tenant</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
                                                                                             <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="">Plate Number</label>
@@ -8337,7 +8471,7 @@
                                                                                                     </select>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label" for="">Parking Lot No.</label>
                                                                                                 <div class="col-lg-8">
                                                                                                     <select data-plugin="customselect" class="form-control">
@@ -8350,9 +8484,9 @@
                                                                                                         <option value="1">L2-4-7</option>
                                                                                                     </select>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
-                                                                                            <div class="form-group row">
+                                                                                            <!-- <div class="form-group row">
                                                                                                 <label class="col-lg-4 col-form-label"
                                                                                                     for="simpleinput">Taken Sticker?</label>
                                                                                                 <div class="col-lg-8">
@@ -8367,7 +8501,7 @@
                                                                                                         <label class="custom-control-label" for="customRadio1">No</label>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </div>
+                                                                                            </div> -->
 
                                                                                             
                                                                                         </div>
@@ -8390,66 +8524,248 @@
                                                 <!-- end row-->
                                             </div>
 
-                                            <div class="tab-pane mt-4" id="billings">
+                                            <div class="tab-pane mt-4" id="aparcel">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card border-gray-light">
                                                             <div class="card-body">
                                                                 <div class="row mb-2">
-                                                                    <div class="col-md-12">
-                                                                        <h4>Billings</h4>
+                                                                    <div class="col-md-6">
+                                                                        <h4>Accessory Parcels</h4>
+                                                                    </div>
+                                                                    <div class="col-md-6 text-right">
+                                                                        <!-- <a href="" class="btn btn-primary btn-md btn-rounded" data-toggle="modal" data-target="#modal-add-vehicle">Add AP</a> -->
                                                                     </div>
                                                                 </div>
-                                                                <table id="basic-datatable6" class="table table-hover nowrap dt-responsive full-width" style="overflow: scroll; width: 80%;">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>No</th>
-                                                                            <th class="text-center">Payment Status</th>
-                                                                            <th>Bill No.</th>
-                                                                            <th>Date</th>
-                                                                            <th>Due Date</th>
-                                                                            <th class="text-right">Amount Due</th>
-                                                                            <th class="text-center">Actions</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge badge-warning width-xs">Partial</span>
-                                                                            </td>
-                                                                            <td>20070008</td>
-                                                                            <td>1 Jul 2020</td>
-                                                                            <td>31 Jul 2020</td>
-                                                                            <td class="text-right">
-                                                                                <span class="bold text-color-black">RM 21.00</span>
-                                                                                <br>
-                                                                                <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Download Bill</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2</td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge badge-success width-xs">Paid</span>
-                                                                            </td>
-                                                                            <td>20070008</td>
-                                                                            <td>1 Apr 2020</td>
-                                                                            <td>31 May 2020</td>
-                                                                            <td class="text-right">
-                                                                                <span class="bold text-color-black">RM 0.00</span>
-                                                                                <br>
-                                                                                <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Download Bill</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        
-                                                                    </tbody>
-                                                                </table>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable7" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Accessory Parcel No.</th>
+                                                                                <th class="text-center">Type</th>
+                                                                                <th class="text-center">Lot No.</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>A1</td>
+                                                                                <td class="text-center">Car Park</td>
+                                                                                <td class="text-center">C1-123</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-ap">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>A4</td>
+                                                                                <td class="text-center">Locker</td>
+                                                                                <td class="text-center">LK1-353</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-ap">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+
+                                                                <!-- modal edit AP -->
+                                                                <div class="modal fade" id="modal-edit-ap" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Accessory Parcel</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form class="form-horizontal">
+                                                                                    <div class="row">
+                                                                                        <div class="col">
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-lg-4 col-form-label"
+                                                                                                    for="">Accessory Parcel No.</label>
+                                                                                                <div class="col-lg-8">
+                                                                                                    <input type="text" id="" name="" class="form-control" value="A1" disabled>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-lg-4 col-form-label" for="">Type</label>
+                                                                                                <div class="col-lg-8">
+                                                                                                    <select class="form-control custom-select">
+                                                                                                        <option selected>Car Park</option>
+                                                                                                        <option>Locker</option>
+                                                                                                        <option>Foyer</option>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-lg-4 col-form-label"
+                                                                                                    for="">Lot. No.</label>
+                                                                                                <div class="col-lg-8">
+                                                                                                    <select data-plugin="customselect" class="form-control">
+                                                                                                        <option value="0">Select Parking Lot No.</option>
+                                                                                                        <option value="1">C1-122</option>
+                                                                                                        <option value="2" selected>C1-123</option>
+                                                                                                        <option value="3">C1-124</option>
+                                                                                                        <option value="4">C1-125</option>
+                                                                                                        <option value="1">C1-126</option>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                                                <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- modal edit AP end -->
+
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <div class="tab-pane mt-4" id="invoices">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card border-gray-light">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2 align-items-center">
+                                                                    <div class="col-md-6">
+                                                                        <h4>Invoices</h4>
+                                                                    </div>
+                                                                    <div class="col-md-6 text-right">
+                                                                        <a href="record-payment-new.html" class="btn btn-primary btn-rounded">Record Payment</a>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="row mb-3 text-color-black">
+                                                                    <div class="col-md-8">
+                                                                        Carry Forward <span class="font-size-12">(as at 31 Jul 2010)</span>: <b>RM1,000.00</b><br>
+                                                                        Outstanding Amount: <b>RM1,100.00</b>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable6" class="table table-hover full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th></th>
+                                                                                <th>No</th>
+                                                                                <th class="text-center">Payment Status</th>
+                                                                                <th>Invoice No.</th>
+                                                                                <th>Date</th>
+                                                                                <th>Due Date</th>
+                                                                                <th class="text-right">Amount Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>1</td>
+                                                                                <td class="text-center">
+                                                                                    <span class="badge badge-warning width-xs">Partial</span>
+                                                                                </td>
+                                                                                <td>20070008</td>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>31 Jul 2020</td>
+                                                                                <td class="text-right">
+                                                                                    <span class="bold text-color-black">RM 21.00</span>
+                                                                                    <br>
+                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Record Payment</a>
+                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>2</td>
+                                                                                <td class="text-center">
+                                                                                    <span class="badge badge-warning width-xs">Partial</span>
+                                                                                </td>
+                                                                                <td>20070008</td>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>31 Jul 2020</td>
+                                                                                <td class="text-right">
+                                                                                    <span class="bold text-color-black">RM 21.00</span>
+                                                                                    <br>
+                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Record Payment</a>
+                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>3</td>
+                                                                                <td class="text-center">
+                                                                                    <span class="badge badge-success width-xs">Paid</span>
+                                                                                </td>
+                                                                                <td>20070008</td>
+                                                                                <td>1 Apr 2020</td>
+                                                                                <td>31 May 2020</td>
+                                                                                <td class="text-right">
+                                                                                    <span class="bold text-color-black">RM 0.00</span>
+                                                                                    <br>
+                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div> <!-- end card body-->
                                                         </div> <!-- end card -->
                                                     </div><!-- end col-->
@@ -8469,17 +8785,17 @@
                                                                 </div>
                                                                 <div class="form-row align-items-center mb-4">
                                                                     <div class="col-auto col-md-4">
-                                                                        <label class="sr-only" for="">Range</label>
-                                                                        <input type="text" id="range-datepicker" class="form-control mb-2" placeholder="Range">
+                                                                        <label class="sr-only" for="">Date Range</label>
+                                                                        <input type="text" id="range-datepicker" class="form-control mb-2" placeholder="Date Range">
                                                                     </div>
-                                                                    <div class="col-auto">
+                                                                    <!-- <div class="col-auto">
                                                                         <label class="sr-only" for="">Bills</label>
                                                                         <select class="form-control custom-select mb-2">
                                                                             <option>All</option>
-                                                                            <option>Owner Bills</option>
-                                                                            <option>Tenant Bills</option>
+                                                                            <option>Owner Invoices</option>
+                                                                            <option>Tenant Invoices</option>
                                                                         </select>
-                                                                    </div>
+                                                                    </div> -->
                                                                     <div class="col-auto">
                                                                         <button type="submit" class="btn btn-primary btn-sm btn-rounded mb-2">View</button>
                                                                     </div>
@@ -8495,7 +8811,7 @@
                                                                     </div>
                                                                 </div>
                                                                 
-                                                                <div class="table-responsive-lg">
+                                                                <div class="table-responsive">
                                                                     <table class="table table-hover mb-0">
                                                                         <thead>
                                                                             <tr>
@@ -8511,12 +8827,12 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td>1 Jul 2020</td>
-                                                                                <td>Balance b/f</td>
+                                                                                <td>Balance carry forward</td>
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td class="text-right">RM 6,369.34</td>
-                                                                                <td class="text-right">RM 6,367.80</td>
-                                                                                <td class="text-right">RM 1.54</td>
+                                                                                <td class="text-right">RM 6,369.34</td>
+                                                                                <td class="text-right">RM 0.00</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>1 Jul 2020</td>
@@ -8525,7 +8841,7 @@
                                                                                 <td>31 Jul 2020</td>
                                                                                 <td class="text-right">RM 296.00</td>
                                                                                 <td class="text-right"></td>
-                                                                                <td class="text-right">RM 297.54</td>
+                                                                                <td class="text-right">RM 296.00</td>
                                                                             </tr>
                                                                             <tr>
                                                                                 <td>1 Jul 2020</td>
@@ -8534,15 +8850,60 @@
                                                                                 <td>31 Jul 2020</td>
                                                                                 <td class="text-right">RM 29.60</td>
                                                                                 <td class="text-right"></td>
-                                                                                <td class="text-right">RM 327.14</td>
+                                                                                <td class="text-right">RM 325.60</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>Payment: Maintenance Charges (Jul 2020)</td>
+                                                                                <td>SE22-00138</td>
+                                                                                <td>31 Jul 2020</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 296.00</td>
+                                                                                <td class="text-right">RM 29.60</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Jul 2020</td>
+                                                                                <td>Payment: Sinking Fund (Jul 2020)</td>
+                                                                                <td>SE22-00138</td>
+                                                                                <td>31 Jul 2020</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 29.60</td>
+                                                                                <td class="text-right">RM 30.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Aug 2020</td>
+                                                                                <td>Late Payment Interest (16 Aug - 31 Aug 2020)</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="text-right">RM 10.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 10.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Sep 2020</td>
+                                                                                <td>Late Payment Interest (1 Sep - 30 Sep 2020)</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="text-right">RM 20.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 30.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>1 Sep 2020</td>
+                                                                                <td>Credit Note (#CN245) on 30 Sep 2023</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">RM 30.00</td>
+                                                                                <td class="text-right">RM 30.00</td>
                                                                             </tr>
                                                                             <tr class="bold text-color-black">
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td class="text-right">Total</td>
-                                                                                <td class="text-right">RM 2229.60</td>
-                                                                                <td class="text-right">RM 2229.00</td>
+                                                                                <td class="text-right">RM 6,694.94</td>
+                                                                                <td class="text-right">RM 6,694.94</td>
                                                                                 <td class="text-right"></td>
                                                                             </tr>
                                                                             <tr class="bold text-color-black">
@@ -8550,9 +8911,9 @@
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td class="text-right">Balance Due</td>
-                                                                                <td class="text-right">RM 0.00</td>
                                                                                 <td class="text-right"></td>
                                                                                 <td class="text-right"></td>
+                                                                                <td class="text-right">RM 30.00</td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
@@ -8580,6 +8941,273 @@
                                                                 </p>
                                                             </div>
                                                         </div>
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <div class="tab-pane mt-4" id="notice">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card border-gray-light">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-6">
+                                                                        <h4>Notice</h4>
+                                                                    </div>
+                                                                    <div class="col-md-6 text-right">
+                                                                        <a href="" class="btn btn-primary btn-md btn-rounded" data-toggle="modal" data-target="#modal-create-notice">Create Notice</a>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable7" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Subject</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>10 Oct 2023</td>
+                                                                                <td><span class="badge badge-danger badge-pill font-weight-normal">Urgent</span> Warning Letter - Vehicle Parking Violation Notice</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-notice">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+
+                                                                <!-- modal create notice -->
+                                                                <div class="modal fade" id="modal-create-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalScrollableTitle">Create Notice</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form class="form-horizontal">
+                                                                                    <div class="row">
+                                                                                        <div class="col-12">
+                                                                                            <div class="card pb-2">
+                                                                                                <div class="card-body">
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label"
+                                                                                                           for="simpleinput">Date</label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10">
+                                                                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label" for="simpleinput">Send To</label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10">
+                                                                                                            <select data-plugin="customselect" class="form-control" multiple>
+                                                                                                                <option value="0">All 6-02-01 Occupants</option>
+                                                                                                                <option value="1">Occupant Name 1</option>
+                                                                                                                <option value="2">Occupant Name 2</option>
+                                                                                                                <option value="3">Occupant Name 3</option>
+                                                                                                            </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label">Urgency</label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10 align-self-center form-inline">
+                                                                                                            <div class="custom-control custom-radio mr-4">
+                                                                                                                <input type="radio" id="urgent1" name="urgent" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="urgent1">Yes</label>
+                                                                                                            </div>
+                                                                                                            <div class="custom-control custom-radio">
+                                                                                                                <input type="radio" id="no" name="urgent" class="custom-control-input">
+                                                                                                                <label class="custom-control-label" for="no">No</label>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label">Subject</label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10">
+                                                                                                            <input type="text" class="form-control" value="">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label">Message</label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10">
+                                                                                                            <textarea class="form-control" rows="20" id="example-textarea"></textarea>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label"></label>
+                                                                                                        <div class="col-10 col-xs-8 col-lg-10">
+                                                                                                            Sincerely,<br>
+                                                                                                            Management Office<br>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group row">
+                                                                                                        <label class="col-2 col-xs-4 col-lg-2 col-form-label">Photo Attach</label>
+                                                                                                        <div class="col-lg-5">
+                                                                                                            <input type="file" class="form-control" id="example-fileinput" multiple>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div> <!-- end card-->
+                                                                                            
+                                                                                        </div><!-- end col-->
+                                                                                    </div>
+                                                                                    <!-- end row-->
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                                                <button type="button" class="btn btn-outline-primary btn-rounded width-sm">Save Draft</button>
+                                                                                <button type="button" class="btn btn-primary btn-rounded width-sm">Send</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- modal create notice end -->
+
+                                                                <!-- modal edit notice -->
+                                                                <div class="modal fade" id="modal-edit-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Notice</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form class="form-horizontal">
+                                                                                    <div class="row">
+                                                                                        <div class="col-12">
+                                                                                            <div class="card pb-2">
+                                                                                                <div class="card-body">
+                                                                                                    <div class="row mb-3 mt-2">
+                                                                                                        <div class="col-md-2 font-weight-bold">Date</div>
+                                                                                                        <div class="col-md-10">
+                                                                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="row mb-3 mt-2">
+                                                                                                        <div class="col-md-2 font-weight-bold">Subject</div>
+                                                                                                        <div class="col-md-10">Warning Letter - Vehicle Parking Violation Notice</div>
+                                                                                                    </div>
+                                                                                                    <div class="row mb-3 mt-2">
+                                                                                                        <div class="col-md-2 font-weight-bold">Urgency</div>
+                                                                                                        <div class="col-md-10">
+                                                                                                            <div class="col-10 col-xs-8 col-lg-10 align-self-center form-inline">
+                                                                                                                <div class="custom-control custom-radio mr-4">
+                                                                                                                    <input type="radio" id="urgent1" name="urgent" class="custom-control-input" checked>
+                                                                                                                    <label class="custom-control-label" for="urgent1">Yes</label>
+                                                                                                                </div>
+                                                                                                                <div class="custom-control custom-radio">
+                                                                                                                    <input type="radio" id="no" name="urgent" class="custom-control-input">
+                                                                                                                    <label class="custom-control-label" for="no">No</label>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-2 font-weight-bold">Message</div>
+                                                                                                        <div class="col-md-10">
+                                                                                                            Unit No.: 1A3-08-08<br />
+                                                                                                            Level 1, Management Office<br>
+                                                                                                            Jalan 3 Resident,<br>
+                                                                                                            11900 Bayan Lepas, Penang, Malaysia<br>
+                                                                                                           <br>
+                                                                                                            <textarea class="form-control" rows="10" id="example-textarea">
+Dear Susan Teh,
+
+I hope this letter finds you well. We are writing to address a matter of concern related to your parking habits within our community.
+
+It has come to our attention that on multiple occasions, your vehicle has been parked in a manner that violates our community's parking regulations. These violations include but are not limited to parking in restricted areas, blocking walkways, and occupying spaces designated for other residents. These actions not only disrupt the overall harmony of the community but also pose safety and accessibility concerns for other residents.
+
+In accordance with our community's policies, we kindly remind you that all residents are required to park their vehicles in a manner that is considerate of their neighbors and compliant with our parking rules. We believe in fostering a safe and respectful living environment for everyone.
+
+To ensure that these violations do not continue, we urge you to immediately rectify your parking practices. Please familiarize yourself with the community's parking regulations, which can be found in our resident handbook or on our website.
+
+Failure to comply with these regulations may result in further action, including fines or additional consequences as outlined in our community guidelines. We trust that you will take this warning seriously and make the necessary adjustments to your parking habits.
+
+If you have any questions or concerns regarding our parking policies or require any clarification, please do not hesitate to contact our community management office at [Contact Information].
+
+We appreciate your immediate attention to this matter and your cooperation in maintaining a peaceful and harmonious living environment for all residents.
+
+Thank you.
+                                                                                                            </textarea>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="row mb-3 mt-2">
+                                                                                                        <div class="col-md-2 font-weight-bold"></div>
+                                                                                                        <div class="col-md-10">
+                                                                                                            Sincerely,<br>
+                                                                                                            Management Office<br>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="row mb-3 mt-2">
+                                                                                                        <div class="col-md-2 font-weight-bold">Photo Attach</div>
+                                                                                                        <div class="col-md-5">
+                                                                                                            <input type="file" class="form-control" id="example-fileinput" multiple>
+                                                                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                                                                <div class="p-1 px-2">
+                                                                                                                    <div class="row align-items-center">
+                                                                                                                        <div class="col-auto">
+                                                                                                                            <img src="assets/images/projects/project-1.jpg"
+                                                                                                                                class="avatar-sm rounded" alt="file-image">
+                                                                                                                        </div>
+                                                                                                                        <div class="col pl-0">
+                                                                                                                            <a href="javascript:void(0);"
+                                                                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                                                            <p class="mb-0">2.3 MB</p>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-auto">
+                                                                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                                                                data-placement="bottom" title="Download"
+                                                                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                                                            </a>
+                                                                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                                                                data-placement="bottom" title="Delete"
+                                                                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                                                                            </a>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div> <!-- end card-->
+                                                                                            <div class="card">
+                                                                                                <div class="card-body">
+                                                                                                    <small class="text-muted">Last saved by Danny on 10 Oct 2023 at 2:30 PM</small>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                        </div><!-- end col-->
+                                                                                    </div>
+                                                                                    <!-- end row-->
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                                                                                <button type="button" class="btn btn-outline-primary btn-rounded width-sm">Save Draft</button>
+                                                                                <button type="button" class="btn btn-primary btn-rounded width-sm">Send</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- modal edit notice end -->
+
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
                                                     </div><!-- end col-->
                                                 </div>
                                                 <!-- end row-->

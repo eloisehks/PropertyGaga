@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Budgeting</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive pb-3">
+                                            <table class="table table-hover nowrap table-sm table-bordered font-size-12 text-color-black">
+                                                <thead class="bg-color-grayLight">
+                                                    <tr>
+                                                        <th></th>
+                                                        <th colspan="2" class="text-center">
+                                                            ACTUAL AMOUNT (RM)
+                                                            <div class="form-row align-items-center text-center mt-2 mb-0">
+                                                                <div class="col col-lg-9">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="text" id="range-datepicker" class="form-control font-sm" placeholder="Date Range">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col col-auto">
+                                                                    <div class="form-group mb-0">
+                                                                        <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded font-sm">View</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th colspan="2" class="text-center bg-color-propertygagaLightest">
+                                                            ESTIMATE AMOUNT (RM)
+                                                            <div class="form-row align-items-center text-center mt-2 mb-0">
+                                                                <div class="col col-lg-9">
+                                                                    <div class="form-group mb-0">
+                                                                        <input type="text" id="range-datepicker" class="form-control font-sm" placeholder="Date Range">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col col-auto">
+                                                                    <div class="form-group mb-0">
+                                                                        <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded font-sm">View</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="18%"></th>
+                                                        <th class="text-center" width="15%">Yearly</th>
+                                                        <th class="text-center" width="15%">Average<br>Monthly</th>
+                                                        <th class="bg-color-propertygagaLightest text-center" width="15%">Yearly</th>
+                                                        <th class="bg-color-propertygagaLightest text-center" width="15%">Average<br>Monthly<br>(Actual)</th>
+                                                        <th class="text-center" width="20%">Remarks</th>
+                                                        <th width="2%"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">A) Income</h5></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="bg-color-propertygagaLightest"></td>    
+                                                        <td class="bg-color-propertygagaLightest"></td>
+                                                        <td></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Maintenance Charges (RM2.20/share unit)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12 width-md" id="simpleinput" value="1,618,927.20"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12 width-md" id="simpleinput" value="134,910.60"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12 width-md" id="simpleinput" value="1,618,927.20"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12 width-md" id="simpleinput" value="134,910.60"></td>
+                                                        <td><textarea class="form-control font-size-12 width-xl" rows="1" id="example-textarea">RM2.20/SU</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sinking Fund</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="161,892.72"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="13,491.06"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="161,892.72"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="13,491.06"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea"></textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fixed Deposit Interest</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="NIL"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="NIL"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="10,749.96"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="895.83"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea"></textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Other Income - Fine / Car Park / ATM / Ads / etc...</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value=""></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value=""></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value=""></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value=""></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea"></textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="#" data-toggle="modal" data-target="#additem"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                        <td colspan="6"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-weight-semibold text-right">TOTAL</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="1,618,927.20"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="134,910.60"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="1,618,927.20"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="149,297.49"></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><u>Less: Payments</u></td>
+                                                        <td colspan="6"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">B) Fixed Costs / Contract Services</h5></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="bg-color-propertygagaLightest"></td>    
+                                                        <td class="bg-color-propertygagaLightest"></td>
+                                                        <td></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Security Charges</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="395,719.20"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="32,976.60"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="396,965.76"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="33,080.48"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">New Security Company</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Management Fee</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="190,800.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="15,900.00"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="172,356.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="14,363.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">New Company</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pool Maintenance</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="45,600.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="3,800.00"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="42,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="3,500.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">Reduce 8%</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gen-set Service</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="4,800.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="400.00"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="4,800.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="400.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea"></textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Gym Equipment</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="NIL"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="NIL"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,599.96"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="133.33"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">Quarterly Service RM400</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-weight-semibold">SUB TOTAL (B)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="1,103,407.20" disabled></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="91,950.60" disabled></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="1,124,841.72" disabled></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="93,736.81" disabled></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="#" data-toggle="modal" data-target="#additem"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                        <td colspan="6"></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">C) Utility Charges</h5></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="bg-color-propertygagaLightest"></td>    
+                                                        <td class="bg-color-propertygagaLightest"></td>
+                                                        <td></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Eletricity (TNB)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="785,505.48"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="65,458.79"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="390,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="32,500.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">Total have 5 meters</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Water (PBA)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="19,958.76"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,663.23"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="21,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,750.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">Total have 4 meters</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sewerage (Indah Water)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,048.80"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="87.40"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="538.80"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="44.90"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">Monthly</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="#" data-toggle="modal" data-target="#additem"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                        <td colspan="6"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-weight-semibold">SUB TOTAL (C)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="806,513.04" disabled></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="67,209.42" disabled></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="411,538.80" disabled></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="34,294.90" disabled></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">D) Variable Expenses</h5></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="bg-color-propertygagaLightest"></td>    
+                                                        <td class="bg-color-propertygagaLightest"></td>
+                                                        <td></td>
+                                                        <td class="text-center"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Access Card</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,520.04"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="126.67"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="999.96"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="83.33"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">purchase of new cards</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AGM Expenses</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,500.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="125.00"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="83.33"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">1 year 1 time</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Audit</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,150.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="95.83"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="3,492.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="291.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">1 year 1 time</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Licence Fees (JKKP)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="5,320.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="443.33"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="5,320.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="443.33"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">1 year 1 time</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fire Insurance</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="74,500.00"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="6,208.33"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="48,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="4,000.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">1 year 1 time</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Repair & Maintenance</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="22,596.96"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="1,883.08"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="24,000.00"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="2,000.00"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">estimate monthly</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="#" data-toggle="modal" data-target="#additem"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                        <td colspan="6"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="font-weight-semibold">SUB TOTAL (D)</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="117,625.00" disabled></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="9,802.08" disabled></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="88,491.92" disabled></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="7,374.33" disabled></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">E) Total Payment (B+C+D) = (E)</h5></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="2,027,545.24" disabled></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="168,962.10" disabled></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="1,624,872.44" disabled></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="135,406.04" disabled></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h5 class="text-color-propertygaga m-0">F) Surplus / (Deficit) (Income-E)</h5></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="(408,618.04)" disabled></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="(34,051.50)" disabled></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="4,804.72" disabled></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-weight-semibold font-size-12" id="simpleinput" value="400.39" disabled></td>
+                                                        <td></td>
+                                                        <td></td>    
+                                                    </tr>
+                                                    
+                                                    <!-- <tr>
+                                                        <td>ddddd</td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="fffff"></td>
+                                                        <td class="text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="ddddd"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="dddddd"></td>    
+                                                        <td class="bg-color-propertygagaLightest text-right"><input type="text" class="form-control text-right font-size-12" id="simpleinput" value="ddddd"></td>
+                                                        <td><textarea class="form-control font-size-12" rows="1" id="example-textarea">ddddd</textarea></td>
+                                                        <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm btn-rounded no-border"><i class='uil uil-trash-alt'></i></button></td>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+
+                                            <div class="float-right">
+                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Print</button>
+                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                            </div>
+
+                                        </div>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- Add Item -->
+            <div class="modal fade" id="additem" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-lg-5 col-form-label" for="example-date">Account Group</label>
+                                    <div class="col-lg-7">
+                                        <select class="form-control custom-select">
+                                            <option>Select Account Group</option>
+                                            <option value="0" selected>Fixed Expenses</option>
+                                            <option>Valuable Expenses</option>
+                                            <option>Utilities Expenses</option>
+                                            <option>Other Expenses</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-5 col-form-label" for="example-date">Account Name</label>
+                                    <div class="col-lg-7">
+                                        <select class="form-control custom-select">
+                                            <option>Select Account Name</option>
+                                            <option>Fixed Services / Management Fee</option>
+                                            <option>Fixed Services / Security Services</option>
+                                            <option>Fixed Services / Pool Maintenance</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Add to List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Item end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Recurring Invoices</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='invoices-recurring-new.html';"><i class="uil-plus mr-1"></i> Create Recurring Invoice</button> -->
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='invoices-invoice-settings-new.html';"><i class="uil-plus mr-1"></i> Create Recurring Invoice</button>
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='invoices-invoice-settings-edit-list.html';"><i class="uil-edit mr-1"></i> Edit Recurring Invoice</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="col-12">
+                                <div class="card mb-2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <h4 class="mt-0 mb-0"><span class="text-muted font-size-16 mr-3">Total Recurring Invoices:</span> 810</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        <div class="row py-1">
+                                            <div class="col-xl-3 col-sm-6">
+                                                <!-- stat 1 -->
+                                                <div class="media p-3">
+                                                    <i data-feather="grid" class="align-self-center icon-dual icon-lg mr-4"></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">2</h4>
+                                                        <span class="text-muted font-size-12">Recurring Inv. (Batch)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-6">
+                                                <!-- stat 2 -->
+                                                <div class="media p-3">
+                                                    <i data-feather="file" class="align-self-center icon-dual icon-lg mr-4"></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">1211</h4>
+                                                        <span class="text-muted">Invoice Created</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-6">
+                                                <!-- stat 3 -->
+                                                <div class="media p-3">
+                                                    <i data-feather="corner-up-right"
+                                                        class="align-self-center icon-dual icon-lg mr-4"></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">1200</h4>
+                                                        <span class="text-muted">Invoice Sent Out</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-6">
+                                                <!-- stat 3 -->
+                                                <div class="media p-3">
+                                                    <i data-feather="check-square"
+                                                        class="align-self-center icon-dual icon-lg mr-4"></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">689</h4>
+                                                        <span class="text-muted">Invoice Read</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-lg-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Frequency</option>
+                                                                <option value="1">Yearly</option>
+                                                                <option value="2">6 Months</option>
+                                                                <option value="3">3 Months</option>
+                                                                <option value="4">Monthly</option>
+                                                                <option value="4">Weekly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option selected>Status</option>
+                                                                <option>Active</option>
+                                                                <option>Stopped</option>
+                                                                <!-- <option>Expired</option> -->
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <a href="#" data-toggle="modal" data-target="#" class="btn btn-outline-secondary btn-sm btn-rounded">Activate</a> <a href="#" data-toggle="modal" data-target="#" class="btn btn-outline-secondary btn-sm btn-rounded">Stop</a>
+                                            </div> 
+                                        </div>
+                                        
+                                        <div class="table-responsive">
+                                            <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2c"><label class="custom-control-label" for="customCheck2c">
+                                                            </div>
+                                                        </th>
+                                                        <th>Batch ID</th>
+                                                        <th>Created Date</th>
+                                                        <th>Unit No.</th>
+                                                        <th>Status</th>
+                                                        <th>Frequency</th>
+                                                        <th>Last Invoice Date</th>
+                                                        <th>Next Invoice Date</th>
+                                                        <th class="text-right">Amt. (RM)</th>
+                                                        <th class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-1</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2c"><label class="custom-control-label" for="customCheck2c">
+                                                            </div>
+                                                        </td>
+                                                        <td>B0055</td>
+                                                        <td>5 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-1</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Yearly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Jul 2023</td>
+                                                        <td width="15%" class="text-right">660.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <!-- <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Stop</a>
+                                                                </div>
+                                                            </div> -->
+                                                            <a href="#" class="btn btn-outline-danger btn-sm btn-rounded width-xs" data-toggle="modal">Stop</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-2</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <!-- <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Activate</a>
+                                                                </div>
+                                                            </div> -->
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2c"><label class="custom-control-label" for="customCheck2c">
+                                                            </div>
+                                                        </td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">2-19-10</a></td>
+                                                        <td class="text-danger">Stopped</td>
+                                                        <td width="30%">Weekly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">-</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <!-- <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Activate</a>
+                                                                </div>
+                                                            </div> -->
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-xs" data-toggle="modal">Activate</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-4</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-15</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-7</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="bg-color-grayLighter">
+                                                        <td></td>
+                                                        <td>B0033</td>
+                                                        <td>2 Mar 2023</td>
+                                                        <td width="30%"><a href="invoices-recurring-unit.html">3-19-12</a></td>
+                                                        <td class="text-success">Active</td>
+                                                        <td width="30%">Monthly</td>
+                                                        <td width="15%">20 Jul 2022</td>
+                                                        <td width="15%">20 Aug 2022</td>
+                                                        <td width="15%" class="text-right">2,000.00</td>
+                                                        <td width="15%" class="text-center">
+                                                            <span class="badge badge-soft-primary font-xs">System Generated</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

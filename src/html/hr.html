@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar0.html')
+
+            @@include('./partials/left-sidebar-0.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-3 mt-0">Human Resource</h3>    
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-0 mt-md-0">
+                                    <!-- <button type="button" class="btn btn-primary btn-rounded mb-0" onclick="location.href='blacklist-add.html';"><i class="uil-plus mr-1"></i> Add Blacklist</button>
+                                    <button type="button" class="btn btn-link mb-0" onclick="location.href='whitelist.html';">View Whitelist</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#leave" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Leave <span class="badge badge-danger badge-pill">1</span></span>
+                                                    <span class="d-none d-sm-block">Leave <span class="badge badge-danger badge-pill">1</span></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#ot" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Overtime <span class="badge badge-danger badge-pill">1</span></span>
+                                                    <span class="d-none d-sm-block">Overtime <span class="badge badge-danger badge-pill">1</span></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#absent" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Absent</span>
+                                                    <span class="d-none d-sm-block">Absent</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                          
+                                            <div class="tab-pane show active" id="leave">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable3" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th width="10%">No.</th>
+                                                                                <th>Status</th>
+                                                                                <th>Ref No.</th>
+                                                                                <th>Name</th>
+                                                                                <th>Type</th>
+                                                                                <th>Date From</th>
+                                                                                <th>Date To</th>
+                                                                                <th class="text-center"># Days</th>
+                                                                                <th>Approve By</th>
+                                                                                <th class="text-center">Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="bg-color-lighterred">
+                                                                                <td>1</td>
+                                                                                <td><span class="text-warning font-weight-bold ">Pending</span></td>
+                                                                                <td>L0392</td>
+                                                                                <td>Peter</td>
+                                                                                <td>Annual Leave</td>
+                                                                                <td>1 Feb 2022</td>
+                                                                                <td>3 Feb 2022</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td>Eric</td>
+                                                                                <td class="text-center"><button type="button" class="btn btn-primary btn-rounded btn-sm mb-0" onclick="location.href='leave-application.html';">Approve Leave</button></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td><span class="text-success">Approved</span></td>
+                                                                                <td>L0394</td>
+                                                                                <td>Sam</td>
+                                                                                <td>Medical Leave</td>
+                                                                                <td>1 Feb 2022</td>
+                                                                                <td>3 Feb 2022</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td>Eric</td>
+                                                                                <td class="text-center"><button type="button" class="btn btn-outline-dark btn-rounded btn-sm mb-0 width-sm" onclick="location.href='leave-application-approved.html';">Edit</button></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td><span class="text-danger">Rejected</span></td>
+                                                                                <td>L0324</td>
+                                                                                <td>Chong</td>
+                                                                                <td>Emergency Leave</td>
+                                                                                <td>1 Feb 2022</td>
+                                                                                <td>3 Feb 2022</td>
+                                                                                <td class="text-center">3</td>
+                                                                                <td>Eric</td>
+                                                                                <td class="text-center"><button type="button" class="btn btn-outline-dark btn-rounded btn-sm mb-0 width-sm" onclick="location.href='leave-application-rejected.html';">Edit</button></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                           
+                                            <div class="tab-pane show" id="ot">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th width="10%">No.</th>
+                                                                                <th>Ref. No.</th>
+                                                                                <th>Name</th>
+                                                                                <th>Username</th>
+                                                                                <th>Start Date & Time</th>
+                                                                                <th>End Date & Time</th>
+                                                                                <th class="text-center"># of hour(s)</th>
+                                                                                <th>Explanation of OT</th>
+                                                                                <th>Status</th>
+                                                                                <th>Approved By</th>
+                                                                                <th class="text-center">Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="bg-color-lighterred">
+                                                                                <td>1</td>
+                                                                                <td>OT1395</td>
+                                                                                <td>Sam</td>
+                                                                                <td>sam123</td>
+                                                                                <td>1 Feb 2022, 8:20pm</td>
+                                                                                <td>1 Feb 2022, 11:20pm</td>
+                                                                                <td class="text-center">4</td>
+                                                                                <td>jldsjg kdshglli oduag dalgld ladg ljdl.</td>
+                                                                                <td><span class="text-dark font-weight-bold">Awaiting Approval</span></td>
+                                                                                <td>Eric</td>
+                                                                                <td class="text-center"><button type="button" class="btn btn-primary btn-rounded btn-sm mb-0" onclick="location.href='overtimeclaim.html';">Approve OT</button></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>OT1394</td>
+                                                                                <td>Eugene</td>
+                                                                                <td>eugene123</td>
+                                                                                <td>1 Feb 2022, 8:20pm</td>
+                                                                                <td>1 Feb 2022, 11:20pm</td>
+                                                                                <td class="text-center">4</td>
+                                                                                <td>jldsjg kdshglli oduag dalgld ladg ljdl.</td>
+                                                                                <td><span class="text-success">Approved</span></td>
+                                                                                <td>Eric</td>
+                                                                                <td class="text-center"><button type="button" class="btn btn-outline-dark btn-rounded btn-sm mb-0 width-sm" onclick="location.href='overtimeclaim-approved.html';">Edit</button></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <div class="tab-pane show" id="absent">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body pr-0 pl-0">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-md-12 text-right">
+                                                                        <a href="" class="btn btn-primary btn-md btn-rounded" data-toggle="modal" data-target="#modal-add-absentee">Add Absentee</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable4" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>No.</th>
+                                                                                <th>Absent Date</th>
+                                                                                <th>Name</th>
+                                                                                <th>Employee ID</th>
+                                                                                <th>Period</th>
+                                                                                <th>Remarks</th>
+                                                                                <th class="text-center">Supporting Doc.</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>1 May 2023</td>
+                                                                                <td>Eugene Choong</td>
+                                                                                <td>248502</td>
+                                                                                <td>Full Day</td>
+                                                                                <td>remarks 111</td>
+                                                                                <td class="text-center">Yes</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-absentee">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>1 May 2023</td>
+                                                                                <td>Eugene Choong</td>
+                                                                                <td>248502</td>
+                                                                                <td>Second Half</td>
+                                                                                <td>Remarks 222</td>
+                                                                                <td class="text-center">Yes</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-absentee">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td>1 May 2023</td>
+                                                                                <td>Eugene Choong</td>
+                                                                                <td>248502</td>
+                                                                                <td>First Half</td>
+                                                                                <td>Remarks 333</td>
+                                                                                <td class="text-center">No</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edit-absentee">Edit</a>
+                                                                                    &nbsp;
+                                                                                    <a href="" class="btn btn-outline-danger btn-sm btn-rounded" data-toggle="modal" data-target="#">Delete</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                        
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal add absentee -->
+            <div class="modal fade" id="modal-add-absentee" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Absentee</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Absent Date<span class="text-danger">*</span></label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" id="example-date" type="date" name="date" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Employee <span class="text-danger">*</span></label>
+                                            <div class="col-lg-8">
+                                                <select data-plugin="customselect" class="form-control">
+                                                    <option value="0" selected>Select Employee</option>
+                                                    <option>Eugene Choong</option>
+                                                    <option>Alicia</option>
+                                                    <option>Tammy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Employee ID</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Period</label>
+                                            <div class="col-lg-5">
+                                                <select class="form-control custom-select">
+                                                    <option>Select Period</option>
+                                                    <option>Full Day</option>
+                                                    <option>First Half</option>
+                                                    <option>Second Half</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="simpleinput">Remarks</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" rows="3" id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Supporting Doc.</label>
+                                            <div class="col-lg-8">
+                                                <input type="file" class="form-control"id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                  
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal add absentee end -->
+
+            <!-- modal edit absentee -->
+            <div class="modal fade" id="modal-edit-absentee" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Absentee</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Absent Date<span class="text-danger">*</span></label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" id="example-date" type="date" name="date" value="01-May-2023">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Employee <span class="text-danger">*</span></label>
+                                            <div class="col-lg-8">
+                                                <select data-plugin="customselect" class="form-control">
+                                                    <option value="0">Select Employee</option>
+                                                    <option selected>Eugene Choong</option>
+                                                    <option>Alicia</option>
+                                                    <option>Tammy</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Employee ID</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" id="" name="" class="form-control" value="248502">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Period</label>
+                                            <div class="col-lg-5">
+                                                <select class="form-control custom-select">
+                                                    <option>Select Period</option>
+                                                    <option selected>Full Day</option>
+                                                    <option>First Half</option>
+                                                    <option>Second Half</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="simpleinput">Remarks</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" rows="3" id="example-textarea">Transportation issues</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="">Supporting Doc.</label>
+                                            <div class="col-lg-8">
+                                                <input type="file" class="form-control"id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                  
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-outline-danger btn-rounded width-sm">Delete</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal edit absentee end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+       
+        <!-- <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#visitorparking').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script> -->
+
+       
+        
+    </body>
+</html>

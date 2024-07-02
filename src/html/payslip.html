@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar0.html')
+
+            @@include('./partials/left-sidebar-0.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Payslip</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="mb-2">
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Select Year</option>
+                                                            <option selected>2023</option>
+                                                            <option>2021</option>
+                                                            <option>2021</option>
+                                                            <option>2020</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Select Month</option>
+                                                            <option>January</option>
+                                                            <option selected>February</option>
+                                                            <option>March</option>
+                                                            <option>April</option>
+                                                            <option>May</option>
+                                                            <option>June</option>
+                                                            <option>July</option>
+                                                            <option>August</option>
+                                                            <option>September</option>
+                                                            <option>October</option>
+                                                            <option>November</option>
+                                                            <option>December</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Role</option>
+                                                            <option>Account Clerk</option>
+                                                            <option>Account Manager</option>
+                                                            <option>Accountant</option>
+                                                            <option>Admin</option>
+                                                            <option>Building Manager</option>
+                                                            <option>Building Supervisor</option>
+                                                            <option>Clerk</option>
+                                                            <option>General Manager</option>
+                                                            <option>Operation Manager</option>
+                                                            <option>Staff</option>
+                                                            <option>Handyman</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <div class="table-responsive">
+                                                            <table id="basic-datatable" class="table table-hover nowrp full-width">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th width="5%">Staff ID</th>
+                                                                        <th width="20%">Role</th>
+                                                                        <th width="35%">Name</th>
+                                                                        <th width="20%">Username</th>
+                                                                        <th width="20%">Upload File</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>031</td>
+                                                                        <td>Staff</td>
+                                                                        <td>David</td>
+                                                                        <td>david24</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-david24.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>342</td>
+                                                                        <td>Clerk</td>
+                                                                        <td>Grace</td>
+                                                                        <td>grace999</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-grace999.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>053</td>
+                                                                        <td>Building Manager</td>
+                                                                        <td>Thomas</td>
+                                                                        <td>thomas444</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>064</td>
+                                                                        <td>Operation Manager</td>
+                                                                        <td>Peter</td>
+                                                                        <td>peter9</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>055</td>
+                                                                        <td>Building Supervisor</td>
+                                                                        <td>Elaine</td>
+                                                                        <td>elaine9</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-elaine9.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>046</td>
+                                                                        <td>Account Clerk</td>
+                                                                        <td>Karin</td>
+                                                                        <td>karin999</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>037</td>
+                                                                        <td>General Manager</td>
+                                                                        <td>Wesly</td>
+                                                                        <td>wesly999</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-wesly999.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>028</td>
+                                                                        <td>Admin</td>
+                                                                        <td>Sue</td>
+                                                                        <td>sue999</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-sue999.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>019</td>
+                                                                        <td>Account Manager</td>
+                                                                        <td>Lim</td>
+                                                                        <td>lim999</td>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-auto">
+                                                                                    <div class="p-2 border rounded">
+                                                                                        <div class="media">
+                                                                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class="media-body">
+                                                                                                <a href="#" class="d-inline-block mt-2">payslip-Feb23-lim999.pdf</a>
+                                                                                            </div>
+                                                                                            <div class="float-right mt-1">
+                                                                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div> <!-- end card body-->
+                                                </div> <!-- end card -->
+                                            </div><!-- end col-->
+                                        </div>
+                                        <!-- end row-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myDIV");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
+        
+    </body>
+</html>

@@ -11,6 +11,21 @@ File: Data tables init js
 
 $(document).ready(function() {
 
+    $('#bookinglist').DataTable({
+        order: [[ 1, 'asc' ]],
+        columnDefs: [ { type: 'num', 'targets': [1] } ],
+        "language": {
+            "paginate": {
+                "previous": "<i class='uil uil-angle-left'>",
+                "next": "<i class='uil uil-angle-right'>"
+            }
+
+        },
+        "drawCallback": function () {
+            $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+        }
+    });
+
     $('#checklist-daily').DataTable({
         order: [[ 0, 'desc' ]],
         columnDefs: [ { type: 'date', 'targets': [0] } ],

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="NODerthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">NOD Batch Listing</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" class="pb-3 mr-3" onclick="location.href='recovery-nodtribunal-archive.html';"><i class="uil-archive mr-1"></i> Archive</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="10%">Created on</th>
+                                                        <th>Batch No.</th>
+                                                        <th width="10%">Recovery</th>
+                                                        <th width="10%">Group Name</th>
+                                                        <th width="10%" class="text-center">Settled / Total Unit</th>
+                                                        <th width="10%">Total Amount</th>
+                                                        <th width="10%" class="text-right">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2 Jan 2023</td>
+                                                        <td><a href="recovery-nodtribunal-details.html">BNOD2435</a></td>
+                                                        <td>NOD</td>
+                                                        <td>Batch 1</td>
+                                                        <td class="text-center">1/4</td>
+                                                        <td>RM 30,000.00</td>
+                                                        <td class="text-right"><a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Close Batch</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4 Dec 2022</td>
+                                                        <td><a href="recovery-nodtribunal-details.html">BTRI6786</a></td>
+                                                        <td>Tribunal</td>
+                                                        <td>Batch 2</td>
+                                                        <td class="text-center">2/4</td>
+                                                        <td>RM 20,000.00</td>
+                                                        <td class="text-right"><a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Close Batch</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1 Dec 2022</td>
+                                                        <td><a href="recovery-nodtribunal-details.html">BNOD2435</a></td>
+                                                        <td>NOD</td>
+                                                        <td>Batch 3</td>
+                                                        <td class="text-center">1/5</td>
+                                                        <td>RM 10,000.00</td>
+                                                        <td class="text-right"><a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Close Batch</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal registered post-->
+            <div class="modal fade" id="regpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registered Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="example-date">Upload</label>
+                                            <div class="col-lg-9">
+                                                <div class="row align-items-center">
+                                                    <div class="col-12">
+                                                        <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-muted font-weight-bold">qr.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                                <input type="file" class="form-control" id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal registered post end-->
+
+            <!-- modal returned post-->
+            <div class="modal fade" id="retpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Returned Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label"
+                                        for="example-date">Returned Date</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" id="example-date" type="date"
+                                            name="date" value="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                            for="example-date">Upload</label>
+                                            <div class="col-lg-9">
+                                                <input type="file" class="form-control" id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal returned post end-->
+
+            <!-- modal registered post 2-->
+            <div class="modal fade" id="regpost2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registered Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for="example-date">Upload</label>
+                                            <div class="col-lg-9">
+                                               
+                                                <div class="row align-items-center">
+                                                    <div class="col-12">
+                                                        <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-muted font-weight-bold">qr.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                                <input type="file" class="form-control" id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal registered post 2 end-->
+
+            <!-- modal returned post 2-->
+            <div class="modal fade" id="retpost2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Returned Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label"
+                                        for="example-date">Returned Date</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" id="example-date" type="date"
+                                            name="date" value="">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                            for="example-date">Upload</label>
+                                            <div class="col-lg-9">
+                                                <div class="row align-items-center">
+                                                    <div class="col-12">
+                                                        <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-muted font-weight-bold">returned.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <!-- Button -->
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Download"
+                                                            class="btn btn-link text-muted btn-lg p-0">
+                                                            <i class='uil uil-cloud-download font-size-14'></i>
+                                                        </a>
+                                                        <a href="javascript:void(0);" data-toggle="tooltip"
+                                                            data-placement="bottom" title="Delete"
+                                                            class="btn btn-link text-danger btn-lg p-0">
+                                                            <i class='uil uil-multiply font-size-14'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                                <input type="file" class="form-control" id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal returned post 2 end-->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

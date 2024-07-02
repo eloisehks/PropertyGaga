@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Edit Recurring Invoice Setting</h3>
+                                <!-- <span class="badge badge-success width-sm">Active</span> -->
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <button type="submit" class="btn btn-primary btn-rounded" onclick="location.href='invoices-invoice-recurring-invoice-preview.html';">Preview Invoice</button>
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-12">                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <div class="row">
+                                            <div class="col-auto col-xl-6 col-sm-6"><h4>#Inv3785092</h4></div>
+                                            <div class="col-auto col-xl-6 col-sm-6 text-right">
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                    <label class="custom-control-label mt-2 mr-2 mb-4" for="customSwitch1">Share to Committee</label>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center">
+                                                            <div class="col col-auto col-lg-1">
+                                                                <span class="badge badge-soft-primary rounded-circle p-1"><i class="icon-sm m-2" data-feather="file"></i></span>
+                                                            </div>
+                                                            <div class="col col-auto mr-3">
+                                                                <h4 class="m-0">Recurring Invoice - B0033</h4>
+                                                                <!-- <span class="text-muted font-size-13 font-weight-normal">Created by Andy Lim on 23 Apr 2020</span> <a href="" class="ml-2 font-weight-medium" data-toggle="modal" data-target="#createlog">more</a> -->
+                                                            </div>
+                                                            <div class="col-auto mr-3">
+                                                                
+                                                            </div>
+                                                            <!-- <div class="col text-right">
+                                                                <a href="" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#">Save</a>
+                                                            </div> -->
+                                                        </div>
+
+                                                        <div class="border mt-3 mb-3"></div>
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form class="form-horizontal">
+                                                                            <div class="row">
+                                                                                <div class="col">
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-lg-2 col-form-label">Select Unit(s)</label>
+                                                                                        <div class="col-lg-10">
+                                                                                            <select class="form-control wide" data-plugin="customselect" multiple>
+                                                                                                <option value="0">Select Unit</option>
+                                                                                                <option value="1" selected>All Units</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="1">8-18-3A</option>
+                                                                                                <option value="2">8-19-03</option>
+                                                                                                <option value="3">8-20-3A</option>
+                                                                                                <option value="4">8-21-03</option>
+                                                                                                <option value="4">3-19-2</option>
+                                                                                                <option value="4">3-19-3</option>
+                                                                                                <option value="4">3-19-4</option>
+                                                                                                <option value="4">3-19-5</option>
+                                                                                                <option value="4">3-19-6</option>
+                                                                                                <option value="4">3-19-7</option>
+                                                                                                <option value="4">3-19-8</option>
+                                                                                                <option value="4">3-19-9</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                        <form class="form-inline">
+                                                                            
+                                                                            <div class="row m-0 pb-2">
+                                                                                <div class="form-group mr-3">
+                                                                                    <label class="mr-2">Create first invoice on</label>
+                                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                                    <label class="ml-lg-2 ml-md-2 mr-lg-2 mr-md-2">and end</label>
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option></option>
+                                                                                        <option value="1">On</option>
+                                                                                        <option value="2">Never</option>
+                                                                                    </select>
+                                                                                    <input class="form-control ml-lg-2 ml-md-2" id="example-date" type="date" name="date">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row m-0 pb-2">
+                                                                                <div class="form-group mr-3">
+                                                                                    <label class="mr-2">Repeat this invoice</label>
+                                                                                    <label class="mr-2">on the</label>
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option></option>
+                                                                                        <option value="0">First</option>
+                                                                                        <option value="1">Last</option>
+                                                                                        <option value="2">2nd</option>
+                                                                                        <option value="3">3rd</option>
+                                                                                        <option value="4">4th</option>
+                                                                                    </select>
+                                                                                    <label class="ml-2 mr-2">day of every  (Frequency)</label>
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option></option>
+                                                                                        <option value="0">Week</option>
+                                                                                        <option value="0">Month</option>
+                                                                                        <option value="0">Quarter</option>
+                                                                                        <option value="0">Half Year</option>
+                                                                                        <option value="1">Year</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row m-0 pb-2">
+                                                                                <div class="form-group mr-3">
+                                                                                    <label for="example-date">Due Date</label>
+                                                                                    <div class="ml-lg-2 ml-md-2">
+                                                                                        <select class="form-control custom-select">
+                                                                                            <option></option>
+                                                                                            <option value="1">every 15 days</option>
+                                                                                            <option value="1">every 30 days</option>
+                                                                                            <option value="1">every 45 days</option>
+                                                                                            <option value="1">end of the month</option>
+                                                                                            <option value="1">end of next month</option>
+                                                                                            <option value="1">on Receipt</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="ml-lg-2 ml-md-2">
+                                                                                        or <input type="text" class="form-control" placeholder="eg. 18th">                                                                                        
+                                                                                    </div>
+                                                                                    <label class="ml-lg-2 ml-md-2 mr-lg-2 mr-md-2">days</label>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                        <div class="card mt-3">
+                                                                            <div class="card-body p-0">
+                                            
+                                                                                <div class="table-responsive">
+                                                                                    <table class="table table-centered m-0">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th width="25%"></th>
+                                                                                                <th width="24%">Description</th>
+                                                                                                <th width="10%">Qty.</th>
+                                                                                                <th width="14%">Price (RM)</th>
+                                                                                                <th width="14%">Tax (RM)</th>
+                                                                                                <th width="11%">Amt. (RM)</th>
+                                                                                                <th width="2%"></th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Category</option>
+                                                                                                            <option value="1">Signboard</option>
+                                                                                                            <option value="2">Adv Maintenance Charges</option>
+                                                                                                            <option value="3">Adv Sinking Fund</option>
+                                                                                                            <option value="4">Prepaid Income</option>
+                                                                                                            <option>Singking Fund</option>
+                                                                                                            <option>Fix Deposit Interest</option>
+                                                                                                            <option>Insurance</option>
+                                                                                                            <option>Interest</option>
+                                                                                                            <option>Legal Fees</option>
+                                                                                                            <option selected>Maintenance Fees</option>
+                                                                                                            <option>Outstanding Balance</option>
+                                                                                                            <option>Quit Rent</option>
+                                                                                                            <option>Reimbursement of Elec</option>
+                                                                                                            <option>Utilities</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                    <!-- <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Sub Category</option>
+                                                                                                            <option value="1">Accumulated Depreciation</option>
+                                                                                                        </select>
+                                                                                                    </div> -->
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <textarea class="form-control" rows="4" id="example-textarea"></textarea>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="1">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="1,000.00" placeholder="Price">
+                                                                                                    </div>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="0" placeholder="Discount">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="0">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td class="align-right">
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        1,000.00
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded"><i class='uil uil-trash-alt'></i></button>
+                                                                                                </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Category</option>
+                                                                                                            <option value="1">Signboard</option>
+                                                                                                            <option value="2">Adv Maintenance Charges</option>
+                                                                                                            <option value="3">Adv Sinking Fund</option>
+                                                                                                            <option value="4">Prepaid Income</option>
+                                                                                                            <option selected>Singking Fund</option>
+                                                                                                            <option>Fix Deposit Interest</option>
+                                                                                                            <option>Insurance</option>
+                                                                                                            <option>Interest</option>
+                                                                                                            <option>Legal Fees</option>
+                                                                                                            <option>Maintenance Fees</option>
+                                                                                                            <option>Outstanding Balance</option>
+                                                                                                            <option>Quit Rent</option>
+                                                                                                            <option>Reimbursement of Elec</option>
+                                                                                                            <option>Utilities</option>
+                                                                                                        </select>
+                                                                                                    </div>
+                                                                                                    <!-- <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <select data-plugin="customselect" class="small">
+                                                                                                            <option value="0">Choose Sub Category</option>
+                                                                                                            <option value="1">Accumulated Depreciation</option>
+                                                                                                        </select>
+                                                                                                    </div> -->
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <textarea class="form-control" rows="4" id="example-textarea"></textarea>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="1">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="1,000.00" placeholder="Price">
+                                                                                                    </div>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="0" placeholder="Discount">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <input type="text" class="form-control" id="simpleinput" value="0">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td class="align-right">
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        1,000.00
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <div class="form-group mt-3 mt-sm-0">
+                                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded"><i class='uil uil-trash-alt'></i></button>
+                                                                                                </div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="6"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td colspan="3"></td>
+                                                                                                <td colspan="2" class="align-right font-weight-bold">Total:</td>
+                                                                                                <td class="align-right font-weight-bold">2,000.00</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <div class="col-6">
+                                                                                <label>Default Notes / Terms</label>
+                                                                                <textarea class="form-control" rows="5" id="example-textarea">Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this invoice will be deemed correct. You may ignore this invoice if your payment has already been made.
+                                                                                </textarea>
+                                                                                <span class="help-block"><small>Appears on every invoice. You can choose to override it when an invoice is created.</small></span>
+                                                                            </div>
+                                                                        </div>
+                                
+                                                                        <div class="float-right">
+                                                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='invoices-invoice-settings.html';">Save</button>
+                                                                        </div>
+                                            
+                                                                    </div> <!-- end card-body -->
+                                                                </div> <!-- end card-->
+                                                            </div><!-- end col -->
+                                                        </div>
+                                                        <!-- end row -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end card -->
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal create log -->
+            <div class="modal fade" id="createlog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Invoice Change Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>Last saved by Andy Lim on 23 Apr 2020</div>
+                            <div>Created by Andy Lim on 23 Apr 2020</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal create log end -->
+
+            <!-- modal schedule log -->
+            <div class="modal fade" id="schedulelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Schedule Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>Last saved by Andy Lim on 23 Apr 2020</div>
+                            <div>Set by Andy Lim on 23 Apr 2020</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal schedule log end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

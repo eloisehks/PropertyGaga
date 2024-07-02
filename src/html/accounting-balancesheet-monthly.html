@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Balance Sheet</h3>    
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card pb-0">
+                                    <div class="card-body">
+                                        <div class="form-row align-items-center">
+                                            <label class="col-lg-2 col-form-label" for="simpleinput">View by</label>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio2" name="customRadio"
+                                                        class="custom-control-input" value="monthly" checked>
+                                                    <label class="custom-control-label" for="customRadio2">Monthly</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio3" name="customRadio"
+                                                        class="custom-control-input" value="date">
+                                                    <label class="custom-control-label" for="customRadio3">Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio1" name="customRadio"
+                                                        class="custom-control-input" value="fy">
+                                                    <label class="custom-control-label" for="customRadio1">Financial Year</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="monthly box mt-3" style="display: block">
+                                            <div class="form-row align-items-center">
+                                                <label class="col-lg-2 col-form-label" for=""></label>
+                                                <div class="col-auto">
+                                                    <div class="form-group mb-3">
+                                                        <input class="form-control" id="example-month" type="month" name="month" placeholder="Year / Month" value="2023-08">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded" onclick="location.href='accounting-balancesheet-monthly.html';">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="date box mt-3" style="display: none">
+                                            <div class="form-row align-items-center">
+                                                <label class="col-lg-2 col-form-label" for=""></label>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Date">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded" onclick="location.href='accounting-balancesheet-date.html';">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="fy box mt-3" style="display: none">
+                                            <div class="form-row align-items-center">
+                                                <label class="col-lg-2 col-form-label" for=""></label>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option>Financial Year</option>
+                                                            <option>FY2023</option>
+                                                            <option>FY2022</option>
+                                                            <option>FY2021</option>
+                                                            <option>FY2020</option>
+                                                            <option>FY2019</option>
+                                                            <option>FY2018</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded" onclick="location.href='accounting-balancesheet-fy.html';">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <div class="col-lg-12">
+                                            <h5 class="text-primary">Monthly: 31 August 2023</h5>
+                                        </div>
+                                        
+                                        <div class="table-responsive pl-3 pr-3">
+                                            <table class="table table-sm mb-0 text-color-black">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Assets</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLighter font-size-14 font-weight-semibold">Fixed Assets</td>
+                                                        <td class="text-right bg-color-grayLighter"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Furniture</td>
+                                                        <td class="text-right">RM19,105.45</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Operating Equipment</td>
+                                                        <td class="text-right">RM18,709.28</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Computer</td>
+                                                        <td class="text-right">RM1,247.60</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Office equipment</td>
+                                                        <td class="text-right">RM2,361.12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Signboard</td>
+                                                        <td class="text-right">RM3,832.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Fixed Assets</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM45,255.45</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLighter font-size-14 font-weight-semibold">Current Assets
+                                                        </td>
+                                                        <td class="text-right bg-color-grayLighter"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Bank PBB MF 3211486126</td>
+                                                        <td class="text-right">RM71,202.56</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Bank MBB SF 507134515964</td>
+                                                        <td class="text-right">RM(45.46)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Bank PBB MF 3230386310 MC</td>
+                                                        <td class="text-right">RM246,422.58</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">AMB SF 8881051393976 MC</td>
+                                                        <td class="text-right">RM42,494.40</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Fixed Deposit - MF</td>
+                                                        <td class="text-right">RM2,275,801.72</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Fixed Deposit - SF</td>
+                                                        <td class="text-right">RM741,478.72</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Petty Cash</td>
+                                                        <td class="text-right">RM1,500.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">FD Interest Receivable</td>
+                                                        <td class="text-right">RM(2,427.37)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Trade Receivables</td>
+                                                        <td class="text-right">RM119,343.66</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Sundry Deposits</td>
+                                                        <td class="text-right">RM94,779.66</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Prepayments</td>
+                                                        <td class="text-right">RM530.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Current Assets</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM3,591,080.47</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold text-primary">TOTAL ASSETS</td>
+                                                        <td class="text-right font-size-16 font-weight-semibold text-primary">RM3,636,335.92</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Liabilities</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLighter font-size-14 font-weight-semibold">Current Liabilities
+                                                        </td>
+                                                        <td class="text-right bg-color-grayLighter"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Trade Payables</td>
+                                                        <td class="text-right">RM755.80</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Accruals</td>
+                                                        <td class="text-right">RM8,865.16</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Deposit</td>
+                                                        <td class="text-right">RM72,100.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Deposit - Service Charge</td>
+                                                        <td class="text-right">RM112,962.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Deposit - Sinking Fund</td>
+                                                        <td class="text-right">RM11,296.20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Prepaid Income</td>
+                                                        <td class="text-right">RM20,935.51</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Advance Billings</td>
+                                                        <td class="text-right">R124,258.20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Current Liabilities</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM351,172.87</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-size-16 font-weight-semibold text-primary">TOTAL LIABILITIES</td>
+                                                        <td class="text-right font-size-16 font-weight-semibold text-primary">RM351,172.87</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-size-16 font-weight-semibold">NET ASSETS</td>
+                                                        <td class="text-right font-size-16 font-weight-semibold">3,285,163.05</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left bg-color-grayLight font-size-16 font-weight-semibold">Financed By</td>
+                                                        <td class="text-right bg-color-grayLight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Accumulated Funds</td>
+                                                        <td class="text-right">RM2,449,244.25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">Sinking Fund</td>
+                                                        <td class="text-right">RM835,918.80</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left font-weight-semibold border-top-gray500">Total Equity</td>
+                                                        <td class="text-right font-weight-semibold border-top-gray500">RM3,285,163.05</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded width-md mr-1" onclick="window.history.go(-1);">Print</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded width-md">Download</button>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

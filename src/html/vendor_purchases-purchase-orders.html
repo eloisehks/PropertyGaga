@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-vendor.html')
+
+            @@include('./partials/left-sidebar-vendor.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Purchase Orders</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <select class="custom-select">
+                                                                <option>All</option>
+                                                                <option>Open</option>
+                                                                <option>Accepted</option>
+                                                                <option>Declined</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="custom-select">
+                                                                <option>All Sites</option>      
+                                                                <option>3 Resident</option>
+                                                                <option>Emerald Residence</option>
+                                                                <option>Maya Residence</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table id="basic-datatable" class="table table-hover nowrp full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <th></th>
+                                                        <th>P.O. No.</th>
+                                                        <th>Site Name</th>
+                                                        <th>Task ID</th>
+                                                        <th>Date</th>
+                                                        <th class="text-right">Amount</th>
+                                                        <th class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="badge badge-info width-sm">Open</span></td>
+                                                        <td></td>
+                                                        <td><a href="vendor_purchases-purchase-orders-open.html">BC-00004</a></td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT022</td>
+                                                        <td>30 Feb 2023</td>
+                                                        <td class="text-right">RM100,000.00</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#accept">Accept</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#declinepo">Decline</a>
+                                                                    <a class="dropdown-item" href="#"></a>
+                                                                    <a class="dropdown-item" href="#">Print</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- <tr>
+                                                        <td><span class="badge badge-danger width-sm">Cancelled</span></td>
+                                                        <td><a href="vendor_purchases-purchase-orders-cancelled.html">BC-00006</a></td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT022</td>
+                                                        <td>30 Feb 2023</td>
+                                                        <td class="text-right">RM100,000.00</td>
+                                                        <td class="text-right">
+                                                        </td>
+                                                    </tr> -->
+                                                    <tr>
+                                                        <td><span class="badge badge-soft-success width-sm">Accepted</span></td>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Message from Management"><i data-feather="message-square" class="icon-xs icon-dual-danger animate-blinker2s "></i></a>
+
+                                                            <!-- <a class="btn p-0" data-toggle="modal" data-target="#messagereply" title="New Message">
+                                                                <i data-feather="message-square"></i>
+                                                                <span class="noti-icon-update"></span>
+                                                            </a> -->
+                                                        </td>
+                                                        <td><a href="vendor_purchases-purchase-orders-acceptednotconfirm.html">BC-00005</a></td>
+                                                        <td>Emerald Residence</td>
+                                                        <td>OT022</td>
+                                                        <td>30 Feb 2023</td>
+                                                        <td class="text-right">RM100,000.00</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#viewaccept"><span class="noti-icon-update"></span> Accept</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#declinepo">Decline</a>
+                                                                    <a class="dropdown-item" href="#"></a>
+                                                                    <a class="dropdown-item" href="#">Print</a>
+                                                                </div>
+                                                                <span class="noti-icon-update animate-blinker2s"></span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-success width-sm">Accepted</span></td>
+                                                        <td>
+                                                            <!-- <i data-feather="message-square" class="icon-xs icon-dual-danger"></i> -->
+
+                                                            <!-- <a class="btn p-0" data-toggle="modal" data-target="#messagereply" title="New Message">
+                                                                <i data-feather="message-square"></i>
+                                                                <span class="noti-icon-update"></span>
+                                                            </a> -->
+                                                        </td>
+                                                        <td><a href="vendor_purchases-purchase-orders-accepted.html">BC-00005</a></td>
+                                                        <td>Emerald Residence</td>
+                                                        <td>OT022</td>
+                                                        <td>30 Feb 2023</td>
+                                                        <td class="text-right">RM100,000.00</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#viewaccept2">Accept</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#declinepo">Decline</a>
+                                                                    <a class="dropdown-item" href="#"></a>
+                                                                    <a class="dropdown-item" href="#">Print</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-danger width-sm">Declined</span></td>
+                                                        <td></td>
+                                                        <td><a href="vendor_purchases-purchase-orders-declined.html">BC-00007</a></td>
+                                                        <td>Maya Residence</td>
+                                                        <td>OT022</td>
+                                                        <td>30 Feb 2023</td>
+                                                        <td class="text-right">RM100,000.00</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Print</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- Decline -->
+            <div class="modal fade" id="declinepo" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Decline P.O.</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="simpleinput">Please state reason for declining the P.O.</label>
+                                    <textarea class="form-control" rows="3" id="example-textarea"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Confirm Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Decline end -->
+
+            <!-- Accept -->
+            <div class="modal fade" id="accept" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Purchase Order</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Start Work Date & Time</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Estimated Complete Date</label>
+                                                <input class="form-control" id="example-date" type="date" name="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Vehicle No. Plate</label>
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="form-group">
+                                                <label>Number of Staff (Vendor)</label>
+                                                <input data-toggle="touchspin" type="text" value="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="accordion custom-accordionwitharrow" id="accordionExample">
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        <div class="card-header" id="headingOne">
+                                                            <h5 class="m-0 font-size-13">
+                                                                Vendor Staff Name 1 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseTwo" aria-expanded="true"
+                                                        aria-controls="collapseTwo">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <h5 class="m-0 font-size-13">
+                                                                Vendor Staff Name 2 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row">
+                                        <div class="col-xl-12">
+                                            <label>Staff Name 1</label>
+                                            <div class="card">
+                                                <div class="card-body bg-color-grayLighter border-gray-light">
+                                                    <div class="form-group mb-0">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                        <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label>Staff Name 2</label>
+                                            <div class="card">
+                                                <div class="card-body bg-color-grayLighter border-gray-light">
+                                                    <div class="form-group mb-0">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                        <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group mb-1">
+                                        <label>Messages</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12">
+                                    <div class="border-gray-light rounded m-1">
+                                        <form action="#" class="comment-area-box">
+                                            <textarea rows="3" class="form-control border-0 resize-none"
+                                                placeholder="Message Management..."></textarea>
+                                            <div class="p-2 bg-light">
+                                                <div class="text-right">
+                                                    <button type="submit" class="btn btn-sm btn-rounded btn-success mb-0">Send</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Accept & Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Accept end -->
+
+            <!-- start work -->
+            <!-- <div class="modal fade" id="startwork" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Purchase Order</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Start Work Date & Time</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="form-group">
+                                        <label>Number of Staff</label>
+                                        <input data-toggle="touchspin" type="text" value="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <label>Staff Name 1</label>
+                                    <div class="card">
+                                        <div class="card-body bg-color-grayLighter border-gray-light">
+                                            <div class="form-group mb-0">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <label>Staff Name 2</label>
+                                    <div class="card">
+                                        <div class="card-body bg-color-grayLighter border-gray-light">
+                                            <div class="form-group mb-0">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No.">
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No.">
+                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Vehicle No. Plate</label>
+                                        <input type="text" class="form-control mb-1" id="simpleinput" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <label>Estimated Complete Date</label>
+                                        <input class="form-control" id="example-date" type="date" name="date">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- start work end -->
+
+            <!-- View Accept -->
+            <div class="modal fade" id="viewaccept" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Purchase Order</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Start Work Date & Time</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Estimated Complete Date</label>
+                                                <input class="form-control" id="example-date" type="date" name="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Vehicle No. Plate</label>
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="form-group">
+                                                <label>Number of Staff (Vendor)</label>
+                                                <input data-toggle="touchspin" type="text" value="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="accordion custom-accordionwitharrow" id="accordionExample">
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        <div class="card-header" id="headingOne">
+                                                            <h5 class="m-0 font-size-13">
+                                                               Vendor Staff Name 1 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name" value="Name 122">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No." valeu="A3940680862">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No." value="FU89053">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No." value="013 894 2849">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseTwo" aria-expanded="true"
+                                                        aria-controls="collapseTwo">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <h5 class="m-0 font-size-13">
+                                                                Vendor Staff Name 2 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name" value="Name 120">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No." valeu="A3940680862">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No." value="FU89053">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No." value="013 894 2849">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group m-0 p-0">
+                                        <label class="col-form-label" for="">Comment</label>                                           
+                                    </div>
+                                    <div class="form-group m-0 p-0">
+                                        <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                            <img src="assets/images/users/avatar-2.jpg"
+                                                alt="image"
+                                                class="avatar-xs rounded-circle p-1"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Sammy" />
+                                            <div class="media-body">
+                                                <p class="mb-0 text-muted font-size-12">
+                                                    comment from Management...Please change complete date to earlier
+                                                </p>
+                                            </div>
+                                            <div class="dropdown float-right mt-1">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                    <a href="javascript:void(0);"
+                                                        class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group m-0 p-0">
+                                        <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                            <img src="assets/images/users/avatar-1.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle p-1"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="Arya S" />
+                                            <div class="media-body">
+                                                <p class="mb-0 text-muted font-size-12">
+                                                    The earliest completion date is on 2 Oct 2023
+                                                </p>
+                                            </div>
+                                            <div class="dropdown float-right mt-1">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                    <a href="javascript:void(0);"
+                                                        class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="border-gray-light rounded">
+                                                <form action="#" class="comment-area-box">
+                                                    <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                    <div class="p-2 border">
+                                                        <div class="text-right">
+                                                            <button type="submit" class="btn btn-sm btn-rounded btn-outline-primary mb-0">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div> <!-- end .border-->
+                                        </div> <!-- end col-->
+                                    </div> <!-- end row-->
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group mb-1">
+                                        <label>Messages</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card m-1">
+                                        <div class="card-body bg-color-propertygagaLightest border-gray-light">
+                                            <b>Managment Team:</b><br>
+                                            Please change complete date to earlier
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card m-1">
+                                        <div class="card-body bg-color-grayLighter border-gray-light">
+                                            <b>Vendor:</b><br>
+                                            The earliest completion date is on 2 Oct 2023
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12">
+                                    <div class="border-gray-light rounded m-1">
+                                        <form action="#" class="comment-area-box">
+                                            <textarea rows="3" class="form-control border-0 resize-none"
+                                                placeholder="Message Management..."></textarea>
+                                            <div class="p-2 bg-light">
+                                                <div class="text-right">
+                                                    <button type="submit" class="btn btn-sm btn-rounded btn-success mb-0">Send</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- View Accept end -->
+
+            <!-- View Accept 2 -->
+            <div class="modal fade" id="viewaccept2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Purchase Order</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>Start Work Date & Time</label>
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Estimated Complete Date</label>
+                                                <input class="form-control" id="example-date" type="date" name="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="form-group">
+                                                <label>Vehicle No. Plate</label>
+                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="form-group">
+                                                <label>Number of Staff (Vendor)</label>
+                                                <input data-toggle="touchspin" type="text" value="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="accordion custom-accordionwitharrow" id="accordionExample">
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        <div class="card-header" id="headingOne">
+                                                            <h5 class="m-0 font-size-13">
+                                                               Vendor Staff Name 1 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name" value="Name 122">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No." valeu="A3940680862">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No." value="FU89053">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No." value="013 894 2849">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-1 shadow-none bg-color-grayLighter">
+    
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#collapseTwo" aria-expanded="true"
+                                                        aria-controls="collapseTwo">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <h5 class="m-0 font-size-13">
+                                                                Vendor Staff Name 2 <i class="uil uil-angle-down float-right accordion-arrow" style="margin-top: -5px"></i>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+    
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="form-group mb-0">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="Name" value="Name 120">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="ID No. / Passport No." valeu="A3940680862">
+                                                                <input type="text" class="form-control mb-1" id="simpleinput" placeholder="CIDB Card No." value="FU89053">
+                                                                <input type="text" class="form-control" id="simpleinput" placeholder="Contact No." value="013 894 2849">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group m-0 p-0">
+                                        <label class="col-form-label" for="">Comment</label>                                           
+                                    </div>
+                                    <div class="form-group m-0 p-0">
+                                        <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                            <img src="assets/images/users/avatar-2.jpg"
+                                                alt="image"
+                                                class="avatar-xs rounded-circle p-1"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Sammy" />
+                                            <div class="media-body">
+                                                <p class="mb-0 text-muted font-size-12">
+                                                    comment from Management...Please change complete date to earlier
+                                                </p>
+                                            </div>
+                                            <div class="dropdown float-right mt-1">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                    <a href="javascript:void(0);"
+                                                        class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-0 p-0">
+                                        <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                            <img src="assets/images/users/avatar-1.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle p-1"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="Arya S" />
+                                            <div class="media-body">
+                                                <p class="mb-0 text-muted font-size-12">
+                                                    The earliest completion date is on 2 Oct 2023
+                                                </p>
+                                            </div>
+                                            <div class="dropdown float-right mt-1">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                    <a href="javascript:void(0);"
+                                                        class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="border-gray-light rounded">
+                                                <form action="#" class="comment-area-box">
+                                                    <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                    <div class="p-2 border">
+                                                        <div class="text-right">
+                                                            <button type="submit" class="btn btn-sm btn-rounded btn-outline-primary mb-0">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div> <!-- end .border-->
+                                        </div> <!-- end col-->
+                                    </div> <!-- end row-->
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- View Accept 2 end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

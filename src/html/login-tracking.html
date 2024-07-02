@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar0.html')
+
+            @@include('./partials/left-sidebar-0.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Login Tracking</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="form-group">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="btn btn-primary btn-rounded dropdown-toggle"
+                                            data-toggle="dropdown" aria-expanded="false">
+                                            Download Report <i class="uil uil-angle-down"></i></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" target="_blank">PDF</a>
+                                            <a class="dropdown-item" href="#">Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="mb-2">
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Select Year</option>
+                                                            <option selected>2022</option>
+                                                            <option>2021</option>
+                                                            <option>2020</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <select class="form-control custom-select">
+                                                            <option value="0">Select Month</option>
+                                                            <option>January</option>
+                                                            <option>February</option>
+                                                            <option>March</option>
+                                                            <option>April</option>
+                                                            <option>May</option>
+                                                            <option>June</option>
+                                                            <option>July</option>
+                                                            <option>August</option>
+                                                            <option selected>September</option>
+                                                            <option>October</option>
+                                                            <option>November</option>
+                                                            <option>December</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-auto float-right">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">Save as PDF</button>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <div class="table-responsive">
+                                                            <table id="basic-datatable3" class="table table-hover nowrp full-width">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Role</th>
+                                                                        <th>Name</th>
+                                                                        <th>Username</th>
+                                                                        <th>User Created Date</th>
+                                                                        <th>Last Login Date</th>
+                                                                        <th>Duration</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Staff</td>
+                                                                        <td>David</td>
+                                                                        <td>david24</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Clerk</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Building Manager</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Operation Manager</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Building Supervisor</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Account Clerk</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>General Manager</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Admin</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Account Manager</td>
+                                                                        <td>Susan</td>
+                                                                        <td>susan999</td>
+                                                                        <td>10 Jun 2022</td>
+                                                                        <td>10 Sep 2022</td>
+                                                                        <td>5h 0m 0s</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div> <!-- end card body-->
+                                                </div> <!-- end card -->
+                                            </div><!-- end col-->
+                                        </div>
+                                        <!-- end row-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myDIV");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
+        
+    </body>
+</html>

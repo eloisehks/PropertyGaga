@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Late Payment Interest</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-4 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class=" pb-3">
+                                            <table id="basic-datatable" class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date Range</th>
+                                                        <th class="text-center">No. of Units</th>
+                                                        <th class="text-right">Total Interest (RM)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>        
+                                                        <td>1 Jan 2023 - 31 Jan 2023</td>
+                                                        <td class="text-center"><a href="" class="btn-sm btn-primary btn-rounded" data-toggle="modal" data-target="#lpunits">4</a></td>  
+                                                        <td class="text-right">40.00</td>
+                                                    </tr>
+                                                    <tr>        
+                                                        <td>1 Feb 2023 - 28 Feb 2023</td>
+                                                        <td class="text-center"><a href="" class="btn-sm btn-primary btn-rounded" data-toggle="modal" data-target="#lpunits">4</a></td>  
+                                                        <td class="text-right">40.00</td>
+                                                    </tr>
+                                                    <tr>        
+                                                        <td>1 Mar 2023 - 31 Mar 2023</td>
+                                                        <td class="text-center"><a href="" class="btn-sm btn-primary btn-rounded" data-toggle="modal" data-target="#lpunits">4</a></td>  
+                                                        <td class="text-right">40.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal update mailing address-->
+            <div class="modal fade" id="lpunits" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Late Payment Interest for 1 Jan 2023 - 31 Jan 2023</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="basic-datatable2" class="table table-hover nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Unit No.</th>
+                                        <th>Invoice No.</th>
+                                        <th class="text-right">Interest (RM)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>6-02-01</td>
+                                        <td><a href="invoices-invoice-latepaymentinterest-unpaid.html">INV-234567</a></td>
+                                        <td class="text-right">10.00</td>
+                                        <!-- <td class="text-center">
+                                            <a href="accounting-creditnote-waiveinterest.html" class="btn btn-outline-primary btn-sm btn-rounded">Waive Interest</a>
+                                        </td> -->
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>6-02-05</td>
+                                        <td><a href="invoices-invoice-latepaymentinterest-unpaid.html">INV-234567</a></td>
+                                        <td class="text-right">10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2-02-05</td>
+                                        <td><a href="invoices-invoice-latepaymentinterest-unpaid.html">INV-234567</a></td>
+                                        <td class="text-right">10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>8-02-05</td>
+                                        <td><a href="invoices-invoice-latepaymentinterest-unpaid.html">INV-234567</a></td>
+                                        <td class="text-right">10.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Access Deactivation</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <!-- <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='servicing-report-new.html';"><i class="uil-plus mr-1"></i> New Servicing Report</button>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="Deactivated Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <!-- <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <a href="#" data-toggle="modal" data-target="#" class="btn btn-outline-secondary btn-sm btn-rounded">Activate Access</a>
+                                            </div> 
+                                        </div> -->
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="1%">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
+                                                            </div>
+                                                        </th>
+                                                        <th>Deactivate Access No.</th>
+                                                        <th class="text-center">Deactivated Date</th>
+                                                        <th width="1%">Unit No.</th>
+                                                        <th>Owners</th>
+                                                        <!-- <th>Contact</th> -->
+                                                        <th>Inv. No.</th>
+                                                        <th class="text-right">Last Payment</th>
+                                                        <th class="text-right">Outstanding<br>Amount</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                            </div>
+                                                        </td>
+                                                        <td>BC00351</td>
+                                                        <td class="text-center">
+                                                            1 Jan 2020
+                                                        </td>
+                                                        <td><a href="data-units-detail.html">6-01-07</a></td>   
+                                                        <td>Admin</td>
+                                                        <!-- <td><a href="#" data-toggle="modal" data-target="#phoneno">013 xxx xx03</a></td> -->
+                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                
+                                                        <td class="text-right">
+                                                            RM 1,000.00<br>
+                                                            <span class="text-muted font-size-12">2 Dec 2019</span>
+                                                        </td>
+                                                        <td class="text-right">RM 1,200.00</td>
+                                                        <td class="text-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" onclick="location.href='record-payment-new.html';">Record Payment</a>
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary"></i></a> -->
+                                                                    <!-- <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Activate Access</a> -->
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                            </div>
+                                                        </td>
+                                                        <td>BC00353</td>
+                                                        <td class="text-center">
+                                                            1 Jan 2020
+                                                        </td>
+                                                        <td><a href="data-units-detail.html">6-01-08</a></td> 
+                                                        <td>Nancy</td> 
+                                                        <!-- <td><a href="#" data-toggle="modal" data-target="#phoneno">013 xxx xx03</a></td>    -->
+                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                                  
+                                                        <td class="text-right">
+                                                           RM 100.00<br>
+                                                            <span class="text-muted font-size-12">1 Nov 2020</span>
+                                                        </td>
+                                                        <td class="text-right">RM 30,000.00</td>
+                                                        <td class="text-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" onclick="location.href='record-payment-new.html';">Record Payment</a>
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary"></i></a>
+                                                                    <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Activate Access</a> -->
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
+                                                            </div>
+                                                        </td>
+                                                        <td>BC00359</td>
+                                                        <td class="text-center">
+                                                            1 Jan 2020
+                                                        </td>
+                                                        <td><a href="data-units-detail.html">6-01-07</a></td>   
+                                                        <td>Admin</td>
+                                                        <!-- <td><a href="#" data-toggle="modal" data-target="#phoneno">013 xxx xx03</a></td>       -->
+                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                    
+                                                        <td class="text-right">
+                                                            RM 1,000.00<br>
+                                                            <span class="text-muted font-size-12">2 Dec 2019</span>
+                                                        </td>
+                                                        <td class="text-right">RM 1,200.00</td>
+                                                        <td class="text-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" onclick="location.href='record-payment-new.html';">Record Payment</a>
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary"></i></a>
+                                                                    <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Activate Access</a> -->
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
+                                                            </div>
+                                                        </td>
+                                                        <td>BC003518</td>
+                                                        <td class="text-center">
+                                                            1 Jan 2020
+                                                        </td>
+                                                        <td><a href="data-units-detail.html">6-01-08</a></td> 
+                                                        <td>Nancy</td> 
+                                                        <!-- <td><a href="#" data-toggle="modal" data-target="#phoneno">013 xxx xx03</a></td> -->
+                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                                
+                                                        <td class="text-right">
+                                                           RM 100.00<br>
+                                                            <span class="text-muted font-size-12">1 Nov 2020</span>
+                                                        </td>
+                                                        <td class="text-right">RM 30,000.00</td>
+                                                        <td class="text-center">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item cursor-pointer" onclick="location.href='record-payment-new.html';">Record Payment</a>
+                                                                    <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary"></i></a>
+                                                                    <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Activate Access</a> -->
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal phone no-->
+            <div class="modal fade" id="phoneno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Legal Owner Contact</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h5>
+                                013 245 5733
+                            </h5>
+                            <div class="mt-4 font-size-12">
+                                <div>Viewed by Danny on 2 Oct 2021</div>
+                                <div>Viewed by Sam on 1 May 2021</div>
+                                <div>Viewed by Toh on 2 Apr 2021</div>
+                                <div>Viewed by Elaine on 2 Jan 2021</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal phone no end -->
+
+            <!-- modal invoice no. -->
+            <div class="modal fade" id="invoiceno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Invoices for 8-19-1</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatable" class="table table-hover nowrp full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Due</th>
+                                        <th>Inv. No.</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
+                                        <td width="15%">30/9/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-view.html">20201234</a></td>
+                                        <td width="20%">RM100,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
+                                        <td width="15%">31/10/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-view.html">20201235</a></td>
+                                        <td width="20%">RM100,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
+                                        <td width="15%">30/11/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-view.html">20201236</a></td>
+                                        <td width="20%">RM100,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
+                                        <td width="15%">31/12/2020</td>
+                                        <td width="20%"><a href="invoices-invoice-recurring-view.html">20201237</a></td>
+                                        <td width="20%">RM100,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge badge-danger width-xs">Partially Paid</span></td>
+                                        <td>30/9/2020</td>
+                                        <td><a href="invoices-invoice-recurring-view.html">20201224</a></td>
+                                        <td>RM100,000.00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="mt-4">
+                                <div><a href="invoices-invoice-recurring-view.html">20201234</a></div>
+                                <div>20201235</div>
+                                <div>20201236</div>
+                                <div>20201237</div>
+                                <div>20201224</div>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal invoice no. end -->
+
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Call This Unit Owner</h5> -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="modal-title mb-4" id="exampleModalScrollableTitle">Call Unit Owner<br>(6-14-01)</h5>
+                            <div class="col-lg-12">
+                                <h4><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary">Call Now</a></h4>
+                                <small>Last successful called on 3 Jan 2023, 3:30pm</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Succesfully Called</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+    </body>
+</html>

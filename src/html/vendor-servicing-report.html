@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+        <style>
+            .image-upload>input {
+                display: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-vendor.html')
+
+            @@include('./partials/left-sidebar-vendor.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Servicing Reports</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='vendor-servicing-report-new.html';"><i class="uil-plus mr-1"></i> New Servicing Report</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Status</option>
+                                                                <option>Verifed</option>
+                                                                <option>Pending Verification</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="custom-select">
+                                                                <option>All Sites</option>      
+                                                                <option>3 Resident</option>
+                                                                <option>Emerald Residence</option>
+                                                                <option>Maya Residence</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table id="open-task1" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <th>Service Report No.</th>
+                                                        <th>Date</th>
+                                                        <th>Site Name</th>
+                                                        <!-- <th>Services</th> -->
+                                                        <th>Title</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="badge badge-info width-sm">Pending</span></td>
+                                                        <td><a href="vendor-servicing-report-edit.html">SR1</a></td>
+                                                        <td>12 Aug 2023</td>
+                                                        <td>3 Resident</td>
+                                                        <!-- <td>Lift Maintenance</td> -->
+                                                        <td>Lift Maintenance at Level 2</td>
+                                                        <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-success width-sm">Verified</span></td>
+                                                        <td><a href="vendor-servicing-report-edit.html">SR2</a></td>
+                                                        <td>12 Aug 2023</td>
+                                                        <td>Maya Residence</td>
+                                                        <!-- <td>Lift Maintenance</td> -->
+                                                        <td>Block A Lift Maintenance</td>
+                                                        <td><a href="#" target="_blank"><i class="uil-notes font-size-15"></i></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!--  end work -->
+            <div class="modal fade" id="endwork" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">End Work</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body left-timeline pl-4">
+                            <ul class="list-unstyled events">
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">1 Jan 23<br>3:21pm</p>
+                                            </div>
+                                            <div class="media-body pb-3">
+                                                <div class="card d-inline-block border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>End Date</label>
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group mt-3 mt-sm-0">
+                                                                    <label>Delivery Order <span class="text-danger">*</span></label>
+                                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach <span class="text-danger">*</span></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-1.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic2.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded disabled">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 1 Jan 23, 3:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event-list mb-3">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" data-toggle="tooltip" data-placement="top" title="Simon" />
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">2 Jan 23<br>3:21pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-primary btn-sm btn-rounded disabled">Send to Vendor</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                Comment sent by Simon to vendor on 2 Jan 2023, 3:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">2 Jan 23<br>5:20pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded disabled">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 2 Jan 2023, 5:20pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list mb-3">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" data-toggle="tooltip" data-placement="top" title="Simon" />
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">3 Jan 23<br>1:21pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-primary btn-sm btn-rounded disabled">Send to vendor</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                Comment sent by Simon to vendor on 3 Jan 2023, 1:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <!-- <p class="mt-2 p-0 ml-0 small">3 Jan 23<br>4m ago</p> -->
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 3 Aug 2022, 2:40pm
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal">End Work</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end work end -->
+
+            <!-- view end work -->
+            <div class="modal fade" id="viewendwork" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Job Done</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body left-timeline pl-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body bg-color-propertygagaLightest border-propertygaga-lighter rounded-5">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                                                    <h5 class="font-weight-semibold text-color-greenBright"><i class="icon-dual-success icon-md mr-2" data-feather="smile"></i> Work Task Completed</h5>
+                                                    <!-- Kindly navigate to the 'Invoices' page and click on 'Upload Invoice Button' to upload your invoice.<br> -->
+                                                    <span class="mr-2 text-color-black">Task ID: <span class="font-weight-semibold">OT020</span></span><span class="ml-2 text-color-black">P.O. No.: <span class="font-weight-semibold">BC-00005</span></span><br>
+                                                    Kindly proceed to upload your invoice<br>
+                                                    <a href="vendor_invoices-uploadinvoice.html" class="btn btn-primary btn-rounded ml-3 mt-2">Upload Invoice</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="list-unstyled events">
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">1 Jan 23<br>3:21pm</p>
+                                            </div>
+                                            <div class="media-body pb-3">
+                                                <div class="card d-inline-block border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>End Date</label>
+                                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group mt-3 mt-sm-0">
+                                                                    <label>Delivery Order <span class="text-danger">*</span></label>
+                                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach <span class="text-danger">*</span></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-1.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic2.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-5">
+                                                                <div class="card mb-2 shadow-none border-grayform">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-auto">
+                                                                                <img src="assets/images/projects/project-2.jpg"
+                                                                                    class="avatar-sm rounded" alt="file-image">
+                                                                            </div>
+                                                                            <div class="col pl-0">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">pic1.jpg</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded disabled">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 1 Jan 23, 3:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event-list mb-3">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" data-toggle="tooltip" data-placement="top" title="Simon" />
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">2 Jan 23<br>3:21pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-primary btn-sm btn-rounded disabled">Send to Vendor</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                Comment sent by Simon to vendor on 2 Jan 2023, 3:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">2 Jan 23<br>5:20pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded disabled">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 2 Jan 2023, 5:20pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list mb-3">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle" data-toggle="tooltip" data-placement="top" title="Simon" />
+                                                </div>
+                                                <p class="mt-2 p-0 ml-0 small">3 Jan 23<br>1:21pm</p>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-primary btn-sm btn-rounded disabled">Send to vendor</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                Comment sent by Simon to vendor on 3 Jan 2023, 1:21pm
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="event-list">
+                                    <div>
+                                        <div class="media">
+                                            <div class="event-date text-center mr-4">
+                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                    <span class="font-size-12 avatar-title text-primary font-weight-semibold" data-toggle="tooltip" data-placement="top" title="Company 1">
+                                                        C1
+                                                    </span>
+                                                </div>
+                                                <!-- <p class="mt-2 p-0 ml-0 small">3 Jan 23<br>4m ago</p> -->
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="card border-gray400">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <label class="mr-2">
+                                                                    Comment
+                                                                </label>
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="3" id="example-textarea">process...jLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group mb-1">
+                                                                    <label>Photo Attach</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="row mt-0 pt-0">
+                                                            
+                                                            <div class="col-auto col-lg-4">
+                                                                <div class="image-upload">
+                                                                    <label for="file-input">
+                                                                        <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                    </label>
+                                                                
+                                                                    <input id="file-input" type="file" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-0 pt-0">
+                                                            <div class="col-lg-12">
+                                                                <a href="#" class="btn btn-success btn-sm btn-rounded disabled">Job Done</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="row mt-2">
+                                                            <div class="col-lg-12 font-weight-bold text-color-black">
+                                                                <i class='uil uil-smile font-size-14 text-primary'></i> Job done by Company 1 on 3 Aug 2022, 2:40pm
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal">End Work</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- view end work end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>
