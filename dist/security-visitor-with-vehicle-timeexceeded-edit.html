@@ -93,9 +93,11 @@
                                     <!-- item-->
                                     <a href="security-visitor-visitordetails.html"  class="dropdown-item notify-item border-bottom">
                                         <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
-                                        <p class="notify-details">Visitor Parking Approved<br>
-                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>
-                                                Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                        <p class="notify-details">
+                                            <span class="cursor-pointer d-inline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
+                                                <i data-feather="bell" class="icon-xs icon-dual-success ml-0 mr-2 animate-blinker2s"></i>
+                                            </span> Visitor Parking Approved<br>
+                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
                                             <br>1 min ago</small>
                                         </p>
                                     </a>
@@ -207,7 +209,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="security-access-facereg.html">
+                                <a href="security-access-face-rec.html">
                                     <i class="uil uil-capture"></i>
                                     <span class="badge badge-success float-right"></span>
                                     <span>Face Recognition</span>
@@ -235,8 +237,8 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Visitor Details</h3>
-                                <span class="badge badge-success width-sm">Approved</span>
+                                <h3 class="mb-1 mt-0">Edit Visitor (Vehicle)</h3>
+                                <span class="badge badge-danger width-sm">Time Exceeded</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -252,79 +254,222 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-row row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Visitor Type</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="vehicle1" name="customRadio"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="vehicle1">Visitor</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="vehicle2" name="customRadio"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="vehicle2">Contractor</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Vehicle Type</label>
+                                                        <div class="col-auto"> 
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Vehicle Type</option>
+                                                                <option selected>Car</option>
+                                                                <option>Lorry</option>
+                                                                <option>Motorcycle</option>
+                                                                <option>Big Truck</option>
+                                                                <option>Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Parking Type</label>
                                                         <div class="col-auto">
-                                                            Visitor Parking
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio2" name="customRadiopt"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="customRadio2">Visitor Parking</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio1" name="customRadiopt"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadio1">Loading Bay Parking</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio3" name="customRadiopt"
+                                                                    class="custom-control-input" disabled>
+                                                                <label class="custom-control-label" for="customRadio3">Drop Off</label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Unit to Visit</label>
                                                         <div class="col-lg-5">
-                                                            8-18-3A
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Unit No.</option>
+                                                                <option value="1" selected>8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Name</label>
                                                         <div class="col-lg-5">
-                                                            Faith
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Ahmad">
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Contact No.</label>
                                                         <div class="col-lg-5">
-                                                            012 345 6789
+                                                            <input type="text" class="form-control" id="" placeholder="" value="012 345 6789">
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-3 col-form-label" for="example-fileinput">Note</label>
-                                                        <div class="col-5">
-                                                            -
+                                                        <div class="col-lg-5">
+                                                            <textarea class="form-control" rows="4" id="textarea"></textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Car Plate No.</label>
                                                         <div class="col-lg-5">
-                                                            MMM 3333
+                                                            <input type="text" class="form-control" id="" placeholder="" value="WWW 2222">
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
-                                                        <label class="col-lg-3 col-form-label">Registered on</label>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Register By</label>
                                                         <div class="col-lg-5">
-                                                            15 May 2024
+                                                            <select class="form-control wide" data-plugin="customselect">
+                                                                <option value="0" selected>Malik (20948657)</option>
+                                                                <option value="1">Ali (290002)</option>
+                                                                <option value="2">Ahkaw (290003)</option>
+                                                                <option value="3">Muthu (290004)</option>
+                                                                <option value="4">Ahmad (290005)</option>
+                                                                <option value="4">Staff 1 (290005)</option>
+                                                                <option value="4">Samuel (290005)</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Register Date</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Parking Lot
+                                                            <br>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-2" data-toggle="modal" data-target="#parkinglot">View Parking Lot Location</a>
                                                         </label>
                                                         <div class="col-lg-5">
-                                                            Parking Lot Name 1
+                                                            <select data-plugin="customselect" class="form-control" data-placeholder="Select an option">
+                                                                <option></option>
+                                                                <option value="0">Parking Lot Name 1</option>
+                                                                <option value="1">Parking Lot Name 2</option>
+                                                                <option value="2" selected>Parking Lot Name 3</option>
+                                                                <option value="4">Parking Lot Name 4</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Slot Number</label>
-                                                        <div class="col-lg-5 pl-2">
-                                                            <div>Slot 7 ( 06:01 - 07:00 )</div>
-                                                            <div>Slot 8 ( 07:01 - 08:00 )</div>
-                                                            <div>Slot 9 ( 08:01 - 09:00 )</div>
+                                                    <div class="form-group row" id="affected">
+                                                        <label class="col-lg-3 col-form-label" for="simpleinput"></label>
+                                                        <div class="col-auto">
+                                                            <div class="card border-gray400">
+                                                                <div class="card-body">
+                                                                     <h4 class="header-title mt-0 mb-2">Parking Lot Name 1</h4>
+                                                                     <input type="checkbox" name="Slot1" title="Slot 1 (00.01-01:00)">
+                                                                     <input type="checkbox" name="Slot2" title="Slot 2 (01.01-02:00)">
+                                                                     <input type="checkbox" name="Slot3" title="Slot 3 (02.01-03:00)">
+                                                                     <input type="checkbox" name="Slot4" title="Slot 4 (03.01-04:00)">
+                                                                     <input type="checkbox" name="Slot5" title="Slot 5 (04.01-05:00)">
+                                                                     <input type="checkbox" name="Slot6" title="Slot 6 (05.01-06:00)">
+                                                                     <input type="checkbox" name="Slot7" title="Slot 7 (06.01-07:00)">
+                                                                     <input type="checkbox" name="Slot8" title="Slot 8 (07.01-08:00)" checked>
+                                                                     <input type="checkbox" name="Slot9" title="Slot 9 (08.01-09:00)" checked>
+                                                                     <input type="checkbox" name="Slot10" title="Slot 10 (09.01-10:00)" checked>
+                                                                     <input type="checkbox" name="Slot11" title="Slot 11 (10.01-11:00)">
+                                                                     <input type="checkbox" name="Slot12" title="Slot 12 (11.01-12:00)">
+                                                                     <input type="checkbox" name="Slot13" title="Slot 13 (12.01-13:00)">
+                                                                     <input type="checkbox" name="Slot14" title="Slot 14 (13.01-14:00)">
+                                                                     <input type="checkbox" name="Slot15" title="Slot 15 (14.01-15:00)">
+                                                                     <input type="checkbox" name="Slot16" title="Slot 16 (15.01-16:00)">
+                                                                     <input type="checkbox" name="Slot17" title="Slot 17 (16.01-17:00)">
+                                                                     <input type="checkbox" name="Slot18" title="Slot 18 (17.01-18:00)">
+                                                                     <input type="checkbox" name="Slot19" title="Slot 19 (18.01-19:00)">
+                                                                     <input type="checkbox" name="Slot20" title="Slot 20 (19.01-20:00)">
+                                                                     <input type="checkbox" name="Slot21" title="Slot 21 (20.01-21:00)">
+                                                                     <input type="checkbox" name="Slot22" title="Slot 22 (21.01-22:00)">
+                                                                     <input type="checkbox" name="Slot23" title="Slot 23 (22.01-23:00)">
+                                                                     <input type="checkbox" name="Slot24" title="Slot 24 (23.01-24:00)">
+                                                                </div> <!-- end card body-->
+                                                            </div> <!-- end card -->
                                                         </div>
                                                     </div>
-                                                    
-                                                    <div class="form-group row">
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Access Method</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                                                <label class="custom-control-label" for="customCheck1">QR Code</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <img src="assets/images/qrcode-receipt.gif" class="responsive" width="150">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                <label class="custom-control-label" for="customCheck2">LPR</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">QR Code</label>
                                                         <div class="col-lg-5 text-lg-left text-md-left text-center">
                                                             <img src="assets/images/qrcode-receipt.gif" class="responsive" width="150">
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </form>
 
                                         <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Close</button>
-                                            <!-- <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button> -->
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-outline-danger btn-rounded mr-1" data-toggle="modal" data-target="#callUnit">Make a Call</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
                                         </div>
             
                                     </div> <!-- end card-body -->
@@ -357,7 +502,7 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal update mailing address-->
+            <!-- modal parking lot -->
             <div class="modal fade" id="parkinglot" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
@@ -378,7 +523,29 @@
                     </div>
                 </div>
             </div>
-            <!-- -->
+            <!-- parking lot end -->
+
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Unit: 6-10-02</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="mb-4" id="exampleModalScrollableTitle"><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary btn-block">Call Owner</a></h5>
+                            <h5 class="mb-4"><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary btn-block">Call Visitor</a></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
 
 
         </div>

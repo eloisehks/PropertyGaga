@@ -152,9 +152,11 @@
                                     <!-- item-->
                                     <a href="visitor-with-vehicle-approved-edit.html"  class="dropdown-item notify-item border-bottom">
                                         <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
-                                        <p class="notify-details">Visitor Parking Approved<br>
-                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>
-                                                Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                        <p class="notify-details">
+                                            <span class="cursor-pointer d-inline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
+                                                <i data-feather="bell" class="icon-xs icon-dual-success ml-0 mr-2 animate-blinker2s"></i>
+                                            </span> Visitor Parking Approved<br>
+                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
                                             <br>1 min ago</small>
                                         </p>
                                     </a>
@@ -541,7 +543,7 @@
                                         <a href="access-lpr.html">License Plate Recognition</a>
                                     </li>
                                     <li>
-                                        <a href="access-facereg.html">Face Recognition</a>
+                                        <a href="access-face-rec.html">Face Recognition</a>
                                     </li>
                                 </ul>
                             </li>
@@ -1490,7 +1492,7 @@
                                                             <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-3 col-sm-4">
+                                                    <div class="col-auto">
                                                         <div class="form-group">
                                                             <select class="form-control custom-select">
                                                                 <option value="0">Parking Lot Name</option>
@@ -1540,17 +1542,17 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="text-danger">
+                                                        <tr>
                                                             <td>
-                                                                <div class="cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
-                                                                    <i data-feather="bell" class="icon-xs icon-dual-danger ml-2 animate-blinker2s"></i>
-                                                                </td>
+                                                                <a class="btn btn-sm btn-light btn-rounded p-2 border-success" data-toggle="modal" data-target="#modal-readnotice">
+                                                                    <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success animate-blinker2s"></i></div>
+                                                                </a>
                                                             </td>
                                                             <td>1</td>
                                                             <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
                                                             <td>8-10-02</td>
                                                             <td><a href="visitor-with-vehicle-approved-edit.html">Faith<br>012 345 6789</a></td>
-                                                            <td>Security</td>
+                                                            <td>Security<br>(Malik - 20948657)</td>
                                                             <td>Visitor Parking</td>
                                                             <td>Parking Lot Name 6</td>
                                                             <td>Slot 10, Slot 11</td>
@@ -1565,7 +1567,7 @@
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>
-                                                                        <!-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a> -->
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -1576,7 +1578,7 @@
                                                             <td class="text-center"><span class="badge badge-warning width-sm">Awaiting approval</span></td>
                                                             <td>6-10-02</td>
                                                             <td><a href="visitor-with-vehicle-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
-                                                            <td>Security</td>
+                                                            <td>Security<br>(Malik - 20948657)</td>
                                                             <td>Loading Bay Parking</td>
                                                             <td>Loading Bay 2</td>
                                                             <td>Slot 4, Slot 5, Slot 6</td>
@@ -1591,11 +1593,12 @@
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <td></td>
                                                             <td>3</td>
                                                             <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
@@ -1616,6 +1619,7 @@
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -1640,7 +1644,8 @@
                                                                         aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>                                                                        
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>      
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>                                                                  
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -1666,17 +1671,18 @@
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                        </tr>
+                                                        </tr> -->
                                                         <tr class="text-danger">
                                                             <td></td>
-                                                            <td>6</td>
+                                                            <td>3</td>
                                                             <td class="text-center"><span class="badge badge-danger width-sm">Time Exceeded</span></td>
                                                             <td>6-10-02</td>
                                                             <td><a href="visitor-with-vehicle-timeexceeded-edit.html">Ahmad<br>012 345 6789</a></td>
-                                                            <td>Security</td>
+                                                            <td>Security<br>(Malik - 20948657)</td>
                                                             <td>Visitor Parking</td>
                                                             <td>Parking Lot Name 3</td>
                                                             <td>Slot 14, Slot 15, Slot 16</td>
@@ -1691,12 +1697,13 @@
                                                                     <div class="dropdown-menu">
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#bypass">Bypass</a>
+                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
                                                                     </div>
                                                                 </div>
                                                                 <!-- <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#note">Note</a> -->
                                                             </td>
                                                         </tr>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <td></td>
                                                             <td>7</td>
                                                             <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
@@ -1719,7 +1726,7 @@
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                        </tr>
+                                                        </tr> -->
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -1753,6 +1760,30 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+            <!-- modal read notification -->
+            <div class="modal fade" id="modal-readnotice" tabindex="-1" role="dialog" aria-labelledby="modal-errorLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="">Access Passed</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <i class="uil-smile text-success display-3"></i>
+                            <!-- <h4 class="text-success mt-2">Access Passed</h4> -->
+                            <div class="mx-auto text-muted mb-2"><small>Approved on 24 Jun 2024, 3:30:40pm</small></div>
+                            <p class="w-75 mx-auto text-muted">Visitor access to the building is permitted.</p>
+                            <div class="mt-4 mb-3">
+                                <a href="#" class="btn btn-outline-primary btn-rounded width-md"  data-dismiss="modal"><i class="uil uil-comment-alt-check mr-1"></i>Mark as Read</a>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- modal read notification end -->
 
             <!-- modal note -->
             <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -1802,15 +1833,16 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label class="col-lg-4 col-form-label"
-                                            for="simpleinput">Staff / Security ID</label>
-                                        <div class="col-lg-8">
+                                        <label class="col-lg-3 col-form-label">Register By</label>
+                                        <div class="col-lg-5">
                                             <select class="form-control wide" data-plugin="customselect">
-                                                <option value="0" selected>290001</option>
-                                                <option value="1">290002</option>
-                                                <option value="2">290003</option>
-                                                <option value="3">290004</option>
-                                                <option value="4">290005</option>
+                                                <option value="0" selected>Malik (20948657)</option>
+                                                <option value="1">Ali (290002)</option>
+                                                <option value="2">Ahkaw (290003)</option>
+                                                <option value="3">Muthu (290004)</option>
+                                                <option value="4">Ahmad (290005)</option>
+                                                <option value="4">Staff 1 (290005)</option>
+                                                <option value="4">Samuel (290005)</option>
                                             </select>
                                         </div>
                                     </div>

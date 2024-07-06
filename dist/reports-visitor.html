@@ -147,9 +147,11 @@
                                     <!-- item-->
                                     <a href="visitor-with-vehicle-approved-edit.html"  class="dropdown-item notify-item border-bottom">
                                         <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
-                                        <p class="notify-details">Visitor Parking Approved<br>
-                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>
-                                                Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                        <p class="notify-details">
+                                            <span class="cursor-pointer d-inline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
+                                                <i data-feather="bell" class="icon-xs icon-dual-success ml-0 mr-2 animate-blinker2s"></i>
+                                            </span> Visitor Parking Approved<br>
+                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
                                             <br>1 min ago</small>
                                         </p>
                                     </a>
@@ -536,7 +538,7 @@
                                         <a href="access-lpr.html">License Plate Recognition</a>
                                     </li>
                                     <li>
-                                        <a href="access-facereg.html">Face Recognition</a>
+                                        <a href="access-face-rec.html">Face Recognition</a>
                                     </li>
                                 </ul>
                             </li>
@@ -1461,7 +1463,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Reports <i class="uil uil-angle-right font-sm"></i> <small>Receipts</small></h3>
+                                <h3 class="mb-1 mt-0">Reports <i class="uil uil-angle-right font-sm"></i> <small>Visitor</small></h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <a href="reports.html"><i class="uil-arrow-left mr-1"></i> Back to Reports</a>
@@ -1481,18 +1483,19 @@
                                                     </div>
                                                     <div class="col col-lg-4 text-right">
                                                         <div class="form-group">
-                                                            <button type="button" class="btn btn-primary btn-rounded mb-sm-0" onclick="document.location='assets/images/propertygaga/'"><i class="uil-download-alt mr-1"></i> Download Excel</button>
+                                                            <button type="button" class="btn btn-primary btn-rounded mb-sm-0" onclick="document.location='#'"><i class="uil-download-alt mr-1"></i> Download Excel</button>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="table-responsive">
-                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                    <table class="table table-hover nowrap full-width">
                                                         <thead>
                                                             <tr>
                                                                 <th>No.</th>
                                                                 <!-- <th class="text-center">Status</th> -->
                                                                 <th>Visitor Type</th>
+                                                                <th>Visitor Sub Type</th>
                                                                 <th>Vehicle Type</th>
                                                                 <th>Parking Type</th>
                                                                 <th>Parking Lot Name</th>
@@ -1513,6 +1516,7 @@
                                                                 <td>1</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td> -->
                                                                 <td>Visitor</td>
+                                                                <td>-</td>
                                                                 <td>Car</td>
                                                                 <td>Visitor Parking</td>
                                                                 <td>Parking Lot Name 6</td>
@@ -1531,6 +1535,7 @@
                                                                 <td>2</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-warning width-sm">Awaiting approval</span></td> -->
                                                                 <td>Contractor</td>
+                                                                <td>Renovation</td>
                                                                 <td>Lorry</td>
                                                                 <td>Loading Bay Parking</td>
                                                                 <td>Loading Bay 2</td>
@@ -1549,6 +1554,7 @@
                                                                 <td>3</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td> -->
                                                                 <td>Visitor</td>
+                                                                <td>-</td>
                                                                 <td>Car</td>
                                                                 <td>Visitor Parking</td>
                                                                 <td>Parking Lot Name 1</td>
@@ -1568,6 +1574,7 @@
                                                                 <td>4</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td> -->
                                                                 <td>Visitor</td>
+                                                                <td>-</td>
                                                                 <td>Car</td>
                                                                 <td>Visitor Parking</td>
                                                                 <td>Parking Lot Name 1</td>
@@ -1586,6 +1593,7 @@
                                                                 <td>5</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td> -->
                                                                 <td>Visitor</td>
+                                                                <td>-</td>
                                                                 <td>Car</td>
                                                                 <td>Visitor Parking</td>
                                                                 <td>Parking Lot Name 4</td>
@@ -1604,6 +1612,7 @@
                                                                 <td>6</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-danger width-sm">Time Exceeded</span></td> -->
                                                                 <td>Visitor</td>
+                                                                <td>-</td>
                                                                 <td>Car</td>
                                                                 <td>Visitor Parking</td>
                                                                 <td>Parking Lot Name 3</td>
@@ -1622,6 +1631,7 @@
                                                                 <td>7</td>
                                                                 <!-- <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td> -->
                                                                 <td>Contractor</td>
+                                                                <td>Food Delivery</td>
                                                                 <td>Motocycle</td>
                                                                 <td>Drop off</td>
                                                                 <td>-</td>

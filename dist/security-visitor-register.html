@@ -93,9 +93,11 @@
                                     <!-- item-->
                                     <a href="security-visitor-visitordetails.html"  class="dropdown-item notify-item border-bottom">
                                         <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
-                                        <p class="notify-details">Visitor Parking Approved<br>
-                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>
-                                                Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                        <p class="notify-details">
+                                            <span class="cursor-pointer d-inline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
+                                                <i data-feather="bell" class="icon-xs icon-dual-success ml-0 mr-2 animate-blinker2s"></i>
+                                            </span> Visitor Parking Approved<br>
+                                            <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
                                             <br>1 min ago</small>
                                         </p>
                                     </a>
@@ -207,7 +209,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="security-access-facereg.html">
+                                <a href="security-access-face-rec.html">
                                     <i class="uil uil-capture"></i>
                                     <span class="badge badge-success float-right"></span>
                                     <span>Face Recognition</span>
@@ -256,65 +258,72 @@
                                                             for="simpleinput">Need a parking?</label>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio2" name="customRadio00"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio2">Yes</label>
+                                                                <input type="radio" id="customRadioyes" name="customRadio00"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="customRadioyes">Yes</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio1" name="customRadio00"
+                                                                <input type="radio" id="customRadiono" name="customRadio00"
                                                                     class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio1">No</label>
+                                                                <label class="custom-control-label" for="customRadiono">No</label>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-2">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Parking Type</label>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio88" name="customRadio"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio88">Visitor Parking</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio99" name="customRadio"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio99">Loading Bay Parking</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio3" name="customRadio"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio3">Drop Off</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center mb-2">
+                                                    <div class="form-row row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Visitor Type</label>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio88" name="customRadio"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio88">Visitor Parking</label>
+                                                                <input type="radio" id="vehicle1" name="customRadio"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="vehicle1">Visitor</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio99" name="customRadio"
+                                                                <input type="radio" id="vehicle2" name="customRadio"
                                                                     class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio99">Loading Bay Parking</label>
+                                                                <label class="custom-control-label" for="vehicle2">Contractor</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Vehicle Type</label>
+                                                        <div class="col-auto"> 
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Vehicle Type</option>
+                                                                <option>Car</option>
+                                                                <option>Lorry</option>
+                                                                <option>Motorcycle</option>
+                                                                <option>Big Truck</option>
+                                                                <option>Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Parking Type</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio2" name="customRadiopt"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadio2">Visitor Parking</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio3" name="customRadio"
+                                                                <input type="radio" id="customRadio1" name="customRadiopt"
                                                                     class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadio1">Loading Bay Parking</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio3" name="customRadiopt"
+                                                                    class="custom-control-input" disabled>
                                                                 <label class="custom-control-label" for="customRadio3">Drop Off</label>
                                                             </div>
                                                         </div>
@@ -375,9 +384,22 @@
                                                             <input type="text" class="form-control" id="" placeholder="" value="">
                                                         </div>
                                                     </div>
-                                                    
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Date</label>
+                                                        <label class="col-lg-3 col-form-label">Register By</label>
+                                                        <div class="col-lg-5">
+                                                            <select class="form-control wide" data-plugin="customselect">
+                                                                <option value="0" selected>Malik (20948657)</option>
+                                                                <option value="1">Ali (290002)</option>
+                                                                <option value="2">Ahkaw (290003)</option>
+                                                                <option value="3">Muthu (290004)</option>
+                                                                <option value="4">Ahmad (290005)</option>
+                                                                <option value="4">Staff 1 (290005)</option>
+                                                                <option value="4">Samuel (290005)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Register Date</label>
                                                         <div class="col-lg-5">
                                                             <input class="form-control" id="" type="date" name="date" placeholder="">
                                                         </div>
@@ -432,13 +454,27 @@
                                                             </div> <!-- end card -->
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">QR Code</label>
-                                                        <div class="col-lg-5 text-lg-left text-md-left text-center">
-                                                            <div class="spinner-border text-primary m-2" role="status">
+                                                    <div class="form-row">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Access Method</label>
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                <label class="custom-control-label" for="customCheck2">LPR</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                        </div>
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                                                <label class="custom-control-label" for="customCheck1">QR Code</label>
+                                                            </div>
+                                                            <p class="animate-blinker2s ml-4 text-danger">Pending approval from owner...</p>
+                                                            <!-- <div class="spinner-border text-primary ml-4 mr-2 mt-2 text-sm float-left" role="status">
                                                                 <span class="sr-only">Loading...</span>
                                                             </div>
-                                                            <p>Pending approval from house owner...</p>
+                                                            <p class="float-right mt-3">Pending approval from owner.</p> -->
                                                         </div>
                                                     </div>
                                                 </div>

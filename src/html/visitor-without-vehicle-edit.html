@@ -36,9 +36,9 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            @@include('./partials/topbar-security.html')
+            @@include('./partials/topbar.html')
 
-            @@include('./partials/left-sidebar-security.html')
+            @@include('./partials/left-sidebar.html')
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -51,7 +51,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Visitor Details</h3>
+                                <h3 class="mb-1 mt-0">Edit Visitor (Pedestrian)</h3>
                                 <span class="badge badge-success width-sm">Approved</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
@@ -68,70 +68,113 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-row row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Parking Type</label>
+                                                            for="simpleinput">Visitor Type</label>
                                                         <div class="col-auto">
-                                                            Visitor Parking
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="vehicle1" name="customRadio"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="vehicle1">Visitor</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="vehicle2" name="customRadio"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="vehicle2">Contractor</label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Unit to Visit</label>
                                                         <div class="col-lg-5">
-                                                            8-18-3A
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Unit No.</option>
+                                                                <option value="1" selected>8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Name</label>
                                                         <div class="col-lg-5">
-                                                            Faith
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Eugene">
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Contact No.</label>
                                                         <div class="col-lg-5">
-                                                            012 345 6789
+                                                            <input type="text" class="form-control" id="" placeholder="" value="012 345 6789">
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
                                                         <label class="col-3 col-form-label" for="example-fileinput">Note</label>
-                                                        <div class="col-5">
-                                                            -
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center mb-1">
-                                                        <label class="col-lg-3 col-form-label">Car Plate No.</label>
                                                         <div class="col-lg-5">
-                                                            MMM 3333
+                                                            <textarea class="form-control" rows="4" id="textarea"></textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
-                                                        <label class="col-lg-3 col-form-label">Registered on</label>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Register By</label>
                                                         <div class="col-lg-5">
-                                                            15 May 2024
+                                                            <select class="form-control wide" data-plugin="customselect">
+                                                                <option value="0" selected>Malik (20948657)</option>
+                                                                <option value="1">Ali (290002)</option>
+                                                                <option value="2">Ahkaw (290003)</option>
+                                                                <option value="3">Muthu (290004)</option>
+                                                                <option value="4">Ahmad (290005)</option>
+                                                                <option value="4">Staff 1 (290005)</option>
+                                                                <option value="4">Samuel (290005)</option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-1">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Register Date</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
                                                         <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Parking Lot
-                                                        </label>
-                                                        <div class="col-lg-5">
-                                                            Parking Lot Name 1
+                                                            for="simpleinput">Access Method</label>
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                                                <label class="custom-control-label" for="customCheck1">QR Code</label>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/qrcode-receipt.gif" class="responsive" width="150">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Slot Number</label>
-                                                        <div class="col-lg-5 pl-2">
-                                                            <div>Slot 7 ( 06:01 - 07:00 )</div>
-                                                            <div>Slot 8 ( 07:01 - 08:00 )</div>
-                                                            <div>Slot 9 ( 08:01 - 09:00 )</div>
+                                                        <div class="col-auto">
                                                         </div>
-                                                    </div>
-                                                    
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">QR Code</label>
-                                                        <div class="col-lg-5 text-lg-left text-md-left text-center">
-                                                            <img src="assets/images/qrcode-receipt.gif" class="responsive" width="150">
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                <label class="custom-control-label" for="customCheck2">Face Recognition</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,8 +182,9 @@
                                         </form>
 
                                         <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Close</button>
-                                            <!-- <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button> -->
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-outline-danger btn-rounded mr-1" data-toggle="modal" data-target="#callUnit">Make a Call</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
                                         </div>
             
                                     </div> <!-- end card-body -->
@@ -161,7 +205,7 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal update mailing address-->
+            <!-- modal parking lot -->
             <div class="modal fade" id="parkinglot" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
@@ -182,7 +226,29 @@
                     </div>
                 </div>
             </div>
-            <!-- -->
+            <!-- parking lot end -->
+
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Unit: 6-10-02</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="mb-4" id="exampleModalScrollableTitle"><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary btn-block">Call Owner</a></h5>
+                            <h5 class="mb-4"><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary btn-block">Call Visitor</a></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
 
 
         </div>
