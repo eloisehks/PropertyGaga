@@ -486,6 +486,25 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="uil uil-focus"></i>
+                                    <span>Access</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="access.html">Access Status</a>
+                                    </li>
+                                    <li>
+                                        <a href="access-lpr.html">License Plate Recognition</a>
+                                    </li>
+                                    <li>
+                                        <a href="access-face-rec.html">Face Recognition</a>
+                                    </li>
+                                </ul>
+                            </li>
 
                             <li>
                                 <a href="javascript: void(0);">
@@ -531,25 +550,7 @@
                                     <span>Access Status</span>
                                 </a>
                             </li> -->
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i class="uil uil-focus"></i>
-                                    <span>Access</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="access.html">Access Status</a>
-                                    </li>
-                                    <li>
-                                        <a href="access-lpr.html">License Plate Recognition</a>
-                                    </li>
-                                    <li>
-                                        <a href="access-face-rec.html">Face Recognition</a>
-                                    </li>
-                                </ul>
-                            </li>
+    
                             <!-- <li>
                                 <a href="card-listing.html">
                                     <img src="assets/images/icons/card-gray.svg" class="ml-1 mr-2" style="width: 17px">
@@ -1482,7 +1483,7 @@
                                             data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
                                         <div class="dropdown-menu dropdown-menu-right"> 
-                                            <a class="dropdown-item" href="accounting-transactions-addjournaltrans.html">Add journal transaction</a>
+                                            <a class="dropdown-item" href="accounting-journal-edit.html">Add journal transaction</a>
                                             <a class="dropdown-item" href="accounting-transactions-upload-bankstatement.html">Upload a Bank Statement</a>
                                         </div>
                                     </div><!-- /btn-group -->
@@ -1543,20 +1544,102 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
+                                                                    <tr class="font-weight-bold">
                                                                         <td>
                                                                             <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
                                                                         <td width="30%">
                                                                             <div class="form-group align-items-center m-0 p-0">
-                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="24 Jun 2023">
+                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
                                                                             </div>
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel150 noborder" id="simpleinput" value="Invoice Payment">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="(Copy of) Write a Description" value="(Copy of) Write a Description">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
+                                                                               
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="text-right">0.00</td>
+                                                                        <td class="text-center"></td>
+                                                                        <td class="text-center align-self-center">
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="font-weight-bold">
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td width="30%">
+                                                                            <div class="form-group align-items-center m-0 p-0">
+                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group m-0 p-0">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="Write a Description" value="Write a Description">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
+                                                                               
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="text-right">30,000.00</td>
+                                                                        <td class="text-center"></td>
+                                                                        <td class="text-center align-self-center">
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="font-weight-bold">
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td width="30%">
+                                                                            <div class="form-group align-items-center m-0 p-0">
+                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group m-0 p-0">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" value="Invoice Payment">
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -1590,18 +1673,18 @@
                                                                             </div><!-- /btn-group -->
                                                                         </td>
                                                                     </tr>
-                                                                    <tr>
+                                                                    <tr class="font-weight-bold">
                                                                         <td>
                                                                             <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="21 Jun 2023">
+                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="2023-06-04">
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel150 noborder" id="simpleinput" value="Invoice Payment">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" value="Invoice Payment">
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -1642,11 +1725,11 @@
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="3 Jun 2023">
+                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="2023-06-02">
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel150 noborder" id="simpleinput" value="Payment Voucher">
+                                                                                <input type="text" class="form-control pixel200 noborder" id="simpleinput" value="Payment Voucher">
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -1687,11 +1770,11 @@
                                                                             </div>
                                                                         </td>
                                                                         <td>
-                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="1 Jun 2023">
+                                                                            <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="2023-06-01">
                                                                         </td>
                                                                         <td>
                                                                             <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel150 noborder" id="simpleinput" value="Payment Voucher">
+                                                                                <input type="text" class="form-control pixel200 noborder" id="simpleinput" value="Payment Voucher">
                                                                             </div>
                                                                         </td>
                                                                         <td>
