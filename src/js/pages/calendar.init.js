@@ -81,7 +81,7 @@ File: Calendar init js
                 title: 'Fire Fighting Contract Renewal',
                 start: new Date($.now() + 168000000),
                 className: 'bg-warning'
-            },
+            }];
             /*{
                 title: 'Gen-set License Renewal',
                 start: new Date($.now() + 338000000),
