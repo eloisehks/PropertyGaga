@@ -32,6 +32,9 @@
             .image-upload>input {
                 display: none;
               }
+            .hidden {
+                display: none;
+            }
         </style>
 
     </head>
@@ -200,41 +203,106 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="example-date">Payment Date <span class="text-danger">*</span></label>
-                                                            <div class="col-4 col-xs-4 col-lg-4">
+                                                            <div class="col-xs-4 col-lg-4">
                                                                 <input type="text" id="basic-datepicker" class="form-control" placeholder="">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row border-bottom"></div>
+                                                    <!-- <div class="form-group row border-bottom"></div> -->
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Payment Mode</label>
+                                                        <label class="col-lg-3 col-form-label" for="paymentMethod">Payment Mode</label>
                                                         <div class="col-lg-4">
-                                                            <select class="form-control custom-select">
-                                                                <option value="0">Select</option>
-                                                                <option value="1">Cash</option>
-                                                                <option value="2" selected>Cheque</option>
-                                                                <option value="3">Card</option>
-                                                                <option value="4">Online CDM</option>
-                                                                <option value="4">Online IBG</option>
-                                                                <option value="5">Contra Reno Deposit</option>
-                                                                <option value="6">Others</option>
+                                                            <select class="form-control custom-select" id="paymentMethod" onchange="showFields()">
+                                                                <option value="">Select Payment Mode</option>
+                                                                <option value="cash">Cash</option>
+                                                                <option value="cheque">Cheque</option>
+                                                                <option value="card">Card</option>
+                                                                <option value="onlineBanking">Online Banking</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <!-- <label class="col-lg-4 col-form-label"
-                                                            for="">Bank</label> -->
-                                                        <div class="col-lg-3">
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" id="" name="" class="form-control" value="Hong Leong Bank" placeholder="Bank Name">
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" id="" name="" class="form-control" value="06774721" placeholder="Cheque No.">
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" id="basic-datepicker2" class="form-control" value="01/01/2023" placeholder="Date">
+                                                    
+                                                    <!-- Common Field: Select Deposit Bank -->
+                                                    <div id="commonFields" class="hidden">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="depositBank">Deposit into Account</label>
+                                                            <div class="col-lg-4">
+                                                                <select class="form-control custom-select" id="depositBank">
+                                                                    <option value="">Select</option>
+                                                                    <option value="Bank -  SF  3250732926|Current Account" selected>Bank -  SF  3250732926 - Current Account</option>
+                                                                    <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                                    <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                                    <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                    <option value="Cash on Hand|None">Cash on Hand</option>
+                                                                    <option value="Petty Cash|None">Petty Cash</option>
+                                                                    </select>
+                                                            </div>
                                                         </div>
                                                     </div>
+
+                                                    <!-- Cheque Fields -->
+                                                    <div id="chequeFields" class="hidden">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="chequeNo">Cheque No.</label>
+                                                            <div class="col-lg-4"><input type="text" id="chequeNo" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="chequeDate">Cheque Date</label>
+                                                            <div class="col-lg-4"><input type="date" id="chequeDate" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="chequeFromBank">Cheque From Bank</label>
+                                                            <div class="col-lg-4"><input type="text" id="chequeFromBank" class="form-control"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Card Fields -->
+                                                    <div id="cardFields" class="hidden">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="cardBank">Card Bank</label>
+                                                            <div class="col-lg-4"><input type="text" id="cardBank" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="cardType">Card Type</label>
+                                                            <div class="col-lg-4">
+                                                                <select id="cardType" class="form-control">
+                                                                    <option value="visa">Visa</option>
+                                                                    <option value="mastercard">MasterCard</option>
+                                                                    <option value="amex">American Express</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="txnDateCard">Transaction Date</label>
+                                                            <div class="col-lg-4"><input type="date" id="txnDateCard" class="form-control"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Online Banking Fields -->
+                                                    <div id="onlineBankingFields" class="hidden">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="txnNo">Transaction No.</label>
+                                                            <div class="col-lg-4"><input type="text" id="txnNo" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="txnDateOnline">Transaction Date</label>
+                                                            <div class="col-lg-4"><input type="date" id="txnDateOnline" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="fromWhichBank">From Which Bank</label>
+                                                            <div class="col-lg-4"><input type="text" id="fromWhichBank" class="form-control"></div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="methodUsed">Method Used</label>
+                                                            <div class="col-lg-4">
+                                                                <select id="methodUsed" class="form-control">
+                                                                    <option value="onlineBanking">Online Banking</option>
+                                                                    <option value="cdmAtm">CDM/ATM</option>
+                                                                    <option value="qrCode">QR Code</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="example-date">Reference</label>
@@ -242,18 +310,21 @@
 <textarea class="form-control" rows="2" id="textarea">This payment is for blah blah...</textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label" for="">Deposit into Account</label>
-                                                        <div class="col-auto">
-                                                            <select class="form-control custom-select">
-                                                                <option value="">Select</option>
-                                                                <option value="Bank -  SF  3250732926|Current Account" selected>Bank -  SF  3250732926 - Current Account</option>
-                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
-                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
-                                                                <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
-                                                                <option value="Cash on Hand|None">Cash on Hand</option>
-                                                                <option value="Petty Cash|None">Petty Cash</option>
-                                                                </select>
+                                                    <div class="row">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="fileinput">Attach Document</label>
+                                                        <div class="col-lg-9">
+                                                            <div class="row">
+                                                                <div class="col-auto col-lg-4">
+                                                                    <div class="image-upload">
+                                                                        <label for="file-input">
+                                                                            <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
+                                                                        </label>
+                                                                    
+                                                                        <input id="file-input" type="file" multiple />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -999,6 +1070,32 @@ Your's Faithfully,
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+            function showFields() {
+                const paymentMethod = document.getElementById("paymentMethod").value;
+    
+                // Hide all fields first
+                document.getElementById("commonFields").classList.add("hidden");
+                document.getElementById("chequeFields").classList.add("hidden");
+                document.getElementById("cardFields").classList.add("hidden");
+                document.getElementById("onlineBankingFields").classList.add("hidden");
+    
+                // Show common fields (select deposit bank)
+                if (paymentMethod) {
+                    document.getElementById("commonFields").classList.remove("hidden");
+                }
+    
+                // Show additional fields based on the selected payment Mode
+                if (paymentMethod === "cheque") {
+                    document.getElementById("chequeFields").classList.remove("hidden");
+                } else if (paymentMethod === "card") {
+                    document.getElementById("cardFields").classList.remove("hidden");
+                } else if (paymentMethod === "onlineBanking") {
+                    document.getElementById("onlineBankingFields").classList.remove("hidden");
+                }
+            }
+        </script>
         
     </body>
 </html>
