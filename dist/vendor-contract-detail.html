@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Property Gaga</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="" name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
@@ -27,6 +27,18 @@
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            <!--
+                function toggle_visibility(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'block')
+                      e.style.display = 'none';
+                   else
+                      e.style.display = 'block';
+                }
+            //-->
+            </script>
 
     </head>
 
@@ -239,151 +251,223 @@
                     
                     <!-- Start Content-->
                     <div class="container-fluid">
+                    
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Contracts</h3>
+                                <h3 class="mb-1 mt-0">Emerald Residence</h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a href="#contract" data-toggle="tab" aria-expanded="false"
+                                                class="nav-link active">
+                                                <span class="d-block d-sm-none">Contract</span>
+                                                <span class="d-none d-sm-block">Contract</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#officeinfo" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                                <span class="d-block d-sm-none">Management Office</span>
+                                                <span class="d-none d-sm-block">Management Office</span>
+                                            </a>
+                                        </li>
+                                    </ul>
 
-                                        <div class="table-responsive pb-3">
-                                            <table id="committee-list" class="table table-hover nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th width="30%">Sites</th>
-                                                        <th>Mgmt. Off.<br>Contact No.</th>
-                                                        <th class="text-center">Contract Status</th>
-                                                        <th>Expiry of Contract</th>
-                                                        <th class="text-right">Outstanding<br>Payment (RM)</th>
-                                                        <th class="text-center">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td width="40%"><a href="vendor-contract-detail.html">Penang Coastal</a></td>
-                                                        <td>04 345 6789</td>
-                                                        <td class="text-center">
+                                    <div class="tab-content p-3 text-muted">
+                                        <div class="tab-pane show active" id="contract">
+                                            
+                                            <div class="row pt-3">
+                                                <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-left">
+                                                            <img src="assets/images/condo/3resident.jpg" alt="" class="img-fluid rounded" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8">
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md- font-weight-bold">Site Name</div>
+                                                        <div class="col col-md-8">
+                                                            Emerald Residence
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md- font-weight-bold">Site Address</div>
+                                                        <div class="col col-md-8">
+                                                            Persiaran Bukit Jambul, Bukit Jambul, 34567 Penang Malaysia
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md- font-weight-bold">Type</div>
+                                                        <div class="col col-md-8">
+                                                            Condominium
+                                                        </div>
+                                                    </div>                                   
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom align-items-center">
+                                                        <div class="col col-md-4 font-weight-bold">Contract Status</div>
+                                                        <div class="col col-md-8">
                                                             <span class="badge badge-success width-sm">Active</span>
-                                                        </td>
-                                                        <td>
-                                                            3 Oct 2024 - 3 Oct 2025
-                                                        </td>
-                                                        <td class="text-right">0.00</td>
-                                                        <td class="text-center">
-                                                            
-                                                                <div class="btn-group dropleft">
-                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                    <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-renewal">Renew</a>
-                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-withdraw">Withdraw</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Expiry of Contract</div>
+                                                        <div class="col col-md-8">
+                                                            2018-10-03 to 2018-10-10
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom align-items-center">
+                                                        <div class="col col-md-4 font-weight-bold">Upload Contract</div>
+                                                        <div class="col col-md-8">
+                                                            <div class="p-2 border rounded mb-2">
+                                                                <div class="media">
+                                                                    <div class="avatar-sm font-weight-bold mr-3">
+                                                                        <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                            <i class="uil-file-plus-alt font-size-18"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <a href="#" class="d-inline-block mt-2">contract 1.pdf</a>
+                                                                    </div>
+                                                                    <div class="float-right mt-1">
+                                                                        <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
                                                                     </div>
                                                                 </div>
-                                                           
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="vendor-contract-detail.html">Resident 3</a></td>
-                                                        <td>012 345 6789</td>
-                                                        <td class="text-center">
-                                                            <span class="badge badge-danger width-sm">Inactive</span>
-                                                        </td>
-                                                        <td>
-                                                            3 Oct 2018 - 3 Oct 2019
-                                                        </td>
-                                                        <td class="text-right">0.00</td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-renewal">Renew</a>
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-withdraw">Withdraw</a>
-                                                                </div>
                                                             </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="vendor-contract-detail.html">Emerald Residence</a></td>
-                                                        <td>012 345 6789</td>
-                                                        <td class="text-center">
-                                                            <span class="badge badge-danger width-sm">Terminated</span>
-                                                            <br><small>on 22 May 2019</small>
-                                                        </td>
-                                                        <td>
-                                                            3 Oct 2018 - 3 Oct 2019
-                                                        </td>
-                                                        <td class="text-right">0.00</td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-renewal">Renew</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="vendor-contract-detail.html">Maya Residence</a></td>
-                                                        <td>012 345 6789</td>
-                                                        <td class="text-center">
-                                                            <span class="badge badge-warning width-sm">Expiring</span>
-                                                        </td>
-                                                        <td>
-                                                            3 Nov 2023 - 3 Nov 2024
-                                                        </td>
-                                                        <td class="text-right">0.00</td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-renewal">Renew</a>
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-withdraw">Withdraw</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><a href="vendor-contract-detail.html">Mori Residence</a></td>
-                                                        <td>012 345 6789</td>
-                                                        <td class="text-center">
-                                                            <span class="badge badge-info width-sm">Pending Approval</span>
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="text-right"></td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-withdraw">Withdraw</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Monthly Fees</div>
+                                                        <div class="col col-md-8">
+                                                            RM 1,000.00
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                        <div class="col col-md-4 font-weight-bold">Outstanding Payment</div>
+                                                        <div class="col col-md-8">
+                                                            RM 0.00
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-3 pb-1 align-items-center">
+                                                        <div class="col-md-12 text-right">
+                                                            <button type="submit" class="btn btn-outline-danger btn-rounded mr-1" data-toggle="modal" data-target="#modal-withdraw">Withdraw</button>
+                                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" data-toggle="modal" data-target="#modal-renewal">Renew</button>
+                                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Make Payment</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                        <div class="tab-pane" id="officeinfo">
+                                            <div class="row pt-3">
+                                                <div class="col-lg-6">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h5>Contact Info</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md- font-weight-bold">Address</div>
+                                                        <div class="col col-md-8">
+                                                            Persiaran Bukit Jambul, Bukit Jambul, 34567 Penang Malaysia
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Contact No.</div>
+                                                        <div class="col col-md-8">
+                                                            03 345 6789
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Mobile No.</div>
+                                                        <div class="col col-md-8">
+                                                            012 345 6789
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Fax No.</div>
+                                                        <div class="col col-md-8">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Email</div>
+                                                        <div class="col col-md-8">
+                                                            <a href="mailto:email@email.com">email@email.com</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Website</div>
+                                                        <div class="col col-md-8">
+                                                            <a href="http://www.emeraldresidence.com" target="_blank">www.emeraldresidence.com</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h5>Operation Hour</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Monday</div>
+                                                        <div class="col col-md-8">
+                                                            7:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Tuesday</div>
+                                                        <div class="col col-md-8">
+                                                            7:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Wednesday</div>
+                                                        <div class="col col-md-8">
+                                                            7:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Thursday</div>
+                                                        <div class="col col-md-8">
+                                                            7:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Friday</div>
+                                                        <div class="col col-md-8">
+                                                            7:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                        <div class="col col-md-4 font-weight-bold">Saturday</div>
+                                                        <div class="col col-md-8">
+                                                            10:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 mt-2 pt-0 pb-1">
+                                                        <div class="col col-md-4 font-weight-bold">Sunday</div>
+                                                        <div class="col col-md-8">
+                                                            10:00am - 6:00pm
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- end row-->
+                    
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -408,11 +492,7 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-
-        </div>
-        <!-- END wrapper -->
-
-        <!-- modal edit renewal-->
+            <!-- modal edit renewal-->
         <div class="modal fade" id="modal-renewal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -529,6 +609,9 @@
         </div>
         <!-- modal withdraw end -->
 
+        </div>
+        <!-- END wrapper -->
+
         <!-- Right Sidebar -->
         <div class="right-bar">
             <div class="rightbar-title">
@@ -602,6 +685,7 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
+        
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
@@ -637,5 +721,8 @@
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
         
+        
+
+
     </body>
 </html>
