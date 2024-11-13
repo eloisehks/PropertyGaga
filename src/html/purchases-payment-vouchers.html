@@ -65,22 +65,36 @@
                                     <div class="card-body">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
-                                                <a href="#pending" data-toggle="tab" aria-expanded="true"
+                                                <a href="#all" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link active">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-block d-sm-none">All</span>
+                                                    <span class="d-none d-sm-block">All</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#pending" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Pending</span>
                                                     <span class="d-none d-sm-block">Pending</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#all" data-toggle="tab" aria-expanded="false"
+                                                <a href="#open" data-toggle="tab" aria-expanded="true"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-user"></i></span>
-                                                    <span class="d-none d-sm-block">All Payment</span>
+                                                    <span class="d-block d-sm-none">Open</span>
+                                                    <span class="d-none d-sm-block">Open</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#collected" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Collected / Banked In</span>
+                                                    <span class="d-none d-sm-block">Collected / Banked In</span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <div class="tab-content p-0 text-muted">
-                                            <div class="tab-pane show active" id="pending">
+                                            <div class="tab-pane show active" id="all">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card">
@@ -93,7 +107,10 @@
                                                                                     <select class="form-control custom-select">
                                                                                         <option selected>All Status</option>
                                                                                         <option>Pending</option>
+                                                                                        <option>Open</option>
+                                                                                        <option>Collected/Banked In</option>
                                                                                         <option>Cancelled</option>
+                                                                                        <option>Returned</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
@@ -118,7 +135,7 @@
                                                                 </div>
 
                                                                 <div class="table-responsive">
-                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                                    <table id="basic-datatable1" class="table table-hover nowrap full-width">
                                                                         <thead>
                                                                             <tr>
                                                                                 <th>Status</th>
@@ -126,23 +143,24 @@
                                                                                 <th>PV No.</th>
                                                                                 <th>Payee</th>
                                                                                 <th>Ref. No.</th>
-                                                                                <th class="text-right">Amt. (RM)</th>
+                                                                                <th>Amt. (RM)</th>
                                                                                 <th>Method</th>
-                                                                                <th class="text-center">Cheque No.</th> 
+                                                                                <th>Cheque No.</th>
                                                                                 <th class="text-right">Actions</th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
-                                                                            <!-- <tr>
+                                                                            <tr>
                                                                                 <td><span class="badge badge-warning width-xs">Pending</span></td>
-                                                                                <td>13 Apr 2024</td>
-                                                                                <td><a href="purchases-payment-voucher-refunddeposit.html">PV00004</a></td>
-                                                                                <td>June Tan</td>
-                                                                                <td></td>
-                                                                                <td class="text-right">3,000.00</td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-pending.html">PV00003</a></td>
+                                                                                <td>HSL Electrical Supply</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
                                                                                 <td>Cheque</td>
-                                                                                <td class="text-center">37596332</td>
+                                                                                <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher-pending">Update Status</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -150,23 +168,26 @@
                                                                                         <div class="dropdown-menu">
                                                                                             <a class="dropdown-item" href="#">Save as PDF</a>
                                                                                             <a class="dropdown-item" href="#">Print</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment-d">Return Payment</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment-d">Cancel Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
                                                                                         </div>
-                                                                                    </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                    <!-- <div class="mt-3 mt-sm-0">
+                                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                                    </div> -->
                                                                                 </td>
-                                                                            </tr> -->
+                                                                            </tr>
                                                                             <tr>
-                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                                                <td><span class="badge badge-success width-xs">Open</span></td>
                                                                                 <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view-1.html">PV00003</a></td>
+                                                                                <td><a href="purchases-payment-voucher-open.html">PV00006</a></td>
                                                                                 <td>HSL Electrical Supply</td>
                                                                                 <td>3574858</td>
-                                                                                <td class="text-right">20,000.00</td>
+                                                                                <td class="text-right">RM20,000.00</td>
                                                                                 <td>Cheque</td>
                                                                                 <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</a>
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Status</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -186,14 +207,127 @@
                                                                             <tr class="strikethrough">
                                                                                 <td><span class="badge badge-danger width-xs">Cancelled</span></td>
                                                                                 <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view.html">PV00002</a></td>
+                                                                                <td><a href="purchases-payment-voucher-view-cancelled.html">PV00002</a></td>
                                                                                 <td>Advance Seatech Sdn Bhd</td>
                                                                                 <td>3574858</td>
-                                                                                <td class="text-right">20,000.00</td>
+                                                                                <td class="text-right">RM20,000.00</td>
                                                                                 <td>Cheque</td>
                                                                                 <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Cheque Status</a>
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-info width-xs">Collected</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-collected.html">PV000012</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cash</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- <tr>
+                                                                                <td><span class="badge badge-success width-xs">Cleared</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000012</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cash</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-success width-xs">Cleared</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000013</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Online Transfer</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr> -->
+                                                                            <!-- <tr class="strikethrough">
+                                                                                <td><span class="badge badge-danger width-xs">Cancelled</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-cleared-cancelled.html">PV000015</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>639735</td>
+                                                                                <td class="text-right">RM1,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759678</td>                                                                               
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr> -->
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Returned</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-view-returned.html">PV000033</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <!-- <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">View Status</a> -->
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -214,7 +348,7 @@
                                                 </div>
                                                 <!-- end row-->
                                             </div>
-                                            <div class="tab-pane" id="all">
+                                            <div class="tab-pane" id="pending">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card">
@@ -225,23 +359,13 @@
                                                                             <div class="col-lg-2 col-sm-4">
                                                                                 <div class="form-group">
                                                                                     <select class="form-control custom-select">
-                                                                                        <option selected>All Status</option>
+                                                                                        <option>All Status</option>
                                                                                         <option>Pending</option>
-                                                                                        <option>Settled</option>
-                                                                                        <option>Returned</option>
                                                                                         <option>Cancelled</option>
+                                                                                        <option>Returned</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                            <!-- <div class="col-lg-2 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="form-control custom-select">
-                                                                                        <option selected>Select Option</option>
-                                                                                        <option>Cancelled</option>
-                                                                                        <option>Returned</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div> -->
                                                                             <div class="col-lg-2 col-sm-4">
                                                                                 <div class="form-group">
                                                                                     <select class="form-control custom-select">
@@ -281,14 +405,14 @@
                                                                             <tr>
                                                                                 <td><span class="badge badge-warning width-xs">Pending</span></td>
                                                                                 <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view-1.html">PV00003</a></td>
+                                                                                <td><a href="purchases-payment-voucher-pending.html">PV00003</a></td>
                                                                                 <td>HSL Electrical Supply</td>
                                                                                 <td>3574858</td>
                                                                                 <td class="text-right">RM20,000.00</td>
                                                                                 <td>Cheque</td>
                                                                                 <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Cheque Status</a>
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher-pending">Update Status</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -308,81 +432,14 @@
                                                                             <tr class="strikethrough">
                                                                                 <td><span class="badge badge-danger width-xs">Cancelled</span></td>
                                                                                 <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view.html">PV00002</a></td>
+                                                                                <td><a href="purchases-payment-voucher-view-cancelled.html">PV00002</a></td>
                                                                                 <td>Advance Seatech Sdn Bhd</td>
                                                                                 <td>3574858</td>
                                                                                 <td class="text-right">RM20,000.00</td>
                                                                                 <td>Cheque</td>
                                                                                 <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Cheque Status</a>
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
-                                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-success width-xs">Settled</span></td>
-                                                                                <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000012</a></td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>-</td>
-                                                                                <td class="text-right">RM20,000.00</td>
-                                                                                <td>Cash</td>
-                                                                                <td class="text-center">-</td>
-                                                                                <td class="text-right">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
-                                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-success width-xs">Settled</span></td>
-                                                                                <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view-cleared.html">PV000013</a></td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>3574858</td>
-                                                                                <td class="text-right">RM20,000.00</td>
-                                                                                <td>Online Transfer</td>
-                                                                                <td class="text-center">-</td>
-                                                                                <td class="text-right">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
-                                                                                            <a class="dropdown-item" href="#">Print</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr class="strikethrough">
-                                                                                <td><span class="badge badge-danger width-xs">Cancelled</span></td>
-                                                                                <td>2 Mar 2023</td>
-                                                                                <td><a href="purchases-payment-voucher-view-cleared-cancelled.html">PV000015</a></td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>639735</td>
-                                                                                <td class="text-right">RM1,000.00</td>
-                                                                                <td>Cheque</td>
-                                                                                <td class="text-center">3759678</td>                                                                               
-                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Status</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -404,6 +461,7 @@
                                                                                 <td>Cheque</td>
                                                                                 <td class="text-center">3759626</td>
                                                                                 <td class="text-right">
+                                                                                    <!-- <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">View Status</a> -->
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -424,7 +482,170 @@
                                                 </div>
                                                 <!-- end row-->
                                             </div>
-                                            
+                                            <div class="tab-pane" id="open">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Payees</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable3" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Payment Date</th>
+                                                                                <th>PV No.</th>
+                                                                                <th>Payee</th>
+                                                                                <th>Ref. No.</th>
+                                                                                <th>Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th>Cheque No.</th>
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-open.html">PV00006</a></td>
+                                                                                <td>HSL Electrical Supply</td>
+                                                                                <td>3574858</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cheque</td>
+                                                                                <td class="text-center">3759626</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher">Update Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                    <!-- <div class="mt-3 mt-sm-0">
+                                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#updatepaymentvoucher">Update</a>
+                                                                                    </div> -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="collected">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Status</option>
+                                                                                        <option>Collected</option>
+                                                                                        <option>Banked In</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Payees</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable4" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>Payment Date</th>
+                                                                                <th>PV No.</th>
+                                                                                <th>Payee</th>
+                                                                                <th>Ref. No.</th>
+                                                                                <th>Amt. (RM)</th>
+                                                                                <th>Method</th>
+                                                                                <th>Cheque No.</th>
+                                                                                <th class="text-right">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-info width-xs">Collected</span></td>
+                                                                                <td>2 Mar 2023</td>
+                                                                                <td><a href="purchases-payment-voucher-collected.html">PV000012</a></td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">RM20,000.00</td>
+                                                                                <td>Cash</td>
+                                                                                <td class="text-center">-</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" data-toggle="modal" data-target="#updatepaymentvoucher2">View Status</a>
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -443,12 +664,12 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal update Cheque Status 1 -->
+            <!-- modal update Status 1 -->
             <div class="modal fade" id="updatepaymentvoucher" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Cheque Status</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Status</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -472,16 +693,6 @@
                                                             <label class="custom-control-label" for="customRadio1">Cheque banked in by Staff</label>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="">
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio3">Cheque collected by Vendor</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio3">Cheque banked in</label>
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -573,12 +784,12 @@
             </div>
             <!-- modal update status 1 end -->
 
-            <!-- modal update Cheque Status 2 -->
+            <!-- modal update Status 2 -->
             <div class="modal fade" id="updatepaymentvoucher2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">View Cheque Status</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">View Status</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -596,22 +807,12 @@
                                                             <label class="custom-control-label" for="customRadio2">Cheque collected by Vendor</label>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col-auto">
+                                                    <div class="col-auto">
                                                         <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin">
-                                                            <label class="custom-control-label" for="customRadio1">Cheque banked in</label>
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin" disabled>
+                                                            <label class="custom-control-label" for="customRadio1">Cheque banked in by staff</label>
                                                         </div>
-                                                    </div> -->
-                                                    <!-- <div class="">
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio3">Cheque collected by Vendor</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                                                            <label class="custom-control-label" for="customRadio3">Cheque banked in</label>
-                                                        </div>
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -654,6 +855,60 @@
                 </div>
             </div>
             <!-- modal update status 2 end -->
+
+            <!-- modal update Status pending -->
+            <div class="modal fade" id="updatepaymentvoucher-pending" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" checked>
+                                                            <label class="custom-control-label" for="customRadio2">Cheque Ready</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save & Send to Vendor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal update status pending end -->
 
             <!-- modal Return payment -->
             <div class="modal fade" id="returnpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">

@@ -65,22 +65,43 @@
                                     <div class="card-body">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
-                                                <a href="#pending" data-toggle="tab" aria-expanded="true"
+                                                <a href="#allinvoices" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link active">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
-                                                    <span class="d-none d-sm-block">Pending</span>
+                                                    <span class="d-block d-sm-none">All P.I.</span>
+                                                    <span class="d-none d-sm-block">All P.I.</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#allinvoices" data-toggle="tab" aria-expanded="false"
+                                                <a href="#open" data-toggle="tab" aria-expanded="true"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-user"></i></span>
-                                                    <span class="d-none d-sm-block">All Invoices</span>
+                                                    <span class="d-block d-sm-none">Open</span>
+                                                    <span class="d-none d-sm-block">Open</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#vendorsubmit" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Vendor Submit</span>
+                                                    <span class="d-none d-sm-block">Vendor Submit</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#draft" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Draft</span>
+                                                    <span class="d-none d-sm-block">Draft</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#rejected" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Rejected</span>
+                                                    <span class="d-none d-sm-block">Rejected</span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <div class="tab-content p-0 text-muted">
-                                            <div class="tab-pane show active" id="pending">
+                                            <div class="tab-pane show active" id="allinvoices">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card">
@@ -92,8 +113,519 @@
                                                                                 <div class="form-group">
                                                                                     <select class="form-control custom-select">
                                                                                         <option selected>All Status</option>
-                                                                                        <option>Pending</option>
-                                                                                        <option>Open (Note to developer: temporary / same as pending)</option>
+                                                                                        <option>Open (Note to developer: Inv. submitted by vendor, admin accepted)</option>
+                                                                                        <option>Vendor Submit</option>
+                                                                                        <option>Draft</option>
+                                                                                        <option>Rejected</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Vendors</option>
+                                                                                        <option>AERO Pest Services</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Status</th>
+                                                                                <th>P.I. No.<br>(Mgmt.)</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Vendor</th>
+                                                                                <th>Uploaded<br>Inv. on</th>
+                                                                                <th class="text-center">Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Amount<br>(RM)</th>
+                                                                                <th>Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-secondary width-xs">Draft</span></td>
+                                                                                <td><a href="purchases-purchase-invoices-draft.html">7777</a></td>
+                                                                                <td>I457597</td>
+                                                                                <td>AERO Pest Services</td>
+                                                                                <td>30 Mar 2024, 1:30pm</td>
+                                                                                <td class="text-center">OT043</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <!-- <a class="dropdown-item" href="purchases-purchase-invoices-submitted.html">Accept</a>
+                                                                                            <a class="dropdown-item" href="#">Reject</a> -->
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#messagevendor2">Mark as Open</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Vendor Submit</span></td>
+                                                                                <td><a href="purchases-purchase-invoices-vendorsubmit.html">9999</a></td>
+                                                                                <td>457597</td>
+                                                                                <td>AERO Pest Services</td>
+                                                                                <td>30 Mar 2024, 1:30pm</td>
+                                                                                <td class="text-center">OT033</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor2">Accept</a>
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-warning width-xs">Vendor Submit</span></td>
+                                                                                <td><a href="purchases-purchase-invoices-vendorsubmit.html">9998</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT023</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor2">Accept</a>
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-danger width-xs">Rejected</span></td>
+                                                                                <td><a href="purchases-purchase-invoices-rejected.html">9997</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT022</td>
+                                                                                <td>BC-00004</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span class="badge badge-success width-xs">Open</span></td>
+                                                                                <td><a href="purchases-purchase-invoices-submitted.html">3535</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT026</td>
+                                                                                <td>BC-000015</td>
+                                                                                <td class="text-right">500.00</td>
+                                                                                <td>15 Jun 2023</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <!-- open -->
+                                            <div class="tab-pane" id="open">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Vendors</option>
+                                                                                        <option>AERO Pest Services</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable2" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>P.I. No.<br>(Mgmt.)</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Vendor</th>
+                                                                                <th>Uploaded<br>Inv. on</th>
+                                                                                <th class="text-center">Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Amount<br>(RM)</th>
+                                                                                <th>Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="purchases-purchase-invoices-submitted.html">3535</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT026</td>
+                                                                                <td>BC-000015</td>
+                                                                                <td class="text-right">500.00</td>
+                                                                                <td>15 Jun 2023</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <!-- vendor submit -->
+                                            <div class="tab-pane" id="vendorsubmit">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Vendors</option>
+                                                                                        <option>AERO Pest Services</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable3" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>P.I. No.<br>(Mgmt.)</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Vendor</th>
+                                                                                <th>Uploaded<br>Inv. on</th>
+                                                                                <th class="text-center">Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Amount<br>(RM)</th>
+                                                                                <th>Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="purchases-purchase-invoices-vendorsubmit.html">9999</a></td>
+                                                                                <td>457597</td>
+                                                                                <td>AERO Pest Services</td>
+                                                                                <td>30 Mar 2024, 1:30pm</td>
+                                                                                <td class="text-center">OT033</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor2">Accept</a>
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><a href="purchases-purchase-invoices-vendorsubmit.html">9998</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT023</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor2">Accept</a>
+                                                                                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#messagevendor">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <!-- draft -->
+                                            <div class="tab-pane" id="draft">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Vendors</option>
+                                                                                        <option>AERO Pest Services</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable4" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>P.I. No.<br>(Mgmt.)</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Vendor</th>
+                                                                                <th>Uploaded<br>Inv. on</th>
+                                                                                <th class="text-center">Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Amount<br>(RM)</th>
+                                                                                <th>Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="purchases-purchase-invoices-draft.html">7777</a></td>
+                                                                                <td>I457597</td>
+                                                                                <td>AERO Pest Services</td>
+                                                                                <td>30 Mar 2024, 1:30pm</td>
+                                                                                <td class="text-center">OT043</td>
+                                                                                <td>BC-00005</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <!-- <a class="dropdown-item" href="purchases-purchase-invoices-submitted.html">Accept</a>
+                                                                                            <a class="dropdown-item" href="#">Reject</a> -->
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#messagevendor2">Mark as Open</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <div class="tab-pane" id="rejected">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option>All Vendors</option>
+                                                                                        <option>AERO Pest Services</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                        <option>Advance Seatech Sdn Bhd</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable5" class="table table-hover nowrap">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>P.I. No.<br>(Mgmt.)</th>
+                                                                                <th>Inv. No.<br>(Vendor)</th>
+                                                                                <th>Vendor</th>
+                                                                                <th>Uploaded<br>Inv. on</th>
+                                                                                <th class="text-center">Task ID</th>
+                                                                                <th>P.O. No.</th>
+                                                                                <th class="text-right">Amount<br>(RM)</th>
+                                                                                <th>Due</th>
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><a href="purchases-purchase-invoices-rejected.html">9997</a></td>
+                                                                                <td>234567</td>
+                                                                                <td>Advance Seatech Sdn Bhd</td>
+                                                                                <td>30 Feb 2023, 1:30pm</td>
+                                                                                <td class="text-center">OT022</td>
+                                                                                <td>BC-00004</td>
+                                                                                <td class="text-right">-</td>
+                                                                                <td>-</td>
+                                                                                <td class="text-right">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
+                                                                                    </div><!-- /btn-group -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <div class="tab-pane" id="vendorsubmit">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-lg-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option selected>All Status</option>
+                                                                                        <option>Open</option>
+                                                                                        <option>Vendor Submit</option>
+                                                                                        <option>Draft</option>
                                                                                         <option>Rejected</option>
                                                                                     </select>
                                                                                 </div>
@@ -123,7 +655,7 @@
                                                                     <div class="col-md-12">
                                                                         <a href="" class="btn btn-outline-primary btn-sm btn-rounded float-right" data-toggle="modal" data-target="#">Excel</a>
 
-                                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded mr-1 float-right" data-toggle="modal" data-target="#">PDF</a>
+                                                                        <a href="pdf-print-pi.html" class="btn btn-outline-primary btn-sm btn-rounded mr-1 float-right" target="_blank">PDF</a>
                                                                     </div>
                                                                 </div>
 
@@ -173,7 +705,6 @@
                                                                                 <td class="text-center">OT023</td>
                                                                                 <td>BC-00005</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#viewinvoice">Inv. by Vendor</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -193,7 +724,6 @@
                                                                                 <td class="text-center">OT023</td>
                                                                                 <td>BC-00003</td>
                                                                                 <td class="text-right">
-                                                                                    <a href="" class="btn btn-outline-danger btn-rounded btn-sm" data-toggle="modal" data-target="#rejectedinvoice">View Inv.</a>
                                                                                     <div class="btn-group dropleft">
                                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                             data-toggle="dropdown" aria-haspopup="true"
@@ -214,165 +744,11 @@
                                                 </div>
                                                 <!-- end row-->
                                             </div>
-                                            <div class="tab-pane" id="allinvoices">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-lg-2 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="form-control custom-select">
-                                                                                        <option selected>All Status</option>
-                                                                                        <option>Open (Note to developer: temporary / same as pending)</option>
-                                                                                        <option>Pending</option>
-                                                                                        <option>Accepted</option>
-                                                                                        <option>Rejected</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-2 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="form-control custom-select">
-                                                                                        <option>All Vendors</option>
-                                                                                        <option>AERO Pest Services</option>
-                                                                                        <option>Advance Seatech Sdn Bhd</option>
-                                                                                        <option>Advance Seatech Sdn Bhd</option>
-                                                                                        <option>Advance Seatech Sdn Bhd</option>
-                                                                                        <option>Advance Seatech Sdn Bhd</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable2" class="table table-hover nowrap">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Status</th>
-                                                                                <th>Purc. Inv. No.<br>(Mgmt.)</th>
-                                                                                <th>Inv. No.<br>(Vendor)</th>
-                                                                                <th>Vendor</th>
-                                                                                <th>Uploaded<br></R>Inv. on</th>
-                                                                                <th class="text-center">Task ID</th>
-                                                                                <th>Purchase<br>Order No.</th>
-                                                                                <th class="text-right">Amount<br>(RM)</th>
-                                                                                <th>Due</th>
-                                                                                <th class="text-center">Actions</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-warning width-xs">Open</span></td>
-                                                                                <td><a href="purchases-purchase-invoices-open.html">4444</a></td>
-                                                                                <td>457597</td>
-                                                                                <td>AERO Pest Services</td>
-                                                                                <td>30 Mar 2024, 1:30pm</td>
-                                                                                <td class="text-center">OT023</td>
-                                                                                <td>BC-00005</td>
-                                                                                <td class="text-right">-</td>
-                                                                                <td>-</td>
-                                                                                <td class="text-right">
-                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#viewinvoice">Inv. by Vendor</a>
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <!-- <a class="dropdown-item" href="purchases-purchase-invoices-submitted.html">Accept</a>
-                                                                                            <a class="dropdown-item" href="#">Reject</a> -->
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
-                                                                                <td>-</td>
-                                                                                <td>234567</td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>30 Feb 2023, 1:30pm</td>
-                                                                                <td class="text-center">OT023</td>
-                                                                                <td>BC-00005</td>
-                                                                                <td class="text-right">-</td>
-                                                                                <td>-</td>
-                                                                                <td class="text-right">
-                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#viewinvoice">Inv. by Vendor</a>
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <!-- <a class="dropdown-item" href="purchases-purchase-invoices-submitted.html">Accept</a>
-                                                                                            <a class="dropdown-item" href="#">Reject</a> -->
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-danger width-xs">Rejected</span></td>
-                                                                                <td>-</td>
-                                                                                <td>234567</td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>30 Feb 2023, 1:30pm</td>
-                                                                                <td class="text-center">OT022</td>
-                                                                                <td>BC-00004</td>
-                                                                                <td class="text-right">-</td>
-                                                                                <td>-</td>
-                                                                                <td class="text-right">
-                                                                                    <a href="" class="btn btn-outline-danger btn-rounded btn-sm" data-toggle="modal" data-target="#rejectedinvoice">View Inv.</a>
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <!-- <a class="dropdown-item" href="purchases-purchase-invoices-submitted.html">Accept</a> -->
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-success width-xs">Accepted</span></td>
-                                                                                <td><a href="purchases-purchase-invoices-submitted.html">3535</a></td>
-                                                                                <td>234567</td>
-                                                                                <td>Advance Seatech Sdn Bhd</td>
-                                                                                <td>30 Feb 2023, 1:30pm</td>
-                                                                                <td class="text-center">OT026</td>
-                                                                                <td>BC-000015</td>
-                                                                                <td class="text-right">500.00</td>
-                                                                                <td>15 Jun 2023</td>
-                                                                                <td class="text-right">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#">Reject</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div><!-- /btn-group -->
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
-                                                </div>
-                                                <!-- end row-->
-                                            </div>
+                                            Note to developer:<br>
+                                            Open - Inv. submitted by vendor, admin accepted, ready to proceed to Purchase voucher<br>
+                                            Vendor Submit - Invoice submited by vendor, pending Approval<br>
+                                            Draft - Vendor pass invoice to admin by hand, admin create PI<br>
+                                            Rejected - Admin reject Invoice submited by vendor
                                         </div>
                                     </div>
                                 </div>
@@ -476,43 +852,6 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <!-- <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label class="col-form-label" for="">Attach Invoice</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row text-left">
-                                            <div class="col">
-                                                <div class="card mb-2 shadow-none border">
-                                                    <div class="p-1 px-2">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-auto">
-                                                                <img src="assets/images/projects/project-1.jpg" class="avatar-sm rounded" alt="file-image">
-                                                            </div>
-                                                            <div class="col pl-0">
-                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold">vendor-invoice.jpg</a>
-                                                                <p class="mb-0">2.3 MB</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                             
-                                                                <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                    data-placement="bottom" title="Download"
-                                                                    class="btn btn-link text-muted btn-lg p-0">
-                                                                    <i class='uil uil-cloud-download font-size-14'></i>
-                                                                </a>
-                                                                <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                    data-placement="bottom" title="Delete"
-                                                                    class="btn btn-link text-danger btn-lg p-0">
-                                                                    <i class='uil uil-multiply font-size-14'></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group m-0 p-0 mt-4">
@@ -787,6 +1126,158 @@
                 </div>
             </div>
             <!-- rejected invoice end -->
+
+            <!-- modal send message to vendor: reject -->
+            <div class="modal fade" id="messagevendor" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><i class="uil uil-minus-circle text-danger font-md"></i> You are rejecting this purchase invoice #9999</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">                               
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Would you like to send a message to the vendor?</h6>
+                                        <div class="row">
+                                            <div class="col">
+                                                
+                                                <!-- <div class="form-group m-0 p-0">
+                                                    <label class="col-form-label" for="">Comment</label>                                           
+                                                </div>
+                                                <div class="form-group m-0 p-0">
+                                                    <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="image"
+                                                            class="avatar-xs rounded-circle p-1"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Sammy" />
+                                                        <div class="media-body">
+                                                            <p class="mb-0 text-muted font-size-12">
+                                                                Uploaded invoice.
+                                                            </p>
+                                                            <div class="pr-3"><small class="float-right pt-0 m-0">10 Nov 2024, 2:30pm</small></div>
+                                                        </div>
+                                                        <div class="dropdown float-right mt-1">
+                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <div class="row mt-2">
+                                                    <div class="col">
+                                                        <div class="border-gray-light rounded">
+                                                            <form action="#" class="comment-area-box">
+                                                                <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                                <div class="p-2 border">
+                                                                    <div class="text-right">
+                                                                        <button type="submit" class="btn btn-sm btn-rounded btn-outline-success mb-0">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Submit without message Vendor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- send message to vendor end -->
+
+            <!-- modal send message to vendor 2: accept -->
+            <div class="modal fade" id="messagevendor2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle"><i class="uil uil-check-circle text-success font-md"></i>You are accepting this purchase invoice #9999</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">                               
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Would you like to send a message to the vendor?</h6>
+                                        <div class="row">
+                                            <div class="col">
+                                                
+                                                <!-- <div class="form-group m-0 p-0">
+                                                    <label class="col-form-label" for="">Comment</label>                                           
+                                                </div>
+                                                <div class="form-group m-0 p-0">
+                                                    <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="image"
+                                                            class="avatar-xs rounded-circle p-1"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Sammy" />
+                                                        <div class="media-body">
+                                                            <p class="mb-0 text-muted font-size-12">
+                                                                Uploaded invoice.
+                                                            </p>
+                                                            <div class="pr-3"><small class="float-right pt-0 m-0">10 Nov 2024, 2:30pm</small></div>
+                                                        </div>
+                                                        <div class="dropdown float-right mt-1">
+                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <div class="row mt-2">
+                                                    <div class="col">
+                                                        <div class="border-gray-light rounded">
+                                                            <form action="#" class="comment-area-box">
+                                                                <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                                <div class="p-2 border">
+                                                                    <div class="text-right">
+                                                                        <button type="submit" class="btn btn-sm btn-rounded btn-outline-success mb-0">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Submit without message Vendor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- send message to vendor 2 end -->
 
         </div>
         <!-- END wrapper -->

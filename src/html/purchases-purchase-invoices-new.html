@@ -12,7 +12,7 @@
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- plugin css -->
-        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />purchases-purchase-invoices-new.html
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -65,12 +65,19 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group row">
-                                                        <label class="col-lg-5 col-form-label">Purc. Inv. No. (Mgmt.)</label>
-                                                        <div class="col-lg-7">
-                                                            <input class="form-control" type="url" name="url">
+                                                        <label class="col-lg-5 col-form-label">P.I. No. (Mgmt.)</label>
+                                                        <div class="col-lg-7 align-self-center">
+                                                            Auto generated
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <label class="col-lg-5 col-form-label">Inv. No. (Vendor)</label>
+                                                        <div class="col-lg-7">
+                                                            <input class="form-control" type="text" name="" placeholder="Insert Inv. No.">
+                                                            <input type="file" class="form-control" id="fileinput">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-5 col-form-label">Inv. No. (Vendor)</label>
                                                         <div class="col-lg-7">
                                                             <select class="form-control custom-select">
@@ -81,7 +88,7 @@
                                                                 <option>65865366</option>
                                                             </select>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="form-group row">
                                                         <label class="col-lg-5 col-form-label"
                                                             for="example-date">Date</label>
@@ -99,6 +106,16 @@
 
                                                 </div>
                                                 <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Task ID</label>
+                                                        <div class="col-lg-9">
+                                                            <select data-plugin="customselect" class="form-control" data-placeholder="Select">
+                                                                <option>Select Task ID</option>
+                                                                <option>OT022</option>
+                                                                <option>OT022</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">P.O.</label>
                                                         <div class="col-lg-9">
@@ -134,7 +151,7 @@
                                             </div>
                                         </form>
 
-                                        <div class="card mt-3">
+                                        <div class="card mt-3 mb-0 shadow-none">
                                             <div class="card-body p-0">
             
                                                 <div class="table-responsive">
@@ -315,41 +332,40 @@
                                                 </div>
 
                                                 <h5>Attachments</h5>
-                                                <div class="p-2 border-grayform rounded mb-2">
+                                                <div class="p-3 border-grayform rounded mb-2">
                                                     <div class="form-group row mb-0">
-                                                        <label class="col-lg-5 col-form-label text-lg-right">
+                                                        <label class="col-lg-3 col-form-label">
                                                             Approved Purchase Order</label>
-                                                        <div class="col-auto">
-                                                            <input type="file" class="form-control"
-                                                                id="fileinput">
+                                                        <div class="col-lg-9">
+                                                            <input type="file" class="form-control" id="fileinput">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="p-2 border-grayform rounded mb-2">
+                                                <!-- <div class="p-3 border-grayform rounded mb-2">
                                                     <div class="form-group row mb-0">
-                                                        <label class="col-lg-5 col-form-label text-lg-right"
-                                                            for="fileinput">Invoice</label>
-                                                        <div class="col-auto">
+                                                        <label class="col-lg-3 col-form-label">
+                                                            Invoice</label>
+                                                            <div class="col-lg-9">
+                                                        <input type="file" class="form-control"
+                                                                id="fileinput" multiple>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <div class="p-3 border-grayform rounded mb-2">
+                                                    <div class="form-group row mb-0">
+                                                        <label class="col-lg-3 col-form-label">
+                                                            Delivery Order</label>
+                                                        <div class="col-lg-9">
                                                             <input type="file" class="form-control"
                                                                 id="fileinput" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="p-2 border-grayform rounded mb-2">
+                                                <div class="p-3 border-grayform rounded mb-2">
                                                     <div class="form-group row mb-0">
-                                                        <label class="col-lg-5 col-form-label text-lg-right"
-                                                            for="fileinput">Delivery Order</label>
-                                                        <div class="col-auto">
-                                                            <input type="file" class="form-control"
-                                                                id="fileinput" multiple>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-2 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-5 col-form-label text-lg-right"
-                                                            for="fileinput">Other Attachments</label>
-                                                        <div class="col-auto">
+                                                        <label class="col-lg-3 col-form-label">
+                                                            Other Attachments</label>
+                                                        <div class="col-lg-9">
                                                             <input type="file" class="form-control"
                                                                 id="fileinput" multiple>
                                                         </div>
@@ -358,10 +374,10 @@
                                             </div>
                                         </div>
 
-                                        <div class="float-right">
+                                        <div class="float-right mt-3">
                                             <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded" onclick="window.history.go(-1);">Save as Open</button>
-                                            <!-- <button type="submit" class="btn btn-primary btn-rounded">Save</button> -->
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" data-toggle="modal" data-target="#messagevendor">Save as Draft</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#messagevendor">Save as Open</button>
                                         </div>
 
                                     </div> <!-- end card-body -->
@@ -403,6 +419,81 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
+            <!-- modal send message to vendor -->
+            <div class="modal fade" id="messagevendor" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Would you like to send a message to the vendor?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">                               
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <!-- <div class="form-group m-0 p-0">
+                                                    <label class="col-form-label" for="">Comment</label>                                           
+                                                </div>
+                                                <div class="form-group m-0 p-0">
+                                                    <div class="media p-2 mb-1 bg-color-grayLighter rounded">
+                                                        <img src="assets/images/users/avatar-4.jpg"
+                                                            alt="image"
+                                                            class="avatar-xs rounded-circle p-1"
+                                                            data-toggle="tooltip"
+                                                            data-placement="top"
+                                                            title="Sammy" />
+                                                        <div class="media-body">
+                                                            <p class="mb-0 text-muted font-size-12">
+                                                                Uploaded invoice.
+                                                            </p>
+                                                            <div class="pr-3"><small class="float-right pt-0 m-0">10 Nov 2024, 2:30pm</small></div>
+                                                        </div>
+                                                        <div class="dropdown float-right mt-1">
+                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit mr-2"></i>Edit</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item text-danger"><i class="uil uil-trash mr-2"></i>Delete</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <div class="row mt-2">
+                                                    <div class="col">
+                                                        <div class="border-gray-light rounded">
+                                                            <form action="#" class="comment-area-box">
+                                                                <textarea rows="1" class="form-control border-0 resize-none" placeholder="Type your comment"></textarea>
+                                                                <div class="p-2 border">
+                                                                    <div class="text-right">
+                                                                        <button type="submit" class="btn btn-sm btn-rounded btn-outline-success mb-0">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <a href="purchases-purchase-invoices-submitted.html" class="btn btn-primary btn-rounded width-sm">Accept</a>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Reject</button> -->
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- send message to vendor end -->
 
         </div>
         <!-- END wrapper -->
