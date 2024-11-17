@@ -258,7 +258,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Work Orders</h3>
+                                <h3 class="mb-1 mt-0">Work Order</h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -267,133 +267,236 @@
                             </div>
                         </div>
                         
-                        
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="mb-2">
-                                            <form>
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-xl-2 col-sm-4">
-                                                        <div class="form-group">
-                                                            <select class="form-control custom-select">
-                                                                <option value="0">All Status</option>
-                                                                <option>Start in # days</option>
-                                                                <option>In Progress</option>
-                                                                <option>Due soon</option>
-                                                                <option>Overdue</option>
-                                                                <option>Done</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-3 col-sm-4">
-                                                        <div class="form-group">
-                                                            <select class="custom-select">
-                                                                <option>All Sites</option>      
-                                                                <option>3 Resident</option>
-                                                                <option>Emerald Residence</option>
-                                                                <option>Maya Residence</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="table-responsive">
-                                            <table id="open-task1" class="table table-hover nowrap full-width">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Status</th>
-                                                        <th width="10%">Due Date</th>
-                                                        <th width="45%">Subject</th>
-                                                        <th width="5%">P.O No.</th>
-                                                        <th>Site Name</th>
-                                                        <th width="5%">Task ID</th>
-                                                        <!-- <th width="20%">Person In Charge</th> -->
-                                                        <th class="text-center">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Start in 2 days</td>
-                                                        <td>12 Nov 2023</td>
-                                                        <td><a href="#">Water ponding in facility floor</a></td>
-                                                        <td>BC-00005</td>
-                                                        <td>3 Resident</td>
-                                                        <td>OT020</td>
-                                                        <td class="text-center">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>In Progress</td>
-                                                        <td>12 Jun 2023</td>
-                                                        <td><a href="vendor-workorder-inprogress.html">Water ponding in facility floor</a></td>
-                                                        <td>BC-00005</td>
-                                                        <td>3 Resident</td>
-                                                        <td>OT020</td>
-                                                        <td class="text-center">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-color-lighterred">
-                                                        <td><span class="text-danger">Overdue by 10 Days</span></td>
-                                                        <td><span class="text-danger">23 May 2023</span></td>
-                                                        <td><a href="#">Water ponding at block 3, second floor</a></td>
-                                                        <td>BC-00006</td>
-                                                        <td>3 Resident</td>
-                                                        <td>OT022</td>
-                                                        <td class="text-right">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
-                                                            <!-- <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Share</a>
-                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
-                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#workorder" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Work Order</span>
+                                                    <span class="d-none d-sm-block">Work Order</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#completed" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Completed <div class="badge badge-success btn-rounded ml-2">1</div></span>
+                                                    <span class="d-none d-sm-block">Completed <div class="badge badge-success btn-rounded ml-2">1</div></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="workorder">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <form>
+                                                                        <div class="form-row align-items-center">
+                                                                            <div class="col-xl-2 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">All Status</option>
+                                                                                        <option>Start in # days</option>
+                                                                                        <option>In Progress</option>
+                                                                                        <option>Due soon</option>
+                                                                                        <option>Overdue</option>
+                                                                                        <!-- <option>Done</option> -->
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xl-3 col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <select class="custom-select">
+                                                                                        <option>All Sites</option>      
+                                                                                        <option>3 Resident</option>
+                                                                                        <option>Emerald Residence</option>
+                                                                                        <option>Maya Residence</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
-                                                            </div> -->
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="text-warning">Due in 5 Days</span></td>
-                                                        <td>12 Jun 2023</td>
-                                                        <td><a href="#">Water ponding in facility floor</a></td>
-                                                        <td>BC-00015</td>
-                                                        <td>3 Resident</td>
-                                                        <td>OT020</td>
-                                                        <td class="text-center">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="text-success">Done</span></td>
-                                                        <td>12 Jun 2023</td>
-                                                        <td><a href="vendor-workorder-done.html">Water ponding in facility floor</a></td>
-                                                        <td>BC-002245</td>
-                                                        <td>Emerald Residence</td>
-                                                        <td>OT020</td>
-                                                        <td class="text-center">
-                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#viewendwork">Job Done</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+
+                                                                <div class="table-responsive">
+                                                                    <table id="open-task1" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th width="5%">Task ID</th>
+                                                                                <th>Status</th>
+                                                                                <th>Start Work</th>
+                                                                                <th width="10%">Est. Complete Date</th>
+                                                                                <th width="45%">Subject</th>
+                                                                                <th width="5%">P.O No.</th>
+                                                                                <th>Site Name</th>
+                                                                                <!-- <th width="20%">Person In Charge</th> -->
+                                                                                <th class="text-center">Actions</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>OT020</td>
+                                                                                <td>Start in 2 days</td>
+                                                                                <td>9 Nov 2023, 3:00pm</td>
+                                                                                <td>12 Nov 2023</td>
+                                                                                <td><a href="vendor-workorder-inprogress.html">Water ponding in facility floor</a></td>
+                                                                                <td>BC-00005</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>OT020</td>
+                                                                                <td>In Progress</td>
+                                                                                <td>9 Jun 2023, 3:00pm</td>
+                                                                                <td>12 Jun 2023</td>
+                                                                                <td><a href="vendor-workorder-inprogress.html">Water ponding in facility floor</a></td>
+                                                                                <td>BC-00005</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="text-danger bg-color-lighterred">
+                                                                                <td>OT022</td>
+                                                                                <td>Overdue by 10 Days</td>
+                                                                                <td>9 May 2023, 3:00pm</td>
+                                                                                <td>23 May 2023</td>
+                                                                                <td><a href="#">Water ponding at block 3, second floor</a></td>
+                                                                                <td>BC-00006</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td class="text-right">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
+                                                                                    <!-- <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Share</a>
+                                                                                            <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                                            <a class="dropdown-item" href="#">KIV</a>
+                                                                                        </div>
+                                                                                    </div> -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>OT020</td>
+                                                                                <td><span class="text-warning">Due in 5 Days</span></td>
+                                                                                <td>9 Jun 2023, 3:00pm</td>
+                                                                                <td>12 Jun 2023</td>
+                                                                                <td><a href="#">Water ponding in facility floor</a></td>
+                                                                                <td>BC-00015</td>
+                                                                                <td>3 Resident</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#endwork">End Work</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- <tr class="text-success font-weight-semibold">
+                                                                                <td>OT020</td>
+                                                                                <td><span class="text-success">Done</span></td>
+                                                                                <td>9 Jun 2023, 3:00pm</td>
+                                                                                <td>12 Jun 2023</td>
+                                                                                <td><a href="vendor-workorder-done.html">Water ponding in facility floor</a></td>
+                                                                                <td>BC-002245</td>
+                                                                                <td>Emerald Residence</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="#" class="btn btn-success btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#viewendwork">Complete</a>
+                                                                                </td>
+                                                                            </tr> -->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                            <!-- completed -->
+                                            <div class="tab-pane" id="completed">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <div class="table-responsive">
+                                                                        <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th width="5%">Task ID</th>
+                                                                                    <th>Start Work</th>
+                                                                                    <th width="10%">Est. Complete</th>
+                                                                                    <th>Actual Completed</th>
+                                                                                    <th width="45%">Subject</th>
+                                                                                    <th width="5%">P.O No.</th>
+                                                                                    <th>Site Name</th>
+                                                                                    <!-- <th width="20%">Person In Charge</th> -->
+                                                                                    <th class="text-center">Actions</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr class="text-success">
+                                                                                    <td>OT020</td>
+                                                                                    <td>9 Jun 2023, 3:00pm</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td><a href="vendor-workorder-done.html">Water ponding in facility floor</a></td>
+                                                                                    <td>BC-002245</td>
+                                                                                    <td>Emerald Residence</td>
+                                                                                    <td class="text-center">
+                                                                                        <a href="#" class="btn btn-success btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#viewendwork">Complete</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="text-success">
+                                                                                    <td>OT020</td>
+                                                                                    <td>9 Jun 2023, 3:00pm</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td><a href="vendor-workorder-done.html">Water ponding in facility floor</a></td>
+                                                                                    <td>BC-002245</td>
+                                                                                    <td>Emerald Residence</td>
+                                                                                    <td class="text-center">
+                                                                                        <a href="#" class="btn btn-success btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#viewendwork">Complete</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="text-success">
+                                                                                    <td>OT020</td>
+                                                                                    <td>9 Jun 2023, 3:00pm</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td>12 Jun 2023</td>
+                                                                                    <td><a href="vendor-workorder-done.html">Water ponding in facility floor</a></td>
+                                                                                    <td>BC-002245</td>
+                                                                                    <td>Emerald Residence</td>
+                                                                                    <td class="text-center">
+                                                                                        <a href="#" class="btn btn-success btn-sm btn-rounded width-sm mt-1" data-toggle="modal" data-target="#viewendwork">Complete</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- end row -->
 
                     </div> <!-- container-fluid -->
@@ -1454,6 +1557,13 @@
             
                     <!-- <i>Note to developer: below line will appear if Special holiday is set.</i>
                     <div class="text-danger mt-2">We are close today in conjunction with special holiday.</div> -->
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Late Payment Interest</h6>
+                    <span class="text-success"><i class="uil-check-square mr-1"></i> Activated</span><br>
+                    Interest Rate: 10%<br>
+                    Grace Period: 7 days<br>
+                    Admin Charges: 10%
                 </div>
                 <div class="px-3 py-2 border-bottom-gray300">
                     <h6 class="mb-0">Bank Account <small>(Maintenance)</small></h6>
