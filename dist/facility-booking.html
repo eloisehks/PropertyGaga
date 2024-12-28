@@ -1539,7 +1539,18 @@
                                         <form class="">
                                             <div class="mb-2">
                                                 <div class="form-row align-items-center">
-                                                    
+                                                    <div class="col-xl-2 col-sm-3">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Status</option>
+                                                                <option>New</option>
+                                                                <option>Checked In</option>
+                                                                <!-- <option>To Inspect</option> -->
+                                                                <option>Cancelled</option>
+                                                                <option>Archived</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-xl-3 col-sm-4">
                                                         <div class="form-group">
                                                             <select data-plugin="customselect" class="form-control">
@@ -1562,16 +1573,18 @@
                                                 </div>
                                             </div>
 
-                                            <table id="bookinglist" class="table table-hover nowrap full-width">
+                                            <table id="basic-datatable" class="table table-hover nowrap full-width">
                                                 <thead>
                                                     <tr>
                                                         <th>No.</th>
                                                         <th>Booking ID</th>
+                                                        <th>Status</th>
+                                                        <th>Facility</th>
                                                         <th>Unit No.</th>
                                                         <th>Booked By</th>
-                                                        <th>Facility</th>
                                                         <th>Booking Date</th>
                                                         <th>Slot</th>
+                                                        <th>Payment</th>
                                                         <th class="text-center">Actions</th>
                                                     </tr>
                                                 </thead>
@@ -1579,61 +1592,111 @@
                                                     <tr>
                                                         <td>1</td>
                                                         <td><a href="facility-booking-edit.html">132</a></td>
+                                                        <td><span class="badge badge-warning width-sm">New</span></td>
+                                                        <td>Basketball Court</td>
                                                         <td>6-10-02</td>
                                                         <td>Eugene</td>
-                                                        <td>Badminton Court 2</td>
                                                         <td>5 Nov 2021</td>
-                                                        <td>Slot 2, Slot 3</td>
+                                                        <td>Slot 2, Slot 3 (13:01 - 14:00)</td>
+                                                        <td>Cash</td>
                                                         <td class="text-center pb-1">
-                                                            <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="facility-booking-edit.html">View</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#checkin">Check In</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancel">Cancel Booking</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a> -->
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
-                                                        <td><a href="facility-booking-edit.html">152</a></td>
+                                                        <td><a href="facility-booking-edit-checkedin.html">152</a></td>
+                                                        <td><span class="badge badge-success width-sm">Checked In</span></td>
+                                                        <td>Squash Room</td>
                                                         <td>6-10-02</td>
                                                         <td>Eugene</td>
-                                                        <td>Badminton Court 1</td>
                                                         <td>15 Nov 2021</td>
-                                                        <td>Slot 5, Slot 6</td>
+                                                        <td>Slot 5, Slot 6 (13:01 - 45:00)</td>
+                                                        <td>Cheque (#536938)</td>
                                                         <td class="text-center pb-1">
-                                                            <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="facility-booking-edit-checkedin.html">View</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#checkout">Check Out</a>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr class="text-primary">
                                                         <td>3</td>
-                                                        <td><a href="facility-booking-edit.html">302</a></td>
+                                                        <td><a href="facility-booking-edit-inspect.html">302</a></td>
+                                                        <td><span class="badge badge-primary width-sm">To Inspect</span></td>
+                                                        <td>Swimming Pool</td>
                                                         <td>6-10-02</td>
                                                         <td>Eugene</td>
-                                                        <td>Swimming Pool</td>
                                                         <td>25 Nov 2021</td>
-                                                        <td>Slot 8, Slot 9, Slot 10</td>
+                                                        <td>Slot 8, Slot 9, Slot 10 (13:01 - 15:00)</td>
+                                                        <td>Contra Reno Deposit</td>
                                                         <td class="text-center pb-1">
-                                                            <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="facility-booking-edit-inspect.html">View</a>
+                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#checkout">Check Out</a>
+                                                                </div>
+                                                            </div>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr>
                                                         <td>4</td>
-                                                        <td><a href="facility-booking-edit.html">152</a></td>
+                                                        <td><a href="#">152</a></td>
+                                                        <td><span class="badge badge-dark width-sm">Archived</span></td>
+                                                        <td>Squash Room</td>
                                                         <td>6-10-02</td>
                                                         <td>Eugene</td>
-                                                        <td>Squash Room</td>
                                                         <td>2 Dec 2021</td>
-                                                        <td>Slot 5, Slot 6</td>
+                                                        <td>Slot 5, Slot 6 (13:01 - 14:00)</td>
+                                                        <td>Online IBG</td>
                                                         <td class="text-center pb-1">
-                                                            <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">View</a>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>5</td>
-                                                        <td><a href="facility-booking-edit.html">602</a></td>
+                                                        <td><a href="#">602</a></td>
+                                                        <td><span class="badge badge-danger width-sm">Cancelled</span></td>
+                                                        <td>Games Room</td>
                                                         <td>6-10-02</td>
                                                         <td>Eugene</td>
-                                                        <td>Games Room</td>
                                                         <td>10 Dec 2021</td>
-                                                        <td>Slot 8, Slot 9, Slot 10</td>
+                                                        <td>Slot 8, Slot 9 (13:01 - 14:00)</td>
+                                                        <td>Cash</td>
                                                         <td class="text-center pb-1">
-                                                            <a href="facility-booking-edit.html" class="btn btn-danger btn-sm btn-rounded">Cancel Booking</a>
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">View</a>
+                                                                </div>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -1669,12 +1732,12 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal update mailing address-->
-            <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <!-- modal checkin -->
+            <div class="modal fade" id="checkin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Check In</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -1684,9 +1747,31 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group row">
-                                            <div class="col-lg-12">
-                                            <textarea class="form-control" rows="4"
-                                            id="example-textarea"></textarea>
+                                            <label class="col-lg-4 col-form-label">Check In By</label>
+                                            <div class="col-lg-8">
+                                                <select class="form-control wide" data-plugin="customselect">
+                                                    <option value="0" selected>Malik (20948657)</option>
+                                                    <option value="1">Ali (290003)</option>
+                                                    <option value="2">Ahkaw (290003)</option>
+                                                    <option value="3">Muthu (290004)</option>
+                                                    <option value="4">Ahmad (290005)</option>
+                                                    <option value="4">Staff 1 (290005)</option>
+                                                    <option value="4">Samuel (290005)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Password</label>
+                                            <div class="col-lg-8">
+                                                <input class="form-control" id="password" type="password" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Note</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" rows="3" id="example-textarea"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -1695,13 +1780,184 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- -->
+            <!-- modal checkin end-->
+            
+            <!-- modal check out -->
+            <div class="modal fade" id="checkout" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Check Out</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Check Out By</label>
+                                            <div class="col-lg-8">
+                                                <select class="form-control wide" data-plugin="customselect">
+                                                    <option value="0" selected>Malik (20948657)</option>
+                                                    <option value="1">Ali (290003)</option>
+                                                    <option value="2">Ahkaw (290003)</option>
+                                                    <option value="3">Muthu (290004)</option>
+                                                    <option value="4">Ahmad (290005)</option>
+                                                    <option value="4">Staff 1 (290005)</option>
+                                                    <option value="4">Samuel (290005)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Password</label>
+                                            <div class="col-lg-8">
+                                                <input class="form-control" id="password" type="password" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Note</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" rows="3" id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">No Issue</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Create a Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal check out end-->
 
+            <!-- modal cancel -->
+            <div class="modal fade" id="cancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Booking</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Please access credit note from Payment module.</h6>
+                            <p class="card-text text-muted">
+                                <div class="row">
+                                    <div class="col-lg-4">Deposit</div>
+                                    <div class="col-lg-8">RM100.00 <span class="text-success">(to be refunded)</span></div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-4">Booking Fee</div>
+                                    <div class="col-lg-8">RM100.00 x 1h = RM100.00<span class="text-success">(to be refunded)</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">Cleaning Fee</div>
+                                    <div class="col-lg-8">RM200.00 <span class="text-success">(to be refunded)</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">Cancellation Fee</div>
+                                    <div class="col-lg-8">RM30.00 <span class="text-danger">(to be forfeited)</span></div>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Cancel Booking</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal cancel end-->
+
+            <!-- modal checking -->
+            <div class="modal fade" id="checking" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Checking Facility</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <!-- <h6 class="text-left">Start checking the facility.</h6> -->
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label">Check By</label>
+                                            <div class="col-lg-8">
+                                                <select class="form-control custom-select">
+                                                    <option value="0" selected>Sam</option>
+                                                    <option value="1">Sim</option>
+                                                    <option value="2">Som</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal checking end-->
+
+            <!-- modal checked and add task -->
+            <div class="modal fade" id="checked" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Facility Checked</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="text-left">Done checking the facility by Sam</h6>
+                                        
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Note / Description</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" rows="3" id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Done</button>
+                            <a href="tasksheet-task-new.html" class="btn btn-danger btn-rounded width-sm">Add Task</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal checked and add task end-->
 
         </div>
         <!-- END wrapper -->

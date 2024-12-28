@@ -60,212 +60,134 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-xl-12">
+                            <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
-                                                <a href="#uploadeddoc" data-toggle="tab" aria-expanded="true"
-                                                    class="nav-link active">
-                                                    <span class="d-block d-sm-none">Uploaded Invoices</span>
-                                                    <span class="d-none d-sm-block">Uploaded Invoices</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#invoices" data-toggle="tab" aria-expanded="false"
-                                                    class="nav-link">
-                                                    <span class="d-block d-sm-none">Purchase Invoice by (Mgmt)</span>
-                                                    <span class="d-none d-sm-block">Purchase Invoice by (Mgmt)</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content p-0 text-muted">
-                                            <div class="tab-pane show active" id="uploadeddoc">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-xl-2 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="form-control custom-select">
-                                                                                        <option value="0">All Status</option>
-                                                                                        <option>Pending</option>
-                                                                                        <option>Rejected</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-xl-3 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="custom-select">
-                                                                                        <option>All Sites</option>      
-                                                                                        <option>3 Resident</option>
-                                                                                        <option>Emerald Residence</option>
-                                                                                        <option>Maya Residence</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable" class="table table-hover nowrap">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Status</th>
-                                                                                <th>Inv. No. (Vendor)</th>
-                                                                                <th>Uploaded Inv. on</th>
-                                                                                <th>Site Name</th>
-                                                                                <th>Task ID</th>
-                                                                                <th>P.O. No.</th>
-                                                                                <!-- <th class="text-center">Actions</th> -->
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-warning width-xs">Pending</span></td>
-                                                                                <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
-                                                                                <td>3 Feb 2023, 1:30pm</td>
-                                                                                <td>3 Resident</td>
-                                                                                <td>OT022</td>
-                                                                                <td>BC-00005</td>
-                                                                                <!-- <td class="text-center">
-                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#viewinvoice">View</a>
-                                                                                </td> -->
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><span class="badge badge-danger width-xs">Rejected</span></td>
-                                                                                <td><a href="" data-toggle="modal" data-target="#rejectedinvoice">23456763</a></td>
-                                                                                <td>2 Mar 2023, 1:30pm</td>
-                                                                                <td>3 Resident</td>
-                                                                                <td>OT023</td>
-                                                                                <td>BC-00003</td>
-                                                                                <!-- <td class="text-center">
-                                                                                    <a href="" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="modal" data-target="#rejectedinvoice">View</a>
-                                                                                </td> -->
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Status</option>
+                                                                <option>Pending</option>
+                                                                <option>Rejected</option>
+                                                                <option>In Progress</option>
+                                                                <option>Paid</option>
+                                                                <option>Overpaid</option>
+                                                                <option>Partially Paid</option>
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="custom-select">
+                                                                <option>All Sites</option>      
+                                                                <option>3 Resident</option>
+                                                                <option>Emerald Residence</option>
+                                                                <option>Maya Residence</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <!-- end row-->
-                                            </div>
-                                            <div class="tab-pane" id="invoices">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-xl-2 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="form-control custom-select">
-                                                                                        <option value="0">All Status</option>
-                                                                                        <option>Paid</option>
-                                                                                        <option>Overpaid</option>
-                                                                                        <option>Partially Paid</option>
-                                                                                        <option>In Progress</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-xl-3 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select class="custom-select">
-                                                                                        <option>All Sites</option>      
-                                                                                        <option>3 Resident</option>
-                                                                                        <option>Emerald Residence</option>
-                                                                                        <option>Maya Residence</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable2" class="table table-hover nowrap">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Status</th>
-                                                                                <th>Date</th>
-                                                                                <th>Inv. No.<br>(Vendor)</th>
-                                                                                <th>Purc. Inv. No.<br>(Mgmt.)</th>
-                                                                                <th>Site Name</th>
-                                                                                <th>Task ID</th>
-                                                                                <th>P.O. No.</th>
-                                                                                <th class="text-right">Balance (RM)</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td class="text-center" width="1%"><span class="badge badge-primary width-xs">In Progress</span></td>
-                                                                                <td>13 Jun 2023</td>
-                                                                                <td>234567</td>
-                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
-                                                                                <td>3 Resident</td>
-                                                                                <td>OT023</td>
-                                                                                <td>BC-00005</td>
-                                                                                <td class="text-right">500.00</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="text-center"><span class="badge badge-danger width-xs">Partially Paid</span></td>
-                                                                                <td>15 Jun 2023</td>
-                                                                                <td>234567</td>
-                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
-                                                                                <td>3 Resident</td>
-                                                                                <td>OT024</td>
-                                                                                <td>BC-00002</td>
-                                                                                <td class="text-right">200.00</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="text-center"><span class="badge badge-success width-xs">Overpaid</span></td>
-                                                                                <td>15 Jun 2023</td>
-                                                                                <td>234567</td>
-                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
-                                                                                <td>Emerald Residence</td>
-                                                                                <td>OT022</td>
-                                                                                <td>BC-00005</td>
-                                                                                <td class="text-right">+30.00</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="text-center"><span class="badge badge-success width-xs">Paid</span></td>
-                                                                                <td>15 Jun 2023</td>
-                                                                                <td>234567</td>
-                                                                                <td><a href="vendor_invoice_detail.html">3535</a></td>
-                                                                                <td>Maya Residence</td>
-                                                                                <td>OT022</td>
-                                                                                <td>BC-00001</td>
-                                                                                <td class="text-right">0.00</td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
-                                                </div>
-                                                <!-- end row-->
-                                            </div>
+                                            </form>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        <div class="table-responsive">
+                                            <table id="basic-datatable2" class="table table-hover nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <th>Uploaded Inv. On</th>
+                                                        <th>Inv. No.<br>(Vendor)</th>
+                                                        <th>P.I. No.<br>(Mgmt.)</th>
+                                                        <th>P.I. Date</th>
+                                                        <th>Site Name</th>
+                                                        <th>Task ID</th>
+                                                        <th>P.O. No.</th>
+                                                        <th class="text-right">Balance (RM)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="badge badge-danger width-xs">Rejected</span></td>
+                                                        <td>2 Mar 2024, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#rejectedinvoice">23456763</a></td>
+                                                        <td>9999</td>
+                                                        <td></td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT023</td>
+                                                        <td>BC-00003</td>
+                                                        <td class="text-right">400.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-warning width-xs">Pending</span></td>
+                                                        <td>3 Feb 2024, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
+                                                        <td>9998</td>
+                                                        <td></td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT022</td>
+                                                        <td>BC-00005</td>
+                                                        <td class="text-right">400.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center" width="1%"><span class="badge badge-primary width-xs">In Progress</span></td>
+                                                        <td>13 Jun 2023, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#viewinvoice">34567</a>2</td>
+                                                        <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                        <td>14 Jun 2023</td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT023</td>
+                                                        <td>BC-00005</td>
+                                                        <td class="text-right">500.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><span class="badge badge-info width-xs">Partially Paid</span></td>
+                                                        <td>15 Jun 2023, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
+                                                        <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                        <td>16 Jun 2023</td>
+                                                        <td>3 Resident</td>
+                                                        <td>OT024</td>
+                                                        <td>BC-00002</td>
+                                                        <td class="text-right">200.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><span class="badge badge-success width-xs">Overpaid</span></td>
+                                                        <td>15 Jun 2023, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
+                                                        <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                        <td>16 Jun 2023</td>
+                                                        <td>Emerald Residence</td>
+                                                        <td>OT022</td>
+                                                        <td>BC-00005</td>
+                                                        <td class="text-right">+30.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><span class="badge badge-success width-xs">Paid</span></td>
+                                                        <td>15 Jun 2023, 1:30pm</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#viewinvoice">234567</a></td>
+                                                        <td><a href="vendor_invoice_detail.html">3535</a></td>
+                                                        <td>16 Jun 2023</td>
+                                                        <td>Maya Residence</td>
+                                                        <td>OT022</td>
+                                                        <td>BC-00001</td>
+                                                        <td class="text-right">0.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
                         </div>
+                        <!-- end row-->
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -330,6 +252,18 @@
                                                     <option>BC-00003</option>
                                                     <option>BC-00004</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Price</label>
+                                            <div class="col-lg-4">
+                                                <label class="sr-only" for="inlineFormInputGroup"></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">RM</div>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="400.00">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
@@ -562,6 +496,18 @@
                                                     <option>BC-00003</option>
                                                     <option>BC-00004</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-lg-3 col-form-label" for="">Price</label>
+                                            <div class="col-lg-4">
+                                                <label class="sr-only" for="inlineFormInputGroup"></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">RM</div>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="400.00">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
