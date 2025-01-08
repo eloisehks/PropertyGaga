@@ -1522,7 +1522,7 @@
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='#';">Download Excel Template</button>
+                                    <!-- <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='#';">Download Excel Template</button> -->
                                 </div>
                             </div>
                         </div>
@@ -1531,22 +1531,152 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="margin-auto mb-3 mt-3">Import unit information data into the system by uploading an excel file.</h5>
-                                                <div class="form-row col-lg-5 mb-4 "> 
-                                                    <input type="file" class="form-control" id="">
-                                                    <div class="help-block text-center"><small>Maximum 10MB file size. XLS file type only.</small></div>
+
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#unit" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Import Unit <i class="ult uil-check-circle ml-2 text-success"></i></span>
+                                                    <span class="d-none d-sm-block">Import Unit <i class="ult uil-check-circle ml-2 text-success"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#occupant" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Import Occupant <i class="ult uil-check-circle ml-2 text-muted"></i></span>
+                                                    <span class="d-none d-sm-block">Import Occupant <i class="ult uil-check-circle ml-2 text-muted"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#vehicle" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Import Vehicle <i class="ult uil-check-circle ml-2 text-muted"></i></span>
+                                                    <span class="d-none d-sm-block">Import Vehicle <i class="ult uil-check-circle ml-2 text-muted"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content text-muted">
+                                            <div class="tab-pane show active" id="unit">
+                                                <div class="row">
+                                                    <div class="col-lg-12 text-right">
+                                                        <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='#';">Download Excel Template</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="margin-auto mb-3 mt-3">Import unit information data into the system by uploading an excel file.</h5>
+                                                        <div class="form-row col-lg-5 mb-4 "> 
+                                                            <input type="file" class="form-control" id="">
+                                                            <div class="help-block text-center"><small>Maximum 10MB file size. XLS file type only.</small></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-12">
+                                                        <button type="submit" class="btn btn-primary btn-rounded mr-1 btn-lg" onclick="location.href='import-data-preview.html';">Upload and Preview</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-lg-12">
+                                                        <h6>Uploaded Files</h6>
+                                                        <div class="row justify-content-sm-between border-top pt-2">
+                                                            <div class="col-sm-12 col-lg-4 mb-2 mb-lg-0">
+                                                                <a href="#">import_unit_info_jan25.xlsx</a>
+                                                            </div>
+                                                            <div class="col-sm-12 col-lg-8">
+                                                                <div class="">
+                                                                    <div class="mt-3 mt-sm-0">
+                                                                        <ul class="list-inline font-13">
+                                                                            <li class="list-inline-item pr-2">
+                                                                                <img src="assets/images/users/avatar-9.jpg"
+                                                                                alt="image"
+                                                                                class="avatar-xs rounded-circle"
+                                                                                data-toggle="tooltip"
+                                                                                data-placement="bottom"
+                                                                                title="Uploaded by Arya S" />
+                                                                            </li>
+                                                                            <li class="list-inline-item pr-1">
+                                                                                <i class='uil uil-schedule font-16 mr-1'></i>
+                                                                                Today 10am
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-sm-between border-top pt-2">
+                                                            <div class="col-sm-12 col-lg-4 mb-2 mb-lg-0">
+                                                                <a href="#">import_unit_info_jan24.xlsx</a>
+                                                            </div>
+                                                            <div class="col-sm-12 col-lg-8">
+                                                                <div class="">
+                                                                    <div class="mt-3 mt-sm-0">
+                                                                        <ul class="list-inline font-13">
+                                                                            <li class="list-inline-item pr-2">
+                                                                                <img src="assets/images/users/avatar-9.jpg"
+                                                                                alt="image"
+                                                                                class="avatar-xs rounded-circle"
+                                                                                data-toggle="tooltip"
+                                                                                data-placement="bottom"
+                                                                                title="Uploaded by Arya S" />
+                                                                            </li>
+                                                                            <li class="list-inline-item pr-1">
+                                                                                <i class='uil uil-schedule font-16 mr-1'></i>
+                                                                                3 Jan 2024, 10am
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="occupant">
+                                                <div class="row">
+                                                    <div class="col-lg-12 text-right">
+                                                        <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='#';">Download Excel Template</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="margin-auto mb-3 mt-3">Import occupant information into the system by uploading an excel file.</h5>
+                                                        <div class="form-row col-lg-5 mb-4 "> 
+                                                            <input type="file" class="form-control" id="">
+                                                            <div class="help-block text-center"><small>Maximum 10MB file size. XLS file type only.</small></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-12">
+                                                        <button type="submit" class="btn btn-primary btn-rounded mr-1 btn-lg" onclick="location.href='import-data-preview.html';">Upload and Preview</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="vehicle">
+                                                <div class="row">
+                                                    <div class="col-lg-12 text-right">
+                                                        <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" data-toggle="modal" onclick="location.href='#';">Download Excel Template</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="margin-auto mb-3 mt-3">Import vehicle information into the system by uploading an excel file.</h5>
+                                                        <div class="form-row col-lg-5 mb-4 "> 
+                                                            <input type="file" class="form-control" id="">
+                                                            <div class="help-block text-center"><small>Maximum 10MB file size. XLS file type only.</small></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-12">
+                                                        <button type="submit" class="btn btn-primary btn-rounded mr-1 btn-lg" onclick="location.href='import-data-preview.html';">Upload and Preview</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <div class="col-lg-12 text-center">
-                                                <button type="submit" class="btn btn-primary btn-rounded mr-1 btn-lg" onclick="location.href='import-data-preview.html';">Upload and Preview</button>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
+                                    </div>
+                                </div>
                             </div><!-- end col -->
                         </div>
                         <!-- end row -->
