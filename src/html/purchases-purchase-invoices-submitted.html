@@ -91,9 +91,9 @@
                                                     </div> -->
                                                     <div class="form-group row">
                                                         <label class="col-lg-5 col-form-label"
-                                                            for="example-date">Date</label>
+                                                            for="example-date">Date & Time</label>
                                                         <div class="col-lg-7">
-                                                            <input class="form-control" id="example-date" type="date" name="date">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -141,9 +141,21 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Co. Reg. No.</label>
+                                                        <label class="col-lg-3 col-form-label">Reg. No.</label>
                                                         <div class="col-lg-9">
                                                             <input class="form-control" type="url" name="" value="52645-F" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="">Tax Identification No. (TIN) <span class="text-danger">*</span></label>
+                                                        <div class="col col-lg-5">
+                                                            <input type="text" id="" name="" class="form-control" value="C20880050010">
+                                                        </div>
+                                                        <div class="col col-auto">
+                                                            <i class="uil uil-check-circle text-success" data-toggle="tooltip"
+                                                            data-placement="top" title=""
+                                                            data-original-title="Verified by LHDN"></i>
                                                         </div>
                                                     </div>
                                                     
@@ -158,14 +170,12 @@
                                                     <table class="table table-centered m-0">
                                                         <thead>
                                                             <tr>
-                                                                <th width="18%"></th>
-                                                                <th width="24%">Description</th>
-                                                                <th width="10%">Qty</th>
-                                                                <th width="14%">Price (RM)</th>
-                                                                <th width="10%">Discount (RM)</th>
-                                                                <th width="12%">Tax (RM)</th>
-                                                                <th width="10%">Amt. (RM)</th>
-                                                                <th width="2%"></th>
+                                                                <th width="23%">Account</th>
+                                                                <th width="48%">Description</th>
+                                                                <th width="10%">Quantity</th>
+                                                                <th width="10%">Amount (RM)</th>
+                                                                <th width="10%">Payment (RM)</th>
+                                                                <th></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -174,67 +184,76 @@
                                                                     <div class="form-group mt-3 mt-sm-0">
                                                                         <select data-plugin="customselect" class="small">
                                                                             <option value="0">Category</option>
-                                                                            <option value="1">Signboard</option>
-                                                                            <option value="2">Adv Maintenance Charges</option>
-                                                                            <option value="3">Adv Sinking Fund</option>
-                                                                            <option value="4">Prepaid Income</option>
-                                                                            <option>Singking Fund</option>
-                                                                            <option>Fix Deposit Interest</option>
-                                                                            <option>Insurance</option>
-                                                                            <option>Interest</option>
-                                                                            <option>Legal Fees</option>
-                                                                            <option>Maintenance Fees</option>
-                                                                            <option>Outstanding Balance</option>
-                                                                            <option>Quit Rent</option>
-                                                                            <option>Reimbursement of Elec</option>
-                                                                            <option selected>Utilities</option>
+                                                                            <option value="1" selected>Repairs & Maint</option>
+                                                                            <option value="2">Bank Charges</option>
+                                                                            <option value="3">Credit Card Charges</option>
+                                                                            <option value="4">Equipment Hire</option>
+                                                                            <option>Insurance Charges</option>
+                                                                            <option>Renewal of Licence</option>
+                                                                            <option>AGM Expenses</option>
+                                                                            <option>Meeting Allowances</option>
+                                                                            <option>Phone</option>
+                                                                            <option>Postage</option>
+                                                                            <option>Printing & Stationery</option>
+                                                                            <option>Signage</option>
+                                                                            <option>Audit Fee</option>
+                                                                            <option>Legal Fee</option>
+                                                                            <option>Tax Agent Fee</option>
+                                                                            <option>Quit Rent Charges</option>
+                                                                            <option>Utility Charges </option>
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group mt-3 mt-sm-0">
                                                                         <select data-plugin="customselect" class="small">
                                                                             <option value="0">Sub Category</option>
-                                                                            <option value="1">Accumulated Depreciation</option>
+                                                                            <option value="1">Air Cond</option>
+                                                                            <option value="1">Barrier Gate</option>
+                                                                            <option value="1">Backup Generator</option>
+                                                                            <option value="1">CCTV</option>
+                                                                            <option value="1">Electrical</option>
+                                                                            <option value="1">Fire Control</option>
+                                                                            <option value="1">Landscaping</option>
+                                                                            <option value="1">Lifts</option>
+                                                                            <option value="1">Lighting</option>
+                                                                            <option value="1">Painting</option>
+                                                                            <option value="1">Plumbing</option>
+                                                                            <option value="1">Pump Set</option>
+                                                                            <option value="1">Recreation Facilities</option>
+                                                                            <option value="1">Structure</option>
+                                                                            <option value="1">Water Proofing</option>
+                                                                            <option value="1">Water Tank</option>
+                                                                            <option value="1">Air</option>  
                                                                         </select>
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="form-group mt-3 mt-sm-0">
-                                                                        <textarea class="form-control" rows="4" id="example-textarea">
-To Service & Maintenance - Swimming Pool For the month of Apr 2023
-                                                                        </textarea>
+                                                                        <textarea class="form-control" rows="2" id="example-textarea">Description...</textarea>
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="form-group mt-3 mt-sm-0">
-                                                                        <input type="text" class="form-control" id="simpleinput" value="1">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="1">
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="form-group mt-3 mt-sm-0">
-                                                                        <input type="text" class="form-control" id="simpleinput" placeholder="" value="1,720.00">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="500">
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="form-group mt-3 mt-sm-0">
-                                                                        <input type="text" class="form-control" id="simpleinput" placeholder="" value="">
+                                                                        <input type="text" class="form-control text-right" id="simpleinput" value="300">
                                                                     </div>
                                                                 </td>
                                                                 <td>
                                                                     <div class="form-group mt-3 mt-sm-0">
-                                                                        <input type="text" class="form-control" id="simpleinput" value="">
+                                                                        <button type="button" class="btn btn-outline-primary btn-rounded btn-sm"><i class='uil uil-trash-alt'></i></button>
                                                                     </div>
-                                                                </td>
-                                                                <td class="align-right">
-                                                                    <div class="form-group mt-3 mt-sm-0">
-                                                                        1,720.00
-                                                                    </div>
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    <button type="button" class="btn btn-outline-primary btn-rounded btn-sm"><i class='uil uil-trash-alt' data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove Item"></i></button><br>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="7" class="no-border pt-0">
+                                                                <td colspan="5" class="no-border pt-0">
                                                                     <div class="form-group row">
                                                                         <label class="col-lg-3 col-form-label"
                                                                             for="example-textarea">For Asset</label>
@@ -306,18 +325,18 @@ To Service & Maintenance - Swimming Pool For the month of Apr 2023
                                                                 <td class="no-border pt-0"></td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="8"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
+                                                                <td colspan="6"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="4"></td>
-                                                                <td colspan="2" class="align-right font-weight-bold">Total Amt.:</td>
-                                                                <td class="align-right font-weight-bold">1,720.00</td>
+                                                                <td colspan="3"></td>
+                                                                <td class="align-right font-weight-bold">Total:</td>
+                                                                <td class="align-right font-weight-bold">0.00</td>
                                                                 <td></td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="4"></td>
-                                                                <td colspan="2" class="align-right font-weight-bold">Amount Due:</td>
-                                                                <td class="align-right font-weight-bold text-color-redBright">1,720.00</td>
+                                                                <td colspan="3"></td>
+                                                                <td class="align-right font-weight-bold">Amount Due:</td>
+                                                                <td class="align-right font-weight-bold">0.00</td>
                                                                 <td></td>
                                                             </tr>
                                                         </tbody>
