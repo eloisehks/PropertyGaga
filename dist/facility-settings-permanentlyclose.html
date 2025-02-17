@@ -21,7 +21,8 @@
         <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />       
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />     
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -1517,11 +1518,12 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-3 mt-0">Facility Settings</h3>    
+                                <h3 class="mb-1 mt-0">Settings - Facility</h3>
+                                <span class="badge badge-danger width-sm mr-2">Permanently Closed</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3" onclick="location.href='facility-settings-add.html';"><i class="uil-plus mr-1"></i> Add Facility</button>
+                                    <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back </a>
                                 </div>
                             </div>
                         </div>
@@ -1530,565 +1532,429 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <!-- <h4 class="header-title mt-0 mb-1 mb-3"></h4> -->
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
-                                                <a href="#facility" data-toggle="tab" aria-expanded="true"
-                                                    class="nav-link active">
-                                                    <span class="d-block d-sm-none">Facility Listing</span>
-                                                    <span class="d-none d-sm-block">Facility Listing</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#maintenance" data-toggle="tab" aria-expanded="false"
-                                                    class="nav-link">
-                                                    <span class="d-block d-sm-none">Maintenance Listing <div class="badge badge-danger float-right ml-2">4</div></span>
-                                                    <span class="d-none d-sm-block">Maintenance Listing <div class="badge badge-danger float-right ml-2">4</div></span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#permanentlyclose" data-toggle="tab" aria-expanded="false"
-                                                    class="nav-link">
-                                                    <span class="d-block d-sm-none">Permanently Closed</span>
-                                                    <span class="d-none d-sm-block">Permanently Closed</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-
-                                        <div class="tab-content p-0 text-muted">
-                                          
-                                            <div class="tab-pane show active" id="facility">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body pr-0 pl-0">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-xl-3 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select data-plugin="customselect" class="form-control">
-                                                                                        <option value="0">All Facilities</option>
-                                                                                        <option>Swimming Pool</option>
-                                                                                        <option>Games Room</option>
-                                                                                        <option>Squash Room</option>
-                                                                                        <option>Badminton Court 1</option>
-                                                                                        <option>Badminton Court 2</option>
-                                                                                        <option>Barbeque Area</option>
-                                                                                        <option>Multipurpose Hall</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>No.</th>
-                                                                                <th>Facility Name</th>
-                                                                                <th>Operation Hours</th>
-                                                                                <th>Deposit (RM)</th>
-                                                                                <th>Cleaning Fees (RM)</th>
-                                                                                <th>Cancellation Fees (RM)</th>
-                                                                                <th>Face Recognition</th>
-                                                                                <th class="text-right">Actions</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>1</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Swimming Pool</a>
-                                                                                </td>
-                                                                                <td class="font-sm">
-                                                                                    <table class="table table-sm">
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Mon:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 7:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Tue:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Wed:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Thu:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Fri:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sat:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sun:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                    </table>                                                                                  
-                                                                                </td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">200.00</td>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-switch">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
-                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Activate</label>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="text-right pb-1">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-permanentlyclose">Permanently Close</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>2</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Games Room</a>
-                                                                                </td>
-                                                                                <td class="font-sm">
-                                                                                    <table class="table table-sm">
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Mon:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 7:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Tue:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Wed:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Thu:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Fri:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                    </table>   
-                                                                                </td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">200.00</td>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-switch">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Deactivate</label>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="text-right pb-1">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-permanentlyclose">Permanently Close</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>3</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Squash Room</a>
-                                                                                </td>
-                                                                                <td class="font-sm">
-                                                                                    <table class="table table-sm">
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Mon:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 7:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Tue:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Wed:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Thu:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Fri:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sat:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sun:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                    </table>   
-                                                                                </td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">200.00</td>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-switch">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
-                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Activate</label>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="text-right pb-1">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-permanentlyclose">Permanently Close</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>4</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Badminton Court 1</a>
-                                                                                </td>
-                                                                                <td class="font-sm">
-                                                                                    <table class="table table-sm">
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Mon:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 7:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Tue:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Wed:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Thu:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Fri:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sat:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sun:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                    </table>   
-                                                                                </td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">0.00</td>
-                                                                                <td class="text-right">0.00</td>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-switch">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
-                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Activate</label>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="text-right pb-1">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-permanentlyclose">Permanently Close</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>5</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Badminton Court 2</a>
-                                                                                </td>
-                                                                                <td class="font-sm">
-                                                                                    <table class="table table-sm">
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Mon:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 7:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Tue:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Wed:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Thu:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Fri:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 9:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sat:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="p-0 m-0">Sun:</td>
-                                                                                            <td class="p-0 m-0">9:00am - 10:00pm</td>
-                                                                                        </tr>
-                                                                                    </table>   
-                                                                                </td>
-                                                                                <td class="text-right">100.00</td>
-                                                                                <td class="text-right">0.00</td>
-                                                                                <td class="text-right">0.00</td>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-switch">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
-                                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Activate</label>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="text-right pb-1">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-permanentlyclose">Permanently Close</a>
-                                                                                            <a class="dropdown-item" href="#">Delete</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal">Delete</a> -->
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Facility Name</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Swimming Pool">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Closure of Facility</label>
+                                                        <div class="custom-control custom-switch ml-2">
+                                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                            <label class="custom-control-label font-size-12 mr-2" for="customSwitch1">Closed</label>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Advance Booking</label>
+                                                        <div class="col-lg-2">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="3">
+                                                        </div>
+                                                        <label class="col-lg-4 col-form-label">day(s) before</label>
+                                                    </div> -->
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Maximum Slots to Book</label>
+                                                        <div class="col col-lg-2">
+                                                            <input type="text" class="form-control" id="" placeholder="Quantity" value="2">
+                                                        </div>
+                                                        <div class="col col-auto align-self-center">
+                                                            slots
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mt-0 mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Deposit</label>
+                                                        <div class="col-auto ml-2">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="deposit" name="deposit"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="deposit">No</label>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="deposit2" name="deposit"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="deposit2">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto align-items-center">
+                                                            <label class="sr-only" for="inlineFormInputGroup">Deposit Amount</label>
+                                                            <div class="input-group mb-2">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">RM</div>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="100">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mt-0 mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Booking Fees</label>
+                                                        <div class="col-auto ml-2">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="booking" name="booking"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="booking">No</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="booking2" name="booking"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="booking2">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto align-items-center">
+                                                            <label class="sr-only" for="inlineFormInputGroup">Booking Fees</label>
+                                                            <div class="input-group mb-2">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">RM</div>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="100">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-lg-2 align-self-center">
+                                                            per hour
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mt-0 mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Cleaning Fees</label>
+                                                        <div class="col-auto ml-2">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="cleaning" name="cleaning"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="cleaning">No</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="cleaning2" name="cleaning"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="cleaning2">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto align-items-center">
+                                                            <label class="sr-only" for="inlineFormInputGroup">Cleaning Fees</label>
+                                                            <div class="input-group mb-2">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">RM</div>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="200">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mt-0 mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Cancellation Fees</label>
+                                                        <div class="col-auto ml-2">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="cancellation" name="cancellation"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="cancellation">No</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="cancellation2" name="cancellation"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="cancellation2">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto align-items-center">
+                                                            <label class="sr-only" for="inlineFormInputGroup">Cancellation Fees</label>
+                                                            <div class="input-group mb-2">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">RM</div>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-4 col-form-label">Face Recognition</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input" id="customSwitch0" checked>
+                                                                <label class="custom-control-label font-size-12 mr-2" for="customSwitch0">Activate</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                <label class="custom-control-label" for="customCheck1">Auto Deactivation After Operating Hours</label>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-4 col-form-label">Operation Hour</label>
+                                                        <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                            <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                        </div>
+                                                        <div class="col col-auto">
+                                                            <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                        </div>
+                                                        <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                            <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="tab-pane show" id="maintenance">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body pr-0 pl-0">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-xl-3 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select data-plugin="customselect" class="form-control">
-                                                                                        <option value="0">All Facilities</option>
-                                                                                        <option>Swimming Pool</option>
-                                                                                        <option>Games Room</option>
-                                                                                        <option>Squash Room</option>
-                                                                                        <option>Badminton Court 1</option>
-                                                                                        <option>Badminton Court 2</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <div class="col-lg-12 ml-1 mt-2">
+                                                            <div class="card border-gray400">
+                                                                <div class="card-body">
+                                                                    <h4 class="header-title mt-0 mb-2">Weekly</h4>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Open / Close</label>
+                                                                                <div class="custom-control custom-switch">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customSwitchweekly" checked>
+                                                                                    <label class="custom-control-label font-size-12 mr-2" for="customSwitchweekly">Open</label>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </form>
-                                                                </div>
+                                                                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mb-4">
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Select Day</label>
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                                            <label class="custom-control-label" for="customCheck1">Mon</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
 
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>No.</th>
-                                                                                <th>Facility Name</th>
-                                                                                <th>Close Date</th>
-                                                                                <th>Close Hours</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>1</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Swimming Pool</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    30 Mar 2022
-                                                                                </td>
-                                                                                <td>
-                                                                                    9:00am - 10:00am
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>2</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Games Room</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    30 Mar 2022
-                                                                                </td>
-                                                                                <td>
-                                                                                    8:00am - 9:00am
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>3</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Squash Room</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    30 Mar 2022
-                                                                                </td>
-                                                                                <td>
-                                                                                    7:00am - 9:00am
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>4</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-edit.html">Badminton Court 1</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    30 Mar 2022
-                                                                                </td>
-                                                                                <td>
-                                                                                    3:00pm - 4:00pm
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                        
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
-                                                </div>
-                                                <!-- end row-->
-                                            </div>
-                                            <div class="tab-pane show" id="permanentlyclose">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card">
-                                                            <div class="card-body pr-0 pl-0">
-                                                                <div class="mb-2">
-                                                                    <form>
-                                                                        <div class="form-row align-items-center">
-                                                                            <div class="col-xl-3 col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <select data-plugin="customselect" class="form-control">
-                                                                                        <option value="0">All Facilities</option>
-                                                                                        <option>Swimming Pool</option>
-                                                                                        <option>Games Room</option>
-                                                                                        <option>Squash Room</option>
-                                                                                        <option>Badminton Court 1</option>
-                                                                                        <option>Badminton Court 2</option>
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                                                            <label class="custom-control-label" for="customCheck2">Tue</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                                                            <label class="custom-control-label" for="customCheck3">Wed</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                                                            <label class="custom-control-label" for="customCheck4">Thu</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                                                                            <label class="custom-control-label" for="customCheck5">Fri</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+                                                                               
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                                                                            <label class="custom-control-label" for="customCheck6">Sat</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-row align-items-center mb-2">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                                                                            <label class="custom-control-label" for="customCheck7">Sun</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Start Time">
+                                                                                    </div>
+                                                                                    <div class="col col-auto">
+                                                                                        <label class="col-auto col-form-label" for="simpleinput">to</label>
+                                                                                    </div>
+                                                                                    <div class="col col-lg-3 col-md-3 col-sm-4">
+                                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="End Time">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-row align-items-center mb-2">
+                                                                                <div class="col col-lg-3">
+                                                                                    <label class="font-weight-bold">Duration per Slot</label>
+                                                                                </div>
+                                                                                <div class="col col-lg-3">
+                                                                                    <select class="form-control custom-select">
+                                                                                        <option value="0">Select Duration</option>
+                                                                                        <option value="0">30 min</option>
+                                                                                        <option value="1">1 hour</option>
+                                                                                        <option value="1">1 hour 30 min</option>
+                                                                                        <option value="1">2 hours</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-auto">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                                        </div>
+                                                                    </div>                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="card border-gray400">
+                                                                <div class="card-body">
+                                                                    <h4 class="header-title mt-0 mb-2">Exact Date</h4>
+                                                                    <div class="row">
+                                                                        
+                                                                        <div class="col-auto col-lg-3">
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Open / Close</label>
+                                                                                <div class="custom-control custom-switch">
+                                                                                    <input type="checkbox" class="custom-control-input" id="customSwitchexact">
+                                                                                    <label class="custom-control-label font-size-12 mr-2" for="customSwitchexact">Close</label>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </form>
-                                                                </div>
 
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable3" class="table table-hover nowrap full-width">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>No.</th>
-                                                                                <th>Facility Name</th>
-                                                                                <th>Close Date</th>
-                                                                                <th class="text-right">Actions</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>1</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-permanentlyclose.html">Swimming Pool</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    10 Feb 2025
-                                                                                </td>
-                                                                                <td class="text-right">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-reopen">Re-open</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>2</td>
-                                                                                <td>
-                                                                                    <a href="facility-settings-permanentlyclose.html">Games Room</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    20 Jan 2025
-                                                                                </td>
-                                                                                <td class="text-right">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-reopen">Re-open</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                        <div class="col-auto col-lg-6">
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Select Multiple Dates</label>
+                                                                                <input type="text" id="multiple-datepicker" class="form-control" placeholder="Multiple dates">
+                                                                            </div>
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Notes</label>
+                                                                                <textarea class="form-control" rows="1" id="example-textarea"></textarea>
+                                                                            </div>
+                                                                        </div> <!-- end col -->
+                                                                        <div class="col-auto col-lg-3">
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">Start Time</label>
+                                                                                <input type="text" id="basic-timepicker" class="form-control" placeholder="Start">
+                                                                            </div>
+                                                                            <div class="form-group mt-3 mt-xl-0">
+                                                                                <label class="font-weight-bold">End Time</label>
+                                                                                <input type="text" id="basic-timepicker2" class="form-control" placeholder="End">
+                                                                            </div>
+                                                                        </div> <!-- end col -->
+                            
+                                                                    </div> <!-- end row -->
                                                                 </div>
-                        
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
+                                                            </div>
+
+                                                            <div class="form-row align-items-center mb-2">
+                                                                <div class="col-lg-12 text-center">
+                                                                    <button type="submit" class="btn btn-outline-primary btn-rounded mr-1">Add Booking Condition</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput"></label>
+                                                        <div class="col-7 ml-1">
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <!-- end row-->
                                             </div>
+                                        </form>
 
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-success btn-rounded mr-1" data-toggle="modal" data-target="#modal-reopen">Re-open</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='facility-settings.html';">Save</button>
                                         </div>
-
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
                         </div>
-                        <!-- end row-->
+                        <!-- end row -->
+
+                        <div class="form-row align-items-center mb-3">
+                            <div class="col-auto col-sm-2 mr-1 pr-0">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mb-0">Duplicate</div>
+                                    </div>
+                                    <input type="text" class="form-control col-auto" id="inlineFormInputGroup" placeholder="Qty">
+                                </div>
+                            </div>
+                            <div class="col-auto ml-1 pl-0">
+                                <button type="submit" class="btn btn-outline-primary mb-2 btn-rounded" onclick="location.href='visitorparking-settings.html';">Go</button>
+                            </div>
+                        </div>
+
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -2112,36 +1978,6 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
-
-            <!-- permanently close -->
-            <div class="modal fade" id="modal-permanentlyclose" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Permanently Close</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal">
-                                <h5 class="text-danger">You are about to permanently close this facility.</h5>
-                                <br>
-                                <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <textarea class="form-control" rows="3" id="example-textarea" placeholder="Reason"></textarea>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-danger btn-rounded width-sm">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- permanently close end -->
 
             <!-- re-open -->
             <div class="modal fade" id="modal-reopen" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -2172,7 +2008,6 @@
                 </div>
             </div>
             <!-- re-open end -->
-
 
         </div>
         <!-- END wrapper -->
@@ -2292,5 +2127,31 @@
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
 
+        <!-- <script>
+            $("#demo").zInput();
+        </script>
+             -->
+        <script src="assets/libs/zInput/zInput.js"></script>
+             
+
+             <script>
+                 $(function(){ 
+                 
+                 $("input[name='css_selector']").change(function(){
+                     $newStyle = $(this).attr("value");
+                     $('#stylesheet').attr("href", $newStyle);
+                 });
+                 
+             });
+             </script>
+             
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            
+            $("#affected").zInput();
+        </script>
+        
     </body>
 </html>
