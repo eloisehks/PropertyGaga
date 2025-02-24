@@ -28,6 +28,30 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
+        <style>
+            .icon-toggle input {
+                display: none;
+            }
+            
+            .icon {
+                font-size: 24px;
+                cursor: pointer;
+                display: none;
+            }
+            
+            .icon-toggle input:not(:checked) + .default-icon {
+                display: inline;
+            }
+            
+            .icon-toggle input:checked + .default-icon {
+                display: none;
+            }
+            
+            .icon-toggle input:checked ~ .active-icon {
+                display: inline;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -163,6 +187,17 @@
                                                         <td>6-01-04</td>
                                                         <td><a href="access-edit.html">29050607208</a></td>
                                                         <td class="text-center p-0 m-0">
+                                                            <label class="icon-toggle">
+                                                                <input type="checkbox" id="iconToggle">
+                                                                <span class="icon default-icon">🔊</span>
+                                                                <span class="icon active-icon">🔇</span>
+                                                            </label>
+
+                                                            <button id="iconButton">
+                                                                <span id="icon" class="default">🔊</span>
+                                                            </button>
+                                                            
+
                                                             <img src="assets/images/icons/carplatereg-green.svg" class="align-self-center mr-1" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Car Plate Recognition Activated"> <img src="assets/images/icons/facereg-green.svg" style="width: 35px" data-toggle="tooltip" data-placement="top" title="" data-original-title="Face Recognition Activated">
                                                         </td>
                                                         <td class="text-center font-sm"><span class="badge badge-soft-primary">System</span></td>
@@ -482,6 +517,13 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+            document.getElementById("iconButton").addEventListener("click", function () {
+                let icon = document.getElementById("icon");
+                icon.textContent = icon.textContent === "🔊" ? "🔇" : "🔊";
+            });
+        </script>
 
     </body>
 </html>
