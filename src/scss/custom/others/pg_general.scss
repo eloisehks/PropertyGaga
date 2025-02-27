@@ -35,6 +35,8 @@
 // notification
 // icon
 // rotated ribbon
+// Toggle icon to change access status
+// entry log or LPR thumbnail popup
 
 
 /**************  **************/ 
@@ -939,6 +941,9 @@ a.fc-more {
 .hover-highlight:hover {
     opacity: 0.8;
 }
+.hover-highlight-50:hover {
+    opacity: 0.5;
+}
 .grayscale-opacity {
     filter: grayscale(100%);
     opacity: 0.2;
@@ -1487,3 +1492,87 @@ div.dataTables_wrapper {
     font-size: 14px;
     color: #212529;
     }
+
+
+// Toggle icon to change access status
+ 
+/* Hide the checkbox */
+.icon-toggle input {
+    display: none;
+}
+
+/* Style for the icon toggle */
+.icon-toggle {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Default icon (Activated) */
+.icon-toggle .default-icon {
+    display: inline-block;
+}
+
+/* Active icon (Deactivated) */
+.icon-toggle .active-icon {
+    display: none;
+}
+
+/* Change to active icon on hover */
+.icon-toggle:hover .default-icon {
+    display: none;
+}
+
+.icon-toggle:hover .active-icon {
+    display: inline-block;
+}
+
+
+// entry log or LPR thumbnail popup
+/* Thumbnail Styling */
+.thumbnail-access {
+    width: 150px; /* Small thumbnail size */
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.thumbnail-access:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Modal Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999 !important;
+}
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+.popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 30px;
+    cursor: pointer;
+}

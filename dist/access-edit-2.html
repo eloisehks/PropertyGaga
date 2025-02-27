@@ -532,7 +532,10 @@
                                         <a href="access.html">Access Listing</a>
                                     </li>
                                     <li>
-                                        <a href="access-lpr.html">License Plate Recognition</a>
+                                        <a href="access-lpr.html">Entry Log</a>
+                                    </li>
+                                    <li>
+                                        <a href="access-parkinghistory.html">Parking History</a>
                                     </li>
                                     <li>
                                         <a href="access-face-rec.html">Face Recognition</a>
@@ -1517,9 +1520,8 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-3 col-xl-6">
-                                <h3 class="mb-0 mt-0">Edit Access : 6-01-08 (29050607208)
-                                    <img src="assets/images/icons/carplatereg.svg" class="align-self-center" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Car Plate Recognition Deactivated"> <img src="assets/images/icons/facereg.svg" style="width: 35px" data-toggle="tooltip" data-placement="top" title="" data-original-title="Face Recognition Deactivated">
-                                </h3>
+                                <h3 class="mb-1 mt-0">Edit Access : 6-01-08 (29050607208)</h3>
+                                <span class="badge badge-danger width-sm mr-2">Car Plate Recognition Deactivated</span><span class="badge badge-danger width-sm">Face Recognition Deactivated</span>
                             </div>
                             <div class="col-md-9 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -1536,76 +1538,44 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Valid From</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="1 Jan 2025, 00:00:00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Valid Until</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="1 Jan 2027, 00:00:00">
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group row align-items-center">
                                                         <label class="col-lg-3 col-form-label">Edit Status</label>
                                                         <div class="col-lg-5">
-                                                            <div class="form-row">
-                                                                <div class="col-auto">
-                                                                    <div class="custom-control custom-switch">
-                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch222">
-                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch222">Car Plate Recognition</label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <div class="custom-control custom-switch">
-                                                                        <input type="checkbox" class="custom-control-input" id="customSwitch333">
-                                                                        <label class="custom-control-label font-size-12 mr-2" for="customSwitch333">Face Recognition</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <!-- LPR Toggle -->
+                                                            <label class="icon-toggle" id="lprToggleActivate">
+                                                                <input type="checkbox">
+                                                                <span class="icon default-icon">
+                                                                    <img src="assets/images/icons/CarDeactivateButton.svg" class="align-self-center" style="width: 35px;" title="Car Plate Recognition Deactivated">
+                                                                </span>
+                                                                <span class="icon active-icon">
+                                                                    <img src="assets/images/icons/CarActivateButton.svg" class="align-self-center" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Activate" title="Click to Activate">
+                                                                </span>
+                                                            </label>
+
+                                                            <!-- Face Recognition Toggle -->
+                                                            <label class="icon-toggle" id="faceToggleActivate">
+                                                                <input type="checkbox">
+                                                                <span class="icon default-icon">
+                                                                    <img src="assets/images/icons/FaceDeactivateButton.svg" class="align-self-center" style="width: 35px;" title="Face Recognition Deactivated">
+                                                                </span>
+                                                                <span class="icon active-icon">
+                                                                    <img src="assets/images/icons/FaceActivateButton.svg" class="align-self-center" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Activate" title="Click to Activate">
+                                                                </span>
+                                                            </label>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Date</label>
-                                                        <div class="col-lg-5">
-                                                            <input type="text" id="basic-datepicker" class="form-control" value="3 Jul 2023">
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Reasons</label>
-                                                        <div class="col-lg-5">
-                                                            <select class="form-control custom-select">
-                                                                <option></option>
-                                                                <option selected>Non-payment or Dues of Fees</option>
-                                                                <option>Violation of Rules</option>
-                                                                <option>Security Concerns</option>
-                                                                <option>Lost or Stolen Card</option>
-                                                                <option>Renovation or Maintenance Work</option>
-                                                                <option>End of Lease or Ownership</option>
-                                                            </select>
-                                                        </div>
-                                                    </div> -->
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Notes</label>
-                                                        <div class="col-lg-5">
-                                                            <textarea class="form-control" rows="2" id="example-textarea"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="fileinput">Supporting Document / Photo(s)</label>
-                                                        <div class="col-lg-5">
-                                                            <div class="card mb-2 shadow-none border-grayform">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-auto">
-                                                                            <img src="assets/images/projects/project-1.jpg"
-                                                                                class="responsiveimg rounded" alt="file-image">
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <input type="file" class="form-control" id="fileinput">
-                                                        </div>
-                                                
-                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="float-right clearfix">
@@ -1737,6 +1707,168 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+            <!-- change status lpr activate to deactivate -->
+            <div class="modal fade" id="lprModal" tabindex="-1" aria-labelledby="lprModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="lprModalLabel">Confirm Deactivation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to deactivate <strong>Car Plate Recognition</strong>?</p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Non-payment or Dues of Fees</option>
+                                    <option>Violation of Rules</option>
+                                    <option>Security Concerns</option>
+                                    <option>Lost or Stolen Card</option>
+                                    <option>Renovation or Maintenance Work</option>
+                                    <option>End of Lease or Ownership</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status lpr activate to deactivate end -->
+
+            <!-- change status Face Recognition activate to deactivate -->
+            <div class="modal fade" id="faceModal" tabindex="-1" aria-labelledby="faceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="faceModalLabel">Confirm Deactivation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to deactivate <strong>Face Recognition</strong>?</p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Non-payment or Dues of Fees</option>
+                                    <option>Violation of Rules</option>
+                                    <option>Security Concerns</option>
+                                    <option>Lost or Stolen Card</option>
+                                    <option>Renovation or Maintenance Work</option>
+                                    <option>End of Lease or Ownership</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status Face Recognition activate to deactivate end -->
+
+            <!-- change status lpr deactivated to activate -->
+            <div class="modal fade" id="lprModal2" tabindex="-1" aria-labelledby="lprModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="lprModalLabel">Confirm Activation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to activate <strong>Car Plate Recognition</strong></p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Payment made</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status lpr deactivated to activate end -->
+
+            <!-- change status Face Recognition deactivated to activate -->
+            <div class="modal fade" id="faceModal2" tabindex="-1" aria-labelledby="faceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="faceModalLabel">Confirm Activation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to activate <strong>Face Recognition</strong></p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Payment made</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status Face Recognition deactivated to activate end -->
             
         </div>
         <!-- END wrapper -->
@@ -1909,6 +2041,51 @@
             function openPopup() {
                 $("#modal-renewal").modal();
             }
+        </script>
+
+        <!-- toggle icon to change access status-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let lprModal = new bootstrap.Modal(document.getElementById("lprModal"));
+                let faceModal = new bootstrap.Modal(document.getElementById("faceModal"));
+            
+                // Select all elements with the same class (instead of just one ID)
+                document.querySelectorAll("#lprToggle, #lprToggle2, #lprToggle3, #lprToggle4, #lprToggle5, #lprToggle6").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        lprModal.show(); // Open LPR modal
+                    });
+                });
+            
+                document.querySelectorAll("#faceToggle, #faceToggle2, #faceToggle3, #faceToggle4, #faceToggle5, #faceToggle6").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        faceModal.show(); // Open Face Recognition modal
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let lprModal = new bootstrap.Modal(document.getElementById("lprModal2"));
+                let faceModal = new bootstrap.Modal(document.getElementById("faceModal2"));
+            
+                // Select all elements with the same class (instead of just one ID)
+                document.querySelectorAll("#lprToggleActivate, #lprToggleActivate2, #lprToggleActivate3, #lprToggleActivate4, #lprToggleActivate5").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        lprModal.show(); // Open LPR modal
+                    });
+                });
+            
+                document.querySelectorAll("#faceToggleActivate, #faceToggleActivate2, #faceToggleActivate3, #faceToggleActivate4, #faceToggleActivate5").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        faceModal.show(); // Open Face Recognition modal
+                    });
+                });
+            });
         </script>
         
     </body>
