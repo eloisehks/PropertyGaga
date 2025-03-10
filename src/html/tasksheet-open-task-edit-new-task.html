@@ -69,6 +69,12 @@
                             <div class="col-md-6 col-xl-6">
                                 <h3 class="mb-1 mt-0">Tasks - Opened <i class="uil uil-exclamation-circle mr-1 text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Urgent"></i></h3>
                                 <span class="badge badge-warning width-sm">Accepted</span>
+                                
+                                <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log" class="ml-2">
+                                    <span class="text-nowrap align-middle font-size-15">
+                                        <i class="uil uil-check-square mr-1 text-muted"></i>3
+                                    </span>
+                                </a>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -96,26 +102,48 @@
                                                 <div class="card border-gray400" id="acceptedtask">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="col col-auto col-lg-1">
+                                                            <div class="col col-12 col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="check"></i>
                                                                 </label>
                                                             </div>
-                                                            <div class="col col-auto mr-3">
+                                                            <div class="col col-auto mr-1">
                                                                 <h4 class="m-0">Accepted Task
-                                                                    <br><span class="text-muted font-size-13 font-weight-normal">Accepted on 23 Apr 2020, 2:30pm</span>
+                                                                    <br><span class="text-muted font-size-13 font-weight-normal">on 23 Apr 2020, 2:30pm</span>
                                                                     <br><span class="text-muted font-size-13 font-weight-normal">
-                                                                        <div class="icon-item text-danger">
-                                                                            <span>Due on 23 May 2020, 2:30pm</span>
+                                                                            <span class="text-danger">Due on 23 May 2020, 2:30pm</span>
                                                                             <i data-feather="flag" class="icon-xs"></i>
-                                                                        </div>
                                                                     </span>
                                                                 </h4>
                                                             </div>
-                                                            <div class="col-auto mr-3">
-                                                                <img src="assets/images/projects/project-1.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;">
+                                                            <div class="col col-auto mr-1">
+                                                                <h4 class="m-0">Submitted
+                                                                    <br><span class="text-muted font-size-13 font-weight-normal">on 23 Apr 2020, 2:30pm</span>
+                                                                    <br><span class="text-muted font-size-13 font-weight-normal">
+                                                                    by Eugene
+                                                                    </span>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col col-auto mr-1">
+                                                                <div class="slider-container">
+                                                                    <button id="prev-btn" onclick="prevSlide()" class="btn btn-sm btn-light btn-rounded disabled">&#10094;</button>
+                                                                    <div class="slider">
+                                                                        <div class="slider-track" id="slider-track">
+                                                                            <img src="assets/images/projects/project-1.jpg" onclick="openPopup(this.src)">
+                                                                            <img src="assets/images/projects/project-2.jpg" onclick="openPopup(this.src)">
+                                                                            <img src="assets/images/projects/project-3.jpg" onclick="openPopup(this.src)">
+                                                                            <img src="assets/images/projects/project-4.jpg" onclick="openPopup(this.src)">
+                                                                            <img src="assets/images/projects/project-2.jpg" onclick="openPopup(this.src)">
+                                                                        </div>
+                                                                    </div>
+                                                                    <button id="next-btn" onclick="nextSlide()" class="btn btn-sm btn-light btn-rounded">&#10095;</button>
+                                                                </div>
+                                                                <div class="popup" id="popup" onclick="closePopup()">
+                                                                    <img id="popup-img">
+                                                                </div>
+                                                                <!-- <img src="assets/images/projects/project-1.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;">
                                                                 <img src="assets/images/projects/project-2.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;">
                                                                 <img src="assets/images/projects/project-2.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;">
-                                                                <img src="assets/images/projects/project-2.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;">
+                                                                <img src="assets/images/projects/project-2.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image" style="width:100px;"> -->
                                                             </div>
                                                             <div class="col text-right">
                                                                 <a href="" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#accepted">Update</a>
@@ -126,133 +154,137 @@
 
                                                         <div class="row align-items-center">
                                                             <div class="col-auto col-lg-1"></div>
-                                                            <div class="col col-lg-11">
-                                                                <div class="card" style="max-height: 350px;">
-                                                                    <div class="slimscroll border-bottom" style="max-height: 257px;">
+                                                            <div class="col col-12 col-lg-11">
+                                                                <div class="row">
+                                                                    <div class="col col-lg-6">
                                                                         <div class="form-group">
                                                                             <label>Activity</label>
-                                                                            <div class="row">
-                                                                                <div class="col col-12 col-lg-8">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <textarea class="form-control" rows="1" id="example-textarea">For other roles, not for Super Admin</textarea>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-4 mt-0 mb-3">
-                                                                                    <div class="form-group m-0 p-0 form-inline">
-                                                                                        <small class="mr-2 align-self-center">23 Apr 2020, 2:30pm</small>
-                                                                                        <div class="avatar-xs mr-2 font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
-                                                                                            <span class="avatar-title rounded-circle bg-soft-primary text-primary">S</span>
-                                                                                        </div>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1" ><i data-feather="save" class="icon-xs"></i></button>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1"><i data-feather="x" class="icon-xs"></i></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                <div class="col col-12 col-lg-3">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-5">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <textarea class="form-control" rows="1" id="example-textarea">Only for Super Admin</textarea>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-4 mt-0 mb-3">
-                                                                                    <div class="form-group m-0 p-0 form-inline">
-                                                                                        <small class="mr-2 align-self-center">23 Apr 2020, 2:30pm</small>
-                                                                                        <div class="avatar-xs mr-2 font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
-                                                                                            <span class="avatar-title rounded-circle bg-soft-primary text-primary">D</span>
-                                                                                        </div>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1" ><i data-feather="save" class="icon-xs"></i></button>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1"><i data-feather="x" class="icon-xs"></i></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                <div class="col col-12 col-lg-3">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-5">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <textarea class="form-control" rows="1" id="example-textarea">Only for Super Admin</textarea>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-4 mt-0 mb-3 form-inline">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <small class="mr-2 align-self-center">23 Apr 2020, 2:30pm</small>
-                                                                                        <small class="mr-2 align-self-center"><img src="assets/images/users/avatar-2.jpg"
-                                                                                            alt="image"
-                                                                                            class="avatar-xs rounded-circle"
-                                                                                            data-toggle="tooltip"
-                                                                                            data-placement="top"
-                                                                                            title="Updated by Fong" />
-                                                                                        </small>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1" ><i data-feather="save" class="icon-xs"></i></button>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1"><i data-feather="x" class="icon-xs"></i></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                <div class="col col-12 col-lg-3">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-5">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <textarea class="form-control" rows="1" id="example-textarea">Only for Super Admin</textarea>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-4 mt-0 mb-3 form-inline">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <small class="mr-2 align-self-center">23 Apr 2020, 2:30pm</small>
-                                                                                        <small class="mr-2 align-self-center"><img src="assets/images/users/avatar-2.jpg"
-                                                                                            alt="image"
-                                                                                            class="avatar-xs rounded-circle"
-                                                                                            data-toggle="tooltip"
-                                                                                            data-placement="top"
-                                                                                            title="Updated by Fong" />
-                                                                                        </small>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1" ><i data-feather="save" class="icon-xs"></i></button>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1"><i data-feather="x" class="icon-xs"></i></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="row">
-                                                                                <div class="col col-12 col-lg-3">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-5">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <textarea class="form-control" rows="1" id="example-textarea">Only for Super Admin</textarea>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col col-12 col-lg-4 mt-0 mb-3 form-inline">
-                                                                                    <div class="form-group m-0 p-0">
-                                                                                        <small class="mr-2 align-self-center">23 Apr 2020, 2:30pm</small>
-                                                                                        <small class="mr-2 align-self-center"><img src="assets/images/users/avatar-2.jpg"
-                                                                                            alt="image"
-                                                                                            class="avatar-xs rounded-circle"
-                                                                                            data-toggle="tooltip"
-                                                                                            data-placement="top"
-                                                                                            title="Updated by Fong" />
-                                                                                        </small>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1" ><i data-feather="save" class="icon-xs"></i></button>
-                                                                                        <button type="button" class="btn btn-link pl-1 pr-1"><i data-feather="x" class="icon-xs"></i></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            
-                                                                            <button type="button" class="btn btn-outline-primary btn-rounded mb-0" onclick="location.href='';"><i class="uil-plus mr-1"></i> Add Activity</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col col-lg-6 text-right">
+                                                                        <div class="form-group">
+                                                                            <a href="" class="btn btn-sm btn-rounded btn-outline-primary" data-toggle="modal" data-target="#viewmoreactivity">View more activity</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <i class="text-danger">notes to developer: display the last post and a new textarea below, click "View more activity" button to view previous post.</i>
+                                                                        <div class="row">
+                                                                            <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                                                                <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                                                    <span class="avatar-title rounded-circle bg-soft-primary text-primary">S</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                                                                <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                                                    <small class="align-self-center">23 Apr 2020, 2:30pm</small>
+                                                                                </div>
+                                                                                <div class="form-group m-0 p-0">
+                                                                                    <div class="card bg-color-grayLight mb-0 rounded-10">
+                                                                                        <div class="card-body p-3">
+                                                                                            Normal user view: S cannot change date and time. S can edit message, save and delete.
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- <textarea class="form-control" rows="2" id="example-textarea">For other roles, not for Super Admin</textarea> -->
+                                                                                </div>
+                                                                                <div class="form-group mt-1 mb-0 text-right">
+                                                                                    <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;12&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;1&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                                                                </div>
+
+                                                                                <!-- reply message -->
+                                                                                <div class="row">
+                                                                                    <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                                                                        <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                                                            <span class="avatar-title rounded-circle bg-soft-primary text-primary">Y</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                                                                        <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                                                            <small class="align-self-center">23 Apr 2020, 2:30pm</small>
+                                                                                        </div>
+                                                                                        <div class="form-group m-0 p-0">
+                                                                                            <textarea class="form-control" rows="1" id="example-textarea">Normal user view: Y reply to S......</textarea>
+                                                                                        </div>
+                                                                                        <div class="form-group mt-1 mb-1 text-right">
+                                                                                            <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                                                                        <div class="dropdown pt-2">
+                                                                                            <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                                                <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                                                            </a>
+                                                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                                                <!-- item-->
+                                                                                                <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                                                                <!-- item-->
+                                                                                                <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a>
+                                                                                                <!-- item-->
+                                                                                                <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                                                                <div class="dropdown pt-2">
+                                                                                    <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                                        data-toggle="dropdown" aria-expanded="false">
+                                                                                        <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                                                    </a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a>
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                                                                <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                                                    <span class="avatar-title rounded-circle bg-soft-primary text-primary">S</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                                                                <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                                                    <small class="align-self-center">&nbsp;</small>
+                                                                                </div>
+                                                                                <div class="form-group m-0 p-0">
+                                                                                    <textarea class="form-control" rows="2" id="example-textarea">Write a comment...</textarea>
+                                                                                </div>
+                                                                                <div class="form-group mt-1 mb-0 text-right">
+                                                                                    <a href="#" class="ml-2"><i class="uil-thumbs-up"></i></a><a href="#" class="ml-2"><i class="uil-thumbs-down"></i></a><a href="#" class="ml-2">Reply</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                                                                <div class="dropdown pt-2">
+                                                                                    <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                                                        data-toggle="dropdown" aria-expanded="false">
+                                                                                        <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                                                    </a>
+                                                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a>
+                                                                                        <!-- item-->
+                                                                                        <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <!-- <button type="button" class="btn btn-outline-primary btn-rounded mb-0" onclick="location.href='';"><i class="uil-plus mr-1"></i> Add Activity</button> -->
+                                                                    </div>
+                                                                </div>
+
+                                                                
                                                             </div>
                                                         </div>
 
@@ -272,7 +304,7 @@
                                                 <div class="card border-gray400" id="inventory">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="col col-auto col-lg-1">
+                                                            <div class="col col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="package"></i>
                                                                 </label>
                                                             </div>
@@ -429,7 +461,7 @@
                                                 <div class="card border-gray400" id="quotation-voting">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="d-sm-flex justify-content-between col-auto col-lg-1">
+                                                            <div class="d-sm-flex justify-content-between col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="dollar-sign"></i>
                                                                 </label>
                                                             </div>
@@ -515,7 +547,7 @@
                                                                             <li class="list-inline-item pr-1 text-color-greenBright">
                                                                             <span class="mr-2 pl-1 pr-0 pt-1 pb-1 text-color-greenBright rounded-circle"><i class="uil uil-award mr-1 font-size-18"></i></span>Company Name 1Company Name 1Company
                                                                             </li>
-                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download Quotation"></i></a>
+                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
                                                                         </ol>
                                                                     </div>
                                                                     
@@ -526,7 +558,7 @@
                                                                             <li class="list-inline-item pr-1">
                                                                             <span class="mr-2 pl-2 pr-2 pt-1 pb-1 rounded-circle"><em>2.</em></span>Company Name 2
                                                                             </li>
-                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download Quotation"></i></a>
+                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
                                                                         </ol>
                                                                     </div>
                                                                     <!-- <div class="mt-sm-0 mr-3 form-inline">
@@ -557,7 +589,7 @@
                                                                             <li class="list-inline-item pr-1">
                                                                             <span class="mr-2 pl-2 pr-2 pt-1 pb-1 rounded-circle"><em>3.</em></span>Company Name 3
                                                                             </li>
-                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download Quotation"></i></a>
+                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
                                                                         </ol>
                                                                     </div>
                                                                     <!-- <div class="mt-sm-0 mr-3 form-inline">
@@ -618,7 +650,7 @@
                                                 <div class="card border-gray400">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="d-sm-flex justify-content-between col-auto col-lg-1">
+                                                            <div class="d-sm-flex justify-content-between col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="dollar-sign"></i>
                                                                 </label>
                                                             </div>
@@ -719,7 +751,7 @@
                                                 <div class="card border-gray400" id="startworktask">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="col col-auto col-lg-1">
+                                                            <div class="col col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="tool"></i>
                                                                 </label>
                                                             </div>
@@ -761,7 +793,7 @@
                                                 <div class="card border-gray400" id="startworktask">
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="col col-auto col-lg-1">
+                                                            <div class="col col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="tool"></i>
                                                                 </label>
                                                             </div>
@@ -802,7 +834,7 @@
                                                     
                                                     <div class="card-body">
                                                         <div class="row align-items-center">
-                                                            <div class="col col-auto col-lg-1">
+                                                            <div class="col col-auto col-lg-1 d-none d-sm-block">
                                                                 <label class="font-weight-bold d-inline mr-2"><i class="icon-dual-primary icon-md mr-2" data-feather="smile"></i>
                                                                 </label>
                                                             </div>
@@ -1152,10 +1184,10 @@
                                         <label>Assign to Staff</label>
                                         <div class="form-group mt-0 mt-xl-0">
                                             <select class="form-control wide" data-plugin="customselect" multiple>
-                                                <option value="0" selected>Staff 1</option>
-                                                <option value="1">Staff 2</option>
-                                                <option value="2">Staff 3</option>
-                                                <option value="4">Staff 4</option>
+                                                <option value="0" selected>039458 - Staff 1</option>
+                                                <option value="1">039451 - Staff 2</option>
+                                                <option value="2">039452 - Staff 3</option>
+                                                <option value="4">039460 - Staff 4</option>
                                             </select>
                                         </div>
                                         <label>Link to a Task</label>
@@ -1176,108 +1208,236 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="form-group mb-1">
-                                        <label>Photo or Document Attach</label>
+                                        <label>Photo Attach</label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row mt-0 pt-0">
-                                <div class="col-auto col-lg-4">
-                                    <div class="card mb-2 shadow-none border-grayform">
-                                        <div class="p-1 px-2">
-                                            <div class="row align-items-center">
-                                                <div class="col-auto">
-                                                    <img src="assets/images/projects/project-1.jpg"
-                                                        class="avatar-sm rounded" alt="file-image">
-                                                </div>
-                                                <div class="col pl-0">
-                                                    <a href="javascript:void(0);"
-                                                        class="text-muted font-weight-bold">pic1.jpg</a>
-                                                    <p class="mb-0">2.3 MB</p>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Download"
-                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Delete"
-                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-auto col-lg-4">
-                                    <div class="card mb-2 shadow-none border-grayform">
-                                        <div class="p-1 px-2">
-                                            <div class="row align-items-center">
-                                                <div class="col-auto">
-                                                    <img src="assets/images/projects/project-1.jpg"
-                                                        class="avatar-sm rounded" alt="file-image">
-                                                </div>
-                                                <div class="col pl-0">
-                                                    <a href="javascript:void(0);"
-                                                        class="text-muted font-weight-bold">pic1.jpg</a>
-                                                    <p class="mb-0">2.3 MB</p>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Download"
-                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Delete"
-                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-auto col-lg-4">
-                                    <div class="card mb-2 shadow-none border-grayform">
-                                        <div class="p-1 px-2">
-                                            <div class="row align-items-center">
-                                                <div class="col-auto">
-                                                    <img src="assets/images/projects/project-1.jpg"
-                                                        class="avatar-sm rounded" alt="file-image">
-                                                </div>
-                                                <div class="col pl-0">
-                                                    <a href="javascript:void(0);"
-                                                        class="text-muted font-weight-bold">pic1.jpg</a>
-                                                    <p class="mb-0">2.3 MB</p>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Download"
-                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                        data-placement="bottom" title="Delete"
-                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-auto col-lg-4">
-                                    <div class="image-upload">
+                            <div class="row mb-3">
+                                <div class="col-auto col-lg-12">
+                                   
+                                    <input type="file" class="form-control" id="example-fileinput" multiple>
+                                    <!-- <div class="image-upload">
                                         <label for="file-input">
                                             <div class="btn btn-soft-primary btn-lg"><i class='uil uil-plus font-size-14'></i></div>
                                         </label>
                                     
                                         <input id="file-input" type="file" multiple />
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="row mt-0 pt-0">
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-1.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic1.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-2.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic2.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-3.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic3.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-3.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic3.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-3.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic3.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-1.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic1.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto col-sm-12 col-lg-6">
+                                    <div class="card mb-2 shadow-none border-grayform">
+                                        <div class="p-1 px-2">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="assets/images/projects/project-2.jpg"
+                                                        class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Enlarge">
+                                                </div>
+                                                <div class="col pl-0">
+                                                    <a href="javascript:void(0);"
+                                                        class="text-muted font-weight-bold" alt=""><span id="fileName" class="file-name">pic2longlonglonglongfilenamelonglongfilename.jpg</span></a>
+                                                    <p class="mb-0">2.3 MB</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Download"
+                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                    </a>
+                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Delete"
+                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
 
                             </div>
 
@@ -3041,6 +3201,283 @@
             </div>
             <!-- Book parking end -->
 
+            <!-- activity edit date and time -->
+            <div class="modal fade" id="editdatetime" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit Date and Time</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div> -->
+                        <div class="modal-body pb-0 mb-0">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer border-0 pt-0 mt-0">
+                            <button type="button" class="btn btn-light btn-rounded btn-sm width-xs" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded btn-sm width-xs" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- activity date and time end -->
+
+            <!-- view more activity -->
+            <div class="modal fade" id="viewmoreactivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Accepted Task: Activity</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                            <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                <span class="avatar-title rounded-circle bg-soft-primary text-primary">S</span>
+                                            </div>
+                                        </div>
+                                        <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                            <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                <small class="align-self-center">23 Apr 2020, 2:30pm</small>
+                                            </div>
+                                            <div class="form-group m-0 p-0">
+                                                <div class="card bg-color-grayLight mb-0 rounded-10">
+                                                    <div class="card-body p-3">
+                                                        Normal user view: S cannot change date and time. S can edit message, save and delete.
+                                                    </div>
+                                                </div>
+                                                <!-- <textarea class="form-control" rows="2" id="example-textarea">For other roles, not for Super Admin</textarea> -->
+                                            </div>
+                                            <div class="form-group mt-1 mb-0 text-right">
+                                                <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;12&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;1&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                            </div>
+
+                                            <!-- reply message -->
+                                            <div class="row">
+                                                <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                                    <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                        <span class="avatar-title rounded-circle bg-soft-primary text-primary">Y</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                                    <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                        <small class="align-self-center">23 Apr 2020, 2:30pm</small>
+                                                    </div>
+                                                    <div class="form-group m-0 p-0">
+                                                        <textarea class="form-control" rows="1" id="example-textarea">Normal user view: Y reply to S......</textarea>
+                                                    </div>
+                                                    <div class="form-group mt-1 mb-1 text-right">
+                                                        <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                                    <div class="dropdown pt-2">
+                                                        <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <!-- item-->
+                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                            <!-- item-->
+                                                            <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a>
+                                                            <!-- item-->
+                                                            <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                            <div class="dropdown pt-2">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <!-- item-->
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                    <!-- item-->
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a>
+                                                    <!-- item-->
+                                                    <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                            <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                <span class="avatar-title rounded-circle bg-soft-primary text-primary">S</span>
+                                            </div>
+                                        </div>
+                                        <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                            <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                <small class="align-self-center">23 Apr 2020, 2:30pm</small> <a href="#" class="mr-3" data-toggle="modal" data-target="#editdatetime" title="Edit"><i class="uil uil-pen"></i></a>
+                                            </div>
+                                            <div class="form-group m-0 p-0">
+                                                <div class="card bg-color-grayLight mb-0 rounded-10">
+                                                    <div class="card-body p-3">
+                                                        Super Admin view: super admin able to change date, time, save and delete other users' post
+                                                    </div>
+                                                </div>
+                                                <!-- <textarea class="form-control" rows="2" id="example-textarea">Super Admin view: super admin able to change date, time, save and delete other users' post</textarea> -->
+                                            </div>
+                                            <div class="form-group mt-1 mb-0 text-right">
+                                                <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;12&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;1&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                            </div>
+
+                                            <!-- reply message -->
+                                            <div class="row">
+                                                <div class="col col-1 col-sm-1 col-lg-1 mt-4 mr-0 pr-0">
+                                                    <div class="avatar-xs font-size-14 font-weight-normal cursor-pointer" data-toggle="tooltip" data-placement="top" title="Updated by Sam">
+                                                        <span class="avatar-title rounded-circle bg-soft-primary text-primary">Y</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-10 col-sm-10 col-lg-10 pl-0 ml-0">
+                                                    <div class="form-group ml-2 mt-0 pt-0 mb-0 pb-0">
+                                                        <small class="align-self-center">23 Apr 2020, 2:30pm</small> <a href="#" class="mr-3" data-toggle="modal" data-target="#editdatetime" title="Edit"><i class="uil uil-pen"></i></a>
+                                                    </div>
+                                                    <div class="form-group m-0 p-0">
+                                                        <div class="card bg-color-grayLight mb-0 rounded-10">
+                                                            <div class="card-body p-3">
+                                                                Super admin view: Y reply to S. Super admin can edit, save and delete.
+                                                            </div>
+                                                        </div>
+                                                        <!-- <textarea class="form-control" rows="1" id="example-textarea">Super admin view: Y reply to S. Super admin can edit, save and delete.</textarea> -->
+                                                    </div>
+                                                    <div class="form-group mt-1 mb-1 text-right">
+                                                        <a href="#" class="ml-2"><i class="uil-thumbs-up">&nbsp;&nbsp;</i></a><a href="#" class="ml-2"><i class="uil-thumbs-down">&nbsp;&nbsp;</i></a><a href="#" class="ml-2">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                                    <div class="dropdown pt-2">
+                                                        <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <!-- item-->
+                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                            <!-- item-->
+                                                            <!-- <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a> -->
+                                                            <!-- item-->
+                                                            <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col col-1 col-sm-1 col-lg-1 mt-4 pl-0 pr-0 ml-0 mr-0">
+                                            <div class="dropdown pt-2">
+                                                <a href="#" class="dropdown-toggle text-muted arrow-none"
+                                                    data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="uil uil-ellipsis-v font-size-14"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <!-- item-->
+                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i>Edit</a>
+                                                    <!-- item-->
+                                                    <!-- <a href="javascript:void(0);" class="dropdown-item"><i data-feather="save" class="icon-xs mr-2"></i>Save</a> -->
+                                                    <!-- item-->
+                                                    <a href="javascript:void(0);" class="dropdown-item text-danger"><i data-feather="x" class="icon-xs mr-2"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary btn-rounded mb-0" onclick="location.href='';"><i class="uil-plus mr-1"></i> Add Activity</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- view more activity end -->
+
+            <!-- update log -->
+            <div class="modal fade" id="updatelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-2.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Eugene" />
+                                    <label>Accepted Task</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 2 Mar 2025, 4:20pm
+                                </div>
+                            </div>
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-3.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Sarah" />
+                                    <label>Accepted Task</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 3 Mar 2025, 5:20pm
+                                </div>
+                            </div>
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-2.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Eugene" />
+                                    <label>Quotations & Voting</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 4 Mar 2025, 6:20pm
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- update log end -->
+
         </div>
         <!-- END wrapper -->
 
@@ -3082,6 +3519,80 @@
         <script src="assets/js/app.min.js"></script>
 
         <script src="assets/js/pages/anchor-scroll.js"></script>
+
+        <!-- slider image on Accepted Task box-->
+        <script>
+            let index = 0;
+            const sliderTrack = document.getElementById('slider-track');
+            const images = sliderTrack.getElementsByTagName('img');
+            const totalImages = images.length;
+            const imagesPerView = 3;
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            function updateButtons() {
+                prevBtn.classList.toggle('disabled', index === 0);
+                nextBtn.classList.toggle('disabled', index >= totalImages - imagesPerView);
+            }
+            
+            function nextSlide() {
+                if (index < totalImages - imagesPerView) {
+                    index++;
+                    sliderTrack.style.transform = `translateX(-${index * 300}px)`;
+                }
+                updateButtons();
+            }
+            
+            function prevSlide() {
+                if (index > 0) {
+                    index--;
+                    sliderTrack.style.transform = `translateX(-${index * 300}px)`;
+                }
+                updateButtons();
+            }
+            
+            function openPopup(src) {
+                document.getElementById('popup-img').src = src;
+                document.getElementById('popup').style.display = 'flex';
+            }
+            
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+            
+            updateButtons();
+        </script>
+
+
+        <!-- Limit File Name Length (photo attached) -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const maxLength = 20; // Set the maximum length of the file name
+        
+                document.querySelectorAll(".file-name").forEach(function (fileNameElement) {
+                    let fullFileName = fileNameElement.textContent.trim();
+        
+                    // Set the full file name as a tooltip
+                    fileNameElement.setAttribute("title", fullFileName);
+        
+                    if (fullFileName.length > maxLength) {
+                        let fileExtension = "";
+                        const lastDotIndex = fullFileName.lastIndexOf(".");
+        
+                        // If the file has an extension, preserve it
+                        if (lastDotIndex !== -1) {
+                            fileExtension = fullFileName.substring(lastDotIndex);
+                            fullFileName = fullFileName.substring(0, lastDotIndex);
+                        }
+        
+                        // Truncate the name while keeping the extension
+                        let truncatedFileName = fullFileName.substring(0, maxLength - fileExtension.length) + "..." + fileExtension;
+                        fileNameElement.textContent = truncatedFileName;
+                    }
+                });
+            });
+        </script>
+        
 
     </body>
 </html>

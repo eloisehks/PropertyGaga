@@ -38,6 +38,8 @@
 // Toggle icon to change access status
 // entry log or LPR thumbnail popup
 // fixed to top button
+// Slider in Task
+// Limit File Name Length (photo attached)
 
 
 /**************  **************/ 
@@ -1593,4 +1595,61 @@ div.dataTables_wrapper {
     // .fixed-top-button:hover {
     //     background-color: #0056b3;
     // }
+}
+
+/* Slider in Task */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+.slider {
+    display: flex;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slider img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.slider img:hover {
+    transform: scale(1.05);
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+.popup img {
+    width: 80%;
+    max-width: 600px;
+}
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Limit File Name Length (photo attached) */
+ .file-name {
+    display: inline-block;
+    max-width: 100px; /* Adjust width as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
 }
