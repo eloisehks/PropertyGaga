@@ -1,86 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Property Gaga</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- plugin css -->
-        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
-        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="utf-8" />
+    <title>Property Gaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    </head>
+    <!-- plugin css -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
 
-    <body class="left-side-menu-dark">
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- Begin page -->
-        <div id="wrapper">
+</head>
 
-            @@include('./partials/topbar-occupant.html')
+<body class="left-side-menu-dark">
 
-            @@include('./partials/left-sidebar-occupant.html')
+    <!-- Begin page -->
+    <div id="wrapper">
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+        @@include('./partials/topbar-occupant.html')
 
-            <div class="content-page">
-                <div class="content">
+        @@include('./partials/left-sidebar-occupant.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="row page-title align-items-center">
+                        <div class="col-md-6 col-xl-6">
+                            <h3 class="mb-3 mt-0">Visitor</h3>
+                        </div>
+                        <div class="col-md-6 col-xl-6 text-md-right">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="card">
+                                <div class="card-body text-center p-5 visitor-bg1">
+                                    <h3 class="text-color-white">Feel free to register for your friends or vendors</h3>
+                                    <div class="margin-auto"><button type="submit"
+                                            class="btn btn-primary btn-rounded mb-3 mt-3"
+                                            onclick="location.href='occupant-visitor-register.html';"><i
+                                                class="uil-edit-alt"></i> REGISTER NOW</button></div>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="card">
+                                <div class="card-body text-center p-5 visitor-bg2">
+                                    <h3 class="text-color-white">Allow your friends or vendors to register themselves
+                                    </h3>
+                                    <div class="margin-auto"><button type="submit"
+                                            class="btn btn-primary btn-rounded mb-3 mt-3" data-toggle="modal"
+                                            data-target="#sharelink"><i class="uil-link-alt"></i> SHARE LINK</button>
+                                    </div>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+
                     
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        <div class="row page-title align-items-center">
-                            <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-3 mt-0">Visitor</h3>     
+                    <div class="flex-container">
+                        <div class="flex-item">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none text-muted"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="uil uil-ellipsis-h font-size-16 text-danger animate-blinker1s"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#acceptrequest">
+                                        <i class='uil uil-info-circle text-dark mr-1'></i> View Details
+                                    </a>
+
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-check-circle text-success mr-1'></i> Approve
+                                    </a>
+                                 
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-times-circle text-danger mr-1'></i> Reject
+                                    </a>
+                                </div> 
                             </div>
-                            <div class="col-md-6 col-xl-6 text-md-right">
+                            <br>
+                            <h5 class="text-danger">Approval Request</h5>
+                            <h6>New Visitor Registration</h6>
+                            <span class="badge badge-warning width-sm">Pending</span>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-lg-12 col-sm-12">
+                                    Visitor: Wendy (012 345 6789)
+                                </div>
+                                <div class="col-lg-12 col-sm-12">
+                                    Date: 7 Jan 2022
+                                </div>
+                            </div>
+                            <!-- <div class="margin-auto"><button type="submit"
+                                    class="btn btn-link btn-sm btn-rounded mb-3" data-toggle="modal"
+                                    data-target="#acceptrequest">View Details</button></div> -->
+                        </div>
+
+                        <div class="flex-item">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none text-muted"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="uil uil-ellipsis-h font-size-16"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                    <a href="occupant-visitor-edit.html" class="dropdown-item">
+                                        <i class='uil uil-info-circle text-dark mr-1'></i> View Details
+                                    </a>
+                                  
+                                    <!-- <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-check-circle text-success mr-1'></i> Approve
+                                    </a> -->
+                                 
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-times-circle text-danger mr-1'></i> Reject
+                                    </a>
+                                   
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-redo text-info mr-1'></i> Resend QR Code
+                                    </a>
+                                </div> 
+                            </div>
+                            <br>
+                            <h5 class="text-success">Registered Visitor</h5>
+                            <span class="badge badge-success width-sm">Approved</span>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="text-dark bold">Eugene (012 345 6789)</div>
+                                    <div class="text-dark semibold">15 Oct 2024</div>
+                                    <div class="text-dark semibold">Parking Lot Name 3 (Limited to 3 slots)</div>
+                                    Slot 16 (03:01 - 04:00)<br>Slot 17 (04:01 -
+                                    05:00)<br>Slot 18 (05:01 - 06:00)
+                                    <div>Time In: - </div>
+                                    <div>Time Out: - </div>
+                                </div>
+                                <!-- <div class="margin-auto mt-2"><a href="occupant-visitor-edit.html"
+                                        class="btn btn-link btn-sm btn-rounded mb-3">View Details</a></div> -->
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-body text-center p-5 visitor-bg1">
-                                        <h3 class="text-color-white">Feel free to register for your friends / vendors</h3>
-                                        <div class="margin-auto"><button type="submit" class="btn btn-primary btn-rounded mb-3 mt-3" onclick="location.href='occupant-visitor-register.html';"><i class="uil-edit-alt"></i> REGISTER NOW</button></div>
+                        <div class="flex-item">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none text-muted"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="uil uil-ellipsis-h font-size-16"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
 
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-body text-center p-5 visitor-bg2">
-                                        <h3 class="text-color-white">Let your friends / vendors register on their own</h3>
-                                        <div class="margin-auto"><button type="submit" class="btn btn-primary btn-rounded mb-3 mt-3" data-toggle="modal" data-target="#sharelink"><i class="uil-link-alt"></i> SHARE LINK</button></div>
-
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                    <a href="occupant-visitor-edit-overnight.html" class="dropdown-item">
+                                        <i class='uil uil-info-circle text-dark mr-1'></i> View Details
+                                    </a>
+                                  
+                                    <!-- <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-check-circle text-success mr-1'></i> Approve
+                                    </a> -->
+                                 
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-times-circle text-danger mr-1'></i> Reject
+                                    </a>
+                                   
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-redo text-info mr-1'></i> Resend QR Code
+                                    </a>
+                                </div> 
+                            </div>
+                            <br>
+                            <h5 class="text-success">Registered Visitor</h5>
+                            <span class="badge badge-success width-sm">Approved</span>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="text-dark bold">Faith (012 345 6789)</div>
+                                    <div class="text-dark semibold">1 Nov 2024 - 2 Nov 2024</div>
+                                    <div class="text-dark semibold">Parking Lot Name 11 (Overnight, 1 night)</div>
+                                    Slot 12 (11:01 - 12:00)<br>Slot 12 (11:01 - 12:00)
+                                    <div>Time In: - </div>
+                                    <div>Time Out: - </div>
+                                </div>
+                                <!-- <div class="margin-auto mt-2"><a href="occupant-visitor-edit-overnight.html"
+                                        class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div> -->
+                            </div>
                         </div>
-                        <!-- end row-->
+                        
+                        <div class="flex-item">
+                            <div class="dropdown float-right">
+                                <a href="#" class="dropdown-toggle arrow-none text-muted"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="uil uil-ellipsis-h font-size-16"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
+                                    <a href="occupant-visitor-edit-overnight.html" class="dropdown-item">
+                                        <i class='uil uil-info-circle text-dark mr-1'></i> View Details
+                                    </a>
+                                  
+                                    <!-- <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-check-circle text-success mr-1'></i> Approve
+                                    </a> -->
+                                 
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-times-circle text-danger mr-1'></i> Reject
+                                    </a>
+                                   
+                                    <a href="javascript:void(0);" class="dropdown-item">
+                                        <i class='uil uil-redo text-info mr-1'></i> Resend QR Code
+                                    </a>
+                                </div> 
+                            </div>
+                            <br>
+                            <h5 class="text-success">Registered Visitor</h5>
+                            <span class="badge badge-success width-sm">Approved</span>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="text-dark bold">Faith (012 345 6789)</div>
+                                    <div class="text-dark semibold">1 Nov 2024 - 2 Nov 2024</div>
+                                    <div class="text-dark semibold">Parking Lot Name 11 (Overnight, 1 night)</div>
+                                    Slot 12 (11:01 - 12:00)<br>Slot 12 (11:01 - 12:00)
+                                    <div>Time In: - </div>
+                                    <div>Time Out: - </div>
+                                </div>
+                                <!-- <div class="margin-auto mt-2"><a href="occupant-visitor-edit-overnight.html"
+                                        class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div> -->
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <!-- <div class="col-sm-6 col-lg-4">
+                                <div class="card flex">
                                     <div class="card-body text-center p-3">
                                         <h5 class="text-danger"><i class="uil-exclamation-circle font-size-20 mr-1"></i>You have a New Visitor Registration Approval Request from Security Department</h5>
                                         <div class="row width-md mb-2">
@@ -92,69 +268,14 @@
                                             </div>
                                         </div>
                                         <div class="margin-auto"><button type="submit" class="btn btn-danger btn-sm btn-rounded mb-3" data-toggle="modal" data-target="#acceptrequest">Check out who is your visitor <i class="uil-smile-wink align-self-center"></i></button></div>
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
-                        </div>
-                        <!-- end row-->
+                                    </div>
+                                </div>
+                            </div> -->
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
+                        <!-- <div class="col-sm-6 col-lg-4">
+                                <div class="card flex">
                                     <div class="card-body text-center p-3">
                                         <h5 class="text-color-greenBright">You have 2 active visitor parking booking</h5>
-                                        <!-- <p class="text-dark bold">Parking Lot Name 3 (Limited to 3 slots) on 15 Oct 2024</p>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-sm-4">
-                                                <div class="card bg-color-grayLight mb-2">
-                                                    <div class="card-body text-center p-2">
-                                                        <div class="bold">Slot 16</div>
-                                                        <small>15:01 - 16:00</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-4">
-                                                <div class="card bg-color-grayLight mb-2">
-                                                    <div class="card-body text-center p-2">
-                                                        <div class="bold">Slot 17</div>
-                                                        <small>16:01 - 17:00</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-4">
-                                                <div class="card bg-color-grayLight mb-2">
-                                                    <div class="card-body text-center p-2">
-                                                        <div class="bold">Slot 18</div>
-                                                        <small>17:01 - 18:00</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="margin-auto"><a href="occupant-visitor-edit.html" class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div>
-
-                                        <p class="text-dark bold">Parking Lot Name 11 (Overnight, 1 night)</p>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-sm-4">
-                                                <div class="card bg-color-grayLight mb-2">
-                                                    <div class="card-body text-center p-2">
-                                                        From 1 Nov 2024
-                                                        <div class="bold">Slot 12</div>
-                                                        <small>11:01 - 12:00</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-4">
-                                                <div class="card bg-color-grayLight mb-2">
-                                                    <div class="card-body text-center p-2">
-                                                        to 2 Nov 2024
-                                                        <div class="bold">Slot 12</div>
-                                                        <small>11:01 - 12:00</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="margin-auto mt-2"><a href="occupant-visitor-edit-overnight.html" class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div> -->
-
                                         <div class="row pl-2">
                                             <div class="col-lg-12 col-sm-12">
                                                 <div class="text-dark bold">Parking Lot Name 3 (Limited to 3 slots)</div>
@@ -163,9 +284,14 @@
                                             </div>
                                             <div class="margin-auto mt-2"><a href="occupant-visitor-edit.html" class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div>
                                         </div>
-                                    
-                                        
-                                        <div class="row pl-2">
+
+                                    </div>
+                                </div>
+                            </div> -->
+                        <!-- <div class="col-sm-6 col-lg-4">
+                                <div class="card flex">
+                                    <div class="card-body text-center p-3">
+                                        <h5 class="text-color-greenBright">You have 2 active visitor parking booking</h5><div class="row pl-2">
                                             <div class="col-lg-12 col-sm-12">
                                                 <div class="text-dark bold">Parking Lot Name 11 (Overnight, 1 night)</div>
                                                 <div class="text-muted">Visitor: Faith</div>
@@ -173,33 +299,31 @@
                                             </div>
                                             <div class="margin-auto mt-2"><a href="occupant-visitor-edit-overnight.html" class="btn btn-success btn-sm btn-rounded mb-3">View Detail</a></div>
                                         </div>
-                                        
-                                        
+                                    </div>
+                                </div>
+                            </div> -->
+                    </div>
+                    <!-- end row-->
 
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
-                        </div>
-                        <!-- end row-->
+                </div> <!-- container-fluid -->
 
-                    </div> <!-- container-fluid -->
+            </div> <!-- content -->
 
-                </div> <!-- content -->
+            @@include('./partials/footer.html')
 
-                @@include('./partials/footer.html')
+        </div>
 
-            </div>
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-            <!-- modal accept request -->
-        <div class="modal fade" id="acceptrequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <!-- modal accept request -->
+        <div class="modal fade" id="acceptrequest" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Accept Request for Parking Lot</h5>
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Visitor Registration Details</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -273,92 +397,102 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal"><i class="uil-check"></i> Accept Request</button>
+                        <button type="button" class="btn btn-light btn-rounded width-sm"
+                            data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success btn-rounded"
+                        data-dismiss="modal">Approve</button>
+                        <button type="button" class="btn btn-danger btn-rounded"
+                        data-dismiss="modal">Reject</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- -->
 
-            <!-- modal share link -->
-            <div class="modal fade" id="sharelink" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Share Link</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h5>Paste the link into your chosen app (e.g., email, messaging) to share with friends and vendors.</h5>
-                                </div>
+        <!-- modal share link -->
+        <div class="modal fade" id="sharelink" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Share Link</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h5>Paste the link into your chosen app (e.g., email, messaging) to share with friends
+                                    and vendors.</h5>
                             </div>
-                            <div class="sharelink d-inline-block mb-3 mb-sm-0 col-lg-12">
-                                <form>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control copylink-input"
-                                            placeholder="" value="http://propertygaga.com/beta2/occupant-visitor-sharelink.html" />
-                                        <div class="input-group-append">
-                                            <button class="btn btn-soft-primary" type="button">
-                                                <i class='uil uil-copy-alt'></i>
-                                            </button>
-                                        </div>
+                        </div>
+                        <div class="sharelink d-inline-block mb-3 mb-sm-0 col-lg-12">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control copylink-input" placeholder=""
+                                        value="http://propertygaga.com/beta2/occupant-visitor-sharelink.html" />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-soft-primary" type="button">
+                                            <i class='uil uil-copy-alt'></i>
+                                        </button>
                                     </div>
-                                </form>
-                            </div>
-                            <i><br><br>Note to developer: page to link <a href="occupant-visitor-sharelink.html">occupant-visitor-sharelink.html</a></i>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                        </div>
+                        <i><br><br>Note to developer: page to link <a
+                                href="occupant-visitor-sharelink.html">occupant-visitor-sharelink.html</a></i>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded"
+                            data-dismiss="modal">Close</button>
+                        
                     </div>
                 </div>
             </div>
-            <!-- share link end -->
-
         </div>
-        <!-- END wrapper -->
+        <!-- share link end -->
 
-        @@include('./partials/right-sidebar.html')
+    </div>
+    <!-- END wrapper -->
 
-        <!-- Vendor js -->
-        <script src="assets/js/vendor.min.js"></script>
+    @@include('./partials/right-sidebar.html')
 
-        <!-- Plugins Js -->
-        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-        <script src="assets/libs/select2/select2.min.js"></script>
-        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
-        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
-        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-        <!-- Init js-->
-        <script src="assets/js/pages/form-advanced.init.js"></script>
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
 
-        <!-- datatable js -->
-        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
-        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
-        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
-        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
-        
-        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
-        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
-        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
-        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
-        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
 
-        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
-        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
 
-        <!-- Datatables init -->
-        <script src="assets/js/pages/datatables.init.js"></script>
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
 
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-        
-    </body>
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+
 </html>

@@ -4212,3 +4212,52 @@ a.badge-alert:focus, a.badge-alert.focus {
   white-space: nowrap;
   text-overflow: ellipsis;
   vertical-align: middle; }
+
+/* flex container */
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left; }
+
+.flex-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(33.33% - 15px);
+          flex: 1 1 calc(33.33% - 15px);
+  /* 3 columns in large screens */
+  text-align: center;
+  max-width: 315px;
+  /* Ensures all boxes have the same width */
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 110px;
+  /* Ensuring equal height */
+  border: 1px solid #ededed;
+  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+@media (max-width: 992px) {
+  .flex-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    /* 1 column on mobile */
+    max-width: 100%; } }
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .flex-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+    /* 2 columns on iPad */
+    max-width: 315px; } }

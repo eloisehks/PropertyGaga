@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-security.html')
+
+            @@include('./partials/left-sidebar-security.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Visitor Listing (Pedestrian)</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="security-visitor-with-vehicle-approved-edit.html" class="btn btn-primary btn-rounded mb-3 mb-sm-0 mr-1"><i class="uil-focus mr-1"></i> Scan QR Code</a>  <a href="security-visitor-register.html" class="btn btn-dark btn-rounded mb-3 mb-sm-0 mr-1"><i class="uil-edit-alt mr-1"></i> Register</a> <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form class="">
+                                                <div class="mb-2">
+                                                    <div class="form-row align-items-center">
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <select class="form-control custom-select">
+                                                                    <option selected>Visitor Type</option>
+                                                                    <option>Visitor</option>
+                                                                    <option>Contractor</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <select class="form-control custom-select">
+                                                                    <option selected>Visitor Sub Type</option>
+                                                                    <option>Renovation</option>
+                                                                    <option>Move in / Move out</option>
+                                                                    <option>Food Delivery</option>
+                                                                    <option>Parcel Delivery</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <select class="form-control custom-select">
+                                                                    <option value="0">Access Point</option>
+                                                                    <option>Main Entrance</option>
+                                                                    <option>Entrance A</option>
+                                                                    <option>Entrance B</option>
+                                                                    <option>Entrance C</option>
+                                                                    <option>Gym Room</option>
+                                                                    <option>Multipurpose Hall</option>
+                                                                </select>
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" id="basic-timepicker" class="form-control" placeholder="Time From">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" id="basic-timepicker" class="form-control" placeholder="Time To">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable2" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>No.</th>
+                                                                <th class="text-center">Status</th>
+                                                                <th>Unit to Visit</th>
+                                                                <th>Visitor</th>
+                                                                <th>Visitor Type</th>
+                                                                <th>Visitor Sub Type</th>
+                                                                <th>Registered by</th>
+                                                                <th>Check-in</th>
+                                                                <th>Check-out</th>
+                                                                <th class="text-center">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a class="btn btn-sm btn-light btn-rounded p-2 border-success animate-blinker2s" data-toggle="modal" data-target="#modal-readnotice">
+                                                                        <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success cursor-pointer"></i></div>
+                                                                    </a>
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
+                                                                <td>8-10-02</td>
+                                                                <td><a href="security-without-vehicle-approved-edit.html">Faith<br>012 345 6789</a></td>
+                                                                <td>Contractor</td>
+                                                                <td>Renovation</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-center pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="text-danger">
+                                                                <td></td>
+                                                                <td>2</td>
+                                                                <td class="text-center"><span class="badge badge-warning width-sm">Awaiting approval</span></td>
+                                                                <td>6-10-02</td>
+                                                                <td><a href="security-without-vehicle-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td>-</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-center pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                                
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal read notification -->
+            <div class="modal fade" id="modal-readnotice" tabindex="-1" role="dialog" aria-labelledby="modal-errorLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="">Access Passed</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <i class="uil-smile text-success display-3"></i>
+                            <!-- <h4 class="text-success mt-2">Access Passed</h4> -->
+                            <div class="mx-auto text-muted mb-2"><small>Approved on 24 Jun 2024, 3:30:40pm</small></div>
+                            <p class="w-75 mx-auto text-muted">Visitor access to the building is permitted.</p>
+                            <div class="mt-4 mb-3">
+                                <a href="#" class="btn btn-outline-primary btn-rounded width-md"  data-dismiss="modal"><i class="uil uil-comment-alt-check mr-1"></i>Mark as Read</a>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- modal read notification end -->
+
+            <!-- modal note -->
+            <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                            <textarea class="form-control" rows="4"
+                                            id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end note -->
+
+ 
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Unit: 6-10-02</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="mb-4" id="exampleModalScrollableTitle">Call Occupant<br><span class="badge badge-soft-primary badge-pill p-2 pl-4 pr-4 m-2">013 555 5733</span></h5>
+                            <div class="col-md-12 border-top-gray300 mt-1 mb-4"></div>
+                            <h5 class="mb-4">Call Visitor<br><span class="badge badge-soft-primary badge-pill p-2 pl-4 pr-4 m-2">013 111 5733</span></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
+
+            <!-- modal note -->
+            <!-- <div class="modal fade" id="modal-note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 col-form-label"
+                                                for="example-fileinput">Remarks</label>
+                                            <div class="col-lg-10">
+                                                <textarea class="form-control" rows="5" id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 col-form-label"
+                                                for="example-fileinput">Upload Photo</label>
+                                            <div class="col-lg-10">
+                                                <input type="file" class="form-control"
+                                                    id="example-fileinput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- modal note end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#visitorlist').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script>
+        
+    </body>
+</html>

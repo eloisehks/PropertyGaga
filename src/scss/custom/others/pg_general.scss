@@ -40,6 +40,7 @@
 // fixed to top button
 // Slider in Task
 // Limit File Name Length (photo attached)
+// flex container
 
 
 /**************  **************/ 
@@ -1652,4 +1653,39 @@ div.dataTables_wrapper {
     white-space: nowrap;
     text-overflow: ellipsis;
     vertical-align: middle;
+}
+
+/* flex container */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: left;
+}
+
+.flex-item {
+    flex: 1 1 calc(33.33% - 15px); /* 3 columns in large screens */
+    text-align: center;
+    max-width: 315px; /* Ensures all boxes have the same width */
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 110px; /* Ensuring equal height */
+    border: 1px solid #ededed;
+    background-color: #fff;;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .flex-item {
+        flex: 1 1 100%; /* 1 column on mobile */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .flex-item {
+        flex: 1 1 50%; /* 2 columns on iPad */
+        max-width: 315px;
+    }
 }

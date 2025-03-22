@@ -65,26 +65,53 @@
                                     <div class="card-body">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
-                                                <a href="#vehicle" data-toggle="tab" aria-expanded="false"
+                                                <a href="#all" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link active">
-                                                    <span class="d-block d-sm-none">Visitor (Vehicle)</span>
-                                                    <span class="d-none d-sm-block">Visitor (Vehicle)</span>
+                                                    <span class="d-block d-sm-none">All</span>
+                                                    <span class="d-none d-sm-block">All</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#pedestrian" data-toggle="tab" aria-expanded="true"
+                                                <a href="#visitor" data-toggle="tab" aria-expanded="true"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none">Visitor (Pedestrian)</span>
-                                                    <span class="d-none d-sm-block">Visitor (Pedestrian)</span>
+                                                    <span class="d-block d-sm-none">Visitor</span>
+                                                    <span class="d-none d-sm-block">Visitor</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#contractor" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Contractor</span>
+                                                    <span class="d-none d-sm-block">Contractor</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#dropoff" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Drop off</span>
+                                                    <span class="d-none d-sm-block">Drop off</span>
                                                 </a>
                                             </li>
                                         </ul>
                                         <div class="tab-content p-3 text-muted">
-                                            <div class="tab-pane show active" id="vehicle">
+                                            <div class="tab-pane show active" id="all">
                                                 <div class="mb-2">
                                                     <form class="">
                                                         <div class="mb-2">
                                                             <div class="form-row align-items-center">
+                                                                <div class="col-lg-2">
+                                                                    <div class="form-group mb-3">
+                                                                        <select class="form-control custom-select">
+                                                                            <option selected>Status</option>
+                                                                            <option selected>All Status</option>
+                                                                            <option>Pending Approval</option>
+                                                                            <option>Approved</option>
+                                                                            <option>Overnight</option>
+                                                                            <option>Penalty</option>
+                                                                            <option>Expired</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="col-lg-2">
                                                                     <div class="form-group mb-3">
                                                                         <select class="form-control custom-select">
@@ -96,41 +123,7 @@
                                                                 </div>
                                                                 <div class="col-lg-2">
                                                                     <div class="form-group mb-3">
-                                                                        <select class="form-control custom-select">
-                                                                            <option selected>Visitor Sub Type</option>
-                                                                            <option>Renovation</option>
-                                                                            <option>Move in / Move out</option>
-                                                                            <option>Food Delivery</option>
-                                                                            <option>Parcel Delivery</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control custom-select">
-                                                                            <option value="0">Parking Lot Name</option>
-                                                                            <option>Parking Lot Name 1</option>
-                                                                            <option>Parking Lot Name 2</option>
-                                                                            <option>Parking Lot Name 3</option>
-                                                                            <option>Parking Lot Name 4</option>
-                                                                            <option>Loading Bay 1</option>
-                                                                            <option>Loading Bay 2</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Time From">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Time To">
+                                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Parking Date">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-auto">
@@ -150,44 +143,40 @@
                                                                         <th>Unit to Visit</th>
                                                                         <th>Visitor</th>
                                                                         <th>Visitor Type</th>
-                                                                        <th>Visitor Sub Type</th>
+                                                                        <th class="text-center">Overnight</th>
                                                                         <th>Registered on</th>
                                                                         <th>Registered by</th>
-                                                                        <th>Parking Type</th>
-                                                                        <th>Parking Lot Name</th>
+                                                                        <th>Approved Date</th>
+                                                                        <th>Approved By</th>
                                                                         <th>Car Plate No.</th>
-                                                                        <th>Booking Starts</th>
-                                                                        <th>Booking Ends</th>
-                                                                        <th class="text-center">Booking Duration</th>
+                                                                        <th>Parking Date</th>
                                                                         <th>Check-in</th>
                                                                         <th>Check-out</th>
-                                                                        <th class="text-center">Actions</th>
+                                                                        <th class="text-right">Actions</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
                                                                         <td>
                                                                             <a class="btn btn-sm btn-light btn-rounded p-2 border-success animate-blinker2s" data-toggle="modal" data-target="#modal-readnotice">
-                                                                                <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success"></i></div>
+                                                                                <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success cursor-pointer"></i></div>
                                                                             </a>
                                                                         </td>
-                                                                        <td>1</td>
+                                                                        <td>7</td>
                                                                         <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
                                                                         <td>8-10-02</td>
                                                                         <td><a href="security-visitor-with-vehicle-approved-edit.html">Faith<br>012 345 6789</a></td>
                                                                         <td>Visitor</td>
-                                                                        <td>-</td>
+                                                                        <td class="text-center">No</td>
                                                                         <td>20 Oct 2024<br>3:30:00pm</td>
                                                                         <td>Security<br>(Malik - 20948657)</td>
-                                                                        <td>Visitor Parking</td>
-                                                                        <td>Parking Lot Name 6</td>
-                                                                        <td class="text-center">MMM 3333</td>
-                                                                        <td>8 Nov 2024<br>9:01:00am</td>
-                                                                        <td>8 Nov 2024<br>11:00:00am</td>
-                                                                        <td class="text-center">2 hours</td>
+                                                                        <td>20 Oct 2024</td>
+                                                                        <td>Catherine<br>8-10-02</td>
+                                                                        <td class="text-center">MMM 4444</td>
+                                                                        <td>20 Oct 2024</td>
                                                                         <td></td>
                                                                         <td></td>
-                                                                        <td class="text-center pb-1">
+                                                                        <td class="text-right pb-1">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                     data-toggle="dropdown" aria-haspopup="true"
@@ -199,25 +188,52 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr class="text-danger">
-                                                                        <td></td>
-                                                                        <td>2</td>
-                                                                        <td class="text-center"><span class="badge badge-warning width-sm">Awaiting approval</span></td>
-                                                                        <td>6-10-02</td>
-                                                                        <td><a href="security-visitor-with-vehicle-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
-                                                                        <td>Contractor</td>
-                                                                        <td>Renovation</td>
+                                                                    <tr>
+                                                                        <td>
+                                                                        </td>
+                                                                        <td>1</td>
+                                                                        <td class="text-center"><span class="badge badge-danger width-sm">Expired</span></td>
+                                                                        <td>8-10-02</td>
+                                                                        <td><a href="#">Faith<br>012 345 6789</a></td>
+                                                                        <td>Visitor</td>
+                                                                        <td class="text-center">No</td>
                                                                         <td>20 Oct 2024<br>3:30:00pm</td>
                                                                         <td>Security<br>(Malik - 20948657)</td>
-                                                                        <td>Loading Bay Parking</td>
-                                                                        <td>Loading Bay 2</td>
+                                                                        <td>-</td>
+                                                                        <td>-</td>
+                                                                        <td class="text-center">MMM 3333</td>
+                                                                        <td>20 Oct 2024</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td class="text-right pb-1">
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td>2</td>
+                                                                        <td class="text-center"><span class="badge badge-warning width-sm">Pending approval</span></td>
+                                                                        <td>6-10-02</td>
+                                                                        <td><a href="security-visitor-with-vehicle-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
+                                                                        <td>Drop off</td>
+                                                                        <td class="text-center">No</td>
+                                                                        <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                        <td>Security<br>(Malik - 20948657)</td>
+                                                                        <td>-</td>
+                                                                        <td>-</td>
                                                                         <td class="text-center">PDD 1111</td>
-                                                                        <td>5 Nov 2024<br>3:01:00am</td>
-                                                                        <td>5 Nov 2024<br>6:00:00am</td>
-                                                                        <td class="text-center">3 hours</td>
+                                                                        <td>20 Oct 2024</td>
                                                                         <td></td>
                                                                         <td></td>
-                                                                        <td class="text-center pb-1">
+                                                                        <td class="text-right pb-1">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                     data-toggle="dropdown" aria-haspopup="true"
@@ -232,22 +248,22 @@
                                                                     <tr class="text-danger">
                                                                         <td></td>
                                                                         <td>3</td>
-                                                                        <td class="text-center"><span class="badge badge-danger width-sm">Time Exceeded</span></td>
+                                                                        <td class="text-center"><span class="badge badge-danger width-sm">Penalty</span><br><b>RM 15.00</b> <i class="uil uil-question-circle"  data-toggle="tooltip"
+                                                                            data-placement="top" title=""
+                                                                            data-original-title="RM 5.00 /hr"></i></td>
                                                                         <td>6-10-02</td>
-                                                                        <td><a href="security-visitor-with-vehicle-timeexceeded-edit.html">Ahmad<br>012 345 6789</a></td>
+                                                                        <td><a href="security-visitor-with-vehicle-penalty-edit.html">Ahmad<br>012 345 6789</a></td>
                                                                         <td>Visitor</td>
-                                                                        <td>-</td>
-                                                                        <td>20 Oct 2024<br>3:30:02pm</td>
+                                                                        <td class="text-center">No</td>
+                                                                        <td>19 Oct 2024<br>3:30:02pm</td>
                                                                         <td>Security<br>(Malik - 20948657)</td>
-                                                                        <td>Visitor Parking</td>
-                                                                        <td>Parking Lot Name 3</td>
+                                                                        <td>19 Oct 2024</td>
+                                                                        <td>Sue<br>6-10-02</td>
                                                                         <td class="text-center">WWW 2222</td>
-                                                                        <td>5 Nov 2024<br>10:01:00am</td>
-                                                                        <td>5 Nov 2024<br>1:00:00pm</td>
-                                                                        <td class="text-center">3 hours</td>
-                                                                        <td>5 Nov 2024<br>10:00:33am</td>
+                                                                        <td>20 Oct 2024</td>
+                                                                        <td>20 Oct 2024<br>3:30:00pm</td>
                                                                         <td></td>
-                                                                        <td class="text-center pb-1">
+                                                                        <td class="text-right pb-1">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                     data-toggle="dropdown" aria-haspopup="true"
@@ -255,6 +271,7 @@
                                                                                 <div class="dropdown-menu">
                                                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
                                                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#">Pay Penalty</a>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -267,18 +284,16 @@
                                                                         <td>8-10-02</td>
                                                                         <td><a href="security-visitor-with-vehicle-approved-overnight-edit.html">CJ<br>012 345 6789</a></td>
                                                                         <td>Visitor</td>
-                                                                        <td>-</td>
-                                                                        <td>20 Oct 2024<br>3:30:00pm</td>
-                                                                        <td>Occupant</td>
-                                                                        <td>Visitor Parking</td>
-                                                                        <td>Parking Lot Name 4</td>
+                                                                        <td class="text-center">Yes</td>
+                                                                        <td>17 Oct 2024<br>3:30:00pm</td>
+                                                                        <td>Bee<br>8-10-02</td>
+                                                                        <td>17 Oct 2024</td>
+                                                                        <td>Bee<br>8-10-02</td>
                                                                         <td class="text-center">JJJ 9999</td>
-                                                                        <td>5 Nov 2024<br>4:01:00pm</td>
-                                                                        <td>7 Nov 2024<br>4:00:00pm</td>
-                                                                        <td class="text-center">2 nights</td>
+                                                                        <td>20 Oct 2024</td>
                                                                         <td></td>
                                                                         <td></td>
-                                                                        <td class="text-center pb-1">
+                                                                        <td class="text-right pb-1">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                     data-toggle="dropdown" aria-haspopup="true"
@@ -290,25 +305,51 @@
                                                                             </div>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr class="text-danger">
+                                                                    <tr>
                                                                         <td></td>
                                                                         <td>5</td>
                                                                         <td class="text-center"><span class="badge badge-danger width-sm">Expired</span></td>
                                                                         <td>6-10-02</td>
                                                                         <td><a href="#">Timothy<br>012 345 6789</a></td>
                                                                         <td>Contractor</td>
-                                                                        <td>Renovation</td>
+                                                                        <td class="text-center">No</td>
                                                                         <td>20 Oct 2024<br>3:30:00pm</td>
-                                                                        <td>Occupant</td>
-                                                                        <td>Loading Bay Parking</td>
-                                                                        <td>Loading Bay 2</td>
-                                                                        <td class="text-center">PDD 1111</td>
-                                                                        <td>4 Nov 2024<br>3:01:00am</td>
-                                                                        <td>4 Nov 2024<br>6:00:00am</td>
-                                                                        <td class="text-center">3 hours</td>
+                                                                        <td>Mathew<br>6-10-02</td>
+                                                                        <td>-</td>
+                                                                        <td>-</td>
+                                                                        <td class="text-center">PDD 2222</td>
+                                                                        <td>20 Oct 2024</td>
                                                                         <td></td>
                                                                         <td></td>
-                                                                        <td class="text-center pb-1">
+                                                                        <td class="text-right pb-1">
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>                                                                                    
+                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td>6</td>
+                                                                        <td class="text-center"><span class="badge badge-warning width-sm">Pending Approval</span></td>
+                                                                        <td>6-10-02</td>
+                                                                        <td><a href="#">Benjamin<br>012 345 6789</a></td>
+                                                                        <td>Contractor</td>
+                                                                        <td class="text-center">Yes</td>
+                                                                        <td>17 Oct 2024<br>3:30:00pm</td>
+                                                                        <td>Michelle<br>6-10-02</td>
+                                                                        <td>-</td>
+                                                                        <td>-</td>
+                                                                        <td class="text-center">PPP 3</td>
+                                                                        <td>20 Oct 2024</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td class="text-right pb-1">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                                     data-toggle="dropdown" aria-haspopup="true"
@@ -326,144 +367,19 @@
                                                     </form>
 
                                                     <br><br>Note to developer:
-                                                    <br>status “Expired” --> Not check-in, booking period has passed
-                                                    <br> status "Time Exceeded" --> Already check-in but not check-out, booking period has passed
+                                                    <br>status “Expired” --> If owner did not approve within 15mins, system auto expired
+                                                    <br> status "Penalty" --> If the owner in today visitor list and not out after new day...then Penalty will impose and security can filter and physically go check the car or make calls.
                                                 </div>
 
                                             </div>
-                                            <div class="tab-pane" id="pedestrian">
-                                                <div class="mb-2">
-                                                    <form class="">
-                                                        <div class="mb-2">
-                                                            <div class="form-row align-items-center">
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <select class="form-control custom-select">
-                                                                            <option selected>Visitor Type</option>
-                                                                            <option>Visitor</option>
-                                                                            <option>Contractor</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <select class="form-control custom-select">
-                                                                            <option selected>Visitor Sub Type</option>
-                                                                            <option>Renovation</option>
-                                                                            <option>Move in / Move out</option>
-                                                                            <option>Food Delivery</option>
-                                                                            <option>Parcel Delivery</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="Select Date">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- <div class="col-auto">
-                                                                    <div class="form-group">
-                                                                        <select class="form-control custom-select">
-                                                                            <option value="0">Access Point</option>
-                                                                            <option>Main Entrance</option>
-                                                                            <option>Entrance A</option>
-                                                                            <option>Entrance B</option>
-                                                                            <option>Entrance C</option>
-                                                                            <option>Gym Room</option>
-                                                                            <option>Multipurpose Hall</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div> -->
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Time From">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-2">
-                                                                    <div class="form-group mb-3">
-                                                                        <input type="text" id="basic-timepicker" class="form-control" placeholder="Time To">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <div class="form-group">
-                                                                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="table-responsive">
-                                                            <table id="basic-datatable2" class="table table-hover nowrap full-width">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th></th>
-                                                                        <th>No.</th>
-                                                                        <th class="text-center">Status</th>
-                                                                        <th>Unit to Visit</th>
-                                                                        <th>Visitor</th>
-                                                                        <th>Visitor Type</th>
-                                                                        <th>Visitor Sub Type</th>
-                                                                        <th>Registered by</th>
-                                                                        <th>Check-in</th>
-                                                                        <th>Check-out</th>
-                                                                        <th class="text-center">Actions</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <a class="btn btn-sm btn-light btn-rounded p-2 border-success animate-blinker2s" data-toggle="modal" data-target="#modal-readnotice">
-                                                                                <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success"></i></div>
-                                                                            </a>
-                                                                        </td>
-                                                                        <td>1</td>
-                                                                        <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
-                                                                        <td>8-10-02</td>
-                                                                        <td><a href="security-without-vehicle-approved-edit.html">Faith<br>012 345 6789</a></td>
-                                                                        <td>Contractor</td>
-                                                                        <td>Renovation</td>
-                                                                        <td>Security<br>(Malik - 20948657)</td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td class="text-center pb-1">
-                                                                            <div class="btn-group dropleft">
-                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="text-danger">
-                                                                        <td></td>
-                                                                        <td>2</td>
-                                                                        <td class="text-center"><span class="badge badge-warning width-sm">Awaiting approval</span></td>
-                                                                        <td>6-10-02</td>
-                                                                        <td><a href="security-without-vehicle-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
-                                                                        <td>Visitor</td>
-                                                                        <td>-</td>
-                                                                        <td>Security<br>(Malik - 20948657)</td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td class="text-center pb-1">
-                                                                            <div class="btn-group dropleft">
-                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                            <div class="tab-pane" id="visitor">
+                                             visitor
+                                            </div>
+                                            <div class="tab-pane" id="contractor">
+                                                contractor
+                                            </div>
+                                            <div class="tab-pane" id="dropoff">
+                                                dropoff
                                             </div>
                                         </div>
 

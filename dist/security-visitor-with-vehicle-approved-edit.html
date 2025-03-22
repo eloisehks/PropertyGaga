@@ -188,11 +188,23 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="security-visitor-listing.html">
+                                <a href="javascript: void(0);">
                                     <i class="uil uil-users-alt"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Visitor </span>
+            
+                                    <span>Visitor</span>
+                                    <span class="menu-arrow"></span>
                                 </a>
+
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="security-visitor-listing.html">Visitor (Vehicle)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="security-visitor-pedestrian.html">Visitor (Pedestrian)
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
@@ -207,6 +219,9 @@
                                     </li>
                                     <li>
                                         <a href="security-access-lpr.html">Entry Log</a>
+                                    </li>
+                                    <li>
+                                        <a href="security-car-parking.html">Car Parking</a>
                                     </li>
                                     <li>
                                         <a href="security-access-face-rec.html">Face Recognition</a>
@@ -310,6 +325,13 @@
                                                                 <label class="custom-control-label" for="vehicle22">Contractor</label>
                                                             </div>
                                                         </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="vehicle33" name="customRadio"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="vehicle33">Drop Off</label>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="form-row row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
@@ -323,31 +345,6 @@
                                                                 <option>Big Truck</option>
                                                                 <option>Others</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center mb-2">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Parking Type</label>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio2" name="customRadio"
-                                                                    class="custom-control-input" checked>
-                                                                <label class="custom-control-label" for="customRadio2">Visitor Parking</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio1" name="customRadio"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadio1">Loading Bay Parking</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadio3" name="customRadio"
-                                                                    class="custom-control-input" disabled>
-                                                                <label class="custom-control-label" for="customRadio3">Drop Off</label>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -395,19 +392,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-3 col-form-label" for="example-fileinput">Note</label>
-                                                        <div class="col-lg-5">
-                                                            <textarea class="form-control" rows="4" id="textarea"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Car Plate No.</label>
                                                         <div class="col-lg-5">
                                                             <input type="text" class="form-control" id="" placeholder="" value="MMM 3333">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Registered By</label>
+                                                        <label class="col-3 col-form-label" for="example-fileinput">Note</label>
+                                                        <div class="col-lg-5">
+                                                            <textarea class="form-control" rows="4" id="textarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Registered by</label>
                                                         <div class="col-lg-5">
                                                             <select class="form-control wide" data-plugin="customselect">
                                                                 <option value="0" selected>Malik (20948657)</option>
@@ -421,7 +418,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Registered On</label>
+                                                        <label class="col-lg-3 col-form-label">Registered on</label>
                                                         <div class="col-lg-5">
                                                             <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" disabled>
                                                         </div>
@@ -432,31 +429,32 @@
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" id="customRadioyesyes" name="customRadio22"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadioyesyes">Yes</label>
+                                                                    class="custom-control-input" disabled>
+                                                                <label class="custom-control-label" for="customRadioyesyes">Yes (RM 3.00 /day)</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" id="customRadionono" name="customRadio22"
-                                                                    class="custom-control-input" checked>
-                                                                <label class="custom-control-label" for="customRadionono">No</label>
+                                                                    class="custom-control-input" checked disabled>
+                                                                <label class="custom-control-label" for="customRadionono">No (Penalty RM 5.00 /hr)</label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Booking Date</label>
+                                                        <label class="col-lg-3 col-form-label">Parking Date</label>
                                                         <div class="col-lg-5">
-                                                            <input class="form-control" id="" type="date" name="date" placeholder="">
+                                                            <input class="form-control" id="" type="date" name="date" placeholder="" value="20 Oct 2024" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Parking Lot
                                                             <br>
                                                             <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-2" data-toggle="modal" data-target="#parkinglot">View Parking Lot Location</a>
                                                         </label>
                                                         <div class="col-lg-5">
+                                                            
                                                             <select data-plugin="customselect" class="form-control" data-placeholder="Select an option">
                                                                 <option></option>
                                                                 <option value="0">Parking Lot Name 1 (Limited to 1 slot)</option>
@@ -465,8 +463,8 @@
                                                                 <option value="4">Parking Lot Name 4 (Limited to 4 slots)</option>
                                                             </select>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group row" id="affected">
+                                                    </div> -->
+                                                    <!-- <div class="form-group row" id="affected">
                                                         <label class="col-lg-3 col-form-label" for="simpleinput"></label>
                                                         <div class="col-auto">
                                                             <div class="card border-gray400">
@@ -496,11 +494,23 @@
                                                                      <input type="checkbox" name="Slot22" title="Slot 22 (21.01-22:00)">
                                                                      <input type="checkbox" name="Slot23" title="Slot 23 (22.01-23:00)">
                                                                      <input type="checkbox" name="Slot24" title="Slot 24 (23.01-24:00)">
-                                                                </div> <!-- end card body-->
-                                                            </div> <!-- end card -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Approved by</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Catherine (8-10-02)" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Approved on</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="20 Oct 2024" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row mb-4">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Access Method</label>
                                                         <div class="col-auto mt-2">
@@ -526,9 +536,7 @@
                                                             <div class="custom-control custom-checkbox">
                                                                 <input type="checkbox" class="custom-control-input" id="customCheck3">
                                                                 <label class="custom-control-label" for="customCheck3">Face Recognition</label>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <a href="#" class="btn btn-success btn-rounded ml-2 mt-2 btn-sm">Activated</a>
+                                                                <a href="#" class="btn btn-outline-primary btn-rounded ml-2 btn-sm">Activate</a>
                                                             </div>
                                                         </div>
                                                     </div>
