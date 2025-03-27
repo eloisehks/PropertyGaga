@@ -29,6 +29,10 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
+        <style>
+            .hidden { display: none; } /* Hide elements initially */
+        </style>
+
     </head>
 
     <body>
@@ -65,11 +69,21 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <form class="form-horizontal">
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col">
-                                                    <div class="form-group row mb-1">
-                                                        <label class="col-lg-4 col-form-label" for="">Upload Parking Lot Location Map</label>
-                                                        <div class="col-lg-5">
+                                                 
+                                                    <!-- 1. Parking Lot Name -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Parking Lot Name:</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="text" class="form-control" value="Parking Lot Name 1">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 2. Upload Parking Lot Location Map -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Upload Parking Lot Location Map:</label>
+                                                        <div class="col-6 text-end">
                                                             <div class="card mb-2 shadow-none border">
                                                                 <div class="p-1 px-2">
                                                                     <div class="row align-items-center">
@@ -79,7 +93,7 @@
                                                                             <p class="mb-0">1.6 MB</p>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <!-- Button -->
+                                                                           
                                                                             <a href="javascript:void(0);" data-toggle="tooltip"
                                                                                 data-placement="bottom" title="Download"
                                                                                 class="btn btn-link text-muted btn-lg p-0">
@@ -94,7 +108,185 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- <input type="file" class="form-control" id=""> -->
+                                                            <input type="file" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 3. Parking Type -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Parking Type:</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="parkingType" checked> Visitor Parking
+                                                            <input type="radio" name="parkingType"> Loading Bay Parking
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 4. Need Approval? -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Need Approval?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="approval" id="approvalYes"> Yes
+                                                            <input type="radio" name="approval" id="approvalNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="approvalDropdown">
+                                                        <label class="col-6 form-label">Who Can Approve?<br><small class="help-block">Allow multi select</small></label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <select class="form-control" multiple>
+                                                                <option>Super Admin</option>
+                                                                <option>Building Manager</option>
+                                                                <option>Admin</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 5. Set Quantity of Lots Allowed -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Set Quantity of Lots Allowed to Book?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="quantity" id="quantityYes"> Yes
+                                                            <input type="radio" name="quantity" id="quantityNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="quantityInput">
+                                                        <label class="col-6 form-label">Quantity:</label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <input type="number" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 6. Set Slot Limit -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Set Slot Limit?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="slotLimit" id="slotLimitYes"> Yes
+                                                            <input type="radio" name="slotLimit" id="slotLimitNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="slotLimitInput">
+                                                        <label class="col-6 form-label">Slot Limit:</label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <input type="number" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 7. Overnight Parking -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Overnight Parking?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="overnight" id="overnightYes"> Yes
+                                                            <input type="radio" name="overnight" id="overnightNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="overnightDays">
+                                                        <label class="col-6 form-label">Maximum Overnight Days:</label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <select class="form-control">
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                                <option>6</option>
+                                                                <option>7</option>
+                                                                <option>8</option>
+                                                                <option>9</option>
+                                                                <option>10</option>
+                                                                <option>11</option>
+                                                                <option>12</option>
+                                                                <option>13</option>
+                                                                <option>14</option>
+                                                                <option>15</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="applyCharges">
+                                                        <label class="col-6 form-label">Apply Charges for Overnight Parking?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="applyCharges" id="chargeYes"> Yes
+                                                            <input type="radio" name="applyCharges" id="chargeNo"> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="chargeAmount">
+                                                        <label class="col-6 form-label">Charge (RM per day):</label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <input type="number" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 8. Advance Booking -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Advance Booking?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="advanceBooking" id="advanceYes"> Yes
+                                                            <input type="radio" name="advanceBooking" id="advanceNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row hidden" id="advanceDays">
+                                                        <label class="col-6 form-label">Days in Advance:</label>
+                                                        <div class="col-6 col-lg-3 text-end">
+                                                            <input type="number" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 9. Penalty for Exceeded Booking Time -->
+                                                    <div class="form-group row">
+                                                        <label class="col-6 form-label">Penalty for Exceeded Booking Time?</label>
+                                                        <div class="col-6 text-end">
+                                                            <input type="radio" name="penalty" id="penaltyYes"> Yes
+                                                            <input type="radio" name="penalty" id="penaltyNo" checked> No
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row hidden" id="penaltyAmount">
+                                                        <label class="col-6 form-label">Penalty Amount (RM):</label>
+                                                        <div class="col-6 col-lg-3 text-end d-flex">
+                                                            <input type="number" class="form-control mr-2">
+                                                            <select class="form-control" id="penaltyType">
+                                                                <option value="per_hour">Per Hour</option>
+                                                                <option value="per_day">Per Day</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row mb-1">
+                                                        <label class="col-lg-4 col-form-label" for="">Upload Parking Lot Location Map</label>
+                                                        <div class="col-lg-5">
+                                                            <div class="card mb-2 shadow-none border">
+                                                                <div class="p-1 px-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <a href="javascript:void(0);"
+                                                                                class="text-muted font-weight-bold">parking.jpg</a>
+                                                                            <p class="mb-0">1.6 MB</p>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                           
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Download"
+                                                                                class="btn btn-link text-muted btn-lg p-0">
+                                                                                <i class='uil uil-cloud-download font-size-14'></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                data-placement="bottom" title="Delete"
+                                                                                class="btn btn-link text-danger btn-lg p-0">
+                                                                                <i class='uil uil-multiply font-size-14'></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                                     <div class="form-row align-items-center mt-2">
@@ -160,7 +352,7 @@
                                                     </div>
                                                     
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <div class="row">
                                                 <div class="col">

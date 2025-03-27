@@ -636,51 +636,12 @@
                                         <a href="invoices-notices-reminders.html">Reminder Settings</a>
                                     </li>
                                     <li>
-                                        <a href="javascript: void(0);" aria-expanded="false">Defaulter
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <ul class="nav-third-level" aria-expanded="false">
-                                            <li>
-                                                <a href="recovery-defaulter.html">Defaulter Listing</a>
-                                            </li>
-                                            <li>
-                                                <a href="recovery-access-deactivation.html">Access Deactivation</a>
-                                            </li>
-                                            <!-- <li>
-                                                <a href="recovery-card-blocking.html">Card Blocking</a>
-                                            </li> -->
-                                            <li>
-                                                <a href="recovery-installmentlist.html">Installment
-                                                    <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">1</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="recovery-nodbatch.html">NOD Batch</a>
-                                            </li>
-                                            <li>
-                                                <a href="recovery-tribunalbatch.html">Tribunal Batch</a>
-                                            </li>
-                                            <li>
-                                                <a href="recovery-posttribunal.html">Post-tribunal Actions</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="recovery-defaulter.html">Defaulter</a>
+                                        <a href="recovery-defaulter.html">Defaulter Listing</a>
                                     </li>
                                     <li>
-                                        <a href="recovery-card-blocking.html" class="ml-3">Card Blocking</a>
-                                    </li>
-                                    <li>
-                                        <a href="recovery-installmentlist.html" class="ml-3">Installment
+                                        <a href="recovery-installmentlist.html">Installment
                                             <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">1</span>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="recovery-nodtribunal.html" class="ml-3">Batch <small>(NOD/Tribunal)</small></a>
-                                    </li> -->
-                                    <li>
-                                        <a href="accounting-latepayment.html">Late Payment Interest</a>
                                     </li>
                                 </ul>
                             </li>
@@ -1533,490 +1494,336 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <form>
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-xl-3 col-sm-4">
-                                                        <div class="form-group">
-                                                            <select class="form-control">
-                                                                <option value="0">Outstanding Payment</option>
-                                                                <option>exact amount</option>
-                                                                <option>more than</option>
-                                                                <option>less than</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-2 col-sm-4">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" id="" placeholder="Amount (RM)">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                        </div>
+                                    <div class="card-body p-0">
+                                        <div class="row p-2">
+                                            <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
+                                                <!-- stat 1 -->
+                                                <div class="media">
+                                                    <i class='uil uil-stopwatch text-danger font-xl mr-3 ml-2'></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">14 days</h4>
+                                                        <span class="text-muted font-size-12">Notice of Reminder to be sent automatically 14 days after the due date of the invoice.</span>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="row mb-2">
-                                            <div class="col-md-12">
-                                                <small class="font-size-12">Extracted on 26-May-2021 at 11:39:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;more than RM 1,000.00</small>
                                             </div>
-                                        </div>
-
-                                        <div class="form-group row border-bottom pt-2"></div>
-
-                                        <div class="row mb-3">
-                                            <div class="col-md-12">
-                                                <a href="recovery-installment-new.html" class="btn btn-outline-secondary btn-sm btn-rounded">Installment</a> <a href="#" data-toggle="modal" data-target="#" class="btn btn-outline-secondary btn-sm btn-rounded">Deactivate Access</a> <a href="#" data-toggle="modal" data-target="#nod-tribunal" class="btn btn-outline-secondary btn-sm btn-rounded">Batch Notice Of Demand (NOD)</a>
-                                            </div> 
-                                        </div>
-
-                                        <div class="table-responsive pb-3">
-                                            <table id="basic-datatable" class="table table-hover nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th width="1%">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
-                                                            </div>
-                                                        </th>
-                                                        <th>Defaulter No.</th>
-                                                        <th width="1%">Unit No.</th>
-                                                        <th>Owners</th>
-                                                        <th>Billing Address</th>
-                                                        <th>Invoices</th>
-                                                        <th class="text-right">Last Payment</th>
-                                                        <th class="text-right">Outstanding<br>Amount</th>
-                                                        <th class="text-center">Reminder (NOR)</th>
-                                                        <th class="text-center">Reminder (NOR)<br>Due Date</th>
-                                                        <th class="text-center bg-color-propertygagaLightest">Access</th>
-                                                        <th class="text-center">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="table-tr-danger">
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                            </div>
-                                                        </td>
-                                                        <td>D00231</td>
-                                                        <td><a href="data-units-detail.html">6-01-07</a></td>   
-                                                        <td>Owner name 1, owner name 2, owner name 3</td>
-                                                        <td>Address 122, address. address, address address.</td>
-                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">6 Invoices</a> <span class="badge badge-danger">1 NEW</span></td>                                
-                                                        <td class="text-right">
-                                                            RM 1,000.00<br>
-                                                            <span class="font-size-12">2 Dec 2019</span>
-                                                        </td>
-                                                        <td class="text-right">RM 1,200.00</td>
-                                                        <td class="text-center">
-                                                            3
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <i class="uil uil-exclamation-circle"></i><br>
-                                                            <span class="font-size-12">1 Jan 2023</span>
-                                                        </td> 
-                                                        <td class="text-center bg-color-propertygagaLightest">
-                                                            Deactivated<br>
-                                                            <span class="font-size-12">1 Jan 2023<br>(BC00351)</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Installment</a>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#batchnodtri">Batch NOD</a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
-                                                            </div>
-                                                        </td>
-                                                        <td>D00235</td>
-                                                        <td><a href="data-units-detail.html">6-01-07</a></td>   
-                                                        <td>sssss, hhhhh</td>
-                                                        <td>Address 122, address. address, address address.</td>
-                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                    
-                                                        <td class="text-right">
-                                                            RM 1,000.00<br>
-                                                            <span class="font-size-12">2 Dec 2019</span>
-                                                        </td>
-                                                        <td class="text-right">RM 1,200.00</td>
-                                                        <td class="text-center">
-                                                            3
-                                                        </td>
-                                                        <td class="text-center">
-                                                            
-                                                        </td> 
-                                                        <td class="text-center bg-color-propertygagaLightest">
-                                                            Deactivated<br>
-                                                            <span class="font-size-12">1 Jan 2023<br>(BC00357)</span>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Installment</a>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#batchnodtri">Batch NOD</a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
-                                                            </div>
-                                                        </td>
-                                                        <td>D00237</td>
-                                                        <td><a href="data-units-detail.html">6-01-08</a></td> 
-                                                        <td>Nancy</td> 
-                                                        <td>Address 122, address. address, address address.</td>
-                                                        <td><a href="#" data-toggle="modal" data-target="#invoiceno">5 Invoices</a></td>                                                
-                                                        <td class="text-right">
-                                                           RM 100.00<br>
-                                                            <span class="font-size-12">1 Nov 2023</span>
-                                                        </td>
-                                                        <td class="text-right">RM 30,000.00</td>
-                                                        <td class="text-center">
-                                                            1
-                                                        </td>
-                                                        <td class="text-center">
-                                                            
-                                                        </td> 
-                                                        <td class="text-center bg-color-propertygagaLightest">
-                                                            Activate
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="btn-group dropleft">
-                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Deactivate Access</a>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="">Installment</a>
-                                                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#batchnodtri">Batch NOD</a>
-                                                                    <div class="dropdown-divider"></div>
-                                                                    <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- modal Report Error-->
-                                        <div class="modal fade" id="reportError" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Report Error</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
+                                            <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
+                                                <!-- stat 1 -->
+                                                <div class="media">
+                                                    <i class='uil uil-exclamation-octagon text-danger font-xl mr-3 ml-2'></i>
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">10 days</h4>
+                                                        <span class="text-muted font-size-12">Notice of Demand to be sent automatically 10 days after the due date of reminder.</span>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-12 col-form-label"
-                                                                            for="simpleinput">Remarks</label>
-                                                                    </div>
-                                                                    <div class="form-group row">
-                                                                        <div class="col-lg-12">
-                                                                            <textarea class="form-control" rows="5"
-                                                                                id="example-textarea"></textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
+                                                <!-- stat 3 -->
+                                                <div class="media">
+                                                    <img src="assets/images/icons/defaulter.svg" class="mr-3 ml-2" style="width: 35px">
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">> RM 1,000</h4>
+                                                        <span class="text-muted font-size-12">Outstanding more than RM 1,000 catogorized as "Defaulter"</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- modal Report Error end-->
-
-                                        <!-- modal Call -->
-                                        <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-md" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body text-center mt-2 mb-2">
-                                                        <h5 class="modal-title mb-4" id="exampleModalScrollableTitle">Call Unit Owner<br>(6-14-01)</h5>
-                                                        <div class="col-lg-12">
-                                                            <h4><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary">Call Now</a></h4>
-                                                            <small>Last successful called on 3 Jan 2023, 3:30pm</small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Succesfully Called</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- modal Call end-->
-
-                                        <!-- modal registered post-->
-                                        <div class="modal fade" id="regpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Registered Post</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="example-date">Upload</label>
-                                                                        <div class="col-lg-9">
-                                                                            <div class="row align-items-center">
-                                                                                <div class="col-12">
-                                                                                    <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-muted font-weight-bold">qr.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <!-- Button -->
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Download"
-                                                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                                                    </a>
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Delete"
-                                                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p></p>
-                                                                            <input type="file" class="form-control" id="example-fileinput">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- modal registered post end-->
-
-                                        <!-- modal returned post-->
-                                        <div class="modal fade" id="retpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Returned Post</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="form-group row">
-                                                                <label class="col-lg-3 col-form-label"
-                                                                    for="example-date">Returned Date</label>
-                                                                <div class="col-lg-9">
-                                                                    <input class="form-control" id="example-date" type="date"
-                                                                        name="date" value="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label"
-                                                                        for="example-date">Upload</label>
-                                                                        <div class="col-lg-9">
-                                                                            <input type="file" class="form-control" id="example-fileinput">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- modal returned post end-->
-
-                                        <!-- modal registered post 2-->
-                                        <div class="modal fade" id="regpost2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Registered Post</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label" for="example-date">Upload</label>
-                                                                        <div class="col-lg-9">
-                                                                           
-                                                                            <div class="row align-items-center">
-                                                                                <div class="col-12">
-                                                                                    <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-muted font-weight-bold">qr.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <!-- Button -->
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Download"
-                                                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                                                    </a>
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Delete"
-                                                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p></p>
-                                                                            <input type="file" class="form-control" id="example-fileinput">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- modal registered post 2 end-->
-
-                                        <!-- modal returned post 2-->
-                                        <div class="modal fade" id="retpost2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Returned Post</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-horizontal">
-                                                            <div class="form-group row">
-                                                                <label class="col-lg-3 col-form-label"
-                                                                    for="example-date">Returned Date</label>
-                                                                <div class="col-lg-9">
-                                                                    <input class="form-control" id="example-date" type="date"
-                                                                        name="date" value="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="form-group row">
-                                                                        <label class="col-lg-3 col-form-label"
-                                                                        for="example-date">Upload</label>
-                                                                        <div class="col-lg-9">
-                                                                            <div class="row align-items-center">
-                                                                                <div class="col-12">
-                                                                                    <img src="assets/images/propertygaga/gray.jpg" class="rounded responsiveimg mb-1 mt-2" alt="file-image">
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-muted font-weight-bold">returned.jpg <span class="text-muted font-sm ml-2">(1 MB)</span></a>
-                                                                                </div>
-                                                                                <div class="col-auto">
-                                                                                    <!-- Button -->
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Download"
-                                                                                        class="btn btn-link text-muted btn-lg p-0">
-                                                                                        <i class='uil uil-cloud-download font-size-14'></i>
-                                                                                    </a>
-                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                        data-placement="bottom" title="Delete"
-                                                                                        class="btn btn-link text-danger btn-lg p-0">
-                                                                                        <i class='uil uil-multiply font-size-14'></i>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p></p>
-                                                                            <input type="file" class="form-control" id="example-fileinput">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                                                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Save</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- modal returned post 2 end-->
-
-
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- end row-->
+
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a href="#current" data-toggle="tab" aria-expanded="false"
+                                                class="nav-link active">
+                                                <span class="d-block d-sm-none">Current</span>
+                                                <span class="d-none d-sm-block">Current</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#archived" data-toggle="tab" aria-expanded="true"
+                                                class="nav-link">
+                                                <span class="d-block d-sm-none">Archived</span>
+                                                <span class="d-none d-sm-block">Archived</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content p-3 text-muted">
+                                        <div class="tab-pane show active" id="current">
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 text-right">
+                                                    <a href="pdf-defaulter.html" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">PDF</a>
+                                                </div> 
+                                            </div>
+    
+                                            <div class="table-responsive pb-3">
+                                                <table id="basic-datatable" class="table table-hover nowrap">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="1%">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
+                                                                </div>
+                                                            </th>
+                                                            <th>Defaulter No.</th>
+                                                            <th width="1%">Unit No.</th>
+                                                            <th>Owners</th>
+                                                            <th class="text-right">Outstanding<br>Amt. (RM)</th>
+                                                            <th class="text-right">Last Payment (RM)</th>
+                                                            <th class="text-left bg-color-propertygagaLightest">Access</th>
+                                                            <th class="text-center">Installment</th>
+                                                            <th class="text-center">Reminder (NOR)<br>Send out Date</th>
+                                                            <th class="text-center">Reminder (NOD)<br>Send out Date</th>
+                                                            <th class="text-center">Tribunal Date<br>Ref Code</th>
+                                                            <th class="text-center">Judgement in Default (JID)<br>Send out Date</th>
+                                                            <th class="text-right">LPI<br>Total Amt. (RM)</th>
+                                                            <th class="text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                </div>
+                                                            </td>
+                                                            <td>D00231</td>
+                                                            <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
+                                                            <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
+                                                            <td class="text-right">RM 1,200.00</td>
+                                                            <td class="text-right">
+                                                                RM 1,000.00<br>
+                                                                <span class="font-size-12">2 Dec 2024</span>
+                                                            </td>
+                                                            <td class="text-center bg-color-propertygagaLightest">
+                                                                Deactivated<br>
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">10 Jan 2023</span>
+                                                                <br>
+                                                                TRI024
+                                                            </td>
+                                                            <td class="text-center">
+                                                                10 Feb 2023
+                                                            </td>
+                                                            <td class="text-right">
+                                                                10.00
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="btn-group dropleft">
+                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Tribunal</a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
+                                                                </div>
+                                                            </td>
+                                                            <td>D00235</td>
+                                                            <td><a href="data-units-detail.html"target="_blank">6-01-07</a></td>   
+                                                            <td>sssss <span class="badge badge-soft-secondary ml-2">+1</span></td>                              
+                                                            <td class="text-right">RM 1,200.00</td>
+                                                            <td class="text-right">
+                                                                RM 1,000.00<br>
+                                                                <span class="font-size-12">2 Dec 2024</span>
+                                                            </td>
+                                                            <td class="text-center bg-color-propertygagaLightest">
+                                                                Deactivated<br>
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td> 
+                                                            <td class="text-center">
+                                                                
+                                                            </td>
+                                                            <td class="text-center">
+                                                                
+                                                            </td>
+                                                            <td class="text-right">
+                                                                100.00
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="btn-group dropleft">
+                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Installment</a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Tribunal</a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
+                                                                </div>
+                                                            </td>
+                                                            <td>D00237</td>
+                                                            <td><a href="data-units-detail.html" target="_blank">6-01-08</a></td> 
+                                                            <td>Nancy</td>                                            
+                                                            <td class="text-right">RM 30,000.00</td>
+                                                            <td class="text-right">
+                                                                RM 100.00<br>
+                                                                 <span class="font-size-12">1 Nov 2023</span>
+                                                             </td>
+                                                            <td class="text-center bg-color-propertygagaLightest">
+                                                                Activated
+                                                            </td>
+                                                            <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                
+                                                            </td>
+                                                            <td class="text-center">
+                                                                
+                                                            </td>
+                                                            <td class="text-center">
+                                                                
+                                                            </td>
+                                                            <td class="text-right">
+                                                                1,000.00
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="btn-group dropleft">
+                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="archived">
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 text-right">
+                                                    <a href="pdf-defaulter.html" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">PDF</a>
+                                                </div> 
+                                            </div>
+    
+                                            <div class="table-responsive pb-3">
+                                                <table id="basic-datatable2" class="table table-hover nowrap">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="1%">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
+                                                                </div>
+                                                            </th>
+                                                            <th>Defaulter No.</th>
+                                                            <th width="1%">Unit No.</th>
+                                                            <th>Owners</th>
+                                                            <th class="text-right">Outstanding<br>Amt. (RM)</th>
+                                                            <th class="text-right">Last Payment (RM)</th>
+                                                            <th class="text-left bg-color-propertygagaLightest">Access</th>
+                                                            <th class="text-center">Installment</th>
+                                                            <th class="text-center">Reminder (NOR)<br>Send out Date</th>
+                                                            <th class="text-center">Reminder (NOD)<br>Send out Date</th>
+                                                            <th class="text-center">Tribunal Date<br>Ref Code</th>
+                                                            <th class="text-center">Judgement in Default (JID)<br>Send out Date</th>
+                                                            <th class="text-right">LPI<br>Total Amt. (RM)</th>
+                                                            <th class="text-center">Paid Date</th>
+                                                            <th class="text-center">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                </div>
+                                                            </td>
+                                                            <td>D00231</td>
+                                                            <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
+                                                            <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
+                                                            <td class="text-right">RM 1,200.00</td>
+                                                            <td class="text-right">
+                                                                RM 1,000.00<br>
+                                                                <span class="font-size-12">2 Dec 2024</span>
+                                                            </td>
+                                                            <td class="text-center bg-color-propertygagaLightest">
+                                                                Deactivated<br>
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">1 Jan 2023</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="font-size-12">10 Jan 2023</span>
+                                                                <br>
+                                                                TRI024
+                                                            </td>
+                                                            <td class="text-center">
+                                                                10 Feb 2023
+                                                            </td>
+                                                            <td class="text-right">
+                                                                10.00
+                                                            </td>
+                                                            <td class="text-right text-success font-weight-bold">
+                                                                30 Mar 2023
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">Delete</button>
+                                                                <br><small>Note to dev: only Super Admin can delete</small>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+
+                        
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -2040,6 +1847,68 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+             <!-- modal Report Error-->
+             <div class="modal fade" id="reportError" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Report Error</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-12 col-form-label"
+                                                for="simpleinput">Remarks</label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <textarea class="form-control" rows="5"
+                                                    id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Report Error end-->
+
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="modal-title mb-4" id="exampleModalScrollableTitle">Call Unit Owner<br>(6-14-01)</h5>
+                            <div class="col-lg-12">
+                                <h4><a href="tel:013 xxx 5733" class="btn btn-rounded btn-soft-primary">Call Now</a></h4>
+                                <small>Last successful called on 3 Jan 2023, 3:30pm</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Succesfully Called</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
 
             <!-- modal phone no-->
             <div class="modal fade" id="phoneno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -2069,97 +1938,6 @@
                 </div>
             </div>
             <!-- modal phone no end -->
-
-            <!-- modal invoice no. -->
-            <div class="modal fade" id="invoiceno" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Invoices for 8-19-1</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="table-responsive">
-                                <table id="basic-datatable3" class="table table-hover nowrp full-width">
-                                <thead>
-                                    <tr>
-                                        <th>Status</th>
-                                        <th>Due</th>
-                                        <th>Inv. No.</th>
-                                        <th>NOD Batch Created Date</th>
-                                        <th class="text-center">NOD Batch ID</th>
-                                        <th class="text-center">NOD Batch Group Name</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="bg-color-lighterred">
-                                        <td><span class="badge badge-danger width-xs">Partially Paid</span></td>
-                                        <td>30/9/2023</td>
-                                        <td><a href="invoices-invoice-recurring-overdue.html">20231224</a> <span class="badge badge-danger">NEW</span></td>
-                                        <td></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td>RM100,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
-                                        <td width="15%">30/9/2023</td>
-                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20231234</a></td>
-                                        <td>1 Jan 2023</td>
-                                        <td class="text-center">BNOD2435</td>
-                                        <td class="text-center">Batch 3</td>
-                                        <td width="20%">RM100,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
-                                        <td width="15%">31/10/2023</td>
-                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20231235</a></td>
-                                        <td>1 Jan 2023</td>
-                                        <td class="text-center">BNOD2435</td>
-                                        <td class="text-center">Batch 3</td>
-                                        <td width="20%">RM100,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
-                                        <td width="15%">30/11/2023</td>
-                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20231236</a></td>
-                                        <td>1 Jan 2023</td>
-                                        <td class="text-center">BNOD2435</td>
-                                        <td class="text-center">Batch 3</td>
-                                        <td width="20%">RM100,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="15%"><span class="badge badge-danger width-xs">Overdue</span></td>
-                                        <td width="15%">31/12/2023</td>
-                                        <td width="20%"><a href="invoices-invoice-recurring-overdue.html">20231237</a></td>
-                                        <td>1 Jan 2023</td>
-                                        <td class="text-center">BNOD2435</td>
-                                        <td class="text-center">Batch 3</td>
-                                        <td width="20%">RM100,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="badge badge-danger width-xs">Partially Paid</span></td>
-                                        <td>30/9/2023</td>
-                                        <td><a href="invoices-invoice-recurring-overdue.html">20231224</a></td>
-                                        <td>1 Jan 2023</td>
-                                        <td class="text-center">BNOD2435</td>
-                                        <td class="text-center">Batch 3</td>
-                                        <td>RM100,000.00</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modal invoice no. end -->
 
             <!-- modal nod  -->
             <div class="modal fade" id="nod-tribunal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -2221,6 +1999,47 @@
                 </div>
             </div>
             <!-- nod -->
+
+            <!-- modal Ref code  -->
+            <div class="modal fade" id="refcode" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog dialog-sm modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Tribunal Reference Code</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Tribunal Date</label>
+                                            <div class="col-lg-8">
+                                                <input class="form-control" id="example-date" type="date" name="date" value="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Ref Code</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" id="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ref code end -->
 
         </div>
         <!-- END wrapper -->
