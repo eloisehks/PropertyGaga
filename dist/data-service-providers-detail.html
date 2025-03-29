@@ -2124,6 +2124,11 @@
                                             <div class="tab-pane mt-4" id="mails">
                                                 <div class="row">
                                                     <div class="col-12">
+                                                        <div class="form-row mb-3">
+                                                            <div class="col-auto col-md-12 text-right align-self-center pt-1">
+                                                                <a href="data-service-providers-email.html#mails" class="btn btn-primary btn-rounded">Send Email</a>
+                                                            </div>
+                                                        </div>
                                                         <div class="card border-gray-light">
                                                             <div class="card-body">
                                                                 <div class="row">
@@ -2195,7 +2200,6 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
-
 
         </div>
         <!-- END wrapper -->
@@ -2365,8 +2369,17 @@
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
         
-        
-
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let hash = window.location.hash;
+                if (hash) {
+                    let activeTab = document.querySelector(`a[href="${hash}"]`);
+                    if (activeTab) {
+                        new bootstrap.Tab(activeTab).show();
+                    }
+                }
+            });
+            </script>
 
     </body>
 </html>
