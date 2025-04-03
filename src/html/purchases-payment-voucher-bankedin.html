@@ -56,8 +56,8 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Payment Voucher - PV0002</h3>
-                                <span class="badge badge-info width-sm mr-2">Collected</span>
+                                <h3 class="mb-1 mt-0">Payment Voucher - PV00007</h3>
+                                <span class="badge badge-info width-sm mr-2">Banked In</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-right">
                                 <div class="btn-group mr-1">
@@ -74,20 +74,6 @@
                                 <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
                             </div>
                         </div>
-
-                        <!-- <div class="row">
-                            <div class="col-12">
-                                <div class="card mb-0">
-                                    <div class="card-body bg-color-propertygagaLightest border-propertygaga-lighter rounded-5">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                Cheque collected by vendor1 on 3 Mar 2023 <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded mr-2 float-left" data-toggle="modal" data-target="#updatepaymentvoucher2">Update Cheque Status</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         
                         <div class="row">
                             <div class="col-12">
@@ -99,7 +85,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label">P.V. No.</label>
                                                         <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="" value="PV0002" disabled>
+                                                            <input class="form-control" type="url" name="" value="PV00007" disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -181,14 +167,14 @@
                                                         <div class="col-lg-8">
                                                             <select class="form-control custom-select">
                                                                 <option value="0">Select</option>
-                                                                <option value="1" selected>Cash</option>
-                                                                <option value="2">Cheque</option>
+                                                                <option value="1">Cash</option>
+                                                                <option value="2" selected>Cheque</option>
                                                                 <option value="3">Card</option>
                                                                 <option value="4">Online Banking</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                   <div class="form-group row">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label" for="">Pay from Account</label>
                                                         <div class="col-lg-8">
                                                             <select class="form-control custom-select">
@@ -196,18 +182,18 @@
                                                                 <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
                                                                 <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
                                                                 <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
-                                                                <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
-                                                                <option value="Cash on Hand|None" selected>Cash on Hand</option>
+                                                                <option selected="selected" value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                <option value="Cash on Hand|None">Cash on Hand</option>
                                                                 <option value="Petty Cash|None">Petty Cash</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                     <!-- <div class="form-group row">
+                                                    <div class="form-group row">
                                                         <label class="col-lg-4 col-form-label">Cheque</label>
                                                         <div class="col-lg-8">
                                                             <input class="form-control" type="url" name="" value="PBB 280831">
                                                         </div>
-                                                    </div> -->
+                                                    </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group row">
@@ -616,21 +602,21 @@
                                                             <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
                                                                 <div class="col-auto">
                                                                     <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" checked>
-                                                                        <label class="custom-control-label" for="customRadio2">Cash collected by Vendor</label>
+                                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" disabled>
+                                                                        <label class="custom-control-label" for="customRadio2">Cheque collected by Vendor</label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-auto">
                                                                     <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin" disabled>
-                                                                        <label class="custom-control-label" for="customRadio1">Cash banked in by Staff</label>
+                                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin" checked>
+                                                                        <label class="custom-control-label" for="customRadio1">Cheque banked in by Staff</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
             
-                                                    <div class="collect">
+                                                    <div class="collect" style="display: none">
                                                         <div class="form-group row">
                                                             <label class="col-lg-4 col-form-label">Name</label>
                                                             <div class="col-lg-8">
@@ -657,15 +643,16 @@
                                                         </div>
                                                     </div>
             
-                                                    <div class="bankin box" style="display: none">
+                                                    <div class="bankin box">
                                                         <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Staff Name</label>
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="fileinput">Staff Name</label>
                                                             <div class="col-lg-8">
                                                                 <select data-plugin="customselect" class="form-control">
                                                                     <option value="0">Banked in by</option>
                                                                     <option value="2">BM - Raymond</option>
                                                                     <option value="1">BS - Tay Cheng Cheng</option>
-                                                                    <option value="2">Staff 1</option>
+                                                                    <option value="2" selected>Staff 1</option>
                                                                     <option value="2">Staff 2</option>
                                                                     <option value="2">Staff 3</option>
                                                                 </select>
@@ -674,26 +661,50 @@
                                                         <div class="form-group row">
                                                             <label class="col-lg-4 col-form-label">Username</label>
                                                             <div class="col-lg-8">
-                                                                <input type="text" class="form-control" id="" value="">
+                                                                <input type="text" class="form-control" id="" value="staff1">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label"
-                                                                >Date</label>
+                                                            <label class="col-lg-4 col-form-label">Date</label>
                                                             <div class="col-auto">
                                                                 <input class="form-control" id="example-date" type="date" name="date">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Bank Receipt</label>
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="fileinput">Bank Receipt</label>
                                                             <div class="col-auto">
+                                                                <div class="card mb-2 shadow-none border">
+                                                                    <div class="p-1 px-2">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col">
+                                                                                <a href="javascript:void(0);"
+                                                                                    class="text-muted font-weight-bold">bankedinslip.pdf</a>
+                                                                                <p class="mb-0">2.3 MB</p>
+                                                                            </div>
+                                                                            <div class="col-auto">
+                                                                                <!-- Button -->
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Download"
+                                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                    data-placement="bottom" title="Delete"
+                                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                                 <input type="file" class="form-control" id="fileinput">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
                                                             <div class="col-auto">
-                                                                <input type="text" class="form-control" id="" value="">
+                                                                <input type="text" class="form-control" id="" value="3485932">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
