@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+     <body data-layout="topnav" class="bg-superadmin-1">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/horizontal-nav-superadmin.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content mb-5">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Company 1 : User</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="superadmin-vendors.html" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back to List</a>
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back to Detail</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills navtab-bg nav-justified" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-activity-tab" data-toggle="pill"
+                                                    href="#pills-info" role="tab" aria-controls="pills-activity"
+                                                    aria-selected="true">
+                                                    Personal Info
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                    href="#pills-password" role="tab" aria-controls="pills-messages"
+                                                    aria-selected="false">
+                                                    Password
+                                                </a>
+                                            </li>
+                                        </ul>
+    
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div class="tab-pane fade show active" id="pills-info" role="tabpanel"
+                                                aria-labelledby="pills-activity-tab">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group row mb-3">
+                                                        <label for="name" class="col-4 col-form-label">Profile Image</label>
+                                                        <div class="col-8">
+                                                            <input type="file" class="form-control mt-1" id="example-fileinput">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="name" class="col-4 col-form-label">Full Name</label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="name" value="">
+                                                            <span class="help-block"><small>as per NRIC</small></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="name" class="col-4 col-form-label">Prefix Name</label>
+                                                        <div class="col-5">
+                                                            <input type="text" class="form-control" id="name" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="contact" class="col-4 col-form-label">Gender</label>
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-radio mb-2">
+                                                                <input type="radio" id="customRadio1" name="customRadio"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadio1">Male</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto mt-2">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadio2" name="customRadio"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadio2">Female</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="state" class="col-4 col-form-label">Race</label>
+                                                        <div class="col-5">
+                                                            <select class="form-control custom-select">
+                                                                <option>Select Race</option>
+                                                                <option>Malay</option>
+                                                                <option>Chinese</option>
+                                                                <option>Indian</option>
+                                                                <option>Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="position" class="col-4 col-form-label">Position</label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="position" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="username" class="col-4 col-form-label">Username <span class="text-danger">*</span></label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="username" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="email" class="col-4 col-form-label">Email</label>
+                                                        <div class="col-8">
+                                                            <input type="email" class="form-control" id="email" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="" class="col-4 col-form-label">ID No. / Passport No. <span class="text-danger">*</span></label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="" class="col-4 col-form-label">Tax Identification No. (TIN)</label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="">
+                                                            <span class="help-block"><small><span class="text-danger">*</span> Compulsory field for Malaysian</small></span><br>
+                                                            <span class="text-danger bold">Note to developer: If Nationality is Malaysian, this must be filled.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="contact" class="col-4 col-form-label">Contact No.</label>
+                                                        <div class="col-8">
+                                                            <input type="text" class="form-control" id="contact" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="float-right">
+                                                        <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save & Next</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+    
+                                            <!-- password -->
+                                            <div class="tab-pane" id="pills-password" role="tabpanel"
+                                            aria-labelledby="pills-messages-tab">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group row mb-3">
+                                                        <label for="currentPassword" class="col-4 col-form-label">Current Password <span class="text-danger">*</span></label>
+                                                        <div class="col-8">
+                                                            <input type="password" class="form-control" id="currentPassword" placeholder="Current Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="newPassword" class="col-4 col-form-label">New Password <span class="text-danger">*</span></label>
+                                                        <div class="col-8">
+                                                            <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+                                                            <span class="help-block"><small><input type="checkbox" onclick="myFunction()">&nbsp;Show Password</small></span>
+                                                            <br>
+                                                            <span class="help-block"><small>Passwords must be at least 8 characters long, and contain UPPERCASE and lowercase letters, and numbers</small></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-3">
+                                                        <label for="confirmNewPassword" class="col-4 col-form-label">Confirm New Password <span class="text-danger">*</span></label>
+                                                        <div class="col-8">
+                                                            <input type="password" class="form-control" id="confirmNewPassword" placeholder="Retype New Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="float-right">
+                                                        <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save & Email</button>
+                                                    </div>
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                <!-- end card -->
+                            </div>
+                        </div>
+
+                        
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- jQuery Script -->
+<script>
+    $(document).ready(function () {
+      $('#goToTab2').on('click', function () {
+        $('#tab2-tab').tab('show'); // This activates the tab and the content
+      });
+    });
+  </script>
+      
+          
+        
+    </body>
+</html>

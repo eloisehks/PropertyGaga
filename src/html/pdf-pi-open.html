@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Purchase Invoice</title>
+
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+</style>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        color:#333;
+        background-color: #fff;
+        font-size: 14px;
+        min-width: 100%;
+        Margin: 0;
+        padding: 0;
+    }
+    .pdf-box {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 40px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .font300 {
+        font-weight: 300;
+    }
+    .font500 {
+        font-weight: 500;
+    }
+    .font600 {
+        font-weight: 600;
+    }
+    .text-center {
+        text-align: center !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .border-0 {
+        border-spacing: 0;
+    }
+    .text-lg {
+        font-size: large;
+    }
+    .text-medium {
+        font-size: medium;
+    }
+    .text-small {
+        font-size: small;
+    }
+    .text-xlarge {
+        font-size: x-large;
+    }
+    .text-xxlarge {
+        font-size: xx-large;
+    }
+    .text-xxxlarge {
+        font-size: 40px;
+    }
+    .radius5 {
+        border-radius: 5px;
+    }
+    .text-italic {
+        font-style: italic;
+    }
+    .displayfooter1 {
+        position: relative;
+        display:none;
+        margin-bottom: 0px;
+    }
+       .displayfooter2 {
+        position: relative;
+        display:block;
+        margin-bottom: 0px;
+    }
+    
+    @media print {
+        .page-break {page-break-after: always;}
+        .invoice-box {
+            border: 0px solid #eee;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+        }
+        .displayfooter1 {
+            position: relative;
+            display:block;
+            margin-bottom: 0px;
+        }
+        .displayfooter2 {
+            position: relative;
+            display:block;
+            margin-bottom: 0px;
+        }
+    }
+    table.vtop tr {
+        vertical-align: top;
+    }
+    table.vtop tr th, table.vtop tr td{
+        padding: 10px 14px;
+    }
+
+    .border-bottom-gray {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .border-bottom-darkgray {
+        border-bottom: 3px solid #666;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class="pdf-box">
+        
+        <table style="border-spacing: 0; padding: 0px 20px 0; margin: 20px 0;" width="100%">
+            <tr>
+                <td class="text-left">
+                    <img src="assets/images/propertygaga/logo-3r.svg" alt="" height="60px" valign="middle" /><br>
+                    <div style="margin-top: 15px;">
+                        <span style="font-size: 20px;">3 Resident</span><br>
+                        Level 1 Management Office,<br>
+                        Persiaran Paya Terubong 4,<br>
+                        11900 Bayan Lepas, Penang, Malaysia.<br>
+                        Tel: 604 370 2065 / 018 246 0677<br>Fax: 604 370 2065<br>Email: 3resident.mgmt@gmail.com
+                    </div>
+                </td>
+                <td class="text-right" style="vertical-align: top;">
+                    <span class="font600 text-xxlarge">Purchase Invoice</span><br>
+                    <span class="font600 text-xlarge">#3535</span><br>
+                    <span class="font600 text-lg" style="color: #4e4e4e">10 Apr 2025</span>
+                </td>
+            </tr>
+        </table>
+
+        <div class="text-center" style="margin: 2px 20px 20px; background-color: #ccc; height: 1px"></div>
+      
+        <table class="border-0" style="padding: 10px 20px 30px;" width="100%">
+            <tr valign="top">
+                <td width="60%" class="font600">
+                    <span class="text-lg">Advance Seatech Sdn Bhd</span> <span class="text-small">(394235-W)</span><br>
+                    Address 1, Address 2, Address 3<br>
+                    11900 Bayan Lepas, Penang, Malaysia.<br>
+                    Tel: 604 370 2065 / 018 246 0677<br>Fax: 604 370 2065<br>Email: advanceseatech@gmail.com<br>
+                    Tax Identification No.: C20880050010
+                </td>
+                <td align="right">
+                    Task ID Ref: <b>OT022</b>
+                    Purchase Order No.: <b>BC-00005</b><br>
+                    Invoice No. (Vendor): <b>6436436</b><br>
+                    Delivery Order No.: <b>DO-30303</b>
+                </td>
+            </tr>
+        </table>
+
+        <table class="border-0" style="padding: 5px 20px 10px;" width="100%">
+            <tr>
+                <td>
+                    <table class="vtop" style="padding: 0;" cellspacing="0" cellpadding="4" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="32%" class="text-left border-bottom-darkgray">Account</th>
+                                <th width="30%" class="text-left border-bottom-darkgray">Description</th>
+                                <th width="10%" class="text-left border-bottom-darkgray">Quantity</th>
+                                <th width="14%" class="text-right border-bottom-darkgray">Amount (RM)</th>
+                                <th width="14%" class="text-right border-bottom-darkgray">Payment (RM)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-bottom-gray">Repair & Maintenance / Air Cond</td>
+                                <td class="border-bottom-gray">Some description</td>
+                                <td class="border-bottom-gray">1</td>
+                                <td class="text-right border-bottom-gray">500</td>
+                                <td class="text-right border-bottom-gray">300</td>
+                            </tr>
+                            <tr class="bold text-color-black">
+                                <td colspan="3" class="text-right">Total (RM)</td>
+                                <td class="text-right">500.00</td>
+                                <td class="text-right"></td>
+                            </tr>
+                            <tr class="bold text-color-black">
+                                <td colspan="3" class="text-right">Amount Paid (RM)</td>
+                                <td class="text-right"></td>
+                                <td class="text-right text-medium" style="background-color: rgb(198, 228, 255);">300.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+		</table>
+
+        <div class="page-break"></div>
+        
+        <table class="border-0" style="padding: 45px 20px 60px;" width="100%">
+            <tr valign="top">
+                <td width="60%"></td>
+                <td class="text-right" width="40%">
+
+                    <div class="border-bottom-gray" style="margin-top: 60px;"></div>
+                    <p class="bold">Authorised Signature</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <table style="border-spacing: 0; padding: 60px 20px 10px;" width="100%">
+            <tr>
+                <td class="text-center" valign="top">
+                    <span style="font-size: 20px">Approved Purchase Order #BC-00005</span><br><br>
+                    <img src="http://propertygaga.com/beta2/assets/images/propertygaga/gray.jpg" alt="" style="width:100%;">
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <table style="border-spacing: 0; padding: 60px 20px 10px;" width="100%">
+            <tr>
+                <td class="text-center" valign="top">
+                    <span style="font-size: 20px">Invoice (Vendor) #6436436</span><br><br>
+                    <img src="http://propertygaga.com/beta2/assets/images/propertygaga/gray.jpg" alt="" style="width:100%;">
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <table style="border-spacing: 0; padding: 60px 20px 10px;" width="100%">
+            <tr>
+                <td class="text-center" valign="top">
+                    <span style="font-size: 20px">Delivery Order #DO-30303</span><br><br>
+                    <img src="http://propertygaga.com/beta2/assets/images/propertygaga/gray.jpg" alt="" style="width:100%;">
+                </td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <table style="border-spacing: 0; padding: 60px 20px 10px;" width="100%">
+            <tr>
+                <td colspan="2" class="text-center" valign="top">
+                    <span style="font-size: 20px">Other Attachments</span><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="assets/images/projects/project-1.jpg" class="radius5" alt="" style="width:100%;">
+                </td>
+                <td>
+                    <img src="assets/images/projects/project-1.jpg" class="radius5" alt="" style="width:100%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="assets/images/projects/project-1.jpg" class="radius5" alt="" style="width:100%;">
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+
+        <table class="border-0" style="padding: 40px 20px;" width="100%">
+            <tr>
+                <td align="center">
+                    <a href="" style="padding: 10px 20px; background-color: #1967ca; color: #fff; border-radius: 20px; text-decoration: none;">Print</a>
+                    <a href="" style="padding: 10px 20px; background-color: #1967ca; color: #fff; border-radius: 20px; text-decoration: none;">Save as PDF</a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>

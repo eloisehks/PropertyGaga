@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            <!--
+                function toggle_visibility(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'block')
+                      e.style.display = 'none';
+                   else
+                      e.style.display = 'block';
+                }
+            //-->
+            </script>
+
+    </head>
+
+    <body data-layout="topnav" class="bg-superadmin-1">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Topbar Start -->
+<div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
+    <div class="container-fluid">
+        <!-- LOGO -->
+        <a href="superadmin-index.html" class="navbar-brand mr-0 mr-md-2 logo">
+            <span class="logo-lg">
+                <img src="assets/images/logo_pg.png" alt="" height="30" />
+            </span>
+            <span class="logo-sm">
+                <img src="assets/images/logo.png" alt="" height="24">
+            </span>
+        </a>
+
+        <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
+            <li class="">
+                <button class="button-menu-mobile open-left disable-btn">
+                    <i data-feather="menu" class="menu-icon"></i>
+                    <i data-feather="x" class="close-icon"></i>
+                </button>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-left mb-0 propertyname-header" style="margin-top: -10px;">
+            <li class="d-block d-sm-none">
+                <img src="assets/images/logo_pg.png" alt="" height="25" />
+            </li>
+        </ul>
+
+        <!-- <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
+            <li class="">
+                <button class="button-menu-mobile open-left">
+                    <i data-feather="menu" class="menu-icon"></i>
+                    <i data-feather="x" class="close-icon"></i>
+                </button>
+            </li>
+        </ul> -->
+        <!-- <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-left mb-0 propertyname-header">Select PMC</ul>
+        <form class="form-inline float-sm-right mt-sm-0 ml-2">
+            <div class="btn-group">
+                <button type="button" class="btn btn-light btn-rounded dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="index.html" class="dropdown-item notify-item">
+                        <span>PMC 1</span>
+                    </a>
+                    <a href="index.html" class="dropdown-item notify-item">
+                        <span>PMC 2</span>
+                    </a>
+                    <a href="index.html" class="dropdown-item notify-item">
+                        <span>PMC 3</span>
+                    </a>
+                    <a href="index.html" class="dropdown-item notify-item">
+                        <span>PMC 4</span>
+                    </a>
+                </div>
+            </div>
+        </form> -->
+
+        <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
+            <li class="d-none d-sm-block">
+                <div class="app-search">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span data-feather="search"></span>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <!-- <li class="dropdown notification-list" data-toggle="tooltip" data-placement="left"
+                title="8 new unread notifications">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                    aria-expanded="false">
+                    <i data-feather="bell"></i>
+                    <span class="noti-icon-badge"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-xl">
+
+                    
+                    <div class="dropdown-item noti-title border-bottom">
+                        <h5 class="m-0 font-size-16">
+                            Notification <small></small>
+                        </h5>
+                    </div>
+
+                    <div class="slimscroll noti-scroll">
+
+                        
+                        <a href="visitor-with-vehicle-approved-edit.html"  class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
+                            <p class="notify-details">
+                                <span class="cursor-pointer d-inline" data-toggle="tooltip" data-placement="top" title="" data-original-title="Access Passed">
+                                    <i data-feather="bell" class="icon-xs icon-dual-success ml-0 mr-2 animate-blinker2s"></i>
+                                </span> Visitor Parking Approved<br>
+                                <small class="text-muted">Visitor 8-10-02, Faith (012 345 6789)<br>Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                <br>1 min ago</small>
+                            </p>
+                        </a>
+
+                        
+                        <a href="visitor-with-vehicle-timeexceeded-edit.html"  class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-car-sideview text-color-white icon-xs"></i></div>
+                            <p class="notify-details">Parking time exceeded!<br>
+                                <small class="text-muted">Visitor of 8-18-3A, Eugene (012 345 6789)<br>
+                                    Parking Lot Name 1<br>Slot 7 ( 06:01 - 07:00 )<br>Slot 8 ( 07:01 - 08:00 )<br>Slot 9 ( 08:01 - 09:00 )
+                                <br>1 min ago</small>
+                            </p>
+                        </a>
+
+                        
+                        <a href="blacklist-site-edit-verify.html"  class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-dark"><i data-feather="user-x" class="icon-dual text-color-white icon-xs"></i></div>
+                            <p class="notify-details">Site 1 is blacklisted <small class="text-muted">Site 1 <b class="text-color-orangeDark">blacklisted</b> by Derick, click to verify<br>(NOTE to developer: this only apply to<br>HR / person in charge of blacklist verification)
+                                <br>1 min ago</small>
+                            </p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#endwork" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">End Work</b> updated, commented by [building manager] jlsjdjjhfhlll lsgljl  ljfgdjlfdjh ljagds;lj aldsjg; adsj testing
+                                <br>4 May 2024, 2:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#endwork" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">End Work</b> updated, job done by Company 1
+                                <br>4 May 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#startworktask" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">Start Work</b> updated by Sam
+                                <br>3 May 2024, 10:00am</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#quotation-voting" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details mb-0">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">awarded</b> to Company 1
+                                <br>2 May 2024, 5:00pm</small>
+                            </p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#quotation-voting" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details mb-0">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">Voting</b> started
+                                <br>2 May 2024, 5:00pm</small>
+                            </p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#quotation-voting" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details mb-0">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">Quotation</b> uploaded by Company 2
+                                <br>2 May 2024, 3:00pm</small>
+                            </p>
+                        </a>
+                        
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#acceptedtask" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Water ponding on facility floor <small class="text-muted">New <b class="text-color-orangeDark">activity</b> commented by Sam
+                                <br>2 May 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-open-task-edit-new-task.html#acceptedtask" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">accepted</b> by Tan Cheng Cheng
+                                <br>1 May 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-kiv-edit.html" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">Task - Roof tiles crack <small class="text-muted">moved to <b class="text-color-orangeDark">KIV</b> by Sean
+                                <br>1 May 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="tasksheet-task-edit.html" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i class="uil uil-clipboard-alt"></i></div>
+                            <p class="notify-details">New task - Water ponding on facility floor <small class="text-muted"><b class="text-color-orangeDark">submitted</b> by Sean
+                                <br>30 Apr 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="checklist-listing.html" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i data-feather="check-square" class="icon-dual text-color-white icon-xs"></i></div>
+                            <p class="notify-details">Checklist - Toilet 1  <small class="text-muted"><b class="text-color-orangeDark">checked</b> by Jane
+                                <br>28 Apr 2024, 1:00pm</small></p>
+                        </a>
+
+                        
+                        <a href="checklist-listing.html" class="dropdown-item notify-item border-bottom">
+                            <div class="notify-icon bg-primary"><i data-feather="check-square" class="icon-dual text-color-white icon-xs"></i></div>
+                            <p class="notify-details">Checklist - Car Park A is overdue <small class="text-muted"><b class="text-color-orangeDark">to check</b> by Jane
+                                <br>28 Apr 2024, 1:00pm</small></p>
+                        </a>
+                    </div>
+
+                    
+                    <a href="notification-list.html"
+                        class="dropdown-item text-center text-primary notify-item notify-all border-top">
+                        View all
+                        <i class="fi-arrow-right"></i>
+                    </a>
+
+                </div>
+            </li> -->
+            
+            <li class="dropdown notification-list align-self-center profile-dropdown">
+                <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="false" aria-expanded="false">
+                    <div class="media user-profile ">
+                        <img src="assets/images/users/avatar-6.jpg" alt="user-image" class="rounded-circle align-self-center" />
+                        <div class="media-body text-left">
+                            <h6 class="pro-user-name ml-2 my-0">
+                                <span>Eugene</span>
+                                <span class="pro-user-desc text-muted d-block mt-1">Super Admin</span>
+                            </h6>
+                        </div>
+                        <span data-feather="chevron-down" class="ml-2 align-self-center"></span>
+                    </div>
+                </a>
+                <div class="dropdown-menu profile-dropdown-items dropdown-menu-right">
+                    <a href="superadmin-account.html" class="dropdown-item notify-item">
+                        <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
+                        <span>My Account</span>
+                    </a>
+
+                    <a href="login.html" class="dropdown-item notify-item">
+                        <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<!-- end Topbar -->
+
+            <div class="topnav shadow-sm">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light navbar-expand-lg topbar-nav">
+                        <div class="collapse navbar-collapse" id="topnav-menu-content">
+                            <ul class="metismenu" id="menu-bar">
+                                <li>
+                                    <a href="superadmin-index.html" class="pl-sm-0">
+                                        <!-- <i data-feather="home"></i> -->
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="pl-sm-3">
+                                    <a href="javascript: void(0);">
+                                        <!-- <i class="uil uil-cog"></i> -->
+                                        <span>Admin</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li>
+                                            <a href="superadmin-subscription.html">Subscription</a>
+                                        </li>
+                                        <li>
+                                            <a href="superadmin-blacklist.html">Blacklist</a>
+                                        </li>
+                                        <li>
+                                            <a href="superadmin-reports.html">Reports</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="superadmin-pmc.html">
+                                        <!-- <i class="uil uil-home"></i> -->
+                                        <span>Prop. Mgmt. Co.</span>
+                                    </a>
+                                </li>
+                                <!-- <li>
+                                    <a href="superadmin-subscription.html">
+                                        <i class="uil uil-package"></i>
+                                        <span class="badge badge-success float-right"></span>
+                                        <span>Subscription</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="superadmin-blacklist.html">
+                                        <i data-feather="user-x" class="icon-dual"></i>
+                                        <span class="badge badge-success float-right"></span>
+                                        <span>Blacklist</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="superadmin-reports.html">
+                                        <i data-feather="file-text"></i>
+                                        <span class="badge badge-success float-right"></span>
+                                        <span>Reports</span>
+                                    </a>
+                                </li> -->
+                                <li>
+                                    <a href="superadmin-vendors.html">
+                                        <!-- <i data-feather="user-x" class="icon-dual"></i> -->
+                                        <span>Vendors</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content mb-5">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                    
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Vendor : Company 333 Company 333</h3>
+                                <span class="badge badge-danger width-sm">Rejected</span> <small>Remarks</small> <i class="uil uil-comment-lines cursor-pointer" data-container="body" title=""
+                                data-toggle="tooltip" data-placement="top"
+                                data-original-title="Remarks...ivamus sagittis lacus vel augue laoreet rutrum faucibus."></i>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <!-- <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="data-service-providers-email.html">Email Vendor</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div> -->
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back to List</a>
+                            </div>
+                           
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#spinfo" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none font-size-12">Info</span>
+                                                    <span class="d-none d-sm-block">Info</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#user" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none font-size-12">User</span>
+                                                    <span class="d-none d-sm-block">User</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane mt-3 show active" id="spinfo">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="mb-0">
+                                                            <div class="pb-0 pl-2 pr-2">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xl-6 mt-4 mt-md-0 text-right">
+                                                                        <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='superadmin-vendor-details-edit.html';"><i class="uil-edit mr-1"></i> Edit Info</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Services</div>
+                                                                    <div class="col col-md-8">Pool Maintenance</div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Vendor</div>
+                                                                    <div class="col col-md-8">
+                                                                        Company 333 Company 333
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Tax Identification No. (TIN)</div>
+                                                                    <div class="col col-auto">
+                                                                        <i class="uil uil-times-circle text-danger" data-toggle="tooltip"
+                                                                        data-placement="top" title=""
+                                                                        data-original-title="TIN not Verified"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Address 1</div>
+                                                                    <div class="col col-md-8">
+                                                                        Address 1
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Address 2</div>
+                                                                    <div class="col col-md-8">
+                                                                        Address 2
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Postcode</div>
+                                                                    <div class="col col-md-8">
+                                                                        34567
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">City / Town</div>
+                                                                    <div class="col col-md-8">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Country</div>
+                                                                    <div class="col col-md-8">
+                                                                        Malaysia
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">State</div>
+                                                                    <div class="col col-md-8">
+                                                                        Penang
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Contact No.</div>
+                                                                    <div class="col col-md-8">
+                                                                        012 345 6789
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Fax No.</div>
+                                                                    <div class="col col-md-8">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Email</div>
+                                                                    <div class="col col-md-8">
+                                                                        <a href="mailto:email@email.com">email@email.com</a>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Contract Status</div>
+                                                                    <div class="col col-md-8">
+                                                                        <span class="text-success font-weight-bold font-size-13">Active</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Expiry of Contract</div>
+                                                                    <div class="col col-md-8">
+                                                                        2018-10-03 to 2018-10-10
+                                                                    </div>
+                                                                </div> -->
+                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom align-items-center">
+                                                                    <div class="col col-md-4 font-weight-bold">Upload Contract</div>
+                                                                    <div class="col col-md-4">
+                                                                        <div class="p-2 border rounded mb-2">
+                                                                            <div class="media">
+                                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <a href="#" class="d-inline-block mt-2">contract 1.pdf</a>
+                                                                                </div>
+                                                                                <div class="float-right mt-1">
+                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Monthly Fees</div>
+                                                                    <div class="col col-md-8">
+                                                                        RM 1,000.00
+                                                                    </div>
+                                                                </div> -->
+                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Outstanding Payment</div>
+                                                                    <div class="col col-md-8">
+                                                                        RM 0.00
+                                                                    </div>
+                                                                </div> -->
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Company Profile</div>
+                                                                    <div class="col col-md-4">
+                                                                        <div class="p-2 border rounded mb-2">
+                                                                            <div class="media">
+                                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <a href="#" class="d-inline-block mt-2">profile.pdf</a>
+                                                                                </div>
+                                                                                <div class="float-right mt-1">
+                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
+                                                                    <div class="col col-md-4 font-weight-bold">Other Documents</div>
+                                                                    <div class="col col-md-4">
+                                                                        <div class="p-2 border rounded mb-2">
+                                                                            <div class="media">
+                                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <a href="#" class="d-inline-block mt-2">doc1.pdf</a>
+                                                                                </div>
+                                                                                <div class="float-right mt-1">
+                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="p-2 border rounded mb-2">
+                                                                            <div class="media">
+                                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="media-body">
+                                                                                    <a href="#" class="d-inline-block mt-2">doc2.pdf</a>
+                                                                                </div>
+                                                                                <div class="float-right mt-1">
+                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row mt-2">
+                                                                    <div class="col col-md-12 text-right">
+                                                                        <button type="button" class="btn btn-primary btn-rounded mr-1">Approve</button>                                                                        
+                                                                        <button type="submit" class="btn btn-outline-danger btn-rounded mr-1" onclick="window.history.go(-1);">Delete</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> <!-- end card-->
+                                                    
+                                                    </div><!-- end col-->
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-pane mt-3" id="user">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-right">
+                                                                <div class="mb-3">
+                                                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='superadmin-vendor-usernew.html';"><i class="uil-plus mr-1"></i> New User</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="table-responsive">
+                                                            <table id="open-task1" class="table table-hover nowrap full-width">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Full  Name</th>
+                                                                        <th>Username</th>
+                                                                        <th>Email</th>
+                                                                        <th>Conact No.</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><a href="superadmin-vendor-useredit.html">James</a></td>
+                                                                        <td>james-gg</td>
+                                                                        <td>james@email.com</td>
+                                                                        <td>012 354 6789</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                2025 &copy; Property Gaga. All Rights Reserved.
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="privacy-policy.html">Privacy Policy</a> | <a href="refund-policy.html">Refund Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal reject -->
+            <div class="modal fade" id="reject" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Reject Vendor</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-12 col-form-label"
+                                                for="simpleinput">Remarks</label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <textarea class="form-control" rows="5"
+                                                    id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal reject end-->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div class="rightbar-title">
+                <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                    <i data-feather="x-circle"></i>
+                </a>
+                <h5 class="m-0">Building Management</h5>
+            </div>
+    
+            <div class="slimscroll-menu">
+    
+                <h5 class="font-size-16 pl-3 mt-2 slideout">
+                    <div class="caption">3 Resident - Penang, Malaysia</div>
+                    <img src="assets/images/condo/3residence.jpg" class="img-fluid condo">
+            
+                </h5>
+                <div class="pt-2 pb-2 pl-3 pr-3 border-bottom-gray300">
+                    <h6 class="mb-0">Managed By</h6>
+                    <a href="#">EAD Property Management</a>
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Management Office</h6>
+                    3 Resident<br>
+                    Level 1, Management Office<br>
+                    Jalan 3 Resident,<br>
+                    11900 Bayan Lepas, Penang, Malaysia
+                    <br>
+                    <i class="uil-phone mr-1"></i>04-3702065 / 018-2460677<br>
+                    <i class="uil-newspaper mr-1"></i>04-3702064<br>
+                    <i class="uil-envelope mr-1"></i>email@3resident.com<br>
+                    <i class="uil-globe mr-1"></i>www.3resident.com
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300 font-sm">
+                    <h6 class="mb-1">Operation Hours</h6>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Mon</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Tue</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Wed</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Thu</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Fri</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Sat</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            09:00am - 12:00pm<br>01:00pm - 03:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Sun</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                           Closed
+                        </div>
+                    </div>
+                    <small>(Close on public holiday)</small><br>
+            
+                    <!-- <i>Note to developer: below line will appear if Special holiday is set.</i>
+                    <div class="text-danger mt-2">We are close today in conjunction with special holiday.</div> -->
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Late Payment Interest</h6>
+                    <span class="text-success"><i class="uil-check-square mr-1"></i> Activated</span><br>
+                    Interest Rate: 10%<br>
+                    Grace Period: 7 days<br>
+                    Admin Charges: 10%
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Bank Account <small>(Maintenance)</small></h6>
+                    AmBank<br>784949289570<br>
+                    Holder Name 1
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Building Manager <a href="site-mgnteam-edit.html" class="btn btn-primary btn-sm btn-rounded float-right">Edit</a></h6>
+                    Lee Soon Hoe<br>
+                    <a href="tel:123-456-7890">018-940 1608</a><br>
+                    <a href="mailto:">email@email.com</a><br>
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Building Supervisor</h6>
+                    Muhammad Sabir<br>
+                    <a href="tel:123-456-7890">018-940 1608</a><br>
+                    <a href="mailto:">email@email.com</a><br>
+                </div>
+                <div class="px-3 py-3">
+                    <br>
+                </div>
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let hash = window.location.hash;
+                if (hash) {
+                    let activeTab = document.querySelector(`a[href="${hash}"]`);
+                    if (activeTab) {
+                        new bootstrap.Tab(activeTab).show();
+                    }
+                }
+            });
+            </script>
+
+    </body>
+</html>
