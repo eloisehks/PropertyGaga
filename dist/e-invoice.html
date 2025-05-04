@@ -22,11 +22,6 @@
         <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-core/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-daygrid/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-bootstrap/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-timegrid/main.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/libs/fullcalendar-list/main.min.css" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -1504,1098 +1499,365 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-        <div class="content-page">
-            <div class="content">
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <div class="row page-title">
-                        <div class="col-sm-4 col-xl-6">
-                            <h4 class="mb-1 mt-0">Dashboard <small>(Building Manager)</small></h4>
-                        </div>
-                        <div class="col-sm-8 col-xl-6">
-                            <form class="form-inline float-sm-right mt-3 mt-sm-0">
-                                <a href="e-invoice.html" class="btn btn-outline-primary btn-rounded mr-2">e-Invoice</a>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary btn-rounded dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        Things You Can Do
-                                        <i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a href="admin-announcement-add.html" class="dropdown-item notify-item">
-                                            <span>Add an Announcement</span>
-                                        </a>
-                                        <a href="tasksheet-task-new.html" class="dropdown-item notify-item">
-                                            <span>Add a Task</span>
-                                        </a>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="#" class="dropdown-item notify-item">
-                                            <span>Add a Vendor</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="alert alert-info alert-dismissible fade show" role="alert">
-                        Your leave request from 12 Mar 2024 to 15 Mar 2024 has been approved.
-                        <button type="button" class="close" data-dismiss="alert"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        Your leave request from 12 Mar 2024 to 15 Mar 2024 has been rejected.
-                        <button type="button" class="close" data-dismiss="alert"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="row">
+            <div class="content-page">
+                <div class="content">
                     
-                        <div class="col-lg-12">
-                            <div class="card bg-color-propertygagaLightest border-propertygaga-lighter">
-                                <div class="card-body pb-2">
-                                    <div class="media">
-                                        <div class="avatar-sm rounded-circle bg-soft-primary mr-4">
-                                            <i class="text-primary avatar-title font-xxs p-2" data-feather="mic"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="p-0">
-                                                <h5 class="font-size-16 mt-0"><small class="text-muted mb-0 mr-2">06 Dec 2024</small><button type="button" class="btn btn-link font-size-15 font-weight-semibold text-secondary mb-0 p-0 text-left col-sm-9" data-toggle="modal" data-target="#bs-example-modal-xl">Public Announcement Temporary Closure of Sierra East Management Office</button></h5>
-                                            </div>
-                                            <div class="p-0">
-                                                <h5 class="font-size-16 mt-0"><small class="text-muted mb-0 mr-2">20 Sep 2024</small><button type="button" class="btn btn-link font-size-15 font-weight-semibold text-secondary mb-0 p-0 text-left col-sm-9" data-toggle="modal" data-target="#bs-example-modal-xl">CONFIRM COVID-19 CASE</button></h5>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">e-Invoicing Registration</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
                                 </div>
+                                
                             </div>
                         </div>
-                    </div>
 
-                    <!-- content -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body pt-2 pb-0">
-                                    <h5>Upcoming Events</h5>
-                                    <div class="board mb-3 pb-3">
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule mr-2'></i> 22 Jan 2024, <small>Mon</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-0">
-                                                    <div class="card-body p-0">
-                                                        <div class="p-0">
-                                                            <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                <a href="agm-egm.html">AGM Meeting</a>
-                                                            </h6>
-
-                                                            <p class="mb-0 mt-0">
-                                                                <span class="text-nowrap align-middle font-size-13">
-                                                                    3:00pm
-                                                                </span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 23 Jan 2024, <small>Tue</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="data-service-providers-detail.html">Company 23 - jjllll Contract Revewal</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 24 Jan 2024, <small>Wed</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-0">
-                                                    <div class="card-body p-0">
-                                                        <div class="p-0">
-                                                            <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                <a href="agm-egm.html">AGM Meeting</a>
-                                                            </h6>
-
-                                                            <p class="mb-0 mt-0">
-                                                                <span class="text-nowrap align-middle font-size-13">
-                                                                    3:00pm
-                                                                </span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="data-service-providers-detail.html">Company 1 - Fire Fighting Contract Revewal</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="data-service-providers-detail.html">Company 1 - Fire Fighting Contract Revewal</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 25 Jan 2024, <small>Thu</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="data-service-providers-detail.html">Company 11 - Management Firm Contract Revewal</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 26 Jan 2024, <small>Fri</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-0">
-                                                    <div class="card-body p-0">
-                                                        <div class="p-0">
-                                                            <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                <a href="admin-announcement-edit.html">Fogging Activities in Blocks 6</a>
-                                                            </h6>
-                                                            <p class="mb-0 mt-0">
-                                                                <span class="text-nowrap align-middle font-size-13">
-                                                                    3:00pm - 5:00pm
-                                                                </span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 27 Jan 2024, <small>Sat</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="recovery-tribunalbatch-details.html">C6-01-07 - BTRI2435 - Tribunal Batch 3</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tasks calendardiv border mb-0">
-                                            <h5 class="mt-0 mb-0 pb-1 task-header"><i class='uil uil-schedule text-primary mr-2'></i> 28 Jan 2024, <small>Sun</small></h5> 
-
-                                            <div class="task-list-items">
-                                                <div class="card mb-0 mt-1">
-                                                    <div class="card-body p-0">
-                                                        <div class="task-list-items">
-                                                            <div class="p-0">
-                                                                <h6 class="mt-0 mb-0 font-weight-normal font-size-13">
-                                                                    <a href="data-service-providers-detail.html">Company 2 - Gen-set License Revewal</a>
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="residents-datatable" class="table table-hover nowrap dt-responsive full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Reg No.</th>
+                                                    <th>Full Name</th>
+                                                    <th>Unit No.</th>
+                                                    <th>Contact No.</th>
+                                                    <th>Email</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>15846265</td>
+                                                    <td>Loh Choon Tatt</td>
+                                                    <td>6-02-01</td>
+                                                    <td>013-3821224</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>15846265</td>
+                                                    <td>Alfred Ong Ley Wei</td>
+                                                    <td>8-02-09</td>
+                                                    <td>013-3821224</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>15846265</td>
+                                                    <td>Loh Choon Tatt</td>
+                                                    <td>6-03-11</td>
+                                                    <td>013-3821224</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>15846265</td>
+                                                    <td>Alfred Ong Ley Wei</td>
+                                                    <td>6-02-41</td>
+                                                    <td>013-3821224</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>15846265</td>
+                                                    <td>Loh Choon Tatt</td>
+                                                    <td>6-02-06</td>
+                                                    <td>013-3821224</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>15846265</td>
+                                                    <td>Alicia Tan Su Sian</td>
+                                                    <td>4-02-01</td>
+                                                    <td>013-4678900</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>15846265</td>
+                                                    <td>Loh Choon Tatt</td>
+                                                    <td>9-07-01</td>
+                                                    <td>013-3821464</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>15846265</td>
+                                                    <td>Daneal Ho</td>
+                                                    <td>8-02-01</td>
+                                                    <td>013-5789088</td>
+                                                    <td>email@email.com</td>
+                                                    <td class="text-center">
+                                                        <a href="e-invoice-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
                         </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="row">
-                                <div class="col-md-4 col-xl-4">
-                                    <div class="card">
-                                        <div class="card-body p-0">
-                                            <div class="media p-3">
-                                                <div class="media-body">
-                                                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Vacant Units</span>
-                                                    <h2 class="mb-0">10</h2>
-                                                </div>
-                                                <div class="align-self-center">
-                                                    <i class='uil uil-square-full text-danger font-xl'></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col-md-4 col-xl-4">
-                                    <div class="card">
-                                        <div class="card-body p-0">
-                                            <div class="media p-3">
-                                                <div class="media-body">
-                                                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Owner Occupying Units</span>
-                                                    <h2 class="mb-0">790</h2>
-                                                </div>
-                                                <div class="align-self-center">
-                                                    <i class='uil uil-home-alt text-primary font-xl'></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col-md-4 col-xl-4">
-                                    <div class="card">
-                                        <div class="card-body p-0">
-                                            <div class="media p-3">
-                                                <div class="media-body">
-                                                    <span class="text-muted text-uppercase font-size-12 font-weight-bold">Tenanted Units</span>
-                                                    <h2 class="mb-0">11</h2>
-                                                </div>
-                                                <div class="align-self-center">
-                                                    <i class='uil uil-bed text-info font-xl'></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        
-                        <div class="col-xl-5">
-                            
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body p-0">
-                                            <div class="media p-3">
-                                                <div class="media-body">
-                                                    <h6 class="header-title">Collection of the Day</h6> 
-                                                    <span class="text-muted text-uppercase font-size-12">3 Dec 2024</span>
-                                                    <h2 class="mb-0">RM2,189.00</h2>
-                                                    <div class="text-center"><img src="assets/images/propertygaga/dashboard-collectionday.jpg" class="responsiveimg mt-2 mb-2" height="250"></div>
-                                                    <div class="table-responsive">
-                                                        <table class="table mb-0 mt-2 table-borderless table-sm font-size-12">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th scope="row"><span class="square-primary"></span> Cash</th>
-                                                                    <td class="text-left">RM189.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row"><span class="square-green"></span> IBG</th>
-                                                                    <td class="text-left">RM1,000.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row"><span class="square-yellow"></span> Cheque</th>
-                                                                    <td class="text-left">RM500.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row"><span class="square-orange"></span> Credit Card</th>
-                                                                    <td class="text-left">RM500.00</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row"><span class="square-purple"></span> Touch ’n Go</th>
-                                                                    <td class="text-left">RM1,400.00</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="align-self-center">
-                                                    <img src="assets/images/propertygaga/dashboard-collection1.jpg" class="" height="300">
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body pt-2">
-                                            <h6 class="header-title">Collection for 6 Months</h6> 
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <img src="assets/images/propertygaga/collectionofthemonth.jpg" class="responsiveimg mb-2 mt-2" alt="file-image">
-                                                    <small><span class="square-primary"></span> Cash<span class="mr-3"></span><span class="square-green"></span> IBG<span class="mr-3"></span><span class="square-yellow"></span> Cheque<span class="mr-3"></span><span class="square-orange"></span> Credit Card<span class="mr-3"></span><span class="square-purple"></span> Touch ’n Go</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- end row -->
 
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body pt-2">
-                                            <h6 class="header-title">Invoices & Receipts</h6>
-                                            <small>Total Amount: RM120,000.00<span class="mr-3"></span>Total Invoice: 10,000</small>
-                                            <div class="row">
-                                                <div class="col-md-12 text-center"> 
-                                                    <img src="assets/images/propertygaga/invoice&receipt2.jpg" class="responsiveimg mb-2 mt-2" alt="file-image" height="250px" style="max-height:320px;">
-                                                </div>
-                                            </div>
-                                            <small><span class="square-primary"></span> Unpaid Invoice<span class="mr-3"></span><span class="square-green"></span> Receipt</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> <!-- container-fluid -->
 
-                    <div class="row">
-                        <div class="col-xl-6">    
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body pt-2">
-                                            <h6 class="header-title">Unpaid Invoices</h6>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <select class="form-control custom-select">
-                                                        <option>RM0.00 - RM9,000.00</option>
-                                                        <option>RM9,000.00 - RM18,000.00</option>
-                                                        <option>RM18,000.00 - RM27,000.00</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <a href="#" class="btn btn-link">
-                                                        View Report
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- <small>Outstanding amt. > RM500.00 <b>AND</b> outstanding amt. > 15 days.</small> -->
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <img src="assets/images/propertygaga/unpaidinvoices.jpg" class="responsiveimg mb-2 mt-2" alt="file-image" height="230px">
-                                                </div>
-                                            </div>
-                                            <small><span class="square-primary"></span> Total Occupant<span class="mr-3"></span><span class="square-orange"></span> Total Outstanding Amount</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-xl-6">
-                            
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body pt-2">
-                                            <h6 class="header-title">Top 10 Defaulter for May 2024</h6> 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <select class="form-control custom-select">
-                                                        <option>Jan 2024</option>
-                                                        <option>Feb 2024</option>
-                                                        <option>Mar 2024</option>
-                                                        <option>Apr 2024</option>
-                                                        <option selected>May 2024</option>
-                                                        <option>Jun 2024</option>
-                                                        <option>Jul 2024</option>
-                                                        <option>Aug 2024</option>
-                                                        <option>Sep 2024</option>
-                                                        <option>Oct 2024</option>
-                                                        <option>Nov 2024</option>
-                                                        <option>Dec 2024</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <a href="#" class="btn btn-link">
-                                                        View Report
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- <small>Outstanding amt. > RM500.00 <b>AND</b> outstanding amt. > 15 days.</small> -->
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <img src="assets/images/propertygaga/top10Debtorsbymonth.jpg" class="responsiveimg mb-2 mt-2" alt="file-image" height="250px">
-                                                </div>
-                                            </div>
-                                            <small><span class="square-primary"></span> Total Occupant<span class="mr-3"></span><span class="square-danger"></span> Late Payment Interest</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div> <!-- content -->
 
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body pt-2">
-                                            <h6 class="header-title">Vehicle In & Out</h6>
-                                            <div class="row">
-                                                <div class="col-auto">
-                                                    <select class="form-control custom-select">
-                                                        <option>Daily</option>
-                                                        <option>Monthly</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="form-group mb-3">
-                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="3 Dec 2024">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12 text-center"> 
-                                                    <img src="assets/images/propertygaga/vehicle.jpg" class="responsiveimg mb-2 mt-2" alt="file-image" height="300px" style="max-height:320px;">
-                                                </div>
-                                            </div>
-                                            <small><span class="square-green"></span> Occupant<span class="mr-3"></span><span class="square-primary"></span> Visitor<span class="mr-3"></span><span class="square-yellow"></span> Contractor</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- overview -->
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body pt-2">
-                                    <h6 class="header-title mb-0 pb-3">Tasks</h6>
-
-                                    <div class="media px-1 py-3 border-bottom">
-                                        <div class="media-body">
-                                            <h4 class="mt-0 mb-1 font-size-22"><h3><a href="tasksheet-pending.html">10</a></h3></h4>
-                                            <span class="text-muted">Today's New Task</span>
-                                        </div>
-                                        <i data-feather="clipboard" class="align-self-center icon-dual-success icon-lg"></i>
-                                    </div>
-                                    <div class="media px-1 py-3 border-bottom">
-                                        <div class="media-body">
-                                            <h4 class="mt-0 mb-1 font-size-22"><a href="tasksheet-open-task.html">21</a></h4>
-                                            <span class="text-muted">Opened Task</span>
-                                        </div>
-                                        <i data-feather="check-circle" class="align-self-center icon-dual-success icon-lg"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- breakdown -->
-                        <div class="col-md-6 col-xl-9">
-                            <div class="card">
-                                <div class="card-body pt-2 pb-0">
-                                    <h6 class="header-title mb-0 pb-3">Checklist - Breakdown of the Month</h6>
-                                    <div class="row">
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Lift</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">3</a></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                 
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Electric</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">3</a></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Pipe Burst</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">1</a></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Barrier Gate</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">4</a></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Pump</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">2</a></h3>                                            
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-xl-3">
-                                            <div class="card">
-                                                <div class="card-body p-0 bg-color-grayLighter">
-                                                    <div class="p-2 text-center">
-                                                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Escalator</span>
-                                                        <h3 class="m-2"><a href="pdf-report-checklistBreakdown.html" target="_blank">1</a></h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                2025 &copy; Property Gaga. All Rights Reserved.
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body mb-0 pb-0">
-                                    <button class="btn btn-primary mt-0 mr-1" id="btn-new-event"><i class="uil-plus-circle"></i> Create New Event</button>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="row calendar-widget">
-                                        <div class="col-sm-8">
-                                            <div id="calendar"></div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <ul class="list-unstyled ml-sm-3 pl-sm-5 mt-4 mt-sm-0">
-                                                <li class="border-bottom-gray300 mb-3"><h5>14 October 2021</h5></li>
-                                                <li class="mb-4">
-                                                    <p class="text-muted mb-0 font-size-13">
-                                                        <i class="uil uil-calender mr-1"></i>5:49 AM - 7:00 AM
-                                                    </p>
-                                                    <h6 class="mt-1 font-size-16">AGM Meeting</h6>
-                                                </li>
-                                                <li class="mb-4">
-                                                    <p class="text-muted mb-0 font-size-13">
-                                                        <i class="uil uil-calender mr-1"></i>8:36 AM - 11:45 AM
-                                                    </p>
-                                                    <h6 class="mt-1 font-size-16">Fire Fighting Contract Renewal</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-6 text-right">
+                                <a href="privacy-policy.html">Privacy Policy</a> | <a href="refund-policy.html">Refund Policy</a>
                             </div>
                         </div>
                     </div>
+                </footer>
+                <!-- end Footer -->
 
-                </div> <!-- container-fluid -->
+            </div>
 
-            </div> <!-- content -->
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
 
+            <!-- modal save e-invoice -->
+            <div class="modal fade" id="saveeinvoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">e-Invoicing Registration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Would you like to confirm the submission of the e-Invoicing registration? Please note that upon submission, you will not be permitted to update the information.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-rounded mr-1" data-toggle="modal" data-target="#saveeinvoice">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal save e-invoice end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div class="rightbar-title">
+                <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                    <i data-feather="x-circle"></i>
+                </a>
+                <h5 class="m-0">Building Management</h5>
+            </div>
+    
+            <div class="slimscroll-menu">
+    
+                <h5 class="font-size-16 pl-3 mt-2 slideout">
+                    <div class="caption">3 Resident - Penang, Malaysia</div>
+                    <img src="assets/images/condo/3residence.jpg" class="img-fluid condo">
             
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6 text-left">
-                            2025 &copy; Property Gaga. All Rights Reserved.
-                        </div>
-                        <div class="col-6 text-right">
-                            <a href="privacy-policy.html">Privacy Policy</a> | <a href="refund-policy.html">Refund Policy</a>
-                        </div>
-                    </div>
+                </h5>
+                <div class="pt-2 pb-2 pl-3 pr-3 border-bottom-gray300">
+                    <h6 class="mb-0">Managed By</h6>
+                    <a href="#">EAD Property Management</a>
                 </div>
-            </footer>
-            <!-- end Footer -->
-
-        </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
-        <!-- modals -->
-        <!-- Add New staff leave MODAL -->
-        <div class="modal fade" id="viewstaffleave" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header py-3 px-4 border-bottom-0 d-block">
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
-                        <h5 class="modal-title" id="modal-title">Staff Leave</h5>
-                    </div>
-                    <div class="modal-body p-4">
-                        <form class="needs-validation" name="event-form" id="form-event" novalidate>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Staff Name</label>
-                                        <select data-plugin="customselect" class="form-control">
-                                            <option value="0">Shreyu</option>
-                                            <option value="1">Greeva</option>
-                                            <option value="2">Dhyanu</option>
-                                            <option value="3" disabled>Disabled</option>
-                                            <option value="4">Mannat</option>
-                                        </select>
-                                        <div class="invalid-feedback">Please provide a valid event name</div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Year</label>
-                                        <select class="form-control custom-select" name="category"
-                                            id="event-category" required>
-                                            <option selected>2024</option>
-                                            <option>2019</option>
-                                            <option>2018</option>
-                                            <option>2017</option>
-                                        </select>
-                                        <div class="invalid-feedback">Please select a valid event category</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="list-unstyled activity-widget">
-                                <li class="activity-list">
-                                    <div class="media">
-                                        <div class="media-body overflow-hidden">
-                                            <h5 class="font-size-15 mt-2 mb-1 text-secondary">Carried Forward from year 2019 <span class="badge badge-secondary float-right">1</span></h5>
-                                            <h5 class="font-size-15 mt-2 mb-1 text-secondary">Leave Entitled <span class="badge badge-secondary float-right">14</span></h5>
-                                            <h5 class="font-size-15 mt-2 mb-1 text-secondary">Taken <span class="badge badge-secondary float-right">- 3</span></h5>
-                                            <h5 class="font-size-15 mt-2 mb-1 text-primary">Balance <span class="badge badge-primary float-right">8</span></h5>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="row mt-2">
-                                <div class="col-6">
-                                </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-outline-primary btn-rounded mr-1" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> <!-- end modal-content-->
-            </div> <!-- end modal dialog-->
-        </div>
-        <!-- end modal-->
-
-        <!-- Add New Event MODAL -->
-        <div class="modal fade" id="event-modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header py-3 px-4 border-bottom-0 d-block">
-                        <button type="button" class="close" data-dismiss="modal"
-                            aria-hidden="true">&times;</button>
-                        <h5 class="modal-title" id="modal-title">Event</h5>
-                    </div>
-                    <div class="modal-body p-4">
-                        <form class="needs-validation" name="event-form" id="form-event" novalidate>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Event Name</label>
-                                        <input class="form-control" placeholder="Insert Event Name"
-                                            type="text" name="title" id="event-title" required />
-                                        <div class="invalid-feedback">Please provide a valid event name</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Category</label>
-                                        <select class="form-control custom-select" name="category"
-                                            id="event-category" required>
-                                            <option value="bg-danger" selected>Danger</option>
-                                            <option value="bg-success">Success</option>
-                                            <!--<option value="bg-primary">Primary</option>-->
-                                            <option value="bg-info">Info</option>
-                                            <option value="bg-dark">Dark</option>
-                                            <option value="bg-warning">Warning</option>
-                                        </select>
-                                        <div class="invalid-feedback">Please select a valid event category</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-6">
-                                    <button type="button" class="btn btn-danger" id="btn-delete-event">Delete</button>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-light mr-1 btn-rounded" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary btn-rounded" id="btn-save-event">Save</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> <!-- end modal-content-->
-            </div> <!-- end modal dialog-->
-        </div>
-        <!-- end modal-->
-
-        <!-- modal -->
-        <div class="modal fade" id="bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myExtraLargeModalLabel">Announcement / Notice</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body font-md text-color-black">
-                        <div class="text-center">
-                            <h3>Public Announcement Temporary Closure of Sierra East Management Office</h3>
-                            <p class="text-muted">06 Dec 2024</p>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Management Office</h6>
+                    3 Resident<br>
+                    Level 1, Management Office<br>
+                    Jalan 3 Resident,<br>
+                    11900 Bayan Lepas, Penang, Malaysia
+                    <br>
+                    <i class="uil-phone mr-1"></i>04-3702065 / 018-2460677<br>
+                    <i class="uil-newspaper mr-1"></i>04-3702064<br>
+                    <i class="uil-envelope mr-1"></i>email@3resident.com<br>
+                    <i class="uil-globe mr-1"></i>www.3resident.com
+                </div>
+                <div class="px-3 py-2 border-bottom-gray300 font-sm">
+                    <h6 class="mb-1">Operation Hours</h6>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Mon</span>
                         </div>
-
-                        <hr class="solid-gray400">
-
-                        Dear Sierra East Residents,
-                        <br><br>
-
-                        Kindy be informed that Management Office will be CLOSED due to recent EMCO Enforcement in our condo and the surrounding areas.
-                        <br><br>
-                        Management team still are working with local authoritis on the emergency cases support purposes.
-                        <br><br>
-                        In the meantime, please expect minimum support from cleners due to the restriction as they've issues entering the premises.
-                        <br><br>
-                        We will keep you posted if there are any new updates from the local authorities.
-                        <br><br>
-                        Please stay safe and follow Standard SOP's during this period.
-                        <br><br>
-                        For any emergencies please intercom Security Post.
-                        <br><br>
-                        Thank you.
-                        <br><br><br>
-                        From Sierra East Management
-                        <br><br><br>
-                        <p><img src="assets/images/projects/project-1.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image"></p>
-                        <p><img src="assets/images/projects/project-2.jpg" class="rounded responsiveimg mb-2 mt-2" alt="file-image"></p>
-                    </div>   
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary btn-rounded" data-dismiss="modal">Close</button>
-                    </div>                                             
-                </div>
-            </div>
-        </div>
-        <!-- modal end -->
-
-        <!-- modal Send meeting reminder-->
-        <div class="modal fade" id="sendreminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Send a Meeting Reminder</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label text-right" for="">From</label>
-                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">email@email.com</label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label text-right" for="">To</label>
-                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">email@email.com, email@email.com, email@email.com, email4@email.com, email6@email.com, email@email.com</label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label text-right" for="">Subject</label>
-                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">Reminder:  4th Committee Meeting</label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label text-right" for="">Message</label>
-                                        <label class="col-lg-9 col-form-label text-color-grayDarker" for="">
-                                            Dear Committee Members,<br><br>
-                                            Just a friendly reminder that 4th Committee Meeting is on 12 Aug 2024, 10:30am at Meeting Room 3. Please submit your response if you haven't done so.
-                                            <br><br>
-                                            Thank you.
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Tue</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Send Reminder Now</button>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Wed</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- modal Send meeting reminder end-->
-        
-
-    </div>
-    <!-- END wrapper -->
-
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div class="rightbar-title">
-            <a href="javascript:void(0);" class="right-bar-toggle float-right">
-                <i data-feather="x-circle"></i>
-            </a>
-            <h5 class="m-0">Building Management</h5>
-        </div>
-    
-        <div class="slimscroll-menu">
-    
-            <h5 class="font-size-16 pl-3 mt-2 slideout">
-                <div class="caption">3 Resident - Penang, Malaysia</div>
-                <img src="assets/images/condo/3residence.jpg" class="img-fluid condo">
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Thu</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Fri</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            07:00am - 12:00pm<br>01:00pm - 06:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Sat</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                            09:00am - 12:00pm<br>01:00pm - 03:00pm
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-sm-1 col-md-2 col-lg-2">
+                            <span class="badge badge-soft-primary">Sun</span>
+                        </div>
+                        <div class="col-sm-11 col-md-10 col-lg-10">
+                           Closed
+                        </div>
+                    </div>
+                    <small>(Close on public holiday)</small><br>
             
-            </h5>
-            <div class="pt-2 pb-2 pl-3 pr-3 border-bottom-gray300">
-                <h6 class="mb-0">Managed By</h6>
-                <a href="#">EAD Property Management</a>
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300">
-                <h6 class="mb-0">Management Office</h6>
-                3 Resident<br>
-                Level 1, Management Office<br>
-                Jalan 3 Resident,<br>
-                11900 Bayan Lepas, Penang, Malaysia
-                <br>
-                <i class="uil-phone mr-1"></i>04-3702065 / 018-2460677<br>
-                <i class="uil-newspaper mr-1"></i>04-3702064<br>
-                <i class="uil-envelope mr-1"></i>email@3resident.com<br>
-                <i class="uil-globe mr-1"></i>www.3resident.com
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300 font-sm">
-                <h6 class="mb-1">Operation Hours</h6>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Mon</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        07:00am - 12:00pm<br>01:00pm - 06:00pm
-                    </div>
+                    <!-- <i>Note to developer: below line will appear if Special holiday is set.</i>
+                    <div class="text-danger mt-2">We are close today in conjunction with special holiday.</div> -->
                 </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Tue</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        07:00am - 12:00pm<br>01:00pm - 06:00pm
-                    </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Late Payment Interest</h6>
+                    <span class="text-success"><i class="uil-check-square mr-1"></i> Activated</span><br>
+                    Interest Rate: 10%<br>
+                    Grace Period: 7 days<br>
+                    Admin Charges: 10%
                 </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Wed</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        07:00am - 12:00pm<br>01:00pm - 06:00pm
-                    </div>
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-0">Bank Account <small>(Maintenance)</small></h6>
+                    AmBank<br>784949289570<br>
+                    Holder Name 1
                 </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Thu</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        07:00am - 12:00pm<br>01:00pm - 06:00pm
-                    </div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Fri</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        07:00am - 12:00pm<br>01:00pm - 06:00pm
-                    </div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Sat</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                        09:00am - 12:00pm<br>01:00pm - 03:00pm
-                    </div>
-                </div>
-                <div class="row mb-1">
-                    <div class="col-sm-1 col-md-2 col-lg-2">
-                        <span class="badge badge-soft-primary">Sun</span>
-                    </div>
-                    <div class="col-sm-11 col-md-10 col-lg-10">
-                       Closed
-                    </div>
-                </div>
-                <small>(Close on public holiday)</small><br>
-            
-                <!-- <i>Note to developer: below line will appear if Special holiday is set.</i>
-                <div class="text-danger mt-2">We are close today in conjunction with special holiday.</div> -->
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300">
-                <h6 class="mb-0">Late Payment Interest</h6>
-                <span class="text-success"><i class="uil-check-square mr-1"></i> Activated</span><br>
-                Interest Rate: 10%<br>
-                Grace Period: 7 days<br>
-                Admin Charges: 10%
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300">
-                <h6 class="mb-0">Bank Account <small>(Maintenance)</small></h6>
-                AmBank<br>784949289570<br>
-                Holder Name 1
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300">
-                <h6 class="mb-2">Building Manager</h6>
-                <div class="media user-profile m-0 p-0">
-                    <img src="assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle mr-2" title="Lee Soon Hoe" />
-                    <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" title="Lee Soon Hoe" />
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-2">Building Manager</h6>
+                    <div class="media user-profile m-0 p-0">
+                        <img src="assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle mr-2" title="Lee Soon Hoe" />
+                        <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" title="Lee Soon Hoe" />
         
-                    <div class="media-body">
-                        Lee Soon Hoe<br>
-                        <a href="tel:123-456-7890">018-940 1608</a><br>
-                        <a href="mailto:">email@email.com</a><br>
+                        <div class="media-body">
+                            Lee Soon Hoe<br>
+                            <a href="tel:123-456-7890">018-940 1608</a><br>
+                            <a href="mailto:">email@email.com</a><br>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="px-3 py-2 border-bottom-gray300">
-                <h6 class="mb-2">Building Supervisor</h6>
-                <div class="media user-profile m-0 p-0">
-                    <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle mr-2" title="Muhammad Sabir" />
-                    <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-2" title="Muhammad Sabir" />
+                <div class="px-3 py-2 border-bottom-gray300">
+                    <h6 class="mb-2">Building Supervisor</h6>
+                    <div class="media user-profile m-0 p-0">
+                        <img src="assets/images/users/avatar-3.jpg" class="avatar-sm rounded-circle mr-2" title="Muhammad Sabir" />
+                        <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-2" title="Muhammad Sabir" />
         
-                    <div class="media-body">
-                        Muhammad Sabir<br>
-                <a href="tel:123-456-7890">018-940 1608</a><br>
-                <a href="mailto:">email@email.com</a><br>
+                        <div class="media-body">
+                            Muhammad Sabir<br>
+                    <a href="tel:123-456-7890">018-940 1608</a><br>
+                    <a href="mailto:">email@email.com</a><br>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="px-3 py-3">
-                <br>
-            </div>
-        </div> <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
-
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
-
-    <!-- Vendor js -->
-    <script src="assets/js/vendor.min.js"></script>
-
-    <!-- Plugins Js -->
-    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-    <script src="assets/libs/select2/select2.min.js"></script>
-    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
-    <!-- for calendar widget - e -->
-    <!-- <script src="assets/libs/apexcharts/apexcharts.min.js"></script> -->
-    
-
-    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
-    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-    <script src="assets/libs/moment/moment.min.js"></script>
-
-    <!-- Calendar js-->
-    <script src="assets/libs/fullcalendar-core/main.min.js"></script>
-    <script src="assets/libs/fullcalendar-bootstrap/main.min.js"></script>
-    <script src="assets/libs/fullcalendar-daygrid/main.min.js"></script>
-    <script src="assets/libs/fullcalendar-timegrid/main.min.js"></script>
-    <script src="assets/libs/fullcalendar-list/main.min.js"></script>
-    <script src="assets/libs/fullcalendar-interaction/main.min.js"></script>
-
-    <!-- Init js-->
-    <script src="assets/js/pages/form-advanced.init.js"></script>
-
-    <!-- datatable js -->
-    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
-    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
-    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
-    
-    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
-    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
-    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
-    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
-    <script src="assets/libs/datatables/buttons.print.min.js"></script>
-
-    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
-    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
-
-    <!-- Datatables init -->
-    <script src="assets/js/pages/datatables.init.js"></script>
-
-    <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
-
-    <!-- Calendar init -->
-    <script src="assets/js/pages/calendar.init.js"></script>
-
-    <!-- page js -->
-    <!-- <script src="assets/js/pages/widgets.init.js"></script> -->
-
-    
-    <!-- <script>
-        $(document).ready(function(){
-            $("#checkinModal").modal('show');
-        });
-    </script>
-
-    <div id="checkinModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="p-4">
-                    <div class="modal-header">
-                        <h5 class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <h3>Welcome to Propertygaga's Building Management System</h3>
-                        <p>Thank you for checking in!<br>Don't forget to visit our calendar page to stay up-to-date on our latest events and job tasks.</p>
-                        <p>You can also click on the check-in icon on the top right corner of the page.
-                            <img src="assets/images/propertygaga/checkin-ani.gif" width="80%">
-                        </p>
-                        <a href="calendar.html" class="btn btn-lg btn-primary btn-block btn-rounded">Check-in Now</a>
-                    </div>
+                <div class="px-3 py-3">
+                    <br>
                 </div>
-            </div>
+            </div> <!-- end slimscroll-menu-->
         </div>
-    </div> -->
+        <!-- /Right-bar -->
 
-</body>
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
 </html>
