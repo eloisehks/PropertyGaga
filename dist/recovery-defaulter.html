@@ -644,13 +644,13 @@
                                         <a href="invoices-recovery-settings.html">Recovery Settings</a>
                                     </li>
                                     <li>
-                                        <a href="invoices-notices-reminders.html">Reminder Settings</a>
+                                        <a href="invoices-notices-reminders.html">Notice Settings</a>
                                     </li>
                                     <li>
                                         <a href="recovery-defaulter.html">Defaulter Listing</a>
                                     </li>
                                     <li>
-                                        <a href="recovery-installmentlist.html">Installment
+                                        <a href="recovery-installmentlist.html">Instalment
                                             <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">1</span>
                                         </a>
                                     </li>
@@ -1566,7 +1566,10 @@
                                         <div class="tab-content p-3 text-muted">
                                             <div class="tab-pane show active" id="current">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-12 text-right">
+                                                    <div class="col-md-6">
+                                                        <a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">Send NOR</a><a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">Send NOD</a><a href="#" class="btn btn-outline-secondary btn-sm btn-rounded">Send Tribunal</a>
+                                                    </div> 
+                                                    <div class="col-md-6 text-right">
                                                         <a href="pdf-defaulter.html" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">PDF</a>
                                                     </div> 
                                                 </div>
@@ -1581,12 +1584,13 @@
                                                                     </div>
                                                                 </th>
                                                                 <th>Defaulter No.</th>
+                                                                <th>Defaulter Date</th>
                                                                 <th width="1%">Unit No.</th>
                                                                 <th>Owners</th>
                                                                 <th class="text-right">Outstanding<br>Amt. (RM)</th>
                                                                 <th class="text-right">Last Payment (RM)</th>
                                                                 <th class="text-left bg-color-propertygagaLightest">Access</th>
-                                                                <th class="text-center">Installment</th>
+                                                                <th class="text-center">Instalment</th>
                                                                 <th class="text-center">Reminder (NOR)<br>Send out Date</th>
                                                                 <th class="text-center">Reminder (NOD)<br>Send out Date</th>
                                                                 <th class="text-center">Tribunal Date<br>Ref Code</th>
@@ -1602,7 +1606,8 @@
                                                                         <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
                                                                     </div>
                                                                 </td>
-                                                                <td>D00231</td>
+                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc">D00231</a><i class="uil uil-file-landscape-alt ml-3"></i></td>
+                                                                <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
                                                                 <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
                                                                 <td class="text-right">RM 1,200.00</td>
@@ -1639,9 +1644,15 @@
                                                                             aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
                                                                         <div class="dropdown-menu">
                                                                             <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                            <div class="dropdown-divider"></div>
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Tribunal</a>
-                                                                            <div class="dropdown-divider"></div>
+                                                                           
+                                                                            <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                          
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
+                                                                          
                                                                             <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
                                                                             
                                                                         </div>
@@ -1654,7 +1665,8 @@
                                                                         <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
                                                                     </div>
                                                                 </td>
-                                                                <td>D00235</td>
+                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc1">D00235</a></td>
+                                                                <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html"target="_blank">6-01-07</a></td>   
                                                                 <td>sssss <span class="badge badge-soft-secondary ml-2">+1</span></td>                              
                                                                 <td class="text-right">RM 1,200.00</td>
@@ -1687,13 +1699,17 @@
                                                                         <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
                                                                             data-toggle="dropdown" aria-haspopup="true"
                                                                             aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                        <div class="dropdown-menu">
+                                                                        <div class="dropdown-menu" style="z-index: 9999 !important; position: relative">
                                                                             <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                            <div class="dropdown-divider"></div>
-                                                                            <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Installment</a>
-                                                                            <div class="dropdown-divider"></div>
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Tribunal</a>
-                                                                            <div class="dropdown-divider"></div>
+                                                                           
+                                                                            <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                          
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
+                                                                          
                                                                             <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
                                                                         </div>
                                                                     </div>
@@ -1705,7 +1721,8 @@
                                                                         <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
                                                                     </div>
                                                                 </td>
-                                                                <td>D00237</td>
+                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc1">D00237</a></td>
+                                                                <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-08</a></td> 
                                                                 <td>Nancy</td>                                            
                                                                 <td class="text-right">RM 30,000.00</td>
@@ -1739,7 +1756,15 @@
                                                                             aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
                                                                         <div class="dropdown-menu">
                                                                             <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
-                                                                            <div class="dropdown-divider"></div>
+                                                                           
+                                                                            <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                          
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
+                                                                          
                                                                             <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
                                                                         </div>
                                                                     </div>
@@ -1766,12 +1791,13 @@
                                                                     </div>
                                                                 </th>
                                                                 <th>Defaulter No.</th>
+                                                                <th>Defaulter Date</th>
                                                                 <th width="1%">Unit No.</th>
                                                                 <th>Owners</th>
                                                                 <th class="text-right">Outstanding<br>Amt. (RM)</th>
                                                                 <th class="text-right">Last Payment (RM)</th>
                                                                 <th class="text-left bg-color-propertygagaLightest">Access</th>
-                                                                <th class="text-center">Installment</th>
+                                                                <th class="text-center">Instalment</th>
                                                                 <th class="text-center">Reminder (NOR)<br>Send out Date</th>
                                                                 <th class="text-center">Reminder (NOD)<br>Send out Date</th>
                                                                 <th class="text-center">Tribunal Date<br>Ref Code</th>
@@ -1788,7 +1814,8 @@
                                                                         <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
                                                                     </div>
                                                                 </td>
-                                                                <td>D00231</td>
+                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc">D00231</a><i class="uil uil-file-landscape-alt ml-3"></i></td>
+                                                                <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
                                                                 <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
                                                                 <td class="text-right">RM 1,200.00</td>
@@ -1862,6 +1889,213 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+             <!-- modal Upload document 1 -->
+             <div class="modal fade" id="uploaddoc1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Document</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row align-items-center pb-3">
+                                            <input type="file" class="form-control" id="fileinput">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Upload document 1 end-->
+            
+            <!-- modal Upload document -->
+            <div class="modal fade" id="uploaddoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Document</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row align-items-center pb-3">
+                                            <input type="file" class="form-control" id="fileinput">
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12">
+                                                <div>Uploaded on 2 Jan 2023</div>
+                                                <div class="card shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">document1.pdf</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12">
+                                                <div>Uploaded on 2 Jan 2023</div>
+                                                <div class="card shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">document2.pdf</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Upload document 1 end-->
+        
+
+            <!-- modal Upload document -->
+            <div class="modal fade" id="uploaddoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Document</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row align-items-center pb-3">
+                                            <input type="file" class="form-control" id="fileinput">
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12">
+                                                <div>Uploaded on 2 Jan 2023</div>
+                                                <div class="card shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">document1.pdf</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-12">
+                                                <div>Uploaded on 2 Jan 2023</div>
+                                                <div class="card shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">document2.pdf</a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <!-- Button -->
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Upload document end-->
 
              <!-- modal Report Error-->
              <div class="modal fade" id="reportError" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
