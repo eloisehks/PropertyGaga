@@ -498,7 +498,8 @@
                                 <a href="data-utility.html">
                                     <i class="uil uil-bolt"></i>
                                     <span class="badge badge-success float-right"></span>
-                                    <span>Utility</span>
+                                    <span>Utility<i class="uil uil-exclamation-octagon ml-3 text-color-redBright" data-toggle="tooltip" data-placement="top" title="" data-original-title="Meter reading not updated"></i><i class="uil uil-bill text-color-redBright" data-toggle="tooltip" data-placement="top" title="" data-original-title="Bill not uploaded"></i>
+                                    </span>
                                 </a>
                             </li>
                             <li>
@@ -1594,7 +1595,7 @@
                                                         </div>
                                                         
                                                     </div>
-                                                    <div class="form-group row mb-0">
+                                                    <!-- <div class="form-group row mb-0">
                                                         <label class="col-lg-3 col-form-label" for=""></label>
                                                         <div class="col-lg-9">
                                                             <div class="card bg-color-grayLighter">
@@ -1609,7 +1610,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Available Credits</label>
                                                         <div class="col-lg-3">
@@ -1633,7 +1634,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text">RM</div>
                                                                 </div>
-                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="">
+                                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="5,404.00" disabled>
                                                             </div>
                                                             <!-- <div class="mt-3">
                                                                 <div class="custom-control custom-checkbox mb-2">
@@ -1956,10 +1957,20 @@
                                                                             <td colspan="3" class="text-right pr-2 pt-2 pb-1">
                                                                                 <label class="col-lg-4 col-form-label" for="">Total (RM)</label>
                                                                             </td>
-                                                                            <td class="pt-2 pb-1"><input type="text" id="" name="" class="form-control text-right" value='4,004.00'></td>
+                                                                            <td class="pt-2 pb-1"><input type="text" id="" name="" class="form-control text-right" value='4,404.00'></td>
                                                                             <td class="pt-2 pb-1"></td>
                                                                         </tr>
-                                                            
+                                                                        <tr>
+                                                                            <td class="pr-2 pt-2 pb-1">
+                                                                            </td>
+                                                                            <td colspan="3" class="text-right pr-2 pt-2 pb-1">
+                                                                                <label>
+                                                                                    <input class="col-form-label" type="checkbox" id="editCheckbox" onclick="toggleTextbox()"> Advance Payment (RM)
+                                                                                </label>
+                                                                            </td>
+                                                                            <td class="pt-2 pb-1"><input type="text" id="myTextbox" disabled name="" class="form-control text-right" value='1,000.00'></td>
+                                                                            <td class="pt-2 pb-1"></td>
+                                                                        </tr>
                                                                         <tr>
                                                                             <td colspan="4" class="text-right pr-2 pt-1 pb-1 border-0">
                                                                                 <label class="col-lg-4 col-form-label" for=""> <i class="uil uil-question-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add any other +ve or -ve charges that need to be applied to adjust the total amount Eg. +10 or -10."></i> Adjustment</label>
@@ -1973,36 +1984,44 @@
                                                                             <td colspan="4" class="text-right pr-2 pt-1 border-0">
                                                                                 <label class="col-lg-4 col-form-label" for="">Net Total (RM)</label>
                                                                             </td>
-                                                                            <td class="border-0 pt-1"><input type="text" id="" name="" class="form-control text-right" value='4,004.00'></td>
+                                                                            <td class="border-0 pt-1"><input type="text" id="" name="" class="form-control text-right" value='5,404.00'></td>
                                                                             <td class="border-0 pt-1"></td>
                                                                         </tr>
-                                                                        <!-- <tr>
-                                                                            <td colspan="2" class="text-right pr-2 pt-1 pb-1 border-0">
+                                                                        <tr>
+                                                                            <td class="text-right pr-2 pt-1 pb-1 border-0">
                                                                             </td>
-                                                                            <td colspan="3" class="border-0 pt-1 pb-1">
+                                                                            <td colspan="4" class="border-0 pt-1 pb-1 text-left">
                                                                                 <div class="card">
                                                                                     <div class="card-body border-gray-light">
                                                                                         <div class="row">
-                                                                                            <div class="col-lg-7 text-right">
+                                                                                            <div class="col col-lg-7 text-right">
                                                                                                 Amount Received :
                                                                                             </div>
-                                                                                            <div class="col-lg-5 text-right">
-                                                                                                RM 5,004.00
+                                                                                            <div class="col col-lg-5 text-right">
+                                                                                                RM 5,404.00
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="row">
-                                                                                            <div class="col-lg-7 text-right">
+                                                                                            <div class="col col-lg-7 text-right">
                                                                                                 Amount used for Payments :
                                                                                             </div>
-                                                                                            <div class="col-lg-5 text-right">
-                                                                                                RM 4,004.00
+                                                                                            <div class="col col-lg-5 text-right">
+                                                                                                RM 4,404.00
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col col-lg-7 text-right">
+                                                                                                Advance Payment :
+                                                                                            </div>
+                                                                                            <div class="col col-lg-5 text-right">
+                                                                                                RM 1,000.00
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </td>
                                                                             <td class="border-0 pt-1 pb-1"></td>
-                                                                        </tr> -->
+                                                                        </tr>
                                                                     </tfoot>
                                                                 </table>
                                                                 
@@ -2051,12 +2070,17 @@
                                         <div id="FixedBottomDivInnerBelow">
                                             <div class="row">
                                                 <div class="col-lg-12 col-sm-12 text-right font-weight-semibold">
-                                                    Amount Received: <span class="text-color-black">RM 4,004.00</span>
+                                                    Amount Received: <span class="text-color-black">RM 5,404.00</span>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 col-sm-12 text-right font-weight-semibold">
-                                                    Amount used for Payments: <span class="text-color-black">RM 4,004.00</span>
+                                                    Amount used for Payments: <span class="text-color-black">RM 4,404.00</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-12 text-right font-weight-semibold">
+                                                    Advance Payment: <span class="text-color-black">RM 1,000.00</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -2170,7 +2194,7 @@
         <!-- modal view LPI end -->
 
         <!-- modal apply credits -->
-        <div class="modal fade" id="applycredit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <!-- <div class="modal fade" id="applycredit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -2241,7 +2265,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- modal apply credits end -->
 
         <!-- modal send payment receipt -->
@@ -2277,7 +2301,7 @@
                                     <textarea class="form-control" rows="15" id="example-textarea">
 Hi Derik,
 
-Here's your payment receipt for Invoice #INV-23456, for RM4,004.00.
+Here's your payment receipt for Invoice #INV-23456, for RM4,404.00.
 
 You can always view your receipt online at http://www.propertygaga.com/beta2/pdf-print-receipt-2.html.
 
@@ -2316,7 +2340,7 @@ Your's Faithfully,
                                                 <div class="font-size-14">
                                                     Hi Derik,
 <br><br>
-Here's your payment receipt for Invoice #INV-23456, for RM4,004.00.
+Here's your payment receipt for Invoice #INV-23456, for RM4,404.00.
 <br><br>
 You can always view your receipt online at <a href="http://www.propertygaga.com/beta2/pdf-print-receipt-2.html" target="_blank">http://www.propertygaga.com/beta2/pdf-print-receipt-2.html</a>.
 <br><br>
@@ -2590,6 +2614,15 @@ Your's Faithfully,
                 }
             }
         </script>
+
+    <!-- toggle textbox-->
+    <script>
+        function toggleTextbox() {
+        const checkbox = document.getElementById('editCheckbox');
+        const textbox = document.getElementById('myTextbox');
+        textbox.disabled = !checkbox.checked;
+        }
+    </script>
 
     </body>
 </html>
