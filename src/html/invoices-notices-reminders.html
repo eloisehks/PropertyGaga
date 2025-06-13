@@ -11,6 +11,9 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+        <!-- Summernote css -->
+        <link href="assets/libs/summernote/summernote-bs4.css" rel="stylesheet" />
+
         <!-- plugin css -->
         <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -62,162 +65,111 @@
                                             <li class="nav-item">
                                                 <a href="#billnotice" data-toggle="tab" aria-expanded="true"
                                                     class="nav-link active">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-block d-sm-none">Invoice Notice</span>
                                                     <span class="d-none d-sm-block">Invoice Notice</span>
                                                 </a>
                                             </li>
-                                            <!-- <li class="nav-item">
-                                                <a href="#firstreminder" data-toggle="tab" aria-expanded="false"
-                                                    class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
-                                                    <span class="d-none d-sm-block">First Reminder</span>
-                                                </a>
-                                            </li> -->
                                             <li class="nav-item">
                                                 <a href="#reminder" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
-                                                    <span class="d-none d-sm-block">Reminder</span>
+                                                    <span class="d-block d-sm-none">NOR</span>
+                                                    <span class="d-none d-sm-block">Notice of Reminder</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#noticeofdemand" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
-                                                    <span class="d-none d-sm-block">Notice of Demand</span>
+                                                    <span class="d-block d-sm-none">NOD</span>
+                                                    <span class="d-none d-sm-block ">Notice of Demand</span>
                                                 </a>
                                             </li>
-                                            <li class="nav-item">
+                                            <!-- <li class="nav-item">
                                                 <a href="#tribunal" data-toggle="tab" aria-expanded="false"
                                                     class="nav-link">
-                                                    <span class="d-block d-sm-none"><i class="uil-home-alt"></i></span>
+                                                    <span class="d-block d-sm-none">Tribunal</span>
                                                     <span class="d-none d-sm-block">Tribunal</span>
                                                 </a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <div class="tab-content p-0 text-muted">
                                             <div class="tab-pane show active" id="billnotice">
                                                 <div class="row">
+                                                    <div class="col-12 p-4">
+<span class="bold">Note:</span> Please fill in the form and use [ ] for fields auto-filled by the system.<br>
+Example: All payments should be made payable to [Name of Perbadanan].
+                                                    </div>
+                                                </div>
+                                                <div class="row">
                                                     <div class="col-12">
                                                         <div class="card pb-2">
                                                             <div class="card-body">
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Header</div>
+                                                                <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Email Subject:</div>
                                                                     <div class="col-md-10">
-                                                                        <input type="text" id="" name="" class="form-control text-uppercase" value="Badan Pengurusan Bersama Sierra East">
+                                                                        <input type="text" id="" name="" class="form-control" value="Invoice Notice for [unit no.]: [#invoice no.]">
+                                                                        
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Email Subject:</div>
-                                                                    <div class="col-md-10">Invoice Notice for [unit no.]:  [#invoice no.]</div>
-                                                                </div>
-                                                                <div class="row">
+                                                                <!-- <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Header:</div>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" id="" name="" class="form-control text-uppercase" value="Invoice Notice">
+                                                                    </div>
+                                                                </div> -->
+                                                                <div class="form-group row">
                                                                     <div class="col-md-2 font-weight-bold">Message:</div>
                                                                     <div class="col-md-10">
-                                                                        <!-- Dear Susan Teh,
-                                                                        <br /><br />
-                                                                        Enclosed is a bill for your kind attention:
-                                                                        <br /><br />
-                                                                        Acc. ID / Unit No.: 1A3-08-08<br />
-                                                                        Bill #20040100<br />
-                                                                        Bill Date: 1 Apr 2023<br />
-                                                                        Due Date: 7-Jun-2023
-                                                                        <br /><br />
-                                                                        Kindly make full payment before the due date in order to avoid any overdue interest charges.
-                                                                        <br /><br />
-                                                                        Thank you.
-                                                                        <br /><br />
-                                                                        Badan Pengurusan Bersama Big Place<br />
-                                                                        04-2966 114 / 016 2956 6114<br />
-                                                                        bigplace.mgt@gmail.com -->
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-Dear [Owner],
-Enclosed is a bill for your kind attention:
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+Dear [Owner],<br>
+Enclosed is a bill for your kind attention:<br>
+<br><br>
+Acc. ID / Unit No.: [Unit no.]<br>
+Invoice [#]<br>
+Invoice Date: [Invoice Date]
+Due Date: [Due Date]<br>
+Kindly make full payment before the due date in order to avoid any overdue interest charges.<br>
+Thank you.<br><br>
 
-Acc. ID / Unit No.: [unit no.]
-Invoice [#]
-Invoice Date: []
-Due Date: []
-Kindly make full payment before the due date in order to avoid any overdue interest charges.
-Thank you.
-
-Badan Pengurusan Bersama Big Place
-04-2966 114 / 016 2956 6114
-bigplace.mgt@gmail.com
-                                                                        </textarea>
+<b>[Name of Perbadanan]<br>
+    [Office Number / Mobile Number]<br>
+    [Email Address]</b>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3 mt-2">
+                                                                <div class="form-group row mb-3 mt-2">
                                                                     <div class="col-md-2 font-weight-bold">Notes</div>
                                                                     <div class="col-md-10">
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
-
-2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">E & O.E.</div>
-                                                                    <div class="col-md-10">
-                                                                        <!-- <ol class="m-0">
-                                                                            <li>
-                                                                                Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-                                                                            </li>
-                                                                            <li>
-                                                                                Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-                                                                            </li>
-                                                                            <li>
-                                                                                Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-                                                                            </li>
-                                                                            <li>
-                                                                                All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-                                                                            </li>
-                                                                            <li>
-                                                                                Payment can be made during office hours at our site management office.
-                                                                            </li>
-                                                                            <li>
-                                                                                Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-                                                                                <br>
-                                                                                Email: sierraeast.mgmt@gmail.com
-                                                                                <br>
-                                                                                Tel: 04-12345679
-                                                                            </li>
-                                                                            <li>
-                                                                                Kindly ignore this statement if payment has been made.
-                                                                            </li>
-                                                                        </ol> -->
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-
-2. Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-
-3. Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-
-4. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-
-5. Payment can be made during office hours at our site management office.
-
-6. Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-Kindly ignore this statement if payment has been made.
-                                                                        </textarea>
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+<ol>
+    <li>All payments should be made payable to [Name of Perbadanan]. Please indicate your NAME, UNIT NO. and CONTACT NO. on your payment.</li>
+    <br>
+    <li>Payment can be made during office hours at our site management office.</li>
+    <br>
+    <li>Online payment transfer or direct cash/cheque deposit via ATM can be made to [Name of Perbadanan] ([Bank Name, Bank Account Number])</li>
+    <br>
+    <li>Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+    <br>
+    Email: [Email Address]<br>
+    Tel  : [Office Number / Mobile Number]</li>
+    <br>
+    <li>Kindly ignore this statement if payment has been made.</li>
+</ol>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> <!-- end card-->
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="float-left">
-                                                                    <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
-                                                                </div>
-                                                                <div class="float-right">
-                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
-                                                                    
-                                                                </div>
+                                                        </div>
+                                                        <div class="row mb-5">
+                                                            <div class="col col-lg-6 mt-1 mb-1">
+                                                                <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
+                                                            </div>
+                                                            <div class="col col-lg-6 mt-1 mb-1 text-right">
+                                                                <a href="#" class="btn btn-outline-primary btn-rounded mr-1" target="_blank">Preview</a>
+                                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
                                                             </div>
                                                         </div>
                                                         
@@ -227,327 +179,79 @@ Kindly ignore this statement if payment has been made.
                                             </div>
                                             <div class="tab-pane" id="reminder">
                                                 <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card pb-2">
-                                                            <div class="card-body">
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Header</div>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" id="" name="" class="form-control text-uppercase" value="Badan Pengurusan Bersama Sierra East">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Email Subject:</div>
-                                                                    <div class="col-md-10">Reminder for Invoice [#]</div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-2 font-weight-bold">Message:</div>
-                                                                    <div class="col-md-10">
-                                                                        <!-- Dear Susan Teh,
-                                                                        <br /><br />
-                                                                        This is a Reminder that Invoice [#] issued on [date] is overdue. This invoice was due on [date]. Please make payment as soon as possible.
-                                                                        <br /><br />
-                                                                        Thank you.
-                                                                        <br /><br />
-                                                                        Badan Pengurusan Bersama Big Place<br />
-                                                                        04-2966 114 / 016 2956 6114<br />
-                                                                        bigplace.mgt@gmail.com -->
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-Dear Susan Teh,
-                                                                       
-This is a Reminder that Invoice [#] issued on [date] is overdue. This invoice was due on [date]. Please make payment as soon as possible.
-                                                                        
-Thank you.
-                                                                       
-Badan Pengurusan Bersama Big Place
-04-2966 114 / 016 2956 6114
-bigplace.mgt@gmail.com
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Notes</div>
-                                                                    <div class="col-md-10">
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
-
-2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">E & O.E.</div>
-                                                                    <div class="col-md-10">
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-
-2. Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-
-3. Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-
-4. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-
-5. Payment can be made during office hours at our site management office.
-
-6. Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-Kindly ignore this statement if payment has been made.
-                                                                        </textarea>
-                                                                        <!-- <ol class="m-0">
-                                                                            <li>
-                                                                                Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-                                                                            </li>
-                                                                            <li>
-                                                                                Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-                                                                            </li>
-                                                                            <li>
-                                                                                Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-                                                                            </li>
-                                                                            <li>
-                                                                                All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-                                                                            </li>
-                                                                            <li>
-                                                                                Payment can be made during office hours at our site management office.
-                                                                            </li>
-                                                                            <li>
-                                                                                Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-                                                                                <br>
-                                                                                Email: sierraeast.mgmt@gmail.com
-                                                                                <br>
-                                                                                Tel: 04-12345679
-                                                                            </li>
-                                                                            <li>
-                                                                                Kindly ignore this statement if payment has been made.
-                                                                            </li>
-                                                                        </ol> -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div> <!-- end card-->
-                                                        
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="float-left">
-                                                                    <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
-                                                                </div>
-                                                                <div class="float-right">
-                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div><!-- end col-->
-                                                </div>
-                                                <!-- end row-->
-                                            </div>
-                                            <!-- <div class="tab-pane" id="firstreminder">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="card pb-2">
-                                                            <div class="card-body">
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Header</div>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" id="" name="" class="form-control text-uppercase" value="Badan Pengurusan Bersama Sierra East">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Email Subject:</div>
-                                                                    <div class="col-md-10">First Reminder for Bill #20231234</div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-2 font-weight-bold">Message:</div>
-                                                                    <div class="col-md-10">
-                                                                        Dear Susan Teh,
-                                                                        <br /><br />
-                                                                        This is a First Reminder that Bill #20231234 issued on May 15, 2023 is overdue. This bill was due on May 30, 2023. Please make payment immediately.
-                                                                        <br /><br />
-                                                                        Thank you.
-                                                                        <br /><br />
-                                                                        Badan Pengurusan Bersama Big Place<br />
-                                                                        04-2966 114 / 016 2956 6114<br />
-                                                                        bigplace.mgt@gmail.com
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Notes</div>
-                                                                    <div class="col-md-10">
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
-
-2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">E & O.E.</div>
-                                                                    <div class="col-md-10">
-                                                                        <ol class="m-0">
-                                                                            <li>
-                                                                                Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-                                                                            </li>
-                                                                            <li>
-                                                                                Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-                                                                            </li>
-                                                                            <li>
-                                                                                Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-                                                                            </li>
-                                                                            <li>
-                                                                                All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-                                                                            </li>
-                                                                            <li>
-                                                                                Payment can be made during office hours at our site management office.
-                                                                            </li>
-                                                                            <li>
-                                                                                Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-                                                                                <br>
-                                                                                Email: sierraeast.mgmt@gmail.com
-                                                                                <br>
-                                                                                Tel: 04-12345679
-                                                                            </li>
-                                                                            <li>
-                                                                                Kindly ignore this statement if payment has been made.
-                                                                            </li>
-                                                                        </ol>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="float-left">
-                                                                    <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
-                                                                </div>
-                                                                <div class="float-right">
-                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
+                                                    <div class="col-12 p-4">
+<span class="bold">Note:</span> Please fill in the form and use [ ] for fields auto-filled by the system.<br>
+Example: All payments should be made payable to [Name of Perbadanan].
                                                     </div>
                                                 </div>
-                                                
-                                            </div> -->
-                                            <div class="tab-pane" id="noticeofdemand">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card pb-2">
                                                             <div class="card-body">
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Header</div>
-                                                                    <div class="col-md-10">
-                                                                        <input type="text" id="" name="" class="form-control text-uppercase" value="Badan Pengurusan Bersama Sierra East">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
+                                                                <div class="form-group row mb-3 mt-2">
                                                                     <div class="col-md-2 font-weight-bold">Email Subject:</div>
-                                                                    <div class="col-md-10">Notice of Demand for Invoice [#]</div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-2 font-weight-bold">Message:</div>
                                                                     <div class="col-md-10">
-<textarea class="form-control" rows="10" id="example-textarea">
-Dear [Owner],
+                                                                        <input type="text" id="" name="" class="form-control" value="Notice of Reminder for Outstanding Invoice [Unit No.]">
+                                                                    </div>
+                                                                </div>
 
-This is a Notice of Demand that Invoice [#] issued on [date] is overdue. This invoice was due on [date]. Please make payment immediately.
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-2 font-weight-bold">Message:
 
+                                                                    </div>
+                                                                    <div class="col-md-10">
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+We would like to inform you that as of [date], our records shows that your account has an outstanding total of [RM0.00].
+<br><br>        
+We hope this is merely an oversight on your part and would appreciate if you can settle the above mentioned sum within [FOURTEEN (14) days] of this notice.
+<br><br>
+If full payment is not received by the end of the 14 days, legal and/or tribunal proceedings will commence without any further reference to you, and all costs incurred will be charged to you.
+<br><br>
+Please email us your transaction slip or bank-in slip if you have already made payment so that we can update your account.
+<br><br>
 Thank you.
-
-Badan Pengurusan Bersama Big Place
-04-2966 114 / 016 2956 6114
-bigplace.mgt@gmail.com
-</textarea>
-                                                                        <!-- Dear Susan Teh,
-                                                                        <br /><br />
-                                                                        This is a Notice of Demand that Bill #20231234 issued on May 15, 2023 is overdue. This bill was due on May 30, 2023. Please make payment immediately.
-                                                                        <br /><br />
-                                                                        Thank you.
-                                                                        <br /><br />
-                                                                        Badan Pengurusan Bersama Big Place<br />
-                                                                        04-2966 114 / 016 2956 6114<br />
-                                                                        bigplace.mgt@gmail.com  -->
+<br><br>
+<b>[Name of Perbadanan]<br>
+[Office Number / Mobile Number]<br>
+[Email Address]</b>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Notes</div>
+                                                                <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Notes:</div>
                                                                     <div class="col-md-10">
-                                                                        <textarea class="form-control" rows="10" id="example-textarea">
-1. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO. on the reverse side of your cheque.
-
-2. Online payment transfer or direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A/C No. 321146790). Please email the online transition receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">E & O.E.</div>
-                                                                    <div class="col-md-10">
-<textarea class="form-control" rows="10" id="example-textarea">
-1. Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-
-2. Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-
-3. Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-
-4. All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-
-5. Payment can be made during office hours at our site management office.
-
-6. Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-Email: sierraeast.mgmt@gmail.com
-Tel: 04-12345679
-Kindly ignore this statement if payment has been made.
-                                                                        </textarea>
-                                                                        <!-- <ol class="m-0">
-                                                                            <li>
-                                                                                Kindly inform us in writing within 14 days hereof should there be any discrepancy, failing which this statement/invoice will be deemed correct. You may ignore this statement if our payment has already been made.
-                                                                            </li>
-                                                                            <li>
-                                                                                Full payment of all current charges must be made within 30 days from the date of this statement/invoice and failure to comply will result in late payment interest being imposed from the following day onwards at a rate of 10.00% per annum on a daily basis.
-                                                                            </li>
-                                                                            <li>
-                                                                                Any legal costs and expenses incurred as a result of our delayed payment shall be borne by you.
-                                                                            </li>
-                                                                            <li>
-                                                                                All cheques/TT should made payable to “BADAN PENGURUSAN BERSAMA SIERRA EAST”. Please indicate your NAME, UNIT NO. and CONTACT NO.on the reverse side of your cheque.
-                                                                            </li>
-                                                                            <li>
-                                                                                Payment can be made during office hours at our site management office.
-                                                                            </li>
-                                                                            <li>
-                                                                                Online payment transfer of direct cash/cheque deposit via ATM can be made to BADAN PENGURUSAN BERSAMA SIERRA EAST (Public Bank Bhd A?C No. 34567890)Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
-                                                                                <br>
-                                                                                Email: sierraeast.mgmt@gmail.com
-                                                                                <br>
-                                                                                Tel: 04-12345679
-                                                                            </li>
-                                                                            <li>
-                                                                                Kindly ignore this statement if payment has been made.
-                                                                            </li>
-                                                                        </ol> -->
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+<ol>
+<li>All payments should be made payable to [Name of Perbadanan]. Please indicate your NAME, UNIT NO. and CONTACT NO. on your payment.</li>
+<br>
+<li>Payment can be made during office hours at our site management office.</li>
+<br>
+<li>Online payment transfer or direct cash/cheque deposit via ATM can be made to [Name of Perbadanan] ([Bank Name, Bank Account Number])</li>
+<br>
+<li>Please email the online transaction receipt or bank advice slip to our site management office with payment details for issuance of official receipt.
+<br>
+Email: [Email Address]<br>
+Tel  : [Office Number / Mobile Number]</li>
+<br>
+<li>Kindly ignore this statement if payment has been made.</li>
+</ol>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> <!-- end card-->
+                                                        </div>
                                                         
-                                                        <div class="card">
-                                                            <div class="card-body">
-                                                                <div class="float-left">
-                                                                    <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
-                                                                </div>
-                                                                <div class="float-right">
-                                                                    <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
-                                                                    
-                                                                </div>
+                                                        <div class="row mb-5">
+                                                            <div class="col col-lg-6 mt-1 mb-1">
+                                                                <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
+                                                            </div>
+                                                            <div class="col col-lg-6 mt-1 mb-1 text-right">
+                                                                <a href="pdf-print-nor-template.html" class="btn btn-outline-primary btn-rounded mr-1" target="_blank">Preview</a>
+                                                                    <button type="submit" class="btn btn-primary btn-rounded" onclick="location.href='#';">Save</button>
                                                             </div>
                                                         </div>
 
@@ -555,13 +259,147 @@ Kindly ignore this statement if payment has been made.
                                                 </div>
                                                 <!-- end row-->
                                             </div>
-                                            <div class="tab-pane" id="tribunal">
+                                            
+                                            <div class="tab-pane" id="noticeofdemand">
+                                                <div class="row">
+                                                    <div class="col-12 p-4">
+<span class="bold">Note:</span> Please fill in the form and use [ ] for fields auto-filled by the system.<br>
+Example: All payments should be made payable to [Name of Perbadanan].
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="card pb-2">
                                                             <div class="card-body">
+                                                                <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Email Subject:</div>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" id="" name="" class="form-control" value="Notice of Demand for Outstanding Invoice [Unit No.]">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-2 font-weight-bold">Message:</div>
+                                                                    <div class="col-md-10">
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+                                                                                MANAGEMENT ACT 2013
+                                                                                <br><br>
+                                                                                STRATA MANAGEMENT (MAINTENANCE AND MANAGEMENT) REGULATIONS 2015
+                                                                                <br><br>
+                                                                                <b>FORM 20</b>
+                                                                                <br><br>
+                                                                                Regulation 31
+                                                                                <br><br>
+                                                                                NOTICE TO DEMAND PAYMENT OF SUM DUE BY PROPRIETOR
+                                                                                <br><br><br>
+                                                                                TO:
+                                                                                <br>
+                                                                                [Main Owner Name]
+                                                                                <br>
+                                                                                [Owner Address]
+                                                                                <br><br>
+                                                                                Parcel No./Unit No.: [Unit No.] (Parcel: [Parcel No.])
+                                                                                <br>
+                                                                                Building No./Block No.: [Building No./Block No.]
+                                                                                <br>
+                                                                                Name of management corporation: [Name of management corporation]
+                                                                                <br><br><br>
+                                                                                <b>WHEREAS</b> you have committed a breach of provisions of the Strata Management Act 2013 ("the Act") by -
+                                                                                <br><br>
+                                                                                failing to pay to the management corporation under subsection 52(4) or 60(4) or 60(5) or 61(4) or 61(5) of the Act: 
+                                                                                <br><br>
+                                                                                (a) charges in the sum of <b>[RM 0.00]</b>
+                                                                                <br>
+                                                                                (b) contribution to the sinking fund in the sum of <b>[RM 0.00]</b>
+                                                                                <br><br>
+                                                                                failing to pay to the subsidiary management corporation under subsection 68(1) or 68(4) of the Act: 
+                                                                                <br><br>
+                                                                                (a) charges in the sum of RM <b>- NIL -</b>
+                                                                                <br>
+                                                                                (b) contribution to the sinking fund in the sum of <b>RM - NIL -</b>
+                                                                                <br><br>
+                                                                                failing to fully discharge your liability in respect of the amount of money lawfully incurred by the management corporation in the course of exercise of its powers of functions, or its duties and obligations, which according to subsection 59(3) of the Act and/or subsection 77(1) of the Act, is guaranteed by you as a proprietor, in the sum of  <b>RM - NIL </b>
+                                                                                <br><br>
+                                                                                <b>AND WHEREAS</b> the said sum of <b>[RM 0.00]</b> has become recoverable from you by virtue of the provisions of the Act mentioned above; 
+                                                                                <br><br>
+                                                                                We as the management corporation, by virtue of the powers conferred by subsection 78(1) of the Act hereby demand payment of the sum due within the period of  [0 days]  (Note 1) from the date of service of this notice and failing which we may file a summons or claim in a court of competent jurisdiction or in the Strata Management Tribunal for recovery of the said sum, or as an alternative, resort to recovery under section 79 of the Act for attachment of movable property.
+                                                                                <br><br><br>
+                                                                                <b>AND TAKE FURTHER NOTICE</b> that any proprietor who, without reasonable excuse, fails to comply with this notice commits an offense under subsection 78(3) of the Act and shall on conviction, be liable to a fine not exceeding five thousand ringgit or to imprisonment for a term not exceeding three years or to both, and in the case of a continuing offense, to a further fine not exceeding fifty ringgit for every day or part thereof during which the offence continues after conviction.
+                                                                                <br><br><br>
+                                                                                Dated: [date]
+                                                                                <br><br><br><br>
+                                                                                --------------------------<br>
+                                                                                Signature of authorized signatory of management corporation
+                                                                                <br>
+                                                                                Name: [Name Signing Personal]
+                                                                                <br>
+                                                                                Designation: [Designation]
+                                                                                <br><br>
+                                                                                <b>Note:</b>
+                                                                                <br>
+                                                                                (1) Not less than fourteen days from the date of service of this notice.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-2 font-weight-bold">Signing Personal:</div>
+                                                                    <div class="col-md-5">
+                                                                        <input type="text" id="" name="" class="form-control" value="" placeholder="Name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-2 font-weight-bold">Designation:</div>
+                                                                    <div class="col-md-5">
+                                                                        <input type="text" id="" name="" class="form-control" value="" placeholder="Designation">
+                                                                    </div>
+                                                                </div>
+                                                                
                                                                 <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Address</div>
+                                                                    <div class="col-md-2 font-weight-bold">Notes</div>
+                                                                    <div class="col-md-10">
+
+                                                                        <div class="border-gray-light">
+                                                                            <div class="summernote-editor">
+                                                                                MANAGEMENT ACT 2013
+
+                                                                                STRATA MANAGEMENT (MAINTENANCE AND MANAGEMENT) REGULATIONS 2015
+                                                                            
+                                                                                <b>FORM 20</b>
+                                                                                <br><br>
+                                                                                Regulation 31
+                                                                                <br><br>
+                                                                                NOTICE TO DEMAND PAYMENT OF SUM DUE BY PROPRIETOR
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row mb-5">
+                                                            <div class="col col-lg-6 mt-1 mb-1">
+                                                                <small class="text-muted">Last saved by Danny on 23 Mar 2023 at 2:30 PM</small>
+                                                            </div>
+                                                            <div class="col col-lg-6 mt-1 mb-1 text-right">
+                                                                <a href="pdf-print-nod-template.html" class="btn btn-outline-primary btn-rounded mr-1" target="_blank">Preview</a>
+                                                                <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="location.href='#';">Save</button>
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <!-- <div class="tab-pane" id="tribunal">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card pb-2">
+                                                            <div class="card-body">
+                                                                <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Address:</div>
                                                                     <div class="col-md-10">
                                                                         <textarea class="form-control" rows="6" id="example-textarea">
 Tribunal Perumahan Dan Pengurusan Strata Zon Utara
@@ -574,13 +412,13 @@ Pulau Pinang
                                                                         </textarea>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-3 mt-2">
-                                                                    <div class="col-md-2 font-weight-bold">Subject</div>
+                                                                <div class="form-group row mb-3 mt-2">
+                                                                    <div class="col-md-2 font-weight-bold">Email Subject</div>
                                                                     <div class="col-md-10">
-                                                                        <input type="text" id="" name="" class="form-control" value="Re: Claimant: Perbandanaa Pengurusan Pearl Regency">
+                                                                        <input type="text" id="" name="" class="form-control" value="Re: Claimant: Perbadanan Pengurusan Sierra East">
                                                                     </div>
                                                                 </div>
-                                                                <div class="row">
+                                                                <div class="form-group row">
                                                                     <div class="col-md-2 font-weight-bold">Message:</div>
                                                                     <div class="col-md-10">
 <textarea class="form-control" rows="10" id="example-textarea">
@@ -592,7 +430,7 @@ Thank you.
                                                                 </div>
                                                                 
                                                             </div>
-                                                        </div> <!-- end card-->
+                                                        </div>
                                                         
                                                         <div class="card">
                                                             <div class="card-body">
@@ -606,10 +444,10 @@ Thank you.
                                                             </div>
                                                         </div>
 
-                                                    </div><!-- end col-->
+                                                    </div>
                                                 </div>
-                                                <!-- end row-->
-                                            </div>
+                                                
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -636,6 +474,9 @@ Thank you.
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
+        <!--Summernote js-->
+        <script src="assets/libs/summernote/summernote-bs4.min.js"></script>
+
         <!-- Plugins Js -->
         <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
         <script src="assets/libs/select2/select2.min.js"></script>
@@ -646,6 +487,9 @@ Thank you.
 
         <!-- Init js-->
         <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- Init js -->
+        <script src="assets/js/pages/form-editor.init.js"></script>  
 
         <!-- datatable js -->
         <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>

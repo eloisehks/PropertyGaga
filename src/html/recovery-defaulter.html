@@ -63,6 +63,16 @@
                                     <div class="card-body p-0">
                                         <div class="row p-2">
                                             <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
+                                                <!-- stat 3 -->
+                                                <div class="media">
+                                                    <img src="assets/images/icons/defaulter.svg" class="mr-3 ml-2" style="width: 35px">
+                                                    <div class="media-body">
+                                                        <h4 class="mt-0 mb-0">> RM 1,000</h4>
+                                                        <span class="text-muted font-size-12">Outstanding more than RM 1,000 catogorized as "Defaulter"</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
                                                 <!-- stat 1 -->
                                                 <div class="media">
                                                     <i class='uil uil-stopwatch text-danger font-xl mr-3 ml-2'></i>
@@ -79,16 +89,6 @@
                                                     <div class="media-body">
                                                         <h4 class="mt-0 mb-0">10 days</h4>
                                                         <span class="text-muted font-size-12">Notice of Demand to be sent automatically 10 days after the due date of reminder.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-sm-4 col-xs-12 pl-sm-2 pr-sm-2 pt-sm-2 pl-3 pr-3 pt-3">
-                                                <!-- stat 3 -->
-                                                <div class="media">
-                                                    <img src="assets/images/icons/defaulter.svg" class="mr-3 ml-2" style="width: 35px">
-                                                    <div class="media-body">
-                                                        <h4 class="mt-0 mb-0">> RM 1,000</h4>
-                                                        <span class="text-muted font-size-12">Outstanding more than RM 1,000 catogorized as "Defaulter"</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,12 +120,40 @@
                                         </ul>
                                         <div class="tab-content p-3 text-muted">
                                             <div class="tab-pane show active" id="current">
+                                                <div class="mb-0">
+                                                    <div class="form-row align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <select class="form-control custom-select">
+                                                                    <option value="0">All Stages</option>
+                                                                    <option value="1">NOR Stage</option>
+                                                                    <option value="2">NOD Stage</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="Defaulter Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <input type="text" id="" class="form-control" placeholder="Main Owner">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row mb-3">
                                                     <div class="col-md-6">
-                                                        <a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">Send NOR</a><a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">Send NOD</a><a href="#" class="btn btn-outline-secondary btn-sm btn-rounded">Send Tribunal</a>
+                                                        <!-- <a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">NOR Stage</a><a href="#" class="btn btn-outline-secondary btn-sm btn-rounded mr-2">NOD Stage</a> <a href="#" class="btn btn-outline-secondary btn-sm btn-rounded">Send Tribunal</a> -->
                                                     </div> 
                                                     <div class="col-md-6 text-right">
-                                                        <a href="pdf-defaulter.html" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">PDF</a>
+                                                        <a href="assets/images/propertygaga/defaulter.xlsx" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">Excel</a>
                                                     </div> 
                                                 </div>
         
@@ -133,22 +161,17 @@
                                                     <table id="basic-datatable" class="table table-hover nowrap">
                                                         <thead>
                                                             <tr>
-                                                                <th width="1%">
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
-                                                                    </div>
-                                                                </th>
                                                                 <th>Defaulter No.</th>
                                                                 <th>Defaulter Date</th>
                                                                 <th width="1%">Unit No.</th>
-                                                                <th>Owners</th>
+                                                                <th>Main Owner</th>
                                                                 <th class="text-right">Outstanding<br>Amt. (RM)</th>
                                                                 <th class="text-right">Last Payment (RM)</th>
                                                                 <th class="text-left bg-color-propertygagaLightest">Access</th>
                                                                 <th class="text-center">Instalment</th>
                                                                 <th class="text-center">Reminder (NOR)<br>Send out Date</th>
                                                                 <th class="text-center">Reminder (NOD)<br>Send out Date</th>
-                                                                <th class="text-center">Tribunal Date<br>Ref Code</th>
+                                                                <!-- <th class="text-center">Tribunal Date<br>Ref Code</th> -->
                                                                 <th class="text-center">Judgement in Default (JID)<br>Send out Date</th>
                                                                 <th class="text-right">LPI<br>Total Amt. (RM)</th>
                                                                 <th class="text-center">Actions</th>
@@ -156,15 +179,11 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                                    </div>
-                                                                </td>
-                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc">D00231</a><i class="uil uil-file-landscape-alt ml-3"></i></td>
+                                                                <td>D00231</td>
+                                                                <!-- <td><a href="#" data-toggle="modal" data-target="#uploaddoc">D00231</a><i class="uil uil-file-landscape-alt ml-3"></i></td> -->
                                                                 <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
-                                                                <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
+                                                                <td>Owner name 1</td>                   
                                                                 <td class="text-right">RM 1,200.00</td>
                                                                 <td class="text-right">
                                                                     RM 1,000.00<br>
@@ -174,18 +193,18 @@
                                                                     Deactivated<br>
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
-                                                                <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                                <td class="text-center"><a href="recovery-installment-edit.html">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
-                                                                <td class="text-center">
+                                                                <!-- <td class="text-center">
                                                                     <span class="font-size-12">10 Jan 2023</span>
                                                                     <br>
                                                                     TRI024
-                                                                </td>
+                                                                </td> -->
                                                                 <td class="text-center">
                                                                     10 Feb 2023
                                                                 </td>
@@ -202,28 +221,20 @@
                                                                            
                                                                             <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOR">Send NOR</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOD">Send NOD</a>
                                                                           
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
-                                                                          
-                                                                            <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
-                                                                            
+                                                                            <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
-                                                                    </div>
-                                                                </td>
-                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc1">D00235</a></td>
+                                                                <td>D00235</td>
                                                                 <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html"target="_blank">6-01-07</a></td>   
-                                                                <td>sssss <span class="badge badge-soft-secondary ml-2">+1</span></td>                              
+                                                                <td>sssss</td>                              
                                                                 <td class="text-right">RM 1,200.00</td>
                                                                 <td class="text-right">
                                                                     RM 1,000.00<br>
@@ -240,9 +251,9 @@
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td> 
-                                                                <td class="text-center">
+                                                                <!-- <td class="text-center">
                                                                     
-                                                                </td>
+                                                                </td> -->
                                                                 <td class="text-center">
                                                                     
                                                                 </td>
@@ -259,24 +270,17 @@
                                                                            
                                                                             <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOR">Send NOR</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOD">Send NOD</a>
                                                                           
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
-                                                                          
-                                                                            <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                            <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
-                                                                    </div>
-                                                                </td>
-                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc1">D00237</a></td>
+                                                                <td>D00237</td>
                                                                 <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-08</a></td> 
                                                                 <td>Nancy</td>                                            
@@ -288,16 +292,16 @@
                                                                 <td class="text-center bg-color-propertygagaLightest">
                                                                     Activated
                                                                 </td>
-                                                                <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                                <td class="text-center"><a href="recovery-installment-edit.html">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    
+                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Go to actions to send NOD"><img src="assets/images/icons/checkmark-circle-outline.svg" width="25px"></a>
                                                                 </td>
-                                                                <td class="text-center">
+                                                                <!-- <td class="text-center">
                                                                     
-                                                                </td>
+                                                                </td> -->
                                                                 <td class="text-center">
                                                                     
                                                                 </td>
@@ -314,13 +318,60 @@
                                                                            
                                                                             <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOR</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOR">Send NOR</a>
                                                                          
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send NOD</a>
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOD">Send NOD</a>
                                                                           
-                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a>
+                                                                            <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>D00237</td>
+                                                                <td>1 Jan 2023</td>
+                                                                <td><a href="data-units-detail.html" target="_blank">6-01-08</a></td> 
+                                                                <td>Eugene</td>                                            
+                                                                <td class="text-right">RM 15,000.00</td>
+                                                                <td class="text-right">
+                                                                    RM 100.00<br>
+                                                                    <span class="font-size-12">1 Apr 2025</span>
+                                                                </td>
+                                                                <td class="text-center bg-color-propertygagaLightest">
+                                                                    Deactivated
+                                                                    1 Apr 2025
+                                                                </td>
+                                                                <td class="text-center"></td>
+                                                                <td class="text-center">
+                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Go to actions to send NOR"><img src="assets/images/icons/checkmark-circle-outline.svg" width="25px"></a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    
+                                                                </td>
+                                                                <!-- <td class="text-center">
+                                                                    
+                                                                </td> -->
+                                                                <td class="text-center">
+                                                                    
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    1,000.00
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                           
+                                                                            <a class="dropdown-item cursor-pointer" href="recovery-installment-new.html" target="_blank">Create Instalment</a>
+                                                                         
+                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOR">Send NOR</a>
+                                                                         
+                                                                            <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#sendNOD">Send NOD</a> -->
                                                                           
-                                                                            <a class="dropdown-item cursor-pointer text-danger" data-toggle="modal" data-target="#reportError">Report Error</a>
+                                                                            <!-- <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#refcode">Send Tribunal</a> -->
                                                                         </div>
                                                                     </div>
                                                                 </td>
@@ -330,9 +381,33 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane" id="archived">
+                                                <div class="mb-0">
+                                                    <div class="form-row align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="Defaulter Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <input type="text" id="" class="form-control" placeholder="Main Owner">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="Paid Date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row mb-3">
                                                     <div class="col-md-12 text-right">
-                                                        <a href="pdf-defaulter.html" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">PDF</a>
+                                                        <a href="assets/images/propertygaga/defaulter.xlsx" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">Excel</a>
                                                     </div> 
                                                 </div>
         
@@ -340,22 +415,17 @@
                                                     <table id="basic-datatable2" class="table table-hover nowrap">
                                                         <thead>
                                                             <tr>
-                                                                <th width="1%">
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck0"><label class="custom-control-label" for="customCheck0">
-                                                                    </div>
-                                                                </th>
                                                                 <th>Defaulter No.</th>
                                                                 <th>Defaulter Date</th>
                                                                 <th width="1%">Unit No.</th>
-                                                                <th>Owners</th>
+                                                                <th>Main Owner</th>
                                                                 <th class="text-right">Outstanding<br>Amt. (RM)</th>
                                                                 <th class="text-right">Last Payment (RM)</th>
                                                                 <th class="text-left bg-color-propertygagaLightest">Access</th>
                                                                 <th class="text-center">Instalment</th>
                                                                 <th class="text-center">Reminder (NOR)<br>Send out Date</th>
                                                                 <th class="text-center">Reminder (NOD)<br>Send out Date</th>
-                                                                <th class="text-center">Tribunal Date<br>Ref Code</th>
+                                                                <!-- <th class="text-center">Tribunal Date<br>Ref Code</th> -->
                                                                 <th class="text-center">Judgement in Default (JID)<br>Send out Date</th>
                                                                 <th class="text-right">LPI<br>Total Amt. (RM)</th>
                                                                 <th class="text-center">Paid Date</th>
@@ -364,16 +434,11 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                                    </div>
-                                                                </td>
-                                                                <td><a href="#" data-toggle="modal" data-target="#uploaddoc">D00231</a><i class="uil uil-file-landscape-alt ml-3"></i></td>
+                                                                <td>D00231</a></td>
                                                                 <td>1 Jan 2023</td>
                                                                 <td><a href="data-units-detail.html" target="_blank">6-01-07</a></td>   
-                                                                <td>Owner name 1 <span class="badge badge-soft-secondary ml-2">+2</span></td>                   
-                                                                <td class="text-right">RM 1,200.00</td>
+                                                                <td>Owner name 1</td>                   
+                                                                <td class="text-right">RM 0.00</td>
                                                                 <td class="text-right">
                                                                     RM 1,000.00<br>
                                                                     <span class="font-size-12">2 Dec 2024</span>
@@ -382,18 +447,18 @@
                                                                     Deactivated<br>
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
-                                                                <td class="text-center"><a href="#">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
+                                                                <td class="text-center"><a href="recovery-installment-edit.html">INS001</a><br><span class="badge badge-info">3 / 20</span></td>
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
                                                                 <td class="text-center">
                                                                     <span class="font-size-12">1 Jan 2023</span>
                                                                 </td>
-                                                                <td class="text-center">
+                                                                <!-- <td class="text-center">
                                                                     <span class="font-size-12">10 Jan 2023</span>
                                                                     <br>
                                                                     TRI024
-                                                                </td>
+                                                                </td> -->
                                                                 <td class="text-center">
                                                                     10 Feb 2023
                                                                 </td>
@@ -637,43 +702,6 @@
             </div>
             <!-- modal Upload document end-->
 
-             <!-- modal Report Error-->
-             <div class="modal fade" id="reportError" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Report Error</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <label class="col-lg-12 col-form-label"
-                                                for="simpleinput">Remarks</label>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
-                                                <textarea class="form-control" rows="5"
-                                                    id="example-textarea"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm" onclick="window.open('email-new-meeting-notice.html','_blank')" data-dismiss="modal">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modal Report Error end-->
-
             <!-- modal Call -->
             <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-md" role="document">
@@ -829,6 +857,168 @@
                 </div>
             </div>
             <!-- Ref code end -->
+
+            <!-- modal send NOR  -->
+            <div class="modal fade" id="sendNOR" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Send NOR</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">NOR Date</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" id="example-date" type="date" name="date" value="" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">Send email to</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="owner-default-email@url.com">
+                                                <span class="help-block"><small>Add more email separated by "comma (,)",  eg. email@url.com, email2@url.com</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">Statement of Account</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="range-datepicker" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        1) Sent on 3 Apr 2025 by Eugene (SOA: 1 Mar 2025 - 31 Jan 2025)
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        2) Sent on 15 Apr 2025 by Eugene (SOA: 1 Mar 2025 - 31 Jan 2025)
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        3) Sent on 29 Apr 2025 by Eugene (SOA: 1 Mar 2025 - 31 Jan 2025)
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <a href="pdf-print-nor.html" class="btn btn-dark btn-rounded" target="_blank">Preview / Print NOR</a>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- send NOR end -->
+
+            <!-- modal send NOD  -->
+            <div class="modal fade" id="sendNOD" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Send NOD</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">NOD Date</label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" id="example-date" type="date" name="date" value="" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">Send email to</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" id="" value="owner-default-email@url.com">
+                                                <span class="help-block"><small>Add more email separated by "comma (,)",  eg. email@url.com, email2@url.com</small></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label"
+                                                for="simpleinput">Statement of Account</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="range-datepicker" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label" for=""></label>
+                                            <div class="col-auto">
+                                                <div class="card mb-2 shadow-none border">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">Statement of Account.pdf</a>
+                                                                <p class="mb-0">1.6 MB</p>
+                                                            </div>
+                                                            <div class="col">
+                                                                
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                       
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        1) Sent on 3 Apr 2025 by Eugene (SOA: 1 Mar 2025 - 31 Jan 2025)
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        2) Sent on 15 Apr 2025 by Eugene (SOA: 1 Mar 2025 - 31 Jan 2025)
+                                    </div>
+                                </div>
+                                <div class="row font-sm">
+                                    <div class="col-lg-12">
+                                        3) Sent on 29 Apr 2025 by Eugene 
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <a href="pdf-print-nod.html" class="btn btn-dark btn-rounded" target="_blank">Preview / Print NOD</a>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- send NOD end -->
+            
 
         </div>
         <!-- END wrapper -->
