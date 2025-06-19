@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Property Gaga</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Access Card Listing</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='access-card-new.html';">Add a Card</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Card Type</option>
+                                                                <option value="1">Car</option>
+                                                                <option>Motocycle</option>
+                                                                <option>Door</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">Select Unit No.</option>
+                                                                <option selected>All Units</option>
+                                                                <option>6-13-01</option>
+                                                                <option>6-02-09</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                                <option value="1">8-18-3A</option>
+                                                                <option value="2">8-19-03</option>
+                                                                <option value="3">8-20-3A</option>
+                                                                <option value="4">8-21-03</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Status</option>
+                                                                <option>Active Card</option>
+                                                                <option>Block Card</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">All Reasons</option>
+                                                                <option>Non-payment or Dues of Fees</option>
+                                                                <option>Violation of Rules</option>
+                                                                <option>Security Concerns</option>
+                                                                <option>Lost or Stolen Card</option>
+                                                                <option>Renovation or Maintenance Work</option>
+                                                                <option>End of Lease or Ownership</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Unit No.</th>
+                                                        <th>Card No.</th>
+                                                        <th>Card Type</th>
+                                                        <th>Issue Date</th>
+                                                        <th class="text-right">Fee (RM)</th>
+                                                        <th class="text-center">Edit Status</th>
+                                                        <th>Block Card Reason</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>6-01-04</td>
+                                                        <td><a href="access-card-edit.html">29050607208</a></td>
+                                                        <td>Car</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">50.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2 align-items-center">
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggle">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="font-sm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-05</td>
+                                                        <td><a href="access-card-edit.html">30050607233</a></td>    
+                                                        <td>Car</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">50.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggle2">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                           </div>
+                                                        </td>
+                                                        <td class="font-sm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-10</td>
+                                                        <td><a href="access-card-edit.html">29050607222</a></td>
+                                                        <td>Car</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">50.00</td> 
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+
+                                                               <!-- Activate/Deactivate Toggle -->
+                                                               <label class="icon-toggle" id="CardToggle3">
+                                                                <input type="checkbox">
+                                                                <span class="icon default-icon">
+                                                                    <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
+                                                                </span>
+                                                                <span class="icon active-icon">
+                                                                    <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
+                                                                </span>
+                                                            </label>
+                                                           </div>
+                                                        </td>
+                                                        <td class="font-sm"></td>            
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-06</td>
+                                                        <td><a href="access-card-edit.html">29050607255</a></td>
+                                                        <td>Car</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">50.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggle4">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="font-sm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-07</td>
+                                                        <td><a href="access-card-edit2.html">29050607266</a></td>
+                                                        <td>Door</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">30.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggleActivate">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' title="Block Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Unblock" title="Click to Unblock"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="font-sm">Non-payment or Dues of Fees</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-08</td>
+                                                        <td><a href="access-card-edit2.html">29050607277</a></td>
+                                                        <td>Door</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">30.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggleActivate2">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' title="Block Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Unblock" title="Click to Unblock"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="font-sm">Violation of Rules</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-09</td>
+                                                        <td><a href="access-card-edit.html">29050607288</a></td>
+                                                        <td>Motocycle</td>
+                                                        <td>1 Jan 2025</td>
+                                                        <td  class="text-right">20.00</td>
+                                                        <td class="text-center p-0 m-0">
+                                                            <div class="text-center mt-2">
+                                                                <!-- Activate/Deactivate Toggle -->
+                                                                <label class="icon-toggle" id="CardToggle5">
+                                                                    <input type="checkbox">
+                                                                    <span class="icon default-icon">
+                                                                        <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
+                                                                    </span>
+                                                                    <span class="icon active-icon">
+                                                                        <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="font-sm">Violation of Rules</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- change status card activate to deactivate -->
+            <div class="modal fade" id="CardModal" tabindex="-1" aria-labelledby="CardModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="CardModalLabel">Block Card</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to block this card?</p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Non-payment or Dues of Fees</option>
+                                    <option>Violation of Rules</option>
+                                    <option>Security Concerns</option>
+                                    <option>Lost or Stolen Card</option>
+                                    <option>Renovation or Maintenance Work</option>
+                                    <option>End of Lease or Ownership</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status card activate to deactivate end -->
+
+            <!-- change status card deactivated to activate -->
+            <div class="modal fade" id="CardModal2" tabindex="-1" aria-labelledby="CardModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="CardModalLabel">Unblock Card</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to unblock this card.</p>
+                            <div class="mb-3">
+                                <label for="reason" class="form-label">Reason</label>
+                                <select class="form-control form-select custom-select" id="reason" required>
+                            
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>Payment made</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
+                                <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- change status card deactivated to activate end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- toggle icon to change access status-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let CardModal = new bootstrap.Modal(document.getElementById("CardModal"));
+            
+                // Select all elements with the same class (instead of just one ID)
+                document.querySelectorAll("#CardToggle, #CardToggle2, #CardToggle3, #CardToggle4, #CardToggle5, #CardToggle6").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        CardModal.show(); // Open LPR modal
+                    });
+                });
+        
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let CardModal = new bootstrap.Modal(document.getElementById("CardModal2"));
+            
+                // Select all elements with the same class (instead of just one ID)
+                document.querySelectorAll("#CardToggleActivate, #CardToggleActivate2, #CardToggleActivate3, #CardToggleActivate4, #CardToggleActivate5").forEach(function (element) {
+                    element.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant toggle
+                        CardModal.show(); // Open LPR modal
+                    });
+                });
+            
+            });
+        </script>
+
+    </body>
+</html>
