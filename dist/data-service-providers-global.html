@@ -28,12 +28,6 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <style>
-            .image-upload>input {
-                display: none;
-              }
-        </style>
-
     </head>
 
     <body>
@@ -1508,657 +1502,332 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Payment Voucher - PV0002</h3>
-                                <span class="badge badge-info width-sm mr-2">Collected</span>
+                                <h3 class="mb-1 mt-0">Global Vendors</h3>
                             </div>
-                            <div class="col-md-6 col-xl-6 text-right">
-                                <div class="btn-group mr-1">
-                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
-                                        data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Preview</a>
-                                        <a class="dropdown-item" href="#">Save as PDF</a>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
-                                    </div>
-                                </div><!-- /btn-group -->
-                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-dark btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers.html';">Site Vendors</button> 
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers-invite.html';"><i class="uil-plus mr-1"></i> Invite Vendor</button> <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers-new.html';"><i class="uil-plus mr-1"></i> Add Vendor</button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- <div class="row">
-                            <div class="col-12">
-                                <div class="card mb-0">
-                                    <div class="card-body bg-color-propertygagaLightest border-propertygaga-lighter rounded-5">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                Cheque collected by vendor1 on 3 Mar 2023 <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded mr-2 float-left" data-toggle="modal" data-target="#updatepaymentvoucher2">Update Cheque Status</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form class="form-horizontal">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">P.V. No.</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="" value="PV0002" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">Task ID</label>
-                                                        <div class="col-lg-8">
-                                                            <select class="form-control wide" data-plugin="customselect">
-                                                                <option>Select</option>
-                                                                <option selected>OT1324 - Cigarette butt in balcony</option>
-                                                                <option>OT33233 - Water ponding in facility floor</option>
-                                                                <option>OT65657 - No Light at P3 parking</option>
-                                                                <option>OT65865 - Corridor not clean</option>
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">All Services (17)</option>
+                                                                <option>Management Firm (2)</option>
+                                                                <option>Lift Maintenance (1)</option>
+                                                                <option>Cleaning Services (1)</option>
+                                                                <option>Pool Maintenance (1)</option>
+                                                                <option>Chargeman (1)</option>
+                                                                <option>Supervising Engineer (1)</option>
+                                                                <option>Retainer - Electrician (0)</option>
+                                                                <option>Pest Control (1)</option>
+                                                                <option>Fire Fighting (1)</option>
+                                                                <option>Pump (0)</option>
+                                                                <option>Security / Watchman (1)</option>
+                                                                <option>Landscaping / Gardening (1)</option>
+                                                                <option>Cleaning & Gardening (1)</option>
+                                                                <option>Rubbish Disposal (1)</option>
+                                                                <option>Facilities Attendant (1)</option>
+                                                                <option>Access security System (1)</option>
+                                                                <option>Handyman (1)</option>
+                                                                <option>Car Park Attendant (1)</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">P.I. No.</label>
-                                                        <div class="col-lg-8">
-                                                            <select class="form-control wide" data-plugin="customselect" multiple>
-                                                                <option>Select</option>
-                                                                <option selected>3535 - Company Name 1</option>
-                                                                <option>3535 - Company Name 2</option>
-                                                                <option>3535 - Company Name 3</option>
-                                                                <option>3535 - Company Name 4</option>
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select data-plugin="customselect" class="form-control">
+                                                                <option value="0">All Vendors</option>
+                                                                <option>AERO Pest Services</option>
+                                                                <option>Advance Seatech Sdn Bhd</option>
+                                                                <option>Advance Seatech Sdn Bhd</option>
+                                                                <option>Advance Seatech Sdn Bhd</option>
+                                                                <option>Advance Seatech Sdn Bhd</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col">
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="form-group row border-bottom"></div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">Payee</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="" value="Advance Seatech Sdn Bhd" disabled>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="example-date">Payment Date</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" id="example-date" type="date"
-                                                                name="date" disabled>
+                                                    <div class="col-xl-2 col-sm-2">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" value="" placeholder="Vendor Code">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">Reg. No.</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="url" value="348023" disabled>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-2">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="" value="" placeholder="City">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">Ref No.</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="url" value="3574858" disabled>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row border-bottom"></div>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label" for="">Payment Mode</label>
-                                                        <div class="col-lg-8">
+                                                    <div class="col-xl-2 col-sm-2">
+                                                        <div class="form-group">
                                                             <select class="form-control custom-select">
-                                                                <option value="0">Select</option>
-                                                                <option value="1" selected>Cash</option>
-                                                                <option value="2">Cheque</option>
-                                                                <option value="3">Card</option>
-                                                                <option value="4">Online Banking</option>
+                                                                <option selected>State 1</option>
+                                                                <option>State 2</option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                   <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label" for="">Pay from Account</label>
-                                                        <div class="col-lg-8">
-                                                            <select class="form-control custom-select">
-                                                                <option value="0">Select</option>
-                                                                <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
-                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
-                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
-                                                                <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
-                                                                <option value="Cash on Hand|None" selected>Cash on Hand</option>
-                                                                <option value="Petty Cash|None">Petty Cash</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                     <!-- <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label">Cheque</label>
-                                                        <div class="col-lg-8">
-                                                            <input class="form-control" type="url" name="" value="PBB 280831">
-                                                        </div>
-                                                    </div> -->
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-4 col-form-label"
-                                                            for="example-textarea">Notes</label>
-                                                        <div class="col-lg-8">
-                                                            <textarea class="form-control" rows="3"
-                                                                id="example-textarea"></textarea>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group row border-bottom-gray300 mt-2"></div>
-                                                <div class="form-group row mb-1">
-                                                    <div class="col-lg-9">
-                                                        <h5 class="text-info form-inline">Outstanding Purchase Invoices</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row mb-3">
-                                                    <div class="col-lg-8 form-inline">
-                                                        <i class="uil uil-calender mr-1"></i> <span class="mr-2 text-color-archive">Filter by Date Range </span> <input type="text" id="range-datepicker" class="form-control col-lg-4" placeholder=""> &nbsp;<button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">View</button>
-                                                    </div>
-                                                    <div class="col-lg-4 text-right pt-2">
-                                                        <a href="#">Clear Applied Amount</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
 
-                                        <div class="card mt-3">
-                                            <div class="card-body p-0">
-                                                <div class="table-responsive">
-                                                    <table class="table table-centered m-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th width="10%">P.I. No./SR No.</th>
-                                                                <th width="23%">Account</th>
-                                                                <th width="48%">Description</th>
-                                                                <th width="10%" class="text-center">Quantity</th>
-                                                                <th width="10%" class="text-right">Amount (RM)</th>
-                                                                <th width="10%" class="text-right">Payment (RM)</th>
-                                                                <th></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    3535
-                                                                </td>
-                                                                <td>
-                                                                    Repairs & Maint / Painting
-                                                                </td>
-                                                                <td>
-                                                                    Description...
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    1
-                                                                </td>
-                                                                <td class="text-right">
-                                                                    500
-                                                                </td>
-                                                                <td class="text-right">
-                                                                    <input type="text" class="form-control text-right" id="simpleinput" value="300">
-                                                                </td>
-                                                                <td>
-                                                                    <a href="#" class="text small">Pay In Full</a>
-                                                                        <br>
-                                                                    <a href="#" class="text-danger small"><i class="uil-times"></i> Remove</a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    3535
-                                                                </td>
-                                                                <td>
-                                                                    Repairs & Maint / Painting
-                                                                </td>
-                                                                <td>
-                                                                    Description...
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    1
-                                                                </td>
-                                                                <td class="text-right">
-                                                                    500
-                                                                </td>
-                                                                <td class="text-right">
-                                                                    <input type="text" class="form-control text-right" id="simpleinput" value="300">
-                                                                </td>
-                                                                <td>
-                                                                    <a href="#" class="text small">Pay In Full</a>
-                                                                        <br>
-                                                                    <a href="#" class="text-danger small"><i class="uil-times"></i> Remove</a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="7">
-                                                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">Get Purchase Invoices</button>
-                                                                </td>
-                                                            </tr>
-                                                           <!-- <tr>
-                                                               <td colspan="4"><a href="#"><i class="uil uil-plus-square"></i> Add Item</a></td>
-                                                               <td></td>
-                                                           </tr> -->
-                                                           <tr>
-                                                                <td colspan="4"></td>
-                                                                <td class="align-right font-weight-bold">Total Payment (RM):</td>
-                                                                <td class="align-right font-weight-bold">600.00</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4"></td>
-                                                                <td class="align-right font-weight-bold">Balance (RM):</td>
-                                                                <td class="align-right font-weight-bold">400.00</td>
-                                                                <td></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table table-hover nowrap width-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th>&nbsp;</th>
+                                                        <th>Services</th>
+                                                        <th>Vendor Code</th>
+                                                        <th width="40%">Vendor</th>
+                                                        <th>Contact No.</th>
+                                                        <th>City / State</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Management Firm</td>
+                                                        <td>12345</td>
+                                                        <td width="40%"><a href="data-service-providers-global-addtosite.html">Company 1</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Petaling Jaya, Selangor</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Lift Maintenance</td>
+                                                        <td>12346</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 2</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Cleaning Services</td>
+                                                        <td>12347</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 3</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Pool Maintenance</td>
+                                                        <td>12348</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 4</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Chargeman</td>
+                                                        <td>12349</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 6</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Supervising Engineer</td>
+                                                        <td>12350</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 7</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Retainer - Electrician</td>
+                                                        <td>12351</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 8</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Pest Control</td>
+                                                        <td>12352</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 9</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Fire Fighting</td>
+                                                        <td>12353</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 10</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Pump</td>
+                                                        <td>12354</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 11</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>    
+                                                        <td>Security / Watchman</td>     
+                                                        <td>12355</td>                                 
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 12</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Landscaping / Gardening</td>
+                                                        <td>12356</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 13</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Cleaning & Gardening</td>
+                                                        <td>12357</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 14</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Rubbish Disposal</td>
+                                                        <td>12358</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 15</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Facilities Attendant</td>
+                                                        <td>12359</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 16</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Access security System</td>
+                                                        <td>12360</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 17</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by Polopolomi"><i data-feather="heart" class="icon-dual-success" style="width: 18px; height: 18px;"></i></a>
+                                                        </td>
+                                                        <td>Handyman</td>
+                                                        <td>12361</td>
+                                                        <td><a href="data-service-providers-global-addtosite.html">Company 18</a></td>
+                                                        <td>012 345 6789</td>
+                                                        <td>Bayan Lepas, Penang</td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-outline-primary btn-sm btn-rounded mt-1">Add to Site</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-
-                                        <!-- <div class="row mb-2">
-                                            <div class="col">
-
-                                                <h5>Attachments</h5>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Quotation</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">quotation.pdf</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Approved Purchase Order</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">po.pdf</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Invoice</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">inv-from-vendor.pdf</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Delivery Order</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">do-from-vendor.pdf</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Other Attachments</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-auto">
-                                                                            <img src="assets/images/projects/project-1.jpg"
-                                                                                class="avatar-sm rounded" alt="file-image">
-                                                                        </div>
-                                                                        <div class="col pl-0">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-auto">
-                                                                            <img src="assets/images/projects/project-2.jpg"
-                                                                                class="avatar-sm rounded" alt="file-image">
-                                                                        </div>
-                                                                        <div class="col pl-0">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-auto">
-                                                                            <img src="assets/images/projects/project-3.jpg"
-                                                                                class="avatar-sm rounded" alt="file-image">
-                                                                        </div>
-                                                                        <div class="col pl-0">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">pic1.jpg</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row mb-0">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="">Service Report</label>
-                                                        <div class="col-lg-9">
-                                                            <div class="card mb-2 mt-2 shadow-none border">
-                                                                <div class="p-1 px-2">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col">
-                                                                            <a href="javascript:void(0);"
-                                                                                class="text-muted font-weight-bold">service-report.pdf</a>
-                                                                            <p class="mb-0">2.3 MB</p>
-                                                                        </div>
-                                                                        <div class="col-auto">
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Download"
-                                                                                class="btn btn-link text-muted btn-lg p-0">
-                                                                                <i class='uil uil-cloud-download font-size-14'></i>
-                                                                            </a>
-                                                                            <a href="javascript:void(0);" data-toggle="tooltip"
-                                                                                data-placement="bottom" title="Delete"
-                                                                                class="btn btn-link text-danger btn-lg p-0">
-                                                                                <i class='uil uil-multiply font-size-14'></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div> -->
-
-                                        <div class="row mb-2">
-                                            <div class="col">
-                                                <h5>Update Status</h5>
-                                                <div class="p-3 border-grayform rounded mb-2">
-                                                    <div class="form-group row">
-                                                        <div class="col-lg-12">
-                                                            <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
-                                                                <div class="col-auto">
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" checked>
-                                                                        <label class="custom-control-label" for="customRadio2">Cash collected by Vendor</label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-auto">
-                                                                    <div class="custom-control custom-radio mb-2">
-                                                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="bankin" disabled>
-                                                                        <label class="custom-control-label" for="customRadio1">Cash banked in by Staff</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-            
-                                                    <div class="collect">
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Name</label>
-                                                            <div class="col-lg-8">
-                                                                <input type="text" class="form-control" id="" value="vendor1">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">ID No. / Passport No.</label>
-                                                            <div class="col-lg-8">
-                                                                <input type="text" class="form-control" id="" value="960413-12-1234">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Date</label>
-                                                            <div class="col-auto">
-                                                                <input class="form-control" id="example-date" type="date" name="date">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
-                                                            <div class="col-lg-8">
-                                                                <textarea class="form-control" rows="2" id="example-textarea">some notes goes here...</textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-            
-                                                    <div class="bankin box" style="display: none">
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Staff Name</label>
-                                                            <div class="col-lg-8">
-                                                                <select data-plugin="customselect" class="form-control">
-                                                                    <option value="0">Banked in by</option>
-                                                                    <option value="2">BM - Raymond</option>
-                                                                    <option value="1">BS - Tay Cheng Cheng</option>
-                                                                    <option value="2">Staff 1</option>
-                                                                    <option value="2">Staff 2</option>
-                                                                    <option value="2">Staff 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Username</label>
-                                                            <div class="col-lg-8">
-                                                                <input type="text" class="form-control" id="" value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label"
-                                                                >Date</label>
-                                                            <div class="col-auto">
-                                                                <input class="form-control" id="example-date" type="date" name="date">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label">Bank Receipt</label>
-                                                            <div class="col-auto">
-                                                                <input type="file" class="form-control" id="fileinput">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
-                                                            <div class="col-auto">
-                                                                <input type="text" class="form-control" id="" value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
-                                                            <div class="col-lg-8">
-                                                                <textarea class="form-control" rows="2" id="example-textarea"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <p class="mt-2"></p>
-
-                                        <div class="float-left">
-                                            <div class="mb-3">
-                                                <div><small>Created by Cathryn Boey (boeyketchin) on 8 Jul 2022 3:56pm</small></div>
-                                                <div><small>Processed by Cathryn Boey (boeyketchin) on 14 Jul 2022 3:56pm</small></div>
-                                                <div><small>Cancelled by Cathryn Boey (boeyketchin) on 15 Jul 2022 3:56pm</small></div>
-                                            </div>
-                                        </div>
-                                        <div class="float-right">
-                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <!-- <button type="submit" class="btn btn-primary btn-rounded">Save</button> -->
-                                            <!-- <button type="submit" class="btn btn-primary btn-rounded">Send to Vendor</button> -->
-                                        </div>
-            
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div><!-- end col -->
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
                         </div>
-                        <!-- end row -->
-
+                        <!-- end row-->
                     </div> <!-- container-fluid -->
 
                 </div> <!-- content -->
@@ -2186,163 +1855,67 @@
             <!-- End Page content -->
             <!-- ============================================================== -->
 
-            <!-- modal Return payment -->
-            <div class="modal fade" id="returnpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Return Payment</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal">
-                                <div class="row">
-                                    <div class="col">
-
-                                        <div class="collect box">
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">PV No.</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Date</label>
-                                                <div class="col-lg-4">
-                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Payee</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="HSL Electrical Supply" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="20,000.00" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Returned Date</label>
-                                                <div class="col-lg-4">
-                                                    <input class="form-control" id="example-date" type="date" name="date">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Returned Reason</label>
-                                                <div class="col-auto">
-                                                    <select class="form-control custom-select">
-                                                        <option>Select/option>
-                                                        <option>Insufficient of fund</option>
-                                                        <option>Deposit to wrong account</option>
-                                                        <option>Wrong date</option>
-                                                        <option>Spelling error</option>
-                                                        <option selected>Other reason</option>
-                                                    </select>
-                                                    <input type="text" class="form-control mt-2" id="" value="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
-                                                <div class="col-lg-8">
-                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modal Return payment end -->
-
-            <!-- modal Cancel payment -->
-            <div class="modal fade" id="cancelpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Payment</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal">
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    Are you sure you want to cancel this payment?
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-
-                                        <div class="collect box">
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">PV No.</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="PV00003" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Date</label>
-                                                <div class="col-lg-4">
-                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label">Payee</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="HSL Electrical Supply" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="3574858" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" class="form-control" id="" value="20,000.00" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-4 col-form-label" for="simpleinput">Reason</label>
-                                                <div class="col-lg-8">
-                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-danger btn-rounded width-sm">Yes, cancel this payment</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modal Cancel payment end -->
 
         </div>
         <!-- END wrapper -->
+
+<!-- modal Add Vendor, upload contract -->
+<div class="modal fade" id="modal-addtosite" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Add Vendor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label" for="">Expiry of Contract</label>
+                                <div class="col-lg-8">
+                                    <input type="text" id="range-datepicker" class="form-control" placeholder="2018-10-03 to 2018-10-10">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label"
+                                    for="fileinput">Upload Contract</label>
+                                <div class="col-lg-8">
+                                    <div class="p-2 border rounded mb-2">
+                                        <div class="media">
+                                            <div class="avatar-sm font-weight-bold mr-3">
+                                                <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                    <i class="uil-file-plus-alt font-size-18"></i>
+                                                </span>
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="#" class="d-inline-block mt-2">contract 1.psd</a>
+                                            </div>
+                                            <div class="float-right mt-1">
+                                                <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="file" class="form-control"
+                                        id="fileinput">
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal Renewal end -->
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -2521,17 +2094,6 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-
-        <script>
-            $(document).ready(function(){
-                $('input[type="radio"]').click(function(){
-                    var inputValue = $(this).attr("value");
-                    var targetBox = $("." + inputValue);
-                    $(".box").not(targetBox).hide();
-                    $(targetBox).show();
-                });
-            });
-        </script>
         
     </body>
 </html>
