@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Reports <i class="uil uil-angle-right font-sm"></i> <small>Accounting</small></h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="reports.html"><i class="uil-arrow-left mr-1"></i> Back to Reports</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <select class="required form-control custom-select" id="SelectedAccount" name="SelectedAccount" required="required" style="max-width:340px;"><option value=""> -- Please select -- </option>
+                                                            <optgroup label="Fixed Assets" value="10">
+                                                            <option value="Barrier Gate|None">Barrier Gate</option>
+                                                            <option value="Computer|None">Computer</option>
+                                                            <option value="Furniture|None">Furniture</option>
+                                                            <option value="Office equipment|None">Office equipment</option>
+                                                            <option value="Operating Equipment|None">Operating Equipment</option>
+                                                            <option value="Signboard|None">Signboard</option>
+                                                            </optgroup>
+                                                            <optgroup label="Accumulated Depreciation" value="11">
+                                                            <option value="Barrier Gate|Accumulated Depreciation">Barrier Gate - Accumulated Depreciation</option>
+                                                            <option value="Computer|Accumulated Depreciation">Computer - Accumulated Depreciation</option>
+                                                            <option value="Furniture|Accumulated Depreciation">Furniture - Accumulated Depreciation</option>
+                                                            <option value="Office equipment|Accumulated Depreciation">Office equipment - Accumulated Depreciation</option>
+                                                            <option value="Operating Equipment|Accumulated Depreciation">Operating Equipment - Accumulated Depreciation</option>
+                                                            <option value="Signboard|Accumulated Depreciation">Signboard - Accumulated Depreciation</option>
+                                                            </optgroup>
+                                                            <optgroup label="Current Assets" value="12">
+                                                            <option value="AMB SF 8881051393976 MC|Current Account">AMB SF 8881051393976 MC - Current Account</option>
+                                                            <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
+                                                            <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                            <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                            <option value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                            <option value="Bank PBB MF 3230386310 MC|None">Bank PBB MF 3230386310 MC</option>
+                                                            <option value="Cash on Hand|None">Cash on Hand</option>
+                                                            <option value="Cash Short (Over) Banking|None">Cash Short (Over) Banking</option>
+                                                            <option value="Electricity Deposit|None">Electricity Deposit</option>
+                                                            <option value="FD Interest Receivable|None">FD Interest Receivable</option>
+                                                            <option value="Fixed Deposit - MF|None">Fixed Deposit - MF</option>
+                                                            <option value="Fixed Deposit - SF|None">Fixed Deposit - SF</option>
+                                                            <option value="GST Input|None">GST Input</option>
+                                                            <option value="Petty Cash|None">Petty Cash</option>
+                                                            <option value="Phone Deposit|None">Phone Deposit</option>
+                                                            <option value="Prepayments|None">Prepayments</option>
+                                                            <option value="Service Tax Receivable|None">Service Tax Receivable</option>
+                                                            <option value="Sundry Deposits|None">Sundry Deposits</option>
+                                                            <option value="Trade Receivables|None">Trade Receivables</option>
+                                                            <option value="Water Deposit|None">Water Deposit</option>
+                                                            </optgroup>
+                                                            <optgroup label="Current Liabilities" value="20">
+                                                            <option value="Accrual - Audit Fee|None">Accrual - Audit Fee</option>
+                                                            <option value="Accruals|None">Accruals</option>
+                                                            <option value="Adv Maintenance Charges|None">Adv Maintenance Charges</option>
+                                                            <option value="Adv Sinking Fund|None">Adv Sinking Fund</option>
+                                                            <option value="Advance Billings|None">Advance Billings</option>
+                                                            <option value="Booking Deposit|None">Booking Deposit</option>
+                                                            <option value="Deposit|Renovation">Deposit - Renovation</option>
+                                                            <option value="Deposit|Rental">Deposit - Rental</option>
+                                                            <option value="Deposit|Utilities">Deposit - Utilities</option>
+                                                            <option value="Deposit - Service Charge|None">Deposit - Service Charge</option>
+                                                            <option value="Deposit - Sinking Fund|None">Deposit - Sinking Fund</option>
+                                                            <option value="GST Output|None">GST Output</option>
+                                                            <option value="GST Payable|None">GST Payable</option>
+                                                            <option value="Prepaid Income|None">Prepaid Income</option>
+                                                            <option value="Prepaid Income|Water">Prepaid Income - Water</option>
+                                                            <option value="Refund Contra|None">Refund Contra</option>
+                                                            <option value="Service Tax Payable|None">Service Tax Payable</option>
+                                                            <option value="Tax Payable|None">Tax Payable</option>
+                                                            <option value="Trade Payables|None">Trade Payables</option>
+                                                            <option value="Unknown Receipts|None">Unknown Receipts</option>
+                                                            <option value="WONG THEN FONG|None">WONG THEN FONG</option>
+                                                            </optgroup>
+                                                            <optgroup label="Equity" value="30">
+                                                            <option value="Accumulated Funds|None">Accumulated Funds</option>
+                                                            <option value="Sinking Fund|None">Sinking Fund</option>
+                                                            </optgroup>
+                                                            <optgroup label="Income" value="40">
+                                                            <option value="Access Card|None">Access Card</option>
+                                                            <option value="Bank Interest Received|None">Bank Interest Received</option>
+                                                            <option value="Discounts Received|None">Discounts Received</option>
+                                                            <option value="Fines|None">Fines</option>
+                                                            <option value="Fixed Deposit interest|None">Fixed Deposit interest</option>
+                                                            <option value="Insurance|None">Insurance</option>
+                                                            <option value="Insurance Claim Received|None">Insurance Claim Received</option>
+                                                            <option value="Interest|None">Interest</option>
+                                                            <option value="Interest|Water">Interest - Water</option>
+                                                            <option value="Interest Received (TNB)|None">Interest Received (TNB)</option>
+                                                            <option value="Legal Fees|None">Legal Fees</option>
+                                                            <option value="Maintenance Fee|None">Maintenance Fee</option>
+                                                            <option value="Motor Access Sticker|None">Motor Access Sticker</option>
+                                                            <option value="Online Payment Fee|None">Online Payment Fee</option>
+                                                            <option value="Other Income|None">Other Income</option>
+                                                            <option value="Outstanding Charges|None">Outstanding Charges</option>
+                                                            <option value="Quit Rent|None">Quit Rent</option>
+                                                            <option value="Reimbursement of Elec|None">Reimbursement of Elec</option>
+                                                            <option value="Rental|Car Park">Rental - Car Park</option>
+                                                            <option value="Rental|Common Area">Rental - Common Area</option>
+                                                            <option value="Rental|Facilities">Rental - Facilities</option>
+                                                            <option value="Rental|Shop Lots">Rental - Shop Lots</option>
+                                                            <option value="Rounding Adjustment|None">Rounding Adjustment</option>
+                                                            <option value="Utilities|Electricity">Utilities - Electricity</option>
+                                                            <option value="Utilities|Water">Utilities - Water</option>
+                                                            <option value="Veemios Booking|None">Veemios Booking</option>
+                                                            </optgroup>
+                                                            <optgroup label="Fixed Expenses" value="50">
+                                                            <option value="Fixed Services|CCTV &amp; Barrier System">Fixed Services - CCTV &amp; Barrier System</option>
+                                                            <option value="Fixed Services|Cleaning Services">Fixed Services - Cleaning Services</option>
+                                                            <option value="Fixed Services|Condo Master">Fixed Services - Condo Master</option>
+                                                            <option value="Fixed Services|Fire Control System Maint">Fixed Services - Fire Control System Maint</option>
+                                                            <option value="Fixed Services|Gen Set &amp; Pump">Fixed Services - Gen Set &amp; Pump</option>
+                                                            <option value="Fixed Services|Gym Equipment">Fixed Services - Gym Equipment</option>
+                                                            <option value="Fixed Services|Landscaping">Fixed Services - Landscaping</option>
+                                                            <option value="Fixed Services|Lift Maintenance">Fixed Services - Lift Maintenance</option>
+                                                            <option value="Fixed Services|Management Fee">Fixed Services - Management Fee</option>
+                                                            <option value="Fixed Services|Pest Control Services">Fixed Services - Pest Control Services</option>
+                                                            <option value="Fixed Services|Pool Maintenance">Fixed Services - Pool Maintenance</option>
+                                                            <option value="Fixed Services|Rental  photostat machine">Fixed Services - Rental  photostat machine</option>
+                                                            <option value="Fixed Services|Security Services">Fixed Services - Security Services</option>
+                                                            </optgroup>
+                                                            <optgroup label="Utilities" value="51">
+                                                            <option value="Utility Charges|Electricity">Utility Charges - Electricity</option>
+                                                            <option value="Utility Charges|Sewerage">Utility Charges - Sewerage</option>
+                                                            <option value="Utility Charges|Water">Utility Charges - Water</option>
+                                                            </optgroup>
+                                                            <optgroup label="Other Expenses" value="52">
+                                                            <option value="AGM Expenses|None">AGM Expenses</option>
+                                                            <option value="Audit Fee|None">Audit Fee</option>
+                                                            <option value="Bank Charges|None">Bank Charges</option>
+                                                            <option value="Bank Guarantee Charges|None">Bank Guarantee Charges</option>
+                                                            <option value="Common area expenses|None">Common area expenses</option>
+                                                            <option value="Decoration|None">Decoration</option>
+                                                            <option value="Depreciation Expense|None">Depreciation Expense</option>
+                                                            <option value="Discounts Allowed|None">Discounts Allowed</option>
+                                                            <option value="Equipment Hire|None">Equipment Hire</option>
+                                                            <option value="GST|None">GST</option>
+                                                            <option value="Insurance Charges|None">Insurance Charges</option>
+                                                            <option value="Insurance Claim Expenses|None">Insurance Claim Expenses</option>
+                                                            <option value="Legal Fee|None">Legal Fee</option>
+                                                            <option value="Licence fees|None">Licence fees</option>
+                                                            <option value="Maintenance Supplies|None">Maintenance Supplies</option>
+                                                            <option value="Meeting Allowances|None">Meeting Allowances</option>
+                                                            <option value="Mileage|None">Mileage</option>
+                                                            <option value="Phone|Fixed Line">Phone - Fixed Line</option>
+                                                            <option value="Phone|Mobile">Phone - Mobile</option>
+                                                            <option value="Postage|None">Postage</option>
+                                                            <option value="Printing (AND) Stationery|None">Printing &amp; Stationery</option>
+                                                            <option value="Quit Rent Charges|None">Quit Rent Charges</option>
+                                                            <option value="Repairs (AND) Maint|Air Cond">Repairs &amp; Maint - Air Cond</option>
+                                                            <option value="Repairs (AND) Maint|Barrier Gate">Repairs &amp; Maint - Barrier Gate</option>
+                                                            <option value="Repairs (AND) Maint|CCTV">Repairs &amp; Maint - CCTV</option>
+                                                            <option value="Repairs (AND) Maint|Electrical">Repairs &amp; Maint - Electrical</option>
+                                                            <option value="Repairs (AND) Maint|Fire Control">Repairs &amp; Maint - Fire Control</option>
+                                                            <option value="Repairs (AND) Maint|Gen Set">Repairs &amp; Maint - Gen Set</option>
+                                                            <option value="Repairs (AND) Maint|General Repairs">Repairs &amp; Maint - General Repairs</option>
+                                                            <option value="Repairs (AND) Maint|Gym">Repairs &amp; Maint - Gym</option>
+                                                            <option value="Repairs (AND) Maint|Landscaping">Repairs &amp; Maint - Landscaping</option>
+                                                            <option value="Repairs (AND) Maint|Lifts">Repairs &amp; Maint - Lifts</option>
+                                                            <option value="Repairs (AND) Maint|Lighting">Repairs &amp; Maint - Lighting</option>
+                                                            <option value="Repairs (AND) Maint|MATV">Repairs &amp; Maint - MATV</option>
+                                                            <option value="Repairs (AND) Maint|Painting">Repairs &amp; Maint - Painting</option>
+                                                            <option value="Repairs (AND) Maint|Plumbing">Repairs &amp; Maint - Plumbing</option>
+                                                            <option value="Repairs (AND) Maint|Pump Set">Repairs &amp; Maint - Pump Set</option>
+                                                            <option value="Repairs (AND) Maint|Recreation Facilities">Repairs &amp; Maint - Recreation Facilities</option>
+                                                            <option value="Repairs (AND) Maint|Structure">Repairs &amp; Maint - Structure</option>
+                                                            <option value="Repairs (AND) Maint|Swimming Pool">Repairs &amp; Maint - Swimming Pool</option>
+                                                            <option value="Repairs (AND) Maint|Tools &amp; material supply">Repairs &amp; Maint - Tools &amp; material supply</option>
+                                                            <option value="Repairs (AND) Maint|Water Proofing">Repairs &amp; Maint - Water Proofing</option>
+                                                            <option value="Repairs (AND) Maint|Water Tank">Repairs &amp; Maint - Water Tank</option>
+                                                            <option value="Salary|None">Salary</option>
+                                                            <option value="Service Tax|None">Service Tax</option>
+                                                            <option value="Signage|None">Signage</option>
+                                                            <option value="Sundry Expenses|None">Sundry Expenses</option>
+                                                            <option value="Tax Agent Fee|None">Tax Agent Fee</option>
+                                                            <option value="Tax Expenses|None">Tax Expenses</option>
+                                                            <option value="Wages|Casual Wages">Wages - Casual Wages</option>
+                                                            <option value="Wages|Overtime">Wages - Overtime</option>
+                                                            <option value="Waive Interest|None">Waive Interest</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <em><!-- to be removed -->NOTE to developer: show one only, select option to toggle date range, month or year</em>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="justify-content-sm-between">
+                                                            <div class="form-row align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Select</option>
+                                                                            <option value="1" selected>Daily</option>
+                                                                            <option value="2">Monthly</option>
+                                                                            <option value="3">Yearly</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <a href="reports-accounting.html" class="btn btn-outline-primary btn-sm btn-rounded mb-sm-0">Generate Report</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="justify-content-sm-between">
+                                                            <div class="form-row align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Select</option>
+                                                                            <option value="1">Daily</option>
+                                                                            <option value="2" selected>Monthly</option>
+                                                                            <option value="3">Yearly</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Year</option>
+                                                                            <option value="1">2023</option>
+                                                                            <option value="1">2022</option>
+                                                                            <option value="2">2021</option>
+                                                                            <option value="3">2020</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Month</option>
+                                                                            <option value="1">Jan</option>
+                                                                            <option value="2">Feb</option>
+                                                                            <option value="3">Mar</option>
+                                                                            <option value="1">Apr</option>
+                                                                            <option value="2">May</option>
+                                                                            <option value="3">Jun</option>
+                                                                            <option value="1">Jul</option>
+                                                                            <option value="2">Aug</option>
+                                                                            <option value="3">Sep</option>
+                                                                            <option value="1">Oct</option>
+                                                                            <option value="2">Nov</option>
+                                                                            <option value="3">Dec</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <a href="reports-accounting.html" class="btn btn-outline-primary btn-sm btn-rounded mb-sm-0">Generate Report</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="justify-content-sm-between">
+                                                            <div class="form-row align-items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Select</option>
+                                                                            <option value="1">Daily</option>
+                                                                            <option value="2">Monthly</option>
+                                                                            <option value="3" selected>Yearly</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control custom-select">
+                                                                            <option value="0">Financial Year</option>
+                                                                            <option value="1">FY2022</option>
+                                                                            <option value="2">FY2021</option>
+                                                                            <option value="3">Fy2020</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-group">
+                                                                        <a href="reports-accounting.html" class="btn btn-outline-primary btn-sm btn-rounded mb-sm-0">Generate Report</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-2 mt-1 pt-3 align-items-center border-top-gray300">
+                                                    <div class="col-sm-12 col-lg-6">
+                                                        <h5 class="mb-1 mt-0 font-weight-normal">Report - Other Expenses: Discounts Allowed</h5>
+                                                        <p class="font-size-12">1 Jan 2024 - 31 Dec 2024</p>
+                                                    </div>
+                                                    <div class="col-sm-12 col-lg-6 text-right">
+                                                        <div class="form-group">
+                                                            <a href="pdf-accounting.html" class="btn btn-primary btn-rounded mb-sm-0" target="_blank"><i class="uil-download-alt mr-1"></i> Download PDF</a> <button type="button" class="btn btn-primary btn-rounded mb-sm-0" onclick="document.location='assets/images/propertygaga/report-accounting.xlsx'"><i class="uil-download-alt mr-1"></i> Download Excel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12">
+                                                        <div class="card mb-4">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th>Description</th>
+                                                                                <th>Ref.</th>
+                                                                                <th class="text-right">Debit (RM)</th>
+                                                                                <th class="text-right">Credit (RM)</th>
+                                                                                <th class="text-right">Balance (RM)</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>23 Mar 2024</td>
+                                                                                <td>By 40JN7 - Discounts</td>
+                                                                                <td>PSI-0929202</td>
+                                                                                <td class="text-right">100.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">100.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>23 Mar 2024</td>
+                                                                                <td>By 40JN7 - Discounts</td>
+                                                                                <td>PSI-0929202</td>
+                                                                                <td class="text-right">100.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">100.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>23 Mar 2024</td>
+                                                                                <td>By 40JN7 - Discounts</td>
+                                                                                <td>PSI-0929202</td>
+                                                                                <td class="text-right">100.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">100.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>23 Mar 2024</td>
+                                                                                <td>By 40JN7 - Discounts</td>
+                                                                                <td>PSI-0929202</td>
+                                                                                <td class="text-right">100.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right">100.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td>&nbsp;</td>
+                                                                                <td class="text-right font-weight-bold">Total</td>
+                                                                                <td class="text-right font-weight-bold">400.00</td>
+                                                                                <td class="text-right font-weight-bold">0.00</td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td>&nbsp;</td>
+                                                                                <td class="text-right font-weight-bold">Balance c/f</td>
+                                                                                <td class="text-right font-weight-bold"></td>
+                                                                                <td class="text-right font-weight-bold">400.00</td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td>&nbsp;</td>
+                                                                                <td class="text-right">Total Debits</td>
+                                                                                <td class="text-right">400.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>&nbsp;</td>
+                                                                                <td>&nbsp;</td>
+                                                                                <td class="text-right">Total Credits</td>
+                                                                                <td class="text-right">0.00</td>
+                                                                                <td class="text-right"></td>
+                                                                                <td class="text-right"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

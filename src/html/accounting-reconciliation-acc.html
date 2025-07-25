@@ -51,9 +51,11 @@
                         <div class="row page-title align-items-center">
                             <div class="col-md-9 col-xl-9">
                                 <h3 class="mb-1 mt-0">Public Bank Current Acc Reconciliation</h3>
+                                <span class="badge badge-danger width-sm">Unlock</span>
                             </div>
                             <div class="col-md-3 col-xl-3 text-md-right">
                                 <div class="mt-4 mt-md-0">
+                                    <a href="" class="btn btn-dark btn-rounded mb-3 mb-sm-0 mr-2">Lock</a>
                                     <a href="#" onclick="location.href='accounting-reconciliation.html';"><i class="uil-arrow-left mr-1"></i> Back</a>
                                 </div>
                             </div>
@@ -65,47 +67,200 @@
                                     <div class="card-body">
                                         <div class="row mb-2">
                                             <div class="col-md-12">
-                                                <small class="font-size-12">Transactions between 20 Apr 2023 and 31 May 2023</small>
+                                                Transactions between 20 Apr 2023 and 31 May 2023
                                             </div>
                                         </div>
-                                        <div class="row mb-2">
+
+                                        <div class="row mb-4">
                                             <div class="col-md-12">
                                                 <div class="card bg-color-propertygagaLightest mb-0">
                                                     <div class="card-body">
-                                                        <div class="row">
-                                                            <div class="col col-lg-2 text-center">
-                                                                Trans. Matched
-                                                            </div>
-                                                            <div class="col col-lg-3 text-center">
-                                                                Statement Balance
-                                                            </div>
-                                                            <div class="col col-lg-1 text-center">
-                                                            </div>
-                                                            <div class="col col-lg-3 text-center">
-                                                                Polopolomi Balance
-                                                            </div>
-                                                            <div class="col col-lg-3 text-center">
-                                                                Difference
-                                                            </div>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-borderless table-sm mb-0 text-color-black">
+                                                                <tr>
+                                                                    <td class="border-0 text-center">Trans. Matched</td>
+                                                                    <td class="border-0 text-center">Statement Balance</td>
+                                                                    <td class="border-0 text-center"></td>
+                                                                    <td class="border-0 text-center">Polopolomi Balance</td>
+                                                                    <td class="border-0 text-center">Difference</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="border-0 text-center font-weight-normal">
+                                                                        20 of 67
+                                                                        <div class="progress recon mb-0">
+                                                                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="border-0 text-center lead font-weight-semibold">
+                                                                        <a href="" data-toggle="modal" data-target="#modal-editstatementbalance">RM10,000.00 <i data-feather="edit" class="font-xs"></i></a>
+                                                                    </td>
+                                                                    <td class="border-0 text-center font-size-15">≠</td>
+                                                                    <td class="border-0 text-center lead font-weight-semibold">RM8,000.00</td>
+                                                                    <td class="border-0 text-center lead font-weight-semibold"><span class="text-warning"><i class="uil uil-exclamation-triangle text-warning"></i> RM200.00</span></td>
+                                                                </tr>
+                                                            </table>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col col-lg-2 text-center font-weight-normal">
-                                                                20 of 67
-                                                                <div class="progress recon mb-0">
-                                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center mb-2">
+                                            <div class="col-md-6 col-xl-6">
+                                                <h3 class="mb-1 mt-0"></h3>
+                                            </div>
+                                            <div class="col-md-6 col-xl-6 text-md-right">
+                                                <div class="mt-4 mt-md-0">
+                                                    <a href="#" class="btn btn-sm btn-rounded btn-outline-primary">Print PDF</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <div class="custom-accordion accordion ml-4" id="customaccordion_exa">
+                                                <div class="card mb-1">
+                                                    <a href="" class="text-dark" data-toggle="collapse"
+                                                        data-target="#customaccorcollapseOne" aria-expanded="true"
+                                                        aria-controls="customaccorcollapseOne">
+                                                        <div class="card-header" id="customaccorheadingOne">
+                                                            <h5 class="m-0 font-size-14">
+                                                                <i class="uil uil-question-circle h3 text-primary icon"></i>
+                                                                Unknown Deposits
+                                                                <span class="badge badge-soft-danger float-right" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Unknown Deposits">3</span>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="customaccorcollapseOne" class="collapse"
+                                                        aria-labelledby="customaccorheadingOne"
+                                                        data-parent="#customaccordion_exa">
+                                                        <div class="card-body text-muted">
+                                                            <div class="slimscroll" style="max-height: 300px;">
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Txn Date</th>
+                                                                                <th>Description</th>
+                                                                                <th>Amount (RM)</th>
+                                                                                <th>Verified Date</th>
+                                                                                <th>Notes</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt Official Receipt Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td>5 Apr 2023</td>
+                                                                                <td>CN2245</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td>5 Apr 2023</td>
+                                                                                <td>CN2245</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td>5 Apr 2023</td>
+                                                                                <td>CN2245</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Official Receipt</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td>5 Apr 2023</td>
+                                                                                <td>CN2245</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
                                                             </div>
-                                                            <div class="col col-lg-3 text-center lead font-weight-semibold">
-                                                                <a href="" data-toggle="modal" data-target="#modal-editstatementbalance">RM10,000.00 <i data-feather="edit" class="font-xs"></i></a>
-                                                            </div>
-                                                            <div class="col col-lg-1 text-center font-size-15">
-                                                                ≠
-                                                            </div>
-                                                            <div class="col col-lg-3 text-center lead font-weight-semibold">
-                                                                RM8,000.00
-                                                            </div>
-                                                            <div class="col col-lg-3 text-center lead font-weight-semibold">
-                                                                <span class="text-warning"><i class="uil uil-exclamation-triangle text-warning"></i> RM200.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-1">
+                                                    <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                        data-target="#customaccorcollapseTwo" aria-expanded="false"
+                                                        aria-controls="customaccorcollapseTwo">
+                                                        <div class="card-header" id="customaccorheadingTwo">
+                                                            <h5 class="m-0 font-size-14">
+                                                                <i class="uil uil-question-circle h3 text-primary icon"></i>
+                                                                Uncredited Charges
+                                                                <span class="badge badge-soft-danger float-right" data-toggle="tooltip"
+                                                                data-placement="top" title=""
+                                                                data-original-title="Uncredited Charges">3</span>
+                                                            </h5>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="customaccorcollapseTwo" class="collapse"
+                                                        aria-labelledby="customaccorheadingTwo"
+                                                        data-parent="#customaccordion_exa">
+                                                        <div class="card-body text-muted">
+                                                            <div class="slimscroll" style="max-height: 300px;">
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Txn Date</th>
+                                                                                <th>Description</th>
+                                                                                <th>Amount (RM)</th>
+                                                                                <th>Verified Date</th>
+                                                                                <th>Notes</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Payment Voucher Payment Voucher Payment Voucher Payment Voucher</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Payment Voucher</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2 Apr 2023</td>
+                                                                                <td>Payment Voucher</td>
+                                                                                <td>11,607.96</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -115,8 +270,10 @@
                                         
                                         <div class="row mt-3 mb-3">                                                
                                             <div class="col-md-6">
-                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="tooltip" data-placement="top" title="" onclick="location.assign('')">Merge</button>
-                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="tooltip" data-placement="top" title="" onclick="location.assign('')">Delete</button>
+                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Merge</button>
+                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Delete</button>
+                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Match All</button>
+                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Unmatch All</button>
                                             </div>
                                             <div class="col-md-6 text-right">
                                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-addtransaction">Add Transaction</button>
@@ -153,7 +310,7 @@
                                                                             </div>
                                                                         </td>
                                                                         <td>2 Apr 2023</td>
-                                                                        <td>Invoice Payment</td>
+                                                                        <td>Official Receipt</td>
                                                                         <td>RM11,607.96</td>
                                                                         <td></td>
                                                                         <td>RM1,626,065.72</td>
@@ -179,7 +336,7 @@
                                                                             </div>
                                                                         </td>
                                                                         <td>24 Apr 2023</td>
-                                                                        <td>Invoice Payment</td>
+                                                                        <td>Official Receipt</td>
                                                                         <td>RM11,607.96</td>
                                                                         <td></td>
                                                                         <td>RM1,626,065.72</td>
@@ -209,7 +366,7 @@
                                                                             </div>
                                                                         </td>
                                                                         <td>4 May 2023</td>
-                                                                        <td>Invoice Payment</td>
+                                                                        <td>Official Receipt</td>
                                                                         <td>RM11,607.96</td>
                                                                         <td></td>
                                                                         <td>RM1,626,065.72</td>
@@ -223,6 +380,32 @@
                                                                                     aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
                                                                                 <div class="dropdown-menu">
                                                                                     <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-edit2">Edit</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>4 May 2023</td>
+                                                                        <td>Payment Voucher</td>
+                                                                        <td></td>
+                                                                        <td>RM11,607.96</td>
+                                                                        <td>RM1,626,065.72</td>
+                                                                        <td class="text-center">
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Match Now"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                        </td>
+                                                                        <td class="text-center">
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit</a>
                                                                                     <a class="dropdown-item" href="#">Delete</a>
                                                                                 </div>
                                                                             </div><!-- /btn-group -->
@@ -490,7 +673,7 @@
                                                     <label class="col-lg-3 col-form-label">Description</label>
                                                     <div class="col-lg-9">
                                                         <textarea class="form-control" rows="1" id="textarea">
-Invoice Payment
+Official Receipt
                                                         </textarea>
                                                     </div>
                                                 </div>
