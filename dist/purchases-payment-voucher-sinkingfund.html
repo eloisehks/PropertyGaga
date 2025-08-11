@@ -28,17 +28,11 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript">
-            <!--
-                function toggle_visibility(id) {
-                   var e = document.getElementById(id);
-                   if(e.style.display == 'block')
-                      e.style.display = 'none';
-                   else
-                      e.style.display = 'block';
-                }
-            //-->
-            </script>
+        <style>
+            .image-upload>input {
+                display: none;
+              }
+        </style>
 
     </head>
 
@@ -1509,315 +1503,293 @@
                     
                     <!-- Start Content-->
                     <div class="container-fluid">
-                    
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Global Vendor : Company 1 </h3>
+                                <h3 class="mb-1 mt-0">Payment Voucher - PV0005</h3>
+                                <span class="badge badge-warning width-sm mr-2">Pending</span>
                             </div>
-                            <div class="col-md-6 col-xl-6 text-md-right">
-                                <!-- <div class="btn-group mr-1">
+                            <div class="col-md-6 col-xl-6 text-right">
+                                <div class="btn-group mr-1">
                                     <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
                                         data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="data-service-providers-email.html">Email Vendor</a>
+                                        <a class="dropdown-item" href="#">Preview</a>
+                                        <a class="dropdown-item" href="#">Save as PDF</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
                                     </div>
-                                </div> -->
-                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back to List</a>
+                                </div><!-- /btn-group -->
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
                             </div>
-                           
                         </div>
-
+                        
                         <div class="row">
-                            <div class="col-xl-12">
+                            <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
-                                                <a href="#spinfo" data-toggle="tab" aria-expanded="true"
-                                                    class="nav-link active">
-                                                    <span class="d-block d-sm-none font-size-12">Info</span>
-                                                    <span class="d-none d-sm-block">Info</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#user" data-toggle="tab" aria-expanded="false"
-                                                    class="nav-link">
-                                                    <span class="d-block d-sm-none font-size-12">User</span>
-                                                    <span class="d-none d-sm-block">User</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content p-0 text-muted">
-                                            <div class="tab-pane mt-4 show active" id="spinfo">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <div class="card border-gray-light mb-4">
-                                                            <div class="card-body pb-4">
-                                                                <div class="row">
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">P.V. No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="PV0003" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group row border-bottom"></div>
 
-                                                                    <div class="col-md-3 col-xl-6">
-                                                                        <h4>Vendor Info</h4>
-                                                                    </div>
-                                                                    <div class="col-md-9 col-xl-6 text-md-right">
-                                                                        <div class="mt-4 mt-md-0">
-                                                                            <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 mr-2" onclick="location.href='#';"><i class="uil-plus mr-1"></i> Add to Site</button>
-                                                                            <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='#';"><i class="uil-edit mr-1"></i> Edit Info</button>
-                                                                            <!-- <button type="button" class="btn btn-outline-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers-edit.html';"><i class="uil-edit mr-1"></i> Edit Info</button> -->
-                                                                        </div>
-                                                                    </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Payee</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="Perbadanan Pengurusan ABC" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-date">Payment Date</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" id="example-date" type="date"
+                                                                name="date" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Reg. No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="url" value="348023" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Ref No.</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="url" value="-" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                                                    <!-- <div class="col-lg-12">
-                                                                        <h4>Vendor Info</h4>
-                                                                    </div> -->
-                                                                    
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Services</div>
-                                                                    <div class="col col-md-8">Management Firm</div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Vendor Code</div>
-                                                                    <div class="col col-md-8">12345</div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Vendor</div>
-                                                                    <div class="col col-auto">
-                                                                       Company 1
-                                                                    </div>
-                                                                    <div class="col col-auto">
-                                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Approved and verified by PropertyGaga"><i data-feather="heart" class="icon-dual-success" style="width: 16px; height: 16px;"></i></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom align-items-center">                                                                    
-                                                                    <div class="col col-md-4 font-weight-bold">Tax Identification No. (TIN)</div>
-                                                                    <div class="col col-auto">
-                                                                        C20880050010 
-                                                                    </div>
-                                                                    <div class="col col-auto">
-                                                                        <a href="#" class="btn btn-sm btn-rounded btn-outline-primary"><i class="uil uil-check-circle"></i> Verify</a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Tax Identification No. (TIN)</div>
-                                                                    <div class="col col-auto">
-                                                                        C20880050010 
-                                                                    </div>
-                                                                    <div class="col col-auto">
-                                                                        <i class="uil uil-check-circle text-success" data-toggle="tooltip"
-                                                                        data-placement="top" title=""
-                                                                        data-original-title="TIN Verified"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Address 1</div>
-                                                                    <div class="col col-md-8">
-                                                                        Address 1
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Address 2</div>
-                                                                    <div class="col col-md-8">
-                                                                        Address 2
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Postcode</div>
-                                                                    <div class="col col-md-8">
-                                                                        34567
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">City / Town</div>
-                                                                    <div class="col col-md-8">
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Country</div>
-                                                                    <div class="col col-md-8">
-                                                                        Malaysia
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">State</div>
-                                                                    <div class="col col-md-8">
-                                                                        Penang
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Contact No.</div>
-                                                                    <div class="col col-md-8">
-                                                                        012 345 6789
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Fax No.</div>
-                                                                    <div class="col col-md-8">
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Email</div>
-                                                                    <div class="col col-md-8">
-                                                                        <a href="mailto:email@email.com">email@email.com</a>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Contract Status</div>
-                                                                    <div class="col col-md-8">
-                                                                        <span class="text-success font-weight-bold font-size-13">Active</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Expiry of Contract</div>
-                                                                    <div class="col col-md-8">
-                                                                        2018-10-03 to 2018-10-10
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom align-items-center">
-                                                                    <div class="col col-md-4 font-weight-bold">Upload Contract</div>
-                                                                    <div class="col col-md-4">
-                                                                        <div class="p-2 border rounded mb-2">
-                                                                            <div class="media">
-                                                                                <div class="avatar-sm font-weight-bold mr-3">
-                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
-                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="media-body">
-                                                                                    <a href="#" class="d-inline-block mt-2">contract 1.pdf</a>
-                                                                                </div>
-                                                                                <div class="float-right mt-1">
-                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col col-md-4">
-                                                                        <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded mr-1" onclick="window.history.go(-1);">Approve</button>
-                                                                    </div>
-                                                                </div> -->
-                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Monthly Fees</div>
-                                                                    <div class="col col-md-8">
-                                                                        RM 1,000.00
-                                                                    </div>
-                                                                </div> -->
-                                                                <!-- <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Outstanding Payment</div>
-                                                                    <div class="col col-md-8">
-                                                                        RM 0.00
-                                                                    </div>
-                                                                </div> -->
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Company Profile</div>
-                                                                    <div class="col col-md-4">
-                                                                        <div class="p-2 border rounded mb-2">
-                                                                            <div class="media">
-                                                                                <div class="avatar-sm font-weight-bold mr-3">
-                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
-                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="media-body">
-                                                                                    <a href="#" class="d-inline-block mt-2">profile.pdf</a>
-                                                                                </div>
-                                                                                <div class="float-right mt-1">
-                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-2 mt-2 pt-0 pb-1 border-bottom">
-                                                                    <div class="col col-md-4 font-weight-bold">Other Documents</div>
-                                                                    <div class="col col-md-4">
-                                                                        <div class="p-2 border rounded mb-2">
-                                                                            <div class="media">
-                                                                                <div class="avatar-sm font-weight-bold mr-3">
-                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
-                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="media-body">
-                                                                                    <a href="#" class="d-inline-block mt-2">doc1.pdf</a>
-                                                                                </div>
-                                                                                <div class="float-right mt-1">
-                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="p-2 border rounded mb-2">
-                                                                            <div class="media">
-                                                                                <div class="avatar-sm font-weight-bold mr-3">
-                                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
-                                                                                        <i class="uil-file-plus-alt font-size-18"></i>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="media-body">
-                                                                                    <a href="#" class="d-inline-block mt-2">doc2.pdf</a>
-                                                                                </div>
-                                                                                <div class="float-right mt-1">
-                                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                            <div class="form-group row border-bottom"></div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Payment Mode</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <option value="1">Cash</option>
+                                                                <option value="2" selected>Cheque</option>
+                                                                <option value="3">Card</option>
+                                                                <option value="4">Online Banking</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label" for="">Pay from Account</label>
+                                                        <div class="col-lg-8">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Select</option>
+                                                                <option value="Bank -  SF  3250732926|Current Account">Bank -  SF  3250732926 - Current Account</option>
+                                                                <option value="Bank - MF  3205732501|Current Account">Bank - MF  3205732501 - Current Account</option>
+                                                                <option value="Bank MBB SF 507134515964|None">Bank MBB SF 507134515964</option>
+                                                                <option selected="selected" value="Bank PBB MF 3211486126|None">Bank PBB MF 3211486126</option>
+                                                                <option value="Cash on Hand|None">Cash on Hand</option>
+                                                                <option value="Petty Cash|None">Petty Cash</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label">Cheque</label>
+                                                        <div class="col-lg-8">
+                                                            <input class="form-control" type="url" name="" value="PBB 280831">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-textarea">Notes</label>
+                                                        <div class="col-lg-8">
+                                                            <textarea class="form-control" rows="3"
+                                                                id="example-textarea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group row border-bottom-gray300 mt-2"></div>
+                                                <div class="form-group row mb-1">
+                                                    <div class="col-lg-9">
+                                                        <h5 class="text-info form-inline">Outstanding Purchase Invoices</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mb-3">
+                                                    <div class="col-lg-8 form-inline">
+                                                        <i class="uil uil-calender mr-1"></i> <span class="mr-2 text-color-archive">Filter by Date Range </span> <input type="text" id="range-datepicker" class="form-control col-lg-4" placeholder=""> &nbsp;<button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">View</button>
+                                                    </div>
+                                                    <div class="col-lg-4 text-right pt-2">
+                                                        <a href="#">Clear Applied Amount</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card mt-3">
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table table-centered m-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="10%">P.I. No./SR No.</th>
+                                                                <th width="23%">Account</th>
+                                                                <th width="48%">Description</th>
+                                                                <th width="10%" class="text-center">Quantity</th>
+                                                                <th width="10%" class="text-right">Amount (RM)</th>
+                                                                <th width="10%" class="text-right">Payment (RM)</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    3535
+                                                                </td>
+                                                                <td>
+                                                                    Sinking Fund
+                                                                </td>
+                                                                <td>
+                                                                    Description...
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    1
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    1,100.00
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <input type="text" class="form-control text-right" id="simpleinput" value="1,100.00">
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" class="text small">Pay In Full</a>
+                                                                        <br>
+                                                                    <a href="#" class="text-danger small"><i class="uil-times"></i> Remove</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    3535
+                                                                </td>
+                                                                <td>
+                                                                    Sinking Fund
+                                                                </td>
+                                                                <td>
+                                                                    Add sinking fund manually...
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    1
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    1,000.00
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <input type="text" class="form-control text-right" id="simpleinput" value="1,000.00">
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#" class="text small">Pay In Full</a>
+                                                                        <br>
+                                                                    <a href="#" class="text-danger small"><i class="uil-times"></i> Remove</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7">
+                                                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded">Get Purchase Invoices</button>
+                                                                </td>
+                                                            </tr>
+                                                           <tr>
+                                                                <td colspan="4"></td>
+                                                                <td class="align-right font-weight-bold">Total Payment (RM):</td>
+                                                                <td class="align-right font-weight-bold">2,100.00</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4"></td>
+                                                                <td class="align-right font-weight-bold">Balance (RM):</td>
+                                                                <td class="align-right font-weight-bold">0.00</td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="col">
+                                                <h5>Update Status</h5>
+                                                <div class="p-3 border-grayform rounded mb-2">
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-row align-items-center mb-2 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                                                <div class="col-auto">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect" checked>
+                                                                        <label class="custom-control-label" for="customRadio2">Ready for Payment</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> <!-- end card-->
-                                                    
-                                                    </div><!-- end col-->
-                                                    
+                                                        </div>
+                                                    </div>
+            
+                                                    <div class="collect box">
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label">Date</label>
+                                                            <div class="col-auto">
+                                                                <input class="form-control" id="example-date" type="date" name="date">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-3 col-form-label" for="simpleinput">Notes</label>
+                                                            <div class="col-lg-9">
+                                                                <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div class="tab-pane mt-4" id="user">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        
-                                                        <div class="card border-gray-light">
-                                                            <div class="card-body">
-                                                                <div class="row">
-                                                                    <div class="col-md-12 text-right">
-                                                                        <div class="mb-3">
-                                                                            <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='data-service-providers-usernew.html';"><i class="uil-plus mr-1"></i> New User</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="table-responsive">
-                                                                    <table id="open-task1" class="table table-hover nowrap full-width">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Full  Name</th>
-                                                                                <th>Username</th>
-                                                                                <th>Email</th>
-                                                                                <th>Conact No.</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td><a href="data-service-providers-useredit.html">James</a></td>
-                                                                                <td>james-gg</td>
-                                                                                <td>james@email.com</td>
-                                                                                <td>012 354 6789</td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div> <!-- end card body-->
-                                                        </div> <!-- end card -->
-                                                    </div><!-- end col-->
-                                                </div>
-                                                <!-- end row-->
-                                            </div>
-
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                                        <p class="mt-2"></p>
+
+                                        <div class="float-left">
+                                            <div class="mb-3">
+                                                <div><small>Created by Cathryn Boey (boeyketchin) on 8 Jul 2025 3:56pm</small></div>
+                                                <div><small>Processed by Cathryn Boey (boeyketchin) on 14 Jul 2025 3:56pm</small></div>
+                                                <div><small>Updated by Cathryn Boey (boeyketchin) on 15 Jul 2025 3:56pm</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded">Save & Send to Perbadanan</button>
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
                         </div>
+                        <!-- end row -->
 
                     </div> <!-- container-fluid -->
 
@@ -1845,6 +1817,147 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+                
+            <!-- modal Return payment -->
+            <div class="modal fade" id="returnpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Return Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">P.V. No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00005" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="Perbadanan Pengurusan ABC" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="-" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="2,100.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Returned Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Return payment end -->
+
+            <!-- modal Cancel payment -->
+            <div class="modal fade" id="cancelpayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Cancel Payment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Are you sure you want to cancel this payment?
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">P.V. No.</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="PV00005" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Payee</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="Perbadanan Pengurusan ABC" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="" value="-" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Amount (RM)</label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="" value="2,100.00" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Reason</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded width-sm" data-dismiss="modal">Yes, cancel this payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Cancel payment end -->
 
         </div>
         <!-- END wrapper -->
@@ -1992,7 +2105,6 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-        
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
@@ -2027,18 +2139,17 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                let hash = window.location.hash;
-                if (hash) {
-                    let activeTab = document.querySelector(`a[href="${hash}"]`);
-                    if (activeTab) {
-                        new bootstrap.Tab(activeTab).show();
-                    }
-                }
-            });
-            </script>
 
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
     </body>
 </html>
