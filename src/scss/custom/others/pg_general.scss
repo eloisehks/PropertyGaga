@@ -43,6 +43,7 @@
 // flex container
 /* hide and show accordion content in the datatable */
 // add new row in Datatable (Sinking Fund)
+// box shadow
 
 
 /**************  **************/ 
@@ -698,17 +699,17 @@ span.notify-item:hover {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    ms-transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .site-list-container:hover .site-list-img {
     opacity: 0.2;
-  }
-  
-  .site-list-container:hover .site-list-img-middle {
+}
+
+.site-list-container:hover .site-list-img-middle {
     opacity: 1;
-  }
+}
 
 // site listing
 // #manson-list {
@@ -990,9 +991,19 @@ a.fc-more {
 .hover-highlight-50:hover {
     opacity: 0.5;
 }
-.grayscale-opacity {
+.hover-outline-blue:hover {
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,.175);
+    box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,.175);
+}
+.grayscale- opacity{
     filter: grayscale(100%);
     opacity: 0.2;
+}
+.avatar-disabled {
+    filter: grayscale(100%);
+    opacity: 0.3; /* Adjust the value between 0 (fully transparent) and 1 (fully opaque) */
 }
 
 
@@ -1308,6 +1319,30 @@ div.dataTables_wrapper {
     background-color: rgb(172, 172, 172);
 }
 
+.site-staff-icon-online {
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: $success;
+    border: 2px solid $bg-topbar-light;
+    border-radius: 50%;
+    box-shadow: $box-shadow-lg;
+}
+.site-staff-icon-offline {
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(172, 172, 172);
+    border: 2px solid $bg-topbar-light;
+    border-radius: 50%;
+    box-shadow: $box-shadow-lg;
+}
 // rotated ribbon
 
 .ribbon {
@@ -1756,4 +1791,10 @@ div.dataTables_wrapper {
     margin-top: 10px;
     cursor: pointer;
     text-decoration: underline;
+}
+
+/* box shadow */
+.box-shadow-1 {
+    -webkit-box-shadow: 0.2rem 0 0.2rem rgba(26, 34, 46, 0.2);
+    box-shadow: 0.2rem 0 0.3rem rgba(26, 34, 46,0.2);
 }

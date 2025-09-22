@@ -40,7 +40,7 @@
         <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
             <div class="container-fluid">
                 <!-- LOGO -->
-                <a href="sites.html" class="navbar-brand mr-0 mr-md-2 logo">
+                <a href="sites-list.html" class="navbar-brand mr-0 mr-md-2 logo">
                     <span class="logo-lg">
                         <img src="assets/images/logo_main.png" alt="" height="40" />
                         <!-- <span class="d-inline h5 ml-1 text-logo">Property Gaga</span> -->
@@ -222,7 +222,7 @@
                         <span data-feather="chevron-down"></span>
                     </a>
                     <div class="dropdown-menu profile-dropdown">
-                        <a href="sites.html" class="dropdown-item notify-item">
+                        <a href="sites-list.html" class="dropdown-item notify-item">
                             <i data-feather="arrow-right-circle" class="icon-dual icon-xs mr-2"></i>
                             <span>Sites</span>
                         </a>
@@ -271,7 +271,25 @@
                     </div>
                 </div>
             </div>
-    
+
+            <div class="sidebar-content">
+                <!--- Sidemenu -->
+                <div id="sidebar-menu" class="slimscroll-menu">
+                    <ul class="metismenu" id="menu-bar">
+                        <li>
+                            <a href="sites-mytasks.html">
+                                <i class="uil uil-clipboard-alt mr-2"></i>
+                                <span class="badge badge-success float-right"></span>
+                                <span> My Tasks </span>
+                            </a>
+                        </li>
+   
+                    </ul>
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+            </div>
             <!-- Sidebar -left -->
 
         </div>
@@ -293,12 +311,12 @@
                         <div class="col-md-6 col-xl-6 text-md-right">
                             <button type="button" class="btn btn-primary btn-rounded" onclick="location.href='site-new.html';">Create a new Site</button>
                             <div class="btn-group ml-2 d-inline-block">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="location.href='sites.html';"><i
-                                        class="uil uil-apps"></i></button>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="location.href='sites-list.html';"><i
+                                    class="uil uil-align-left-justify"></i></button>
                             </div>
                             <div class="btn-group d-inline-block">
-                                <button type="button" class="btn btn-white btn-sm" onclick="location.href='sites-list.html';"><i
-                                        class="uil uil-align-left-justify"></i></button>
+                                <button type="button" class="btn btn-white btn-sm" onclick="location.href='sites.html';"><i
+                                    class="uil uil-apps"></i></button>
                             </div>
                         </div>
                     </div>
@@ -313,12 +331,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Created Date</th>
                                                     <th>Site Name</th>
                                                     <th>Site Code</th>
-                                                    <th>City / Town</th>
-                                                    <th>State</th>
-                                                    <th>Type</th>
+                                                    <th class="text-center">Defaulter</th>
+                                                    <th class="text-center">Tasks</th>
                                                     <th>Staff</th>
                                                     <th class="text-center">Actions</th>
                                                 </tr>
@@ -326,91 +342,284 @@
                                             <tbody>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Mori Residence</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>                                                
-                                                    <td><img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-4.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /> <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">20</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-4.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-offline"></span>
+                                                            <img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1 avatar-disabled" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
                                                     <td class="text-center">                                                    
-                                                        <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
+                                                        <a href="site-view.html" class="btn btn-outline-primary btn-sm btn-rounded">View</a>
+                                                        <small class="text-danger"><br>note to developer: View only for normal user</small>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">3 Residence</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">23</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-offline"></span>
+                                                            <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1 avatar-disabled" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                    </td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Urban</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">3</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                    </td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Penang Coastal Tower</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /> <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">55</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-4.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Emerald Residence</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">33</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                    </td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>6</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Star Residence</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">1</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                    </td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>7</td>
-                                                    <td>30 Jun 2022</td>
                                                     <td><a href="index.html">Maya Residence</a></td>
                                                     <td>354657</td>
-                                                    <td>Bukit Jambul</td>
-                                                    <td>Penang</td>
-                                                    <td>Residential</td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /><img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" /> <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
+                                                    <td class="text-center font-size-12"><a href="sites-defaulter-list.html">333</a></td>
+                                                    <td class="text-center">
+                                                        <ul class="list-inline mb-0">
+                                                            <li class="list-inline-item pr-2">
+                                                                <a href="sites-tasksheet-pending.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="New Task">
+                                                                    <i class="uil uil-clipboard mr-2"></i> 56
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="sites-tasksheet-open-task.html" class="d-inline-block font-size-12"
+                                                                    data-toggle="tooltip" data-placement="top" title=""
+                                                                    data-original-title="Opened Task">
+                                                                    <i class="uil uil-clipboard-alt mr-2"></i> 224
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <span style="position: relative;">
+                                                            <span class="site-staff-icon-online"></span>
+                                                            <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Sammy" />
+                                                        </span>
+                                                        <a href="" data-toggle="modal" data-target="#modal-allstaff">+2</a></td>
                                                     <td class="text-center">                                                    
                                                         <a href="site-edit.html" class="btn btn-outline-primary btn-sm btn-rounded">Edit</a>
                                                     </td>
@@ -464,27 +673,52 @@
                     <div class="modal-body">
                         <form class="form-horizontal text-color-black">
                             <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                <div class="col-auto"><img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Eugene" /></div>
+                                <div class="col-auto">
+                                    <span style="position: relative;">
+                                        <span class="site-staff-icon-offline"></span>
+                                        <img src="assets/images/users/avatar-3.jpg" class="avatar-xs rounded-circle mr-1 avatar-disabled" data-toggle="tooltip" data-placement="top" title="Eugene" />
+                                    </span>
+                                </div>
                                 <div class="col-md-5 font-weight-bold"><small class="font-weight-normal mr-3">039458</small> Eugene</div>
                                 <div class="col-md-5">Super Admin</div>
                             </div>
                             <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                <div class="col-auto"><img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Dickson Mah" /></div>
+                                <div class="col-auto">
+                                    <span style="position: relative;">
+                                        <span class="site-staff-icon-online"></span>
+                                        <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Dickson Mah" />
+                                    </span>
+                                </div>
                                 <div class="col-md-5 font-weight-bold"><small class="font-weight-normal mr-3">039451</small> Dickson Mah</div>
                                 <div class="col-md-5">Admin</div>
                             </div>
                             <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                <div class="col-auto"><img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Vivian Chin" /></div>
+                                <div class="col-auto">
+                                    <span style="position: relative;">
+                                        <span class="site-staff-icon-online"></span>
+                                        <img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Vivian Chin" />
+                                    </span>
+                                </div>
                                 <div class="col-md-5 font-weight-bold"><small class="font-weight-normal mr-3">039452</small> Vivian Chin</div>
                                 <div class="col-md-5">Accountant</div>
                             </div>
                             <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                <div class="col-auto"><img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Nadan" /></div>
+                                <div class="col-auto">
+                                    <span style="position: relative;">
+                                        <span class="site-staff-icon-online"></span>
+                                        <img src="assets/images/users/avatar-5.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Nadan" />
+                                    </span>
+                                </div>
                                 <div class="col-md-5 font-weight-bold"><small class="font-weight-normal mr-3">039460</small> Nadan</div>
                                 <div class="col-md-5">Building Manager</div>
                             </div>
                             <div class="row mb-2 mt-2 pt-2 pb-2 border-bottom">
-                                <div class="col-auto"><img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Muthu" /></div>
+                                <div class="col-auto">
+                                    <span style="position: relative;">
+                                        <span class="site-staff-icon-online"></span>
+                                        <img src="assets/images/users/avatar-6.jpg" class="avatar-xs rounded-circle mr-1" data-toggle="tooltip" data-placement="top" title="Muthu" />
+                                    </span>
+                                </div>
                                 <div class="col-md-5 font-weight-bold"><small class="font-weight-normal mr-3">039462</small> Muthu</div>
                                 <div class="col-md-5">Handyman</div>
                             </div>

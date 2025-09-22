@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar0.html')
+
+            @@include('./partials/left-sidebar-0.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">My Tasks</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2">
+                                <div class="card">
+                                    <div class="card-body p-0 slimscroll ml-0 mr-0 mb-2 mt-0" style="min-height: 400px">
+                                        <div class="list-group mt-0 pb-4 mb-2">
+                                            <a href="sites-mytasks.html" class="list-group-item border-0 text-color-primary">All Sites</a>
+                                            <a href="sites-mytasks-1.html" class="list-group-item border-0 text-color-primary-active">3 Resident</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary">Emerald Residence</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary">Mori Residence</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary">Maya Residence</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary">Penang Coastal Tower</a>
+                                            <a href="#" class="list-group-item border-0 text-color-primary">Star Residence</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-10 col-lg-10 col-md-9 col-sm-10 col-xs-10 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="mt-0 mb-3">3 Resident</h5>
+                                        <div class="mb-2">
+                                            <form>
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Status</option>
+                                                                <option value="2">Accepted</option>
+                                                                <option value="3">Voting</option>
+                                                                <option value="4">Approved</option>
+                                                                <option value="5">Quotation</option>
+                                                                <option value="6">In Progress</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Urgency</option>
+                                                                <option value="2">Yes</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table id="open-task1" class="table table-hover nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <th width="5%">Task ID</th>
+                                                        <th width="45%">Subject</th>
+                                                        <th>Submitted Date</th>
+                                                        <th width="10%">Due Date</th>
+                                                        <th class="text-center">Urgency</th>
+                                                        <th>Update Log</th>
+                                                        <th>No. of Quotation</th>
+                                                        <th width="10%">Activity By</th>
+                                                        <!-- <th width="10%">Accepted By / On</th> -->
+                                                        <th width="20%">Assigned On</th>
+                                                        <th class="text-center">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="table-tr-danger">
+                                                        <td><span class="badge badge-warning width-sm">Accepted</span></td>
+                                                        <td>OT022</td>
+                                                        <td><a href="tasksheet-open-task-edit-new-task.html">Cigarette butt in balcony</a></td>
+                                                        <td>13 May 2020</td>
+                                                        <td>23 May 2020</td>
+                                                        <td class="text-center text-danger">Yes</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log">
+                                                                <span class="text-nowrap align-middle font-size-15">
+                                                                    <i class="uil uil-check-square mr-1 text-muted"></i>3 <small>Updates</small>
+                                                                </span>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">-</td>
+                                                        <td><small>Eugene</small><br>(25 Apr 2020, 2:30pm)</td>
+                                                        <!-- <td><small>Sean</small><br>(23 Apr 2020, 2:30pm)</td> -->
+                                                        <td>23 Apr 2020, 2:30pm</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="tasksheet-open-task-edit-new-task.html">Update</a>
+                                                                    <a class="dropdown-item" href="#">Share</a>
+                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-primary width-sm">Voting</span></td>
+                                                        <td>OT020</td>
+                                                        <td><a href="tasksheet-open-task-edit-new-task.html">Water ponding in facility floor</a></td>
+                                                        <td>10 Jun 2020</td>
+                                                        <td>12 Jun 2020</td>
+                                                        <td class="text-center text-danger">Yes</td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log">
+                                                                <span class="text-nowrap align-middle font-size-15">
+                                                                    <i class="uil uil-check-square mr-1 text-muted"></i>3 <small>Updates</small>
+                                                                </span>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">-</td>
+                                                        <td>25 Apr 2020, 2:30pm</td>
+                                                        <td>23 Apr 2020, 2:30pm</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="tasksheet-open-task-edit-new-task.html">Update</a>
+                                                                    <a class="dropdown-item" href="#">Share</a>
+                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-success width-sm">Approved</span></td>
+                                                        <td>OT020</td>
+                                                        <td><a href="tasksheet-open-task-edit-new-task.html">Water ponding in facility floor</a></td>
+                                                        <td>10 Jun 2020</td>
+                                                        <td>12 Jun 2020</td>
+                                                        <td class="text-center"></td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log">
+                                                                <span class="text-nowrap align-middle font-size-15">
+                                                                    <i class="uil uil-check-square mr-1 text-muted"></i>3 <small>Updates</small>
+                                                                </span>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center">-</td>
+                                                        <td><small>Eugene</small><br>(25 Apr 2020, 2:30pm)</td>
+                                                        <td>23 Apr 2020, 2:30pm</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="tasksheet-open-task-edit-new-task.html">Update</a>
+                                                                    <a class="dropdown-item" href="#">Share</a>
+                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-danger width-sm">Quatation</span></td>
+                                                        <td>OT062</td>
+                                                        <td><a href="tasksheet-open-task-edit-new-task.html">No Light at P3 parking</a></td>
+                                                        <td>10 Jun 2020</td>
+                                                        <td>12 Jun 2020</td>
+                                                        <td class="text-center"></td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log">
+                                                                <span class="text-nowrap align-middle font-size-15">
+                                                                    <i class="uil uil-check-square mr-1 text-muted"></i>3 <small>Updates</small>
+                                                                </span>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center"><i class="uil uil-bill"></i> 3</td>
+                                                        <td><small>Handyman 1</small><br>(25 Apr 2020, 2:30pm)</td>
+                                                        <td>23 Apr 2020, 2:30pm</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="tasksheet-open-task-edit-new-task.html">Update</a>
+                                                                    <a class="dropdown-item" href="#">Share</a>
+                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="badge badge-info width-sm">In Progress</span></td>
+                                                        <td>OT092</td>
+                                                        <td><a href="tasksheet-open-task-edit-new-task.html">Corridor not clean</a></td>
+                                                        <td>10 Jun 2020</td>
+                                                        <td>12 Jun 2020</td>
+                                                        <td class="text-center"></td>
+                                                        <td>
+                                                            <a href="#" data-toggle="modal" data-target="#updatelog" title="Update Log">
+                                                                <span class="text-nowrap align-middle font-size-15">
+                                                                    <i class="uil uil-check-square mr-1 text-muted"></i>3 <small>Updates</small>
+                                                                </span>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center"><i class="uil uil-bill"></i> 4</td>
+                                                        <td><small>Eugene</small><br>(25 Apr 2020, 2:30pm)</td>
+                                                        <td>23 Apr 2020, 2:30pm</td>
+                                                        <td class="text-right">
+                                                            <div class="btn-group dropleft">
+                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="tasksheet-open-task-edit-new-task.html">Update</a>
+                                                                    <a class="dropdown-item" href="#">Share</a>
+                                                                    <a class="dropdown-item" href="#">Save as PDF</a>
+                                                                    <a class="dropdown-item" href="#">KIV</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <div class="modal fade" id="insertquotation" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Search Quotation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group mt-3 mt-sm-0">
+                                            <select data-plugin="customselect" class="form-control" data-placeholder="Select Quotation">
+                                                <option></option>
+                                                <option value="0" selected>#28495 - Company 1</option>
+                                                <option value="1">Q28496 - Company 2</option>
+                                                <option value="2">Q28497 - Company 3</option>
+                                                <option value="4">Q28498 - Company 4</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                    <label class="custom-control-label" for="customRadio2">
+                                                        <div class="p-2 border rounded mb-2">
+                                                            <div class="media">
+                                                                <div class="avatar-sm font-weight-bold mr-3">
+                                                                    <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                        <i class="uil-file-plus-alt font-size-18"></i>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <a href="#" class="d-inline-block mt-2">quotation1.doc</a>
+                                                                </div>
+                                                                <div class="float-right mt-1">
+                                                                    <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Insert Quotation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- update log -->
+            <div class="modal fade" id="updatelog" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Log</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-2.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Eugene" />
+                                    <label>Accepted Task</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 2 Mar 2025, 4:20pm
+                                </div>
+                            </div>
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-3.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Sarah" />
+                                    <label>Accepted Task</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 3 Mar 2025, 5:20pm
+                                </div>
+                            </div>
+                            <div class="row justify-content-sm-between border-bottom p-2 align-items-center">
+                                <div class="col col-lg-6 mt-1 mb-lg-0">
+                                    <img src="assets/images/users/avatar-2.jpg"
+                                            alt="image"
+                                            class="avatar-xs rounded-circle"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom"
+                                            title="Updated by Eugene" />
+                                    <label>Quotations & Voting</label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <i class='uil uil-schedule font-16 mr-1'></i> 4 Mar 2025, 6:20pm
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- update log end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>
