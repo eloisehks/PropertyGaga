@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Defaulter - Aged Receivables</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back to Listing</a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            As of
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="30 Sep 2025">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="col-md-6 text-right">
+                                                <a href="assets/images/propertygaga/defaulter-aged-receivables.xlsx" target="_blank" class="btn btn-outline-secondary btn-sm btn-rounded">Excel</a>
+                                            </div> 
+                                        </div>
+
+                                        <div class="table-responsive pb-3">
+                                            <table id="basic-datatable" class="table nowrap full-width">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="no-border"></th>
+                                                        <th class="no-border"></th>
+                                                        <th colspan="4" class="text-center no-border bg-color-propertygagaLightest">Number of Days Overdue</th>
+                                                        <th class="text-right no-border"></th>
+                                                    </tr>
+                                                    <tr class="text-color-grayDarker">
+                                                        <th>Unit No.</th>
+                                                        <th class="text-right">Not Yet<br>Overdue</th>
+                                                        <th class="bg-color-propertygagaLightest text-right">30 or Less</th>
+                                                        <th class="bg-color-propertygagaLightest text-right">31 to 60</th>
+                                                        <th class="bg-color-propertygagaLightest text-right">61 to 90</th>
+                                                        <th class="bg-color-propertygagaLightest text-right">91 or More</th>
+                                                        <th class="text-right">Outstanding<br>Amt.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>6-01-07</td>       
+                                                        <td class="text-right"></td>     
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right">RM300.00<br><small>1 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="text-right">RM300.00<br><small>RM300.00 overdue</small></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-08</td>       
+                                                        <td class="text-right">RM50,000.00<br><small>1 invoice</small></td>     
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="text-right">RM50,000.00<br><small>RM0.00 overdue</small></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6-01-09</td>       
+                                                        <td class="text-right"></td>     
+                                                        <td class="bg-color-propertygagaLightest text-right">RM50,000.00<br><small>1 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="bg-color-propertygagaLightest text-right"></td>
+                                                        <td class="text-right">RM50,000.00<br><small>RM50,000.00 overdue</small></td>
+                                                    </tr>
+                                                    <tr class="font-weight-bold text-color-grayDarker">
+                                                        <td class="border-top-gray500">Total Outstanding</td>       
+                                                        <td class="text-right border-top-gray500">RM50,000.00<br><small>1 invoice</small></td>     
+                                                        <td class="bg-color-propertygagaLightest text-right border-top-gray500">RM50,000.00<br><small>1 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLightest text-right border-top-gray500">RM300.00<br><small>1 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLightest text-right border-top-gray500">RM0.00<br><small>0 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLightest text-right border-top-gray500">RM0.00<br><small>0 invoice</small></td>
+                                                        <td class="bg-color-propertygagaLighter text-right border-top-gray500">RM100,300.00<br><small>RM50,300.00 overdue</small></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+    </body>
+</html>
