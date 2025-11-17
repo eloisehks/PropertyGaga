@@ -62,17 +62,18 @@
                             </div>
                             <div class="col-md-9 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <a href="accounting-journal-edit.html" class="btn btn-primary btn-rounded mb-3 mb-sm-0">Add journal transaction</a>
-                                    <a href="accounting-transaction-bankstatement.html" class="btn btn-primary btn-rounded mb-3 mb-sm-0">Bank Statement</a>
-                                    <!-- <div class="btn-group mr-1">
+                                    <div class="btn-group mr-1">
                                         <button type="button" class="btn btn-primary btn-rounded dropdown-toggle mb-3 mb-sm-0"
                                             data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                        <div class="dropdown-menu dropdown-menu-right"> 
-                                            <a class="dropdown-item" href="accounting-journal-edit.html">Add journal transaction</a>
-                                            <a class="dropdown-item" href="accounting-transactions-upload-bankstatement.html">Upload a Bank Statement</a>
+                                            aria-expanded="false">Add Transaction <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-addtransaction">Add Deposit/Withdrawal</a>
+                                            <a class="dropdown-item" href="accounting-journal-edit.html">Add Journal Transaction</a>
                                         </div>
-                                    </div> -->
+                                    </div>
+                                    <a href="accounting-reconciliation.html" class="btn btn-dark btn-rounded mb-3 mb-sm-0">Bank Reconciliation</a>
+                                    <!-- DO NOT DELETE THIS <a href="accounting-transaction-bankstatement.html" class="btn btn-primary btn-rounded mb-3 mb-sm-0">Bank Statement</a> -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -120,6 +121,7 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
                                                                             </div>
                                                                         </th>
+                                                                        <th></th>
                                                                         <th class="pl-4">Date</th>
                                                                         <th class="pl-4">Category</th>
                                                                         <th class="pl-4">Account</th>
@@ -136,88 +138,7 @@
                                                                                 <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
-                                                                        <td width="30%">
-                                                                            <div class="form-group align-items-center m-0 p-0">
-                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="(Copy of) Write a Description" value="(Copy of) Write a Description">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
-                                                                               
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
-                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="text-right">0.00</td>
-                                                                        <td class="text-center"></td>
-                                                                        <td class="text-center align-self-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
-                                                                            <div class="btn-group dropleft">
-                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
-                                                                                    <a class="dropdown-item" href="#">Delete</a>
-                                                                                </div>
-                                                                            </div><!-- /btn-group -->
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="font-weight-bold">
-                                                                        <td>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td width="30%">
-                                                                            <div class="form-group align-items-center m-0 p-0">
-                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group m-0 p-0">
-                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="Write a Description" value="Write a Description">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
-                                                                               
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
-                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="text-right">30,000.00</td>
-                                                                        <td class="text-center"></td>
-                                                                        <td class="text-center align-self-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
-                                                                            <div class="btn-group dropleft">
-                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
-                                                                                    <a class="dropdown-item" href="#">Delete</a>
-                                                                                </div>
-                                                                            </div><!-- /btn-group -->
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="font-weight-bold">
-                                                                        <td>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
-                                                                            </div>
-                                                                        </td>
+                                                                        <td></td>
                                                                         <td width="30%">
                                                                             <div class="form-group align-items-center m-0 p-0">
                                                                                 <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
@@ -265,6 +186,92 @@
                                                                                 <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
+                                                                        <td></td>
+                                                                        <td width="30%">
+                                                                            <div class="form-group align-items-center m-0 p-0">
+                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group m-0 p-0">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="(Copy of) Write a Description" value="(Copy of) Write a Description">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
+                                                                               
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="text-right">0.00</td>
+                                                                        <td class="text-center"></td>
+                                                                        <td class="text-center align-self-center">
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="font-weight-bold">
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td></td>
+                                                                        <td width="30%">
+                                                                            <div class="form-group align-items-center m-0 p-0">
+                                                                                <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="23 Jun 2023">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group m-0 p-0">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="Write a Description" value="Write a Description">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-200">
+                                                                               
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group noborder m-0 p-0 select-width-300">
+                                                                                <input type="text" class="form-control pixel200 noborder font-weight-bold" id="simpleinput" placeholder="" value="Journal Entry">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="text-right">30,000.00</td>
+                                                                        <td class="text-center"></td>
+                                                                        <td class="text-center align-self-center">
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Reviewed"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit & Upload Receipt</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                    <tr class="font-weight-bold">
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input font-weight-bold" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td></td>
                                                                         <td>
                                                                             <input type="text" id="basic-datepicker" class="form-control pixel110 noborder font-weight-bold" placeholder="Basic datepicker" value="2023-06-04">
                                                                         </td>
@@ -310,6 +317,7 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
+                                                                        <td></td>
                                                                         <td>
                                                                             <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="2023-06-02">
                                                                         </td>
@@ -355,6 +363,7 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
+                                                                        <td><i class="uil uil-balance-scale" data-toggle="tooltip" data-placement="top" title="" data-original-title="Transaction has been reconciled"></i></td>
                                                                         <td>
                                                                             <input type="text" id="basic-datepicker" class="form-control pixel110 noborder" placeholder="Basic datepicker" value="2023-06-01">
                                                                         </td>
@@ -418,6 +427,144 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+            <!-- modal add transaction -->
+            <div class="modal fade" id="modal-addtransaction" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Transaction</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Date</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Account</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option></option>
+                                                            <option>Cash on hand</option>
+                                                            <option>CIMB Current Acc.</option>
+                                                            <option>Public Bank Current Acc.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Amount</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label" for="example-date">Vendor<br><small><i>if select withdrawal</i></small></label>
+                                                    <div class="col-lg-9">
+                                                        <select data-plugin="customselect" class="form-control">
+                                                            <option>Select Vendor</option>
+                                                            <option value="0">Advance Seatech Sdn Bhd</option>
+                                                            <option value="1">Advance Seatech Sdn Bhd</option>
+                                                            <option value="2">Advance Seatech Sdn Bhd</option>
+                                                        
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label" for="example-date">Unit<br><small><i>if select deposit</i></small></label>
+                                                    <div class="col-lg-9">
+                                                        <select data-plugin="customselect" class="form-control">
+                                                            <option value="0">Select Unit No.</option>
+                                                            <option value="1">6-03-01</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                            <option value="1">8-18-3A</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                            <option value="1">8-18-3A</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                            <option value="1">8-18-3A</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                            <option value="1">8-18-3A</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                            <option value="1">8-18-3A</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Description</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea class="form-control" rows="1" id="textarea">
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Type</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option>Deposit</option>
+                                                            <option>Withdrawal</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Category</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option></option>
+                                                            <option>Invoice #3535 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
+                                                            <option>Invoice #3536 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group"> 
+                                                    <label class="col-form-label"
+                                                        for="">Notes</label>
+                                                        <textarea class="form-control" rows="2" id="textarea">
+                                                            
+                                                        </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal add transaction end -->
 
             <!-- modal edit 1 -->
             <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">

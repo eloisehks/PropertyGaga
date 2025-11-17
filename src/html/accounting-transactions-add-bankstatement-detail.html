@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_accountcat_stylesheet.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3>New Bank Statement</h3>     
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body p-3">
+                                        <h5>Add Bank Statement Details</h5>
+                                    
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Statement Date<span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="basic-datepicker4" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Start Date<span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="basic-datepicker4" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">End Date<span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="basic-datepicker4" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Account <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <select class="form-control custom-select">
+                                                    <option></option>
+                                                    <option>Cash on hand</option>
+                                                    <option>CIMB Current Acc.</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-5 pt-1">
+                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-addnewaccount">Add a New Account</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Closing Balance<span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" placeholder="0.00">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label">Upload Bank Statement<span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input class="form-control" type="file" id="fileUpload">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-3"></div>
+                                            <div class="col-lg-4"><button type="submit" class="btn btn-primary btn-rounded full-width">Submit</button></div>
+                                            <div class="col-lg-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row-->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal add new account -->
+            <div class="modal fade" id="modal-addnewaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Create a New Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 class="font-weight-normal">Browse the account categories</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body" id="accountcat">
+                                            <ul class="nav nav-pills navtab-bg nav-justified" id="pills-tab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="pills-activity-tab" data-toggle="pill"
+                                                        href="#pills-assets" role="tab" aria-controls="pills-assets"
+                                                        aria-selected="true">
+                                                        Assets
+                                                        <div class="badge badge-info btn-rounded ml-2">2</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                        href="#pills-liabilities" role="tab" aria-controls="pills-liabilities"
+                                                        aria-selected="false">
+                                                        Liabilities
+                                                        <div class="badge badge-info btn-rounded ml-2">4</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                        href="#pills-equity" role="tab" aria-controls="pills-equity"
+                                                        aria-selected="false">
+                                                        Equity
+                                                        <div class="badge badge-info btn-rounded ml-2">6</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                        href="#pills-income" role="tab" aria-controls="pills-income"
+                                                        aria-selected="false">
+                                                        Income
+                                                        <div class="badge badge-info btn-rounded ml-2">3</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="pills-messages-tab" data-toggle="pill"
+                                                        href="#pills-expenses" role="tab" aria-controls="pills-expenses"
+                                                        aria-selected="false">
+                                                        Expenses
+                                                        <div class="badge badge-info btn-rounded ml-2">2</div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+        
+                                            <div class="tab-content" id="pills-tabContent">
+                                                <div class="tab-pane fade show active" id="pills-assets" role="tabpanel" aria-labelledby="pills-activity-tab">
+                                                    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseCurrentAssets1" aria-expanded="true"
+                                                                aria-controls="collapseCurrentAssets1">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Current Assets<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseCurrentAssets1" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="TradeReceivables" title="> Trade Receivables">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="ServiceTaxReceivable" title="> Service Tax Receivable">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="GSTInput" title="> GST Input">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseFixedAssets" aria-expanded="true"
+                                                                aria-controls="collapseFixedAssets">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Fixed Assets<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseFixedAssets" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="Furniture" title="> Furniture">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="OperatingEquipment" title="> Operating Equipment">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseAccumulated" aria-expanded="true"
+                                                                aria-controls="collapseAccumulated">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Accumulated Depreciation<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseAccumulated" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="Computer" title="> Computer">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+        
+                                                <div class="tab-pane" id="pills-liabilities" role="tabpanel" aria-labelledby="pills-messages-tab">
+                                                    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseCurrentLiabilities" aria-expanded="true"
+                                                                aria-controls="collapseCurrentLiabilities">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Current Liabilities<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseCurrentLiabilities" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="TradePayables" title="> Trade Payables">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="BookingDeposit" title="> Booking Deposit">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="PrepaidIncome" title="> Prepaid Income">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="PrepaidIncomeWater" title="> Prepaid Income / Water">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="RefundContra" title="> Refund Contra">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="GSTOutput" title="> GST Output">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="GSTPayable" title="> GST Payable">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="ServiceTaxPayable" title="> Service Tax Payable">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepositRenovation" title="> Deposit / Renovation">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepositUtilities" title="> Deposit / Utilities">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepositRental" title="> Deposit / Rental">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepositServiceCharge" title="> Deposit / Service Charge">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepositSinkingFund" title="> Deposit / Sinking Fund">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+        
+                                                <div class="tab-pane" id="pills-equity" role="tabpanel" aria-labelledby="pills-messages-tab">
+                                                    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseEquity" aria-expanded="true"
+                                                                aria-controls="collapseEquity">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Equity<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseEquity" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="AccumulatedFunds" title="> Accumulated Funds">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="SinkingFund" title="> Sinking Fund">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+    
+                                                <div class="tab-pane" id="pills-income" role="tabpanel" aria-labelledby="pills-messages-tab">
+                                                   
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseIncome" aria-expanded="true"
+                                                                aria-controls="collapseIncome">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Income<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseIncome" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="MaintenanceFee" title="> Maintenance Fee">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="Interest" title="> Interest">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="InterestWater" title="> Interest / Water">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="InterestReceivedTNB" title="> Interest Received (TNB)">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="RoundingAdjustment" title="> Rounding Adjustment">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="VeemiosBooking" title="> Veemios Booking">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="OnlinePaymentFee" title="> Online Payment Fee">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DiscountsReceived" title="> Discounts Received">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="QuitRent" title="> Quit Rent">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="Insurance" title="> Insurance">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="OutstandingCharges" title="> Outstanding Charges">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="UtilitiesWater" title="> Utilities / Water">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="UtilitiesElectricity" title="> Utilities / Electricity">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+    
+                                                <div class="tab-pane" id="pills-expenses" role="tabpanel" aria-labelledby="pills-messages-tab">
+                                                    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseOtherExpenses" aria-expanded="true"
+                                                                aria-controls="collapseOtherExpenses">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Other Expenses<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseOtherExpenses" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="ServiceTax" title="> Service Tax">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DiscountsAllowed" title="> Discounts Allowed">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="WaiveInterest" title="> Waive Interest">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="DepreciationExpense" title="> Depreciation Expense">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="GST" title="> GST">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseCurrentAssets" aria-expanded="true"
+                                                                aria-controls="collapseCurrentAssets">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Current Assets<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseCurrentAssets" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="GSTInput2" title="> GST Input">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="accordion custom-accordionwitharrow mt-0" id="accordionExample">
+                                                        <div class="card shadow-none mb-1">
+        
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#collapseFixedExpenses" aria-expanded="true"
+                                                                aria-controls="collapseFixedExpenses">
+                                                                <div class="card-header" id="headingOne">
+                                                                    <h5 class="m-0 text-primary">Fixed Expenses<i class="uil uil-angle-down float-right accordion-arrow"></i></h5>
+                                                                </div>
+                                                            </a>
+        
+                                                            <div id="collapseFixedExpenses" class="collapse" aria-labelledby="headingOne"
+                                                                data-parent="#accordionExample">
+                                                                <div class="card-body text-muted pt-3 pb-2">
+                                                                    <div class="row p-0">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="FixedServicesManagementFee" title="> Fixed Services / Management Fee">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="FixedServicesSecurityServices" title="> Fixed Services / Security Services">
+                                                                            </div>
+                                                                            <div class="form-row">
+                                                                                <input type="checkbox" name="FixedServicesPoolMaintenance" title="> Fixed Services / Pool Maintenance">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                            </div>
+                            <!-- end row-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal add new account end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script src="assets/libs/zInput/zInput.js"></script>
+             
+
+             <script>
+                 $(function(){ 
+                 
+                 $("input[name='css_selector']").change(function(){
+                     $newStyle = $(this).attr("value");
+                     $('#stylesheet').attr("href", $newStyle);
+                 });
+                 
+             });
+             </script>
+             
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            
+            $("#accountcat").zInput();
+        </script>
+        
+    </body>
+</html>

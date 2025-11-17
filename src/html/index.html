@@ -130,6 +130,50 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert" style="padding-right: 1.25rem;">
+                        <div class="row align-items-center text-center text-sm-center text-md-left">
+                            <div class="col-md-1">
+                                <div class="rounded-circle bg-light">
+                                <i class="uil uil-exclamation-octagon avatar-title font-xl text-danger p-2"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h5 class="font-size-15">
+                                    <div class="font-size-16 mb-2">Formal notification of an overdue payment.</div>
+                                    <div class="font-weight-normal">A 30-day grace period is provided to settle the outstanding balance. We require you to formally acknowledge this notice.</div>
+                                </h5>
+                            </div>
+                            <div class="col-md-2 text-center text-sm-center">
+                                <a href="#" class="btn btn-dark font-size-14" data-dismiss="alert" aria-label="Close">Acknowledge</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card bg-soft-danger border-danger">
+                                <div class="card-body pb-2">
+                                    <div class="media">
+                                        <div class="rounded-circle bg-danger mr-4">
+                                            <i class="uil uil-exclamation-octagon avatar-title font-xl p-2"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="p-0">
+                                                <h5 class="font-size-15 mt-0">
+                                                    <a href="#" class="btn btn-dark font-size-14 mt-0 mt-sm-3 float-right">Pay Now</a>
+                                                    <div class="font-size-18 mb-2">SITE TEMPORARY SUSPENDED</div>
+                                                    <div class="font-weight-normal">
+                                                        We note that the 30-day grace period for your account has now passed. Unfortunately, your site has been temporarily suspended, but you can reactivate it immediately by settling your outstanding balance.
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- content -->
                     <div class="row">
@@ -988,13 +1032,13 @@
     <!-- <script src="assets/js/pages/widgets.init.js"></script> -->
 
     
-    <!-- <script>
+    <script>
         $(document).ready(function(){
             $("#checkinModal").modal('show');
         });
     </script>
 
-    <div id="checkinModal" class="modal fade">
+    <!-- <div id="checkinModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="p-4">
@@ -1014,6 +1058,47 @@
             </div>
         </div>
     </div> -->
+
+    <!-- Overdue Payment popup notice -->
+    <div id="overdue-Modal" class="modal fade" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Overdue Payment</h5>
+                    <button type="button" class="close" data-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center ml-3 mr-3">
+                    <i class="uil uil-exclamation-octagon bg-light rounded-circle font-xl text-danger p-2"></i>
+                    <h4>Formal notification of an overdue payment.</h4>
+                    <p>A <span class="font-weight-bold text-color-black">30-day grace period</span> is provided to settle the outstanding balance. We require you to formally acknowledge this notice.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="acknowledgeBtn" class="btn btn-lg btn-dark btn-block btn-rounded">Acknowledge</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Overdue Payment popup notice end -->
+        
+    <!-- Script Overdue Payment popup notice -->
+    <script>
+        $(document).ready(function () {
+        // Initialize modal with static backdrop & disable ESC close
+        var myModal = new bootstrap.Modal(document.getElementById('overdue-Modal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+    
+        // Auto show modal on page load
+        myModal.show();
+    
+        // Close only when "Acknowledge" is clicked
+        $("#acknowledgeBtn").on("click", function () {
+            myModal.hide();
+        });
+        });
+    </script>
+    
 
 </body>
 </html>

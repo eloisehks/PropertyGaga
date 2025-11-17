@@ -910,11 +910,16 @@
                             </li>
 
                             <li>
-                                <a href="documents-ok.html">
+                                <a href="javascript: void(0);">
                                     <i data-feather="file"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Documents</span>
+                                    <span>Documents </span>
+                                    <span class="menu-arrow"></span>
                                 </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="documents-ok.html">Site Documents</a>
+                                    </li>
+                                </ul>
                             </li>
 
                             <li>
@@ -1502,12 +1507,11 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-9 col-xl-9">
-                                <h3 class="mb-1 mt-0">Public Bank Current Acc Reconciliation</h3>
+                                <h3 class="mb-1 mt-0">0100-02 Public Bank Current Acc Reconciliation</h3>
                                 <span class="badge badge-danger width-sm">Unlock</span>
                             </div>
                             <div class="col-md-3 col-xl-3 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <a href="" class="btn btn-dark btn-rounded mb-3 mb-sm-0 mr-2">Lock</a>
                                     <a href="#" onclick="location.href='accounting-reconciliation.html';"><i class="uil-arrow-left mr-1"></i> Back</a>
                                 </div>
                             </div>
@@ -1518,55 +1522,78 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row mb-2">
-                                            <div class="col-md-12">
-                                                Transactions between 20 Apr 2023 and 31 May 2023
+                                            <div class="col-md-8 text-center text-sm-left mt-2">
+                                                <h5 class="m-0 p-0">Public Bank - Current Account</h5>
+                                                Reconciliation between 1 Dec 2023 to 31 Dec 2023
+                                            </div>
+                                            <div class="col-md-4 align-items-center text-center text-sm-right mt-2">
+                                                <a href="assets/images/propertygaga/bank-reconciliation-report.xlsx" class="btn btn-outline-primary btn-sm btn-rounded">Report</a>
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4">
+                                        <div class="row mb-4 mt-3">
                                             <div class="col-md-12">
-                                                <div class="card bg-color-propertygagaLightest mb-0">
-                                                    <div class="card-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-borderless table-sm mb-0 text-color-black">
-                                                                <tr>
-                                                                    <td class="border-0 text-center">Trans. Matched</td>
-                                                                    <td class="border-0 text-center">Statement Balance</td>
-                                                                    <td class="border-0 text-center"></td>
-                                                                    <td class="border-0 text-center">Polopolomi Balance</td>
-                                                                    <td class="border-0 text-center">Difference</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="border-0 text-center font-weight-normal">
-                                                                        20 of 67
-                                                                        <div class="progress recon mb-0">
-                                                                            <div class="progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="border-0 text-center lead font-weight-semibold">
-                                                                        <a href="" data-toggle="modal" data-target="#modal-editstatementbalance">RM10,000.00 <i data-feather="edit" class="font-xs"></i></a>
-                                                                    </td>
-                                                                    <td class="border-0 text-center font-size-15">≠</td>
-                                                                    <td class="border-0 text-center lead font-weight-semibold">RM8,000.00</td>
-                                                                    <td class="border-0 text-center lead font-weight-semibold"><span class="text-warning"><i class="uil uil-exclamation-triangle text-warning"></i> RM200.00</span></td>
-                                                                </tr>
-                                                            </table>
+                                                <div class="row mb-2 p-0 align-items-center text-color-black">
+                                                    <div class="col-md-2 text-center text-sm-left">
+                                                        <h6 class="m-0 p-0">Currency: RM</h6>
+                                                    </div>
+                                                    <div class="col-md-8 text-center text-sm-center">
+                                                        <i class="uil uil-usd-circle"></i> Total Txn: <strong>334</strong>
+                                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                        <i class="uil uil-balance-scale text-muted"></i> Unmatched Txn: <strong>203</strong>
+                                                    </div>
+                                                    <div class="col-md-2 text-center text-sm-right">
+                                                        <div class="custom-control custom-switch">
+                                                            <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                                            <label class="custom-control-label font-size-12 mr-2" for="customSwitch3">Unlock</label>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive border-propertygaga-lighter font-sm rounded-10">
+                                                    <table class="table table-sm mb-0">
+                                                        <thead>
+                                                            <tr class="text-center" style="line-height: 30px;">
+                                                                <th scope="col" class="no-border bg-color-propertygaga"></th>
+                                                                <th scope="col" colspan="2" class="no-border bg-color-propertygagaLightest">ADD</th>
+                                                                <th scope="col" colspan="2" class="no-border bg-color-lighteryellow">LESS</th>
+                                                                <th scope="col" class="no-border bg-color-grayLighter"></th>
+                                                                <th scope="col" class="no-border bg-color-lighterred"></th>
+                                                                <th scope="col" class="no-border bg-color-propertygagaLight"></th>
+                                                            </tr>
+                                                            <tr class="text-center text-color-black border-0">
+                                                                <th scope="col" class="no-border bg-color-propertygaga text-color-white">Statement<br>Closing<br>Balance</th>
+                                                                <th scope="col" class="no-border bg-color-propertygagaLightest">Uncleared<br>Receipts</th>
+                                                                <th scope="col" class="no-border bg-color-propertygagaLightest">Uncredited<br>Lodgements</th>
+                                                                <th scope="col" class="no-border bg-color-lighteryellow">Unpresented<br>Cheques</th>
+                                                                <th scope="col" class="no-border bg-color-lighteryellow">Unknown<br>Deposits</th>
+                                                                <th scope="col" class="no-border bg-color-grayLighter">Balance</th>
+                                                                <th scope="col" class="no-border bg-color-lighterred">Unreconciled</th>
+                                                                <th scope="col" class="no-border bg-color-propertygagaLight">Ledger<br>Closing<br>Balance</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="text-center" style="line-height: 30px;">
+                                                                <th scope="row" class="no-border bg-color-propertygaga text-color-white">4,166,424.22</th>
+                                                                <td class="no-border bg-color-propertygagaLightest">1,250.00</td>
+                                                                <td class="no-border bg-color-propertygagaLightest">29,561.40</td>
+                                                                <td class="no-border bg-color-lighteryellow">28,363.55</td>
+                                                                <td class="no-border bg-color-lighteryellow">824.10</td>
+                                                                <td class="no-border bg-color-grayLighter">4,168,047.97</td>
+                                                                <td class="no-border bg-color-lighterred">0.00</td>
+                                                                <td class="no-border bg-color-propertygagaLight text-color-black">4,168,047.97</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="row mb-2 font-sm text-right">
+                                                    <div class="col-md-12 align-items-center mt-2">
+                                                        Created by eugenechoong on 31 Dec 2023, 2:00pm<br>
+                                                        Udpated by eugenechoong on 31 Dec 2023, 2:20pm
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="row align-items-center mb-2">
-                                            <div class="col-md-6 col-xl-6">
-                                                <h3 class="mb-1 mt-0"></h3>
-                                            </div>
-                                            <div class="col-md-6 col-xl-6 text-md-right">
-                                                <div class="mt-4 mt-md-0">
-                                                    <a href="#" class="btn btn-sm btn-rounded btn-outline-primary">Print PDF</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="mb-5">
                                             <div class="custom-accordion accordion ml-4" id="customaccordion_exa">
                                                 <div class="card mb-1">
@@ -1579,7 +1606,7 @@
                                                                 Unknown Deposits
                                                                 <span class="badge badge-soft-danger float-right" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Unknown Deposits">3</span>
+                                                                data-original-title="Total">7</span>
                                                             </h5>
                                                         </div>
                                                     </a>
@@ -1588,6 +1615,11 @@
                                                         aria-labelledby="customaccorheadingOne"
                                                         data-parent="#customaccordion_exa">
                                                         <div class="card-body text-muted">
+                                                            <div class="row mb-3">                                                
+                                                                <div class="col-md-12 text-right">
+                                                                    <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-addtransaction">Add Transaction</button>
+                                                                </div>
+                                                            </div>
                                                             <div class="slimscroll" style="max-height: 300px;">
                                                                 <div class="table-responsive">
                                                                     <table class="table table-hover nowrap full-width">
@@ -1598,12 +1630,12 @@
                                                                                 <th>Amount (RM)</th>
                                                                                 <th>Verified Date</th>
                                                                                 <th>Notes</th>
-                                                                                <th></th>
+                                                                                <th>Action</th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt Official Receipt Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
@@ -1613,7 +1645,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
@@ -1623,7 +1655,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
@@ -1633,7 +1665,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td>5 Apr 2023</td>
@@ -1643,7 +1675,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td>5 Apr 2023</td>
@@ -1653,7 +1685,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td>5 Apr 2023</td>
@@ -1663,7 +1695,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Official Receipt</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td>5 Apr 2023</td>
@@ -1686,10 +1718,10 @@
                                                         <div class="card-header bg-color-lighteryellow" id="customaccorheadingTwo">
                                                             <h5 class="m-0 font-size-14">
                                                                 <i class="uil uil-question-circle h3 text-warning icon"></i>
-                                                                Uncredited Charges
-                                                                <span class="badge badge-soft-danger float-right" data-toggle="tooltip"
+                                                                Uncredited Lodgements
+                                                                <span class="badge badge-soft-warning float-right" data-toggle="tooltip"
                                                                 data-placement="top" title=""
-                                                                data-original-title="Uncredited Charges">3</span>
+                                                                data-original-title="Total">3</span>
                                                             </h5>
                                                         </div>
                                                     </a>
@@ -1698,6 +1730,11 @@
                                                         aria-labelledby="customaccorheadingTwo"
                                                         data-parent="#customaccordion_exa">
                                                         <div class="card-body text-muted">
+                                                            <div class="row mb-3">                                                
+                                                                <div class="col-md-12 text-right">
+                                                                    <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-addtransaction-uncreditedlodgement">Add Transaction</button>
+                                                                </div>
+                                                            </div>
                                                             <div class="slimscroll" style="max-height: 300px;">
                                                                 <div class="table-responsive">
                                                                     <table class="table table-hover nowrap full-width">
@@ -1708,38 +1745,38 @@
                                                                                 <th>Amount (RM)</th>
                                                                                 <th>Verified Date</th>
                                                                                 <th>Notes</th>
-                                                                                <th></th>
+                                                                                <th>Action</th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Payment Voucher Payment Voucher Payment Voucher Payment Voucher</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td>
-                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedcharges">Edit</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedlodgement">Edit</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Payment Voucher</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td>
-                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedcharges">Edit</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedlodgement">Edit</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>2 Apr 2023</td>
+                                                                                <td>2 Dec 2023</td>
                                                                                 <td>Payment Voucher</td>
                                                                                 <td>11,607.96</td>
                                                                                 <td></td>
                                                                                 <td></td>
                                                                                 <td>
-                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedcharges">Edit</a>
+                                                                                    <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-edituncreditedlodgement">Edit</a>
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
@@ -1754,19 +1791,20 @@
                                         
                                         <div class="row mt-3 mb-3">                                                
                                             <div class="col-md-6">
-                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Merge</button>
+                                                <!-- <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Merge</button> -->
                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Delete</button>
                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Match All</button>
                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded">Unmatch All</button>
                                             </div>
                                             <div class="col-md-6 text-right">
-                                                <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-addtransaction">Add Transaction</button>
+                                                
+                                                <a href="javascript:void(0)" class="btn btn-info btn-sm btn-rounded" onclick="openImagePopup()">Bank Statement</a>
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card">
+                                        <div class="row mb-5">
+                                            <div class="col-12 mb-5">
+                                                <div class="card mb-5">
                                                     <div class="card-body p-0">
                                                         <div class="table-responsive">
                                                             <table id="basic-datatable3" class="table table-hover nowrp full-width">
@@ -1779,11 +1817,14 @@
                                                                         </th>
                                                                         <th>Date</th>
                                                                         <th>Description</th>
-                                                                        <th>Debit</th>
-                                                                        <th>Credit</th>
-                                                                        <th>Polopolomi Balance</th>
-                                                                        <th></th>
+                                                                        <th>Ref. No.</th>
+                                                                        <th>Unit No. / Vendor</th>
+                                                                        <th>Name</th>
+                                                                        <th class="text-right">Debit</th>
+                                                                        <th >Credit</th>
+                                                                        <th class="text-right">Polopolomi Balance</th>
                                                                         <th class="text-center">Matched</th>
+                                                                        <th>Flag</th>
                                                                         <th>Actions</th>
                                                                     </tr>
                                                                 </thead>
@@ -1794,19 +1835,20 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
-                                                                        <td>2 Apr 2023</td>
+                                                                        <td>2 Dec 2023</td>
                                                                         <td>Official Receipt</td>
-                                                                        <td>RM11,607.96</td>
-                                                                        <td></td>
-                                                                        <td>RM1,626,065.72</td>
-                                                                        <td>
-                                                                            <i class="uil uil-info-circle font-size-16" data-toggle="tooltip"
-                                                                                data-placement="top" title=""
-                                                                                data-original-title="Unknown Deposits"></i>
-                                                                        </td>
+                                                                        <td>OR29393</td>
+                                                                        <td>6-03-01</td>
+                                                                        <td>Ben</td>
+                                                                        <td class="text-right">RM11,607.96</td>
+                                                                        <td class="text-right"></td>
+                                                                        <td class="text-right">RM1,626,065.72</td>
                                                                         <td class="text-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Matched"><img src="assets/images/icons/checkmark-circle-green-noborder.svg" width="34px"></a>
+                                                                            <a href="#" class="btn btn-soft-primary btn-rounded btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Matched">
+                                                                                <i class="uil uil-balance-scale"></i>
+                                                                            </a>
                                                                         </td>
+                                                                        <td></td>
                                                                         <td class="text-center">
                                                                             <div class="btn-group dropleft">
                                                                                 <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
@@ -1825,54 +1867,21 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
                                                                             </div>
                                                                         </td>
-                                                                        <td>24 Apr 2023</td>
+                                                                        <td>24 Dec 2023</td>
                                                                         <td>Official Receipt</td>
-                                                                        <td>RM11,607.96</td>
-                                                                        <td></td>
-                                                                        <td>RM1,626,065.72</td>
-                                                                        <td>
-                                                                            <i class="uil uil-info-circle font-size-16" data-toggle="tooltip"
-                                                                                data-placement="top" title=""
-                                                                                data-original-title="Unknown Deposits"></i>
-                                                                        </td>
+                                                                        <td>OR29355</td>
+                                                                        <td>6-03-03</td>
+                                                                        <td>Ong Lay Wei</td>
+                                                                        <td class="text-right">RM11,607.96</td>
+                                                                        <td class="text-right"></td>
+                                                                        <td class="text-right">RM1,626,065.72</td>
                                                                         <td class="text-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Match Now"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
-                                                                            <!-- <div class="custom-control custom-switch">
-                                                                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                                                                <label class="custom-control-label font-size-12 mr-2" for="customSwitch1"></label>
-                                                                            </div> -->
+                                                                            <a href="#" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Match Now">
+                                                                                <i class="uil uil-balance-scale"></i>
+                                                                            </a>
                                                                         </td>
-                                                                        <td class="text-center">
-                                                                            <div class="btn-group dropleft">
-                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#moveto-unknowndeposit">Move to Unknown Deposit</a>
-                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-edit2">Edit</a>
-                                                                                    <a class="dropdown-item" href="#">Delete</a>
-                                                                                </div>
-                                                                            </div><!-- /btn-group -->
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
                                                                         <td>
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>4 May 2023</td>
-                                                                        <td>Official Receipt</td>
-                                                                        <td>RM11,607.96</td>
-                                                                        <td></td>
-                                                                        <td>RM1,626,065.72</td>
-                                                                        <td>
-                                                                            <i class="uil uil-info-circle font-size-16" data-toggle="tooltip"
-                                                                                data-placement="top" title=""
-                                                                                data-original-title="Unknown Deposits"></i>
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Matched"><img src="assets/images/icons/checkmark-circle-green-noborder.svg" width="34px"></a>
+                                                                            
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <div class="btn-group dropleft">
@@ -1892,18 +1901,53 @@
                                                                                 <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
                                                                             </div>
                                                                         </td>
-                                                                        <td>4 May 2023</td>
+                                                                        <td>4 Dec 2023</td>
+                                                                        <td>Official Receipt</td>
+                                                                        <td>OR29333</td>
+                                                                        <td>6-04-01</td>
+                                                                        <td>Benny</td>
+                                                                        <td class="text-right">RM11,607.96</td>
+                                                                        <td class="text-right"></td>
+                                                                        <td class="text-right">RM1,626,065.72</td>
+                                                                        <td class="text-center">
+                                                                            <a href="#" class="btn btn-soft-primary btn-rounded btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Matched">
+                                                                                <i class="uil uil-balance-scale"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                        <td></td>
+                                                                        <td class="text-center">
+                                                                            <div class="btn-group dropleft">
+                                                                                <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                                    aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#modal-edit2">Edit</a>
+                                                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                                                </div>
+                                                                            </div><!-- /btn-group -->
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="customCheck2"><label class="custom-control-label" for="customCheck2">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>4 Dec 2023</td>
                                                                         <td>Payment Voucher</td>
+                                                                        <td>PV29393</td>
+                                                                        <td>Advance Seatech Sdn Bhd</td>
                                                                         <td></td>
-                                                                        <td>RM11,607.96</td>
-                                                                        <td>RM1,626,065.72</td>
-                                                                        <td>
-                                                                            <i class="uil uil-info-circle font-size-16" data-toggle="tooltip"
-                                                                                data-placement="top" title=""
-                                                                                data-original-title="Uncredited Charges"></i>
-                                                                        </td>
+                                                                        <td class="text-right"></td>
+                                                                        <td class="text-right">RM11,607.96</td>
+                                                                        <td class="text-right">RM1,626,065.72</td>
                                                                         <td class="text-center">
-                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Match Now"><img src="assets/images/icons/checkmark-circle-outline.svg" width="34px"></a>
+                                                                            <!-- <a href="#" class="btn btn-outline-primary btn-rounded btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Match Now">
+                                                                                <i class="uil uil-balance-scale"></i>
+                                                                            </a> -->
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Flag as Unpresented Cheques"><i data-feather="flag" class="icon-dual"></i></a>
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <div class="btn-group dropleft">
@@ -1911,7 +1955,6 @@
                                                                                     data-toggle="dropdown" aria-haspopup="true"
                                                                                     aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
                                                                                 <div class="dropdown-menu">
-                                                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#moveto-uncreditedcharges">Move to Uncredited Charges</a>
                                                                                     <a class="dropdown-item" href="" data-toggle="modal" data-target="#">Edit</a>
                                                                                     <a class="dropdown-item" href="#">Delete</a>
                                                                                 </div>
@@ -2027,9 +2070,9 @@
                                                     <div class="col-lg-9">
                                                         <select class="form-control custom-select">
                                                             <option></option>
-                                                            <option>Cash on hand</option>
-                                                            <option>CIMB Current Acc.</option>
-                                                            <option>Public Bank Current Acc.</option>
+                                                            <option>0200-00 Cash on hand</option>
+                                                            <option>0100-01 CIMB Current Acc.</option>
+                                                            <option>0100-02 Public Bank Current Acc.</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -2039,7 +2082,7 @@
                                                         <input type="text" class="form-control" id="" placeholder="" value="">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label" for="example-date">Vendor<br><small><i>if select withdrawal</i></small></label>
                                                     <div class="col-lg-9">
                                                         <select data-plugin="customselect" class="form-control">
@@ -2050,9 +2093,9 @@
                                                         
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label" for="example-date">Unit<br><small><i>if select deposit</i></small></label>
+                                                    <label class="col-lg-3 col-form-label" for="example-date">Unit</label>
                                                     <div class="col-lg-9">
                                                         <select data-plugin="customselect" class="form-control">
                                                             <option value="0">Select Unit No.</option>
@@ -2093,7 +2136,7 @@
                                                         </textarea>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Type</label>
                                                     <div class="col-lg-9">
                                                         <select class="form-control custom-select">
@@ -2101,8 +2144,20 @@
                                                             <option>Withdrawal</option>
                                                         </select>
                                                     </div>
+                                                </div> -->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Inv. No.</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Name</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Category</label>
                                                     <div class="col-lg-9">
                                                         <select class="form-control custom-select">
@@ -2111,7 +2166,7 @@
                                                             <option>Invoice #3536 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="row">
@@ -2137,6 +2192,119 @@
                 </div>
             </div>
             <!-- modal add transaction end -->
+
+            <!-- modal add transaction uncredited lodgement  -->
+            <div class="modal fade" id="modal-addtransaction-uncreditedlodgement" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Transaction</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form class="form-horizontal">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Date</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Account</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option></option>
+                                                            <option>0200-00 Cash on hand</option>
+                                                            <option>0100-01 CIMB Current Acc.</option>
+                                                            <option>0100-02 Public Bank Current Acc.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Amount</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label" for="example-date">Vendor</label>
+                                                    <div class="col-lg-9">
+                                                        <select data-plugin="customselect" class="form-control">
+                                                            <option>Select Vendor</option>
+                                                            <option value="0">Advance Seatech Sdn Bhd</option>
+                                                            <option value="1">Advance Seatech Sdn Bhd</option>
+                                                            <option value="2">Advance Seatech Sdn Bhd</option>
+                                                        
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div class="col">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Description</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea class="form-control" rows="1" id="textarea">
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Type</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option>Deposit</option>
+                                                            <option>Withdrawal</option>
+                                                        </select>
+                                                    </div>
+                                                </div> -->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">PV. No.</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Category</label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control custom-select">
+                                                            <option></option>
+                                                            <option>Invoice #3535 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
+                                                            <option>Invoice #3536 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
+                                                        </select>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group"> 
+                                                    <label class="col-form-label"
+                                                        for="">Notes</label>
+                                                        <textarea class="form-control" rows="2" id="textarea">
+                                                            
+                                                        </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal add transaction uncredited lodgement end -->
 
             <!-- modal edit transaction 2 -->
             <div class="modal fade" id="modal-edit2" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -2164,9 +2332,9 @@
                                                     <label class="col-lg-3 col-form-label">Account</label>
                                                     <div class="col-lg-9">
                                                         <select class="form-control custom-select">
-                                                            <option>Cash on hand</option>
-                                                            <option>CIMB Current Acc.</option>
-                                                            <option selected>Public Bank Current Acc.</option>
+                                                            <option>0100-01 Cash on hand</option>
+                                                            <option>0200-00 CIMB Current Acc.</option>
+                                                            <option selected>0100-02 Public Bank Current Acc.</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -2177,6 +2345,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label" for="example-date">Unit No.</label>
+                                                    <div class="col-lg-9">
+                                                        <select data-plugin="customselect" class="form-control" disabled>
+                                                            <option value="0">Select Unit No.</option>
+                                                            <option value="1">All Units</option>
+                                                            <option value="1" selected>6-03-01</option>
+                                                            <option value="2">8-19-03</option>
+                                                            <option value="3">8-20-3A</option>
+                                                            <option value="4">8-21-03</option>
+                                                        
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label" for="example-date">Vendor</label>
                                                     <div class="col-lg-9">
                                                         <select data-plugin="customselect" class="form-control" disabled>
@@ -2187,7 +2369,7 @@
                                                         
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
 
                                             <div class="col">
@@ -2203,18 +2385,21 @@ Official Receipt
                                                     <label class="col-lg-3 col-form-label">Type</label>
                                                     <div class="col-lg-9">
                                                         <select class="form-control custom-select">
-                                                            <option>Deposit</option>
-                                                            <option selected>Withdrawal</option>
+                                                            <option selected>Deposit</option>
+                                                            <option>Withdrawal</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Category</label>
+                                                    <label class="col-lg-3 col-form-label">Ref. No.</label>
                                                     <div class="col-lg-9">
-                                                        <select class="form-control custom-select">
-                                                            <option selected>Invoice #3535 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
-                                                            <option>Invoice #3536 | Payment for Advance Seatech Sdn Bhd | RM0.00 Outstanding</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" id="" placeholder="" value="OR29393">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Name</label>
+                                                    <div class="col-lg-9">
+                                                        <input type="text" class="form-control" id="" placeholder="" value="Ben">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2303,6 +2488,12 @@ Official Receipt
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group row">
+                                                    <label class="col-lg-5 col-form-label">Upload File</label>
+                                                    <div class="col-lg-7">
+                                                        <input class="form-control" type="file" id="fileUpload">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
                                                     <label class="col-lg-5 col-form-label">Reference</label>
                                                     <div class="col-lg-7">
                                                         <input type="text" class="form-control" id="" placeholder="" value="">
@@ -2348,19 +2539,19 @@ Extra Cash Deposit
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Verify</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- modal Edit unknown deposit end -->
 
-            <!-- modal edit uncredited charges -->
-            <div class="modal fade" id="modal-edituncreditedcharges" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <!-- modal edit uncredited Lodgement -->
+            <div class="modal fade" id="modal-edituncreditedlodgement" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit - Uncredited Charges</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Edit - Uncredited Lodgement</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -2371,6 +2562,12 @@ Extra Cash Deposit
                                     <form class="form-horizontal">
                                         <div class="row">
                                             <div class="col">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-5 col-form-label">Upload File</label>
+                                                    <div class="col-lg-7">
+                                                        <input class="form-control" type="file" id="fileUpload">
+                                                    </div>
+                                                </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-5 col-form-label">Reference</label>
                                                     <div class="col-lg-7">
@@ -2417,7 +2614,7 @@ Cheque 758212
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Verify</button>
                         </div>
                     </div>
                 </div>
@@ -2454,12 +2651,12 @@ Cheque 758212
             </div>
             <!-- move to unknown deposit end -->
 
-            <!-- move to uncredited charges -->
-           <div class="modal fade" id="moveto-uncreditedcharges" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <!-- move to uncredited lodgement -->
+           <div class="modal fade" id="moveto-uncreditedlodgement" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modaldialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Move Transation to Uncredited Charges</h5>
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Move Transation to Uncredited Lodgement</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -2470,7 +2667,7 @@ Cheque 758212
                                 <h5 class="font-weight-normal text-center">
                                     You are about to move this transaction:<br><br>
                                     RM11,607.96 dated 4 May 2023<br><br>
-                                    to Uncredited Charges.
+                                    to Uncredited Lodgement.
                                 </h5>
                             </div>
                         </div>
@@ -2487,6 +2684,72 @@ Cheque 758212
 
         </div>
         <!-- END wrapper -->
+
+        <!-- Fixed bottom bar -->
+        <div id="bottomBar">
+            <div class="row ml-0 mr-0 pt-2">
+                <div class="col-md-12">
+                    <div class="row mb-2 align-items-center text-color-black">
+                        <div class="col-md-2 text-center text-sm-left">
+                            <h6 class="m-0 p-0">Currency: RM</h6>
+                        </div>
+                        <div class="col-md-8 text-center text-sm-center">
+                            <i class="uil uil-usd-circle"></i> Total Txn: <strong>334</strong>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <i class="uil uil-balance-scale text-muted"></i> Unmatched Txn: <strong>203</strong>
+                        </div>
+                        <div class="col-md-2 text-center text-sm-right">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                <label class="custom-control-label font-size-12 mr-2" for="customSwitch3">Unlock</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive border-propertygaga-lighter font-sm rounded-10">
+                        <table class="table table-sm mb-0">
+                            <thead>
+                                <tr class="text-center" style="line-height: 30px;">
+                                    <th scope="col" class="no-border bg-color-propertygaga"></th>
+                                    <th scope="col" colspan="2" class="no-border bg-color-propertygagaLightest">ADD</th>
+                                    <th scope="col" colspan="2" class="no-border bg-color-lighteryellow">LESS</th>
+                                    <th scope="col" class="no-border bg-color-grayLighter"></th>
+                                    <th scope="col" class="no-border bg-color-lighterred"></th>
+                                    <th scope="col" class="no-border bg-color-propertygagaLight"></th>
+                                </tr>
+                                <tr class="text-center text-color-black border-0">
+                                    <th scope="col" class="no-border bg-color-propertygaga text-color-white">Statement<br>Closing<br>Balance</th>
+                                    <th scope="col" class="no-border bg-color-propertygagaLightest">Uncleared<br>Receipts</th>
+                                    <th scope="col" class="no-border bg-color-propertygagaLightest">Uncredited<br>Lodgements</th>
+                                    <th scope="col" class="no-border bg-color-lighteryellow">Unpresented<br>Cheques</th>
+                                    <th scope="col" class="no-border bg-color-lighteryellow">Unknown<br>Deposits</th>
+                                    <th scope="col" class="no-border bg-color-grayLighter">Balance</th>
+                                    <th scope="col" class="no-border bg-color-lighterred">Unreconciled</th>
+                                    <th scope="col" class="no-border bg-color-propertygagaLight">Ledger<br>Closing<br>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center" style="line-height: 30px;">
+                                    <th scope="row" class="no-border bg-color-propertygaga text-color-white">4,166,424.22</th>
+                                    <td class="no-border bg-color-propertygagaLightest">1,250.00</td>
+                                    <td class="no-border bg-color-propertygagaLightest">29,561.40</td>
+                                    <td class="no-border bg-color-lighteryellow">28,363.55</td>
+                                    <td class="no-border bg-color-lighteryellow">824.10</td>
+                                    <td class="no-border bg-color-grayLighter">4,168,047.97</td>
+                                    <td class="no-border bg-color-lighterred">0.00</td>
+                                    <td class="no-border bg-color-propertygagaLight text-color-black">4,168,047.97</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row mb-2 font-sm text-right">
+                        <div class="col-md-12 align-items-center mt-2">
+                            Created by eugenechoong on 31 Dec 2023, 2:00pm<br>
+                            Udpated by eugenechoong on 31 Dec 2023, 2:20pm
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -2665,6 +2928,44 @@ Cheque 758212
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <script>
+            window.addEventListener('scroll', function() {
+            const bottomBar = document.getElementById('bottomBar');
+            const scrollY = window.scrollY;
+
+            // Show bar after scrolling down 400px
+            if (scrollY > 400) {
+                bottomBar.style.display = 'block';
+            } else {
+                bottomBar.style.display = 'none';
+            }
+            });
+        </script>
+
+
+        <script>
+            function openImagePopup() {
+                // Open a new window
+                const popup = window.open('', 'imagePopup', 'width=600,height=400,scrollbars=yes');
+                
+                // Write HTML content to the popup
+                popup.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title></title>
+                    </head>
+                    <body>
+                        <div class="image-container">
+                            <img src="assets/images/propertygaga/bank-statement.jpg">
+                        </div>
+                    </body>
+                    </html>
+                `);
+                popup.document.close();
+            }
+        </script>
         
     </body>
 </html>

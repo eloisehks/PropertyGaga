@@ -324,6 +324,24 @@ hr.solid-gray400 {
     box-shadow: 0.10rem 0 0.5rem rgba(75,75,90,.15);
   }
 
+  @media (max-width: 991.98px) {
+    #bottomBar {
+        left: 70px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    #bottomBar {
+        left: 0px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    #bottomBar {
+        left: 0px;
+    }
+  }
+
 
 // form input width setting
 input[type=text].pixel50 {
@@ -1252,6 +1270,13 @@ div.dataTables_wrapper {
     -webkit-animation-fill-mode: initial;
     animation-fill-mode: initial;
  }
+ .animate-blinker3s {
+    -webkit-animation: blinker 3s linear infinite;
+    animation: blinker 3s linear infinite;
+    -webkit-animation-fill-mode: initial;
+    animation-fill-mode: initial;
+ }
+
 
  
 // progress bar
@@ -1386,6 +1411,10 @@ div.dataTables_wrapper {
   .ribbon-warning::after {
     border: 5px solid #ffbe0b;
   }
+  .ribbon-danger::before,
+  .ribbon-danger::after {
+    border: 5px solid #ff0000;
+  }
   .ribbon span {
     position: absolute;
     display: block;
@@ -1410,6 +1439,10 @@ div.dataTables_wrapper {
   .ribbon-warning span {
     background-color: rgba(255, 190, 11, 0.8);
     color: #222;
+  }
+  .ribbon-danger span {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
   }
   
   /* top left*/

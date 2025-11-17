@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="left-side-menu-dark">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar-occupant.html')
+
+            @@include('./partials/left-sidebar-occupant.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-3 mt-0">Rental Parking</h3>     
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0" onclick="location.href='occupant-rent-parking-add.html';">Rent a Parking</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center p-3">
+                                        <div class="ribbon ribbon-warning ribbon-top-left"><span>Pending</span></div>
+
+                                        <div class="dropdown" style="position:absolute; right: 15px;">
+                                            <a href="#" class="dropdown-toggle arrow-none"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <i class="uil uil-ellipsis-h font-size-16"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <div class="dropdown-item">Contact Management Office</div>
+                                                    
+                                                <div class="dropdown-divider"></div>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#messageoffice">
+                                                    <i class='uil uil-comment-notes mr-1'></i>Message
+                                                </a>
+                                                <!-- item-->
+                                                <a href="tel:013 xxx 5733" class="dropdown-item">
+                                                    <i class='uil uil-phone mr-1'></i>Call
+                                                </a>
+                                            </div> <!-- end dropdown menu-->
+                                        </div> <!-- end dropdown-->
+                                        
+                                        <h6>You have rent a parking on 1 Nov 2025 till 31 Dec 2025</h6>
+                                        <p class="text-warning bold">Please wait for a notification after your rental request is reviewed.</p>
+                                        
+                                        <div class="margin-auto">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded btn-sm mb-3 mt-2 width-md" onclick="location.href='occupant-rent-parking-detail-waitapproval.html';">Details</button>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center p-3">
+                                        <div class="ribbon ribbon-success ribbon-top-left"><span>Approved</span></div>
+
+                                        <div class="dropdown" style="position:absolute; right: 15px;">
+                                            <a href="#" class="dropdown-toggle arrow-none"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <i class="uil uil-ellipsis-h font-size-16"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <div class="dropdown-item">Contact Management Office</div>
+                                                    
+                                                <div class="dropdown-divider"></div>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#messageoffice">
+                                                    <i class='uil uil-comment-notes mr-1'></i>Message
+                                                </a>
+                                                <!-- item-->
+                                                <a href="tel:013 xxx 5733" class="dropdown-item">
+                                                    <i class='uil uil-phone mr-1'></i>Call
+                                                </a>
+                                            </div> <!-- end dropdown menu-->
+                                        </div> <!-- end dropdown-->
+                                        <h6>You have rent a parking on 1 Nov 2025 till 31 Dec 2025</h6>
+                                        <p class="text-color-greenBright bold">Your rental request has been approved, please proceed to make payment.</p>
+                                        
+                                        <div class="margin-auto">
+                                            <button type="submit" class="btn btn-primary btn-rounded btn-sm mb-3 mt-2 width-md" onclick="location.href='occupant-rent-parking-detail-pay.html';">Make Payment</button>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center p-3">
+                                        <div class="ribbon ribbon-danger ribbon-top-left"><span>Rejected</span></div>
+
+                                        <div class="dropdown" style="position:absolute; right: 15px;">
+                                            <a href="#" class="dropdown-toggle arrow-none"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <i class="uil uil-ellipsis-h font-size-16"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <div class="dropdown-item">Contact Management Office</div>
+                                                    
+                                                <div class="dropdown-divider"></div>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#messageoffice">
+                                                    <i class='uil uil-comment-notes mr-1'></i>Message
+                                                </a>
+                                                <!-- item-->
+                                                <a href="tel:013 xxx 5733" class="dropdown-item">
+                                                    <i class='uil uil-phone mr-1'></i>Call
+                                                </a>
+                                            </div> <!-- end dropdown menu-->
+                                        </div> <!-- end dropdown-->
+                                        <h6>You have rent a parking on 1 Nov 2025 till 31 Dec 2025</h6>
+                                        <p class="text-danger bold">Your rental request has been rejected.</p>
+                                        
+                                        <div class="margin-auto">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded btn-sm mb-3 mt-2 width-md" onclick="location.href='occupant-rent-parking-detail-rejected.html';">Details</button>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body text-center p-3">
+                                        <div class="ribbon ribbon-success ribbon-top-left"><span><small>Auto-approved</small></span></div>
+
+                                        <div class="dropdown" style="position:absolute; right: 15px;">
+                                            <a href="#" class="dropdown-toggle arrow-none"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <i class="uil uil-ellipsis-h font-size-16"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <div class="dropdown-item">Contact Management Office</div>
+                                                    
+                                                <div class="dropdown-divider"></div>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#messageoffice">
+                                                    <i class='uil uil-comment-notes mr-1'></i>Message
+                                                </a>
+                                                <!-- item-->
+                                                <a href="tel:013 xxx 5733" class="dropdown-item">
+                                                    <i class='uil uil-phone mr-1'></i>Call
+                                                </a>
+                                            </div> <!-- end dropdown menu-->
+                                        </div> <!-- end dropdown-->
+                                        <h6>You have rent a parking on 31 Dec 2025</h6>
+                                        <p class="text-color-greenBright bold">Thank you for your payment, your rental request has been auto-approved.</p>
+                                        
+                                        <div class="margin-auto">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded btn-sm mb-3 mt-2 width-md" onclick="location.href='occupant-rent-parking-detail-autoapproved.html';">Details</button>
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal Message MO -->
+            <div class="modal fade" id="messageoffice" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Message Management Office</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form class="form-horizontal">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">    
+                                                <label class="col-form-label">Date</label>
+                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="col-form-label">Message</label>
+                                                <textarea class="form-control" rows="3" id="example-textarea">E.g. I would like to...</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal message MO end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />       
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script src="assets/libs/zInput/zInput.js"></script>
+             
+
+             <script>
+                 $(function(){ 
+                 
+                 $("input[name='css_selector']").change(function(){
+                     $newStyle = $(this).attr("value");
+                     $('#stylesheet').attr("href", $newStyle);
+                 });
+                 
+             });
+             </script>
+             
+        <script>
+            $(function() {
+                FastClick.attach(document.body);
+            });
+            
+            $("#affected").zInput();
+        </script>
+        
+    </body>
+</html>
