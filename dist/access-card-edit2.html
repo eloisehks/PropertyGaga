@@ -701,12 +701,10 @@
                                     </li>
                                     <li>
                                         <a href="tasksheet-done.html">Done
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">4</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tasksheet-kiv.html">KIV
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">100</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1543,9 +1541,10 @@
                                                     </div>
                                                     <div class="form-group row align-items-center">
                                                         <label class="col-lg-3 col-form-label">Card Status</label>
-                                                        <div class="col-auto">
+                                                        <div class="col-auto align-items-center"><span class="text-danger"><i class='uil uil-times-square font-lg' title="Block Card"></i></span></div>
+                                                        <!-- <div class="col-auto"> -->
                                                             <!-- Activate/Deactivate Toggle -->
-                                                            <label class="icon-toggle" id="CardToggleActivate">
+                                                            <!-- <label class="icon-toggle" id="CardToggleActivate">
                                                                 <input type="checkbox">
                                                                 <span class="icon default-icon">
                                                                     <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' title="Block Card"></i></span>
@@ -1553,10 +1552,13 @@
                                                                 <span class="icon active-icon">
                                                                     <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Unblock" title="Click to Unblock"></i></span>
                                                                 </span>
-                                                            </label>
+                                                            </label> -->
+                                                        <!-- </div> -->
+                                                        <div class="col-auto">
+                                                            <a href="#" class="btn-link" data-toggle="modal" data-target="#viewstatus">View Details</a>
                                                         </div>
-                                                        <div class="col-auto pb-2">
-                                                            <a href="#" class="btn-link" data-toggle="modal" data-target="#viewstatus">View</a>
+                                                        <div class="col-auto">
+                                                            <a href="" class="btn btn-success btn-sm btn-rounded" data-toggle="modal" data-target="#CardModal2">Unblock Card Now</a>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -1798,11 +1800,31 @@
                         <div class="modal-body">
                             <p>You are about to unblock this card.</p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Activate Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period111" name="customRadio"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period111">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period222" name="customRadio"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period222">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
                                     <option value="" disabled selected>Select a reason</option>
-                                    <option>Payment made</option>
+                                    <option>Full Payment made</option>
+                                    <option>Partial Payment made</option>
+                                    <option>...</option>
+                                    <option>...</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -1847,9 +1869,9 @@
                                         </tr>
                                     </thead>
                                     <tbody class="font-size-12">
-                                        <tr>
+                                        <tr class="text-danger">
                                             <td class="fixed-col-100 vertical-align-top pt-3">Block card</td>
-                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Mar 2025, 3:20pm</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Mar 2025, 3:20pm to 1 May 2025, 3:20pm</td>
                                             <td class="fixed-col-150 vertical-align-top pt-3">Non-payment or Dues of Fees</td>
                                             <td class="fixed-col-150 vertical-align-top pt-3">blah blah...blah blah...blah blah...blah blah...</td>
                                             <td class="vertical-align-top pt-3">
@@ -1873,9 +1895,9 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr class="text-danger">
                                             <td class="fixed-col-100 vertical-align-top pt-3">Block card</td>
-                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Mar 2025, 3:20pm</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Mar 2025, 3:20pm to 1 May 2025, 3:20pm</td>
                                             <td class="fixed-col-150 vertical-align-top pt-3">Non-payment or Dues of Fees</td>
                                             <td class="fixed-col-150 vertical-align-top pt-3">blah blah...blah blah...blah blah...blah blah...</td>
                                             <td class="vertical-align-top pt-3">

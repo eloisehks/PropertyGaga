@@ -86,9 +86,10 @@
                                                     </div>
                                                     <div class="form-group row align-items-center">
                                                         <label class="col-lg-3 col-form-label">Card Status</label>
-                                                        <div class="col-lg-5">
+                                                        <div class="col-auto align-items-center"><span class="text-success"><i class='uil uil-check-square font-lg' title="Active Card"></i></span></div>
+                                                        <!-- <div class="col-auto"> -->
                                                             <!-- Activate/Deactivate Toggle -->
-                                                            <label class="icon-toggle" id="CardToggle">
+                                                            <!-- <label class="icon-toggle" id="CardToggle">
                                                                 <input type="checkbox">
                                                                 <span class="icon default-icon">
                                                                     <span class="text-success align-self-center"><i class='uil uil-check-square font-lg' title="Active Card"></i></span>
@@ -96,7 +97,13 @@
                                                                 <span class="icon active-icon">
                                                                     <span class="text-danger align-self-center"><i class='uil uil-times-square font-lg' data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Block" title="Click to Block"></i></span>
                                                                 </span>
-                                                            </label>
+                                                            </label> -->
+                                                        <!-- </div> -->
+                                                        <div class="col-auto">
+                                                            <a href="#" class="btn-link" data-toggle="modal" data-target="#viewstatus">View Details</a>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a href="" class="btn btn-danger btn-sm btn-rounded" data-toggle="modal" data-target="#CardModal">Block Card Now</a>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -260,6 +267,23 @@
                         <div class="modal-body">
                             <p>Are you sure you want to block this card?</p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Block Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period111" name="customRadio"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period111">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period222" name="customRadio"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period222">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
@@ -290,43 +314,93 @@
             </div>
             <!-- change status card activate to deactivate end -->
 
-            <!-- change status card deactivated to activate -->
-            <div class="modal fade" id="CardModal2" tabindex="-1" aria-labelledby="CardModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <!-- view status -->
+            <div class="modal fade" id="viewstatus" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="CardModalLabel">Unblock Card</h5>
+                            <h5 class="modal-title" id="">Card Status</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>You are about to unblock this card.</p>
-                            <div class="mb-3">
-                                <label for="reason" class="form-label">Reason</label>
-                                <select class="form-control form-select custom-select" id="reason" required>
-                            
-                                    <option value="" disabled selected>Select a reason</option>
-                                    <option>Payment made</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="notes" class="form-label">Notes</label>
-                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter additional details"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
-                                <input class="form-control" type="file" id="fileUpload">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-borderless mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="fixed-col-100">Status</th>
+                                            <th class="fixed-col-150">Date/Time</th>
+                                            <th class="fixed-col-150">Reason</th>
+                                            <th class="fixed-col-150">Notes</th>
+                                            <th>Supporting Doc./Photo</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="font-size-12">
+                                        <tr class="text-danger">
+                                            <td class="fixed-col-100 vertical-align-top pt-3">Block card</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Mar 2025, 3:20pm to 1 Apr 2025, 3:20pm</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">Non-payment or Dues of Fees</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">blah blah...blah blah...blah blah...blah blah...</td>
+                                            <td class="vertical-align-top pt-3">
+                                                <div class="card mb-2 shadow-none border-grayform">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">receipt-by-cash.jpg</a>
+                                                                <p class="mb-0">1.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fixed-col-100 vertical-align-top pt-3">Card Activated</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">1 Apr 2025, 3:20pm to 1 Jun 2025, 3:20pm</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">Partial Payment Made</td>
+                                            <td class="fixed-col-150 vertical-align-top pt-3">blah blah...blah blah...blah blah...blah blah...</td>
+                                            <td class="vertical-align-top pt-3">
+                                                <div class="card mb-2 shadow-none border-grayform">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold">receipt-by-cash.jpg</a>
+                                                                <p class="mb-0">1.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary btn-rounded">Confirm</button>
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- change status card deactivated to activate end -->
+            <!-- view status end -->
 
         </div>
         <!-- END wrapper -->

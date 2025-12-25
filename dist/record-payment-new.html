@@ -709,12 +709,10 @@
                                     </li>
                                     <li>
                                         <a href="tasksheet-done.html">Done
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">4</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tasksheet-kiv.html">KIV
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">100</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1843,7 +1841,7 @@
                                                                     <thead>
                                                                         <tr>
                                                                             <th>Date</th>
-                                                                            <th>Invoice No.</th>
+                                                                            <th>Invoice No./Document No.</th>
                                                                             <th class="text-right">Invoice Amount</th>
                                                                             <th class="text-right">Amount Due</th>
                                                                             <th class="text-right">Payment</th>
@@ -2087,8 +2085,7 @@
                                                                                 18 Jul 2023
                                                                             </td>
                                                                             <td width="49%" colspan="3">
-                                                                                <a href="" data-toggle="modal" data-target="#totallpi">Late payment interest to date</a><br>
-                                                                                <small>(Mar 2023 - Jul 2023)</small>
+                                                                                <a href="" data-toggle="modal" data-target="#totallpi">LPI-23456</a>
                                                                             </td>
                                                                             <td class="text-right" width="20%">
                                                                                 <input type="text" id="" name="" class="form-control text-right" placeholder="Amount to pay" value='404.00'>
@@ -2299,43 +2296,38 @@
 
              <!-- modal view LPI -->
         <div class="modal fade" id="totallpi" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Total Late Payment Interest</h5>
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Late Payment Interest: LPI-23456</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        March 2023 to July 2023
                         <div class="table-responsive">
                             <table id="basic-datatable2" class="table table-hover nowrp full-width">
                                 <thead>
                                     <tr>
                                         <th class="text-left">Inv. No.</th>
                                         <th class="text-left">Inv. Date</th>
-                                        <th class="text-right">Inv. Amt. (RM)</th>
+                                        <th class="text-left">Due Date</th>
+                                        <th class="text-center">Days Overdue</th>
                                         <th class="text-right">LPI (RM)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-left">INV-12345</td>
+                                        <td class="text-left"><a href="#">INV-12345</a></td>
                                         <td class="text-left">30 May 2023</td>
-                                        <td class="text-right">400.00</td>
+                                        <td>15 Apr 2025</td>
+                                        <td class="text-center">55</td>
                                         <td class="text-right">40.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left">INV-1235</td>
-                                        <td class="text-left">30 Jun 2023</td>
-                                        <td class="text-right">1,300.00</td>
-                                        <td class="text-right">130.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="text-center"></td>
+                                        <td colspan="3" class="text-center"></td>
                                         <td class="text-right text-color-black font-weight-semibold">Total LPI</td>
-                                        <td class="text-right text-color-black font-weight-semibold">170.00</td>
+                                        <td class="text-right text-color-black font-weight-semibold">40.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -2343,7 +2335,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-rounded width-sm" onclick="window.history.go(-1);">Print</button>
                     </div>
                 </div>
             </div>

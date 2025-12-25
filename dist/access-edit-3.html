@@ -701,12 +701,10 @@
                                     </li>
                                     <li>
                                         <a href="tasksheet-done.html">Done
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">4</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="tasksheet-kiv.html">KIV
-                                            <span class="badge badge-success float-right mr-2 font-xs paddingtop-4">100</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1525,23 +1523,24 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Valid From</label>
-                                                        <div class="col-lg-5">
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-2 col-form-label">Access Validity</label>
+                                                        <div class="col-lg-3">
                                                             <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="1 Jan 2025, 00:00:00">
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Valid Until</label>
-                                                        <div class="col-lg-5">
+                                                        <div class="col-auto">to</div>
+                                                        <div class="col-lg-3">
                                                             <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="1 Jan 2027, 00:00:00">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row align-items-center">
-                                                        <label class="col-lg-3 col-form-label">Edit Status</label>
-                                                        <div class="col-lg-5">
-                                                            <!-- LPR Toggle -->
-                                                            <label class="icon-toggle" id="lprToggle">
+                                                    <div class="form-group row align-items-center mb-0">
+                                                        <label class="col-lg-2 col-form-label">Access Status</label>
+                                                        <div class="col-auto">
+                                                            <img src="assets/images/icons/CarActivateButton.svg" class="align-self-center" style="width: 30px;" title="Car Plate Recognition">
+                                                        </div>
+                                                        <!-- <div class="col-auto"> -->
+                                                             <!-- LPR Toggle -->
+                                                            <!-- <label class="icon-toggle" id="lprToggle">
                                                                 <input type="checkbox">
                                                                 <span class="icon default-icon">
                                                                     <img src="assets/images/icons/CarActivateButton.svg" class="align-self-center" style="width: 35px;" title="Car Plate Recognition Activated">
@@ -1549,10 +1548,31 @@
                                                                 <span class="icon active-icon">
                                                                     <img src="assets/images/icons/CarDeactivateButton.svg" class="align-self-center" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Deactivate" title="Click to Deactivate">
                                                                 </span>
-                                                            </label>
-
+                                                            </label> -->
+                                                        <!-- </div> -->
+                                                        <div class="col-auto">
+                                                            Activated from
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            1 Jan 2025, 03:00:00pm
+                                                        </div>
+                                                        <div class="col-auto">to</div>
+                                                        <div class="col-auto">
+                                                            1 Jan 2027, 03:00:00pm
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a href="" class="btn btn-danger btn-sm btn-rounded" data-toggle="modal" data-target="#lprModal">Deactivate Now</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row align-items-center">
+                                                        <label class="col-lg-2 col-form-label"></label>
+                                                        <div class="col-auto">
+                                                            <img src="assets/images/icons/FaceDeactivateButton.svg" class="align-self-center" style="width: 30px;" title="Face Recognition"> 
+                                                        </div>
+                                                        <!-- <div class="col-auto"> -->
+                                                             
                                                             <!-- Face Recognition Toggle -->
-                                                            <label class="icon-toggle" id="faceToggleActivate5">
+                                                            <!-- <label class="icon-toggle" id="faceToggleActivate">
                                                                 <input type="checkbox">
                                                                 <span class="icon default-icon">
                                                                     <img src="assets/images/icons/FaceDeactivateButton.svg" class="align-self-center" style="width: 35px;" title="Face Recognition Deactivated">
@@ -1560,7 +1580,21 @@
                                                                 <span class="icon active-icon">
                                                                     <img src="assets/images/icons/FaceActivateButton.svg" class="align-self-center" style="width: 35px;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to Activate" title="Click to Activate">
                                                                 </span>
-                                                            </label>
+                                                            </label> -->
+                                                            
+                                                        <!-- </div> -->
+                                                        <div class="col-auto">
+                                                            <span class="text-danger">Deactivated from</span>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="text-danger">3 Jul 2025, 03:00:00pm</span>
+                                                        </div>
+                                                        <div class="col-auto"><span class="text-danger">to</span></div>
+                                                        <div class="col-auto">
+                                                            <span class="text-danger">1 Jan 2027, 03:00:00pm</span>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <a href="" class="btn btn-success btn-sm btn-rounded" data-toggle="modal" data-target="#faceModal2">Activate Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1590,6 +1624,66 @@
                                                             <div class="event-date text-center mr-4">
                                                                 <div class=" avatar-sm rounded-circle bg-soft-primary">
                                                                     <span class="font-size-16 avatar-title text-primary font-weight-semibold">
+                                                                        1
+                                                                    </span>
+                                                                </div>
+                                                                <p class="mt-2">Jan</p>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <div class="card d-inline-block">
+                                                                    <div class="card-body">
+                                                                        <h5 class="mt-0">Access activated from 1 Jan 2025, 3:00:00pm to 1 Jan 2027, 3:00:00pm <span class="badge badge-soft-primary">System</span></h5>
+                                                                        <div>
+                                                                            <img src="assets/images/icons/CarActivateButton.svg" class="align-self-center" style="width: 20px;" title="Car Plate Recognition Activated">
+                                                                            <img src="assets/images/icons/FaceActivateButton.svg" class="align-self-center" style="width: 20px;" title="Face Recognition Activated">
+                                                                        </div>
+                                                                        <div class="text-muted">
+                                                                            Full payment made
+                                                                        </div>
+                                                                        <div class="text-muted">
+                                                                            Describe reason describe reason describe reason describe reason describe reason describe reason describe reason describe reason describe reason...
+                                                                        </div>
+                                                                        <p class="text-muted">
+                                                                            <div class="card mb-2 shadow-none border-grayform">
+                                                                                <div class="p-1 px-2">
+                                                                                    <div class="row align-items-center">
+                                                                                        <div class="col-auto">
+                                                                                            <img src="assets/images/projects/project-1.jpg"
+                                                                                                class="responsiveimg rounded" alt="file-image">
+                                                                                        </div>
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </p>
+                                                                </div>
+                                                                <!-- <div class="card d-inline-block">
+                                                                    <div class="card-body">
+                                                                        <h5 class="mt-0"><a href="#" data-toggle="modal" data-target="#modalEditdailyrecord">Title Blah blah 2</a></h5>
+                                                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et hglshu ahdlj  dflhlsdgl you oare hgksdxg osdhgl osdhxgll jkk.</p>
+                                                                        <div class="album mb-3">
+                                                                            <a href="#" class="mr-1" data-toggle="modal" data-target="#image">
+                                                                                <img alt="" src="assets/images/small/img-1.jpg">
+                                                                            </a>
+                                                                            <a href="#" class="mr-1" data-toggle="modal" data-target="#image">
+                                                                                <img alt="" src="assets/images/small/img-2.jpg">
+                                                                            </a>
+                                                                            <a href="#" class="mr-1" data-toggle="modal" data-target="#image">
+                                                                                <img alt="" src="assets/images/small/img-3.jpg">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="event-list">
+                                                    <div>
+                                                        <div class="media">
+                                                            <div class="event-date text-center mr-4">
+                                                                <div class=" avatar-sm rounded-circle bg-soft-primary">
+                                                                    <span class="font-size-16 avatar-title text-primary font-weight-semibold">
                                                                         3
                                                                     </span>
                                                                 </div>
@@ -1598,9 +1692,12 @@
                                                             <div class="media-body">
                                                                 <div class="card d-inline-block">
                                                                     <div class="card-body">
-                                                                        <h5 class="mt-0">Access for Face Recognition deactivated on 3 Jul 2023 <span class="badge badge-soft-dark">Manual</span></h5>
+                                                                        <h5 class="mt-0">Access for Face Recognition deactivated from 3 Jul 2025, 3:00:00pm to 1 Jan 2027, 3:00:00pm <span class="badge badge-soft-dark">Manual</span></h5>
+                                                                        <div>
+                                                                            <img src="assets/images/icons/FaceDeactivateButton.svg" class="align-self-center" style="width: 20px;" title="Face Recognition Deactivated">
+                                                                        </div>
                                                                         <div class="text-muted">
-                                                                            Violation of Rules
+                                                                            <span class="text-danger">Violation of Rules</span>
                                                                         </div>
                                                                         <div class="text-muted">
                                                                             Describe reason describe reason describe reason describe reason describe reason describe reason describe reason describe reason describe reason...
@@ -1711,6 +1808,23 @@
                         <div class="modal-body">
                             <p>Are you sure you want to deactivate <strong>Car Plate Recognition</strong>?</p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Dectivate Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period-deac1" name="customRadio1"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period-deac1">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period-deac2" name="customRadio1"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period-deac2">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
@@ -1730,6 +1844,12 @@
                             <div class="mb-3">
                                 <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
                                 <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                            <div class="mb-3">
+                                <div class="custom-control custom-switch mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1">Apply the same to Face Recognition</label>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1754,6 +1874,23 @@
                         <div class="modal-body">
                             <p>Are you sure you want to deactivate <strong>Face Recognition</strong>?</p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Deativate Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period111" name="customRadio2"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period111">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period222" name="customRadio2"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period222">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
@@ -1773,6 +1910,12 @@
                             <div class="mb-3">
                                 <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
                                 <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                            <div class="mb-3">
+                                <div class="custom-control custom-switch mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1">Apply the same to Car Plate Recognition</label>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1797,11 +1940,31 @@
                         <div class="modal-body">
                             <p>You are about to activate <strong>Car Plate Recognition</strong></p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Activate Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period111" name="customRadio"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period111">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period222" name="customRadio"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period222">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
                                     <option value="" disabled selected>Select a reason</option>
-                                    <option>Payment made</option>
+                                    <option>Full Payment made</option>
+                                    <option>Partial Payment made</option>
+                                    <option>...</option>
+                                    <option>...</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -1811,6 +1974,12 @@
                             <div class="mb-3">
                                 <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
                                 <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                            <div class="mb-3">
+                                <div class="custom-control custom-switch mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1">Apply the same to Face Recognition</label>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1835,11 +2004,31 @@
                         <div class="modal-body">
                             <p>You are about to activate <strong>Face Recognition</strong></p>
                             <div class="mb-3">
+                                <label for="reason" class="form-label">Activate Period</label>
+                               
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period11" name="customRadio2"
+                                        class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="period11">Full</label>
+                                </div>
+                            
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="period22" name="customRadio2"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="period22">Limited Time</label>
+                                </div>
+                                <input type="text" id="range-datepicker" class="form-control" placeholder="Date range" value="">
+                                
+                            </div>
+                            <div class="mb-3">
                                 <label for="reason" class="form-label">Reason</label>
                                 <select class="form-control form-select custom-select" id="reason" required>
                             
                                     <option value="" disabled selected>Select a reason</option>
-                                    <option>Payment made</option>
+                                    <option>Full Payment made</option>
+                                    <option>Partial Payment made</option>
+                                    <option>...</option>
+                                    <option>...</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -1849,6 +2038,12 @@
                             <div class="mb-3">
                                 <label for="fileUpload" class="form-label">Upload Supporting Document / Photo(s)</label>
                                 <input class="form-control" type="file" id="fileUpload">
+                            </div>
+                            <div class="mb-3">
+                                <div class="custom-control custom-switch mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1">Apply the same to Car Plate Recognition</label>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
