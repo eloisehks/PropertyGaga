@@ -250,7 +250,7 @@
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
                                 <h3 class="mb-1 mt-0">Payment Details</h3>
-                                <span class="badge badge-warning width-sm mr-2">Pending</span>
+                                <span class="badge badge-info width-sm mr-2">Banked In</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-right">
                                 <div class="btn-group mr-1">
@@ -272,7 +272,7 @@
                                     <div class="card-body bg-color-propertygagaLightest border-propertygaga-lighter rounded-5">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 font-weight-bold font-size-15">
-                                                <button type="button" class="btn btn-outline-success btn-rounded width-sm mt-2 float-right">Mark as Read</button> The cheque was banked in by EAD Property Management on 2 Mar 2023<br><span class="font-weight-normal">Notes: some notes goes here...</span>
+                                                <button type="button" class="btn btn-primary btn-rounded width-sm mt-2 float-right" data-toggle="modal" data-target="#bankedin">Update Status</button> The cheque was banked in by EAD Property Management on 2 Mar 2023<br><span class="font-weight-normal">Notes: some notes goes here...</span>
                                             </div>
                                         </div>
                                     </div>
@@ -698,6 +698,60 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+            <!-- modal view status 2 -->
+            <div class="modal fade" id="bankedin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Update Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col-lg-12 mb-4 p-3 bg-color-propertygagaLightest border-grayform rounded-5">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                                <div class="form-row align-items-center ">
+                                                    <div class="col-auto">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="collect">
+                                                            <label class="custom-control-label" for="customRadio2">Payment Settled</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="collect box">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Transaction Date</label>
+                                                <div class="col-auto">
+                                                    <input class="form-control" id="example-date" type="date" name="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal view status 2 end -->
 
         </div>
         <!-- END wrapper -->

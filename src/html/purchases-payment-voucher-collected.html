@@ -67,6 +67,8 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Preview</a>
                                         <a class="dropdown-item" href="#">Save as PDF</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-send-email">Send Email</a>
+                                        <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#returnpayment">Return Payment</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cancelpayment">Cancel Payment</a>
                                     </div>
@@ -605,6 +607,12 @@
                                                                         <label class="custom-control-label" for="customRadio1">Cash banked in by Staff</label>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-auto">
+                                                                    <div class="custom-control custom-radio mb-2">
+                                                                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="onlinetxs" disabled>
+                                                                        <label class="custom-control-label" for="customRadio3">Online transaction</label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -673,6 +681,42 @@
                                                             <label class="col-lg-4 col-form-label" for="simpleinput">Ref. No.</label>
                                                             <div class="col-auto">
                                                                 <input type="text" class="form-control" id="" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label" for="simpleinput">Notes</label>
+                                                            <div class="col-lg-8">
+                                                                <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="onlinetxs box" style="display: none">
+                                                        <div class="form-group row align-items-center">
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="">Online Transaction Successful</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="Onlinetransaction">
+                                                                    <label class="custom-control-label" for="Onlinetransaction">Yes</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="">Transaction Approved by</label>
+                                                            <div class="col-lg-8">
+                                                                <select data-plugin="customselect" class="form-control">
+                                                                    <option value="2">BM - Raymond</option>
+                                                                    <option value="1">BS - Tay Cheng Cheng</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="]">Approved Date</label>
+                                                            <div class="col-auto">
+                                                                <input class="form-control" id="example-date" type="date" name="date">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
@@ -873,6 +917,38 @@
                 </div>
             </div>
             <!-- modal Cancel payment end -->
+
+            <!-- modal Send email -->
+            <div class="modal fade" id="modal-send-email" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Send Email</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                            <small class="help-block">Please enter one or more email addresses, separated by commas.</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <a href="email-send-email-frompv.html" class="btn btn-primary btn-rounded width-sm" target="_blank">Send</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal send email end -->
 
         </div>
         <!-- END wrapper -->
