@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">AGM / EGM Setup</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Upload Proxy Form</a>
+                                        <a class="dropdown-item" href="#">Upload Nomination Form</a>
+                                        <a class="dropdown-item" href="#">Upload Letter of Authority</a>
+                                    </div>
+                                </div><!-- /btn-group -->
+                                <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-row align-items-center mt-2 mb-2">
+                                            <!-- <label class="col-lg-3 col-form-label col-form-label-sm" for="simpleinput">Bring guests?</label> -->
+                                            
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="gm1" name="gm"
+                                                        class="custom-control-input" checked>
+                                                    <label class="custom-control-label" for="gm1">AGM</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="gm2" name="gm"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="gm2">EGM</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group mt-2">
+                                                    <input type="text" class="form-control form-control-sm" id="simpleinput" value="EAD AGM - AGM001">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row border-bottom mb-3">
+                                            <div class="col-xl-3 col-sm-3">
+                                                <div class="form-group mt-3 mt-sm-0">
+                                                    <label>Date</label>
+                                                    <input type="text" id="basic-datepicker" class="form-control form-control-sm" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-3">
+                                                <div class="form-group mt-3 mt-sm-0">
+                                                    <label>Time</label>
+                                                    <input type="text" id="basic-timepicker" class="form-control form-control-sm" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-sm-6">
+                                                <div class="form-group mt-3 mt-sm-0">
+                                                    <label>Venue</label>
+                                                    <input type="text" class="form-control form-control-sm" id="simpleinput" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group mt-3 mt-sm-0">
+                                                    <label>Agenda</label>
+                                                    <textarea class="form-control form-control-sm" rows="1" placeholder="">1. </textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control form-control-sm" rows="1" placeholder="">2. </textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-add-agenda">Add Agenda</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="bg-color-white">
+                                            <div id="smartwizard-default">
+                                                <ul class="mt-2">
+                                                    <li><a href="#sw-default-step-1">Step 1<small class="d-block">Pre-AGM Preparations & Documents</small></a></li>
+                                                    <li><a href="#sw-default-step-2">Step 2<small class="d-block">Voting Materials / Tools</small></a></li>
+                                                    <li><a href="#sw-default-step-3">Step 3<small class="d-block">Staffing / Crew</small></a></li>
+                                                    <li><a href="#sw-default-step-4">Step 4<small class="d-block">Venue, Sitting Arrangements & Refreshments</small></a></li>
+                                                </ul>
+                                                
+                                                <div class="p-3">
+                                                    <div id="sw-default-step-1">
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA0">
+                                                                                            <label class="custom-control-label" for="checkmeoutA0"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Documentation of Agenda to be sent out
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <!-- <label class="col-lg-3 col-form-label col-form-label-sm" for="simpleinput">Bring guests?</label> -->
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="guests" name="guests"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="guests">14 days prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="guests2" name="guests"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="guests2">21 days prior AGM for special resolutions</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-auto">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="form-group row">
+                                                                                    
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm">Vendor</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <select class="form-control custom-select custom-select-sm" disabled>
+                                                                                            <option>Select Vendor</option>
+                                                                                            <option>Advance Seatech Sdn Bhd</option>
+                                                                                            <option selected>Advance Seatech Sdn Bhd</option>
+                                                                                            <option>Advance Seatech Sdn Bhd</option>
+                                                                                            <option>Advance Seatech Sdn Bhd</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div> -->
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA1">
+                                                                                            <label class="custom-control-label" for="checkmeoutA1"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Nomination Forms to be submitted back
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Nomination" name="Nomination"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Nomination">7 days prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA2">
+                                                                                            <label class="custom-control-label" for="checkmeoutA2"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Maintenance Fees to be paid before the AGM Month
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Those who pay after closing date not entitled to vote"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Fees" name="Fees"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Fees">7 days prior need to pay all the outstanding and pay up
+                                                                                                to date</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Closing Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA3">
+                                                                                            <label class="custom-control-label" for="checkmeoutA3"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Proxy Form to be submitted back to designated office
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Must be valid owner.
+                                                                                    Proxy can be any person 18 years old or above.
+                                                                                    Owner must sign and note down registered owner name.
+                                                                                    Proxy to sign and note down name & i.c. number
+                                                                                    Receiver to stamp, sign and date the form then make 2
+                                                                                    copies. Original copy for owner's file, 1 copy for owner, 1
+                                                                                    copy for AGM file."
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="proxy" name="proxy"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="proxy">48 hours prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date / Time</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input type="text" id="datetime-datepicker" class="form-control form-control-sm" placeholder="Date and Time">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA4">
+                                                                                            <label class="custom-control-label" for="checkmeoutA4"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Authorized Letter (Company Representation) to be submitted back
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Authorized" name="Authorized"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Authorized">48 hours prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA5">
+                                                                                            <label class="custom-control-label" for="checkmeoutA5"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Upload Documents
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">Audited Accounts</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">Budgeting of new terms</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">Insurance Quotation</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">Auditor Quotation</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">House Rule Amendments</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-6 col-form-label col-form-label-sm">Quotation to bring up for Approval (3 vendors)</label>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="text" class="form-control form-control-sm" id="simpleinput" placeholder="Document">
+                                                                                    </div>
+                                                                                    <div class="col-lg-6">
+                                                                                        <input type="file" class="form-control form-control-sm" id="fileinput">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <a href="#"><i class="uil uil-plus-square"></i> Add more</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA6">
+                                                                                            <label class="custom-control-label" for="checkmeoutA6"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Attendance List-List of Eligible Voters (paid up to date) to publish on notice board
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Owners must have title (For MC only). 
+                                                                                    Paid up to date as per item 3. 
+                                                                                    Proxy with name & I.C. Number. 
+                                                                                    For unit with more than 1 owner (co- proprietor) proxy
+                                                                                    form must be used, with all owner's signature.
+                                                                                    Take photo (close up and wide angle) upon publishing on
+                                                                                    notice board, update in group. (Proof of publishing)"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Attendance" name="Attendance"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Attendance">48 hours prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA7">
+                                                                                            <label class="custom-control-label" for="checkmeoutA7"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Additional Motion Letter to be submitted back
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Receiver to stamp, sign and date the form then make 2
+                                                                                    copies. Original copy for owner's file, 1 copy for owner, 1
+                                                                                    copy for AGM file. 
+                                                                                    Publish on notice board 48 hours before AGM. 
+                                                                                    Include additional motions in .ppt slides"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Motion" name="Motion"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Motion">Submit 7 days before the AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA8">
+                                                                                            <label class="custom-control-label" for="checkmeoutA8"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Strata Search (for Management Corporation Only)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Prior to search, prepare: 
+                                                                                    Payment- RM200/ day, Laptop, Owners Lists"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-row align-items-center mt-2 mb-2">
+                                                                                    <div class="col-auto">
+                                                                                        <div class="custom-control custom-radio">
+                                                                                            <input type="radio" id="Strata" name="Strata"
+                                                                                                class="custom-control-input">
+                                                                                            <label class="custom-control-label" for="Strata">3 Months prior to AGM</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-auto col-form-label col-form-label-sm"
+                                                                                        for="example-date">Due Date</label>
+                                                                                    <div class="col-lg-5">
+                                                                                        <input class="form-control form-control-sm" id="example-date" type="date" name="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                    </div>
+
+                                                    <div id="sw-default-step-2">
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA9">
+                                                                                            <label class="custom-control-label" for="checkmeoutA9"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Wrist Band for Voters OR Voting Cards
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Prepare color identification wrist bands. E.G. for owner/ individual- Red; for company rep/ proxy- Blue"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA10">
+                                                                                            <label class="custom-control-label" for="checkmeoutA10"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Voting Slips
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="To prepare for all agenda items. Slips to indicate: 
+                                                                                    Share Units, Parcel Owner & Parcel No., Motion No. ( ) - For or - Against (To X - cross)"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA11">
+                                                                                            <label class="custom-control-label" for="checkmeout1A11"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                LED Projector/ Laptop/ Mic (sound system)/ Power Point/ Slides
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="PPT Need ready 3 days before AGM"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA12">
+                                                                                            <label class="custom-control-label" for="checkmeoutA12"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Voting Cards (for votes By Show of Hands)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="To show number of votes (2 votes, 3 votes, 5 votes etc.)
+                                                                                    based on the numbers of parcel (1 Parcel = 1 Vote). 
+                                                                                    Include Unit Number; and Share Units on card (marked
+                                                                                    permanently, with pen)"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA13">
+                                                                                            <label class="custom-control-label" for="checkmeoutA13"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                2 Transparent Boxes (for voting slips)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="1 box marked 'FOR'; 1 box marked 'AGAINST'"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA14">
+                                                                                            <label class="custom-control-label" for="checkmeoutA14"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Calculators/ Recording Sheets
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA15">
+                                                                                            <label class="custom-control-label" for="checkmeoutA15"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Strata Management Act 757 Book Prepare for AGM
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                    </div>
+                                                    <div id="sw-default-step-3">
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA16">
+                                                                                            <label class="custom-control-label" for="checkmeoutA16"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Registration Counter (minimum 2 staffs)
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"for=""> </label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"for=""> </label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <a href="#"><i class="uil uil-plus-square"></i> Add more</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA17">
+                                                                                            <label class="custom-control-label" for="checkmeoutA17"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Floor Manager (1 staff)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Move around providing customer service to guests. Time
+                                                                                    and attendance checking, Update chairman on status"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA18">
+                                                                                            <label class="custom-control-label" for="checkmeoutA18"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Minutes Taker (1 staff to record & complete minutes)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Move around providing customer service to guests. Time
+                                                                                    and attendance checking, Update chairman on status"
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA18">
+                                                                                            <label class="custom-control-label" for="checkmeoutA18"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Power Point/ Slide Show Controller (1 staff)
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA19">
+                                                                                            <label class="custom-control-label" for="checkmeoutA19"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Verifier cum Vote Counter (minimum 2 staff)
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="May include 1 staff from registration when AGM begins. 
+                                                                                    Verify attendees posses Voting Card and assist in vote counting process."
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"for=""> </label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"for=""> </label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <a href="#"><i class="uil uil-plus-square"></i> Add more</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA20">
+                                                                                            <label class="custom-control-label" for="checkmeoutA20"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Security Guards (where applicable, maximum 2 staff)
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Name:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"for=""> </label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+                                                        
+                                                    </div>
+
+                                                    <div id="sw-default-step-4">
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA21">
+                                                                                            <label class="custom-control-label" for="checkmeoutA21"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Venue of AGM
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Location Info:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-1">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA22">
+                                                                                            <label class="custom-control-label" for="checkmeoutA22"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Front Table seating arrangement for
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Chairman:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Chairman" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Secretary:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Name" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Treasurer:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Name" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Committee:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Name" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for=""></label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Name" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA23">
+                                                                                            <label class="custom-control-label" for="checkmeoutA23"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Attendees seating arrangement
+                                                                                <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                    data-toggle="popover" data-trigger="focus" title=""
+                                                                                    data-content="Voters (2nd & 3rd rows onwards). 
+                                                                                    Observers (last row)."
+                                                                                    data-original-title="">
+                                                                                </i>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA24">
+                                                                                            <label class="custom-control-label" for="checkmeoutA24"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Bottled Water (where applicable)
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Size:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="500ml / 250ml" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Quantity:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <input type="text" class="form-control form-control-sm" placeholder="" value="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                        <div class="row">
+                                                            <div class="col-12 p-0 m-0">
+                                                                <div class="card border-gray-light mb-2">
+                                                                    <div class="card-body p-2">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1">
+                                                                                <div class="form-group mb-3">
+                                                                                    <div class="form-group mb-3">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA25">
+                                                                                            <label class="custom-control-label" for="checkmeoutA25"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                Lunch/ High Tea/ Snack - subject to JMB/ MC Consent
+                                                                                <div class="form-group row mb-1">
+                                                                                    <label class="col-lg-3 col-form-label col-form-label-sm"
+                                                                                        for="">Brief details if applicable:</label>
+                                                                                    <div class="col-lg-9">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder=""></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <br>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <textarea class="form-control form-control-sm" rows="1" placeholder="Remarks"></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>    
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end row -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right mt-3 pt-3 pb-3">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                            <button type="submit" class="btn btn-dark btn-rounded mr-1" onclick="window.history.go(-1);">Save Draft</button>
+                                            <button type="submit" class="btn btn-info btn-rounded mr-1" onclick="window.history.go(-1);">Preview Notice</button>
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Publish</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <script src="assets/libs/smartwizard/jquery.smartWizard.min.js"></script>
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+ 
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Petty Cash - Approved <div class="inline-block"><span class="text-primary font-size-15"><span class="font-weight-normal mr-2">Current Balance on Hand:</span>RM100.00</span></h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <!-- <a href="pettycash-reimburse.html" class="btn btn-primary btn-rounded">Reimburse</a>--> <a href="pettycash-admin-topup.html" class="btn btn-primary btn-rounded">Top Up</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a href="#all" data-toggle="tab" aria-expanded="false"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">All</span>
+                                                    <span class="d-none d-sm-block">All</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#approved" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Approved</span>
+                                                    <span class="d-none d-sm-block">Approved</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#reimbursed" data-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Reimbursed</span>
+                                                    <span class="d-none d-sm-block">Reimbursed</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content p-0 text-muted">
+                                            <div class="tab-pane show active" id="all">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col col-auto mb-3">
+                                                                            <div class="float-sm-right mt-3 mt-sm-0">
+                                                                                <div class="dropdown d-inline-block">
+                                                                                    <button class="btn btn-light dropdown-toggle" type="button"
+                                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                                        aria-expanded="false">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                                            <i class='uil uil-angle-down'></i>
+                                                                                        </div>
+                                                                                        
+                                                                                        
+                                                                                    </button>
+                                                                                    <div class="dropdown-menu dropdown-menu-left">
+                                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                                        <a class="dropdown-item" href="#">None</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <div class="col col-md-8 mb-3">
+                                                                            <a href="pettycash-reimburse.html" class="btn btn-soft-primary btn-rounded">Reimburse</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="meeting" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                </th>
+                                                                                <th>Date</th>
+                                                                                <th class="text-center">Status</th>
+                                                                                <th class="text-center">Petty Cash No.</th>
+                                                                                <th>Description</th>
+                                                                                <th>Expensed By</th>
+                                                                                <th class="text-right">Amount (RM)</th>
+                                                                                <th class="text-center">Receipt</th>
+                                                                                <th class="text-center">Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    
+                                                                                </td>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-info width-md">Reimbursed</span><br><small>12 Nov 2023 <a href="pettycash-reimburse.html" class="font-weight-bold ml-2">RIM2345</a></small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77731</a></td>
+                                                                                <td>Petrol from Office to Client Office</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    
+                                                                                </td>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-info width-md">Reimbursed</span><br><small>12 Nov 2023 <a href="pettycash-reimburse.html" class="font-weight-bold ml-2">RIM2345</a></small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77730</a></td>
+                                                                                <td>Petrol from Office to Client Office</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>12 Nov 2023</small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77729</a></td>
+                                                                                <td>2 stacks of A4 paper</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">20.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>25 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>12 Nov 2023</small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77728</a></td>
+                                                                                <td>Paid lunch for customer appointment</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck5"><label class="custom-control-label" for="customCheck5">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>25 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>25 Nov 2023</small> </td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77727</a></td>
+                                                                                <td>Paid lunch for customer appointment</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                            <div class="tab-pane" id="approved">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="mb-2">
+                                                                    <div class="form-row align-items-center">
+                                                                        <div class="col col-auto mb-3">
+                                                                            <div class="float-sm-right mt-3 mt-sm-0">
+                                                                                <div class="dropdown d-inline-block">
+                                                                                    <button class="btn btn-light dropdown-toggle" type="button"
+                                                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                                                        aria-expanded="false">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                                            <i class='uil uil-angle-down'></i>
+                                                                                        </div>
+                                                                                        
+                                                                                        
+                                                                                    </button>
+                                                                                    <div class="dropdown-menu dropdown-menu-left">
+                                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                                        <a class="dropdown-item" href="#">None</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <div class="col col-md-8 mb-3">
+                                                                            <a href="pettycash-reimburse.html" class="btn btn-soft-primary btn-rounded">Reimburse</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable3" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                </th>
+                                                                                <th>Date</th>
+                                                                                <th class="text-center">Status</th>
+                                                                                <th class="text-center">Petty Cash No.</th>
+                                                                                <th>Description</th>
+                                                                                <th>Expensed By</th>
+                                                                                <th class="text-right">Amount (RM)</th>
+                                                                                <th class="text-center">Receipt</th>
+                                                                                <th class="text-center">Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck3"><label class="custom-control-label" for="customCheck3">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>12 Nov 2023</small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77729</a></td>
+                                                                                <td>2 stacks of A4 paper</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">20.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck4"><label class="custom-control-label" for="customCheck4">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>25 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>12 Nov 2023</small></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77728</a></td>
+                                                                                <td>Paid lunch for customer appointment</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck5"><label class="custom-control-label" for="customCheck5">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>25 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-success width-md">Approved</span><br><small>25 Nov 2023</small> </td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77727</a></td>
+                                                                                <td>Paid lunch for customer appointment</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="pettycash-reimburse.html">Reimburse</a>
+                                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="reimbursed">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="table-responsive">
+                                                                    <table id="basic-datatable4" class="table table-hover nowrap full-width">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Date</th>
+                                                                                <th class="text-center">Status</th>
+                                                                                <th>Reimburse No.</th>
+                                                                                <th class="text-center">Petty Cash No.</th>
+                                                                                <th>Description</th>
+                                                                                <th>Expensed By</th>
+                                                                                <th class="text-right">Amount (RM)</th>
+                                                                                <th class="text-center">Receipt</th>
+                                                                                <th class="text-center">Action</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-info width-md">Reimbursed</span><br><small>12 Nov 2023</small></td>
+                                                                                <td><a href="pettycash-reimburse.html" class="font-weight-bold ml-2">RIM2345</a></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77731</a></td>
+                                                                                <td>Petrol from Office to Client Office</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>5 Nov 2023</td>
+                                                                                <td class="text-center"><span class="badge badge-info width-md">Reimbursed</span><br><small>12 Nov 2023 </small></td>
+                                                                                <td><a href="pettycash-reimburse.html" class="font-weight-bold ml-2">RIM2345</a></td>
+                                                                                <td class="text-center"><a href="pettycash-staff-purchase-edit-approved.html">77730</a></td>
+                                                                                <td>Petrol from Office to Client Office</td>
+                                                                                <td>Tim</td>
+                                                                                <td class="text-right">200.00</td>
+                                                                                <td class="text-center">
+                                                                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
+                                                                                </td>
+                                                                                <td class="text-center">
+                                                                                    <div class="btn-group dropleft">
+                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <a class="dropdown-item" href="#">Print</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div> <!-- end card body-->
+                                                        </div> <!-- end card -->
+                                                    </div><!-- end col-->
+                                                </div>
+                                                <!-- end row-->
+                                            </div>
+                                        </div>
+                                        <form class="">
+                                            <!-- <div class="mb-1">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-xl-3 col-sm-4">
+                                                        <div class="form-group">
+                                                            <select class="form-control custom-select">
+                                                                <option value="0">Status</option>
+                                                                <option value="2">Approved</option>
+                                                                <option value="3">Reimbursed</option>
+                                                                <option value="4"> </option>
+                                                                <option value="5"> </option>
+                                                                <option value="6"> </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-md-1">
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col col-md-8 text-right mb-3">
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            
+                                            
+                                        </form>
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- approve  -->
+           <div class="modal fade" id="modal-approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modaldialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Approve</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-color-black">
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Date</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    5 Nov 2023	
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Type</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Transportation
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Description</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Petrol from Office to Client Office
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Expensed By</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    Tim
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Amount</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    RM 200.00
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-sm-4 col-lg-4">
+                                    <label>Receipt</label>
+                                </div>
+                                <div class="col col-sm-8 col-lg-8">
+                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal">Approve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- approve end -->
+
+            <!-- decline  -->
+           <div class="modal fade" id="modal-decline" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modaldialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Reject</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-color-black">
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Date</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                5 Nov 2023	
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Type</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Transportation
+                            </div>
+                        </div>
+                        <div class="row line-height-1dot7">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Description</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Petrol from Office to Client Office
+                            </div>
+                        </div>
+                        <div class="row line-height-1dot7">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Expensed By</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                Tim
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Amount</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                RM 200.00
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-sm-4 col-lg-4">
+                                <label>Receipt</label>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group">
+                                    <label>Notes</label>
+                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger btn-rounded width-sm" data-dismiss="modal">Reject</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- decline end -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+       
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                $('#bookinglist').DataTable( {
+                    "language": {
+                        "paginate": {
+                            "previous": "<i class='uil uil-angle-left'>",
+                            "next": "<i class='uil uil-angle-right'>"
+                        }
+
+                    },
+                    "drawCallback": function () {
+                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+                    },
+                    "scrollX": true
+                } );
+            } );
+            
+        </script>
+        
+    </body>
+</html>

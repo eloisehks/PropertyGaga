@@ -46,6 +46,8 @@
 // add new row in Datatable (Sinking Fund)
 // box shadow
 // login page
+// custom-variables
+// left menu setting
 
 
 /**************  **************/ 
@@ -450,6 +452,9 @@ input[type=text].noborder, input[type=date].noborder, select.noborder {
 .text-color-yellow {
     color: #ffbb00;
 }
+.text-color-greenMedium {
+    color: #048371;
+}
 .font-xl {
     font-size: 200%;
 }
@@ -633,13 +638,20 @@ a.text-color-primary {
 }
 .bg-superadmin-1 {
     padding: 0;
-    background-image: linear-gradient(to top, rgb(247, 254, 255) ,  rgb(218, 253, 255) , rgb(215, 229, 246));
-    // background-image: url('../images/propertygaga/gra-bg-pinkpurplepatch.jpg');
+    background-image: linear-gradient(to top, rgb(247, 254, 255) ,  rgb(216, 216, 216) , rgb(200, 200, 200));
     background-repeat: no-repeat;
     background-size: 100% !important;
     background-position:  bottom 0% left 0%;
     position: relative;
 }
+// .bg-superadmin-1 {
+//     padding: 0;
+//     background-image: linear-gradient(to top, rgb(247, 254, 255) ,  rgb(218, 253, 255) , rgb(215, 229, 246));
+//     background-repeat: no-repeat;
+//     background-size: 100% !important;
+//     background-position:  bottom 0% left 0%;
+//     position: relative;
+// }
 .bg-linear-gradient-greentone {
     background-image: linear-gradient(to right, rgb(247, 254, 255) ,  rgb(235, 240, 215) , rgb(165, 241, 233));
 }
@@ -1899,4 +1911,530 @@ div.dataTables_wrapper {
     bottom: 3rem;
     left: 0;
     right: 0;
+}
+
+.auth-page-sidebar-superadmin {
+    padding: 0;
+    background-image: url(../images/auth-bg-superadmin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.auth-page-sidebar-superadmin .auth-user-testimonial {
+    text-align: center;
+    color: $white;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.auth-page-sidebar-office {
+    padding: 0;
+    background-image: url(../images/auth-bg-office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.auth-page-sidebar-office .auth-user-testimonial {
+    text-align: center;
+    color: $white;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.auth-page-sidebar-security {
+    padding: 0;
+    background-image: url(../images/auth-bg-security.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.auth-page-sidebar-security .auth-user-testimonial {
+    text-align: center;
+    color: $white;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+
+//
+// custom-variables
+//
+
+//Background left-sidebar (blue backup temp - #333d5e)
+$bg-leftbar-blue:            #22314e;
+$bg-leftbar-darkgreen:       #048371;
+$bg-leftbar-lightblue:       #BFE4FF;
+
+// Dark leftbar menu color
+$menu-item-color-darkgreen:        #c7e9d9;
+$menu-item-hover-color-darkgreen:  #c8dcd5;
+$menu-item-active-color-darkgreen: #ffffff;
+
+// Light leftbar menu color
+$menu-item-color-lightblue:        #0c6aad;
+$menu-item-hover-color-lightblue:  #0977c6;
+$menu-item-active-color-lightblue: #0977c6;
+
+$darkgreen:                 #048371;
+$darkgreen-disabled:        #4a857c;
+$darkgreen-notdisabled:     #08a089;
+
+$lightblue:                  #0c6aad;
+
+/* left menu setting
+
+/* =============
+  Menu
+============= */
+
+// Leftbar-blue (occupant)
+.left-side-menu-blue {
+    .metismenu {
+        li {
+            a[aria-expanded=true]{
+                color: $menu-item-active-color-dark !important;
+            }
+        }
+    }
+    .left-side-menu {
+        background-color: $bg-leftbar-blue;
+        box-shadow: none;
+        #sidebar-menu {
+            > ul {
+                > li{
+                    &.mm-active{
+                        >a{
+                            color: $menu-item-active-color-dark;
+                            background-color: lighten($bg-leftbar-blue, 4%);
+                            svg{
+                                color: $menu-item-active-color-dark;
+                                fill: rgba($white,.12);
+                            }
+                        }
+                    }
+                    > a {
+                        color: $menu-item-color-dark;
+        
+                        svg{
+                            color: $menu-item-color-dark;
+                            fill: rgba($white,.12);
+                        }
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $menu-item-hover-color-dark;
+                            background-color: lighten($bg-leftbar-blue, 4%);
+                        }
+
+                        &.active {
+                            color: $menu-item-active-color-dark;
+                            background-color: lighten($bg-leftbar-blue, 4%);
+                            svg{
+                                color: $menu-item-active-color-dark;
+                                fill: rgba($white,.12);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-title {
+                color: $gray-500;
+            }
+        }
+    }
+
+    .nav-second-level,
+    .nav-thrid-level {
+        li {
+            a {
+                color: $menu-item-color-dark;
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    color: $menu-item-hover-color-dark;
+                }
+            }
+            &.mm-active {
+                >a {
+                    color: $menu-item-active-color-dark;
+                }
+            }
+        }
+    }
+
+    &.left-side-menu-condensed {
+        .left-side-menu {
+            #sidebar-menu{
+                >ul{
+                    >li{
+                        &:hover>a{
+                            background-color: lighten($bg-leftbar-blue, 4%);
+                            color: $menu-item-active-color-dark !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-second-level,
+        .nav-thrid-level {
+            li {
+                &.mm-active {
+                    >a {
+                        color: $menu-item-active;
+                    }
+                }
+            }
+        }
+    }
+    .user-profile {
+        .pro-user-name,
+        .pro-user-desc {
+            color: $gray-500;
+        }
+    
+        .profile-dropdown-menu {
+            .dropdown-toggle {
+                svg {
+                    background-color: lighten($bg-leftbar-blue, 4%);
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+// Leftbar-lightblue (vendor)
+.left-side-menu-lightblue {
+    .metismenu {
+        li {
+            a[aria-expanded=true]{
+                color: $menu-item-active-color-lightblue !important;
+            }
+        }
+    }
+    .left-side-menu {
+        background-color: $bg-leftbar-lightblue;
+        box-shadow: none;
+        #sidebar-menu {
+            > ul {
+                > li{
+                    &.mm-active{
+                        >a{
+                            color: $menu-item-active-color-lightblue;
+                            background-color: lighten($bg-leftbar-lightblue, 4%);
+                            svg{
+                                color: $menu-item-active-color-lightblue;
+                                fill: rgba($black,.12);
+                            }
+                        }
+                    }
+                    > a {
+                        color: $menu-item-color-lightblue;
+        
+                        svg{
+                            color: $menu-item-color-lightblue;
+                            fill: rgba($black,.12);
+                        }
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $menu-item-hover-color-lightblue;
+                            background-color: lighten($bg-leftbar-lightblue, 4%);
+                        }
+
+                        &.active {
+                            color: $menu-item-active-color-lightblue;
+                            background-color: lighten($bg-leftbar-lightblue, 4%);
+                            svg{
+                                color: $menu-item-active-color-lightblue;
+                                fill: rgba($black,.12);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-title {
+                color: $lightblue;
+            }
+        }
+    }
+
+    .nav-second-level,
+    .nav-thrid-level {
+        li {
+            a {
+                color: $menu-item-color-lightblue;
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    color: $menu-item-hover-color-lightblue;
+                }
+            }
+            &.mm-active {
+                >a {
+                    color: $menu-item-active-color-lightblue;
+                }
+            }
+        }
+    }
+
+    &.left-side-menu-condensed {
+        .left-side-menu {
+            #sidebar-menu{
+                >ul{
+                    >li{
+                        &:hover>a{
+                            background-color: lighten($bg-leftbar-lightblue, 4%);
+                            color: $menu-item-active-color-lightblue !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-second-level,
+        .nav-thrid-level {
+            li {
+                &.mm-active {
+                    >a {
+                        color: $menu-item-active;
+                    }
+                }
+            }
+        }
+    }
+    .user-profile {
+        .pro-user-name,
+        .pro-user-desc {
+            color: $lightblue;
+        }
+    
+        .profile-dropdown-menu {
+            .dropdown-toggle {
+                svg {
+                    background-color: lighten($bg-leftbar-lightblue, 4%);
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+// Leftbar-darkgreen (security)
+.left-side-menu-darkgreen {
+    $primary:       $darkgreen;
+
+    .btn-primary {
+        color: #fff;
+        background-color: $darkgreen;
+        border-color: $darkgreen;
+    }
+    .btn-primary:hover {
+        color: #fff;
+        background-color: darken($darkgreen, 4%);
+        border-color: darken($darkgreen, 4%);
+        // background-color: #2e49f7;
+        // border-color: #223ef6;
+    }
+    .btn-primary:focus, .btn-primary.focus {
+        color: #fff;
+        background-color: darken($darkgreen, 4%);
+        border-color: darken($darkgreen, 4%);
+        -webkit-box-shadow: 0 0 0 0.15rem rgba(4, 131, 113, 0.5);
+        box-shadow: 0 0 0 0.15rem rgba(4, 131, 113, 0.5); 
+        // background-color: #2e49f7;
+        // border-color: #223ef6;
+        // -webkit-box-shadow: 0 0 0 0.15rem rgba(109, 128, 249, 0.5);
+        // box-shadow: 0 0 0 0.15rem rgba(109, 128, 249, 0.5);
+    }
+    .btn-primary.disabled, .btn-primary:disabled {
+        color: #fff;
+        background-color: $darkgreen-disabled;
+        border-color: $darkgreen-disabled;
+    }
+    .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: $darkgreen-notdisabled;
+        border-color: $darkgreen-notdisabled;;
+    }
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
+        -webkit-box-shadow: 0 0 0 0.15rem rgba(19, 95, 84, 0.5);
+        box-shadow: 0 0 0 0.15rem rgba(19, 95, 84, 0.5); 
+    }
+
+    .btn-outline-primary {
+        color: $darkgreen;
+        border-color: $darkgreen;
+    }
+    .btn-outline-primary:hover {
+        color: #fff;
+        background-color: $darkgreen;
+        border-color: $darkgreen;
+    }
+    .btn-outline-primary:focus, .btn-outline-primary.focus {
+        -webkit-box-shadow: 0 0 0 0.15rem rgba(4, 131, 113, 0.5);
+        box-shadow: 0 0 0 0.15rem rgba(4, 131, 113, 0.5); 
+    }
+    .btn-outline-primary.disabled, .btn-outline-primary:disabled {
+        color: $darkgreen;
+        background-color: transparent;
+    }
+    .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-outline-primary.dropdown-toggle {
+        color: #fff;
+        background-color: $darkgreen;
+        border-color: $darkgreen;
+    }
+    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-primary.dropdown-toggle:focus {
+        -webkit-box-shadow: 0 0 0 0.15rem rgba(19, 95, 84, 0.5);
+        box-shadow: 0 0 0 0.15rem rgba(19, 95, 84, 0.5); 
+    }
+
+    .metismenu {
+        li {
+            a[aria-expanded=true]{
+                color: $menu-item-active-color-dark !important;
+            }
+        }
+    }
+    .left-side-menu {
+        background-color: $bg-leftbar-darkgreen;
+        box-shadow: none;
+        #sidebar-menu {
+            > ul {
+                > li{
+                    &.mm-active{
+                        >a{
+                            color: $menu-item-active-color-darkgreen;
+                            background-color: lighten($bg-leftbar-darkgreen, 4%);
+                            svg{
+                                color: $menu-item-active-color-darkgreen;
+                                fill: rgba($white,.72);
+                            }
+                        }
+                    }
+                    > a {
+                        color: $menu-item-color-darkgreen;
+        
+                        svg{
+                            color: $menu-item-color-darkgreen;
+                            fill: rgba($white,.72);
+                        }
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $menu-item-hover-color-darkgreen;
+                            background-color: lighten($bg-leftbar-darkgreen, 4%);
+                        }
+
+                        &.active {
+                            color: $menu-item-active-color-darkgreen;
+                            background-color: lighten($bg-leftbar-darkgreen, 4%);
+                            svg{
+                                color: $menu-item-active-color-darkgreen;
+                                fill: rgba($white,.72);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-title {
+                color: $gray-200;
+            }
+        }
+    }
+
+    .nav-second-level,
+    .nav-thrid-level {
+        li {
+            a {
+                color: $menu-item-color-darkgreen;
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    color: $menu-item-hover-color-darkgreen;
+                }
+            }
+            &.mm-active {
+                >a {
+                    color: $menu-item-active-color-darkgreen;
+                }
+            }
+        }
+    }
+
+    &.left-side-menu-condensed {
+        .left-side-menu {
+            #sidebar-menu{
+                >ul{
+                    >li{
+                        &:hover>a{
+                            background-color: lighten($bg-leftbar-darkgreen, 4%);
+                            color: $menu-item-active-color-darkgreen !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-second-level,
+        .nav-thrid-level {
+            li {
+                &.mm-active {
+                    >a {
+                        color: $menu-item-active;
+                    }
+                }
+            }
+        }
+    }
+    .user-profile {
+        .pro-user-name,
+        .pro-user-desc {
+            color: $gray-200;
+        }
+    
+        .profile-dropdown-menu {
+            .dropdown-toggle {
+                svg {
+                    background-color: lighten($bg-leftbar-darkgreen, 4%);
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .propertyname-header {
+        color: #000;
+        font-size: 22px;
+        font-weight: 600;
+        text-transform:  uppercase;
+        height: 1em;
+        line-height: 1em;
+    }
 }
