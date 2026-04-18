@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Entry Pass</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .ticket-card {
+            background: #fff;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .header {
+            background-color: #1967ca;
+            color: white;
+            padding: 20px;
+        }
+        .header h2 { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
+        .content { padding: 30px; }
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .info {
+            text-align: left;
+            border-top: 1px dashed #ccc;
+            padding-top: 20px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .label { color: #666; font-weight: bold; }
+        .value { color: #333; }
+        .footer {
+            background: #f9f9f9;
+            padding: 15px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ticket-card">
+    <div class="header">
+        <h2>Visitor Entry Pass</h2>
+    </div>
+    
+    <div class="content">
+        <div id="qrcode"></div>
+        
+        <div class="info">
+            <div class="info-row">
+                <span class="label">Visitor:</span>
+                <span class="value">Eugene</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Unit No:</span>
+                <span class="value">B-12-05</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Date:</span>
+                <span class="value">15 Apr 2026</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Status:</span>
+                <span style="color: #28a745; font-weight: bold;">APPROVED</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Please present this QR code at the guardhouse.
+    </div>
+</div>
+
+<script>
+    // Logic to generate the QR Code
+    // In a real app, 'text' would be a unique ID or encrypted token
+    new QRCode(document.getElementById("qrcode"), {
+        text: "VISITOR-ID-12345-UNIT-B1205",
+        width: 180,
+        height: 180,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+
+</body>
+</html>
