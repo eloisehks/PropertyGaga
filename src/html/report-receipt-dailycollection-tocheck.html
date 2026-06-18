@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-9 col-xl-9">
+                                <h3 class="mb-1 mt-0">Daily Collection Report</h3>
+                                <span class="badge badge-warning width-sm mr-2">Pending Checking</span>
+                            </div>
+                            <div class="col-md-3 col-xl-3 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Collection Date <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="" class="form-control" placeholder="" value="05 Jun 2026">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Total (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="5,000.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Cash (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="1,500.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Card (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="1,200.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Cheque (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="0.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Online Bank (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="2,000.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Unknown Bank (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="300.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Cancelled (RM) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control" id="" value="0.00">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"
+                                                for="simpleinput">Upload Report <span class="text-danger">*</span></label>
+                                            <div class="col-xl-4 col-md-6">
+                                                <input type="file" class="form-control" id="fileinput">
+                                                <div class="p-2 border-gray-light rounded mb-2 mt-2">
+                                                    <div class="media">
+                                                        <div class="avatar-sm font-weight-bold mr-3">
+                                                            <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                <i class="uil-file-plus-alt font-size-18"></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <a href="assets/images/propertygaga/ReceiptList_e_Jun2026.xlsx" class="d-inline-block mt-2">ReceiptList_e_Jun2026.xlsx</a>
+                                                        </div>
+                                                        <div class="float-right mt-1">
+                                                            <a href="#" class="p-2"><i class="uil-download-alt font-size-18"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>Cash Banked-in Details</h5>
+                                        <form class="form-horizontal">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Bank-In Date <span class="text-danger">*</span></label>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" id="basic-datepicker" class="form-control" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="example-email">Bank Name <span class="text-danger">*</span></label>
+                                                        <div class="col-lg-4">
+                                                            <select class="form-control wide" id="bank-name" name="bank_name" required>
+                                                                <option value="" disabled selected>-- Select Bank --</option>
+                                                                    <option value="maybank">Maybank (Malayan Banking Berhad)</option>
+                                                                    <option value="cimb">CIMB Bank Berhad</option>
+                                                                    <option value="public_bank" selected>Public Bank Berhad</option>
+                                                                    <option value="rhb_bank">RHB Bank Berhad</option>
+                                                                    <option value="hong_leong">Hong Leong Bank Berhad</option>
+                                                                    <option value="ambank">AmBank (M) Berhad</option>
+                                                                    <option value="affin_bank">Affin Bank Berhad</option>
+                                                                    <option value="alliance_bank">Alliance Bank Malaysia Berhad</option>
+                                                                    <option value="bank_islam">Bank Islam Malaysia Berhad</option>
+                                                                    <option value="bank_muamalat">Bank Muamalat Malaysia Berhad</option>
+                                                                    <option value="maybank_islamic">Maybank Islamic Berhad</option>
+                                                                    <option value="cimb_islamic">CIMB Islamic Bank Berhad</option>
+                                                                    <option value="public_islamic">Public Islamic Bank Berhad</option>
+                                                                    <option value="rhb_islamic">RHB Islamic Bank Berhad</option>
+                                                                    <option value="hong_leong_islamic">Hong Leong Islamic Bank Berhad</option>
+                                                                    <option value="ambank_islamic">AmBank Islamic Berhad</option>
+                                                                    <option value="affin_islamic">Affin Islamic Bank Berhad</option>
+                                                                    <option value="alliance_islamic">Alliance Islamic Bank Berhad</option>
+                                                                    <option value="mbsb">MBSB Bank Berhad</option>
+                                                                    <option value="al_rajhi">Al Rajhi Banking & Investment Corp (M) Berhad</option>
+                                                                    <option value="uob">United Overseas Bank (Malaysia) Bhd (UOB)</option>
+                                                                    <option value="ocbc">OCBC Bank (Malaysia) Berhad</option>
+                                                                    <option value="hsbc">HSBC Bank Malaysia Berhad</option>
+                                                                    <option value="scb">Standard Chartered Bank Malaysia Berhad</option>
+                                                                    <option value="citibank">Citibank Berhad</option>
+                                                                    <option value="boc">Bank of China (Malaysia) Berhad</option>
+                                                                    <option value="icbc">Industrial and Commercial Bank of China (ICBC)</option>
+                                                                    <option value="gxbank">GX Bank Berhad (GXBank)</option>
+                                                                    <option value="aeon_bank">AEON Bank (M) Berhad</option>
+                                                                    <option value="boost_bank">Boost Bank Berhad</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Banked-In Amt. (RM) <span class="text-danger">*</span></label>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" class="form-control" id="" value="1,500.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Bank Slip Reference No.</label>
+                                                        <div class="col-lg-4">
+                                                            <input type="text" class="form-control" id="" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Upload Bank Slip <span class="text-danger">*</span></label>
+                                                        <div class="col-lg-4">
+                                                            <input type="file" class="form-control" id="fileinput">
+                                                            <div class="card mb-2 mt-2 shadow-none border-grayform">
+                                                                        <div class="p-1 px-2">
+                                                                            <div class="row align-items-center">
+                                                                                <div class="col-auto">
+                                                                                    <img src="assets/images/projects/project-1.jpg"
+                                                                                        class="avatar-sm rounded" alt="file-image">
+                                                                                </div>
+                                                                                <div class="col pl-0">
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="text-muted font-weight-bold">bankslip.jpg</a>
+                                                                                    <p class="mb-0">1.3 MB</p>
+                                                                                </div>
+                                                                                <div class="col-auto">
+                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                        data-placement="bottom" title="Download"
+                                                                                        class="btn btn-link text-muted btn-lg p-0">
+                                                                                        <i class='uil uil-cloud-download font-size-14'></i>
+                                                                                    </a>
+                                                                                    <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                                        data-placement="bottom" title="Delete"
+                                                                                        class="btn btn-link text-danger btn-lg p-0">
+                                                                                        <i class='uil uil-multiply font-size-14'></i>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-4 col-form-label"
+                                                            for="simpleinput">Remarks</label>
+                                                        <div class="col-lg-8">
+                                                            <textarea class="form-control" rows="2" id="example-textarea">
+Banked-in cash, amount matched
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="float-left mt-3">
+                                            <div class="mb-3">
+                                                <div><small>Created by John Tan on 05 Jun 2026, 3:56pm</small></div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right mt-3">
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1 width-sm" onclick="window.history.go(-1);">Cancel</button>
+                                            <a href="reports-receipt-dailycollection.html" class="btn btn-primary btn-rounded mr-1 width-sm">Submit for Verification</a>
+                                        </div>
+            
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            function openPopup() {
+                $("#modal-renewal").modal();
+            }
+        </script>
+        
+    </body>
+</html>

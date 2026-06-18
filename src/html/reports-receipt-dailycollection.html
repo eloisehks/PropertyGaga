@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Daily Collection Report</h3>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <button type="submit" class="btn btn-primary btn-rounded" onclick="location.href='report-receipt-dailycollection-new.html';">New Collection</button>
+                                    <a href="#" onclick="window.history.go(-1);" class="mr-2"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="basic-datatable" class="table table-bordered table-hover table-striped align-middle full-width">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th width="20%">Collection Date</th>
+                                                        <th width="20%">Created by/on</th>
+                                                        <th width="20%" class="text-right">Total Collection (RM)</th>
+                                                        <th width="20%">Verified by/on</th>
+                                                        <th width="20%">Status</th>
+                                                        <th width="20%">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                
+                                                    <tr>
+                                                        <td>04 Jun 2026</td>
+                                                        <td>John Tan<br><small class="text-muted">04 Jun 2026, 3:00pm</small></td>
+                                                        <td class="text-right font-weight-bold">6,100.00</td>
+                                                        <td>Manager<br><small class="text-muted">04 Jun 2026, 4:00pm</small></td>
+                                                        <td>
+                                                            <span class="badge badge-success">
+                                                                Verified
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="report-receipt-dailycollection-verified0.html">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>05 Jun 2026</td>
+                                                        <td>John Tan<br><small class="text-muted">05 Jun 2026, 3:00pm</small></td>
+                                                        <td class="text-right font-weight-bold">5,000.00</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <span class="badge badge-warning">
+                                                                Pending Checking
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="report-receipt-dailycollection-tocheck.html">View</a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>05 Jun 2026</td>
+                                                        <td>John Tan<br><small class="text-muted">05 Jun 2026, 3:00pm</small></td>
+                                                        <td class="text-right font-weight-bold">5,000.00</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <span class="badge badge-info">
+                                                                Pending Verification
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="report-receipt-dailycollection-toverify.html">View</a>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td>05 Jun 2026</td>
+                                                        <td>John Tan<br><small class="text-muted">05 Jun 2026, 3:00pm</small></td>
+                                                        <td class="text-right font-weight-bold">5,000.00</td>
+                                                        <td>Manager<br><small class="text-muted">05 Jun 2026, 4:00pm</small></td>
+                                                        <td>
+                                                            <span class="badge badge-success">
+                                                                Verified
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-outline-primary btn-sm btn-rounded" href="report-receipt-dailycollection-verified.html">View</a>
+                                                        </td>
+                                                    </tr>
+
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+        $(document).ready(function () {
+            $('input[type="radio"]').click(function () {
+                var inputValue = $(this).attr("value");
+                var targetBox = $("." + inputValue);
+                $(".box").not(targetBox).hide();
+                $(targetBox).show();
+            });
+        });
+    </script>
+        
+    </body>
+</html>

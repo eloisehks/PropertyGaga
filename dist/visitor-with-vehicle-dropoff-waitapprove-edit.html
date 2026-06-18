@@ -127,7 +127,70 @@
                     </form>
 
                     <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
-                        <li class="d-none d-sm-block">
+
+                        <li class="dropdown d-none d-lg-block notification-list pt-3 mr-2" data-toggle="tooltip" data-placement="left" title="3 online">
+                
+                            <button type="button" 
+                                    class="btn p-0 border-0 d-flex align-items-center avatar-group-trigger" 
+                                    id="onlineAdminsDropdown" 
+                                    data-toggle="dropdown" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false"
+                                    style="background: none; outline: none; box-shadow: none;">
+                    
+                                <div class="avatar-group d-flex align-items-center">
+                                    <div class="position-relative" style="z-index: 2; margin-right: -10px;">
+                                        <img src="assets/images/users/avatar-1.jpg" 
+                                            class="rounded-circle avatar-sm img-thumbnail" 
+                                            alt="user-img"
+                                            style="width: 36px; height: 36px; object-fit: cover;">
+                                        <span class="position-absolute rounded-circle bg-success border border-white" 
+                                            style="width: 10px; height: 10px; bottom: 2px; right: 2px; display: block;"></span>
+                                    </div>
+                        
+                                    <div class="avatar-sm d-flex align-items-center justify-center rounded-circle bg-soft-primary text-primary font-weight-semibold font-size-14 border border-white" 
+                                        style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background-color: #eef2f7; color: #3bafda; font-weight: 600; z-index: 1;">
+                                        +3
+                                    </div>
+                                </div>
+                            </button>
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-end border-0 shadow-lg p-3" 
+                                aria-labelledby="onlineAdminsDropdown" 
+                                style="min-width: 240px; border-radius: 12px; margin-top: 8px;">
+                    
+                                <div class="d-flex flex-column" style="gap: 12px;">
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle" alt="Nolan" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Nolan Carder</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt="Lydia" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Lydia Baptista</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt="Gretchen" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Gretchen Siphron</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                
+                        </li>
+
+                        <!-- <li class="d-none d-sm-block">
                             <div class="app-search">
                                 <form>
                                     <div class="input-group">
@@ -136,7 +199,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li> -->
 
                         <!--<li class="dropdown d-none d-lg-block" data-toggle="tooltip" data-placement="left" title="Change language">
                             <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button"
@@ -501,6 +564,7 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span>AGM / EGM</span>
                                 </a>
+        
                                 <!-- <a href="javascript: void(0);">
                                     <i class="uil uil-meeting-board"></i>
                                     <span>General Meeting </span>
@@ -538,13 +602,17 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
+                                        <a href="visitor-listing.html">Visitor
+                                        </a>
+                                    </li>
+                                    <!-- <li>
                                         <a href="visitor-with-vehicle.html">Visitor (Vehicle)
                                         </a>
                                     </li>
                                     <li>
                                         <a href="visitor-without-vehicle.html">Visitor (Pedestrian)
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                             <li>
@@ -1539,7 +1607,7 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Edit Visitor (Vehicle)</h3>
+                                <h3 class="mb-1 mt-0">Edit Visitor</h3>
                                 <span class="badge badge-warning width-sm">Pending Approval</span>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
@@ -1556,6 +1624,34 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col">
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Need a Car?</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadioyes"
+                                                                    name="customRadio" class="custom-control-input"
+                                                                    value="needcar" checked>
+                                                                <label class="custom-control-label"
+                                                                    for="customRadioyes">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadiono"
+                                                                    name="customRadio" class="custom-control-input"
+                                                                    value="noneedcar">
+                                                                <label class="custom-control-label"
+                                                                    for="customRadiono">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Car Plate No.</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="PDD 1111">
+                                                        </div>
+                                                    </div>
                                                     <div class="form-row row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Visitor Type</label>
@@ -1591,8 +1687,40 @@
                                                                 <option selected>Lorry</option>
                                                                 <option>Motorcycle</option>
                                                                 <option>Big Truck</option>
+                                                                <option>School Bus</option>
+                                                                <option>Factory Bus</option>
                                                                 <option>Others</option>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Overnight parking?</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadioyesyes" name="customRadio22"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="customRadioyesyes">Yes (RM 3.00 /day)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadionono" name="customRadio22"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="customRadionono">No (Penalty RM 5.00 /hr)</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Entry Date & Time</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="datetime-datepicker" type="date" name="date" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Exit Date & Time</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -1640,12 +1768,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Car Plate No.</label>
-                                                        <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="PDD 1111">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
                                                         <label class="col-3 col-form-label" for="example-fileinput">Note</label>
                                                         <div class="col-lg-5">
                                                             <textarea class="form-control" rows="4" id="textarea"></textarea>
@@ -1666,29 +1788,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Register Date & Time</label>
+                                                        <label class="col-lg-3 col-form-label">Register on</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" value="[date], [time] pm">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" value="[date], [time] pm" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-2">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Overnight parking?</label>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadioyesyes" name="customRadio22"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadioyesyes">Yes (RM 3.00 /day)</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadionono" name="customRadio22"
-                                                                    class="custom-control-input" checked>
-                                                                <label class="custom-control-label" for="customRadionono">No (Penalty RM 5.00 /hr)</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                    
                                                     <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Parking Lot
@@ -1739,49 +1845,19 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <div class="form-group row">
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Approved by</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Approved Date & Time</label>
+                                                        <label class="col-lg-3 col-form-label">Approved on</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" value="[date], [time] pm">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row mb-4">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Access Method</label>
-                                                        <div class="col-auto mt-2">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                                <label class="custom-control-label" for="customCheck1">QR Code</label>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <!-- <img src="assets/images/qrcode-receipt.gif" class="responsive" width="150"> -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                        </div>
-                                                        <div class="col-auto mt-2">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                                <label class="custom-control-label" for="customCheck2">LPR</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                        </div>
-                                                        <div class="col-auto mt-2">
-                                                            <div class="custom-control custom-checkbox">
-                                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                                <label class="custom-control-label" for="customCheck3">Face Recognition</label>
-                                                                <a href="#" class="btn btn-outline-primary btn-rounded ml-2 btn-sm">Activate</a>
-                                                                <!-- <a href="#" class="btn btn-success btn-rounded ml-2 btn-sm">Activated</a> -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    -->
                                                     <div class="form-row">
                                                         <label class="col-lg-3 col-form-label"></label>
                                                         <div class="col-auto"><p class="animate-blinker2s ml-4 mt-2 text-danger font-size-18 semibold">Pending approval from owner...</p></div>

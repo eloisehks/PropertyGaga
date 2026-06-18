@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <!-- Floating Calendar -->
+        <div id="floatingCalendar" class="floating-calendar">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #4f46e5, #06b6d4);">
+                    <h6 class="mb-2 text-color-white font-weight-normal">
+                        <i class="uil uil-calendar-alt"></i>
+                        AGM Calendar
+                    </h6>
+                    <button type="button" class="btn btn-sm btn-soft-light btn-rounded" onclick="hideCalendar()">
+                        <i class="uil uil-multiply"></i>
+                    </button>
+                </div>
+
+                <div class="card-body p-0 bg-color-grayLight">
+                    <div id="calendar-widget" class="border-0"></div>
+
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Reopen Button -->
+        <button id="calendarToggleBtn" class="btn btn-primary shadow" onclick="showCalendar()" style="background: linear-gradient(135deg, #4f46e5, #06b6d4);">
+            <i class="uil uil-calendar-alt mr-1"></i>
+            Calendar
+        </button>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">AGM / EGM: 3rd AGM</h3>
+                                <div class="row mb-1 align-items-center">
+                                    <div class="col col-auto">
+                                        <div class="badge badge-soft-danger mb-2">Preparation</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="agm.html"><i class="uil-arrow-left mr-1"></i> Back to Main </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="card">
+                                    <div class="card-body p-0 ml-0 mr-0 mb-2 mt-0">
+                                        <div class="list-group mt-2 pb-2">
+                                            <a href="agm-setup.html" class="list-group-item border-0 text-color-primary">Settings</a>
+                                            <a href="agm-timeline.html" class="list-group-item border-0 text-color-primary-active">Timeline</a>
+                                            <a href="agm-agenda.html" class="list-group-item border-0 text-color-primary">Agenda</a>
+                                            <a href="agm-voting.html" class="list-group-item border-0 text-color-primary">Voting</a>
+                                            <a href="agm-participants.html" class="list-group-item border-0 text-color-primary">Participants</a>
+                                            <a href="agm-documents.html" class="list-group-item border-0 text-color-primary">Documents<span class="badge badge-success float-right mr-2 font-xs paddingtop-4">3</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <ul class="nav nav-pills navtab-bg nav-justified font-size-12">
+                                            <li class="nav-item">
+                                                <a href="agm-setup.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Agenda</span>
+                                                    <span class="d-none d-sm-block">Agenda</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-timeline.html"
+                                                    class="nav-link active">
+                                                    <span class="d-block d-sm-none">Time Line</span>
+                                                    <span class="d-none d-sm-block">Time Line</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-other.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Other Prep</span>
+                                                    <span class="d-none d-sm-block">Other Prep</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-motion.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Motion</span>
+                                                    <span class="d-none d-sm-block">Motion</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-proxy.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Proxy Form</span>
+                                                    <span class="d-none d-sm-block">Proxy Form</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-nomination.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Nomination</span>
+                                                    <span class="d-none d-sm-block">Nomination</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="agm-letterofauthority.html"
+                                                    class="nav-link">
+                                                    <span class="d-block d-sm-none">Letter of Authority</span>
+                                                    <span class="d-none d-sm-block">Letter of Authority</span>
+                                                </a>
+                                            </li>
+                                        </ul> -->
+                                        <div class="mt-0">
+
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <h5>Timeline & Preparation Check list <small class="text-danger ml-3">* Compulsory</small></h5>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row d-flex flex-column-reverse flex-lg-row">
+    
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <div class="custom-accordion accordion ml-4" id="customaccordion_exa">
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseOne" aria-expanded="true"
+                                                                aria-controls="customaccorcollapseOne">
+                                                                <div class="card-header" id="customaccorheadingOne">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i class="uil uil-check-circle h3 text-success icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            02 Apr 2026 - Thu <div class="badge badge-soft-success">completed</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            Strata Search
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(suggest 90 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseOne" class="collapse"
+                                                                aria-labelledby="customaccorheadingOne"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA8" checked>
+                                                                                            <label class="custom-control-label" for="checkmeoutA8"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    Strata Search (for Management Corporation Only)
+                                                                                    <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                        data-toggle="popover" data-trigger="focus" title=""
+                                                                                        data-content="Prior to search, prepare: Payment- RM200 / day, Laptop, Owners Lists"
+                                                                                        data-original-title="">
+                                                                                    </i>
+                                                                                    <div class="row mt-2">
+                                                                                        <div class="col-xl-12 col-md-12">
+                                                                                            <div class="p-2 border-gray400 rounded mb-2">
+                                                                                                <div class="media">
+                                                                                                    <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                        <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                            <i class="uil-file-alt font-size-14"></i>
+                                                                                                        </span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <a href="#" class="d-inline-block">StrataSearch.xlsx</a>
+                                                                                                        <br>
+                                                                                                        <small>15 MB • Uploaded 2 mins ago</small>
+                                                                                                        <br>
+                                                                                                        <small class="font-xs">Added to Documents → Financial Documents</small>
+                                                                                                    </div>
+                                                                                                    <div class="float-right mt-1">
+                                                                                                        <a href="#" class="p-2" title="View"><i data-feather="eye" class="icon-xs" title="View"></i></a> 
+                                                                                                        <a href="#" class="p-2" title="Replace"><i data-feather="repeat" class="icon-xs"></i></a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseTwo" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseTwo">
+                                                                <div class="card-header" id="customaccorheadingTwo">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i
+                                                                            class="uil  uil-check-circle h3 text-danger icon animate-blinker2s"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            23 May 2026 - Sat <div class="badge badge-soft-danger">overdue</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            Finalised Agenda and upload documents
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(suggest 40 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseTwo" class="collapse"
+                                                                aria-labelledby="customaccorheadingTwo"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA1">
+                                                                                            <label class="custom-control-label" for="checkmeoutA1"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Finalised Agenda
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-audited">
+                                                                                            <label class="custom-control-label" for="checkmeout-audited"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Audited Accounts
+                                                                                    <div class="row mt-2">
+                                                                                        <div class="col-xl-12 col-md-12">
+                                                                                            <div class="p-2 border-gray400 rounded mb-2">
+                                                                                                <div class="media">
+                                                                                                    <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                        <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                            <i class="uil-file-alt font-size-14"></i>
+                                                                                                        </span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <a href="#" class="d-inline-block">auditedaccount.pdf</a>
+                                                                                                        <br>
+                                                                                                        <small>11 MB • Uploaded bt Eugene on 30 May 2026, 4:00pm</small>
+                                                                                                        <br>
+                                                                                                        <small class="font-xs">Added to Documents → Financial Documents</small>
+
+                                                                                                    </div>
+                                                                                                    <div class="float-right mt-1">
+                                                                                                        <a href="#" class="p-2" title="View"><i data-feather="eye" class="icon-xs" title="View"></i></a> <a href="#" class="p-2"  title="Replace"><i data-feather="repeat" class="icon-xs"></i></a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Budgeting">
+                                                                                            <label class="custom-control-label" for="checkmeout-Budgeting"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Budgeting of new terms
+                                                                                    <div class="row mt-2">
+                                                                                        <div class="col-xl-12 col-md-12">
+                                                                                            <div class="p-2 border-gray400 rounded mb-2">
+                                                                                                <div class="media">
+                                                                                                    <div class="avatar-sm font-weight-bold mr-3">
+                                                                                                        <span class="avatar-title rounded bg-soft-primary text-primary">
+                                                                                                            <i class="uil-file-alt font-size-14"></i>
+                                                                                                        </span>
+                                                                                                    </div>
+                                                                                                    <div class="media-body">
+                                                                                                        <a href="#" class="d-inline-block">Budgeting.pdf</a>
+                                                                                                        <br>
+                                                                                                        <small>9 MB • Uploaded bt Eugene on 30 May 2026, 4:20pm</small>
+                                                                                                        <br>
+                                                                                                        <small class="font-xs">Added to Documents → Financial Documents</small>
+
+                                                                                                    </div>
+                                                                                                    <div class="float-right mt-1">
+                                                                                                        <a href="#" class="p-2" title="View"><i data-feather="eye" class="icon-xs" title="View"></i></a> <a href="#" class="p-2"  title="Replace"><i data-feather="repeat" class="icon-xs"></i></a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Policy">
+                                                                                            <label class="custom-control-label" for="checkmeout-Policy"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Insurance Policy
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-InsuranceQuotation">
+                                                                                            <label class="custom-control-label" for="checkmeout-InsuranceQuotation"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    Insurance Quotation (Upload 3 quotations)
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Auditreport">
+                                                                                            <label class="custom-control-label" for="checkmeout-Auditreport"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Audit Report
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-AuditorQuotation">
+                                                                                            <label class="custom-control-label" for="checkmeout-AuditorQuotation"></label>
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    Auditor Quotation (Upload 3 quotations)
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseThree" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseThree">
+                                                                <div class="card-header" id="customaccorheadingThree">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i
+                                                                            class="uil  uil-check-circle h3 text-primary icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            06 Jun 2026 - Sat <div class="badge badge-soft-primary">due soon</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            Prepare Notice, motion letter, proxy form, nomination form and authorized letter
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(suggest 26 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseThree" class="collapse"
+                                                                aria-labelledby="customaccorheadingThree"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA0">
+                                                                                            <label class="custom-control-label" for="checkmeoutA0"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Notice of AGM / EGM
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA7">
+                                                                                            <label class="custom-control-label" for="checkmeoutA7"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Additional Motion Letter
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA3">
+                                                                                            <label class="custom-control-label" for="checkmeoutA3"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Proxy Form
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-nomination">
+                                                                                            <label class="custom-control-label" for="checkmeout-nomination"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Nomination Forms
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA4">
+                                                                                            <label class="custom-control-label" for="checkmeoutA4"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Authorized Letter (Company Representation)
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseFour" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseFour">
+                                                                <div class="card-header" id="customaccorheadingFour">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i class="uil uil-check-circle h3 icon text-muted"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            08 Jun 2026 - Mon <div class="badge badge-soft-dark mb-2">not started</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            Printing, mailing, and distribution process
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(24 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseFour" class="collapse"
+                                                                aria-labelledby="customaccorheadingFour"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Printing">
+                                                                                            <label class="custom-control-label" for="checkmeout-Printing"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Notice to send for printing
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-receipt">Upload Receipt</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-stamp">
+                                                                                            <label class="custom-control-label" for="checkmeout-stamp"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Stamp Purchase
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-receipt">Upload Receipt</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Envelope">
+                                                                                            <label class="custom-control-label" for="checkmeout-Envelope"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Envelope Purchase
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-receipt">Upload Receipt</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Registeredpost">
+                                                                                            <label class="custom-control-label" for="checkmeout-Registeredpost"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Registered Post Purchase
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-receipt">Upload Receipt</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-InsertNotice">
+                                                                                            <label class="custom-control-label" for="checkmeout-InsertNotice"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Insert the notice into the envelope
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseFive" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseFive">
+                                                                <div class="card-header" id="customaccorheadingFive">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i
+                                                                            class="uil  uil-check-circle h3 text-muted icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            11 Jun 2026 - Thu <div class="badge badge-soft-dark mb-2">not started</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            Send out Notice
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(21 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseFive" class="collapse"
+                                                                aria-labelledby="customaccorheadingFive"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-noticesent">
+                                                                                            <label class="custom-control-label" for="checkmeout-noticesent"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Notice of AGM / EGM to be sent
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-publish">
+                                                                                            <label class="custom-control-label" for="checkmeout-publish"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Publish to Occupant Dashboard
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-dark btn-sm btn-rounded" onclick="window.history.go(-1);">Publish</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseSix" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseSix">
+                                                                <div class="card-header" id="customaccorheadingSix">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i
+                                                                            class="uil  uil-check-circle h3 text-muted icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            25 Jun 2026 - Thu <div class="badge badge-soft-dark mb-2">not started</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            - Pay maintenance fees<br>
+                                                                            - Submit motion letters and nomination forms
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(7 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseSix" class="collapse"
+                                                                aria-labelledby="customaccorheadingSix"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA2">
+                                                                                            <label class="custom-control-label" for="checkmeoutA2"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Maintenance Fees to be paid before the AGM Month
+                                                                                    <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                        data-toggle="popover" data-trigger="focus" title=""
+                                                                                        data-content="Owners who make payment after the closing date shall not be entitled to vote."
+                                                                                        data-original-title="">
+                                                                                    </i>
+                                                                                    <br>
+                                                                                    <small>By 25 Jun 2026, 11:59pm</small>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-motion">
+                                                                                            <label class="custom-control-label" for="checkmeout-motion"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    Additional Motion Letter to be submitted back
+                                                                                    <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                        data-toggle="popover" data-trigger="focus" title=""
+                                                                                        data-content="Receiver to stamp, sign and date the form then make 2
+                                                                                        copies. Original copy for owner's file, 1 copy for owner, 1
+                                                                                        copy for AGM file. 
+                                                                                        Publish on notice board 48 hours before AGM. 
+                                                                                        Include additional motions in .ppt slides"
+                                                                                        data-original-title="">
+                                                                                    </i>
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-nominationform">
+                                                                                            <label class="custom-control-label" for="checkmeout-nominationform"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Nomination Forms to be submitted back
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseSeven" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseSeven">
+                                                                <div class="card-header" id="customaccorheadingSeven">
+                                                                    <h5 class="m-1 font-size-14">
+                                                                        <i
+                                                                            class="uil  uil-check-circle h3 text-muted icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            30 Jun 2026 - Tue <div class="badge badge-soft-dark mb-2">not started</div>
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            - Submit proxy form and authorized letter<br>
+                                                                            - Prepare eligible voter list
+                                                                        </div>
+                                                                        <div class="mt-1">
+                                                                            <span class="text-muted font-weight-normal font-size-12">(2 days before)</span>
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <div id="customaccorcollapseSeven" class="collapse"
+                                                                aria-labelledby="customaccorheadingSeven"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-proxyform">
+                                                                                            <label class="custom-control-label" for="checkmeout-proxyform"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Proxy Form to be submitted back to designated office
+                                                                                    <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                        data-toggle="popover" data-trigger="focus" title=""
+                                                                                        data-content="Must be valid owner.
+                                                                                        Proxy can be any person 18 years old or above.
+                                                                                        Owner must sign and note down registered owner name.
+                                                                                        Proxy to sign and note down name & i.c. number
+                                                                                        Receiver to stamp, sign and date the form then make 2
+                                                                                        copies. Original copy for owner's file, 1 copy for owner, 1
+                                                                                        copy for AGM file." data-original-title="">
+                                                                                    </i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeout-Authorizedletter">
+                                                                                            <label class="custom-control-label" for="checkmeout-Authorizedletter"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Authorized Letter (Company Representation) to be submitted back
+                                                                                </div>
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="border-gray-light mb-2">
+                                                                        <div class="p-2">
+                                                                            <div class="row">
+                                                                                <div class="col col-auto">
+                                                                                    <div class="form-group mb-0">
+                                                                                        <div class="custom-control custom-checkbox">
+                                                                                            <input type="checkbox" class="custom-control-input" id="checkmeoutA6">
+                                                                                            <label class="custom-control-label" for="checkmeoutA6"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col col-lg-10">
+                                                                                    <span class="text-danger">*</span> Attendance List-List of Eligible Voters (paid up to date) to publish on notice board
+                                                                                    <i class="uil uil-info-circle cursor-pointer bg-color-white" tabindex="0" 
+                                                                                        data-toggle="popover" data-trigger="focus" title=""
+                                                                                        data-content="Owners must have title (For MC only). 
+                                                                                        Paid up to date as per item 3. 
+                                                                                        Proxy with name & I.C. Number. 
+                                                                                        For unit with more than 1 owner (co- proprietor) proxy
+                                                                                        form must be used, with all owner's signature.
+                                                                                        Take photo (close up and wide angle) upon publishing on
+                                                                                        notice board, update in group. (Proof of publishing)"
+                                                                                        data-original-title="">
+                                                                                    </i>
+                                                                                    <div class="mt-1">
+                                                                                        <a href="#" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modal-upload-document">Upload Document</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="col-lg-3">
+                                                                                    <div class="form-group row mb-0">
+                                                                                        <div class="col-lg-12">
+                                                                                            <textarea class="form-control" rows="1" placeholder="Remarks"></textarea>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div> -->
+                                                                            </div>    
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card mb-1">
+                                                            <a href="" class="text-dark collapsed" data-toggle="collapse"
+                                                                data-target="#customaccorcollapseEight" aria-expanded="false"
+                                                                aria-controls="customaccorcollapseEight">
+                                                                <div class="card-header" id="customaccorheadingEight">
+                                                                    <h5 class="m-1 font-size-14 text-color-greenBright">
+                                                                        <i
+                                                                            class="uil uil-star h3 text-success icon"></i>
+                                                                        <div class="font-weight-normal">
+                                                                            02 Jul 2026 - Thu
+                                                                        </div>
+                                                                        <div class="mt-2">
+                                                                            AGM / EGM Day - 2:00pm
+                                                                        </div>
+                                                                    </h5>
+                                                                </div>
+                                                            </a>
+
+                                                            <!-- <div id="customaccorcollapseEight" class="collapse"
+                                                                aria-labelledby="customaccorheadingEight"
+                                                                data-parent="#customaccordion_exa">
+                                                                <div class="card-body">
+                                                                    
+                                                                    <h5 class="mt-2"><a href="#" data-toggle="modal" data-target="">3rd Annual General Meeting 3 Resident</a></h5>
+
+                                                                </div>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                                    <div class="card border-gray-light bg-color-grayLight text-center p-3 mb-3 d-lg-block" style="max-width: 360px; margin-left: auto; margin-right: auto;">
+                                                        <h6 class="text-start text-uppercase text-secondary fw-bold mb-3" style="font-size: 11px; letter-spacing: 0.5px;">AGM Preparation Progress</h6>
+                                                        
+                                                        <div class="position-relative d-inline-flex align-items-center justify-content-center mx-auto">
+                                                            <svg width="120" height="120" viewBox="0 0 36 36" class="transform -rotate-90">
+                                                                <path class="text-light" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                <path class="text-primary" stroke-width="3" stroke-dasharray="20, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                            </svg>
+                                                            <div class="position-absolute">
+                                                                <h4 class="mb-0 fw-extrabold text-dark">20%</h4>
+                                                                <small class="text-muted text-uppercase fw-semibold" style="font-size: 9px;">Ready</small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row g-2 mt-2 pt-2 text-start">
+                                                            <div class="col-6">
+                                                                <small class="text-muted d-block" style="font-size: 10px;">Completed Tasks</small>
+                                                                <span class="fw-bold text-success small"><i class="mdi mdi-checkbox-marked-circle-outline me-1"></i>1 of 7 Done</span>
+                                                            </div>
+                                                            <div class="col-6 border-start border-light ps-3">
+                                                                <small class="text-muted d-block" style="font-size: 10px;">Next Critical Target</small>
+                                                                <span class="fw-bold text-dark small">23 May 2026</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>                                        
+
+                                            <!-- <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group mt-0 mb-0 float-right">
+                                                        <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                        <button type="submit" class="btn btn-primary btn-rounded" onclick="">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- Modal upload document -->
+            <div class="modal fade" id="modal-upload-document" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content upload-container ">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Document</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <!-- Document Name -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Document Name
+                                </label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Category
+                                </label>
+                                <select class="form-control custom-select">
+                                    <option disabled selected>Select Category</option>
+                                    <option value="0">Notice</option>
+                                    <option value="2">Agenda</option>
+                                    <option value="3">Proxy Form</option>
+                                    <option value="4">Motion</option>
+                                    <option value="5">Letter of Authority</option>
+                                    <option value="6" selected>Financial Documents</option>
+                                    <option value="7">Other</option>
+                                </select>
+
+                                <small class="text-danger">Note to developer: Catetory pre-select for user
+                                <br>
+                                <b>Financial Documents:-</b> Budget, Audited Accounts, insurance policy and quotation, audit report and quotation<br>
+                                <b>Other:-</b> Receipts, Eligible Voters List</small>
+                            </div>
+
+                            <!-- Drag Drop Area -->
+
+                            <div class="card-body border-gray400">
+                    
+                                <div class="drop-zone rounded p-4 text-center">
+                                    <i class="uil uil-cloud-upload font-size-22 text-primary"></i>
+                                    <h5 class="mt-2">Drag & Drop Files Here</h5>
+                                    <p class="text-muted small mb-3">or</p>
+
+                                    <input type="file" class="file-input d-none" multiple>
+                                    
+                                    <button type="button" class="btn btn-primary browse-btn">
+                                        Browse Files
+                                    </button>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h6 class="text-secondary">Selected Files (<span class="file-count">0</span>)</h6>
+                                    <ul class="file-list list-group list-group-flush mt-2">
+                                        <li class="list-group-item text-muted small text-center py-3 empty-message">
+                                            No files selected yet.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded clear-btn" data-dismiss="modal">Clear All</button>
+                            <button type="button" class="btn btn-primary btn-rounded upload-btn">Upload</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal upload receipt -->
+            <div class="modal fade" id="modal-upload-receipt" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content upload-container ">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Receipt</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <!-- Document Name -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Receipt Name
+                                </label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Category
+                                </label>
+                                <input type="text" class="form-control" value="Other" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Purchase Date
+                                </label>
+                                <input class="form-control" id="example-date" type="date" name="date">
+                            </div>
+
+                            <!-- Drag Drop Area -->
+                            
+                            <div class="card-body border-gray400">
+
+                                <div class="drop-zone rounded p-4 text-center">
+                                    <i class="uil uil-cloud-upload font-size-22 text-primary"></i>
+                                    <h5 class="mt-2">Drag & Drop Files Here</h5>
+                                    <p class="text-muted small mb-3">or</p>
+                                    
+                                    <input type="file" class="file-input d-none" multiple>
+                                    
+                                    <button type="button" class="btn btn-primary browse-btn">
+                                        Browse Files
+                                    </button>
+                                </div>
+
+                               <div class="mt-4">
+                                    <h6 class="text-secondary">Selected Files (<span class="file-count">0</span>)</h6>
+                                    <ul class="file-list list-group list-group-flush mt-2">
+                                        <li class="list-group-item text-muted small text-center py-3 empty-message">
+                                            No files selected yet.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded clear-btn" data-dismiss="modal">Clear All</button>
+                            <button type="button" class="btn btn-primary btn-rounded upload-btn">Upload</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <script src="assets/libs/smartwizard/jquery.smartWizard.min.js"></script>
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+
+
+    <!-- optional plugins -->
+    <script src="assets/libs/moment/moment.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- page js -->
+    <script src="assets/js/pages/widgets.init.js"></script>
+
+    <!-- agm calendar hide and show -->
+    <script>
+        function hideCalendar() {
+
+            document
+                .getElementById('floatingCalendar')
+                .classList
+                .add('calendar-hidden');
+
+            document
+                .getElementById('calendarToggleBtn')
+                .style.display = 'block';
+        }
+
+        function showCalendar() {
+
+            document
+                .getElementById('floatingCalendar')
+                .classList
+                .remove('calendar-hidden');
+
+            document
+                .getElementById('calendarToggleBtn')
+                .style.display = 'none';
+        }
+    </script>
+    <!-- agm calendar hide and show end -->
+
+    <!-- drag & Drop files -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Target all uploader wrappers on the page
+        const uploadContainers = document.querySelectorAll(".upload-container");
+
+        uploadContainers.forEach((container) => {
+            // 2. Scope UI elements strictly INSIDE this specific container box
+            const dropZone = container.querySelector(".drop-zone");
+            const fileInput = container.querySelector(".file-input");
+            const fileList = container.querySelector(".file-list");
+            const fileCount = container.querySelector(".file-count");
+            const emptyMessage = container.querySelector(".empty-message");
+            const browseBtn = container.querySelector(".browse-btn");
+            const clearBtn = container.querySelector(".clear-btn");
+            const uploadBtn = container.querySelector(".upload-btn");
+
+            // Isolated file array queue for this container instance
+            let containerFiles = [];
+
+            // Manual trigger for file layout click
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Drag/Drop Styling Toggles
+            ['dragenter', 'dragover'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
+            });
+
+            // Drop handling
+            dropZone.addEventListener('drop', (e) => {
+                handleFiles(e.dataTransfer.files);
+            });
+
+            // Click browse selection handling
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                containerFiles = [...containerFiles, ...Array.from(files)];
+                renderQueue();
+            }
+
+            // Render current files inside this instance's checklist 
+            function renderQueue() {
+                fileList.innerHTML = '';
+                
+                if (containerFiles.length === 0) {
+                    fileList.appendChild(emptyMessage);
+                    fileCount.textContent = 0;
+                    return;
+                }
+
+                fileCount.textContent = containerFiles.length;
+
+                containerFiles.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.className = "list-group-item d-flex justify-content-between align-items-center small py-2";
+                    li.innerHTML = `
+                        <div>
+                            <i class="uil uil-file text-primary me-2"></i>
+                            <strong>${file.name}</strong> <span class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                    `;
+
+                    // Single delete trash button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = "button";
+                    deleteBtn.className = "btn btn-sm btn-link text-danger p-0";
+                    deleteBtn.innerHTML = `<i class="uil uil-times fs-5"></i>`;
+                    deleteBtn.addEventListener('click', () => {
+                        containerFiles.splice(index, 1);
+                        renderQueue();
+                    });
+
+                    li.appendChild(deleteBtn);
+                    fileList.appendChild(li);
+                });
+            }
+
+            // Clear everything inside this specific box
+            clearBtn.addEventListener('click', () => {
+                containerFiles = [];
+                fileInput.value = '';
+                renderQueue();
+            });
+
+            // Custom instance submit handler
+            uploadBtn.addEventListener('click', () => {
+                const documentTitle = container.querySelector(".card-title").innerText.trim();
+                
+                if (containerFiles.length === 0) {
+                    alert(`Please select files for: "${documentTitle}"`);
+                    return;
+                }
+
+                console.log(`Uploading ${containerFiles.length} items for container section: [${documentTitle}]`, containerFiles);
+                alert(`Uploading ${containerFiles.length} files from the section: "${documentTitle}"`);
+            });
+        });
+    });
+    </script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css" class="init">
+	
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">Visitor Listing</h3>    
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <div class="btn-group mr-1">
+                                    <button type="button" class="btn btn-primary btn-rounded mb-3 mb-sm-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">More Actions <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Save as Excel</a>
+                                    </div>
+                                </div><!-- /btn-group -->
+                                <button type="button" class="btn btn-primary btn-rounded" onclick="location.href='visitor-register.html';"><i class="uil-plus mr-1"></i> Register</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        
+                                        <div class="mb-2">
+                                            <form class="">
+                                                <div class="mb-2">
+                                                    <div class="form-row align-items-center">
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <select class="form-control custom-select">
+                                                                    <option selected>Status</option>
+                                                                    <option selected>All Status</option>
+                                                                    <option>Pending Approval</option>
+                                                                    <option>Approved</option>
+                                                                    <option>Overnight</option>
+                                                                    <option>Penalty</option>
+                                                                    <option>Expired</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <select class="form-control custom-select">
+                                                                    <option selected>With Car</option>
+                                                                    <option>Yes</option>
+                                                                    <option>No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2">
+                                                            <div class="form-group mb-3">
+                                                                <select class="form-control custom-select">
+                                                                    <option selected>Visitor Type</option>
+                                                                    <option>Visitor</option>
+                                                                    <option>Contractor</option>
+                                                                    <option>Drop off</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>No.</th>
+                                                                <th class="text-center">Status</th>
+                                                                <th>With Car</th>
+                                                                <th>QR Code</th>
+                                                                <th>Unit to Visit</th>
+                                                                <th>Visitor</th>
+                                                                <th>Visitor Type</th>
+                                                                <th class="text-center">Overnight</th>
+                                                                <th>Register on</th>
+                                                                <th>Register by</th>
+                                                                <th>Approved Date</th>
+                                                                <th>Approved By</th>
+                                                                <th>Car Plate No.</th>
+                                                                <th>Entry</th>
+                                                                <th>Exit</th>
+                                                                <th class="text-right">Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a class="btn btn-sm btn-light btn-rounded p-2 border-success animate-blinker2s" data-toggle="modal" data-target="#modal-readnotice">
+                                                                        <div data-toggle="tooltip" data-placement="top" title="" data-original-title="Mark as Read"><i data-feather="bell" class="icon-xs icon-dual-success cursor-pointer"></i></div>
+                                                                    </a>
+                                                                </td>
+                                                                <td>8</td>
+                                                                <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>8-10-02</td>
+                                                                <td><a href="visitor-with-vehicle-approved-edit.html">Faith<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td class="text-center">No</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td>20 Oct 2024</td>
+                                                                <td>Catherine<br>8-10-02</td>
+                                                                <td class="text-center">MMM 4444</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>1</td>
+                                                                <td class="text-center"><span class="badge badge-warning width-sm">Pending approval</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td></td>
+                                                                <td>6-10-02</td>
+                                                                <td><a href="visitor-with-vehicle-dropoff-waitapprove-edit.html">Eugene<br>012 345 6789</a></td>
+                                                                <td>Drop off</td>
+                                                                <td class="text-center">No</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-center">PDD 1111</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>                                                                                    
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>2</td>
+                                                                <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>8-10-02</td>
+                                                                <td><a href="visitor-with-vehicle-approved-overnight-edit.html">CJ<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td class="text-center">Yes</td>
+                                                                <td>17 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Bee<br>8-10-02</td>
+                                                                <td>17 Oct 2024</td>
+                                                                <td>Bee<br>8-10-02</td>
+                                                                <td class="text-center">JJJ 9999</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="text-danger">
+                                                                <td></td>
+                                                                <td>3</td>
+                                                                <td class="text-center"><span class="badge badge-danger width-sm">Penalty</span><br><b>RM 15.00</b> <i class="uil uil-question-circle"  data-toggle="tooltip"
+                                                                    data-placement="top" title=""
+                                                                    data-original-title="3 hrs x RM 5.00"></i></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>6-10-02</td>
+                                                                <td><a href="visitor-with-vehicle-penalty-edit.html">Ahmad<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td class="text-center">No</td>
+                                                                <td>19 Oct 2024<br>3:30:02pm</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td>19 Oct 2024</td>
+                                                                <td>Sue<br>6-10-02</td>
+                                                                <td class="text-center">WWW 2222</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#">Pay Penalty</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>4</td>
+                                                                <td class="text-center"><span class="badge badge-success width-sm">Approved</span></td>
+                                                                <td class="text-center"><i class="uil uil-times font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>8-10-02</td>
+                                                                <td><a href="#">Faith<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td class="text-center">-</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-center">-</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td>5</td>
+                                                                <td class="text-center"><span class="badge badge-danger width-sm">Expired</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>8-10-02</td>
+                                                                <td><a href="#">Faith<br>012 345 6789</a></td>
+                                                                <td>Visitor</td>
+                                                                <td class="text-center">No</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Security<br>(Malik - 20948657)</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-center">MMM 3333</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>6</td>
+                                                                <td class="text-center"><span class="badge badge-danger width-sm">Expired</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td class="text-center"><a href="security-visitor-qrcode-ticket.html" class="btn btn-sm btn-soft-primary btn-rounded p-2 pl-3 pr-3" target="_blank"><i class="uil uil-focus"></i></a></td>
+                                                                <td>6-10-02</td>
+                                                                <td><a href="#">Timothy<br>012 345 6789</a></td>
+                                                                <td>Contractor</td>
+                                                                <td class="text-center">No</td>
+                                                                <td>20 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Mathew<br>6-10-02</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-center">PDD 2222</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>                                                                                    
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>7</td>
+                                                                <td class="text-center"><span class="badge badge-warning width-sm">Pending Approval</span></td>
+                                                                <td class="text-center"><i class="uil uil-check font-md"></i></td>
+                                                                <td></td>
+                                                                <td>6-10-02</td>
+                                                                <td><a href="#">Benjamin<br>012 345 6789</a></td>
+                                                                <td>Contractor</td>
+                                                                <td class="text-center">Yes</td>
+                                                                <td>17 Oct 2024<br>3:30:00pm</td>
+                                                                <td>Michelle<br>6-10-02</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td class="text-center">PPP 3</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right pb-1">
+                                                                    <a href="#" class="btn btn-success btn-sm btn-rounded" data-toggle="modal" data-target="#approvecontractor">Approve</a>
+                                                                    <div class="btn-group dropleft">
+                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu">
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#callUnit">Make a Call <i class="uil-phone mr-1 text-primary ml-2"></i></a>                                                                                    
+                                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note">Note</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+
+                                            <br><br>Note to developer:
+                                            <br>status “Expired” --> If owner did not approve within 15mins, system auto expired
+                                            <br> status "Penalty" --> If the owner in today visitor list and not out after new day...then Penalty will impose and security can filter and physically go check the car or make calls.
+                                            <br>if registered by occupant, mo only can view the details, so no Save button.
+                                        </div>
+
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                                
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal read notification -->
+            <div class="modal fade" id="modal-readnotice" tabindex="-1" role="dialog" aria-labelledby="modal-errorLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="">Access Passed</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <i class="uil-smile text-success display-3"></i>
+                            <!-- <h4 class="text-success mt-2">Access Passed</h4> -->
+                            <div class="mx-auto text-muted mb-2"><small>Approved on 24 Jun 2024, 3:30:40pm</small></div>
+                            <p class="w-75 mx-auto text-muted">Visitor access to the building is permitted.</p>
+                            <div class="mt-4 mb-3">
+                                <a href="#" class="btn btn-outline-primary btn-rounded width-md"  data-dismiss="modal"><i class="uil uil-comment-alt-check mr-1"></i>Mark as Read</a>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- modal read notification end -->
+
+            <!-- modal note -->
+            <div class="modal fade" id="note" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Note</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+                                            <textarea class="form-control" rows="4"
+                                            id="example-textarea"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary btn-rounded width-sm">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end note -->
+
+            <!-- modal Call -->
+            <div class="modal fade" id="callUnit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Unit: 6-10-02</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center mt-2 mb-2">
+                            <h5 class="mb-4" id="exampleModalScrollableTitle">Call Occupant<br><span class="badge badge-soft-primary badge-pill p-2 pl-4 pr-4 m-2">013 555 5733</span></h5>
+                            <div class="col-md-12 border-top-gray300 mt-1 mb-4"></div>
+                            <h5 class="mb-4">Call Visitor<br><span class="badge badge-soft-primary badge-pill p-2 pl-4 pr-4 m-2">013 111 5733</span></h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal Call end-->
+
+            <!-- modal approve contractor -->
+            <div class="modal fade" id="approvecontractor" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Approve Visitor Registration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal text-color-black">
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Unit to Visit</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">6-10-02</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Visitor</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">Benjamin (012 345 6789)</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Visitor Type</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">Contractor</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Overnight</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">Yes</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Car Plate No.</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">PPP 3</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Parking starts on</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">20 Oct 2024</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Parking ends on</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">22 Oct 2024</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Overnight parking Payment</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <div class="form-group mb-2">RM 3.00 x 2 = RM 6.00 <span class="badge badge-success">Paid</span></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xl-4">
+                                        <div class="form-group mb-2 font-weight-bold">Approval Remarks</div>
+                                    </div>
+                                    <div class="col col-xl-8">
+                                        <textarea class="form-control" rows="4" id="example-textarea"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-success btn-rounded width-sm">Approve Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end approve contractor -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        
+    </body>
+</html>

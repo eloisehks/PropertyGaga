@@ -51,10 +51,10 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Edit Visitor (Vehicle)</h3>
+                                <h3 class="mb-1 mt-0">Edit Visitor</h3>
                                 <span class="badge badge-danger width-sm">Penalty</span> <b>RM 15.00</b> <i class="uil uil-question-circle"  data-toggle="tooltip"
                                 data-placement="top" title=""
-                                data-original-title="RM 5.00 /hr"></i> 
+                                data-original-title="3 hrs x RM 5.00"></i> 
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
@@ -70,27 +70,55 @@
                                         <form class="form-horizontal">
                                             <div class="row">
                                                 <div class="col"> 
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Need a Car?</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadioyes"
+                                                                    name="customRadio" class="custom-control-input"
+                                                                    value="needcar" checked disabled>
+                                                                <label class="custom-control-label"
+                                                                    for="customRadioyes">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadiono"
+                                                                    name="customRadio" class="custom-control-input"
+                                                                    value="noneedcar" disabled>
+                                                                <label class="custom-control-label"
+                                                                    for="customRadiono">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Car Plate No.</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="WWW 2222" disabled>
+                                                        </div>
+                                                    </div>
                                                     <div class="form-row row align-items-center mb-2">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Visitor Type</label>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" id="vehicle11" name="customRadio1"
-                                                                    class="custom-control-input" checked>
+                                                                    class="custom-control-input" checked disabled>
                                                                 <label class="custom-control-label" for="vehicle11">Visitor</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" id="vehicle22" name="customRadio1"
-                                                                    class="custom-control-input">
+                                                                    class="custom-control-input" disabled>
                                                                 <label class="custom-control-label" for="vehicle22">Contractor</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="custom-control custom-radio">
                                                                 <input type="radio" id="vehicle33" name="customRadio1"
-                                                                    class="custom-control-input">
+                                                                    class="custom-control-input" disabled>
                                                                 <label class="custom-control-label" for="vehicle33">Drop off</label>
                                                             </div>
                                                         </div>
@@ -99,14 +127,46 @@
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Vehicle Type</label>
                                                             <div class="col-lg-5">
-                                                            <select class="form-control custom-select">
+                                                            <select class="form-control custom-select" disabled>
                                                                 <option>Select Vehicle Type</option>
                                                                 <option selected>Car</option>
                                                                 <option>Lorry</option>
                                                                 <option>Motorcycle</option>
                                                                 <option>Big Truck</option>
+                                                                <option>School Bus</option>
+                                                                <option>Factory Bus</option>
                                                                 <option>Others</option>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Overnight parking?</label>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadioyesyes" name="customRadio22"
+                                                                    class="custom-control-input" disabled>
+                                                                <label class="custom-control-label" for="customRadioyesyes">Yes (RM 3.00 /day)</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="customRadionono" name="customRadio22"
+                                                                    class="custom-control-input" checked disabled>
+                                                                <label class="custom-control-label" for="customRadionono">No (Penalty RM 5.00 /hr)</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Entry Date & Time</label>
+                                                        <div class="col-lg-5">
+                                                            <input class="form-control" id="datetime-datepicker" type="date" name="date" placeholder="" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label">Exit Date & Time</label>
+                                                        <div class="col-lg-5">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="" disabled>
                                                         </div>
                                                     </div>
                                                     <!-- <div class="form-row align-items-center mb-2">
@@ -137,7 +197,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Unit to Visit</label>
                                                         <div class="col-lg-5">
-                                                            <select data-plugin="customselect" class="form-control">
+                                                            <select data-plugin="customselect" class="form-control" disabled>
                                                                 <option value="0">Select Unit No.</option>
                                                                 <option value="1" selected>8-18-3A</option>
                                                                 <option value="2">8-19-03</option>
@@ -169,58 +229,35 @@
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Name</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="Ahmad">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Ahmad" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Visitor Contact No.</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="012 345 6789">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Car Plate No.</label>
-                                                        <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="WWW 2222">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="012 345 6789" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-3 col-form-label" for="example-fileinput">Note</label>
                                                         <div class="col-lg-5">
-                                                            <textarea class="form-control" rows="4" id="textarea"></textarea>
+                                                            <textarea class="form-control" rows="4" id="textarea" disabled></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Register by</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="Security (Malik - 20948657)">
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Security (Malik - 20948657)" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Register Date & Time</label>
+                                                        <label class="col-lg-3 col-form-label">Register on</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="19 Oct 2024, 3:30:00pm">
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" value="19 Oct 2024, 3:30:00pm" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row align-items-center mb-2">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Overnight parking?</label>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadioyesyes" name="customRadio22"
-                                                                    class="custom-control-input">
-                                                                <label class="custom-control-label" for="customRadioyesyes">Yes (RM 3.00 /day)</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="custom-control custom-radio">
-                                                                <input type="radio" id="customRadionono" name="customRadio22"
-                                                                    class="custom-control-input" checked>
-                                                                <label class="custom-control-label" for="customRadionono">No (Penalty RM 5.00 /hr)</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
+                                                    
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Parking Date & Time</label>
                                                         <label class="col-auto col-form-label">From</label>
                                                         <div class="col-auto">
@@ -230,14 +267,7 @@
                                                         <div class="col-auto">
                                                             <input type="text" id="datetime-datepicker" class="form-control" placeholder="To" value="20 Oct 2024, 9:00 pm">
                                                         </div>
-                                                    </div>
-                                                    <div class="form-row align-items-center mb-2">
-                                                        <label class="col-lg-3 col-form-label"
-                                                            for="simpleinput">Penalty Fees</label>
-                                                        <div class="col-auto font-weight-semibold">
-                                                            RM 5.00 x 3 hrs (exceeded) = RM 15.00 <span class="badge badge-success">Paid</span>
-                                                        </div>
-                                                    </div>
+                                                    </div> -->
                                                     <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Parking starts on</label>
                                                         <div class="col-lg-5">
@@ -357,7 +387,8 @@
                                                             </select>
                                                         </div>
                                                     </div> -->
-                                                    <div class="form-group row">
+                                                    
+                                                    <!-- <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Parking Lot
                                                             <br>
@@ -365,13 +396,13 @@
                                                         </label>
                                                         <div class="col-lg-5">
                                                             <input type="text" class="form-control" id="" placeholder="" value="Parking Lot Name 2 (Limited to 2 slots)" disabled>
-                                                            <!-- <select data-plugin="customselect" class="form-control" data-placeholder="Select an option">
+                                                            <select data-plugin="customselect" class="form-control" data-placeholder="Select an option">
                                                                 <option></option>
                                                                 <option value="0" selected>Parking Lot Name 11</option>
                                                                 <option value="1">Parking Lot Name 12</option>
                                                                 <option value="2">Parking Lot Name 13</option>
                                                                 <option value="4">Parking Lot Name 14</option>
-                                                            </select> -->
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row" id="affected">
@@ -409,20 +440,27 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="form-group row">
                                                         <label class="col-lg-3 col-form-label">Approved by</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" class="form-control" id="" placeholder="" value="Sue (8-10-02)" disabled>
+                                                            <input type="text" class="form-control" id="" placeholder="" value="Sue (8-10-3A)" disabled>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-lg-3 col-form-label">Approved Date & Time</label>
+                                                        <label class="col-lg-3 col-form-label">Approved on</label>
                                                         <div class="col-lg-5">
-                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="" value="[date], [time] pm" disabled>
+                                                            <input type="text" id="datetime-datepicker" class="form-control" placeholder="Date and Time" value="19 Oct 2024, 3:30:00pm" disabled>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row mb-4">
+                                                    <div class="form-row align-items-center mb-2">
+                                                        <label class="col-lg-3 col-form-label"
+                                                            for="simpleinput">Penalty Fees</label>
+                                                        <div class="col-auto font-weight-semibold">
+                                                            RM 5.00 x 3 hrs (exceeded) = RM 15.00 <span class="badge badge-danger">Outstanding</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-row mb-4">
                                                         <label class="col-lg-3 col-form-label"
                                                             for="simpleinput">Access Method</label>
                                                         <div class="col-auto mt-2">
@@ -451,16 +489,16 @@
                                                                 <a href="#" class="btn btn-outline-primary btn-rounded ml-2 btn-sm">Activate</a>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </form>
 
                                         <div class="float-right">
                                             <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
-                                            <button type="submit" class="btn btn-danger btn-rounded mr-1" data-toggle="modal" data-target="#">Pay Penalty</button>
-                                            <button type="submit" class="btn btn-outline-danger btn-rounded mr-1" data-toggle="modal" data-target="#callUnit">Make a Call</button>
-                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button>
+                                            <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" data-toggle="modal" data-target="#callUnit">Make a Call</button>
+                                            <!-- <button type="submit" class="btn btn-primary btn-rounded mr-1" onclick="window.history.go(-1);">Save</button> -->
+                                            <button type="submit" class="btn btn-primary btn-rounded mr-1" data-toggle="modal" data-target="#">Pay Penalty</button>
                                         </div>
             
                                     </div> <!-- end card-body -->

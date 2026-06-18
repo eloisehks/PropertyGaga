@@ -143,7 +143,70 @@
                     </form>
 
                     <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
-                        <li class="d-none d-sm-block">
+
+                        <li class="dropdown d-none d-lg-block notification-list pt-3 mr-2" data-toggle="tooltip" data-placement="left" title="3 online">
+                
+                            <button type="button" 
+                                    class="btn p-0 border-0 d-flex align-items-center avatar-group-trigger" 
+                                    id="onlineAdminsDropdown" 
+                                    data-toggle="dropdown" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false"
+                                    style="background: none; outline: none; box-shadow: none;">
+                    
+                                <div class="avatar-group d-flex align-items-center">
+                                    <div class="position-relative" style="z-index: 2; margin-right: -10px;">
+                                        <img src="assets/images/users/avatar-1.jpg" 
+                                            class="rounded-circle avatar-sm img-thumbnail" 
+                                            alt="user-img"
+                                            style="width: 36px; height: 36px; object-fit: cover;">
+                                        <span class="position-absolute rounded-circle bg-success border border-white" 
+                                            style="width: 10px; height: 10px; bottom: 2px; right: 2px; display: block;"></span>
+                                    </div>
+                        
+                                    <div class="avatar-sm d-flex align-items-center justify-center rounded-circle bg-soft-primary text-primary font-weight-semibold font-size-14 border border-white" 
+                                        style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background-color: #eef2f7; color: #3bafda; font-weight: 600; z-index: 1;">
+                                        +3
+                                    </div>
+                                </div>
+                            </button>
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-end border-0 shadow-lg p-3" 
+                                aria-labelledby="onlineAdminsDropdown" 
+                                style="min-width: 240px; border-radius: 12px; margin-top: 8px;">
+                    
+                                <div class="d-flex flex-column" style="gap: 12px;">
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle" alt="Nolan" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Nolan Carder</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt="Lydia" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Lydia Baptista</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center py-1">
+                                        <div class="position-relative">
+                                            <img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt="Gretchen" style="width: 32px; height: 32px; object-fit: cover;">
+                                            <span class="position-absolute rounded-circle bg-success border border-white" style="width: 8px; height: 8px; bottom: 1px; right: 1px;"></span>
+                                        </div>
+                                        <span class="ml-2 ms-2 text-dark font-weight-medium font-size-14">Gretchen Siphron</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                
+                        </li>
+
+                        <!-- <li class="d-none d-sm-block">
                             <div class="app-search">
                                 <form>
                                     <div class="input-group">
@@ -152,7 +215,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li> -->
 
                         <!--<li class="dropdown d-none d-lg-block" data-toggle="tooltip" data-placement="left" title="Change language">
                             <a class="nav-link dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button"
@@ -517,6 +580,7 @@
                                     <span class="badge badge-success float-right"></span>
                                     <span>AGM / EGM</span>
                                 </a>
+        
                                 <!-- <a href="javascript: void(0);">
                                     <i class="uil uil-meeting-board"></i>
                                     <span>General Meeting </span>
@@ -554,13 +618,17 @@
                                         <a href="visitorparking-settings-first.html">Visitor Parking Settings</a>
                                     </li>
                                     <li>
+                                        <a href="visitor-listing.html">Visitor
+                                        </a>
+                                    </li>
+                                    <!-- <li>
                                         <a href="visitor-with-vehicle.html">Visitor (Vehicle)
                                         </a>
                                     </li>
                                     <li>
                                         <a href="visitor-without-vehicle.html">Visitor (Pedestrian)
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                             <li>
@@ -1565,33 +1633,8 @@
                             </div>
                         </div>
 
-                        <!-- <div class="row">
-                            <div class="col-md-8 col-xl-8">
-                                <div class="form-group mt-3 mt-sm-0">
-                                    <select data-plugin="customselect" class="form-control">
-                                        <option value="0">OT022 - Cigarette butt in balcony</option>
-                                        <option value="1" selected>OT022 - Water ponding in facility floor Water ponding in facility floor Water ponding in facility floor</option>
-                                        <option value="2">OT062 - No Light at P3 parking</option>
-                                        <option value="4">OT092 - Corridor not clean</option>
-                                        <option value="0">OT022 - Cigarette butt in balcony</option>
-                                        <option value="1">OT022 - Water ponding in facility floor</option>
-                                        <option value="2">OT062 - No Light at P3 parking</option>
-                                        <option value="4">OT092 - Corridor not clean</option>
-                                        <option value="0">OT022 - Cigarette butt in balcony</option>
-                                        <option value="1">OT022 - Water ponding in facility floor</option>
-                                        <option value="2">OT062 - No Light at P3 parking</option>
-                                        <option value="4">OT092 - Corridor not clean</option>
-                                        <option value="0">OT022 - Cigarette butt in balcony</option>
-                                        <option value="1">OT022 - Water ponding in facility floor</option>
-                                        <option value="2">OT062 - No Light at P3 parking</option>
-                                        <option value="4">OT092 - Corridor not clean</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> -->
-
                         <div class="row">
-                            <div class="col col-xl-2 col-lg-2 col-md-3 col-sm-2 col-xs-2">
+                            <div class="col-xl-2 col-lg-2">
                                 <div class="mb-0">
                                     <div class="form-group">
                                         <select class="form-control custom-select">
@@ -1615,7 +1658,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-xl-10 col-lg-10 col-md-9 col-sm-10 col-xs-10 pl-1">
+                            <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 pl-1">
                                 <div class="card">
                                     <div class="card-body">
                                         
@@ -2085,9 +2128,9 @@
                                                                     <div class="mt-sm-0 mr-3 ml-3">
                                                                         <ol class="list-inline font-13">
                                                                             <li class="list-inline-item pr-1 text-color-greenBright">
-                                                                            <span class="mr-2 pl-1 pr-0 pt-1 pb-1 text-color-greenBright rounded-circle"><i class="uil uil-award mr-1 font-size-18"></i></span>Company Name 1Company Name 1Company
+                                                                            <span class="mr-2 pl-1 pr-0 pt-1 pb-1 text-color-greenBright rounded-circle"><i class="uil uil-award mr-1 font-size-18"></i></span>Company Name <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
                                                                             </li>
-                                                                            <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
+                                                                            <div><small class="ml-4 pl-3 text-muted">Approved by Sandy on 28 Oct 2023, 3:30pm</small></div>
                                                                         </ol>
                                                                     </div>
                                                                     
@@ -2097,8 +2140,8 @@
                                                                         <ol class="list-inline font-13">
                                                                             <li class="list-inline-item pr-1">
                                                                             <span class="mr-2 pl-2 pr-2 pt-1 pb-1 rounded-circle"><em>2.</em></span>Company Name 2
-                                                                            </li>
                                                                             <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
+                                                                            </li>
                                                                         </ol>
                                                                     </div>
                                                                     <!-- <div class="mt-sm-0 mr-3 form-inline">
@@ -2128,8 +2171,8 @@
                                                                         <ol class="list-inline font-13">
                                                                             <li class="list-inline-item pr-1">
                                                                             <span class="mr-2 pl-2 pr-2 pt-1 pb-1 rounded-circle"><em>3.</em></span>Company Name 3
-                                                                            </li>
                                                                             <a href="assets/images/propertygaga/quotation.jpg" class="font-16" target="_blank"><i class="uil uil-bill" data-toggle="tooltip" data-placement="top" title="" data-original-title="Preview Quotation"></i></a>
+                                                                            </li>
                                                                         </ol>
                                                                     </div>
                                                                     <!-- <div class="mt-sm-0 mr-3 form-inline">
@@ -2359,14 +2402,15 @@
                                                             <div class="col col-auto mr-3">
                                                                 <h4 class="m-0 mb-2">
                                                                     Start Work
-                                                                    <br><span class="text-muted font-size-13 font-weight-normal">on 28 Sep 2023, 3:00pm</span>
+                                                                    <br><span class="text-muted font-size-13 font-weight-normal">by Staff 1 on 28 Sep 2023, 3:00pm</span>
                                                                     <div class="text-danger font-size-13 font-weight-normal pt-0">Estimated complete on 23 Oct 2023, 3:00pm</div>
-                                                                    <div class="font-size-13 font-weight-normal pt-0">Person in charge: Ivan, 012 345 6789</div>
                                                                 </h4>
                                                             </div>
                                                             <div class="col-auto mr-3">
                                                                 <span class="font-weight-bold">Company 1</span><span class="badge badge-success badge-pill ml-2">Online</span>
-                                                                <p>03 462 4869</p>
+                                                                <p>
+                                                                    Worker Name 1<br>012 462 4869
+                                                                </p>
                                                             </div>
                                                             <div class="col-auto mr-3">
                                                                 <span class="font-weight-bold">P.O. No.</span> <i class="uil uil-history text-danger text-lg" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Pending Acceptance"></i>
@@ -2401,14 +2445,15 @@
                                                             <div class="col col-auto mr-3">
                                                                 <h4 class="m-0 mb-2">
                                                                     Start Work
-                                                                    <br><span class="text-muted font-size-13 font-weight-normal">on 28 Sep 2023, 3:00pm</span>
+                                                                    <br><span class="text-muted font-size-13 font-weight-normal">by Staff 1 on 28 Sep 2023, 3:00pm</span>
                                                                     <div class="text-danger font-size-13 font-weight-normal pt-0">Estimated complete on 23 Oct 2023, 3:00pm</div>
-                                                                    <div class="font-size-13 font-weight-normal pt-0">Person in charge: Ivan, 012 345 6789</div>
                                                                 </h4>
                                                             </div>
                                                             <div class="col-auto mr-3">
-                                                                <span class="font-weight-bold">Person in charge</span>
-                                                                <p>Fatimah</p>
+                                                                <!-- <span class="font-weight-bold">Person in charge</span> -->
+                                                                <p>
+                                                                    Worker Name 1<br>012 462 4869
+                                                                </p>
                                                             </div>
                                                             <div class="col-auto mr-3">
                                                             </div>
@@ -3503,8 +3548,13 @@
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="David" />
-                                                        
                                                     </div>
+                                                </div>
+                                                <div class="mt-4 mt-md-4">
+                                                   <p>
+                                                        <small>Uploaded by Janice on 10 Sep 2023, 3:30pm</small><br>
+                                                        <small>Updated by Janice on 10 Sep 2023, 3:50pm</small>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-sm-12">
@@ -3691,6 +3741,12 @@
                                                         
                                                     </div>
                                                 </div>
+                                                <div class="mt-4 mt-md-4">
+                                                   <p>
+                                                        <small>Uploaded by Janice on 10 Sep 2023, 3:30pm</small><br>
+                                                        <small>Updated by Janice on 10 Sep 2023, 3:50pm</small>
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="col-lg-9 col-sm-12">
                                                 <div class="form-group mt-3 mt-sm-0">
@@ -3836,8 +3892,13 @@
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Arya S" />
-                                                        
                                                     </div>
+                                                </div>
+                                                <div class="mt-4 mt-md-4">
+                                                   <p>
+                                                        <small>Uploaded by Janice on 10 Sep 2023, 3:30pm</small><br>
+                                                        <small>Updated by Janice on 10 Sep 2023, 3:50pm</small>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-9 col-sm-12">

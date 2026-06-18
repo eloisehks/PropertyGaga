@@ -3,7 +3,7 @@
 const gulp = require("gulp"),
     newer = require("gulp-newer"),
     imagemin = require("gulp-imagemin"),
-    sass = require("gulp-sass"),
+    sass = require("gulp-sass")(require('sass')),
     sourcemaps = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer"),
     cleanCSS = require('gulp-clean-css'),
