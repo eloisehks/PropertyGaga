@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">AGM / EGM: <small class="ml-2">EAD AGM - AGM001</small></h3>
+                                <div class="row mb-1 align-items-center">
+                                    <div class="col col-auto">
+                                        <div class="badge badge-soft-danger mb-2">Preparation</div>
+                                    </div>
+                                    <div class="col col-lg-6 col-lg-3">
+                                        <div class="progress mt-0 mt-sm-0" style="height: 5px;" data-toggle="tooltip"
+                                            data-placement="top" title="" data-original-title="Readiness 20%">
+                                            <div class="progress-bar bg-warning" role="progressbar"
+                                                style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="20"></div>
+                                        </div>
+                                        <small>Readiness 20%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="#" class="btn btn-dark btn-rounded px-4 mr-2 disabled">
+                                    <img src="assets/images/icons/go-live.svg" class="mr-2" style="width: 23px !important;">Go Live
+                                </a>
+                                <a href="agm.html"><i class="uil-arrow-left mr-1"></i> Back to Main </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="card bg-color-lightBlue">
+                                    <div class="card-body p-0 ml-0 mr-0 mb-2 mt-0">
+                                        <div class="list-group mt-2 pb-2 font-size-12 font-weight-semibold">
+                                            <a href="agm-setup.html" class="list-group-item border-0 text-color-primary">Settings</a>
+                                            <a href="agm-timeline.html" class="list-group-item border-0 text-color-primary">Timeline & Checklist</a>
+                                            <a href="agm-agenda.html" class="list-group-item border-0 text-color-primary-active">Agenda</a>
+                                            <a href="agm-resolutions.html" class="list-group-item border-0 text-color-primary">Resolutions</a>
+                                            <a href="agm-voting.html" class="list-group-item border-0 text-color-primary">Voting</a>
+                                            <a href="agm-participants.html" class="list-group-item border-0 text-color-primary">Participants</a>
+                                            <a href="agm-documents.html" class="list-group-item border-0 text-color-primary">Documents<span class="badge badge-success float-right mr-2 paddingtop-4">5</span></a>
+                                            <a href="agm-submitted-documents.html" class="list-group-item border-0 text-color-primary">Submitted Docs.</a>
+                                            <a href="agm-readiness.html" class="list-group-item border-0 text-color-primary">Readiness</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        
+                                        <div class="mt-0">
+                                            <div class="agenda-container">
+    
+                                                <!-- Top Layout Header Row -->
+                                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                                    <div>
+                                                        <h5 class="header-title mb-1 mt-0">Agenda Builder</h5>
+                                                        <p class="text-muted mb-0">8 items • Total 1h 40m</p>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#addItemModal">
+                                                        <i class="uil uil-plus mr-2"></i>Add Item
+                                                    </button>
+                                                </div>
+
+                                                <!-- Active List Layout Wrapper -->
+                                                <div id="agenda-items-wrapper">
+                                                    
+                                                    <!-- Item 1 -->
+                                                    <div class="agenda-item p-2 cat-procedural" data-duration="5" data-category="procedural">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">1</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Opening & Attendance</span>
+                                                                    <span class="badge badge-soft badge-soft-procedural align-middle">Procedural</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Dr. Amelia Chen</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>5m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 2 -->
+                                                    <div class="agenda-item p-2 cat-presentation" data-duration="30" data-category="presentation">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">2</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Acquisition Overview: SolarPath Pty Ltd</span>
+                                                                    <span class="badge badge-soft badge-soft-presentation align-middle">Presentation</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Investment Bank Representative</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>30m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 3 -->
+                                                    <div class="agenda-item p-2 cat-procedural" data-duration="5" data-category="procedural">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">3</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Quorum Verification</span>
+                                                                    <span class="badge badge-soft badge-soft-procedural align-middle">Procedural</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Mr. Robert Blackwood</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>5m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 4 -->
+                                                    <div class="agenda-item p-2 cat-presentation" data-duration="15" data-category="presentation">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">4</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Purpose of EGM</span>
+                                                                    <span class="badge badge-soft badge-soft-presentation align-middle">Presentation</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Dr. Amelia Chen</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>15m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 5 -->
+                                                    <div class="agenda-item p-2 cat-discussion" data-duration="20" data-category="discussion">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">5</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Q&A — Proposed Acquisition</span>
+                                                                    <span class="badge badge-soft badge-soft-discussion align-middle">Discussion</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Board Panel</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>20m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 6 -->
+                                                    <div class="agenda-item p-2 cat-vote" data-duration="10" data-category="vote">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">6</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Resolution: Approval of Acquisition</span>
+                                                                    <span class="badge badge-soft badge-soft-vote align-middle">Vote</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Board Panel</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>10m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 7 -->
+                                                    <div class="agenda-item p-2 cat-vote" data-duration="10" data-category="vote">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">7</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Resolution: Authority to Issue New Shares</span>
+                                                                    <span class="badge badge-soft badge-soft-vote align-middle">Vote</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Board Panel</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>10m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item 8 -->
+                                                    <div class="agenda-item p-2 cat-procedural" data-duration="5" data-category="procedural">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center flex-grow-1">
+                                                                <div class="reorder-actions d-flex flex-column mr-2">
+                                                                    <button class="action-icon-btn py-0 move-up"><i class="uil uil-angle-up font-size-22"></i></button>
+                                                                    <button class="action-icon-btn py-0 move-down"><i class="uil uil-angle-down font-size-22"></i></button>
+                                                                </div>
+                                                                <div class="index-circle mr-3">8</div>
+                                                                <div class="mr-3">
+                                                                    <span class="item-title d-inline-block align-middle mr-2">Closing</span>
+                                                                    <span class="badge badge-soft badge-soft-procedural align-middle">Procedural</span>
+                                                                    <div class="item-presenter mt-1">Presenter: Dr. Amelia Chen</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="time-text mr-3"><i class="uil uil-clock mr-1"></i><span>5m</span></div>
+                                                                <div class="management-actions">
+                                                                    <button class="action-icon-btn btn-edit"><i class="uil uil-pen"></i></button>
+                                                                    <button class="action-icon-btn btn-delete"><i class="uil uil-trash-alt"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Layout Summary Footer Bar -->
+                                                <div class="agenda-footer-summary d-flex justify-content-between align-items-center mt-3">
+                                                    <span id="footer-count">8 agenda items</span>
+                                                    <span id="footer-duration">Estimated duration: 1h 40min</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- Structural Add Modal Setup Component -->
+            <div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Agenda Item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form id="edit-agenda-form">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="font-weight-600">Item Title</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-600">Presenter Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="font-weight-600">Category Tag</label>
+                                        <select class="form-control">
+                                            <option value="procedural">Procedural</option>
+                                            <option value="presentation">Presentation</option>
+                                            <option value="discussion">Discussion</option>
+                                            <option value="vote">Vote</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="font-weight-600">Duration (Minutes)</label>
+                                        <input type="number" class="form-control" min="1" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-rounded">Add Item</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Structural Edit Modal Setup Component -->
+            <div class="modal fade" id="editItemModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Modify Agenda Item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form id="edit-agenda-form">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="font-weight-600">Item Title</label>
+                                    <input type="text" id="edit-title" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-600">Presenter Name</label>
+                                    <input type="text" id="edit-presenter" class="form-control" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="font-weight-600">Category Tag</label>
+                                        <select id="edit-category" class="form-control">
+                                            <option value="procedural">Procedural</option>
+                                            <option value="presentation">Presentation</option>
+                                            <option value="discussion">Discussion</option>
+                                            <option value="vote">Vote</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="font-weight-600">Duration (Minutes)</label>
+                                        <input type="number" id="edit-duration" class="form-control" min="1" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-rounded">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <script src="assets/libs/smartwizard/jquery.smartWizard.min.js"></script>
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+
+
+    <!-- optional plugins -->
+    <script src="assets/libs/moment/moment.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- page js -->
+    <script src="assets/js/pages/widgets.init.js"></script>
+    
+
+    <!--  agenda -->
+    <script>
+    $(document).ready(function() {
+        let currentlyEditingRow = null;
+
+        // Dynamic metrics engine processing calculation
+        function updateIndicesAndTotals() {
+            let totalMinutes = 0;
+            const items = $('.agenda-item');
+            
+            items.each(function(index) {
+                // Adjust Index Text
+                $(this).find('.index-circle').text(index + 1);
+                // Parse out aggregate calculation metric
+                totalMinutes += parseInt($(this).attr('data-duration')) || 0;
+            });
+
+            // Convert raw min aggregates into cleaner readable dashboard labels
+            const hours = Math.floor(totalMinutes / 60);
+            const mins = totalMinutes % 60;
+            let durationString = "";
+            if (hours > 0) {
+                durationString = hours + "h " + (mins > 0 ? mins + "m" : "");
+            } else {
+                durationString = mins + "m";
+            }
+
+            // Update UI Targets across the page matching Screenshot 2026-06-28 at 3.28.57 PM.png layout structures
+            $('#header-summary').text(items.length + ' items • Total ' + durationString);
+            $('#footer-count').text(items.length + ' agenda items');
+            $('#footer-duration').text('Estimated duration: ' + (hours > 0 ? hours + 'h ' : '') + mins + 'min');
+        }
+
+        // Live Reordering Engine: Swap nodes up
+        $(document).on('click', '.move-up', function() {
+            const currentCard = $(this).closest('.agenda-item');
+            const previousCard = currentCard.prev('.agenda-item');
+            if (previousCard.length > 0) {
+                currentCard.insertBefore(previousCard);
+                updateIndicesAndTotals();
+            }
+        });
+
+        // Live Reordering Engine: Swap nodes down
+        $(document).on('click', '.move-down', function() {
+            const currentCard = $(this).closest('.agenda-item');
+            const nextCard = currentCard.next('.agenda-item');
+            if (nextCard.length > 0) {
+                currentCard.insertAfter(nextCard);
+                updateIndicesAndTotals();
+            }
+        });
+
+        // Delete Row Lifecycle Engine Method
+        $(document).on('click', '.btn-delete', function() {
+            if(confirm('Are you sure you want to drop this item?')) {
+                $(this).closest('.agenda-item').remove();
+                updateIndicesAndTotals();
+            }
+        });
+
+        // Edit Configuration Context Capture Interaction Handler
+        $(document).on('click', '.btn-edit', function() {
+            currentlyEditingRow = $(this).closest('.agenda-item');
+            
+            // Extract active variables out of element contexts safely
+            const title = currentlyEditingRow.find('.item-title').text();
+            const presenterText = currentlyEditingRow.find('.item-presenter').text().replace('Presenter: ', '');
+            const category = currentlyEditingRow.attr('data-category');
+            const duration = currentlyEditingRow.attr('data-duration');
+
+            // Map data items smoothly straight into the dynamic modal context elements
+            $('#edit-title').val(title);
+            $('#edit-presenter').val(presenterText);
+            $('#edit-category').val(category);
+            $('#edit-duration').val(duration);
+
+            $('#editItemModal').modal('show');
+        });
+
+        // Dynamic State Storage and Save UI Component Action Loop Processing Pipeline
+        $('#edit-agenda-form').on('submit', function(e) {
+            e.preventDefault();
+            if (!currentlyEditingRow) return;
+
+            const newTitle = $('#edit-title').val();
+            const newPresenter = $('#edit-presenter').val();
+            const newCategory = $('#edit-category').val();
+            const newDuration = $('#edit-duration').val();
+
+            // Format dynamic CSS category tag tracking flags
+            currentlyEditingRow.removeClass('cat-procedural cat-presentation cat-discussion cat-vote')
+                                .addClass('cat-' + newCategory);
+            currentlyEditingRow.attr('data-category', newCategory);
+            currentlyEditingRow.attr('data-duration', newDuration);
+
+            // Mutate content metrics components dynamically
+            currentlyEditingRow.find('.item-title').text(newTitle);
+            currentlyEditingRow.find('.item-presenter').text('Presenter: ' + newPresenter);
+            currentlyEditingRow.find('.time-text span').text(newDuration + 'm');
+
+            // Format internal text context strings to map back clearly 
+            const badge = currentlyEditingRow.find('.badge-soft');
+            badge.removeClass('badge-soft-procedural badge-soft-presentation badge-soft-discussion badge-soft-vote')
+                 .addClass('badge-soft-' + newCategory)
+                 .text(newCategory.charAt(0).toUpperCase() + newCategory.slice(1));
+
+            // Force dynamic interface recalculation pass 
+            updateIndicesAndTotals();
+            $('#editItemModal').modal('hide');
+        });
+    });
+</script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:transparent}
+:root{
+  --sidebar-w:200px;
+  --blue:#185FA5;--blue-bg:#E6F1FB;--blue-t:#0C447C;
+  --green:#3B6D11;--green-bg:#EAF3DE;--green-t:#27500A;
+  --amber:#BA7517;--amber-bg:#FAEEDA;--amber-t:#633806;
+  --red:#A32D2D;--red-bg:#FCEBEB;--red-t:#791F1F;
+  --teal:#0F6E56;--teal-bg:#E1F5EE;--teal-t:#085041;
+  --gray-bg:#F1EFE8;--border:0.5px solid var(--color-border-tertiary);
+}
+.app{display:flex;min-height:600px;border:var(--border);border-radius:var(--border-radius-lg);overflow:hidden;background:var(--color-background-primary)}
+.sidebar{width:var(--sidebar-w);background:var(--color-background-secondary);border-right:var(--border);display:flex;flex-direction:column;flex-shrink:0}
+.sidebar-logo{padding:16px;border-bottom:var(--border);display:flex;align-items:center;gap:8px}
+.sidebar-logo span{font-weight:500;font-size:14px}
+.sidebar-badge{background:var(--blue-bg);color:var(--blue-t);font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500}
+.nav-section{padding:8px 0}
+.nav-label{font-size:11px;color:var(--color-text-tertiary);padding:6px 16px 2px;text-transform:uppercase;letter-spacing:.04em}
+.nav-item{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:13px;color:var(--color-text-secondary);cursor:pointer;border-radius:0;transition:background .15s}
+.nav-item:hover,.nav-item.active{background:var(--color-background-primary);color:var(--color-text-primary)}
+.nav-item i{font-size:16px;opacity:.7}
+.nav-item.active i{opacity:1}
+.nav-item .badge-num{margin-left:auto;background:var(--blue-bg);color:var(--blue-t);font-size:10px;padding:1px 5px;border-radius:8px}
+.content{flex:1;overflow:auto;display:flex;flex-direction:column}
+.topbar{padding:12px 20px;border-bottom:var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--color-background-primary);position:sticky;top:0;z-index:10}
+.topbar-title{font-size:15px;font-weight:500}
+.topbar-actions{display:flex;gap:8px}
+.btn{padding:6px 14px;font-size:13px;border-radius:var(--border-radius-md);cursor:pointer;border:var(--border);background:var(--color-background-primary);color:var(--color-text-primary);transition:background .15s}
+.btn:hover{background:var(--color-background-secondary)}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-primary:hover{background:var(--blue-t)}
+.page{padding:20px;display:none;flex:1}
+.page.active{display:block}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.kpi-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.kpi-label i{font-size:14px}
+.kpi-value{font-size:24px;font-weight:500}
+.kpi-sub{font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
+.kpi-draft .kpi-value{color:var(--color-text-secondary)}
+.kpi-prep .kpi-value{color:var(--blue)}
+.kpi-up .kpi-value{color:var(--amber)}
+.kpi-live .kpi-value{color:var(--green)}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em}
+.kanban{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kanban-col{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:14px}
+.col-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.col-title{font-size:13px;font-weight:500}
+.col-count{font-size:11px;color:var(--color-text-tertiary);background:var(--color-background-primary);padding:1px 6px;border-radius:8px;border:var(--border)}
+.agm-card{background:var(--color-background-primary);border:var(--border);border-radius:var(--border-radius-md);padding:14px;margin-bottom:10px;cursor:pointer;transition:border-color .15s}
+.agm-card:hover{border-color:var(--color-border-secondary)}
+.card-name{font-size:13px;font-weight:500;margin-bottom:8px}
+.card-meta{font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:4px;margin-bottom:8px}
+.card-meta i{font-size:14px}
+.progress-bar{height:4px;background:var(--color-background-secondary);border-radius:2px;overflow:hidden;margin-bottom:8px}
+.progress-fill{height:100%;border-radius:2px;transition:width .3s}
+.fill-blue{background:var(--blue)}
+.fill-green{background:var(--green)}
+.fill-amber{background:var(--amber)}
+.tag-row{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500}
+.tag-missing{background:var(--red-bg);color:var(--red-t)}
+.tag-ok{background:var(--green-bg);color:var(--green-t)}
+.tag-warn{background:var(--amber-bg);color:var(--amber-t)}
+.countdown-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--amber-bg);color:var(--amber-t);padding:3px 8px;border-radius:4px}
+.live-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;background:var(--green-bg);color:var(--green-t);padding:3px 8px;border-radius:4px}
+.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.workspace{display:flex;min-height:560px}
+.ws-sidebar{width:180px;border-right:var(--border);background:var(--color-background-secondary);flex-shrink:0}
+.ws-nav{padding:8px 0}
+.ws-item{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:13px;color:var(--color-text-secondary);cursor:pointer;transition:background .15s}
+.ws-item:hover,.ws-item.active{background:var(--color-background-primary);color:var(--color-text-primary)}
+.ws-item i{font-size:15px;opacity:.7}
+.ws-content{flex:1;padding:20px;overflow:auto}
+.ws-page{display:none}
+.ws-page.active{display:block}
+.readiness-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.readiness-circle{display:flex;flex-direction:column;align-items:center;padding:20px}
+.circle-svg{margin-bottom:8px}
+.checklist{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:16px}
+.check-item{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;border-bottom:var(--border)}
+.check-item:last-child{border-bottom:none}
+.check-icon.done{color:var(--green)}
+.check-icon.todo{color:var(--color-text-tertiary)}
+.countdown-widget{background:var(--blue-bg);border:0.5px solid #B5D4F4;border-radius:var(--border-radius-md);padding:16px;margin-top:16px;text-align:center}
+.countdown-num{font-size:32px;font-weight:500;color:var(--blue-t)}
+.countdown-label{font-size:13px;color:var(--blue);margin-top:4px}
+.timeline-line{position:relative;padding-left:32px;margin-top:16px}
+.tl-item{position:relative;padding-bottom:24px}
+.tl-item:before{content:'';position:absolute;left:-20px;top:14px;bottom:0;width:1px;background:var(--color-border-tertiary)}
+.tl-item:last-child:before{display:none}
+.tl-dot{position:absolute;left:-26px;top:8px;width:13px;height:13px;border-radius:50%;border:2px solid}
+.tl-dot.done{background:var(--green);border-color:var(--green)}
+.tl-dot.current{background:var(--blue);border-color:var(--blue);animation:pulse 1.5s ease-in-out infinite}
+.tl-dot.overdue{background:var(--red);border-color:var(--red)}
+.tl-dot.upcoming{background:var(--color-background-primary);border-color:var(--color-border-secondary)}
+.tl-date{font-size:11px;color:var(--color-text-tertiary);margin-bottom:2px}
+.tl-title{font-size:13px;font-weight:500}
+.tl-desc{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.agenda-builder{margin-top:12px}
+.agenda-card{background:var(--color-background-primary);border:var(--border);border-radius:var(--border-radius-md);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.agenda-num{font-size:11px;color:var(--color-text-tertiary)}
+.agenda-title{font-size:13px;font-weight:500;margin-top:2px}
+.agenda-actions{display:flex;gap:6px}
+.icon-btn{background:none;border:var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:12px;color:var(--color-text-secondary)}
+.icon-btn:hover{background:var(--color-background-secondary)}
+.resolution-card{background:var(--color-background-primary);border:var(--border);border-radius:var(--border-radius-md);padding:14px;margin-bottom:10px}
+.res-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.res-title{font-size:13px;font-weight:500}
+.res-type{font-size:11px;color:var(--color-text-tertiary)}
+.res-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:var(--border)}
+.live-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.live-kpi{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
+.live-kpi-val{font-size:22px;font-weight:500;margin-bottom:2px}
+.live-kpi-label{font-size:11px;color:var(--color-text-secondary)}
+.vote-card{background:var(--color-background-primary);border:var(--border);border-radius:var(--border-radius-md);padding:16px;margin-bottom:12px}
+.vote-title{font-size:13px;font-weight:500;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.vote-bar-wrap{margin-bottom:8px}
+.vote-label{display:flex;justify-content:space-between;font-size:12px;color:var(--color-text-secondary);margin-bottom:3px}
+.vote-bar{height:8px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden}
+.vb-for{background:var(--green)}
+.vb-against{background:var(--red)}
+.vb-abstain{background:var(--amber)}
+.activity-feed{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
+.feed-item{display:flex;gap:12px;padding:8px 0;border-bottom:var(--border);font-size:12px}
+.feed-item:last-child{border-bottom:none}
+.feed-time{color:var(--color-text-tertiary);white-space:nowrap;min-width:50px}
+.feed-msg{color:var(--color-text-primary)}
+.setup-wizard{max-width:560px}
+.wizard-steps{display:flex;gap:0;margin-bottom:24px}
+.w-step{flex:1;text-align:center;font-size:11px;color:var(--color-text-tertiary);position:relative;padding-top:28px}
+.w-step:before{content:'';position:absolute;top:10px;left:0;right:50%;height:2px;background:var(--color-border-tertiary)}
+.w-step:after{content:'';position:absolute;top:10px;left:50%;right:0;height:2px;background:var(--color-border-tertiary)}
+.w-step:first-child:before,.w-step:last-child:after{display:none}
+.w-step-num{position:absolute;top:0;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;border:2px solid var(--color-border-secondary);background:var(--color-background-primary);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500}
+.w-step.done .w-step-num{background:var(--green);border-color:var(--green);color:#fff}
+.w-step.active .w-step-num{background:var(--blue);border-color:var(--blue);color:#fff}
+.w-step.done:before,.w-step.done:after,.w-step.active:before{background:var(--blue)}
+.form-group{margin-bottom:16px}
+.form-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:5px;display:block}
+.form-control{width:100%;padding:8px 10px;font-size:13px;border:var(--border);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);outline:none}
+.form-control:focus{border-color:var(--blue)}
+.radio-group{display:flex;gap:10px}
+.radio-opt{display:flex;align-items:center;gap:5px;font-size:13px;cursor:pointer}
+.timeline-gen{background:var(--blue-bg);border:0.5px solid #B5D4F4;border-radius:var(--border-radius-md);padding:16px;margin-top:16px}
+.tg-title{font-size:12px;font-weight:500;color:var(--blue-t);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.tg-row{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:12px;border-bottom:0.5px solid #B5D4F4}
+.tg-row:last-child{border-bottom:none}
+.tg-when{color:var(--blue);min-width:110px;font-weight:500}
+.tg-what{color:var(--blue-t)}
+.dot-sep{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.doc-card{background:var(--color-background-primary);border:var(--border);border-radius:var(--border-radius-md);padding:14px}
+.doc-icon{font-size:24px;margin-bottom:8px;color:var(--blue)}
+.doc-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.doc-type{font-size:11px;color:var(--color-text-tertiary);margin-bottom:10px}
+.doc-actions{display:flex;gap:6px}
+.tab-bar{display:flex;gap:4px;margin-bottom:20px;border-bottom:var(--border);padding-bottom:0}
+.tab{padding:8px 14px;font-size:13px;cursor:pointer;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-0.5px}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.sticky-footer{position:sticky;bottom:0;background:var(--color-background-primary);border-top:var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.upcoming-banner{background:var(--green-bg);border:0.5px solid #C0DD97;border-radius:var(--border-radius-md);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.banner-text{font-size:13px;color:var(--green-t);font-weight:500;display:flex;align-items:center;gap:8px}
+.participants-layout{display:grid;grid-template-columns:180px 1fr;gap:16px}
+.filter-panel{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
+.filter-title{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px}
+.filter-item{display:flex;align-items:center;gap:7px;padding:5px 0;font-size:12px;cursor:pointer}
+.filter-item input{accent-color:var(--blue)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px}
+.data-table th{text-align:left;padding:8px 10px;background:var(--color-background-secondary);color:var(--color-text-secondary);font-weight:500;border-bottom:var(--border)}
+.data-table td{padding:8px 10px;border-bottom:var(--border);color:var(--color-text-primary)}
+.data-table tr:last-child td{border-bottom:none}
+</style>
+
+</head>
+
+    <body>
+
+<h2 class="sr-only">AGM Management Dashboard - Annual General Meeting workflow and status management system</h2>
+
+<div class="app" id="mainApp">
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <i class="ti ti-building-community" style="font-size:20px;color:var(--blue)" aria-hidden="true"></i>
+      <span>AGM Portal</span>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Overview</div>
+      <div class="nav-item active" onclick="showPage('dashboard')"><i class="ti ti-layout-dashboard" aria-hidden="true"></i>Dashboard<span class="badge-num">1</span></div>
+      <div class="nav-item" onclick="showPage('wizard')"><i class="ti ti-plus" aria-hidden="true"></i>New AGM</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Active AGMs</div>
+      <div class="nav-item" onclick="showWorkspace('agm2026')"><i class="ti ti-file-description" aria-hidden="true"></i>AGM 2026<span class="badge-num" style="background:var(--blue-bg);color:var(--blue-t)">65%</span></div>
+      <div class="nav-item" onclick="showWorkspace('agm2025')"><i class="ti ti-check" aria-hidden="true"></i>AGM 2025</div>
+      <div class="nav-item" onclick="showWorkspace('live')"><i class="ti ti-broadcast" aria-hidden="true"></i>AGM 2024<span class="badge-num" style="background:var(--green-bg);color:var(--green-t)">LIVE</span></div>
+    </div>
+    <div class="nav-section" style="margin-top:auto;border-top:var(--border);padding-top:8px">
+      <div class="nav-item"><i class="ti ti-settings" aria-hidden="true"></i>Settings</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- DASHBOARD PAGE -->
+    <div id="page-dashboard" class="page active">
+      <div class="topbar">
+        <div class="topbar-title">AGM Dashboard</div>
+        <div class="topbar-actions">
+          <button class="btn" onclick="showPage('wizard')"><i class="ti ti-plus" style="font-size:13px" aria-hidden="true"></i> Create New AGM</button>
+        </div>
+      </div>
+      <div style="padding:20px">
+        <div class="kpi-grid">
+          <div class="kpi-card kpi-draft">
+            <div class="kpi-label"><i class="ti ti-file-text" aria-hidden="true"></i>Draft</div>
+            <div class="kpi-value">12</div>
+            <div class="kpi-sub">Not started</div>
+          </div>
+          <div class="kpi-card kpi-prep">
+            <div class="kpi-label"><i class="ti ti-loader" aria-hidden="true"></i>Preparation</div>
+            <div class="kpi-value">5</div>
+            <div class="kpi-sub">In progress</div>
+          </div>
+          <div class="kpi-card kpi-up">
+            <div class="kpi-label"><i class="ti ti-clock" aria-hidden="true"></i>Upcoming</div>
+            <div class="kpi-value">3</div>
+            <div class="kpi-sub">Ready to go</div>
+          </div>
+          <div class="kpi-card kpi-live">
+            <div class="kpi-label"><i class="ti ti-broadcast" aria-hidden="true"></i>Live Now</div>
+            <div class="kpi-value">1</div>
+            <div class="kpi-sub">In session</div>
+          </div>
+        </div>
+        <div class="section-header">
+          <span class="section-title">Status Board</span>
+          <div style="display:flex;gap:6px">
+            <button class="btn" style="font-size:12px;padding:4px 10px">Kanban</button>
+            <button class="btn" style="font-size:12px;padding:4px 10px;color:var(--color-text-tertiary)">Timeline</button>
+          </div>
+        </div>
+        <div class="kanban">
+          <!-- Preparation -->
+          <div class="kanban-col">
+            <div class="col-header">
+              <div class="tl-dot done" style="position:relative;left:0;top:0"></div>
+              <span class="col-title">Preparation</span>
+              <span class="col-count">5</span>
+            </div>
+            <div class="agm-card" onclick="showWorkspace('agm2026')">
+              <div class="card-name">AGM 2026 — Sunway Residences</div>
+              <div class="card-meta"><i class="ti ti-calendar" aria-hidden="true"></i>31 Aug 2026</div>
+              <div class="progress-bar"><div class="progress-fill fill-blue" style="width:65%"></div></div>
+              <div style="font-size:11px;color:var(--blue);margin-bottom:6px">65% complete</div>
+              <div class="tag-row">
+                <span class="tag tag-ok">Agenda ✓</span>
+                <span class="tag tag-missing">Notice</span>
+                <span class="tag tag-missing">Voting</span>
+              </div>
+            </div>
+            <div class="agm-card">
+              <div class="card-name">EGM 2026 — Tower B</div>
+              <div class="card-meta"><i class="ti ti-calendar" aria-hidden="true"></i>15 Oct 2026</div>
+              <div class="progress-bar"><div class="progress-fill fill-blue" style="width:30%"></div></div>
+              <div style="font-size:11px;color:var(--blue);margin-bottom:6px">30% complete</div>
+              <div class="tag-row">
+                <span class="tag tag-missing">Agenda</span>
+                <span class="tag tag-missing">Resolution</span>
+                <span class="tag tag-missing">Notice</span>
+              </div>
+            </div>
+          </div>
+          <!-- Upcoming -->
+          <div class="kanban-col">
+            <div class="col-header">
+              <div class="tl-dot current" style="position:relative;left:0;top:0"></div>
+              <span class="col-title">Upcoming</span>
+              <span class="col-count">3</span>
+            </div>
+            <div class="agm-card" onclick="showWorkspace('agm2025')">
+              <div class="card-name">AGM 2025 — Pavilion Heights</div>
+              <div class="card-meta"><i class="ti ti-calendar" aria-hidden="true"></i>15 Jul 2026</div>
+              <div style="margin-bottom:8px"><span class="tag tag-ok" style="font-size:11px">Preparation complete</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:12px;color:var(--color-text-secondary)">Countdown</span>
+                <span class="countdown-badge"><i class="ti ti-clock" style="font-size:12px" aria-hidden="true"></i>8 Days</span>
+              </div>
+            </div>
+            <div class="agm-card">
+              <div class="card-name">AGM 2025 — Meridian Park</div>
+              <div class="card-meta"><i class="ti ti-calendar" aria-hidden="true"></i>22 Jul 2026</div>
+              <div style="margin-bottom:8px"><span class="tag tag-ok" style="font-size:11px">Preparation complete</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:12px;color:var(--color-text-secondary)">Countdown</span>
+                <span class="countdown-badge"><i class="ti ti-clock" style="font-size:12px" aria-hidden="true"></i>15 Days</span>
+              </div>
+            </div>
+          </div>
+          <!-- Live -->
+          <div class="kanban-col" style="background:var(--green-bg)">
+            <div class="col-header">
+              <div class="live-dot"></div>
+              <span class="col-title" style="color:var(--green-t)">Live</span>
+              <span class="col-count">1</span>
+            </div>
+            <div class="agm-card" onclick="showWorkspace('live')" style="border-color:#C0DD97">
+              <div class="card-name">AGM 2024 — Tropicana Villa</div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px">
+                <span class="live-badge"><span class="live-dot"></span>LIVE NOW</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div style="background:var(--color-background-secondary);border-radius:6px;padding:10px;text-align:center">
+                  <div style="font-size:18px;font-weight:500;color:var(--green-t)">76%</div>
+                  <div style="font-size:11px;color:var(--color-text-secondary)">Attendance</div>
+                </div>
+                <div style="background:var(--color-background-secondary);border-radius:6px;padding:10px;text-align:center">
+                  <div style="font-size:18px;font-weight:500;color:var(--blue-t)">58%</div>
+                  <div style="font-size:11px;color:var(--color-text-secondary)">Votes cast</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIZARD PAGE -->
+    <div id="page-wizard" class="page">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="btn" onclick="showPage('dashboard')" style="border:none;padding:4px 8px"><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
+          <div class="topbar-title">Create New AGM</div>
+        </div>
+      </div>
+      <div style="padding:20px">
+        <div class="setup-wizard">
+          <div class="wizard-steps">
+            <div class="w-step active"><div class="w-step-num">1</div>AGM Details</div>
+            <div class="w-step"><div class="w-step-num">2</div>Timeline</div>
+            <div class="w-step"><div class="w-step-num">3</div>Participants</div>
+            <div class="w-step"><div class="w-step-num">4</div>Documents</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">AGM Name</label>
+            <input class="form-control" type="text" placeholder="e.g. AGM 2026 — Sunway Residences">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meeting Type</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="type" checked> AGM</label>
+              <label class="radio-opt"><input type="radio" name="type"> EGM</label>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="form-group">
+              <label class="form-label">Meeting Date</label>
+              <input class="form-control" type="date" value="2026-08-31" onchange="generateTimeline()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meeting Time</label>
+              <input class="form-control" type="time" value="10:00" onchange="generateTimeline()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Venue</label>
+            <input class="form-control" type="text" placeholder="e.g. Sunway Clubhouse, Block A Function Hall">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meeting Mode</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="mode" checked> Physical</label>
+              <label class="radio-opt"><input type="radio" name="mode"> Virtual</label>
+              <label class="radio-opt"><input type="radio" name="mode"> Hybrid</label>
+            </div>
+          </div>
+          <div class="timeline-gen" id="timelineGen">
+            <div class="tg-title"><i class="ti ti-wand" style="font-size:14px" aria-hidden="true"></i>Auto-generated preparation schedule</div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">3 Jun 2026</div><div class="tg-what">Preparation start (90 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">2 Jul 2026</div><div class="tg-what">Draft agenda (60 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">17 Jul 2026</div><div class="tg-what">Prepare resolutions (45 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">1 Aug 2026</div><div class="tg-what">Issue AGM notice (30 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">10 Aug 2026</div><div class="tg-what">Proxy submission opens (21 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep"></div><div class="tg-when">24 Aug 2026</div><div class="tg-what">Final verification (7 days before)</div></div>
+            <div class="tg-row"><div class="dot-sep" style="background:var(--green)"></div><div class="tg-when" style="color:var(--green)">31 Aug 2026</div><div class="tg-what" style="color:var(--green-t);font-weight:500">AGM Day — 10:00 AM</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-footer">
+        <button class="btn" onclick="showPage('dashboard')">Cancel</button>
+        <button class="btn btn-primary" onclick="showPage('dashboard')">Create AGM & Begin Preparation →</button>
+      </div>
+    </div>
+
+    <!-- WORKSPACE PAGE -->
+    <div id="page-workspace" class="page">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="btn" onclick="showPage('dashboard')" style="border:none;padding:4px 8px"><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
+          <div class="topbar-title" id="ws-title">AGM 2026 — Sunway Residences</div>
+          <span class="tag" id="ws-status-badge" style="font-size:11px"></span>
+        </div>
+      </div>
+      <div class="workspace">
+        <div class="ws-sidebar">
+          <div class="ws-nav">
+            <div class="ws-item active" onclick="showWsPage('overview')"><i class="ti ti-layout-dashboard" aria-hidden="true"></i>Overview</div>
+            <div class="ws-item" onclick="showWsPage('timeline')"><i class="ti ti-timeline" aria-hidden="true"></i>Timeline</div>
+            <div class="ws-item" onclick="showWsPage('agenda')"><i class="ti ti-list" aria-hidden="true"></i>Agenda</div>
+            <div class="ws-item" onclick="showWsPage('resolutions')"><i class="ti ti-gavel" aria-hidden="true"></i>Resolutions</div>
+            <div class="ws-item" onclick="showWsPage('voting')"><i class="ti ti-chart-bar" aria-hidden="true"></i>Voting</div>
+            <div class="ws-item" onclick="showWsPage('participants')"><i class="ti ti-users" aria-hidden="true"></i>Participants</div>
+            <div class="ws-item" onclick="showWsPage('documents')"><i class="ti ti-folder" aria-hidden="true"></i>Documents</div>
+          </div>
+        </div>
+        <div class="ws-content">
+          <!-- Overview -->
+          <div id="wsp-overview" class="ws-page active">
+            <div id="upcoming-banner" class="upcoming-banner" style="display:none">
+              <div class="banner-text"><i class="ti ti-circle-check" style="font-size:18px" aria-hidden="true"></i>AGM Ready — All preparation tasks complete</div>
+              <span class="countdown-badge"><i class="ti ti-clock" style="font-size:12px" aria-hidden="true"></i>10 Days</span>
+            </div>
+            <div id="live-banner" class="upcoming-banner" style="display:none;background:var(--green-bg);border-color:#C0DD97">
+              <div class="banner-text" style="color:var(--green-t)"><span class="live-dot"></span>AGM In Progress — Live session running</div>
+              <span class="live-badge"><span class="live-dot"></span>LIVE</span>
+            </div>
+            <div class="readiness-grid" id="overview-normal">
+              <div class="readiness-circle">
+                <svg class="circle-svg" viewBox="0 0 100 100" width="100" height="100">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-border-tertiary)" stroke-width="8"/>
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="var(--blue)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="55" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                  <text x="50" y="46" text-anchor="middle" font-size="18" font-weight="500" fill="var(--color-text-primary)" font-family="var(--font-sans)">78%</text>
+                  <text x="50" y="62" text-anchor="middle" font-size="9" fill="var(--color-text-secondary)" font-family="var(--font-sans)">Ready for AGM</text>
+                </svg>
+                <div class="countdown-widget" style="width:100%">
+                  <div style="font-size:11px;color:var(--blue);margin-bottom:4px">AGM Starts In</div>
+                  <div class="countdown-num">45</div>
+                  <div class="countdown-label">Days remaining</div>
+                </div>
+              </div>
+              <div class="checklist">
+                <div style="font-size:13px;font-weight:500;margin-bottom:10px">Readiness checklist</div>
+                <div class="check-item"><i class="ti ti-circle-check check-icon done" aria-hidden="true"></i><span style="font-size:13px">Meeting information</span></div>
+                <div class="check-item"><i class="ti ti-circle-check check-icon done" aria-hidden="true"></i><span style="font-size:13px">Agenda</span></div>
+                <div class="check-item"><i class="ti ti-circle-check check-icon done" aria-hidden="true"></i><span style="font-size:13px">Resolutions</span></div>
+                <div class="check-item"><i class="ti ti-circle-check check-icon done" aria-hidden="true"></i><span style="font-size:13px">Notice issued</span></div>
+                <div class="check-item"><i class="ti ti-circle-check check-icon done" aria-hidden="true"></i><span style="font-size:13px">Participant list</span></div>
+                <div class="check-item"><i class="ti ti-circle check-icon todo" aria-hidden="true"></i><span style="font-size:13px;color:var(--color-text-tertiary)">Voting setup</span></div>
+                <div class="check-item"><i class="ti ti-circle check-icon todo" aria-hidden="true"></i><span style="font-size:13px;color:var(--color-text-tertiary)">Proxy setup</span></div>
+              </div>
+            </div>
+            <!-- Live KPI cards -->
+            <div id="overview-live" style="display:none">
+              <div class="live-grid">
+                <div class="live-kpi"><div class="live-kpi-val" style="color:var(--green-t)">76%</div><div class="live-kpi-label">Attendance</div></div>
+                <div class="live-kpi"><div class="live-kpi-val" style="color:var(--blue-t)">58%</div><div class="live-kpi-label">Votes submitted</div></div>
+                <div class="live-kpi"><div class="live-kpi-val" style="color:var(--amber-t)">124</div><div class="live-kpi-label">Proxy votes</div></div>
+                <div class="live-kpi"><div class="live-kpi-val" style="color:var(--green-t)">✓</div><div class="live-kpi-label">Quorum met</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div>
+                  <div style="font-size:13px;font-weight:500;margin-bottom:10px">Live voting</div>
+                  <div class="vote-card">
+                    <div class="vote-title">Resolution 1 — Approve Accounts<span class="live-badge"><span class="live-dot"></span>Open</span></div>
+                    <div class="vote-bar-wrap">
+                      <div class="vote-label"><span>For</span><span>78%</span></div>
+                      <div class="vote-bar"><div class="vb-for" style="width:78%;height:100%;border-radius:4px"></div></div>
+                    </div>
+                    <div class="vote-bar-wrap">
+                      <div class="vote-label"><span>Against</span><span>15%</span></div>
+                      <div class="vote-bar"><div class="vb-against" style="width:15%;height:100%;border-radius:4px"></div></div>
+                    </div>
+                    <div class="vote-bar-wrap">
+                      <div class="vote-label"><span>Abstain</span><span>7%</span></div>
+                      <div class="vote-bar"><div class="vb-abstain" style="width:7%;height:100%;border-radius:4px"></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:13px;font-weight:500;margin-bottom:10px">Live activity</div>
+                  <div class="activity-feed">
+                    <div class="feed-item"><span class="feed-time">10:20 AM</span><span class="feed-msg">Resolution 1 opened for voting</span></div>
+                    <div class="feed-item"><span class="feed-time">10:18 AM</span><span class="feed-msg">Proxy vote submitted — Unit B-05</span></div>
+                    <div class="feed-item"><span class="feed-time">10:15 AM</span><span class="feed-msg">Unit A-10 joined session</span></div>
+                    <div class="feed-item"><span class="feed-time">10:08 AM</span><span class="feed-msg">Quorum confirmed (76%)</span></div>
+                    <div class="feed-item"><span class="feed-time">10:00 AM</span><span class="feed-msg">AGM 2024 session started</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Timeline -->
+          <div id="wsp-timeline" class="ws-page">
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Preparation timeline</div>
+            <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:16px">AGM 2026 — 31 Aug 2026</div>
+            <div class="timeline-line">
+              <div class="tl-item">
+                <div class="tl-dot done"></div>
+                <div class="tl-date">3 Jun 2026 — 90 days before</div>
+                <div class="tl-title">Preparation start</div>
+                <div class="tl-desc">AGM planning commenced</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot done"></div>
+                <div class="tl-date">2 Jul 2026 — 60 days before</div>
+                <div class="tl-title">Draft agenda</div>
+                <div class="tl-desc">Agenda items finalised and reviewed</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot done"></div>
+                <div class="tl-date">17 Jul 2026 — 45 days before</div>
+                <div class="tl-title">Prepare resolutions</div>
+                <div class="tl-desc">Ordinary and special resolutions drafted</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot current"></div>
+                <div class="tl-date">1 Aug 2026 — 30 days before</div>
+                <div class="tl-title">Issue AGM notice<span style="margin-left:8px;font-size:10px;background:var(--blue-bg);color:var(--blue-t);padding:2px 6px;border-radius:4px">Due soon</span></div>
+                <div class="tl-desc">Notice distributed to all participants</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot upcoming"></div>
+                <div class="tl-date">10 Aug 2026 — 21 days before</div>
+                <div class="tl-title">Proxy submission opens</div>
+                <div class="tl-desc">Online proxy submission portal live</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot upcoming"></div>
+                <div class="tl-date">24 Aug 2026 — 7 days before</div>
+                <div class="tl-title">Final verification</div>
+                <div class="tl-desc">Participant list and proxy audit</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot upcoming" style="background:var(--green-bg);border-color:var(--green)"></div>
+                <div class="tl-date">31 Aug 2026 — AGM Day</div>
+                <div class="tl-title" style="color:var(--green-t)">AGM — 10:00 AM</div>
+                <div class="tl-desc">Annual General Meeting commences</div>
+              </div>
+            </div>
+          </div>
+          <!-- Agenda -->
+          <div id="wsp-agenda" class="ws-page">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+              <div style="font-size:13px;font-weight:500">Agenda builder</div>
+              <button class="btn btn-primary" style="font-size:12px;padding:5px 12px"><i class="ti ti-plus" style="font-size:12px" aria-hidden="true"></i> Add agenda item</button>
+            </div>
+            <div class="agenda-builder">
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 1</div><div class="agenda-title">Chairman's opening address</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 2</div><div class="agenda-title">Confirmation of minutes of last AGM</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 3</div><div class="agenda-title">Presentation of audited financial report</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 4</div><div class="agenda-title">Presentation and adoption of budget</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 5</div><div class="agenda-title">Election of Management Committee</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+              <div class="agenda-card">
+                <div><div class="agenda-num">Agenda 6</div><div class="agenda-title">Any other business</div></div>
+                <div class="agenda-actions"><button class="icon-btn">Edit</button><button class="icon-btn">↕</button></div>
+              </div>
+            </div>
+          </div>
+          <!-- Resolutions -->
+          <div id="wsp-resolutions" class="ws-page">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+              <div style="font-size:13px;font-weight:500">Resolution builder</div>
+              <button class="btn btn-primary" style="font-size:12px;padding:5px 12px"><i class="ti ti-plus" style="font-size:12px" aria-hidden="true"></i> Add resolution</button>
+            </div>
+            <div class="resolution-card">
+              <div class="res-header">
+                <div><div class="res-type">Resolution 1 · Ordinary</div><div class="res-title">Approve audited accounts FY2025</div></div>
+                <span class="tag tag-ok">Published</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-text-secondary)">That the audited financial statements for the year ended 31 Dec 2025 be and are hereby adopted.</div>
+              <div class="res-footer">
+                <div style="display:flex;gap:6px">
+                  <button class="icon-btn">Edit</button>
+                  <button class="icon-btn">Duplicate</button>
+                  <button class="icon-btn" style="color:var(--red-t)">Archive</button>
+                </div>
+              </div>
+            </div>
+            <div class="resolution-card">
+              <div class="res-header">
+                <div><div class="res-type">Resolution 2 · Ordinary</div><div class="res-title">Re-appointment of auditors</div></div>
+                <span class="tag tag-ok">Published</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-text-secondary)">That Messrs Tan & Partners be re-appointed as auditors of the Corporation.</div>
+              <div class="res-footer">
+                <div style="display:flex;gap:6px">
+                  <button class="icon-btn">Edit</button>
+                  <button class="icon-btn">Duplicate</button>
+                  <button class="icon-btn" style="color:var(--red-t)">Archive</button>
+                </div>
+              </div>
+            </div>
+            <div class="resolution-card">
+              <div class="res-header">
+                <div><div class="res-type">Resolution 3 · Special</div><div class="res-title">Amendment to by-laws — car park allocation</div></div>
+                <span class="tag tag-warn">Draft</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-text-secondary)">That By-Law 12(c) be amended to allow dual car park allocation for units above 1,500 sq ft.</div>
+              <div class="res-footer">
+                <div style="display:flex;gap:6px">
+                  <button class="icon-btn">Edit</button>
+                  <button class="icon-btn">Duplicate</button>
+                  <button class="icon-btn" style="color:var(--red-t)">Archive</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Voting -->
+          <div id="wsp-voting" class="ws-page">
+            <div style="font-size:13px;font-weight:500;margin-bottom:16px">Voting configuration</div>
+            <div style="background:var(--amber-bg);border:0.5px solid #FAC775;border-radius:var(--border-radius-md);padding:12px 14px;margin-bottom:16px;font-size:13px;color:var(--amber-t)">
+              <i class="ti ti-alert-triangle" style="font-size:15px;vertical-align:-2px;margin-right:6px" aria-hidden="true"></i>
+              Voting setup not yet complete. Configure voting methods before the notice is issued.
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px">
+                <div style="font-size:13px;font-weight:500;margin-bottom:10px">Voting method</div>
+                <div class="filter-item"><input type="radio" name="vtype" checked> Show of hands</div>
+                <div class="filter-item"><input type="radio" name="vtype"> Poll voting</div>
+                <div class="filter-item"><input type="radio" name="vtype"> Electronic voting</div>
+              </div>
+              <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px">
+                <div style="font-size:13px;font-weight:500;margin-bottom:10px">Proxy voting</div>
+                <div class="filter-item"><input type="checkbox" checked> Allow proxy votes</div>
+                <div class="filter-item"><input type="checkbox" checked> Undirected proxy</div>
+                <div class="filter-item"><input type="checkbox"> Corporate proxy</div>
+              </div>
+            </div>
+          </div>
+          <!-- Participants -->
+          <div id="wsp-participants" class="ws-page">
+            <div class="tab-bar">
+              <div class="tab active">All (342)</div>
+              <div class="tab">Present (261)</div>
+              <div class="tab">Proxy (58)</div>
+              <div class="tab">Absent (23)</div>
+            </div>
+            <div style="display:flex;gap:8px;margin-bottom:12px">
+              <button class="btn" style="font-size:12px;padding:4px 10px"><i class="ti ti-upload" style="font-size:12px" aria-hidden="true"></i> Import</button>
+              <button class="btn" style="font-size:12px;padding:4px 10px"><i class="ti ti-mail" style="font-size:12px" aria-hidden="true"></i> Send notice</button>
+              <button class="btn" style="font-size:12px;padding:4px 10px"><i class="ti ti-download" style="font-size:12px" aria-hidden="true"></i> Export</button>
+            </div>
+            <div style="overflow:auto;border:var(--border);border-radius:var(--border-radius-md)">
+              <table class="data-table">
+                <thead><tr><th>Parcel No</th><th>Owner</th><th>Share Units</th><th>Attendance</th><th>Proxy</th><th>Voting Rights</th></tr></thead>
+                <tbody>
+                  <tr><td>A-01</td><td>Ahmad Fadzli bin Yusof</td><td>1</td><td><span class="tag tag-ok">Present</span></td><td>—</td><td>1</td></tr>
+                  <tr><td>A-02</td><td>Lee Siew Ling</td><td>1</td><td><span class="tag tag-warn">Proxy</span></td><td>Ahmad Fadzli</td><td>1</td></tr>
+                  <tr><td>A-03</td><td>Priya Narayanan</td><td>2</td><td><span class="tag tag-ok">Present</span></td><td>—</td><td>2</td></tr>
+                  <tr><td>A-04</td><td>Mohd Riza bin Mohd Dali</td><td>1</td><td><span class="tag tag-missing">Absent</span></td><td>—</td><td>0</td></tr>
+                  <tr><td>B-01</td><td>Tan Wei Jian</td><td>1</td><td><span class="tag tag-ok">Present</span></td><td>—</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Documents -->
+          <div id="wsp-documents" class="ws-page">
+            <div style="font-size:13px;font-weight:500;margin-bottom:16px">Document centre</div>
+            <div class="doc-grid">
+              <div class="doc-card"><div class="doc-icon"><i class="ti ti-file-description" aria-hidden="true"></i></div><div class="doc-name">Notice of AGM</div><div class="doc-type">Auto-generated · PDF</div><div class="doc-actions"><button class="btn btn-primary" style="font-size:11px;padding:4px 10px">Generate PDF</button><button class="btn" style="font-size:11px;padding:4px 10px">Preview</button></div></div>
+              <div class="doc-card"><div class="doc-icon"><i class="ti ti-writing" aria-hidden="true"></i></div><div class="doc-name">Proxy Form</div><div class="doc-type">Auto-generated · PDF</div><div class="doc-actions"><button class="btn btn-primary" style="font-size:11px;padding:4px 10px">Generate PDF</button><button class="btn" style="font-size:11px;padding:4px 10px">Preview</button></div></div>
+              <div class="doc-card"><div class="doc-icon"><i class="ti ti-clipboard-list" aria-hidden="true"></i></div><div class="doc-name">Attendance sheet</div><div class="doc-type">Auto-generated · PDF</div><div class="doc-actions"><button class="btn btn-primary" style="font-size:11px;padding:4px 10px">Generate PDF</button><button class="btn" style="font-size:11px;padding:4px 10px">Preview</button></div></div>
+              <div class="doc-card"><div class="doc-icon" style="color:var(--amber)"><i class="ti ti-chart-pie" aria-hidden="true"></i></div><div class="doc-name">Financial report</div><div class="doc-type">Upload required</div><div class="doc-actions"><button class="btn" style="font-size:11px;padding:4px 10px"><i class="ti ti-upload" style="font-size:11px" aria-hidden="true"></i> Upload</button></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script>
+var currentWs = 'agm2026';
+function showPage(p){
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('active')});
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(function(el){el.classList.remove('active')});
+}
+function showWorkspace(ws){
+  currentWs = ws;
+  showPage('workspace');
+  var titles = {agm2026:'AGM 2026 — Sunway Residences',agm2025:'AGM 2025 — Pavilion Heights',live:'AGM 2024 — Tropicana Villa'};
+  document.getElementById('ws-title').textContent = titles[ws]||'AGM Workspace';
+  var badge = document.getElementById('ws-status-badge');
+  var upBanner = document.getElementById('upcoming-banner');
+  var liveBanner = document.getElementById('live-banner');
+  var overviewNormal = document.getElementById('overview-normal');
+  var overviewLive = document.getElementById('overview-live');
+  upBanner.style.display='none';liveBanner.style.display='none';
+  overviewNormal.style.display='grid';overviewLive.style.display='none';
+  if(ws==='agm2026'){badge.textContent='Preparation';badge.className='tag tag-missing';}
+  else if(ws==='agm2025'){badge.textContent='Upcoming';badge.className='tag tag-warn';upBanner.style.display='flex';}
+  else if(ws==='live'){badge.textContent='Live';badge.className='tag tag-ok';liveBanner.style.display='flex';overviewNormal.style.display='none';overviewLive.style.display='block';}
+  showWsPage('overview');
+}
+function showWsPage(p){
+  document.querySelectorAll('.ws-page').forEach(function(el){el.classList.remove('active')});
+  document.querySelectorAll('.ws-item').forEach(function(el){el.classList.remove('active')});
+  var el = document.getElementById('wsp-'+p);
+  if(el) el.classList.add('active');
+  document.querySelectorAll('.ws-item').forEach(function(item){
+    if(item.textContent.toLowerCase().indexOf(p)>=0) item.classList.add('active');
+  });
+}
+function generateTimeline(){
+  // Timeline auto-generates based on date - shown statically for demo
+}
+</script>
