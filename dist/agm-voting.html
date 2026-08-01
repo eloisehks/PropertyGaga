@@ -546,6 +546,9 @@
                                     <li>
                                         <a href="data-service-providers.html">Vendors</a>
                                     </li>
+                                    <li>
+                                        <a href="data-strata-roll.html">Strata Roll</a>
+                                    </li>
                                     <!-- <li>
                                         <a href="data-inventory.html">Inventory</a>
                                     </li> -->
@@ -1656,8 +1659,9 @@
                                             <a href="agm-agenda.html" class="list-group-item border-0 text-color-primary">Agenda</a>
                                             <a href="agm-resolutions.html" class="list-group-item border-0 text-color-primary">Resolutions</a>
                                             <a href="agm-voting.html" class="list-group-item border-0 text-color-primary-active">Voting</a>
-                                            <a href="agm-participants.html" class="list-group-item border-0 text-color-primary">Participants</a>
-                                            <a href="agm-documents.html" class="list-group-item border-0 text-color-primary">Documents<span class="badge badge-success float-right mr-2 paddingtop-4">5</span></a>
+                                            <a href="agm-eligiblevoters.html" class="list-group-item border-0 text-color-primary">Eligible Voters</a>
+                                            <a href="agm-attendance.html" class="list-group-item border-0 text-color-primary">Attendance</a>
+                                            <a href="agm-documents.html" class="list-group-item border-0 text-color-primary">Documents<span class="badge badge-success float-right mr-2 paddingtop-4">6</span></a>
                                             <a href="agm-submitted-documents.html" class="list-group-item border-0 text-color-primary">Submitted Docs.</a>
                                             <a href="agm-readiness.html" class="list-group-item border-0 text-color-primary">Readiness</a>
                                         </div>
@@ -1673,119 +1677,158 @@
                                                 <!-- Top Layout Header Row -->
                                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                                     <div>
-                                                        <h5 class="header-title mb-1 mt-0">Voting Configuration</h5>
-                                                        <p class="text-muted mb-0" id="header-summary">Configure how voting will be conducted at this meeting.</p>
-                                                    </div>
-                                                    <button class="btn btn-dark btn-rounded" id="btn-save-config">
-                                                        <i data-feather="save" class="icon-xs mr-2"></i> Save Configuration
-                                                    </button>
-                                                </div>
-
-                                                <!-- Section Card 1: Voting Method Selection Base -->
-                                                <div class="configuration-card mb-4">
-                                                    <h2 class="section-header-title">Voting Method</h2>
-                                                    <p class="section-header-desc">Select the primary voting method for this meeting.</p>
-                                                    
-                                                    <div class="row">
-                                                        <!-- Method Card 1: Electronic Voting (Active default state matching image) -->
-                                                        <div class="col-md-6 mb-3">
-                                                            <div class="voting-method-card active" data-method="electronic">
-                                                                <div class="d-flex align-items-start">
-                                                                    <div class="method-icon-box mt-1">
-                                                                        <i class="desktop-icon uil uil-desktop"></i>
-                                                                    </div>
-                                                                    <div>
-                                                                        <div class="method-title">Electronic Voting</div>
-                                                                        <div class="method-desc">Participants vote via digital platform</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- Method Card 2: Show of Hands -->
-                                                        <div class="col-md-6 mb-3">
-                                                            <div class="voting-method-card" data-method="hands">
-                                                                <div class="d-flex align-items-start">
-                                                                    <div class="mt-1">
-                                                                        <img src="assets/images/icons/hand-regular.svg" class="mr-3 ml-2" style="width: 23px !important; opacity: 0.5;">
-                                                                    </div>
-                                                                    <div>
-                                                                        <div class="method-title">Show of Hands</div>
-                                                                        <div class="method-desc">Traditional in-person raising of hands</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <!-- Method Card 3: Poll -->
-                                                        <div class="col-md-6 mb-0">
-                                                            <div class="voting-method-card" data-method="poll">
-                                                                <div class="d-flex align-items-start">
-                                                                    <div class="method-icon-box mt-1">
-                                                                        <i class="poll-icon uil uil-analytics"></i>
-                                                                    </div>
-                                                                    <div>
-                                                                        <div class="method-title">Poll</div>
-                                                                        <div class="method-desc">Formal poll with appointed scrutineers</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <h5 class="header-title mb-1 mt-0">Voting</h5>
                                                     </div>
                                                 </div>
 
-                                                <!-- Section Card 2: Voting Rules Management Grid -->
-                                                <div class="configuration-card">
-                                                    <h2 class="section-header-title">Voting Rules</h2>
-                                                    <p class="section-header-desc">Set quorum requirements and voting rules.</p>
+                                                <ul class="nav nav-pills navtab-bg nav-justified bg-color-lightBlue">
+                                                    <li class="nav-item">
+                                                        <a href="#config" data-toggle="tab" aria-expanded="true"
+                                                            class="nav-link active">
+                                                            <span class="d-block d-sm-none">Configuration</span>
+                                                            <span class="d-none d-sm-block">Configuration</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#console" data-toggle="tab" aria-expanded="false"
+                                                            class="nav-link">
+                                                            <span class="d-block d-sm-none">Voting Console</span>
+                                                            <span class="d-none d-sm-block">Voting Console</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
 
-                                                    <!-- Rule Item Row 1: Proxy Voting -->
-                                                    <div class="d-flex justify-content-between align-items-center rule-row mb-2">
-                                                        <div>
-                                                            <div class="rule-title">Allow Proxy Voting</div>
-                                                            <div class="rule-desc">Owners may appoint a proxy to vote on their behalf</div>
+                                                <div class="tab-content text-muted">
+                                                    <div class="tab-pane show active" id="config">
+
+                                                        <!-- Top Layout Header Row -->
+                                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                                            <div>
+                                                                <h5 class="header-title mb-1 mt-0">Voting Configuration</h5>
+                                                                <p class="text-muted mb-0" id="header-summary">Configure how voting will be conducted at this meeting.</p>
+                                                            </div>
+                                                            <button class="btn btn-dark btn-rounded" id="btn-save-config">
+                                                                <i data-feather="save" class="icon-xs mr-2"></i> Save Configuration
+                                                            </button>
                                                         </div>
-                                                        <div>
-                                                            <label class="shreyu-switch-container mb-0">
-                                                                <input type="checkbox" id="toggle-proxy" checked>
-                                                                <span class="switch-slider"></span>
-                                                            </label>
+
+                                                        <!-- Section Card 1: Voting Method Selection Base -->
+                                                        <div class="configuration-card mb-4">
+                                                            <h2 class="section-header-title">Voting Method</h2>
+                                                            <p class="section-header-desc">Select the primary voting method for this meeting.</p>
+                                                            
+                                                            <div class="row">
+                                                                <!-- Method Card 1: Electronic Voting (Active default state matching image) -->
+                                                                <div class="col-md-6 mb-3">
+                                                                    <div class="voting-method-card active" data-method="electronic">
+                                                                        <div class="d-flex align-items-start">
+                                                                            <div class="method-icon-box mt-1">
+                                                                                <i class="desktop-icon uil uil-desktop"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="method-title">Electronic Voting</div>
+                                                                                <div class="method-desc">Participants vote via digital platform</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Method Card 2: Show of Hands -->
+                                                                <div class="col-md-6 mb-3">
+                                                                    <div class="voting-method-card" data-method="hands">
+                                                                        <div class="d-flex align-items-start">
+                                                                            <div class="mt-1">
+                                                                                <img src="assets/images/icons/hand-regular.svg" class="mr-3 ml-2" style="width: 23px !important; opacity: 0.5;">
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="method-title">Show of Hands</div>
+                                                                                <div class="method-desc">Traditional in-person raising of hands</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <!-- Method Card 3: Poll -->
+                                                                <div class="col-md-6 mb-0">
+                                                                    <div class="voting-method-card" data-method="poll">
+                                                                        <div class="d-flex align-items-start">
+                                                                            <div class="method-icon-box mt-1">
+                                                                                <i class="poll-icon uil uil-analytics"></i>
+                                                                            </div>
+                                                                            <div>
+                                                                                <div class="method-title">Poll</div>
+                                                                                <div class="method-desc">Formal poll with appointed scrutineers</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Section Card 2: Voting Rules Management Grid -->
+                                                        <div class="configuration-card">
+                                                            <h2 class="section-header-title">Voting Rules</h2>
+                                                            <p class="section-header-desc">Set quorum requirements and voting rules.</p>
+
+                                                            <!-- Rule Item Row 1: Proxy Voting -->
+                                                            <div class="d-flex justify-content-between align-items-center rule-row mb-2">
+                                                                <div>
+                                                                    <div class="rule-title">Allow Proxy Voting</div>
+                                                                    <div class="rule-desc">Owners may appoint a proxy to vote on their behalf</div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="shreyu-switch-container mb-0">
+                                                                        <input type="checkbox" id="toggle-proxy" checked>
+                                                                        <span class="switch-slider"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Rule Item Row 2: Abstentions -->
+                                                            <div class="d-flex justify-content-between align-items-center rule-row mb-4">
+                                                                <div>
+                                                                    <div class="rule-title">Allow Abstentions</div>
+                                                                    <div class="rule-desc">Owners may abstain from voting on a resolution</div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="shreyu-switch-container mb-0">
+                                                                        <input type="checkbox" id="toggle-abstentions" checked>
+                                                                        <span class="switch-slider"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Input Parameters Block -->
+                                                            <div class="row pt-2">
+                                                                <!-- Input 1: Quorum -->
+                                                                <div class="col-md-6 mb-3 mb-md-0">
+                                                                    <label class="field-label" for="input-quorum">Quorum Required (%)</label>
+                                                                    <input type="number" id="input-quorum" class="form-control form-control-shreyu w-100" value="50" min="1" max="100">
+                                                                    <div class="field-sub-info">Minimum <span class="highlight-text">owners</span> required to proceed</div>
+                                                                </div>
+
+                                                                <!-- Input 2: Majority -->
+                                                                <div class="col-md-6">
+                                                                    <label class="field-label" for="input-majority">Majority Required (%)</label>
+                                                                    <input type="number" id="input-majority" class="form-control form-control-shreyu w-100" value="50" min="1" max="100">
+                                                                    <div class="field-sub-info">% of For votes to pass a resolution</div>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
-
-                                                    <!-- Rule Item Row 2: Abstentions -->
-                                                    <div class="d-flex justify-content-between align-items-center rule-row mb-4">
-                                                        <div>
-                                                            <div class="rule-title">Allow Abstentions</div>
-                                                            <div class="rule-desc">Owners may abstain from voting on a resolution</div>
-                                                        </div>
-                                                        <div>
-                                                            <label class="shreyu-switch-container mb-0">
-                                                                <input type="checkbox" id="toggle-abstentions" checked>
-                                                                <span class="switch-slider"></span>
-                                                            </label>
+                                                    <div class="tab-pane" id="console">
+                                                        <div class="card">
+                                                            <div class="card-body border-gray-light rounded p-5">
+                                                                <div class="text-center">
+                                                                    <i class="uil uil-clipboard-notes font-xl text-muted"></i>
+                                                                    <p class="px-5">The voting console becomes available once this meeting is marked Ready and goes Live. For now, finish configuring resolutions and participants.</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-
-                                                    <!-- Input Parameters Block -->
-                                                    <div class="row pt-2">
-                                                        <!-- Input 1: Quorum -->
-                                                        <div class="col-md-6 mb-3 mb-md-0">
-                                                            <label class="field-label" for="input-quorum">Quorum Required (%)</label>
-                                                            <input type="number" id="input-quorum" class="form-control form-control-shreyu w-100" value="50" min="1" max="100">
-                                                            <div class="field-sub-info">Minimum <span class="highlight-text">owners</span> required to proceed</div>
-                                                        </div>
-
-                                                        <!-- Input 2: Majority -->
-                                                        <div class="col-md-6">
-                                                            <label class="field-label" for="input-majority">Majority Required (%)</label>
-                                                            <input type="number" id="input-majority" class="form-control form-control-shreyu w-100" value="50" min="1" max="100">
-                                                            <div class="field-sub-info">% of For votes to pass a resolution</div>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
 
                                             </div>

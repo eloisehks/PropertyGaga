@@ -546,6 +546,9 @@
                                     <li>
                                         <a href="data-service-providers.html">Vendors</a>
                                     </li>
+                                    <li>
+                                        <a href="data-strata-roll.html">Strata Roll</a>
+                                    </li>
                                     <!-- <li>
                                         <a href="data-inventory.html">Inventory</a>
                                     </li> -->
@@ -1639,7 +1642,9 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
-                                <!-- <a href="#" class="btn btn-success btn-rounded mr-2">Complete Preparation</a> -->
+                                <a href="#" class="btn btn-dark btn-rounded px-4 mr-2 disabled">
+                                    <img src="assets/images/icons/go-live.svg" class="mr-2" style="width: 23px !important;">Go Live
+                                </a>
                                 <a href="agm.html"><i class="uil-arrow-left mr-1"></i> Back to Main </a>
                             </div>
                         </div>
@@ -1699,7 +1704,7 @@
                                         </ul>
 
                                         <!-- Action Utility Group Row -->
-                                        <div class="d-flex align-items-center mb-4 mt-3">
+                                        <!-- <div class="d-flex align-items-center mb-3 mt-3">
                                             <button class="btn btn-outline-primary btn-rounded mr-2" onclick="alert('Import feature ready for integration.')">
                                                 <i class="uil uil-down-arrow mr-2"></i>Import
                                             </button>
@@ -1709,64 +1714,62 @@
                                             <button class="btn btn-outline-primary btn-rounded" id="btn-export-excel">
                                                 <i class="uil uil-export mr-2"></i> Export
                                             </button>
-                                        </div>
+                                        </div> -->
 
                                         <!-- Participants Attendance Grid Table Layout Container -->
-                                        <div class="table-responsive">
-                                            <table id="basic-datatable" class="table table-hover table-sm nowrap full-width">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Unit No.</th>
-                                                        <th>Owner</th>
-                                                        <th class="text-center">Share Units</th>
-                                                        <th>Attendance</th>
-                                                        <th>Proxy</th>
-                                                        <th class="text-center">Voting Rights</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr data-status="Present">
-                                                        <td>A-01</td>
-                                                        <td class="font-weight-600">Ahmad Fadzli bin Yusof</td>
-                                                        <td class="text-center">1</td>
-                                                        <td><span class="badge-soft badge-soft-present">Present</span></td>
-                                                        <td class="text-muted">—</td>
-                                                        <td class="text-center">1</td>
-                                                    </tr>
-                                                    <tr data-status="Proxy">
-                                                        <td>A-02</td>
-                                                        <td class="font-weight-600">Lee Siew Ling</td>
-                                                        <td class="text-center">1</td>
-                                                        <td><span class="badge-soft badge-soft-proxy">Proxy</span></td>
-                                                        <td>Ahmad Fadzli</td>
-                                                        <td class="text-center">1</td>
-                                                    </tr>
-                                                    <tr data-status="Present">
-                                                        <td>A-03</td>
-                                                        <td class="font-weight-600">Priya Narayanan</td>
-                                                        <td class="text-center">2</td>
-                                                        <td><span class="badge-soft badge-soft-present">Present</span></td>
-                                                        <td class="text-muted">—</td>
-                                                        <td class="text-center">2</td>
-                                                    </tr>
-                                                    <tr data-status="Absent">
-                                                        <td>A-04</td>
-                                                        <td class="font-weight-600">Mohd Riza bin Mohd Dali</td>
-                                                        <td class="text-center">1</td>
-                                                        <td><span class="badge-soft badge-soft-absent">Absent</span></td>
-                                                        <td class="text-muted">—</td>
-                                                        <td class="text-center">0</td>
-                                                    </tr>
-                                                    <tr data-status="Present">
-                                                        <td>B-01</td>
-                                                        <td class="font-weight-600">Tan Wei Jian</td>
-                                                        <td class="text-center">1</td>
-                                                        <td><span class="badge-soft badge-soft-present">Present</span></td>
-                                                        <td class="text-muted">—</td>
-                                                        <td class="text-center">1</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                         <div class="card mt-4">
+                                            <div class="card-body border-gray-light rounded">
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatable" class="table table-hover table-sm nowrap full-width">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Unit No.</th>
+                                                                <th>Owner / Proprietors</th>
+                                                                <th class="text-center">Share Units</th>
+                                                                <th>Attendance</th>
+                                                                <th>Proxy</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-status="Present">
+                                                                <td>A-01</td>
+                                                                <td class="font-weight-600">Ahmad Fadzli bin Yusof</td>
+                                                                <td class="text-center">1</td>
+                                                                <td><span class="badge badge-soft-primary">Present</span></td>
+                                                                <td class="text-muted">—</td>
+                                                            </tr>
+                                                            <tr data-status="Proxy">
+                                                                <td>A-02</td>
+                                                                <td class="font-weight-600">Lee Siew Ling</td>
+                                                                <td class="text-center">1</td>
+                                                                <td><span class="badge badge-soft-info">Proxy</span></td>
+                                                                <td>Ahmad Fadzli</td>
+                                                            </tr>
+                                                            <tr data-status="Present">
+                                                                <td>A-03</td>
+                                                                <td class="font-weight-600">Priya Narayanan</td>
+                                                                <td class="text-center">2</td>
+                                                                <td><span class="badge badge-soft-primary">Present</span></td>
+                                                                <td class="text-muted">—</td>
+                                                            </tr>
+                                                            <tr data-status="Absent">
+                                                                <td>A-04</td>
+                                                                <td class="font-weight-600">Mohd Riza bin Mohd Dali</td>
+                                                                <td class="text-center">1</td>
+                                                                <td><span class="badge badge-soft-danger">Absent</span></td>
+                                                                <td class="text-muted">—</td>
+                                                            </tr>
+                                                            <tr data-status="Present">
+                                                                <td>B-01</td>
+                                                                <td class="font-weight-600">Tan Wei Jian</td>
+                                                                <td class="text-center">1</td>
+                                                                <td><span class="badge badge-soft-primary">Present</span></td>
+                                                                <td class="text-muted">—</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2066,71 +2069,6 @@
                     $('#basic-datatable tbody tr').hide();
                     $(`#basic-datatable tbody tr[data-status="${chosenFilterKeyword}"]`).show();
                 }
-            });
-
-            // Open Send Notice Details Window Overlay Frame Setup Trigger Container Click
-            $('#btn-send-notice').on('click', function() {
-                // Set dynamic target recipient context based on currently active selected layout view state tag filter 
-                const activeFilterClass = $('.nav-tabs-shreyu a.active').attr('data-filter');
-                if (activeFilterClass !== 'all') {
-                    $('#notice-target-filter').val(activeFilterClass);
-                } else {
-                    $('#notice-target-filter').val('all');
-                }
-                $('#sendNoticeModal').modal('show');
-            });
-
-            // Handle Dispatch Notice Action
-            $('#dispatch-notice-form').on('submit', function(e) {
-                e.preventDefault();
-                alert('Notices successfully queued and dispatched to target tracking selections.');
-                $('#sendNoticeModal').modal('hide');
-            });
-
-            // Client-Side Spreadsheet Excel (.xls) Builder & Downloader Logic Pipeline Framework
-            $('#btn-export-excel').on('click', function() {
-                const tableElement = document.getElementById('basic-datatable');
-                let workbookTemplateHTML = `
-                    <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
-                    <head>
-                        <!--[if gte mso 9]>
-                        <xml>
-                            <x:ExcelWorkbook>
-                                <x:ExcelWorksheets>
-                                    <x:ExcelWorksheet>
-                                        <x:Name>Participant Attendance</x:Name>
-                                        <x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>
-                                    </x:ExcelWorksheet>
-                                </x:ExcelWorksheets>
-                            </x:ExcelWorkbook>
-                        </xml>
-                        <![endif]-->
-                        <meta charset="utf-8">
-                        <style>
-                            th { background-color: #f4f6f9; font-weight: bold; border: 0.5pt solid #cbd5e1; text-align: left; }
-                            td { border: 0.5pt solid #e2e8f0; }
-                        </style>
-                    </head>
-                    <body>
-                        <table>
-                            ${tableElement.innerHTML}
-                        </table>
-                    </body>
-                    </html>`;
-
-                // Clean up internal dynamic elements like status selectors and badges for structural data purity inside Excel cells
-                workbookTemplateHTML = workbookTemplateHTML.replace(/<span class="badge-soft[^>]*">([\s\S]*?)<\/span>/gi, '$1');
-
-                // Formulate standard binary data uri string tracking package block container array object element tags
-                const blobPayload = new Blob([workbookTemplateHTML], { type: 'application/vnd.ms-excel;charset=utf-8;' });
-                const temporaryDownloadAnchor = document.createElement('a');
-                
-                temporaryDownloadAnchor.href = URL.createObjectURL(blobPayload);
-                temporaryDownloadAnchor.download = 'Participant_Attendance_Report.xls';
-                
-                document.body.appendChild(temporaryDownloadAnchor);
-                temporaryDownloadAnchor.click();
-                document.body.removeChild(temporaryDownloadAnchor);
             });
         });
     </script>
