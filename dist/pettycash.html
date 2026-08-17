@@ -28,10 +28,6 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-        <style type="text/css" class="init">
- 
-        </style>
-
     </head>
 
     <body>
@@ -1613,193 +1609,332 @@
                     <div class="container-fluid">
                         <div class="row page-title align-items-center">
                             <div class="col-md-6 col-xl-6">
-                                <h3 class="mb-1 mt-0">Petty Cash Listing <div class="inline-block"><span class="text-primary font-size-15"><span class="font-weight-normal mr-2">Current Balance on Hand:</span>RM100.00</span></h3>
+                                <h3 class="mb-1 mt-0">Petty Cash Listing <div class="inline-block"><span class="text-muted font-size-15"><span class="font-weight-normal mr-2">November 2023 &nbsp;•&nbsp; Current Balance on Hand: <strong class="text-primary">RM 100.00</strong></h3>
                             </div>
                             <div class="col-md-6 col-xl-6 text-md-right">
                                 <div class="mt-4 mt-md-0">
-                                    <a href="pettycash-admin-topup.html" class="btn btn-primary btn-rounded">Top Up</a> <!-- <a href="pettycash-admin-purchase.html" class="btn btn-primary btn-rounded">Purchase</a> -->
+                                    <button class="btn btn-outline-primary btn-rounded mr-2" onclick="openModal('expenseModal')"><i class="uil uil-plus"></i> Add Expense</button>
+                                    <button class="btn btn-primary btn-rounded" onclick="openModal('topupModal')"><i class="uil uil-arrow-up"></i> Top Up</button>
+
+                                    <!-- <a href="pettycash-admin-topup.html" class="btn btn-primary btn-rounded"><i class="uil uil-plus"></i> Top Up</a> <a href="pettycash-admin-purchase.html" class="btn btn-primary btn-rounded">Purchase</a> -->
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Threshold Alert Banner -->
+                        <div class="shreyu-alert-banner show" id="lowAlert">
+                            <i class="uil uil-exclamation-triangle font-size-20"></i>
+                            <div class="flex-grow-1">
+                                Balance on hand (<strong>RM 100.00</strong>) has fallen below the top-up threshold of <strong>RM 150.00</strong>. A top-up is recommended to keep petty cash operational.
+                            </div>
+                            <button class="btn btn-sm btn-warning text-dark font-weight-bold btn-rounded px-3" onclick="openModal('topupModal')">Top Up Now</button>
                         </div>
 
                         <div class="row">
                             
                             <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <form class="">
-                                            <div class="mb-2">
-                                                <div class="form-row align-items-center">
-                                                    <div class="col col-md-3">
-                                                        <div class="form-group">
-                                                            <input type="text" id="range-datepicker" class="form-control" placeholder="Date Range">
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <select class="form-control custom-select">
-                                                                <option>Select Type</option>
-                                                                <option>Transportation</option>
-                                                                <option>Office Supplies</option>
-                                                                <option>Food & Beverages</option>
-                                                                <option>Postage and Shipping</option>
-                                                                <option>MISC</option>
-                                                            </select>
-                                                        </div>
-                                                    </div> -->
-                                                    <div class="col col-md-1">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">View</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col col-md-8 text-right mb-3">
-                                                        <a href="" class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#">Save as PDF</a>
+                                <!-- 4 Metric Cards Grid -->
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6 mb-2">
+                                        <div class="shreyu-card stat-card-widget">
+                                            <div class="stat-title">Opening Balance</div>
+                                            <div class="stat-value">RM 300.00</div>
+                                            <div class="stat-subtitle">Balance b/f — 1 Nov 2023</div>
+                                            <div class="stat-chip-icon chip-blue"><i class="uil uil-arrow-down"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-2">
+                                        <div class="shreyu-card stat-card-widget">
+                                            <div class="stat-title">Total Top-Ups</div>
+                                            <div class="stat-value text-success">+ RM 200.00</div>
+                                            <div class="stat-subtitle">1 top-up this month</div>
+                                            <div class="stat-chip-icon chip-green"><i class="uil uil-arrow-up"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-2">
+                                        <div class="shreyu-card stat-card-widget">
+                                            <div class="stat-title">Total Expenses</div>
+                                            
+                                            <div class="stat-value text-danger">− RM 400.00</div>
+                                            <div class="stat-subtitle">5 approved expenses</div>
+                                            <div class="stat-chip-icon chip-red"><i class="uil uil-arrow-down"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6 mb-2">
+                                        <div class="shreyu-card stat-card-widget border-warning" style="background: #fffdfa;">
+                                            <div class="stat-title">Closing Balance on Hand</div>
+                                            <div class="stat-value">RM 100.00</div>
+                                            <div class="stat-subtitle text-warning font-weight-bold">Below threshold (RM 150.00)</div>
+                                            <div class="stat-chip-icon chip-amber"><i data-feather="flag"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12">
+                                        <!-- Data Table Card Panel -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <!-- Filter Header Controls -->
+                                                <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 border-bottom">
+                                                    <ul class="nav nav-tabs nav-bordered card-header-tabs m-0 border-0" id="statusTabs">
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link active font-weight-bold" data-filter="">All <span class="badge badge-soft-primary ml-1">6</span></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link font-weight-bold" data-filter="Pending">Pending Approval <span class="badge badge-soft-warning ml-1">1</span></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link font-weight-bold" data-filter="Approved">Approved <span class="badge badge-soft-success ml-1">3</span></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link font-weight-bold" data-filter="Reimbursed">Reimbursed <span class="badge badge-soft-info ml-1">2</span></a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="d-flex align-items-center gap-2 mt-2 mt-md-0">
+                                                        <button class="btn btn-sm btn-light border text-primary font-weight-bold mr-2" onclick="bulkReimburse()"><i class="uil uil-sync mr-1"></i> Reimburse Selected</button>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="table-responsive">
-                                                <table id="basic-datatable2" class="table table-hover nowrap full-width">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Date</th>
-                                                            <!-- <th>Approved on</th> -->
-                                                            <th class="text-center">Top Up No. / Reimburse No.</th>
-                                                            <th>Description</th>
-                                                            <!-- <th>Expensed By</th> -->
-                                                            <th class="text-right">Debit (RM)</th>
-                                                            <th class="text-right">Credit (RM)</th>
-                                                            <!-- <th class="text-right">Balance</th> -->
-                                                            <!-- <th class="text-center">Receipt</th> -->
-                                                            <!-- <th class="text-center">Actions</th> -->
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1 Nov 2023</td>
-                                                            <td class="text-center"></td>
-                                                            <td>Balance b/f from previous month</td>
-                                                            <!-- <td></td> -->
-                                                            <td class="text-right">300.00</td>
-                                                            <td class="text-right"></td>
-                                                            <!-- <td class="text-right">300.00</td> -->
-                                                            <!-- <td class="text-center">
-                                                            </td> -->
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5 Nov 2023</td>
-                                                            <!-- <td class="text-center"><a href="pettycash-admin-purchase-edit-approved.html">77731</a></td> -->
-                                                            <td class="text-center"><a href="pettycash-reimburse.html">RIM2345</a></td>
-                                                            <td>Reimbursed</td>
-                                                            <!-- <td>Tim</td> -->
-                                                            <td class="text-right"></td>
-                                                            <td class="text-right">400.00</td>
-                                                            <!-- <td class="text-right">200.00</td> -->
-                                                            <!-- <td class="text-center">
-                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
-                                                            </td> -->
-                                                            <!-- <td class="text-center">
-                                                                <div class="btn-group dropleft">
-                                                                    <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                    <div class="dropdown-menu">
-                                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-decline">Reject</a>
-                                                                        <a class="dropdown-item" href="#">Print</a>
+                                                <!-- Table -->
+                                                <div class="table-responsive">
+                                                    <table id="basic-datatble" class="table table-centered table-hover table-nowrap mb-0 nowrap w-100">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 20px;"><input type="checkbox" id="selectAllCheckboxes" onclick="toggleAll(this)"></th>
+                                                                <th>Date</th>
+                                                                <th>Petty Cash No.</th>
+                                                                <th>Description</th>
+                                                                <th>Expensed By</th>
+                                                                <th>Status</th>
+                                                                <th class="text-right">Amount (RM)</th>
+                                                                <th class="text-center">Receipt</th>
+                                                                <th class="text-center">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>26 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77732</td>
+                                                                <td>Cleaning supplies for lobby</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-warning badge-pill">Pending</span>
+                                                                        <small class="text-muted">Awaiting supervisor</small>
                                                                     </div>
-                                                                </div>
-                                                            </td> -->
-                                                        </tr>
-                                                        
-                                                        <tr>
-                                                            <td class="text-color-greenBright">15 Nov 2023</td>
-                                                            <td class="text-center"><a href="pettycash-admin-topup-detail.html">TU77799</a></td>
-                                                            <td class="text-color-greenBright">Topped Up</td>
-                                                            <!-- <td></td> -->
-                                                            <td class="text-color-greenBright text-right">200.00</td>
-                                                            <td class="text-right"></td>
-                                                            <!-- <td class="text-right">300.00</td> -->
-                                                            <!-- <td class="text-center">
-                                                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xs rounded" alt="file-image"></a>
-                                                            </td> -->
-                                                            <!-- <td class="text-center pb-1">
-                                                            </td> -->
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </form>
-
-                                        <div class="mt-4">
-                                            <div class="row">
-                                                <div class="col-md-5"></div>
-                                                <div class="col-md-7 text-right">
-                                                    <div class="card">
-                                                        <div class="card-body border-gray-light bg-color-grayLighter text-color-black pt-3 pb-3 line-height-1dot8">
-                                                            <div class="row">
-                                                                <div class="col col-lg-7 text-right">
-                                                                    Balance b/f (RM)
-                                                                </div>
-                                                                <div class="col col-lg-5 text-right">
-                                                                    300.00
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col col-lg-7 text-right">
-                                                                    Topped Up (RM)
-                                                                </div>
-                                                                <div class="col col-lg-5 text-right">
-                                                                    + 200.00
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col col-lg-7 text-right">
-                                                                    Reimbursed (RM)
-                                                                </div>
-                                                                <div class="col col-lg-5 text-right">
-                                                                    - 400.00
-                                                                </div>
-                                                            </div>
-                                                            <!-- <div class="row text-color-orangeDark">
-                                                                <div class="col col-lg-7 text-right">
-                                                                    Pending (RM)
-                                                                </div>
-                                                                <div class="col col-lg-5 text-right">
-                                                                    - 400.00
-                                                                </div>
-                                                            </div> -->
-                                                            
-                                                            <div class="row bg-color-grayLight font-size-16 pt-2 pb-2 mt-2">
-                                                                <div class="col col-lg-7 text-right font-weight-semibold">
-                                                                    Current Balance on Hand (RM)
-                                                                </div>
-                                                                <div class="col col-lg-5 text-right font-weight-semibold">
-                                                                    100.00
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">120.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item text-success" onclick="approve(this)"><i class="uil uil-check mr-2"></i> Approve</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-edit-alt mr-2"></i> Edit</button>
+                                                                            <button class="dropdown-item text-danger"><i class="uil uil-multiply mr-2"></i> Reject</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>25 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77728</td>
+                                                                <td>Paid lunch for customer appointment</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-success badge-pill">Approved</span>
+                                                                        <small class="text-muted">12 Nov 2023 · by Nik</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">200.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item text-primary" onclick="reimburseOne(this)"><i class="uil uil-sync mr-2"></i> Reimburse</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-file-download mr-2"></i> Download</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>25 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77727</td>
+                                                                <td>Paid lunch for customer appointment</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-success badge-pill">Approved</span>
+                                                                        <small class="text-muted">25 Nov 2023 · by Nik</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">200.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item text-primary" onclick="reimburseOne(this)"><i class="uil uil-sync mr-2"></i> Reimburse</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-file-download mr-2"></i> Download</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>5 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77729</td>
+                                                                <td>2 stacks of A4 paper</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-success badge-pill">Approved</span>
+                                                                        <small class="text-muted">12 Nov 2023 · by Nik</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">20.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item text-primary" onclick="reimburseOne(this)"><i class="uil uil-sync mr-2"></i> Reimburse</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-file-download mr-2"></i> Download</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>5 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77731</td>
+                                                                <td>Petrol from Office to Client Office</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-info badge-pill">Reimbursed</span>
+                                                                        <small class="text-muted">12 Nov 2023 · RIM2345</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">200.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-file-download mr-2"></i> Download slip</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="checkbox" class="rowchk"></td>
+                                                                <td>5 Nov 2023</td>
+                                                                <td class="font-weight-bold text-primary">77730</td>
+                                                                <td>Petrol from Office to Client Office</td>
+                                                                <td>Tim</td>
+                                                                <td>
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="badge badge-soft-info badge-pill">Reimbursed</span>
+                                                                        <small class="text-muted">12 Nov 2023 · RIM2345</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-right font-weight-bold text-danger">200.00</td>
+                                                                <td class="text-center"><button class="btn btn-sm btn-light btn-rounded border"><i class="uil uil-receipt text-primary"></i></button></td>
+                                                                <td class="text-center">
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1" type="button" data-toggle="dropdown"><i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                                            <button class="dropdown-item"><i class="uil uil-eye mr-2"></i> View</button>
+                                                                            <button class="dropdown-item"><i class="uil uil-file-download mr-2"></i> Download slip</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <!-- <div class="row mb-4">
-                                            <div class="col-md-12">
-                                                <div class="card bg-color-propertygagaLightest mb-0">
-                                                    <div class="card-body">
-                                                        <h5 class="m-0 text-right">Balance:  RM 470.00</h5>
-                                                        <div class="row">
-                                                            <div class="col col-lg-3">
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                <!-- Ledger & Reconciliation Grid -->
+                                <div class="row">
+                                    <div class="col-lg-7 mb-4">
+                                        <div class="shreyu-card p-4 h-100">
+                                            <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem;">Monthly Cash Movement — November 2023</h5>
+                                            
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <span style="width: 90px; font-size: 0.8rem;" class="text-muted">Opening</span>
+                                                <div class="flex-grow-1 bg-light rounded overflow-hidden" style="height: 10px;">
+                                                    <div class="bg-primary h-100" style="width: 50%;"></div>
+                                                </div>
+                                                <strong class="ml-2">RM 300.00</strong>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <span style="width: 90px; font-size: 0.8rem;" class="text-muted">Top-ups</span>
+                                                <div class="flex-grow-1 bg-light rounded overflow-hidden" style="height: 10px;">
+                                                    <div class="bg-success h-100" style="width: 33%;"></div>
+                                                </div>
+                                                <strong class="ml-2">+ RM 200.00</strong>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <span style="width: 90px; font-size: 0.8rem;" class="text-muted">Expenses</span>
+                                                <div class="flex-grow-1 bg-light rounded overflow-hidden" style="height: 10px;">
+                                                    <div class="bg-danger h-100" style="width: 67%;"></div>
+                                                </div>
+                                                <strong class="ml-2">− RM 400.00</strong>
+                                            </div>
+
+                                            <div class="d-flex align-items-center gap-2 my-3">
+                                                <span style="width: 90px; font-size: 0.8rem;" class="text-muted">Closing</span>
+                                                <div class="flex-grow-1 bg-light rounded overflow-hidden" style="height: 10px;">
+                                                    <div class="bg-warning h-100" style="width: 17%;"></div>
+                                                </div>
+                                                <strong class="ml-2">RM 100.00</strong>
+                                            </div>
+
+                                            <p class="text-muted mt-4 mb-0" style="font-size: 0.775rem;">
+                                                Top-up threshold set at <strong>RM 150.00</strong>. Petty cash purchases are capped at <strong>RM 200.00</strong> per transaction — larger amounts require a cheque.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 mb-4">
+                                        <div class="shreyu-card p-4 h-100 d-flex flex-column justify-content-between">
+                                            <div>
+                                                <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem;">Reconciliation</h5>
+                                                <div class="d-flex justify-content-between py-2 border-bottom" style="font-size: 0.875rem;">
+                                                    <span class="text-muted">Balance b/f (RM)</span><strong>300.00</strong>
+                                                </div>
+                                                <div class="d-flex justify-content-between py-2 border-bottom" style="font-size: 0.875rem;">
+                                                    <span class="text-muted">Topped Up (RM)</span><strong class="text-success">+ 200.00</strong>
+                                                </div>
+                                                <div class="d-flex justify-content-between py-2 border-bottom" style="font-size: 0.875rem;">
+                                                    <span class="text-muted">Reimbursed / Spent (RM)</span><strong class="text-danger">− 400.00</strong>
                                                 </div>
                                             </div>
-                                        </div> -->
-                                        
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
+                                            <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded mt-3">
+                                                <span class="font-weight-bold text-dark">Current Balance on Hand (RM)</span>
+                                                <span class="font-weight-bold h5 mb-0 text-primary">100.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div><!-- end col-->
                         </div>
                         <!-- end row-->
@@ -1828,235 +1963,7 @@
 
             <!-- ============================================================== -->
             <!-- End Page content -->
-            <!-- ============================================================== -->
-
-            <!-- approve  -->
-           <div class="modal fade" id="modal-approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                <div class="modal-dialog modaldialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Approve</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-color-black">
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Date</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    5 Nov 2023	
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Type</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    Transportation
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Description</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    Petrol from Office to Client Office
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Expensed By</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    Tim
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Amount</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    RM 200.00
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col col-sm-4 col-lg-4">
-                                    <label>Receipt</label>
-                                </div>
-                                <div class="col col-sm-8 col-lg-8">
-                                    <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success btn-rounded width-sm" data-dismiss="modal">Approve</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- approve end -->
-
-            <!-- decline  -->
-           <div class="modal fade" id="modal-decline" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modaldialog-scrollable" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Reject</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-color-black">
-                        <div class="row">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Date</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                5 Nov 2023	
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Type</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                Transportation
-                            </div>
-                        </div>
-                        <div class="row line-height-1dot7">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Description</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                Petrol from Office to Client Office
-                            </div>
-                        </div>
-                        <div class="row line-height-1dot7">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Expensed By</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                Tim
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Amount</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                RM 200.00
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-sm-4 col-lg-4">
-                                <label>Receipt</label>
-                            </div>
-                            <div class="col col-sm-8 col-lg-8">
-                                <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="form-group">
-                                    <label>Notes</label>
-                                    <textarea class="form-control" rows="2" id="example-textarea"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-danger btn-rounded width-sm" data-dismiss="modal">Reject</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <!-- decline end -->
-
-            <!-- reverse rejected  -->
-       <div class="modal fade" id="modal-reverse" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-        <div class="modal-dialog modaldialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalScrollableTitle">Reverse Rejected</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-color-black">
-                    <div class="row">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Date</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            5 Nov 2023	
-                        </div>
-                    </div>
-                    <!-- <div class="row">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Type</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            Transportation
-                        </div>
-                    </div> -->
-                    <div class="row line-height-1dot7">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Description</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            Petrol from Office to Client Office
-                        </div>
-                    </div>
-                    <div class="row line-height-1dot7">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Expensed By</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            Tim
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Amount</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            RM 200.00
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-sm-4 col-lg-4">
-                            <label>Receipt</label>
-                        </div>
-                        <div class="col col-sm-8 col-lg-8">
-                            <a href="javascript:void(0);" class="text-muted font-weight-bold"><img src="assets/images/projects/project-1.jpg" class="avatar-xl rounded" alt="file-image"></a>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="form-group">
-                                <label>Notes</label>
-                                <textarea class="form-control" rows="2" id="example-textarea">Reason....blah blah.....</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light btn-rounded width-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-rounded width-sm" data-dismiss="modal">Revert</button>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- reverse rejected end -->
+            <!-- ============================================================== --> 
 
 
         </div>
@@ -2239,26 +2146,485 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
-       
-        <script type="text/javascript" class="init">
-	
-            $(document).ready(function() {
-                $('#bookinglist').DataTable( {
-                    "language": {
-                        "paginate": {
-                            "previous": "<i class='uil uil-angle-left'>",
-                            "next": "<i class='uil uil-angle-right'>"
-                        }
 
-                    },
-                    "drawCallback": function () {
-                        $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
-                    },
-                    "scrollX": true
-                } );
-            } );
-            
-        </script>
+        <!-- optional plugins -->
+        <script src="assets/libs/moment/moment.min.js"></script>
+        <!-- page js -->
+        <script src="assets/js/pages/widgets.init.js"></script>
+       
+       
+<!-- Add Expense Modal -->
+<div class="modal-overlay" id="expenseModal">
+    <div class="shreyu-modal-card upload-container">
+        <div class="shreyu-modal-header">
+            <h5 class="font-weight-bold m-0">Petty Cash Purchase</h5>
+            <button class="border-0 bg-transparent h4 mb-0 text-muted" onclick="closeModal('expenseModal')">&times;</button>
+        </div>
+        <div class="shreyu-modal-body">
+            <div class="alert alert-info py-2 px-3 mb-3" style="font-size: 0.8rem;">
+                <i class="uil uil-info-circle mr-1"></i> Only applicable for expenses of <strong>RM 200 or below</strong>. For amounts exceeding RM 200, please issue a cheque.
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Date of Spend <span class="text-danger">*</span></label>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Petty Cash No.</label>
+                <input class="form-control form-control-sm bg-light" value="77733" readonly>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Expensed By <span class="text-danger">*</span></label>
+                <select class="form-control form-control-sm">
+                    <option>Tim</option>
+                    <option>Nik Patel</option>
+                    <option>Sarah Lim</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control form-control-sm" rows="3" placeholder="What was purchased and why…"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Amount <span class="text-danger">*</span></label>
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend"><span class="input-group-text">RM</span></div>
+                    <input type="number" id="expAmt" class="form-control" placeholder="0.00" step="0.01" oninput="checkCap()">
+                </div>
+                <small class="form-text text-muted" id="capHint">Maximum RM 200.00 per petty cash transaction.</small>
+            </div>
+            <div class="form-group mb-0">
+                <!-- <label class="font-weight-bold" style="font-size: 0.825rem;">Upload Official Receipt / Slip <span class="text-danger">*</span></label>
+                <label class="d-block border border-dashed rounded text-center p-3 text-muted cursor-pointer" for="expFile" style="border-style: dashed;">
+                    <i class="fas fa-paperclip h4 mb-1 text-primary d-block"></i>
+                    <span style="font-size: 0.825rem;">Click to upload or drag & drop</span>
+                    <small class="d-block text-muted">JPG, PNG or PDF — up to 5 MB</small>
+                </label>
+                <input type="file" id="expFile" multiple accept="image/*,.pdf" class="d-none" onchange="showFiles(this,'expFiles')">
+                <div class="d-flex flex-column gap-1 mt-2" id="expFiles"></div> -->
+
+                <!-- Drag Drop Area -->
+
+                <div class="card-body border-gray400">
+        
+                    <div class="drop-zone rounded p-4 text-center">
+                        <i class="uil uil-cloud-upload font-size-22 text-primary"></i>
+                        <h5 class="mt-2">Drag & Drop Official Receipt / Slip Here</h5>
+                        <p class="text-muted small mb-3">or</p>
+
+                        <input type="file" class="file-input d-none" multiple>
+
+                        <button type="button" class="btn btn-primary browse-btn">
+                            Browse Files
+                        </button>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Selected Files (<span class="file-count">0</span>)</h6>
+                        <ul class="file-list list-group list-group-flush mt-2">
+                            <li class="list-group-item text-muted small text-center py-3 empty-message">
+                                No files selected yet.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="shreyu-modal-footer">
+            <button class="btn btn-light btn-rounded" onclick="closeModal('expenseModal')">Cancel</button>
+            <button class="btn btn-primary btn-rounded" onclick="saveExpense()">Submit for Approval</button>
+        </div>
+    </div>
+</div>
+
+<!-- Top Up Modal -->
+<div class="modal-overlay" id="topupModal">
+    <div class="shreyu-modal-card upload-container2">
+        <div class="shreyu-modal-header">
+            <h5 class="font-weight-bold m-0">Top Up Petty Cash</h5>
+            <button class="border-0 bg-transparent h4 mb-0 text-muted" onclick="closeModal('topupModal')">&times;</button>
+        </div>
+        <div class="shreyu-modal-body">
+            <div class="alert alert-warning py-2 px-3 mb-3" style="font-size: 0.8rem;">
+                Current balance on hand is <strong>RM 100.00</strong>, below the threshold of <strong>RM 150.00</strong>. Recommended top-up to restore float of RM 300.00: <strong>RM 200.00</strong>.
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Date <span class="text-danger">*</span></label>
+                <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Top Up No.</label>
+                <input class="form-control form-control-sm bg-light" value="TU77733" readonly>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Amount <span class="text-danger">*</span></label>
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend"><span class="input-group-text">RM</span></div>
+                    <input type="number" class="form-control" value="200.00" step="0.01">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" style="font-size: 0.825rem;">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control form-control-sm" rows="2" placeholder="e.g. Monthly petty cash replenishment"></textarea>
+            </div>
+            <div class="form-group mb-0">
+                <!-- <label class="font-weight-bold" style="font-size: 0.825rem;">Upload Receipt / Slip</label>
+                <label class="d-block border border-dashed rounded text-center p-3 text-muted cursor-pointer" for="tuFile" style="border-style: dashed;">
+                    <i class="fas fa-paperclip h4 mb-1 text-primary d-block"></i>
+                    <span style="font-size: 0.825rem;">Click to upload or drag & drop</span>
+                    <small class="d-block text-muted">Bank slip or withdrawal record</small>
+                </label>
+                <input type="file" id="tuFile" multiple accept="image/*,.pdf" class="d-none" onchange="showFiles(this,'tuFiles')">
+                <div class="d-flex flex-column gap-1 mt-2" id="tuFiles"></div> -->
+
+                <!-- Drag Drop Area -->
+
+                <div class="card-body border-gray400">
+        
+                    <div class="drop-zone rounded p-4 text-center">
+                        <i class="uil uil-cloud-upload font-size-22 text-primary"></i>
+                        <h5 class="mt-2">Drag & Drop Official Receipt / Slip Here</h5>
+                        <p class="text-muted small mb-3">or</p>
+
+                        <input type="file" class="file-input d-none" multiple>
+                        
+                        <button type="button" class="btn btn-primary browse-btn">
+                            Browse Files
+                        </button>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Selected Files (<span class="file-count">0</span>)</h6>
+                        <ul class="file-list list-group list-group-flush mt-2">
+                            <li class="list-group-item text-muted small text-center py-3 empty-message">
+                                No files selected yet.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="shreyu-modal-footer">
+            <button class="btn btn-light btn-rounded" onclick="closeModal('topupModal')">Cancel</button>
+            <button class="btn btn-primary btn-rounded" onclick="saveTopup()">Save Top Up</button>
+        </div>
+    </div>
+</div>
+
+<!-- drag & Drop files -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Target all uploader wrappers on the page
+        const uploadContainers = document.querySelectorAll(".upload-container");
+
+        uploadContainers.forEach((container) => {
+            // 2. Scope UI elements strictly INSIDE this specific container box
+            const dropZone = container.querySelector(".drop-zone");
+            const fileInput = container.querySelector(".file-input");
+            const fileList = container.querySelector(".file-list");
+            const fileCount = container.querySelector(".file-count");
+            const emptyMessage = container.querySelector(".empty-message");
+            const browseBtn = container.querySelector(".browse-btn");
+            const clearBtn = container.querySelector(".clear-btn");
+            const uploadBtn = container.querySelector(".upload-btn");
+
+            // Isolated file array queue for this container instance
+            let containerFiles = [];
+
+            // Manual trigger for file layout click
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Drag/Drop Styling Toggles
+            ['dragenter', 'dragover'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
+            });
+
+            // Drop handling
+            dropZone.addEventListener('drop', (e) => {
+                handleFiles(e.dataTransfer.files);
+            });
+
+            // Click browse selection handling
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                containerFiles = [...containerFiles, ...Array.from(files)];
+                renderQueue();
+            }
+
+            // Render current files inside this instance's checklist 
+            function renderQueue() {
+                fileList.innerHTML = '';
+                
+                if (containerFiles.length === 0) {
+                    fileList.appendChild(emptyMessage);
+                    fileCount.textContent = 0;
+                    return;
+                }
+
+                fileCount.textContent = containerFiles.length;
+
+                containerFiles.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.className = "list-group-item d-flex justify-content-between align-items-center small py-2";
+                    li.innerHTML = `
+                        <div>
+                            <i class="uil uil-file text-primary me-2"></i>
+                            <strong>${file.name}</strong> <span class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                    `;
+
+                    // Single delete trash button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = "button";
+                    deleteBtn.className = "btn btn-sm btn-link text-danger p-0";
+                    deleteBtn.innerHTML = `<i class="uil uil-times fs-5"></i>`;
+                    deleteBtn.addEventListener('click', () => {
+                        containerFiles.splice(index, 1);
+                        renderQueue();
+                    });
+
+                    li.appendChild(deleteBtn);
+                    fileList.appendChild(li);
+                });
+            }
+
+            // Clear everything inside this specific box
+            clearBtn.addEventListener('click', () => {
+                containerFiles = [];
+                fileInput.value = '';
+                renderQueue();
+            });
+
+            // Custom instance submit handler
+            uploadBtn.addEventListener('click', () => {
+                const documentTitle = container.querySelector(".card-title").innerText.trim();
+                
+                if (containerFiles.length === 0) {
+                    alert(`Please select files for: "${documentTitle}"`);
+                    return;
+                }
+
+                console.log(`Uploading ${containerFiles.length} items for container section: [${documentTitle}]`, containerFiles);
+                alert(`Uploading ${containerFiles.length} files from the section: "${documentTitle}"`);
+            });
+        });
+    });
+</script>
+
+<!-- drag & Drop files -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Target all uploader wrappers on the page
+        const uploadContainers = document.querySelectorAll(".upload-container2");
+
+        uploadContainers.forEach((container) => {
+            // 2. Scope UI elements strictly INSIDE this specific container box
+            const dropZone = container.querySelector(".drop-zone");
+            const fileInput = container.querySelector(".file-input");
+            const fileList = container.querySelector(".file-list");
+            const fileCount = container.querySelector(".file-count");
+            const emptyMessage = container.querySelector(".empty-message");
+            const browseBtn = container.querySelector(".browse-btn");
+            const clearBtn = container.querySelector(".clear-btn");
+            const uploadBtn = container.querySelector(".upload-btn");
+
+            // Isolated file array queue for this container instance
+            let containerFiles = [];
+
+            // Manual trigger for file layout click
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Drag/Drop Styling Toggles
+            ['dragenter', 'dragover'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
+            });
+
+            // Drop handling
+            dropZone.addEventListener('drop', (e) => {
+                handleFiles(e.dataTransfer.files);
+            });
+
+            // Click browse selection handling
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                containerFiles = [...containerFiles, ...Array.from(files)];
+                renderQueue();
+            }
+
+            // Render current files inside this instance's checklist 
+            function renderQueue() {
+                fileList.innerHTML = '';
+                
+                if (containerFiles.length === 0) {
+                    fileList.appendChild(emptyMessage);
+                    fileCount.textContent = 0;
+                    return;
+                }
+
+                fileCount.textContent = containerFiles.length;
+
+                containerFiles.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.className = "list-group-item d-flex justify-content-between align-items-center small py-2";
+                    li.innerHTML = `
+                        <div>
+                            <i class="uil uil-file text-primary me-2"></i>
+                            <strong>${file.name}</strong> <span class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                    `;
+
+                    // Single delete trash button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = "button";
+                    deleteBtn.className = "btn btn-sm btn-link text-danger p-0";
+                    deleteBtn.innerHTML = `<i class="uil uil-times fs-5"></i>`;
+                    deleteBtn.addEventListener('click', () => {
+                        containerFiles.splice(index, 1);
+                        renderQueue();
+                    });
+
+                    li.appendChild(deleteBtn);
+                    fileList.appendChild(li);
+                });
+            }
+
+            // Clear everything inside this specific box
+            clearBtn.addEventListener('click', () => {
+                containerFiles = [];
+                fileInput.value = '';
+                renderQueue();
+            });
+
+            // Custom instance submit handler
+            uploadBtn.addEventListener('click', () => {
+                const documentTitle = container.querySelector(".card-title").innerText.trim();
+                
+                if (containerFiles.length === 0) {
+                    alert(`Please select files for: "${documentTitle}"`);
+                    return;
+                }
+
+                console.log(`Uploading ${containerFiles.length} items for container section: [${documentTitle}]`, containerFiles);
+                alert(`Uploading ${containerFiles.length} files from the section: "${documentTitle}"`);
+            });
+        });
+    });
+</script>
+
+<!-- Toast Notification -->
+<div class="shreyu-toast-notification" id="toast">
+    <i class="uil uil-check-circle text-success"></i> <span id="toastMsg">Saved</span>
+</div>
+
+
+<!-- Interactive JavaScript -->
+<script>
+    let table;
+
+    $(document).ready(function() {
+        // Initialize Shreyu DataTable
+        table = $('#basic-datatble').DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "<i class='uil uil-angle-left'>",
+                    "next": "<i class='uil uil-angle-right'>"
+                }
+            },
+            "order": [],
+            "columnDefs": [
+                { "orderable": false, "targets": [0, 7, 8] }
+            ],
+            "drawCallback": function () {
+                $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+            }
+        });
+
+        // Tab Filter Connection to Datatable Column Search
+        $('#statusTabs a').on('click', function(e) {
+            e.preventDefault();
+            $('#statusTabs a').removeClass('active');
+            $(this).addClass('active');
+
+            const filterVal = $(this).data('filter');
+            // Filter column index 5 (Status column)
+            table.column(5).search(filterVal).draw();
+        });
+    });
+
+    function openModal(id) { document.getElementById(id).classList.add('show'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+    function toggleAll(master) {
+        $('.rowchk').prop('checked', master.checked);
+    }
+
+    function approve(btn) {
+        const cell = table.cell($(btn).closest('td').prev().prev());
+        cell.data('<div class="d-flex flex-column"><span class="badge badge-soft-success badge-pill">Approved</span><small class="text-muted">Just now · by Nik</small></div>').draw();
+        toast('Expense approved');
+    }
+
+    function reimburseOne(btn) {
+        const cell = table.cell($(btn).closest('td').prev().prev());
+        cell.data('<div class="d-flex flex-column"><span class="badge badge-soft-info badge-pill">Reimbursed</span><small class="text-muted">Just now · RIM' + Math.floor(1000 + Math.random() * 9000) + '</small></div>').draw();
+        toast('Marked as reimbursed');
+    }
+
+    function bulkReimburse() {
+        const checked = $('.rowchk:checked');
+        if (!checked.length) { toast('Select at least one expense'); return; }
+        
+        checked.each(function() {
+            const cell = table.cell($(this).closest('tr').find('td:nth-child(6)'));
+            cell.data('<div class="d-flex flex-column"><span class="badge badge-soft-info badge-pill">Reimbursed</span><small class="text-muted">Just now</small></div>');
+            $(this).prop('checked', false);
+        });
+        table.draw();
+        toast(checked.length + ' expense(s) reimbursed');
+    }
+
+    function checkCap() {
+        const val = parseFloat($('#expAmt').val() || 0);
+        if (val > 200) {
+            $('#capHint').addClass('text-danger font-weight-bold').html('<i class="uil uil-exclamation-circle"></i> Exceeds RM 200.00 cap.');
+        } else {
+            $('#capHint').removeClass('text-danger font-weight-bold').text('Maximum RM 200.00 per transaction.');
+        }
+    }
+
+    function saveExpense() {
+        closeModal('expenseModal');
+        toast('Expense submitted for approval');
+    }
+
+    function saveTopup() {
+        closeModal('topupModal');
+        $('#lowAlert').fadeOut();
+        toast('Top up recorded');
+    }
+
+    function toast(msg) {
+        $('#toastMsg').text(msg);
+        $('#toast').addClass('show');
+        setTimeout(() => $('#toast').removeClass('show'), 2600);
+    }
+</script>
+
         
     </body>
 </html>
