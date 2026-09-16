@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">AGM / EGM: <small class="ml-2">EAD AGM - AGM001</small></h3>
+                                <div class="row mb-1 align-items-center">
+                                    <div class="col col-auto">
+                                        <div class="badge badge-soft-danger mb-2">Preparation</div>
+                                    </div>
+                                    <div class="col col-lg-6 col-lg-3">
+                                        <div class="progress mt-0 mt-sm-0" style="height: 5px;" data-toggle="tooltip"
+                                            data-placement="top" title="" data-original-title="Readiness 20%">
+                                            <div class="progress-bar bg-warning" role="progressbar"
+                                                style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="20"></div>
+                                        </div>
+                                        <small>Readiness 20%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="agm-prepare-golive.html" class="btn btn-dark btn-rounded px-4 mr-2">
+                                    <img src="assets/images/icons/go-live.svg" class="mr-2" style="width: 23px !important;">Go Live
+                                </a>
+                                <a href="agm.html"><i class="uil-arrow-left mr-1"></i> Back to Main </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="card bg-color-lightBlue">
+                                    <div class="card-body p-0 ml-0 mr-0 mb-2 mt-0">
+                                        <div class="list-group mt-2 pb-2 font-size-12 font-weight-semibold">
+                                            <a href="agm-prepare-overview.html" class="list-group-item border-0 text-color-primary">Overview</a>
+                                            <a href="agm-prepare-setup.html" class="list-group-item border-0 text-color-primary-active">Settings</a>
+                                            <a href="agm-prepare-timeline.html" class="list-group-item border-0 text-color-primary">Timeline & Checklist</a>
+                                            <a href="agm-prepare-agenda.html" class="list-group-item border-0 text-color-primary">Agenda</a>
+                                            <!-- <a href="agm-resolutions.html" class="list-group-item border-0 text-color-primary">Resolutions</a> -->
+                                            <a href="agm-prepare-voting.html" class="list-group-item border-0 text-color-primary">Voting</a>
+                                            <a href="agm-prepare-eligiblevoters.html" class="list-group-item border-0 text-color-primary">Eligible Voters</a>
+                                            <!-- <a href="agm-prepare-attendance.html" class="list-group-item border-0 text-color-primary">Attendance</a> -->
+                                            <a href="agm-prepare-documents.html" class="list-group-item border-0 text-color-primary">Documents<span class="badge badge-success float-right mr-2 paddingtop-4">6</span></a>
+                                            <a href="agm-prepare-submitted-documents.html" class="list-group-item border-0 text-color-primary">Submitted Docs.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="header-title mb-4 mt-0">Settings</h5>
+                                        <div class="mt-3">
+                                            <div class="card border-gray400 border-left5-propertygaga bg-color-propertygagaLightest bg-color-propertygagaLightest-override-hover">
+                                                <div class="card-body pb-2 pt-4">
+                                                    <label>Meeting Type</label>
+                                                    <div class="row align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="gm1" name="gm"
+                                                                    class="custom-control-input" checked>
+                                                                <label class="custom-control-label" for="gm1">AGM</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="gm2" name="gm"
+                                                                    class="custom-control-input">
+                                                                <label class="custom-control-label" for="gm2">EGM</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mt-3">
+                                                                <label>Meeting Title</label>
+                                                                <input type="text" class="form-control" id="simpleinput" value="EAD AGM - AGM001">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-sm-3">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Date</label>
+                                                                <input type="text" id="basic-datepicker" class="form-control" placeholder="2 Jul 2026" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-sm-3">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Time</label>
+                                                                <input type="text" id="basic-timepicker" class="form-control" placeholder="2:00pm" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-12">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Meeting Mode</label>
+                                                                <div class="form-row align-items-center mt-0 mb-2">
+                                                                    <div class="col-auto">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="Physical" name="method"
+                                                                                class="custom-control-input" checked>
+                                                                            <label class="custom-control-label font-weight-normal" for="Physical">Physical</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="Virtual" name="method"
+                                                                                class="custom-control-input">
+                                                                            <label class="custom-control-label font-weight-normal" for="Virtual">Virtual</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="Hybrid" name="method"
+                                                                                class="custom-control-input">
+                                                                            <label class="custom-control-label font-weight-normal" for="Hybrid">Hybrid</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-6 col-sm-6">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Location</label>
+                                                                <input type="text" class="form-control" id="simpleinput" value="Multipurpose Hall, 3 Resident">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 col-sm-6">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Virtual Link</label>
+                                                                <input type="text" class="form-control" id="simpleinput" value="Multipurpose Hall, 3 Resident">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-12">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Notice of AGM / EGM to be sent</label>
+                                                                <div class="form-row align-items-center mt-0 mb-2">
+                                                                    <div class="col-auto">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="14" name="14"
+                                                                                class="custom-control-input">
+                                                                            <label class="custom-control-label font-weight-normal" for="14">14 days prior to the meeting</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="21" name="14"
+                                                                                class="custom-control-input" checked>
+                                                                            <label class="custom-control-label font-weight-normal" for="21">21 days prior to the meeting for special resolutions</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-sm-3">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Quorum Required (%)</label>
+                                                                <input type="text" class="form-control" placeholder="50" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-sm-3">
+                                                            <div class="form-group mt-3 mt-sm-0">
+                                                                <label>Status</label>
+                                                                <select class="form-control custom-select">
+                                                                    <option>Select Status</option>
+                                                                    <option selected>Preparation</option>
+                                                                    <option>Ready</option>
+                                                                    <option>live</option>
+                                                                    <option>Completed</option>
+                                                                    <option>Cancelled</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group float-right">
+                                                                <button type="submit" class="btn btn-outline-primary btn-rounded mr-1" onclick="window.history.go(-1);">Cancel</button>
+                                                                <a href="agm-prepare-setup.html" class="btn btn-primary btn-rounded" onclick="">Save</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="mt-3">
+                                            <!-- ============================================
+                                                Danger Zone Card
+                                                ============================================ -->
+                                            <div class="card border-danger">
+                                                <div class="card-body">
+
+                                                    <!-- Header -->
+                                                    <div class="d-flex mb-3">
+                                                        <i class="uil uil-exclamation-octagon text-danger font-size-16 mr-2 mt-2"></i>
+
+                                                        <div class="mt-0">
+                                                            <h6 class="text-danger mb-1 pt-0">
+                                                                Danger Zone
+                                                            </h6>
+                                                            <p class="text-muted mb-0 font-size-12">
+                                                                These actions are irreversible. Please be certain.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Delete AGM -->
+                                                    <div class="border rounded bg-color-lighterred p-3">
+
+                                                        <div class="row align-items-center">
+
+                                                            <div class="col-lg-8">
+                                                                <h6 class="text-danger mb-2 mt-0">
+                                                                    Delete this AGM
+                                                                </h6>
+                                                                <p class="text-danger mb-0 font-size-12">
+                                                                    Permanently removes this AGM and all associated data,
+                                                                    including agenda, participants, voting
+                                                                    records, and documents.
+                                                                </p>
+                                                            </div>
+
+                                                            <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+                                                                <button class="btn btn-danger btn-rounded" data-toggle="modal" data-target="#deleteAgmModal">
+                                                                    <i class="uil uil-trash mr-1"></i>Delete AGM
+                                                                </button>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================
+                Confirmation Modal
+                ============================================ -->
+            <div class="modal fade" id="deleteAgmModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Delete AGM</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-danger">
+                                <i class="uil uil-exclamation-circle mr-1"></i>
+                                This action cannot be undone.
+                            </div>
+                            <p>
+                                Deleting this AGM will permanently remove:
+                            </p>
+                            <ul>
+                                <li>Agenda Items</li>
+                                <li>Sub Agendas</li>
+                                <li>Motions</li>
+                                <li>Nominations</li>
+                                <li>Voting Records</li>
+                                <li>Attendance</li>
+                                <li>Meeting Minutes</li>
+                                <li>Supporting Documents</li>
+                            </ul>
+                            <p class="fw-bold text-danger">
+                                Are you sure you want to continue?
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded clear-btn" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-rounded"><i class="uil uil-trash mr-1"></i>Yes, Delete AGM</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <script src="assets/libs/smartwizard/jquery.smartWizard.min.js"></script>
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+
+
+    <!-- optional plugins -->
+    <script src="assets/libs/moment/moment.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- page js -->
+    <script src="assets/js/pages/widgets.init.js"></script>
+
+    <!-- drag & Drop files -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Target all uploader wrappers on the page
+        const uploadContainers = document.querySelectorAll(".upload-container");
+
+        uploadContainers.forEach((container) => {
+            // 2. Scope UI elements strictly INSIDE this specific container box
+            const dropZone = container.querySelector(".drop-zone");
+            const fileInput = container.querySelector(".file-input");
+            const fileList = container.querySelector(".file-list");
+            const fileCount = container.querySelector(".file-count");
+            const emptyMessage = container.querySelector(".empty-message");
+            const browseBtn = container.querySelector(".browse-btn");
+            const clearBtn = container.querySelector(".clear-btn");
+            const uploadBtn = container.querySelector(".upload-btn");
+
+            // Isolated file array queue for this container instance
+            let containerFiles = [];
+
+            // Manual trigger for file layout click
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Drag/Drop Styling Toggles
+            ['dragenter', 'dragover'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
+            });
+
+            // Drop handling
+            dropZone.addEventListener('drop', (e) => {
+                handleFiles(e.dataTransfer.files);
+            });
+
+            // Click browse selection handling
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                containerFiles = [...containerFiles, ...Array.from(files)];
+                renderQueue();
+            }
+
+            // Render current files inside this instance's checklist 
+            function renderQueue() {
+                fileList.innerHTML = '';
+                
+                if (containerFiles.length === 0) {
+                    fileList.appendChild(emptyMessage);
+                    fileCount.textContent = 0;
+                    return;
+                }
+
+                fileCount.textContent = containerFiles.length;
+
+                containerFiles.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.className = "list-group-item d-flex justify-content-between align-items-center small py-2";
+                    li.innerHTML = `
+                        <div>
+                            <i class="uil uil-file text-primary me-2"></i>
+                            <strong>${file.name}</strong> <span class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                    `;
+
+                    // Single delete trash button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = "button";
+                    deleteBtn.className = "btn btn-sm btn-link text-danger p-0";
+                    deleteBtn.innerHTML = `<i class="uil uil-times fs-5"></i>`;
+                    deleteBtn.addEventListener('click', () => {
+                        containerFiles.splice(index, 1);
+                        renderQueue();
+                    });
+
+                    li.appendChild(deleteBtn);
+                    fileList.appendChild(li);
+                });
+            }
+
+            // Clear everything inside this specific box
+            clearBtn.addEventListener('click', () => {
+                containerFiles = [];
+                fileInput.value = '';
+                renderQueue();
+            });
+
+            // Custom instance submit handler
+            uploadBtn.addEventListener('click', () => {
+                const documentTitle = container.querySelector(".card-title").innerText.trim();
+                
+                if (containerFiles.length === 0) {
+                    alert(`Please select files for: "${documentTitle}"`);
+                    return;
+                }
+
+                console.log(`Uploading ${containerFiles.length} items for container section: [${documentTitle}]`, containerFiles);
+                alert(`Uploading ${containerFiles.length} files from the section: "${documentTitle}"`);
+            });
+        });
+    });
+    </script>
+
+        
+    </body>
+</html>

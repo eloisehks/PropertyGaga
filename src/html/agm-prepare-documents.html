@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/zInput/zInput_default_stylesheet.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_arrows.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_circles.min.css" type="text/css" />
+        <link rel="stylesheet" href="assets/libs/smartwizard/smart_wizard_theme_dots.min.css" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function myFunction() {
+              var x = document.getElementById("newPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-6 col-xl-6">
+                                <h3 class="mb-1 mt-0">AGM / EGM: <small class="ml-2">EAD AGM - AGM001</small></h3>
+                                <div class="row mb-1 align-items-center">
+                                    <div class="col col-auto">
+                                        <div class="badge badge-soft-danger mb-2">Preparation</div>
+                                    </div>
+                                    <div class="col col-lg-6 col-lg-3">
+                                        <div class="progress mt-0 mt-sm-0" style="height: 5px;" data-toggle="tooltip"
+                                            data-placement="top" title="" data-original-title="Readiness 20%">
+                                            <div class="progress-bar bg-warning" role="progressbar"
+                                                style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                aria-valuemax="20"></div>
+                                        </div>
+                                        <small>Readiness 20%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-6 text-md-right">
+                                <a href="agm-prepare-golive.html" class="btn btn-dark btn-rounded px-4 mr-2">
+                                    <img src="assets/images/icons/go-live.svg" class="mr-2" style="width: 23px !important;">Go Live
+                                </a>
+                                <a href="agm.html"><i class="uil-arrow-left mr-1"></i> Back to Main </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="card bg-color-lightBlue">
+                                    <div class="card-body p-0 ml-0 mr-0 mb-2 mt-0">
+                                        <div class="list-group mt-2 pb-2 font-size-12 font-weight-semibold">
+                                            <a href="agm-prepare-overview.html" class="list-group-item border-0 text-color-primary">Overview</a>
+                                            <a href="agm-prepare-setup.html" class="list-group-item border-0 text-color-primary">Settings</a>
+                                            <a href="agm-prepare-timeline.html" class="list-group-item border-0 text-color-primary">Timeline & Checklist</a>
+                                            <a href="agm-prepare-agenda.html" class="list-group-item border-0 text-color-primary">Agenda</a>
+                                            <!-- <a href="agm-resolutions.html" class="list-group-item border-0 text-color-primary">Resolutions</a> -->
+                                            <a href="agm-prepare-voting.html" class="list-group-item border-0 text-color-primary">Voting</a>
+                                            <a href="agm-prepare-eligiblevoters.html" class="list-group-item border-0 text-color-primary">Eligible Voters</a>
+                                            <!-- <a href="agm-prepare-attendance.html" class="list-group-item border-0 text-color-primary">Attendance</a> -->
+                                            <a href="agm-prepare-documents.html" class="list-group-item border-0 text-color-primary-active">Documents<span class="badge badge-success float-right mr-2 paddingtop-4">6</span></a>
+                                            <a href="agm-prepare-submitted-documents.html" class="list-group-item border-0 text-color-primary">Submitted Docs.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 pl-1">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <!-- Top Layout Header Row -->
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div>
+                                                <h5 class="header-title mb-1 mt-0">Document Center</h5>
+                                                <p class="text-muted mb-0">5 documents</p>
+                                            </div>
+                                            <button class="btn btn-primary btn-rounded" id="btn-trigger-upload-wizard">
+                                                <i class="uil uil-plus mr-2"></i>Upload Document
+                                            </button>
+                                        </div>
+        
+                                        <!-- Category Categorization Filtering Control Row Menu Bar -->
+                                        <div class="filter-pill-container">
+                                            <button class="filter-pill active" data-filter="all">All</button>
+                                            <button class="filter-pill" data-filter="notice">Notice & Forms</button>
+                                            <button class="filter-pill" data-filter="financial">Financial Document</button>
+                                            <button class="filter-pill" data-filter="other">Other</button>
+                                        </div>
+
+                                        <!-- Document Registry Matrix Column Layout Workspace Grid Container -->
+                                        <div class="row" id="document-cards-container">
+                                            
+                                            <!-- Card 1 Component Entry Block -->
+                                            <div class="col-md-6 group-item-card" data-category="notice">
+                                                <div class="doc-card" data-id="doc-01">
+                                                    <div class="doc-info-block">
+                                                        <div class="doc-icon-frame"><i class="uil uil-file-alt"></i></div>
+                                                        <div class="doc-metadata">
+                                                            <div class="doc-title">Notice of 2026 AGM.pdf</div>
+                                                            <div class="doc-details-line">Uploaded by Simon on 2 Jan 2026, 3:00pm <span class="divider-dot">•</span> 512.0 KB</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doc-actions-wrapper">
+                                                        <i class="uil uil-eye action-trigger-icon view-doc-trigger" title="View Document"></i>
+                                                        <i class="uil uil-trash-alt action-trigger-icon delete-icon delete-doc-trigger" title="Delete Entry File Record"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 2 Component Entry Block -->
+                                            <div class="col-md-6 group-item-card" data-category="notice">
+                                                <div class="doc-card" data-id="doc-02">
+                                                    <div class="doc-info-block">
+                                                        <div class="doc-icon-frame"><i class="uil uil-file-alt"></i></div>
+                                                        <div class="doc-metadata">
+                                                            <div class="doc-title">Motion Form.pdf</div>
+                                                            <div class="doc-details-line">Uploaded by Simon on 2 Jan 2026, 3:00pm <span class="divider-dot">•</span> 128.0 KB</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doc-actions-wrapper">
+                                                        <i class="uil uil-eye action-trigger-icon view-doc-trigger" title="View Document"></i>
+                                                        <i class="uil uil-trash-alt action-trigger-icon delete-icon delete-doc-trigger" title="Delete Entry File Record"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 3 Component Entry Block -->
+                                            <div class="col-md-6 group-item-card" data-category="financial">
+                                                <div class="doc-card" data-id="doc-03">
+                                                    <div class="doc-info-block">
+                                                        <div class="doc-icon-frame"><i class="uil uil-file-alt"></i></div>
+                                                        <div class="doc-metadata">
+                                                            <div class="doc-title">Annual Report 2026 .pdf</div>
+                                                            <div class="doc-details-line">Uploaded by Simon on 2 Jun 2026, 3:00pm <span class="divider-dot">•</span> 4.0 MB</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doc-actions-wrapper">
+                                                        <i class="uil uil-eye action-trigger-icon view-doc-trigger" title="View Document"></i>
+                                                        <i class="uil uil-trash-alt action-trigger-icon delete-icon delete-doc-trigger" title="Delete Entry File Record"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 4 Component Entry Block -->
+                                            <div class="col-md-6 group-item-card" data-category="notice">
+                                                <div class="doc-card" data-id="doc-04">
+                                                    <div class="doc-info-block">
+                                                        <div class="doc-icon-frame"><i class="uil uil-file-alt"></i></div>
+                                                        <div class="doc-metadata">
+                                                            <div class="doc-title">Letter of Authority.pdf</div>
+                                                            <div class="doc-details-line">Uploaded by Simon on 6 Jun 2026, 3:00pm <span class="divider-dot">•</span> 128.0 KB</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doc-actions-wrapper">
+                                                        <i class="uil uil-eye action-trigger-icon view-doc-trigger" title="View Document"></i>
+                                                        <i class="uil uil-trash-alt action-trigger-icon delete-icon delete-doc-trigger" title="Delete Entry File Record"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 5 Component Entry Block -->
+                                            <div class="col-md-6 group-item-card" data-category="notice">
+                                                <div class="doc-card" data-id="doc-05">
+                                                    <div class="doc-info-block">
+                                                        <div class="doc-icon-frame"><i class="uil uil-file-alt"></i></div>
+                                                        <div class="doc-metadata">
+                                                            <div class="doc-title">Proxy Form.pdf</div>
+                                                            <div class="doc-details-line">Uploaded by Simon on 6 Jun 2026, 3:00pm <span class="divider-dot">•</span> 128.0 KB</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doc-actions-wrapper">
+                                                        <i class="uil uil-eye action-trigger-icon view-doc-trigger" title="View Document"></i>
+                                                        <i class="uil uil-trash-alt action-trigger-icon delete-icon delete-doc-trigger" title="Delete Entry File Record"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <!-- end row -->
+
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- Modal upload document -->
+            <div class="modal fade" id="modal-upload-document" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content upload-container ">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Upload Document</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <!-- Document Name -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Document Name
+                                </label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+
+                            <!-- Category -->
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Category
+                                </label>
+                                <select class="form-control custom-select">
+                                    <option disabled selected>Select Category</option>
+                                    <option value="0">Notice & Forms</option>
+                                    <option value="6" selected>Financial Documents</option>
+                                    <option value="7">Other</option>
+                                </select>
+
+                                <small class="text-danger">Note to developer: Catetory pre-select for user
+                                <br>
+                                <b>Financial Documents:-</b> Budget, Audited Accounts, insurance policy and quotation, audit report and quotation<br>
+                                <b>Other:-</b> Receipts, Eligible Voters List</small>
+                            </div>
+
+                            <!-- Drag Drop Area -->
+
+                            <div class="card-body border-gray400">
+                    
+                                <div class="drop-zone rounded p-4 text-center">
+                                    <i class="uil uil-cloud-upload font-size-22 text-primary"></i>
+                                    <h5 class="mt-2">Drag & Drop Files Here</h5>
+                                    <p class="text-muted small mb-3">or</p>
+
+                                    <input type="file" class="file-input d-none" multiple>
+                                    
+                                    <button type="button" class="btn btn-primary browse-btn">
+                                        Browse Files
+                                    </button>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h6 class="text-secondary">Selected Files (<span class="file-count">0</span>)</h6>
+                                    <ul class="file-list list-group list-group-flush mt-2">
+                                        <li class="list-group-item text-muted small text-center py-3 empty-message">
+                                            No files selected yet.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded clear-btn" data-dismiss="modal">Clear All</button>
+                            <button type="button" class="btn btn-primary btn-rounded upload-btn">Upload</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Module 2: View Document Preview File Display Popup Overlay Frame Container Content View -->
+            <!-- <div class="modal fade" id="viewDocumentModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                    <div class="modal-content border-0">
+                        <div class="modal-header bg-light">
+                            <h5 class="modal-title font-weight-bold text-dark" id="preview-modal-heading-title">View Document Overview</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body p-0">
+                            <div class="p-4 text-center bg-white">
+                                <div class="mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: #eff6ff; border-radius: 50%;">
+                                    <i class="uil uil-file-alt text-primary" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5 class="font-weight-bold text-dark mb-1" id="preview-doc-filename">Document_Name.pdf</h5>
+                                <p class="text-muted small mb-3" id="preview-doc-meta">Uploaded metadata strings line reference details</p>
+                                
+                                <hr class="my-3" style="border-top: 1px dashed #e2e8f0;">
+                                
+                                <div class="text-left p-3 rounded" style="background-color: #f8fafc; font-size: 0.85rem;">
+                                    <div class="row mb-2">
+                                        <div class="col-4 text-muted font-weight-bold">Database ID:</div>
+                                        <div class="col-8 text-dark font-weight-600" id="preview-doc-id">DOC-XXXX</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-muted font-weight-bold">System Status:</div>
+                                        <div class="col-8"><span class="badge badge-success px-2 py-1">Active File Asset</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer bg-light border-top-0">
+                            <button type="button" class="btn btn-secondary font-weight-bold btn-sm px-4" data-dismiss="modal">Close Viewer</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Modal Module 3: Confirm Delete Document Action Modal Dialog Validation Framework Box Wrapper -->
+            <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+                    <div class="modal-content border-0">
+                        <div class="modal-body text-center p-4">
+                            <div class="text-danger mb-3" style="font-size: 3rem;"><i class="uil uil-exclamation-circle"></i></div>
+                            <h5 class="font-weight-bold text-dark mb-2">Confirm Delete</h5>
+                            <p class="text-muted small mb-4">Are you certain you want to remove <b class="text-dark" id="delete-target-filename-lbl">this file</b> permanently from the database record index?</p>
+                            
+                            <div class="d-flex gap-2 justify-content-center">
+                                <button type="button" class="btn btn-light btn-rounded btn-sm px-3 mx-1" style="border:1px solid #cbd5e1;" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-sm px-3 mx-1" id="btn-execute-confirmed-deletion">Confirm Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <script src="assets/libs/smartwizard/jquery.smartWizard.min.js"></script>
+        <script src="assets/js/pages/form-wizard.init.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+
+
+    <!-- optional plugins -->
+    <script src="assets/libs/moment/moment.min.js"></script>
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- page js -->
+    <script src="assets/js/pages/widgets.init.js"></script>
+
+    <!-- agm documents -->
+    <script>
+        $(document).ready(function() {
+            
+            // Track pointer scope variables referencing active selected file targets during popups lifecycle
+            let targetCardElementRef = null;
+
+            // Trigger Configuration Wizard Dialog Screen Popover Overlay Module View
+            $('#btn-trigger-upload-wizard').on('click', function() {
+                $('#modal-upload-document').modal('show');
+            });
+
+            // Handle Submission action inside Upload Document wizard parameters
+            $('#submission-wizard-form').on('submit', function(e) {
+                e.preventDefault();
+                $('#modal-upload-document').modal('hide');
+                alert('Document processed successfully! Data saved into simulated registry.');
+                this.reset();
+            });
+
+            // Functional Sorting Module Filter Controls
+            $('.filter-pill').on('click', function() {
+                $('.filter-pill').removeClass('active');
+                $(this).addClass('active');
+
+                const selectedCategoryTag = $(this).attr('data-filter');
+                
+                if(selectedCategoryTag === 'all') {
+                    $('.group-item-card').fadeIn(200);
+                } else {
+                    $('.group-item-card').hide();
+                    $(`.group-item-card[data-category="${selectedCategoryTag}"]`).fadeIn(200);
+                }
+            });
+
+            // Trigger View Document Popup Details Data Modal Screen Module View Layout Configuration
+            $(document).on('click', '.view-doc-trigger', function() {
+                const contextualCard = $(this).closest('.doc-card');
+                const targetFilename = contextualCard.find('.doc-title').text();
+                const targetMetaDetails = contextualCard.find('.doc-details-line').text();
+                const targetDatabaseID = contextualCard.attr('data-id').toUpperCase();
+
+                // Inject metrics parameters directly into structural text tags
+                $('#preview-doc-filename').text(targetFilename);
+                $('#preview-doc-meta').text(targetMetaDetails);
+                $('#preview-doc-id').text(targetDatabaseID);
+
+                $('#viewDocumentModal').modal('show');
+            });
+
+            // Trigger Confirm Delete verification screen dialog popup interface module channel
+            $(document).on('click', '.delete-doc-trigger', function() {
+                targetCardElementRef = $(this).closest('.group-item-card');
+                const contextualFilename = targetCardElementRef.find('.doc-title').text();
+
+                $('#delete-target-filename-lbl').text(contextualFilename);
+                $('#deleteConfirmModal').modal('show');
+            });
+
+            // Execute finalized array entity slice command deletion from target grid context arrays
+            $('#btn-execute-confirmed-deletion').on('click', function() {
+                if(targetCardElementRef) {
+                    targetCardElementRef.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                    $('#deleteConfirmModal').modal('hide');
+                    targetCardElementRef = null;
+                }
+            });
+        });
+    </script>
+
+
+<!-- drag & Drop files -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Target all uploader wrappers on the page
+        const uploadContainers = document.querySelectorAll(".upload-container");
+
+        uploadContainers.forEach((container) => {
+            // 2. Scope UI elements strictly INSIDE this specific container box
+            const dropZone = container.querySelector(".drop-zone");
+            const fileInput = container.querySelector(".file-input");
+            const fileList = container.querySelector(".file-list");
+            const fileCount = container.querySelector(".file-count");
+            const emptyMessage = container.querySelector(".empty-message");
+            const browseBtn = container.querySelector(".browse-btn");
+            const clearBtn = container.querySelector(".clear-btn");
+            const uploadBtn = container.querySelector(".upload-btn");
+
+            // Isolated file array queue for this container instance
+            let containerFiles = [];
+
+            // Manual trigger for file layout click
+            browseBtn.addEventListener('click', () => fileInput.click());
+
+            // Drag/Drop Styling Toggles
+            ['dragenter', 'dragover'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(name => {
+                dropZone.addEventListener(name, (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); });
+            });
+
+            // Drop handling
+            dropZone.addEventListener('drop', (e) => {
+                handleFiles(e.dataTransfer.files);
+            });
+
+            // Click browse selection handling
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            function handleFiles(files) {
+                if (!files.length) return;
+                containerFiles = [...containerFiles, ...Array.from(files)];
+                renderQueue();
+            }
+
+            // Render current files inside this instance's checklist 
+            function renderQueue() {
+                fileList.innerHTML = '';
+                
+                if (containerFiles.length === 0) {
+                    fileList.appendChild(emptyMessage);
+                    fileCount.textContent = 0;
+                    return;
+                }
+
+                fileCount.textContent = containerFiles.length;
+
+                containerFiles.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.className = "list-group-item d-flex justify-content-between align-items-center small py-2";
+                    li.innerHTML = `
+                        <div>
+                            <i class="uil uil-file text-primary me-2"></i>
+                            <strong>${file.name}</strong> <span class="text-muted">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                    `;
+
+                    // Single delete trash button
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = "button";
+                    deleteBtn.className = "btn btn-sm btn-link text-danger p-0";
+                    deleteBtn.innerHTML = `<i class="uil uil-times fs-5"></i>`;
+                    deleteBtn.addEventListener('click', () => {
+                        containerFiles.splice(index, 1);
+                        renderQueue();
+                    });
+
+                    li.appendChild(deleteBtn);
+                    fileList.appendChild(li);
+                });
+            }
+
+            // Clear everything inside this specific box
+            clearBtn.addEventListener('click', () => {
+                containerFiles = [];
+                fileInput.value = '';
+                renderQueue();
+            });
+
+            // Custom instance submit handler
+            uploadBtn.addEventListener('click', () => {
+                const documentTitle = container.querySelector(".card-title").innerText.trim();
+                
+                if (containerFiles.length === 0) {
+                    alert(`Please select files for: "${documentTitle}"`);
+                    return;
+                }
+
+                console.log(`Uploading ${containerFiles.length} items for container section: [${documentTitle}]`, containerFiles);
+                alert(`Uploading ${containerFiles.length} files from the section: "${documentTitle}"`);
+            });
+        });
+    });
+    </script>
+        
+    </body>
+</html>

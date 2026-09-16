@@ -45,6 +45,8 @@
                 $('#selectedBlockButton').html(selectedBlock + ' <i class="uil uil-angle-down"></i>');
             }
         </script>
+
+    
     </head>
 
     <body>
@@ -252,7 +254,7 @@
                             title="8 new unread notifications">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                 aria-expanded="false">
-                                <i data-feather="bell"></i>
+                                <i data-feather="bell" style="display:inline-block"></i>
                                 <span class="noti-icon-badge"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-xl">
@@ -915,16 +917,16 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="pettycash.html">
+                                    <i class="uil uil-money-stack"></i>
+                                    <span class="badge badge-success float-right"></span>
+                                    <span> Petty Cash</span>
+                                </a>
+                               <!-- <a href="javascript: void(0);">
                                     <i class="uil uil-money-stack mr-0"></i>
                                     <span>&nbsp;&nbsp;Petty Cash</span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <!-- <a href="pettycash.html">
-                                    <i class="uil uil-money-stack"></i>
-                                    <span class="badge badge-success float-right"></span>
-                                    <span> Petty Cash</span>
-                                </a> -->
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
                                         <a href="pettycash.html">Petty Cash Listing</a>
@@ -938,7 +940,7 @@
                                     <li>
                                         <a href="pettycash-approved.html">Approved</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
@@ -8824,130 +8826,72 @@
                                                     <div class="col-12">
                                                         <div class="card border-gray-light">
                                                             <div class="card-body">
-                                                                <div class="row mb-2 align-items-center">
-                                                                    <div class="col-md-6">
-                                                                        <h4>Invoices</h4>
-                                                                    </div>
-                                                                    <div class="col-md-6 text-right">
-                                                                        <a href="record-payment-new.html" class="btn btn-primary btn-rounded">Record Payment</a>
-                                                                    </div>
+                                                                <!-- Summary cards -->
+                                                                <div class="summary-grid">
+                                                                <div class="scard">
+                                                                    <div class="scard-label"><i class="uil uil-corner-up-right-alt"></i> Carry forward</div>
+                                                                    <div class="scard-value muted">RM 0.00</div>
+                                                                    <div class="scard-sub">As at 30 Apr 2026</div>
                                                                 </div>
-                                                                
-                                                                <div class="row mb-3 text-color-black">
-                                                                    <div class="col-md-8">
-                                                                        Carry Forward <span class="font-size-12">(as at 31 Jul 2010)</span>: <b>RM1,000.00</b><br>
-                                                                        Outstanding Amount: <b>RM1,100.00</b>
-                                                                    </div>
+                                                                <div class="scard">
+                                                                    <div class="scard-label"><i class="uil uil-exclamation-circle"></i> Outstanding</div>
+                                                                    <div class="scard-value red">RM 390.00</div>
+                                                                    <div class="scard-sub">3 unpaid invoices</div>
                                                                 </div>
-                                                                <div class="table-responsive">
-                                                                    <table id="basic-datatable6" class="table table-hover full-width">
+                                                                <div class="scard">
+                                                                    <div class="scard-label"><i class="uil uil-receipt-alt"></i> LPI accrued</div>
+                                                                    <div class="scard-value red">RM 23.24</div>
+                                                                    <div class="scard-sub">Across 3 overdue invoices</div>
+                                                                </div>
+                                                                <div class="scard">
+                                                                    <div class="scard-label"><i class="uil uil-arrow-growth"></i> Advance payment</div>
+                                                                    <div class="scard-value muted">RM 0.00</div>
+                                                                    <div class="scard-sub">No credit balance</div>
+                                                                </div>
+                                                                </div>
+
+                                                                <!-- Invoice panel -->
+                                                                <div class="panel">
+                                                                    <div class="panel-header">
+                                                                        <div class="panel-title">
+                                                                        <i class="uil uil-invoice"></i>
+                                                                        Invoice history
+                                                                        </div>
+                                                                        <div class="filter-row">
+                                                                        <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+                                                                        <button class="filter-btn" onclick="setFilter('paid', this)">Paid</button>
+                                                                        <button class="filter-btn" onclick="setFilter('unpaid', this)">Unpaid / Overdue</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="table-responsive">
+                                                                        <table id="basic-datatable6" class="table table-hover nowrap full-width">
+                                                                        <colgroup>
+                                                                            <col style="width:44px">
+                                                                            <col style="width:130px">
+                                                                            <col style="width:108px">
+                                                                            <col style="width:100px">
+                                                                            <col style="width:108px">
+                                                                            <col style="width:110px">
+                                                                            <col style="width:610px">
+                                                                            <col style="width:100px">
+                                                                        </colgroup>
                                                                         <thead>
                                                                             <tr>
-                                                                                <th></th>
-                                                                                <th>No</th>
-                                                                                <th class="text-center">Payment Status</th>
-                                                                                <th>Invoice No.</th>
-                                                                                <th>Date</th>
-                                                                                <th>Due Date</th>
-                                                                                <th class="text-right">Amount Due</th>
-                                                                                <th class="text-center">Actions</th>
+                                                                            <th>#</th>
+                                                                            <th>Status</th>
+                                                                            <th>Invoice no.</th>
+                                                                            <th>Date</th>
+                                                                            <th>Due date ↑</th>
+                                                                            <th>Amount due</th>
+                                                                            <th>Late payment invoice (LPI)</th>
+                                                                            <th class="right">Actions</th>
                                                                             </tr>
                                                                         </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-checkbox">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td>1</td>
-                                                                                <td class="text-center">
-                                                                                    <span class="badge badge-warning width-xs">Partial</span>
-                                                                                </td>
-                                                                                <td>20070008</td>
-                                                                                <td>1 Jul 2020</td>
-                                                                                <td>31 Jul 2020</td>
-                                                                                <td class="text-right">
-                                                                                    <span class="bold text-color-black">RM 21.00</span>
-                                                                                    <br>
-                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
-                                                                                </td>
-                                                                                <td class="text-center">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Record Payment</a>
-                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-checkbox">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td>2</td>
-                                                                                <td class="text-center">
-                                                                                    <span class="badge badge-warning width-xs">Partial</span>
-                                                                                </td>
-                                                                                <td>20070008</td>
-                                                                                <td>1 Jul 2020</td>
-                                                                                <td>31 Jul 2020</td>
-                                                                                <td class="text-right">
-                                                                                    <span class="bold text-color-black">RM 21.00</span>
-                                                                                    <br>
-                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
-                                                                                </td>
-                                                                                <td class="text-center">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Record Payment</a>
-                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <div class="custom-control custom-checkbox">
-                                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1"><label class="custom-control-label" for="customCheck1">
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td>3</td>
-                                                                                <td class="text-center">
-                                                                                    <span class="badge badge-success width-xs">Paid</span>
-                                                                                    <br>
-                                                                                    <a href="accounting-receipt-view.html">SE21-02610</a>
-                                                                                </td>
-                                                                                <td>20070008</td>
-                                                                                <td>1 Apr 2020</td>
-                                                                                <td>31 May 2020</td>
-                                                                                <td class="text-right">
-                                                                                    <span class="bold text-color-black">RM 0.00</span>
-                                                                                    <br>
-                                                                                    <small class="text-muted"><span class="mr-1">Total:</span> RM 418.00</small>
-                                                                                </td>
-                                                                                <td class="text-center">
-                                                                                    <div class="btn-group dropleft">
-                                                                                        <button type="button" class="btn btn-outline-primary btn-sm btn-rounded dropdown-toggle pl-1 pt-1 pb-1 pr-1 ml-1"
-                                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                                            aria-expanded="false"><i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                                        <div class="dropdown-menu">
-                                                                                            <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#">Download</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                            </tr>
-                                                                            
-                                                                        </tbody>
-                                                                    </table>
+                                                                        <tbody id="inv-table"></tbody>
+                                                                        </table>
+                                                                    </div>
+
                                                                 </div>
                                                             </div> <!-- end card body-->
                                                         </div> <!-- end card -->
@@ -9632,8 +9576,601 @@ Thank you.
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+
+<!-- Modal Backdrop Popup Container -->
+<div id="modal-backdrop" class="modal-overlay" onclick="handleBackdropClick(event)">
+  <div class="modal-container" id="modal-content">
+    <!-- Content injected dynamically by JS -->
+  </div>
+</div>
         
-        
+<script>
+const invoices = [
+  { no:1,  status:'paid',    receipt:'OR3971', invNo:'INV-2781', date:'13 Mar 2026', due:'28 Mar 2026', total:45,  paid:45,  daysLate:0,  lpi:null },
+  { no:2,  status:'overdue', receipt:null,     invNo:'INV-2122', date:'01 Dec 2025', due:'16 Dec 2025', total:130, paid:0,   daysLate:151, lpi:{ invNo:'LPI-0312', days:151, rate:0.000493, amount:9.64,  status:'accruing' } },
+  { no:3,  status:'overdue', receipt:null,     invNo:'INV-2121', date:'01 Nov 2025', due:'16 Nov 2025', total:130, paid:0,   daysLate:181, lpi:{ invNo:'LPI-0298', days:181, rate:0.000493, amount:11.55, status:'accruing' } },
+  { no:4,  status:'overdue', receipt:null,     invNo:'INV-2120', date:'01 Oct 2025', due:'16 Oct 2025', total:130, paid:0,   daysLate:32,  lpi:{ invNo:'LPI-0285', days:32,  rate:0.000493, amount:2.05,  status:'accruing' } },
+  { no:5,  status:'paid',    receipt:'OR3679', invNo:'INV-2119', date:'01 Sep 2025', due:'16 Sep 2025', total:130, paid:130, daysLate:8,   lpi:{ invNo:'LPI-0271', days:8,   rate:0.000493, amount:0.51,  status:'settled' } },
+  { no:6,  status:'paid',    receipt:'OR3679', invNo:'INV-2118', date:'01 Aug 2025', due:'16 Aug 2025', total:130, paid:130, daysLate:0,   lpi:null },
+  { no:7,  status:'paid',    receipt:'OR3679', invNo:'INV-2117', date:'01 Jul 2025', due:'16 Jul 2025', total:130, paid:130, daysLate:0,   lpi:null },
+  { no:8,  status:'paid',    receipt:'OR3679', invNo:'INV-2116', date:'01 Jun 2025', due:'16 Jun 2025', total:130, paid:130, daysLate:0,   lpi:null },
+  { no:9,  status:'paid',    receipt:'OR3679', invNo:'INV-2115', date:'01 May 2025', due:'16 May 2025', total:130, paid:130, daysLate:0,   lpi:null },
+  { no:10, status:'paid',    receipt:'OR3679', invNo:'INV-2114', date:'01 Apr 2025', due:'16 Apr 2025', total:130, paid:130, daysLate:0,   lpi:null },
+];
+
+let currentFilter = 'all';
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function statusBadge(inv) {
+  if (inv.status === 'paid')
+    return `<span class="badge badge-paid"><i class="uil uil-check"></i> Paid</span>
+            <div class="receipt-tag"><i class="uil uil-receipt"></i> ${inv.receipt}</div>`;
+  if (inv.status === 'overdue')
+    return `<span class="badge badge-overdue"><i class="uil uil-exclamation-triangle"></i> Overdue</span>`;
+  return `<span class="badge badge-unpaid"><i class="uil uil-clock"></i> Unpaid</span>`;
+}
+
+function dueDateCell(inv) {
+  if (inv.status === 'overdue')
+    return `<span class="date-overdue">${inv.due}</span>`;
+  return `<span class="date-text">${inv.due}</span>`;
+}
+
+function amountCell(inv) {
+  const amtDue = inv.total - inv.paid;
+  if (amtDue === 0)
+    return `<div class="amount-main" style="color:var(--text-muted)">MYR 0.00</div>
+            <div class="amount-sub">Total: MYR ${inv.total.toFixed(2)}</div>`;
+  return `<div class="amount-main amount-due">MYR ${amtDue.toFixed(2)}</div>
+          <div class="amount-sub">Total: MYR ${inv.total.toFixed(2)}</div>`;
+}
+
+function lpiCell(inv) {
+  if (!inv.lpi)
+    return `<span class="no-lpi"><i class="uil uil-minus"></i> No LPI</span>`;
+
+  const l = inv.lpi;
+  const isSettled = l.status === 'settled';
+  const settledClass = isSettled ? ' settled' : '';
+  const icon = isSettled
+    ? `<i class="uil uil-check" style="font-size:12px"></i>`
+    : `<i class="uil uil-history" style="font-size:12px"></i>`;
+  const statusLabel = isSettled ? 'Settled' : 'Accruing';
+  const amtLabel = isSettled
+    ? `RM ${l.amount.toFixed(2)} charged`
+    : `RM ${l.amount.toFixed(2)} accruing`;
+  const daysLabel = `${l.days} days overdue`;
+
+  return `<div class="lpi-inner${settledClass}">
+    <span class="lpi-tag">${icon} LPI</span>
+    <a class="lpi-inv-no" href="javascript:void(0)" onclick="openLpiModal('${l.invNo}')">${l.invNo}</a>
+    <span class="lpi-divider"></span>
+    <span class="lpi-detail">${daysLabel}</span>
+    <span class="lpi-divider"></span>
+    <span class="lpi-detail">${amtLabel}</span>
+    <span class="lpi-divider"></span>
+    <span class="lpi-detail">${statusLabel}</span>
+  </div>`;
+}
+
+function render() {
+  const tbody = document.getElementById('inv-table');
+  const filtered = currentFilter === 'all' ? invoices
+    : currentFilter === 'paid' ? invoices.filter(i => i.status === 'paid')
+    : invoices.filter(i => i.status !== 'paid');
+
+  tbody.innerHTML = filtered.map(inv => {
+    const hasLpiRow = inv.lpi !== null;
+    const invRow = `<tr class="inv-row${hasLpiRow ? ' has-lpi' : ''}">
+      <td class="no-cell">${inv.no}</td>
+      <td>${statusBadge(inv)}</td>
+      <td><a class="inv-link" href="javascript:void(0)" onclick="openInvoiceModal('${inv.invNo}')">${inv.invNo}</a></td>
+      <td><span class="date-text">${inv.date}</span></td>
+      <td>${dueDateCell(inv)}</td>
+      <td>${amountCell(inv)}</td>
+      <td>${lpiCell(inv)}</td>
+      <td>
+        <div class="actions-cell">
+          <button class="icon-btn" title="Download"><i class="uil uil-download-alt"></i></button>
+          <button class="icon-btn" title="Preview" onclick="openInvoiceModal('${inv.invNo}')"><i class="uil uil-eye"></i></button>
+        </div>
+      </td>
+    </tr>`;
+    return invRow;
+  }).join('');
+}
+
+/* ── Modal Dialog Logic ── */
+function openInvoiceModal(invNo) {
+  const inv = invoices.find(i => i.invNo === invNo) || invoices[1];
+  const modal = document.getElementById('modal-backdrop');
+  const content = document.getElementById('modal-content');
+
+  const isOverdue = inv.status === 'overdue';
+  const isPaid = inv.status === 'paid';
+  const statusBadgeHTML = isPaid
+    ? `<span class="m-badge m-badge-paid"><span class="m-badge-dot green"></span> Paid</span>`
+    : isOverdue
+    ? `<span class="m-badge m-badge-overdue"><span class="m-badge-dot red"></span> Overdue</span>`
+    : `<span class="m-badge m-badge-amber"><span class="m-badge-dot amber"></span> Unpaid</span>`;
+
+  const dueDateStyle = isOverdue ? 'color:#B91C1C;font-weight:600;' : 'color:#475569;';
+  const amtDue = inv.total - inv.paid;
+  const lpiAmount = inv.lpi ? inv.lpi.amount : 0;
+  const totalBalance = amtDue + (isOverdue ? lpiAmount : 0);
+
+  let lpiCardHTML = '';
+  if (inv.lpi) {
+    const l = inv.lpi;
+    const isSettled = l.status === 'settled';
+    const badgeClass = isSettled ? 'm-badge-paid' : 'm-badge-amber';
+    const badgeText = isSettled ? 'SETTLED' : 'ACCRUING';
+    lpiCardHTML = `
+      <div class="m-rail-card">
+        <div class="m-rail-card-head">
+          <div class="m-rail-card-title"><i class="uil uil-exclamation-octagon" style="color:#D97706"></i> Late payment interest</div>
+          <span class="m-badge ${badgeClass}">${badgeText}</span>
+        </div>
+        <div class="m-rail-row"><span class="m-rail-label">LPI no</span><a href="javascript:void(0)" onclick="openLpiModal('${l.invNo}')" class="link-mono">${l.invNo}</a></div>
+        <div class="m-rail-row"><span class="m-rail-label">Days overdue</span><span class="m-rail-val">${l.days} days</span></div>
+        <div class="m-rail-row"><span class="m-rail-label">Rate</span><span class="m-rail-val">10% p.a.</span></div>
+        <div class="m-rail-row"><span class="m-rail-label">Accrued so far</span><span class="m-rail-val red">RM ${l.amount.toFixed(2)}</span></div>
+        <button onclick="openLpiModal('${l.invNo}')" class="m-rail-action-btn">
+          Open LPI invoice <i class="uil uil-arrow-right"></i>
+        </button>
+      </div>`;
+  } else {
+    lpiCardHTML = `
+      <div class="m-rail-card">
+        <div class="m-rail-card-head">
+          <div class="m-rail-card-title"><i class="uil uil-info-circle" style="color:#64748B"></i> Late payment interest</div>
+        </div>
+        <div style="font-size:12px;color:#64748B;">No LPI accrued for this invoice.</div>
+      </div>`;
+  }
+
+  let lineItemsHTML = '';
+  if (inv.total === 45) {
+    lineItemsHTML = `
+      <tr>
+        <td>
+          <div class="m-item-title">Maintenance Fee — March 2026</div>
+          <div class="m-item-sub">Category 3010 · Monthly charge</div>
+        </td>
+        <td class="right">1</td>
+        <td class="right">35.00</td>
+        <td class="right" style="font-weight:600">35.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="m-item-title">Sinking Fund — March 2026</div>
+          <div class="m-item-sub">Category 3020 · Monthly charge</div>
+        </td>
+        <td class="right">1</td>
+        <td class="right">10.00</td>
+        <td class="right" style="font-weight:600">10.00</td>
+      </tr>`;
+  } else {
+    lineItemsHTML = `
+      <tr>
+        <td>
+          <div class="m-item-title">Maintenance Fee — December 2025</div>
+          <div class="m-item-sub">Category 3010 · Monthly charge</div>
+        </td>
+        <td class="right">1</td>
+        <td class="right">100.00</td>
+        <td class="right" style="font-weight:600">100.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="m-item-title">Sinking Fund — December 2025</div>
+          <div class="m-item-sub">Category 3020 · Monthly charge</div>
+        </td>
+        <td class="right">1</td>
+        <td class="right">30.00</td>
+        <td class="right" style="font-weight:600">30.00</td>
+      </tr>`;
+  }
+
+  content.innerHTML = `
+    <div class="m-header">
+      <div>
+        <a href="javascript:void(0)" onclick="closeModal()" class="m-back-link"><i class="uil uil-arrow-left"></i> Back to invoices</a>
+        <div class="m-title-row">
+          <h2 class="m-title">${inv.invNo}</h2>
+          ${statusBadgeHTML}
+        </div>
+        <div class="m-subtitle">Unit 78-3-01 · Issued ${inv.date} · View only</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="m-actions">
+          <button class="btn btn-outline-dark btn-rounded"><i class="uil uil-eye"></i> Preview PDF</button>
+          <button class="btn btn-outline-dark btn-rounded"><i class="uil uil-download-alt"></i> Save PDF</button>
+          <button class="btn btn-primary btn-rounded"><i class="uil uil-envelope"></i> Send email</button>
+        </div>
+        <button class="m-close-btn" onclick="closeModal()"><i class="uil uil-times-circle"></i></button>
+      </div>
+    </div>
+
+    <div class="m-body">
+      <!-- Status Timeline -->
+      <div class="m-timeline-grid">
+        <div class="m-timeline-card success">
+          <div class="m-timeline-head success"><i class="uil uil-check-circle"></i> Created</div>
+          <div class="m-timeline-sub">${inv.date}, 09:14</div>
+        </div>
+        <div class="m-timeline-card success">
+          <div class="m-timeline-head success"><i class="uil uil-envelope-send"></i> Sent</div>
+          <div class="m-timeline-sub">${inv.date}, 09:15</div>
+        </div>
+        <div class="m-timeline-card success">
+          <div class="m-timeline-head success"><i class="uil uil-eye"></i> Viewed</div>
+          <div class="m-timeline-sub">04 Dec 2025, 17:42</div>
+        </div>
+        <div class="m-timeline-card ${isOverdue ? 'danger' : 'success'}">
+          <div class="m-timeline-head ${isOverdue ? 'danger' : 'success'}">
+            <i class="${isOverdue ? 'uil uil-exclamation-triangle' : 'uil uil-check-circle'}"></i>
+            ${isOverdue ? `Overdue · ${inv.daysLate} days` : 'Paid'}
+          </div>
+          <div class="m-timeline-sub">${isOverdue ? `Since ${inv.due}` : `Receipt ${inv.receipt || '-'}`}</div>
+        </div>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="m-layout-grid">
+        <!-- Document Paper -->
+        <div class="m-doc-paper">
+          <div class="m-doc-header">
+            <div>
+              <div class="m-company-title">Perbadanan Pengurusan Casa Impian</div>
+              <div class="m-company-sub">208, Jalan Casa Impian, 10300 Georgetown, Penang</div>
+              <div class="m-company-sub">Tel: 0174786556 · Email: finance@casaimpian.my</div>
+            </div>
+            <div>
+              <div class="m-doc-type-label">INVOICE</div>
+              <div class="m-doc-number">${inv.invNo}</div>
+            </div>
+          </div>
+
+          <div class="m-doc-info-grid">
+            <div>
+              <div class="m-info-label">Billed to</div>
+              <div class="m-info-val-bold">Lim Wei Jian</div>
+              <div class="m-info-text">Unit 78-3-01, Block 78</div>
+              <div class="m-info-text">Account ID: 78-3-01</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="m-info-label">Issued · Due</div>
+              <div class="m-info-val-bold">${inv.date}</div>
+              <div style="${dueDateStyle}">${inv.due}</div>
+            </div>
+          </div>
+
+          <table class="m-doc-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th class="right">Qty</th>
+                <th class="right">Price (RM)</th>
+                <th class="right">Amount (RM)</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${lineItemsHTML}
+            </tbody>
+          </table>
+
+          <div class="m-calc-box">
+            <div class="m-calc-row"><span>Subtotal</span><span>RM ${inv.total.toFixed(2)}</span></div>
+            <div class="m-calc-row"><span>Tax</span><span>RM 0.00</span></div>
+            <div class="m-calc-row" style="font-weight:600;color:#0F172A;border-top:1px solid #E2E8F0;padding-top:6px;margin-top:4px;">
+              <span>Total</span><span>RM ${inv.total.toFixed(2)}</span>
+            </div>
+            ${inv.lpi ? `<div class="m-calc-row highlight-red"><span>Late payment interest</span><span>+ RM ${inv.lpi.amount.toFixed(2)}</span></div>` : ''}
+            <div class="m-calc-total-box">
+              <span class="m-calc-total-label">Balance due</span>
+              <span class="m-calc-total-val">RM ${totalBalance.toFixed(2)}</span>
+            </div>
+          </div>
+
+          <div class="m-doc-footer-note">
+            Created by Sumitha Kathiravan on ${inv.date} · This view is read-only.
+          </div>
+        </div>
+
+        <!-- Sidebar Rail -->
+        <div class="m-rail">
+          ${lpiCardHTML}
+
+          <div class="m-rail-card">
+            <div class="m-rail-card-head">
+              <div class="m-rail-card-title">Actions</div>
+            </div>
+            <div class="m-action-list">
+              <button class="m-action-item"><i class="uil uil-eye"></i> Preview PDF</button>
+              <button class="m-action-item"><i class="uil uil-download-alt"></i> Save as PDF</button>
+              <button class="m-action-item"><i class="uil uil-envelope"></i> Send via email</button>
+              <button class="m-action-item"><i class="uil uil-link"></i> Share invoice link</button>
+              <button class="m-action-item"><i class="uil uil-money-bill"></i> Record payment</button>
+              <button class="m-action-item danger"><i class="uil uil-times-circle"></i> Void invoice</button>
+            </div>
+          </div>
+
+          <div class="m-rail-card">
+            <div class="m-rail-card-head">
+              <div class="m-rail-card-title">Activity</div>
+            </div>
+            <div class="m-activity-list">
+              <div class="m-activity-item">
+                <div class="m-activity-icon red"><i class="uil uil-bell"></i></div>
+                <div>
+                  <div class="m-activity-title">Reminder #3 sent</div>
+                  <div class="m-activity-sub">15 Apr 2026 · System</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon red"><i class="uil uil-exclamation-octagon"></i></div>
+                <div>
+                  <div class="m-activity-title">Marked overdue · LPI started</div>
+                  <div class="m-activity-sub">${inv.due} · System</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon blue"><i class="uil uil-eye"></i></div>
+                <div>
+                  <div class="m-activity-title">Occupant viewed invoice</div>
+                  <div class="m-activity-sub">04 Dec 2025</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon green"><i class="uil uil-envelope-send"></i></div>
+                <div>
+                  <div class="m-activity-title">Invoice emailed to Lim Wei Jian</div>
+                  <div class="m-activity-sub">${inv.date} · Sumitha K.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function openLpiModal(lpiNo) {
+  const inv = invoices.find(i => i.lpi && i.lpi.invNo === lpiNo) || invoices[1];
+  const lpi = inv.lpi || { invNo: lpiNo, days: 151, rate: 0.000493, amount: 9.64, status: 'accruing' };
+
+  const modal = document.getElementById('modal-backdrop');
+  const content = document.getElementById('modal-content');
+
+  const isSettled = lpi.status === 'settled';
+  const badgeHTML = isSettled
+    ? `<span class="m-badge m-badge-paid"><i class="uil uil-check"></i> SETTLED</span>`
+    : `<span class="m-badge m-badge-amber"><i class="uil uil-clock-exclamation"></i> ACCRUING</span>`;
+
+  const dailyRate = (inv.total * 0.10 / 365).toFixed(4);
+  const totalPayable = inv.total + lpi.amount;
+
+  content.innerHTML = `
+    <div class="m-header">
+      <div>
+        <a href="javascript:void(0)" onclick="closeModal()" class="m-back-link"><i class="uil uil-arrow-left"></i> Back to invoices</a>
+        <div class="m-title-row">
+          <h2 class="m-title">${lpi.invNo}</h2>
+          ${badgeHTML}
+        </div>
+        <div class="m-subtitle">Late payment interest for ${inv.invNo} · Unit 78-3-01 · Accruing since ${inv.due}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="m-actions">
+          <button class="btn btn-warning btn-rounded"><i class="uil uil-multiply"></i> Waive LPI</button>
+          <button class="btn btn-primary btn-rounded"><i class="uil uil-money-bill"></i> Record payment</button>
+        </div>
+        <button class="m-close-btn" onclick="closeModal()"><i class="uil uil-times-circle"></i></button>
+      </div>
+    </div>
+
+    <div class="m-body">
+      <!-- 4 Summary KPI Cards -->
+      <div class="m-kpi-grid">
+        <div class="m-kpi-card">
+          <div class="m-kpi-label">Target invoice</div>
+          <div class="m-kpi-val"><a href="javascript:void(0)" onclick="openInvoiceModal('${inv.invNo}')" class="link-mono">${inv.invNo}</a></div>
+          <div class="m-kpi-sub">Original MYR ${inv.total.toFixed(2)}</div>
+        </div>
+        <div class="m-kpi-card">
+          <div class="m-kpi-label">Overdue duration</div>
+          <div class="m-kpi-val">${lpi.days} days</div>
+          <div class="m-kpi-sub">Due ${inv.due}</div>
+        </div>
+        <div class="m-kpi-card">
+          <div class="m-kpi-label">Interest rate</div>
+          <div class="m-kpi-val">10.0% p.a.</div>
+          <div class="m-kpi-sub">MYR ${dailyRate} / day</div>
+        </div>
+        <div class="m-kpi-card">
+          <div class="m-kpi-label">Total accrued</div>
+          <div class="m-kpi-val" style="color:#B91C1C">MYR ${lpi.amount.toFixed(2)}</div>
+          <div class="m-kpi-sub">As at today (15 May 2026)</div>
+        </div>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="m-layout-grid">
+        <!-- LPI Statement Document Paper -->
+        <div class="m-doc-paper">
+          <div class="m-doc-header">
+            <div>
+              <div class="m-company-title">Perbadanan Pengurusan Casa Impian</div>
+              <div class="m-company-sub">208, Jalan Casa Impian, 10300 Georgetown, Penang</div>
+              <div class="m-company-sub">Tel: 0174786556 · Email: finance@casaimpian.my</div>
+            </div>
+            <div>
+              <div class="m-doc-type-label">LPI STATEMENT</div>
+              <div class="m-doc-number amber">${lpi.invNo}</div>
+            </div>
+          </div>
+
+          <div class="m-doc-info-grid">
+            <div>
+              <div class="m-info-label">Target Invoice Details</div>
+              <div class="m-info-val-bold">Invoice No: <a href="javascript:void(0)" onclick="openInvoiceModal('${inv.invNo}')" class="link-mono">${inv.invNo}</a></div>
+              <div class="m-info-text">Original Amount: MYR ${inv.total.toFixed(2)}</div>
+              <div class="m-info-text">Due Date: ${inv.due}</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="m-info-label">Calculation Basis</div>
+              <div class="m-info-val-bold">10.0% per annum (365 days)</div>
+              <div class="m-info-text">Daily Rate: MYR ${dailyRate} / day</div>
+              <div class="m-info-text">Days Overdue: ${lpi.days} days</div>
+            </div>
+          </div>
+
+          <table class="m-doc-table">
+            <thead>
+              <tr>
+                <th>Period / Description</th>
+                <th class="right">Days</th>
+                <th class="right">Rate</th>
+                <th class="right">Accrued Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="m-item-title">${inv.due} – 15 May 2026</div>
+                  <div class="m-item-sub">Late Payment Interest Accrual for ${inv.invNo}</div>
+                </td>
+                <td class="right">${lpi.days} days</td>
+                <td class="right">10.0% p.a.</td>
+                <td class="right" style="font-weight:700;color:#B91C1C">MYR ${lpi.amount.toFixed(2)}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:10px 12px;margin-bottom:1.15rem;font-size:12px;color:#92400E;">
+            <strong>Formula:</strong> MYR ${inv.total.toFixed(2)} × 10% × (${lpi.days} / 365 days) = <strong>MYR ${lpi.amount.toFixed(2)}</strong>
+          </div>
+
+          <div class="m-calc-box">
+            <div class="m-calc-row"><span>Original Invoice Amount</span><span>MYR ${inv.total.toFixed(2)}</span></div>
+            <div class="m-calc-row highlight-red"><span>Accrued LPI Amount</span><span>+ MYR ${lpi.amount.toFixed(2)}</span></div>
+            <div class="m-calc-total-box amber">
+              <span class="m-calc-total-label amber">Total Payable</span>
+              <span class="m-calc-total-val amber">MYR ${totalPayable.toFixed(2)}</span>
+            </div>
+          </div>
+
+          <div class="m-doc-footer-note">
+            Auto-calculated system entry pursuant to Strata Management Bylaws Clause 14.2 · Subject to review & waiver by Management.
+          </div>
+        </div>
+
+        <!-- Sidebar Rail -->
+        <div class="m-rail">
+          <div class="m-rail-card">
+            <div class="m-rail-card-head">
+              <div class="m-rail-card-title"><i class="uil uil-file-invoice" style="color:#185FA5"></i> Parent Invoice</div>
+              <span class="m-badge ${inv.status === 'overdue' ? 'm-badge-overdue' : 'm-badge-paid'}">${inv.status.toUpperCase()}</span>
+            </div>
+            <div class="m-rail-row"><span class="m-rail-label">Invoice No</span><a href="javascript:void(0)" onclick="openInvoiceModal('${inv.invNo}')" class="link-mono">${inv.invNo}</a></div>
+            <div class="m-rail-row"><span class="m-rail-label">Amount Due</span><span class="m-rail-val red">MYR ${inv.total.toFixed(2)}</span></div>
+            <div class="m-rail-row"><span class="m-rail-label">Issued date</span><span class="m-rail-val">${inv.date}</span></div>
+            <button onclick="openInvoiceModal('${inv.invNo}')" class="m-rail-action-btn">
+              View parent invoice <i class="uil uil-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="m-rail-card">
+            <div class="m-rail-card-head">
+              <div class="m-rail-card-title">LPI Actions</div>
+            </div>
+            <div class="m-action-list">
+              <button class="m-action-item" style="color:#B45309;"><i class="uil uil-multiply"></i> Waive LPI</butt on>
+              <button class="m-action-item"><i class="uil uil-sliders-v-alt"></i> Adjust Rate / Days</button>
+              <button class="m-action-item"><i class="uil uil-money-bill"></i> Record Payment</button>
+              <button class="m-action-item"><i class="uil uil-download-alt"></i> Download Statement PDF</button>
+              <button class="m-action-item"><i class="uil uil-envelope"></i> Send LPI Reminder</button>
+            </div>
+          </div>
+
+          <div class="m-rail-card">
+            <div class="m-rail-card-head">
+              <div class="m-rail-card-title">Accrual Log</div>
+            </div>
+            <div class="m-activity-list">
+              <div class="m-activity-item">
+                <div class="m-activity-icon blue"><i class="uil uil-calculator"></i></div>
+                <div>
+                  <div class="m-activity-title">Daily accrual: +MYR ${dailyRate} added</div>
+                  <div class="m-activity-sub">Today · System</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon green"><i class="uil uil-file-alt"></i></div>
+                <div>
+                  <div class="m-activity-title">Monthly LPI statement generated</div>
+                  <div class="m-activity-sub">01 May 2026</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon red"><i class="uil uil-exclamation-triangle"></i></div>
+                <div>
+                  <div class="m-activity-title">100 days overdue milestone reached</div>
+                  <div class="m-activity-sub">26 Mar 2026</div>
+                </div>
+              </div>
+              <div class="m-activity-item">
+                <div class="m-activity-icon red"><i class="uil uil-clock"></i></div>
+                <div>
+                  <div class="m-activity-title">LPI calculation commenced</div>
+                  <div class="m-activity-sub">${inv.due} · 10% p.a.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal-backdrop');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handleBackdropClick(e) {
+  if (e.target.id === 'modal-backdrop') {
+    closeModal();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
+render();
+</script>
 
 
     </body>
