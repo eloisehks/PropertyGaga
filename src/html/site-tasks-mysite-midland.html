@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @@include('./partials/topbar0.html')
+
+        @@include('./partials/left-sidebar-0.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                  <div id="app">
+                    <!-- Main Container -->
+                    <div class="main-task">
+                        <div class="page-head">
+                            <div>
+                                <a href="#" onclick="history.back(); return false;" class="back-link mt-0">&larr; BACK TO OVERVIEW</a>
+                                <h1>191 · MIDLANDS — Task Listing</h1>
+                                <div class="sub">Showing tasks assigned to Yong Siang at Midlands Kompleks.</div>
+                            </div>
+                        </div>
+                      <!-- Overall Statistics Strip -->
+                      <div class="stats-summary">
+                        <div class="stat stat-urgent">
+                          <span class="rail"></span>
+                          <div class="k"><i data-feather="zap" class="icon-md"></i> Urgent Tasks</div>
+                          <div class="v mono" id="stat-tot-urgent">2</div>
+                        </div>
+                        <div class="stat stat-new">
+                          <span class="rail"></span>
+                          <div class="k"><i class="uil uil-layers font-xl"></i> New Requests</div>
+                          <div class="v mono" id="stat-tot-new">1</div>
+                        </div>
+                        <div class="stat stat-progress">
+                          <span class="rail"></span>
+                          <div class="k"><i class="uil uil-folder font-xl"></i> In Progress</div>
+                          <div class="v mono" id="stat-tot-progress">2</div>
+                        </div>
+                        <div class="stat stat-approval">
+                          <span class="rail"></span>
+                          <div class="k"><i class="uil uil-smile font-xl"></i> Pending Approval</div>
+                          <div class="v mono" id="stat-tot-approval">1</div>
+                        </div>
+                        <div class="stat stat-completed">
+                          <span class="rail"></span>
+                          <div class="k"><i class="uil uil-check font-xl"></i> Completed</div>
+                          <div class="v mono" id="stat-tot-completed">1</div>
+                        </div>
+                      </div>
+                    
+                      <!-- Main Tasks List Panel -->
+                      <div class="panel-overview">
+                        <div class="panel-h">
+                          <h3>All Tasks Assigned To Me</h3>
+                          <span class="pill-tag normal" id="task-count-badge">5 tasks found</span>
+                        </div>
+                    
+                        <div class="toolbar">
+                          <div class="search">
+                            <i class="uil uil-search"></i>
+                            <input type="text" id="search-input" placeholder="Search task ID, title, site, or location..."
+                              oninput="handleSearch()">
+                          </div>
+                          <div class="seg" id="filter-tabs">
+                            <button class="active" onclick="setFilter('all', this)">All</button>
+                            <button onclick="setFilter('urgent', this)">Urgent</button>
+                            <button onclick="setFilter('new', this)">New</button>
+                            <button onclick="setFilter('in_progress', this)">In Progress</button>
+                            <button onclick="setFilter('pending_approval', this)">Pending Approval</button>
+                            <button onclick="setFilter('completed', this)">Completed</button>
+                          </div>
+                        </div>
+                    
+                        <div class="tlist-overview">
+                          <!-- Task 1 -->
+                          <a href="#" data-toggle="modal" data-target="#modal-OT-1607" class="tcard is-urgent align-items-center">
+                            <div class="body">
+                              <div class="row1">
+                                <span class="pill-tag in-progress"><span class="pdot"></span>In Progress</span>
+                                <span class="pill-tag urgent"><i class="uil uil-bolt"></i> URGENT</span>
+                                <span class="pill-tag normal">Midlands Kompleks</span>
+                                <span class="pill-tag normal">Security</span>
+                              </div>
+                              <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                                <span class="no">OT-1607</span>
+                                <h3>Install new CCTV &amp; cabling at Control Room</h3>
+                              </div>
+                              <div class="meta">
+                                <span><i class="uil uil-map-marker"></i> <b>Control Room, Management Office</b></span>
+                                <span><i data-feather="user"></i> Submitted by: <b>Yong Siang</b></span>
+                                <span><i data-feather="calendar"></i> Date: <b>2026-08-10</b></span>
+                              </div>
+                            </div>
+                            <span class="btn btn-primary btn-rounded">View Details →</span>
+                          </a>
+                    
+                          <!-- Task 2 -->
+                          <a href="#" data-toggle="modal" data-target="#modal-OT-1620" class="tcard is-urgent align-items-center">
+                            <div class="body">
+                              <div class="row1">
+                                <span class="pill-tag new"><span class="pdot"></span>New Request</span>
+                                <span class="pill-tag urgent"><i class="uil uil-bolt"></i> URGENT</span>
+                                <span class="pill-tag normal">Midlands Kompleks</span>
+                                <span class="pill-tag normal">Plumbing</span>
+                              </div>
+                              <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                                <span class="no">OT-1620</span>
+                                <h3>Ceiling leak in Block C lift lobby</h3>
+                              </div>
+                              <div class="meta">
+                                <span><i class="uil uil-map-marker"></i> <b>Block C, Ground Lobby</b></span>
+                                <span><i data-feather="user"></i> Submitted by: <b>Aisyah Binti</b></span>
+                                <span><i data-feather="calendar"></i> Date: <b>2026-08-28</b></span>
+                              </div>
+                            </div>
+                            <span class="btn btn-primary btn-rounded">View Details →</span>
+                          </a>
+                    
+                          <!-- Task 3 -->
+                          <a href="#" data-toggle="modal" data-target="#modal-OT-1605" class="tcard is-overview align-items-center">
+                            <div class="body">
+                              <div class="row1">
+                                <span class="pill-tag pending"><span class="pdot"></span>Pending Approval</span>
+                                <span class="pill-tag normal">Midlands Kompleks</span>
+                                <span class="pill-tag normal">Electrical</span>
+                              </div>
+                              <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                                <span class="no">OT-1605</span>
+                                <h3>Recalibrate switch room protection relays</h3>
+                              </div>
+                              <div class="meta">
+                                <span><i class="uil uil-map-marker"></i> <b>Main switch room (TNB)</b></span>
+                                <span><i data-feather="user"></i> Submitted by: <b>Eugene Choong</b></span>
+                                <span><i data-feather="calendar"></i> Date: <b>2026-08-01</b></span>
+                              </div>
+                            </div>
+                            <span data-toggle="modal" data-target="#modal-OT-1605" class="btn btn-outline-dark btn-rounded">View Details
+                              →</span>
+                          </a>
+                    
+                          <!-- Task 4 -->
+                          <a href="#" data-toggle="modal" data-target="#modal-OT-1573" class="tcard is-overview align-items-center">
+                            <div class="body">
+                              <div class="row1">
+                                <span class="pill-tag done"><span class="pdot"></span>Completed</span>
+                                <span class="pill-tag normal">Midlands Kompleks</span>
+                                <span class="pill-tag normal">Admin</span>
+                              </div>
+                              <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                                <span class="no">OT-1573</span>
+                                <h3>Insurance claim for lifts 14, 15 &amp; 16</h3>
+                              </div>
+                              <div class="meta">
+                                <span><i class="uil uil-map-marker"></i> <b>Block D lift bank</b></span>
+                                <span><i data-feather="user"></i> Submitted by: <b>Eugene Choong</b></span>
+                                <span><i data-feather="calendar"></i> Date: <b>2026-06-15</b></span>
+                              </div>
+                            </div>
+                            <span class="btn btn-outline-dark btn-rounded">View Details →</span>
+                          </a>
+                    
+                          <!-- Task 5 -->
+                          <a href="#" data-toggle="modal" data-target="#modal-OT-1612" class="tcard is-overview align-items-center">
+                            <div class="body">
+                              <div class="row1">
+                                <span class="pill-tag in-progress"><span class="pdot"></span>In Progress</span>
+                                <span class="pill-tag normal">Midlands Kompleks</span>
+                                <span class="pill-tag normal">Renovation</span>
+                              </div>
+                              <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+                                <span class="no">OT-1612</span>
+                                <h3>Design OKU ramp at main entrance staircase</h3>
+                              </div>
+                              <div class="meta">
+                                <span><i class="uil uil-map-marker"></i> <b>Main Entrance</b></span>
+                                <span><i data-feather="user"></i> Submitted by: <b>Eugene Choong</b></span>
+                                <span><i data-feather="calendar"></i> Date: <b>2026-08-20</b></span>
+                              </div>
+                            </div>
+                            <span class="btn btn-outline-dark btn-rounded">View Details →</span>
+                          </a>
+                    
+                        </div>
+                      </div>
+                    
+                    </div>
+                
+                  </div>
+                </div>
+
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/right-sidebar.html')
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+    
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+<!-- Modal 1 -->
+ 
+<div class="modal fade" id="modal-OT-1607" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="main-task">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <div class="modal-head-pills">
+            <span class="modal-id">OT-1607</span>
+            <span class="pill-tag in-progress">In Progress</span>
+            <span class="pill-tag urgent"><i class="uil uil-bolt"></i> URGENT</span>
+            <span class="pill-tag normal">Midlands Kompleks</span>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Install new CCTV &amp; cabling at Control Room</h5>
+          <div class="modal-grid-box">
+            <div class="modal-field"><strong>Category:</strong> Security</div>
+            <div class="modal-field"><strong>Location:</strong> Control Room, Management Office</div>
+            <div class="modal-field"><strong>Submitted By:</strong> Yong Siang</div>
+            <div class="modal-field"><strong>Submitted Date:</strong> 2026-08-10</div>
+            <div class="modal-field"><strong>Assignee:</strong> Yong Siang (Site Engineer)</div>
+            <div class="modal-field"><strong>Site ID:</strong> 191</div>
+          </div>
+          <div class="modal-desc-head">Description &amp; Scope of Work</div>
+          <div class="modal-desc-body">Supply and install 3× 40" monitors, wireless HDMI, brackets and cabling at
+            control room.</div>
+          <div class="modal-divider"></div>
+        </div>
+        <div class="modal-foot">
+          <a href="tasksheet-details-pendingapproval.html" class="btn btn-primary btn-rounded">Go to Work Order Timeline
+            →</a>
+          <a href="#" class="btn btn-light btn-rounded" data-dismiss="modal" aria-label="Close">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 2 -->
+<div class="modal fade" id="modal-OT-1620" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="main-task">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <div class="modal-head-pills">
+            <span class="modal-id">OT-1620</span>
+            <span class="pill-tag new">New Request</span>
+            <span class="pill-tag urgent"><i class="uil uil-bolt"></i> URGENT</span>
+            <span class="pill-tag normal">Midlands Kompleks</span>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Ceiling leak in Block C lift lobby</h5>
+          <div class="modal-grid-box">
+            <div class="modal-field"><strong>Category:</strong> Plumbing</div>
+            <div class="modal-field"><strong>Location:</strong> Block C, Ground Lobby</div>
+            <div class="modal-field"><strong>Submitted By:</strong> Aisyah Binti</div>
+            <div class="modal-field"><strong>Submitted Date:</strong> 2026-08-28</div>
+            <div class="modal-field"><strong>Assignee:</strong> Yong Siang (Site Engineer)</div>
+            <div class="modal-field"><strong>Site ID:</strong> 191</div>
+          </div>
+          <div class="modal-desc-head">Description &amp; Scope of Work</div>
+          <div class="modal-desc-body">Investigate and rectify water seepage coming from top floor ceiling near Block C
+            main elevator shaft.</div>
+          <div class="modal-divider"></div>
+        </div>
+        <div class="modal-foot">
+          <a href="tasksheet-details-accepted.html" class="btn btn-primary btn-rounded">Go to Work Order Timeline
+            →</a>
+          <a href="#" class="btn btn-light btn-rounded" data-dismiss="modal" aria-label="Close">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal-OT-1605" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="main-task">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <div class="modal-head-pills">
+            <span class="modal-id">OT-1605</span>
+            <span class="pill-tag pending">Pending Approval</span>
+            <span class="pill-tag normal">Midlands Kompleks</span>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Recalibrate switch room protection relays</h5>
+          <div class="modal-grid-box">
+            <div class="modal-field"><strong>Category:</strong> Electrical</div>
+            <div class="modal-field"><strong>Location:</strong> Main switch room (TNB)</div>
+            <div class="modal-field"><strong>Submitted By:</strong> Eugene Choong</div>
+            <div class="modal-field"><strong>Submitted Date:</strong> 2026-08-01</div>
+            <div class="modal-field"><strong>Assignee:</strong> Yong Siang (Site Engineer)</div>
+            <div class="modal-field"><strong>Site ID:</strong> 191</div>
+          </div>
+          <div class="modal-desc-head">Description &amp; Scope of Work</div>
+          <div class="modal-desc-body">Annual testing and recalibration of protection relays, overcurrent relays, and
+            earth fault relays by certified Chargeman.</div>
+          <div class="modal-divider"></div>
+        </div>
+        <div class="modal-foot">
+          <a href="tasksheet-details-pendingapproval.html" class="btn btn-primary btn-rounded">Go to Work Order Timeline
+            →</a>
+          <a href="#" class="btn btn-light btn-rounded" data-dismiss="modal" aria-label="Close">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 4 -->
+<div class="modal fade" id="modal-OT-1573" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="main-task">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <div class="modal-head-pills">
+            <span class="modal-id">OT-1573</span>
+            <span class="pill-tag done">Completed</span>
+            <span class="pill-tag normal">Midlands Kompleks</span>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Insurance claim for lifts 14, 15 &amp; 16</h5>
+          <div class="modal-grid-box">
+            <div class="modal-field"><strong>Category:</strong> Admin</div>
+            <div class="modal-field"><strong>Location:</strong> Block D lift bank</div>
+            <div class="modal-field"><strong>Submitted By:</strong> Eugene Choong</div>
+            <div class="modal-field"><strong>Submitted Date:</strong> 2026-06-15</div>
+            <div class="modal-field"><strong>Assignee:</strong> Yong Siang (Site Engineer)</div>
+            <div class="modal-field"><strong>Site ID:</strong> 191</div>
+          </div>
+          <div class="modal-desc-head">Description &amp; Scope of Work</div>
+          <div class="modal-desc-body">Submit property damage insurance assessment reports and contractor repair
+            invoices for lift power surge damage.</div>
+          <div class="modal-divider"></div>
+        </div>
+        <div class="modal-foot">
+          <a href="site-tasks-mysite-midland.html" class="btn btn-primary btn-rounded">Go to Work Order Timeline
+            →</a>
+          <a href="#" class="btn btn-light btn-rounded" data-dismiss="modal" aria-label="Close">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal 5 -->
+<div class="modal fade" id="modal-OT-1612" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="main-task">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <div class="modal-head-pills">
+            <span class="modal-id">OT-1612</span>
+            <span class="pill-tag in-progress">In Progress</span>
+            <span class="pill-tag normal">Midlands Kompleks</span>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Design OKU ramp at main entrance staircase</h5>
+          <div class="modal-grid-box">
+            <div class="modal-field"><strong>Category:</strong> Renovation</div>
+            <div class="modal-field"><strong>Location:</strong> Main Entrance</div>
+            <div class="modal-field"><strong>Submitted By:</strong> Eugene Choong</div>
+            <div class="modal-field"><strong>Submitted Date:</strong> 2026-08-20</div>
+            <div class="modal-field"><strong>Assignee:</strong> Yong Siang (Site Engineer)</div>
+            <div class="modal-field"><strong>Site ID:</strong> 191</div>
+          </div>
+          <div class="modal-desc-head">Description &amp; Scope of Work</div>
+          <div class="modal-desc-body">Draft preliminary architectural layout and budget cost estimates for disabled
+            ramp compliance at main lobby entrance.</div>
+          <div class="modal-divider"></div>
+        </div>
+        <div class="modal-foot">
+          <a href="site-tasks-mysite-midland.html" class="btn btn-primary btn-rounded">Go to Work Order Timeline
+            →</a>
+          <a href="#" class="btn btn-light btn-rounded" data-dismiss="modal" aria-label="Close">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const segButtons = document.querySelectorAll('.seg button');
+  const tcards = document.querySelectorAll('.tlist-overview .tcard');
+  const countBadge = document.getElementById('task-count-badge');
+  const searchInput = document.querySelector('.search input');
+
+  function filterTasks() {
+    const activeBtn = document.querySelector('.seg button.active');
+    const filterText = activeBtn ? activeBtn.textContent.trim().toLowerCase() : 'all';
+    const query = searchInput ? searchInput.value.toLowerCase() : '';
+    let visibleCount = 0;
+
+    tcards.forEach(card => {
+      const cardText = card.textContent.toLowerCase();
+      const matchesSearch = cardText.includes(query);
+
+      let matchesTab = false;
+      const isUrgent = card.classList.contains('is-urgent');
+      const pillText = card.querySelector('.row1').textContent.toLowerCase();
+
+      if (filterText === 'all') {
+        matchesTab = true;
+      } else if (filterText === 'urgent') {
+        matchesTab = isUrgent || pillText.includes('urgent');
+      } else if (filterText === 'new') {
+        matchesTab = pillText.includes('new request');
+      } else if (filterText === 'in progress') {
+        matchesTab = pillText.includes('in progress');
+      } else if (filterText === 'pending approval') {
+        matchesTab = pillText.includes('pending approval');
+      } else if (filterText === 'completed') {
+        matchesTab = pillText.includes('completed');
+      }
+
+      if (matchesSearch && matchesTab) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (countBadge) {
+      countBadge.textContent = `${visibleCount} task${visibleCount === 1 ? '' : 's'} found`;
+    }
+  }
+
+  segButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterTasks();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterTasks);
+  }
+});
+</script>
+
+</body>
+
+</html>

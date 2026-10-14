@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+       
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            @@include('./partials/topbar.html')
+
+            @@include('./partials/left-sidebar.html')
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div id="app">
+                            <!-- Main Container -->
+                            <div class="main-task">
+                                <div class="page-head">
+                                    <div>
+                                        <!-- <div class="crumb">TASK MODULE</div> -->
+                                        <h1>Tasks - Overview</h1>
+                                        <div class="sub">Pick up new requests, run the work, and keep the team in sync.</div>
+                                    </div>
+                                    <button class="btn btn-primary btn-rounded" id="openNewTaskBtn">
+                                        <i class="uil uil-plus"></i> New Task
+                                    </button>
+                                </div>
+                        
+                                <!-- 4 Top Cards -->
+                                <div class="stats">
+                                    <div class="stat-card">
+                                        <div class="stat-info">
+                                            <div class="k">New<br>requests</div>
+                                            <div class="v">3</div>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="uil uil-layers font-xxxl"></i>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="stat-card">
+                                        <div class="stat-info">
+                                            <div class="k">In<br>progress</div>
+                                            <div class="v">3</div>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="uil uil-folder font-xxxl"></i>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="stat-card yellow">
+                                        <div class="stat-info">
+                                            <div class="k">Awaiting<br>approval</div>
+                                            <div class="v">1</div>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="uil uil-smile font-xxxl"></i>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="stat-card green">
+                                        <div class="stat-info">
+                                            <div class="k">Completed</div>
+                                            <div class="v">1</div>
+                                        </div>
+                                        <div class="stat-icon">
+                                            <i class="uil uil-check font-xxxl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <!-- Warning Callout -->
+                                <div class="alert-callout">
+                                    <i data-feather="zap" class="icon-xs"></i>
+                                    <div><b>1 urgent task</b> need to be completed within 3 days: <a href="tasksheet-details-inprogress-start-withquotation.html"
+                                            class="bold">OT1607</a>.</div>
+                                </div>
+                        
+                                <!-- Main Grid -->
+                                <div class="grid2">
+                                    <!-- Left: Recently active tasks -->
+                                    <div class="panel">
+                                        <div class="panel-h">
+                                            <h3>Recently active tasks</h3>
+                                            <a href="tasksheet-opentasks.html" style="font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:4px;">View all &rarr;</a>
+                                        </div>
+                                        <div class="panel-b">
+                                            <div class="tlist">
+              
+                                                <!-- Task 1: #OT1612 -->
+                                                <div class="tcard" onclick="window.location.href='tasksheet-details-accepted.html'">
+                                                    <div class="lead"></div>
+                                                    <div class="body">
+                                                    <div class="row1">
+                                                        <span class="pill-tag accepted"><span class="pdot"></span>Accepted</span>
+                                                        <span class="pill-tag outline">Due 08 Sept 2026</span>
+                                                        <span class="pill-tag outline">Renovation</span>
+                                                    </div>
+                                                    <div style="display:flex; align-items:baseline; gap:8px;">
+                                                        <span class="no">#OT1612</span>
+                                                        <h3>Design OKU ramp at main entrance staircase</h3>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="m">
+                                                        <i data-feather="user"></i>
+                                                        <b>Management Office</b>
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-map-marker"></i>
+                                                        Main entrance
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="calendar"></i>
+                                                        23 Aug 2026
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="message-circle"></i>
+                                                        3 activities
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="rgt">
+                                                    <!-- <div class="avatar ys" style="width:24px; height:24px; font-size:10px;">YS</div> -->
+                                                    <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-2" data-toggle="tooltip" data-placement="top" title="Yong Siang" />
+                                                    <div class="card-progress-box">
+                                                        <div class="card-progress-bar"><div class="card-progress-fill" style="width:55%;"></div></div>
+                                                        <a href="#" class="open-link">Open &rarr;</a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Task 2: #OT1607 (Urgent) -->
+                                                <div class="tcard urgent" onclick="window.location.href='tasksheet-details-inprogress-start-withquotation.html'">
+                                                    <div class="lead"></div>
+                                                    <div class="body">
+                                                    <div class="row1">
+                                                        <span class="pill-tag in-progress"><span class="pdot"></span>In Progress</span>
+                                                        <span class="pill-tag urgent">Urgent</span>
+                                                        <span class="pill-tag due-warn">Due in 2d</span>
+                                                        <span class="pill-tag outline">Security</span>
+                                                    </div>
+                                                    <div style="display:flex; align-items:baseline; gap:8px;">
+                                                        <span class="no">#OT1607</span>
+                                                        <h3>Install new CCTV & cabling at Control Room</h3>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="m">
+                                                        <i data-feather="user"></i>
+                                                        <b>Yong Siang</b>
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-map-marker"></i>
+                                                        Control Room, Management Office
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="calendar"></i>
+                                                        09 Aug 2026
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-dollar-sign"></i>
+                                                        3 quotes
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="message-circle"></i>
+                                                        6 activities
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="rgt">
+                                                    <!-- <div class="avatar ys" style="width:24px; height:24px; font-size:10px;">YS</div> -->
+                                                    <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-2" data-toggle="tooltip" data-placement="top" title="Yong Siang" />
+                                                    <div class="card-progress-box">
+                                                        <div class="card-progress-bar"><div class="card-progress-fill" style="width:80%;"></div></div>
+                                                        <a href="#" class="open-link">Open &rarr;</a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Task 3: #OT1605 -->
+                                                <div class="tcard" onclick="window.location.href='tasksheet-details-pendingapproval.html'">
+                                                    <div class="lead"></div>
+                                                    <div class="body">
+                                                    <div class="row1">
+                                                        <span class="pill-tag pending"><span class="pdot"></span>Pending Approval</span>
+                                                        <span class="pill-tag overdue">Overdue 1d</span>
+                                                        <span class="pill-tag outline">Electrical</span>
+                                                    </div>
+                                                    <div style="display:flex; align-items:baseline; gap:8px;">
+                                                        <span class="no">#OT1605</span>
+                                                        <h3>Recalibrate switch room protection relays</h3>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="m">
+                                                        <i data-feather="user"></i>
+                                                        <b>Eugene Choong</b>
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-map-marker"></i>
+                                                        Main switch room (TNB)
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="calendar"></i>
+                                                        30 Jul 2026
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-dollar-sign"></i>
+                                                        1 quote
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="message-circle"></i>
+                                                        4 activities
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="rgt">
+                                                    <!-- <div class="avatar sr" style="width:24px; height:24px; font-size:10px;">SR</div> -->
+                                                    <img src="assets/images/users/avatar-9.jpg" class="avatar-xs rounded-circle mr-2" data-toggle="tooltip" data-placement="top" title="Siti Rahman" />
+                                                    <div class="card-progress-box">
+                                                        <div class="card-progress-bar"><div class="card-progress-fill" style="width:85%;"></div></div>
+                                                        <button type="button" class="btn-approve" id="openApproveModalBtn" onclick="event.stopPropagation(); openApproveModal();">&check; Approve</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Task 4: #OT1620 -->
+                                                <div class="tcard" onclick="window.location.href='tasksheet-details-new.html'">
+                                                    <div class="lead"></div>
+                                                    <div class="body">
+                                                    <div class="row1">
+                                                        <span class="pill-tag new"><span class="pdot"></span>New</span>
+                                                        <span class="pill-tag outline">Plumbing</span>
+                                                    </div>
+                                                    <div style="display:flex; align-items:baseline; gap:8px;">
+                                                        <span class="no">#OT1620</span>
+                                                        <h3>Ceiling leak in Block C lift lobby</h3>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="m">
+                                                        <i data-feather="user"></i>
+                                                        <b>Aisyah Binti (A-12-3)</b>
+                                                        </span>
+                                                        <span class="m">
+                                                        <i class="uil uil-map-marker"></i>
+                                                        Block C, Ground Floor lobby
+                                                        </span>
+                                                        <span class="m">
+                                                        <i data-feather="calendar"></i>
+                                                        28 Aug 2026
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    <div class="rgt">
+                                                    <span class="unassigned-badge">Unassigned</span>
+                                                    <button class="btn-accept" onclick="window.location.href='tasksheet-details-accepted.html'">&check; Accept</button>
+                                                    </div>
+                                                </div>
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Right Side Stack -->
+                                    <div style="display:flex; flex-direction:column; gap:20px;">
+                                        <!-- Workflow Card -->
+                                        <div class="panel">
+                                            <div class="panel-h">
+                                                <h3>Workflow</h3>
+                                            </div>
+                                            <div class="panel-b" style="padding-top:6px; padding-bottom:6px;">
+                                                <div class="wf-list">
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">1</div>Request created
+                                                    </div>
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">2</div>Accepted / delegated
+                                                    </div>
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">3</div>Quotation & voting
+                                                    </div>
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">4</div>Work started
+                                                    </div>
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">5</div>Completed + proof
+                                                    </div>
+                                                    <div class="wf-item">
+                                                        <div class="wf-num">6</div>Approved & shared
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Team Card -->
+                                        <div class="panel">
+                                            <div class="panel-h">
+                                                <h3>Team</h3>
+                                            </div>
+                                            <div class="panel-b">
+                                                <div class="team-list">
+                                                    <div class="team-item">
+                                                        <div class="team-user">
+                                                            <!-- <div class="team-av ys">YS</div> -->
+                                                            <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-2" />
+                                                            <div>
+                                                                <div class="team-name">Yong Siang</div>
+                                                                <div class="team-role">Site Staff</div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="team-active">3 active</span>
+                                                    </div>
+                        
+                                                    <div class="team-item">
+                                                        <div class="team-user">
+                                                            <!-- <div class="team-av ec">EC</div> -->
+                                                            <img src="assets/images/users/avatar-2.jpg" class="avatar-xs rounded-circle mr-2" />
+                                                            <div>
+                                                                <div class="team-name">Eugene Choong</div>
+                                                                <div class="team-role">Site Staff</div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="team-active">0 active</span>
+                                                    </div>
+                        
+                                                    <div class="team-item">
+                                                        <div class="team-user">
+                                                            <!-- <div class="team-av sr">SR</div> -->
+                                                            <img src="assets/images/users/avatar-9.jpg" class="avatar-xs rounded-circle mr-2" />
+                                                            <div>
+                                                                <div class="team-name">Siti Rahman</div>
+                                                                <div class="team-role">Site Staff</div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="team-active">1 active</span>
+                                                    </div>
+                        
+                                                    <div class="team-item">
+                                                        <div class="team-user">
+                                                            <!-- <div class="team-av rk">RK</div> -->
+                                                            <img src="assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" />
+                                                            <div>
+                                                                <div class="team-name">Rajesh K.</div>
+                                                                <div class="team-role">Site Staff</div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="team-active">0 active</span>
+                                                    </div>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                @@include('./partials/footer.html')
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <!-- modal new task modal -->
+            <div class="main-task">
+                <div class="modal-overlay-task modal fade" id="newTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-container modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Create a task
+                                    <div class="font-sm text-muted font-weight-normal">Submitted as <strong>Yong Siang</strong> (Site Staff). It will appear under New Requests for staff to accept.</div>
+                                </h5>
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBackBtn">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mt-2 mb-2">
+                                <div class="modal-card">
+                                    <form id="newTaskForm" onsubmit="event.preventDefault(); closeModal();">
+                                        <div class="form-group">
+                                        <label class="form-label">Subject <span class="req">*</span></label>
+                                        <input type="text" class="form-control" placeholder="e.g. Ceiling leak in Block C lobby" required>
+                                        </div>
+
+                                        <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label">Category</label>
+                                            <select class="form-control form-select">
+                                            <option value="General">General</option>
+                                            <option value="Renovation">Renovation</option>
+                                            <option value="Security">Security</option>
+                                            <option value="Electrical">Electrical</option>
+                                            <option value="Plumbing">Plumbing</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Location of issue</label>
+                                            <input type="text" class="form-control" placeholder="Block / floor / area">
+                                        </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label class="form-label">Description <span class="req">*</span></label>
+                                        <textarea class="form-control" rows="4" placeholder="Describe the issue or work needed..." required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label class="form-label">Attach photos</label>
+                                        <div class="photo-upload-box" onclick="document.getElementById('taskPhotoInput').click()">
+                                            <i data-feather="camera"></i>
+                                            <span class="upload-text">Click to attach photos of the issue</span>
+                                            <input type="file" id="taskPhotoInput" style="display:none;" accept="image/*" multiple>
+                                        </div>
+                                        </div>
+
+                                        <div class="modal-actions">
+                                        <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+                                        <button type="submit" class="btn-submit">
+                                            <i class="uil uil-plus"></i>
+                                            <span>Submit task</span>
+                                        </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- modal new task modal end-->
+
+            <!-- Verify & Approve Completion Modal Popup -->
+            <div class="main-task">
+                <div class="modal-overlay-task modal fade" id="approveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-container modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Verify & approve completion
+                                    <div class="font-sm text-muted font-weight-normal">#OT1605 · Recalibrate switch room protection relays</div>
+                                </h5>                    
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeApproveModalBtn" >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="approve-banner">
+                                    <i data-feather="check"></i>
+                                    <div>
+                                    Vendor <b>SG Commercial Enterprise</b> submitted completion on 28 Aug 2026. Review before approving.
+                                    </div>
+                                </div>
+                                
+                                <form id="approveForm" onsubmit="event.preventDefault(); closeApproveModal();">
+                                    <div class="form-group">
+                                    <label class="form-label">Completion date</label>
+                                    <div class="input-icon-wrapper">
+                                        <input class="form-control" id="example-date" type="date" name="date">
+                                    </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label class="form-label">Verification note</label>
+                                    <textarea class="form-control" rows="3">Verified on site. Work completed to standard.</textarea>
+                                    </div>
+
+                                    <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label">Proof of completion (additional)</label>
+                                    <div class="proof-upload-box" onclick="document.getElementById('proofPhotoInput').click()">
+                                        <i data-feather="camera"></i>
+                                        <span class="upload-text">Attach verification photos / documents</span>
+                                        <input type="file" id="proofPhotoInput" style="display:none;" accept="image/*,.pdf" multiple>
+                                    </div>
+                                    </div>
+
+                                   
+                                </form>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                    <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal" id="cancelApproveModalBtn">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-rounded">
+                                        <i class="uil uil-check"></i>
+                                        Approve & mark done
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Verify & Approve Completion Modal Popup end -->
+
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        
+         <script>
+            // New Task Modal
+            const openBtn = document.getElementById('openNewTaskBtn');
+            const modal = document.getElementById('newTaskModal');
+            const closeBackBtn = document.getElementById('closeModalBackBtn');
+            const cancelBtn = document.getElementById('cancelModalBtn');
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (closeBackBtn) closeBackBtn.addEventListener('click', closeModal);
+            if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                closeModal();
+                }
+            });
+
+            // Verify & Approve Modal Logic
+            const approveModal = document.getElementById('approveModal');
+            const openApproveBtn = document.getElementById('openApproveModalBtn');
+            const closeApproveBtn = document.getElementById('closeApproveModalBtn');
+            const cancelApproveBtn = document.getElementById('cancelApproveModalBtn');
+
+            function openApproveModal() {
+                approveModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeApproveModal() {
+                approveModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openApproveBtn) openApproveBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openApproveModal();
+            });
+            if (closeApproveBtn) closeApproveBtn.addEventListener('click', closeApproveModal);
+            if (cancelApproveBtn) cancelApproveBtn.addEventListener('click', closeApproveModal);
+
+            approveModal.addEventListener('click', (e) => {
+                if (e.target === approveModal) {
+                closeApproveModal();
+                }
+            });
+
+        </script>
+
+
+    </body>
+</html>

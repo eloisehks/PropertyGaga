@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Polopolomi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+       
+
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+        
+            @@include('./partials/topbar.html')
+        
+            @@include('./partials/left-sidebar.html')
+        
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+        
+            <div class="content-page">
+                <div class="content">
+        
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        <div id="app">
+                            <!-- Main Container -->
+                            <div class="main-task">
+                                <div class="page-head">
+                                    <div>
+                                        <!-- <div class="crumb">TASK MODULE</div> -->
+                                        <h1>Tasks - New Requests</h1>
+                                        <div class="sub">Submitted by occupants and the management office. Accept or delegate to
+                                            a staff member.</div>
+                                    </div>
+                                    <button class="btn btn-primary btn-rounded" id="openNewTaskBtn">
+                                        <i class="uil uil-plus"></i> New Task
+                                    </button>
+                                </div>
+        
+                                <!-- Warning Callout -->
+                                <div class="info-callout">
+                                    <i class="uil uil-info-circle"></i>
+                                    <span>Accept a request to move it into your open tasks, or delegate it to a teammate.</span>
+                                </div>
+        
+                                <!-- Search & Count Row -->
+                                <div class="filter-bar">
+                                    <div class="search-wrapper">
+                                        <i class="uil uil-search"></i>
+                                        <input type="text" class="search-input"
+                                            placeholder="Search by subject, task no, location...">
+                                    </div>
+                                    <div class="task-count">3 tasks</div>
+                                </div>
+        
+                                <!-- Task List -->
+                                <div class="tlist">
+        
+                                    <!-- Task 1: #OT1620 -->
+                                    <div class="tcard" onclick="window.location.href='tasksheet-details-accepted.html'">
+                                        <div class="lead"></div>
+                                        <div class="body">
+                                            <div class="row1">
+                                                <span class="pill-tag new"><span class="pdot"></span>New</span>
+                                                <span class="pill-tag outline">Plumbing</span>
+                                            </div>
+                                            <div style="display:flex; align-items:baseline; gap:8px;">
+                                                <span class="no">#OT1620</span>
+                                                <h3>Ceiling leak in Block C lift lobby</h3>
+                                            </div>
+                                            <div class="meta">
+                                                <span class="m">
+                                                    <i data-feather="user"></i>
+                                                    Aisyah Binti (A-12-3)
+                                                </span>
+                                                <span class="m">
+                                                    <i class="uil uil-map-marker"></i>
+                                                    Block C, Ground Floor lobby
+                                                </span>
+                                                <span class="m">
+                                                    <i data-feather="calendar"></i>
+                                                    28 Aug 2026
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="rgt">
+                                            <span class="unassigned-badge">Unassigned</span>
+                                            <button class="btn-accept">&check; Accept</button>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Task 2: #OT1619 -->
+                                    <div class="tcard" onclick="window.location.href='tasksheet-details-accepted.html'">
+                                        <div class="lead"></div>
+                                        <div class="body">
+                                            <div class="row1">
+                                                <span class="pill-tag new"><span class="pdot"></span>New</span>
+                                                <span class="pill-tag outline">Security</span>
+                                            </div>
+                                            <div style="display:flex; align-items:baseline; gap:8px;">
+                                                <span class="no">#OT1619</span>
+                                                <h3>Faulty barrier gate at Basement 2 entrance</h3>
+                                            </div>
+                                            <div class="meta">
+                                                <span class="m">
+                                                    <i data-feather="user"></i>
+                                                    Management Office
+                                                </span>
+                                                <span class="m">
+                                                    <i class="uil uil-map-marker"></i>
+                                                    Basement 2 vehicle entrance
+                                                </span>
+                                                <span class="m">
+                                                    <i data-feather="calendar"></i>
+                                                    28 Aug 2026
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="rgt">
+                                            <span class="unassigned-badge">Unassigned</span>
+                                            <button class="btn-accept">&check; Accept</button>
+                                        </div>
+                                    </div>
+        
+                                    <!-- Task 3: #OT1618 -->
+                                    <div class="tcard" onclick="window.location.href='tasksheet-details-accepted.html'">
+                                        <div class="lead"></div>
+                                        <div class="body">
+                                            <div class="row1">
+                                                <span class="pill-tag new"><span class="pdot"></span>New</span>
+                                                <span class="pill-tag outline">Electrical</span>
+                                            </div>
+                                            <div style="display:flex; align-items:baseline; gap:8px;">
+                                                <span class="no">#OT1618</span>
+                                                <h3>Replace blown lights at Block A staircase</h3>
+                                            </div>
+                                            <div class="meta">
+                                                <span class="m">
+                                                    <i data-feather="user"></i>
+                                                    Muthu (guard)
+                                                </span>
+                                                <span class="m">
+                                                    <i class="uil uil-map-marker"></i>
+                                                    Block A, staircase levels 3-7
+                                                </span>
+                                                <span class="m">
+                                                    <i data-feather="calendar"></i>
+                                                    26 Aug 2026
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="rgt">
+                                            <span class="unassigned-badge">Unassigned</span>
+                                            <button class="btn-accept">&check; Accept</button>
+                                        </div>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!-- end row-->
+                    </div> <!-- container-fluid -->
+        
+                </div> <!-- content -->
+        
+                @@include('./partials/footer.html')
+        
+            </div>
+        
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+        
+            <!-- modal new task modal -->
+            <div class="main-task">
+                <div class="modal-overlay-task modal fade" id="newTaskModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-container modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Create a task
+                                    <div class="font-sm text-muted font-weight-normal">Submitted as <strong>Yong Siang</strong>
+                                        (Site Staff). It will appear under New Requests for staff to accept.</div>
+                                </h5>
+        
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                    id="closeModalBackBtn">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mt-2 mb-2">
+                                <div class="modal-card">
+                                    <form id="newTaskForm" onsubmit="event.preventDefault(); closeModal();">
+                                        <div class="form-group">
+                                            <label class="form-label">Subject <span class="req">*</span></label>
+                                            <input type="text" class="form-control"
+                                                placeholder="e.g. Ceiling leak in Block C lobby" required>
+                                        </div>
+        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label class="form-label">Category</label>
+                                                <select class="form-control form-select">
+                                                    <option value="General">General</option>
+                                                    <option value="Renovation">Renovation</option>
+                                                    <option value="Security">Security</option>
+                                                    <option value="Electrical">Electrical</option>
+                                                    <option value="Plumbing">Plumbing</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Location of issue</label>
+                                                <input type="text" class="form-control" placeholder="Block / floor / area">
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label class="form-label">Description <span class="req">*</span></label>
+                                            <textarea class="form-control" rows="4"
+                                                placeholder="Describe the issue or work needed..." required></textarea>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label class="form-label">Attach photos</label>
+                                            <div class="photo-upload-box"
+                                                onclick="document.getElementById('taskPhotoInput').click()">
+                                                <i data-feather="camera"></i>
+                                                <span class="upload-text">Click to attach photos of the issue</span>
+                                                <input type="file" id="taskPhotoInput" style="display:none;" accept="image/*"
+                                                    multiple>
+                                            </div>
+                                        </div>
+        
+                                        <div class="modal-actions">
+                                            <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+                                            <button type="submit" class="btn-submit">
+                                                <i class="uil uil-plus"></i>
+                                                <span>Submit task</span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+            <!-- modal new task modal end-->
+        
+        </div>
+        <!-- END wrapper -->
+
+        @@include('./partials/right-sidebar.html')
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/select2/select2.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Init js-->
+        <script src="assets/js/pages/form-advanced.init.js"></script>
+
+        <!-- datatable js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            // New Task Modal
+            const openBtn = document.getElementById('openNewTaskBtn');
+            const modal = document.getElementById('newTaskModal');
+            const closeBackBtn = document.getElementById('closeModalBackBtn');
+            const cancelBtn = document.getElementById('cancelModalBtn');
+
+            function openModal() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (closeBackBtn) closeBackBtn.addEventListener('click', closeModal);
+            if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                closeModal();
+                }
+            });
+
+            // Verify & Approve Modal Logic
+            const approveModal = document.getElementById('approveModal');
+            const openApproveBtn = document.getElementById('openApproveModalBtn');
+            const closeApproveBtn = document.getElementById('closeApproveModalBtn');
+            const cancelApproveBtn = document.getElementById('cancelApproveModalBtn');
+
+            function openApproveModal() {
+                approveModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeApproveModal() {
+                approveModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openApproveBtn) openApproveBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openApproveModal();
+            });
+            if (closeApproveBtn) closeApproveBtn.addEventListener('click', closeApproveModal);
+            if (cancelApproveBtn) cancelApproveBtn.addEventListener('click', closeApproveModal);
+
+            approveModal.addEventListener('click', (e) => {
+                if (e.target === approveModal) {
+                closeApproveModal();
+                }
+            });
+
+        </script>
+
+
+    </body>
+</html>
