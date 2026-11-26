@@ -54,7 +54,7 @@
                             <div class="main-task">
                                 <a href="#" onclick="history.back(); return false;" class="back-link">&larr; BACK</a>
             
-                                <div class="detail-head">
+                                <div class="detail-head align-items-center">
                                     <div>
                                         <div class="task-id-row">
                                             <span class="task-no">#OT1620</span>
@@ -80,169 +80,237 @@
                                             <div class="panel-b">
                                                 <div class="timeline">
                                                     <div class="tl-item">
+                                                        <div class="tl-icon done">&check;</div>
                                                         <div class="tl-box">
                                                             <div class="tl-title">Request submitted</div>
-                                                            <div class="tl-meta">by Aisyah Binti (A-12-3) - 28 Aug 2026</div>
+                                                            <div class="tl-meta">by Aisyah Binti (A-12-3) - 28 Aug 2026, 04:16 pm</div>
                                                             <div class="tl-desc">Water dripping from ceiling near the lift lobby
                                                                 after heavy rain. Tiles
                                                                 are getting
                                                                 stained and floor is slippery — safety concern for residents.</div>
-                                                            <div class="photo-previews">
-                                                                <div class="photo-thumb"><i data-feather="image"></i></div>
-                                                                <div class="photo-thumb"><i data-feather="image"></i></div>
+                                                            <!-- Middle: Task Photo Thumbnails -->
+                                                            <div class="task-photos-details-pg" data-extra-photos='["assets/images/tasks/ceiling-leak-3.jpg"]'>
+                                                        
+                                                                <button type="button" class="task-photo"
+                                                                    onclick="openTaskGallery(event, this, 0)">
+                                                                    <img src="assets/images/tasks/ceiling-leak-1.jpg">
+                                                                </button>
+                                                        
+                                                                <button type="button" class="task-photo"
+                                                                    onclick="openTaskGallery(event, this, 1)">
+                                                                    <img src="assets/images/tasks/ceiling-leak-2.jpg">
+                                                                    <span class="more-photos-overlay">+1</span>
+                                                                </button>
+                                                                
+                                                            </div>
+                                                            <!-- Image Gallery Modal -->
+                                                            <div id="taskGalleryModal"
+                                                                class="task-gallery-modal"
+                                                                role="dialog"
+                                                                aria-modal="true"
+                                                                aria-label="Task photo gallery"
+                                                                aria-hidden="true">
+
+                                                                <button type="button"
+                                                                        class="gallery-close"
+                                                                        aria-label="Close gallery"
+                                                                        onclick="closeTaskGallery()">
+                                                                    &times;
+                                                                </button>
+
+                                                                <button type="button"
+                                                                        class="gallery-nav gallery-prev"
+                                                                        aria-label="Previous photo"
+                                                                        onclick="changeTaskPhoto(-1)">
+                                                                    &#10094;
+                                                                </button>
+
+                                                                <div class="gallery-content">
+                                                                    <img id="galleryMainImage" src="" alt="Task photo">
+
+                                                                    <div class="gallery-caption">
+                                                                        <span id="galleryPhotoCount">Photo 1 of 5</span>
+                                                                        <span id="galleryPhotoName">Ceiling leak</span>
+                                                                    </div>
+
+                                                                    <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+                                                                </div>
+
+                                                                <button type="button"
+                                                                        class="gallery-nav gallery-next"
+                                                                        aria-label="Next photo"
+                                                                        onclick="changeTaskPhoto(1)">
+                                                                    &#10095;
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
-            
+                                    
                                                     <div class="tl-item">
                                                         <div class="tl-icon done">&check;</div>
                                                         <div class="tl-box">
-                                                            <div class="tl-title">Accepted / delegated</div>
-                                                            <div class="tl-meta">Accepted by Yong Siang</div>
+                                                            <div class="tl-title">Accepted / assigned</div>
+                                                            <div class="tl-meta">Accepted by Yong Siang - 28 Aug 2026, 05:16 pm; Assigned to Yong Siang - 28
+                                                                Aug 2026, 06:16 pm</div>
                                                         </div>
                                                     </div>
-
+                                    
                                                     <!-- Card Boxed in Red (Image 1): Quotations & voting -->
                                                     <div class="tl-item">
-                                                    <div class="tl-icon done">&check;</div>
-                                                    <div class="tl-box">
-                                                        <div class="tl-title">Quotations &amp; voting</div>
-                                                        <div class="tl-meta">Awarded to JT Lintas Technology Sdn Bhd &middot; RM 4,000.00</div>
-
-                                                        <!-- Vendor 1: JT Lintas Technology Sdn Bhd (Awarded - Green Highlight) -->
-                                                        <div class="quote-card awarded-card">
-                                                        <div class="quote-card-header">
-                                                            <div class="quote-vendor-info">
-                                                            <div class="vendor-avatar">JL</div>
-                                                            <div>
-                                                                <div class="vendor-name">JT Lintas Technology Sdn Bhd</div>
-                                                                <div class="vendor-price">RM &mdash;</div>
-                                                            </div>
-                                                            </div>
-                                                            <div class="quote-actions">
-                                                            <span class="badge-awarded-green">Awarded</span>
-                                                            <button class="btn-awarded-pill">Awarded</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="quote-file">
-                                                            <span class="pdf-icon">
-                                                            <i data-feather="file" class="icon-xs text-danger"></i>
-                                                            </span>
-                                                            <span class="file-name">JT_quote.pdf</span>
-                                                            <a href="#" class="preview-link">Preview</a>
-                                                        </div>
-
-                                                        <!-- Comments Section with Posted Comment (As highlighted in red box) -->
-                                                        <div class="quote-comments-section">
-                                                            <div class="quote-comment-item">
-                                                            <img src="assets/images/users/avatar-7.jpg"
-                                                                class="avatar-xs rounded-circle mr-2" data-toggle="tooltip"
-                                                                data-placement="top" title="Yong Siang" />
-                                                            <!-- <div class="qc-avatar">YS</div>. THIS can be replace with the image avatar -->
-                                                            <div class="qc-body">
-                                                                <div>
-                                                                <span class="qc-author">Yong Siang</span>
-                                                                <span class="qc-time">&middot; today</span>
+                                                        <div class="tl-icon done">&check;</div>
+                                                        <div class="tl-box">
+                                                            <div class="tl-title">Quotations &amp; voting</div>
+                                                            <div class="tl-meta">Awarded to JT Lintas Technology Sdn Bhd &middot; RM 4,000.00</div>
+                                    
+                                                            <!-- Vendor 1: JT Lintas Technology Sdn Bhd (Awarded - Green Highlight) -->
+                                                            <div class="quote-card awarded-card">
+                                                                <div class="quote-card-header">
+                                                                    <div class="quote-vendor-info">
+                                                                        <div class="vendor-avatar">JL</div>
+                                                                        <div>
+                                                                            <div class="vendor-name">JT Lintas Technology Sdn Bhd</div>
+                                                                            <div class="vendor-price">RM &mdash;</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="quote-actions">
+                                                                        <span class="badge-awarded-green">Awarded</span>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="qc-text">dddd</div>
+                                    
+                                                                <div class="quote-file">
+                                                                    <span class="pdf-icon">
+                                                                        <i data-feather="file" class="icon-xs text-danger"></i>
+                                                                    </span>
+                                                                    <span class="file-name">JT_quote.pdf</span>
+                                                                    <a href="#" class="preview-link">Preview</a>
+                                                                </div>
+                                    
+                                                                <!-- Comments Section with Posted Comment (As highlighted in red box) -->
+                                                                <div class="quote-comments-section">
+                                                                    <div class="quote-comment-item">
+                                                                        <img src="assets/images/users/avatar-7.jpg" class="avatar-xs rounded-circle mr-2"
+                                                                            data-toggle="tooltip" data-placement="top" title="Yong Siang" />
+                                                                        <!-- <div class="qc-avatar">YS</div>. THIS can be replace with the image avatar -->
+                                                                        <div class="qc-body">
+                                                                            <div>
+                                                                                <span class="qc-author">Yong Siang</span>
+                                                                                <span class="qc-time">&middot; today</span>
+                                                                            </div>
+                                                                            <div class="qc-text">dddd</div>
+                                                                        </div>
+                                                                    </div>
+                                    
+                                                                    <div class="quote-comment-input-wrap">
+                                                                        <input type="text" class="quote-comment-input"
+                                                                            placeholder="Comment on this quotation...">
+                                                                        <button class="quote-comment-send" aria-label="Send comment">
+                                                                            <i data-feather="send" class="icon-xs"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            </div>
-
-                                                            <div class="quote-comment-input-wrap">
-                                                            <input type="text" class="quote-comment-input" placeholder="Comment on this quotation...">
-                                                            <button class="quote-comment-send" aria-label="Send comment">
-                                                                <i data-feather="send" class="icon-xs"></i>
-                                                            </button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-
-                                                        <!-- Quote 2: SG Commercial Enterprise -->
-                                                        <div class="quote-card">
-                                                        <div class="quote-card-header">
-                                                            <div class="quote-vendor-info">
-                                                            <div class="vendor-avatar" style="background:#e0f2fe; color:#0369a1;">SC</div>
-                                                            <div>
-                                                                <div class="vendor-name">SG Commercial Enterprise</div>
-                                                                <div class="vendor-price">RM 3,800.00</div>
-                                                            </div>
-                                                            </div>
-                                                            <div class="quote-actions">
-                                                            <button class="btn btn-primary btn-rounded btn-sm">Award</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="quote-file">
-                                                            <span class="pdf-icon">
-                                                            <i data-feather="file" class="icon-xs text-danger"></i>
-                                                            </span>
-                                                            <span class="file-name">SG_quote.pdf</span>
-                                                            <a href="#" class="preview-link">Preview</a>
-                                                        </div>
-
-                                                        <div class="quote-comments-empty">No comments yet.</div>
-
-                                                        <div class="quote-comment-input-wrap">
-                                                            <input type="text" class="quote-comment-input" placeholder="Comment on this quotation...">
-                                                            <button class="quote-comment-send" aria-label="Send comment">
-                                                            <i data-feather="send" class="icon-xs"></i>
-                                                            </button>
-                                                        </div>
                                                         </div>
                                                     </div>
-                                                    </div>
-
+                                    
                                                     <!-- Step 4: Start work (Completed) -->
                                                     <div class="tl-item">
                                                         <div class="tl-icon done">&check;</div>
                                                         <div class="tl-box">
-                                                        <div class="tl-title">Start work</div>
-                                                        <div class="tl-meta">JT Lintas Technology Sdn Bhd &middot; started 29 Aug 2026</div>
-                                                      
-                                                       <div class="tl-desc" style="display: grid; grid-template-columns: 120px 1fr; gap: 6px;">
-                                                                <span style="color: var(--muted); font-weight: 500;">Vendor /
-                                                                    worker</span>
+                                                            <div class="tl-title">Start work</div>
+                                                            <div class="tl-meta">JT Lintas Technology Sdn Bhd &middot; started 29 Aug 2026</div>
+                                    
+                                                            <div class="tl-desc" style="display: grid; grid-template-columns: 120px 1fr; gap: 6px;">
+                                                                <span style="color: var(--muted); font-weight: 500;">Vendor</span>
                                                                 <span style="font-weight: 600; color: #0f172a;">JT Lintas Technology Sdn Bhd</span>
+                                                                <span style="color: var(--muted); font-weight: 500;">Technician</span>
+                                                                <span style="font-weight: 600; color: #0f172a;">-</span>
                                                                 <span style="color: var(--muted); font-weight: 500;">Start
                                                                     date</span>
                                                                 <span style="font-weight: 600; color: #0f172a;">29 Aug 2026</span>
                                                                 <span style="color: var(--muted); font-weight: 500;">Est.
                                                                     completion</span>
-                                                                <span style="font-weight: 600; color: #0f172a;">03 Sept 2026</span>
+                                                                <span style="font-weight: 600; color: #0f172a;">03 Sep 2026</span>
                                                             </div>
                                                         </div>
                                                     </div>
-
+                                    
                                                     <!-- Step 5: Complete & Approve (quo-6.png) -->
                                                     <div class="tl-item">
-                                                    <div class="tl-icon done">&check;</div>
-                                                    <div class="tl-box">
-                                                        <div class="tl-title">Complete & approve</div>
-                                                        <div class="tl-meta">Approved by Yong Siang &middot; 28 Aug 2026</div>
-                                                        
-                                                        <div class="verified-hero-box">
-                                                        <i class="uil uil-check text-success" style="font-size: 4.4em;"></i>
-                                                        <div class="verified-hero-text">VERIFIED & APPROVED</div>
-                                                        </div>
+                                                        <div class="tl-icon done">&check;</div>
+                                                        <div class="tl-box">
+                                                            <div class="tl-title">Complete & approve</div>
+                                                            <div class="tl-meta">Approved by Yong Siang &middot; 28 Aug 2026</div>
+                                    
+                                                            <div class="verified-hero-box">
+                                                                <i class="uil uil-check text-success" style="font-size: 4.4em;"></i>
+                                                                <div class="verified-hero-text">VERIFIED & APPROVED</div>
+                                                            </div>
+                                    
+                                                            <div>
+                                                                <div style="font-size: 13px; font-weight: 500; color: #64748b; margin-bottom: 6px;">work
+                                                                    done</div>
+                                                                <!-- Middle: Task Photo Thumbnails -->
+                                                                <div class="task-photos-details-pg" data-extra-photos='["assets/images/tasks/taskimg.jpg"]'>
+                                                            
+                                                                    <button type="button" class="task-photo"
+                                                                        onclick="openTaskGallery(event, this, 0)">
+                                                                        <img src="assets/images/tasks/taskimg.jpg">
+                                                                    </button>
+                                                            
+                                                                    <button type="button" class="task-photo"
+                                                                        onclick="openTaskGallery(event, this, 1)">
+                                                                        <img src="assets/images/tasks/taskimg.jpg">
+                                                                        <span class="more-photos-overlay">+1</span>
+                                                                    </button>
+                                                                    
+                                                                </div>
+                                                                <!-- Image Gallery Modal -->
+                                                                <div id="taskGalleryModal"
+                                                                    class="task-gallery-modal"
+                                                                    role="dialog"
+                                                                    aria-modal="true"
+                                                                    aria-label="Task photo gallery"
+                                                                    aria-hidden="true">
 
-                                                        <div>
-                                                        <div style="font-size: 13px; font-weight: 500; color: #64748b; margin-bottom: 6px;">work done</div>
-                                                        <div class="photo-previews" style="margin-bottom: 12px;">
-                                                            <div class="photo-thumb">
-                                                            <i data-feather="image"></i>
-                                                            </div>
-                                                            <div class="photo-thumb">
-                                                            <i data-feather="image"></i>
+                                                                    <button type="button"
+                                                                            class="gallery-close"
+                                                                            aria-label="Close gallery"
+                                                                            onclick="closeTaskGallery()">
+                                                                        &times;
+                                                                    </button>
+
+                                                                    <button type="button"
+                                                                            class="gallery-nav gallery-prev"
+                                                                            aria-label="Previous photo"
+                                                                            onclick="changeTaskPhoto(-1)">
+                                                                        &#10094;
+                                                                    </button>
+
+                                                                    <div class="gallery-content">
+                                                                        <img id="galleryMainImage" src="" alt="Task photo">
+
+                                                                        <div class="gallery-caption">
+                                                                            <span id="galleryPhotoCount">Photo 1 of 5</span>
+                                                                            <span id="galleryPhotoName">image</span>
+                                                                        </div>
+
+                                                                        <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+                                                                    </div>
+
+                                                                    <button type="button"
+                                                                            class="gallery-nav gallery-next"
+                                                                            aria-label="Next photo"
+                                                                            onclick="changeTaskPhoto(1)">
+                                                                        &#10095;
+                                                                    </button>
+                                                                </div>
+                                                                <div style="font-size: 12px; color: #94a3b8;">Approved 28 Aug 2026 by Yong Siang</div>
                                                             </div>
                                                         </div>
-                                                        <div style="font-size: 12px; color: #94a3b8;">Approved 28 Aug 2026 by Yong Siang</div>
-                                                        </div>
                                                     </div>
-                                                    </div>
-            
+                                    
                                                     <!-- Disabled Start Work Card (Image 1) -->
-                                                   
+                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -262,7 +330,11 @@
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Submitted on</span>
-                                                        <span class="detail-val">28 Aug 2026</span>
+                                                        <span class="detail-val">28 Aug 2026, 04:16 pm</span>
+                                                    </div>
+                                                    <div class="detail-item">
+                                                        <span class="detail-lbl">Link to unit</span>
+                                                        <span class="detail-val">A-12-3</span>
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Location</span>
@@ -270,7 +342,7 @@
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Due date</span>
-                                                        <span class="detail-val" style="color:var(--muted);">Not set</span>
+                                                        <span class="detail-val">29 Sep 2026</span>
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Assigned to</span>
@@ -304,103 +376,107 @@
                                                 <span class="pct">10</span>
                                             </div>
                                             <div class="panel-b">
-                                                <!-- Activity Log Item -->
-                                                 <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text">Marked job complete with proof of work and approved</div>
-                                                    </div>
-                                                </div>
-                                                 <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text">Started work with JT Lintas Technology Sdn Bhd.</div>
-                                                    </div>
-                                                </div>
-                                                 <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text italic">Awarded quotation to JT Lintas Technology Sdn Bhd (RM 4,000.00).</div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Activity Item 2: Uploaded SG quote -->
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text">Uploaded a quotation from SG Commercial Enterprise (RM 5,555.00).</div>
-                                                    </div>
-                                                </div>
-                                                 <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text">Uploaded a quotation from SG Commercial Enterprise (RM 3,800.00).</div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                    <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                    <div class="act-text">Uploaded a quotation from JT Lintas Technology Sdn Bhd (RM 4,000.00).</div>
-                                                    </div>
-                                                </div>
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                        <div class="act-text">Marked this job as requiring quotations.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                <div class="activityscroll">
+                                                    <!-- Activity Log Item -->
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
                                                         </div>
-                                                        <div class="act-text">Started work.</div>
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
+                                                            <div class="act-text">Marked job complete with proof of work and approved
+                                                                <div class="text-primary"><i class="uil uil-comment-dots"></i> "work done"</div>
+                                                            </div>
                                                         </div>
-                                                        <div class="act-text">Set due date to 29 Sept 2026 and marked urgent
-                                                            (3-day).</div>
                                                     </div>
-                                                </div>
-            
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                        <div class="act-text">Started work with JT Lintas Technology Sdn Bhd.</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> · staff · today</div>
-                                                        <div class="act-text">Accepted the task.</div>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                        <div class="act-text italic">Awarded quotation to JT Lintas Technology Sdn Bhd (RM 4,000.00).</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Activity Item 2: Uploaded SG quote -->
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                        <div class="act-text">Uploaded a quotation from SG Commercial Enterprise (RM 5,555.00).</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                        <div class="act-text">Uploaded a quotation from SG Commercial Enterprise (RM 3,800.00).</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                        <div class="act-text">Uploaded a quotation from JT Lintas Technology Sdn Bhd (RM 4,000.00).</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago</div>
+                                                            <div class="act-text">Marked this job as requiring quotations.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 1 day ago
+                                                            </div>
+                                                            <div class="act-text">Started work.</div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; 2 days ago
+                                                            </div>
+                                                            <div class="act-text">Set due date to 29 Sep 2026 and marked urgent
+                                                                (3-day).</div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> · staff · 2 days ago</div>
+                                                            <div class="act-text">Accepted the task.</div>
+                                                        </div>
                                                     </div>
                                                 </div>
             
@@ -751,6 +827,9 @@
             
                                 <span class="pdf-lbl">Submitted on</span>
                                 <span class="pdf-val">28 Aug 2026</span>
+
+                                <span class="pdf-lbl">Link to unit</span>
+                                <span class="pdf-val">A-12-3</span>
             
                                 <span class="pdf-lbl">Location</span>
                                 <span class="pdf-val">Block C, Ground Floor lobby</span>
@@ -860,8 +939,8 @@
                             <div class="pdf-sec-title">Proof of completion</div>
                             <div style="font-size: 12.5px; color: #64748b; margin-bottom: 6px;">work done</div>
                             <div class="pdf-proof-grid">
-                                <div class="pdf-proof-thumb">proof 1</div>
-                                <div class="pdf-proof-thumb">proof 2</div>
+                                <img src="assets/images/tasks/taskimg.jpg" class="pdf-proof-thumb">
+                                <img src="assets/images/tasks/taskimg2.jpg" class="pdf-proof-thumb">
                             </div>
             
                             <!-- Document Footer -->
@@ -1017,6 +1096,190 @@
         }
         </script>
 
+        <script>
+            $('#technicianSelect').select2({
+                placeholder: 'Select in-house technician...',
+                width: '100%',
+                dropdownParent: $('#startWorkModal')
+            });
+
+            $('#assignedStaffSelect').select2({
+                placeholder: 'Select staff(s)...',
+                width: '100%',
+                dropdownParent: $('#startWorkModal')
+            });
+        </script>
+
+        <script>
+
+            let taskGalleryImages = [];
+            let taskGalleryIndex = 0;
+            let previousFocusedElement = null;
+
+            function openTaskGallery(event, thumbnail, index) {
+                // Prevent the task card from navigating to its details page.
+                event.preventDefault();
+                event.stopPropagation();
+
+                const photoContainer = thumbnail.closest('.task-photos-details-pg');
+
+                // Get every photo belonging to this task.
+                // For more than three photos, include extra image URLs
+                // in the data-extra-photos attribute as shown below.
+                taskGalleryImages = Array.from(
+                    photoContainer.querySelectorAll('.task-photo img')
+                ).map(img => ({
+                    src: img.src,
+                    alt: img.alt || ''
+                }));
+
+                const extraPhotos = photoContainer.dataset.extraPhotos;
+
+                if (extraPhotos) {
+                    try {
+                        const extras = JSON.parse(extraPhotos);
+
+                        extras.forEach(src => {
+                            taskGalleryImages.push({
+                                src: src,
+                                alt: ''
+                            });
+                        });
+                    } catch (error) {
+                        console.error('Invalid extra photo list:', error);
+                    }
+                }
+
+                if (!taskGalleryImages.length) return;
+
+                previousFocusedElement = thumbnail;
+                taskGalleryIndex = Math.min(index, taskGalleryImages.length - 1);
+
+                const modal = document.getElementById('taskGalleryModal');
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+
+                renderTaskGallery();
+
+                modal.querySelector('.gallery-close').focus();
+            }
+
+            function renderTaskGallery() {
+                const image = document.getElementById('galleryMainImage');
+                const counter = document.getElementById('galleryPhotoCount');
+                const caption = document.getElementById('galleryPhotoName');
+                const thumbnailContainer =
+                    document.getElementById('galleryThumbnails');
+
+                const current = taskGalleryImages[taskGalleryIndex];
+
+                image.src = current.src;
+                image.alt = current.alt;
+
+                counter.textContent =
+                    `Photo ${taskGalleryIndex + 1} of ${taskGalleryImages.length}`;
+
+                caption.textContent = current.alt;
+
+                thumbnailContainer.innerHTML = '';
+
+                taskGalleryImages.forEach((photo, index) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'gallery-thumb' +
+                        (index === taskGalleryIndex ? ' active' : '');
+                    button.setAttribute('aria-label', `View photo ${index + 1}`);
+
+                    const thumb = document.createElement('img');
+                    thumb.src = photo.src;
+                    thumb.alt = '';
+
+                    button.appendChild(thumb);
+
+                    button.addEventListener('click', () => {
+                        taskGalleryIndex = index;
+                        renderTaskGallery();
+                    });
+
+                    thumbnailContainer.appendChild(button);
+                });
+
+                document.querySelector('.gallery-prev').hidden =
+                    taskGalleryImages.length <= 1;
+
+                document.querySelector('.gallery-next').hidden =
+                    taskGalleryImages.length <= 1;
+            }
+
+            function changeTaskPhoto(direction) {
+                if (!taskGalleryImages.length) return;
+
+                taskGalleryIndex =
+                    (taskGalleryIndex + direction + taskGalleryImages.length)
+                    % taskGalleryImages.length;
+
+                renderTaskGallery();
+            }
+
+            function closeTaskGallery() {
+                const modal = document.getElementById('taskGalleryModal');
+
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+
+                if (previousFocusedElement) {
+                    previousFocusedElement.focus();
+                }
+            }
+
+            // Close when clicking the dark background.
+            document.getElementById('taskGalleryModal')
+                .addEventListener('click', function (event) {
+                    if (event.target === this) {
+                        closeTaskGallery();
+                    }
+                });
+
+            // Keyboard navigation.
+            document.addEventListener('keydown', function (event) {
+                const modal = document.getElementById('taskGalleryModal');
+
+                if (!modal.classList.contains('is-open')) return;
+
+                if (event.key === 'Escape') {
+                    closeTaskGallery();
+                } else if (event.key === 'ArrowLeft') {
+                    changeTaskPhoto(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeTaskPhoto(1);
+                }
+            });
+
+        </script>
+
+        <script>
+            function openPopup(src) {
+                document.getElementById('popup-img').src = src;
+                document.getElementById('popup').style.display = 'flex';
+            }
+            
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+            
+            updateButtons();
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                $('#delegateToSelect').select2({
+                    placeholder: 'Select staff(s)...',
+                    width: '100%'
+                });
+            });
+        </script>
 
     </body>
 </html>

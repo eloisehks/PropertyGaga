@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Polopolomi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/multiselect/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .image-upload>input {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        @@include('./partials/topbar.html')
+
+        @@include('./partials/left-sidebar.html')
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <div class="main-checklist">
+                        <div class="row page-title align-items-center">
+                            <div class="col-md-3 col-xl-6">
+                                <h3 class="mb-1 mt-0">Execute Check</h3>
+                            </div>
+                            <div class="col-md-9 col-xl-6 text-md-right">
+                                <div class="mt-4 mt-md-0">
+                                    <a href="#" onclick="window.history.go(-1);"><i class="uil-arrow-left mr-1"></i> Back </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="check-header">
+                                    <div
+                                        style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
+                                        <div>
+                                            <div style="font-size:12px;opacity:.7;margin-bottom:4px;text-transform:uppercase">Weekly
+                                                Inspection</div>
+                                            <h2>Common Toilet Ground Floor (Male &amp; Female)</h2>
+                                            <div class="check-meta" style="margin-top:10px">
+                                                <div class="check-meta-item">Front and Back</div>
+                                                <div class="check-meta-item">Due: 30 Mar 2026</div>
+                                                <div class="check-meta-item">Assigned: Eugene Choong Gian Ee</div>
+                                            </div>
+                                        </div>
+                                        <div style="text-align:right">
+                                            <div style="font-size:12px;opacity:.7;margin-bottom:6px">Progress</div>
+                                            <div style="font-size:22px;font-weight:700" id="progress-text">0 / 5</div>
+                                            <div style="margin-top:8px;width:160px">
+                                                <div class="progress-bar-wrap">
+                                                    <div class="progress-bar" id="exec-progress" style="width:0%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="check-items">
+                                    <!-- Item 1 -->
+                                    <div class="check-item-card status-pending" id="item-1">
+                                        <div class="check-item-top">
+                                            <div class="check-item-num">1</div>
+                                            <div class="check-item-info">
+                                                <div class="check-item-title">Cleanliness – Floor, Walls &amp; Ceiling</div>
+                                                <div class="check-item-sub">Check for stains, mould, dirt and general cleanliness</div>
+                                            </div>
+                                            <div class="check-actions">
+                                                <button class="status-btn ok" onclick="setStatus(1, 'ok', this)">✓ No Problem</button>
+                                                <button class="status-btn issue" onclick="setStatus(1, 'issue', this)">⚠ Issue
+                                                    Found</button>
+                                            </div>
+                                        </div>
+                                        <div class="check-item-detail" id="detail-1">
+                                            <div class="detail-grid">
+                                                <div><label class="form-label">Remarks <span class="req">*</span></label><textarea
+                                                        class="form-textarea" placeholder="Describe observations…"></textarea></div>
+                                                <div><label class="form-label">Photo Evidence <span class="req">*</span></label>
+                                                    <div class="photo-upload-area">
+                                                        <i data-feather="image"></i>
+                                                        <div>Tap to upload photo</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Item 2 -->
+                                    <div class="check-item-card status-pending" id="item-2">
+                                        <div class="check-item-top">
+                                            <div class="check-item-num">2</div>
+                                            <div class="check-item-info">
+                                                <div class="check-item-title">Supplies – Toilet Paper, Soap &amp; Hand Dryer
+                                                </div>
+                                                <div class="check-item-sub">Ensure all consumables are adequately stocked and functional
+                                                </div>
+                                            </div>
+                                            <div class="check-actions">
+                                                <button class="status-btn ok" onclick="setStatus(2, 'ok', this)">✓ No Problem</button>
+                                                <button class="status-btn issue" onclick="setStatus(2, 'issue', this)">⚠ Issue
+                                                    Found</button>
+                                            </div>
+                                        </div>
+                                        <div class="check-item-detail" id="detail-2">
+                                            <div class="detail-grid">
+                                                <div><label class="form-label">Remarks <span class="req">*</span></label><textarea
+                                                        class="form-textarea" placeholder="Describe observations…"></textarea></div>
+                                                <div><label class="form-label">Photo Evidence <span class="req">*</span></label>
+                                                    <div class="photo-upload-area">
+                                                        <i data-feather="image"></i>
+                                                        <div>Tap to upload photo</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Item 3 -->
+                                    <div class="check-item-card status-pending" id="item-3">
+                                        <div class="check-item-top">
+                                            <div class="check-item-num">3</div>
+                                            <div class="check-item-info">
+                                                <div class="check-item-title">Plumbing – Drainage &amp; Water Taps</div>
+                                                <div class="check-item-sub">Check for leaks, blockages, dripping taps and water pressure
+                                                </div>
+                                            </div>
+                                            <div class="check-actions">
+                                                <button class="status-btn ok" onclick="setStatus(3, 'ok', this)">✓ No Problem</button>
+                                                <button class="status-btn issue" onclick="setStatus(3, 'issue', this)">⚠ Issue
+                                                    Found</button>
+                                            </div>
+                                        </div>
+                                        <div class="check-item-detail" id="detail-3">
+                                            <div class="detail-grid">
+                                                <div><label class="form-label">Remarks <span class="req">*</span></label><textarea
+                                                        class="form-textarea" placeholder="Describe observations…"></textarea></div>
+                                                <div><label class="form-label">Photo Evidence <span class="req">*</span></label>
+                                                    <div class="photo-upload-area">
+                                                        <i data-feather="image"></i>
+                                                        <div>Tap to upload photo</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Item 4 -->
+                                    <div class="check-item-card status-pending" id="item-4">
+                                        <div class="check-item-top">
+                                            <div class="check-item-num">4</div>
+                                            <div class="check-item-info">
+                                                <div class="check-item-title">Lighting &amp; Electrical Fittings</div>
+                                                <div class="check-item-sub">Ensure all lights, exhaust fans and electrical fittings are
+                                                    working</div>
+                                            </div>
+                                            <div class="check-actions">
+                                                <button class="status-btn ok" onclick="setStatus(4, 'ok', this)">✓ No Problem</button>
+                                                <button class="status-btn issue" onclick="setStatus(4, 'issue', this)">⚠ Issue
+                                                    Found</button>
+                                            </div>
+                                        </div>
+                                        <div class="check-item-detail" id="detail-4">
+                                            <div class="detail-grid">
+                                                <div><label class="form-label">Remarks <span class="req">*</span></label><textarea
+                                                        class="form-textarea" placeholder="Describe observations…"></textarea></div>
+                                                <div><label class="form-label">Photo Evidence <span class="req">*</span></label>
+                                                    <div class="photo-upload-area">
+                                                        <i data-feather="image"></i>
+                                                        <div>Tap to upload photo</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Item 5 -->
+                                    <div class="check-item-card status-pending" id="item-5">
+                                        <div class="check-item-top">
+                                            <div class="check-item-num">5</div>
+                                            <div class="check-item-info">
+                                                <div class="check-item-title">Overall Odour &amp; Sanitation</div>
+                                                <div class="check-item-sub">Assess general smell, air fresheners and sanitation
+                                                    dispensers</div>
+                                            </div>
+                                            <div class="check-actions">
+                                                <button class="status-btn ok" onclick="setStatus(5, 'ok', this)">✓ No Problem</button>
+                                                <button class="status-btn issue" onclick="setStatus(5, 'issue', this)">⚠ Issue
+                                                    Found</button>
+                                            </div>
+                                        </div>
+                                        <div class="check-item-detail" id="detail-5">
+                                            <div class="detail-grid">
+                                                <div><label class="form-label">Remarks <span class="req">*</span></label><textarea
+                                                        class="form-textarea" placeholder="Describe observations…"></textarea></div>
+                                                <div><label class="form-label">Photo Evidence <span class="req">*</span></label>
+                                                    <div class="photo-upload-area">
+                                                        <i data-feather="image"></i>
+                                                        <div>Tap to upload photo</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div
+                                    style="margin-top:24px;background:#fff;border:1px solid #e8eaed;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+                                    <div>
+                                        <div style="font-size:13px;font-weight:600">General Remarks</div>
+                                        <div style="font-size:12px;color:#9ca3af">Optional overall notes for this inspection</div>
+                                    </div>
+                                    <textarea class="form-textarea" style="width:340px;min-height:70px"
+                                        placeholder="Overall remarks…"></textarea>
+                                    <div style="display:flex;gap:10px">
+                                        <a class="btn btn-light btn-rounded" href="checklist-listing.html">Cancel</a>
+                                        <button class="btn btn-primary btn-rounded" onclick="submitChecklist()"><i class="uil uil-check"></i> Submit Inspection</button>
+                                    </div>
+                                </div>
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->
+                    </div>
+                </div> <!-- container-fluid -->
+
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    @@include('./partials/right-sidebar.html')
+
+    
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- Plugins Js -->
+    <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/libs/select2/select2.min.js"></script>
+    <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Init js-->
+    <script src="assets/js/pages/form-advanced.init.js"></script>
+
+    <!-- datatable js -->
+    <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+    <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+    <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+    <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+    <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+    <!-- Datatables init -->
+    <script src="assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    
+<!-- <div class="main-checklist">
+    <div class="modal-overlay-checklist" id="task-modal">
+
+        <div class="modal-checklist">
+
+            <h3>New Task Created (Issue Detected)</h3>
+            <div class="task-alert" style="margin-top:12px">An issue was flagged during checklist inspection. A
+                follow-up task has been automatically generated[cite: 27].</div>
+            <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('task-modal').classList.remove('open'); window.location.href='checklist.html';">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+    <!-- TASK MODAL -->
+    <div class="main-checklist">
+        <div class="modal-overlay-checklist" id="task-modal">
+            <div class="modal-checklist">
+                <div class="main-checklist">
+                    <div class="modal-header">
+                        <div>
+                            <div class="modal-title">New Task Created – TSK-001</div>
+                            <div class="text-sm text-muted mt-2">Automatically generated from checklist issue</div>
+                        </div>
+                        <button class="modal-close" id="modal-close-btn">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="task-alert">
+                            <i class="uil uil-exclamation-triangle"></i>
+                            <div>An issue was detected during checklist inspection. A task has been automatically raised for
+                                follow-up.</div>
+                        </div>
+                        <div class="form-grid" style="margin-bottom:16px">
+                            <div class="form-group">
+                                <label class="form-label">Task ID</label>
+                                <div class="form-input" style="background:var(--neutral)">TSK-001</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Source Checklist</label>
+                                <div class="form-input" style="background:var(--neutral)">205 – Swimming Pool</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date Detected</label>
+                                <div class="form-input" style="background:var(--neutral)">3 May 2026</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Reported By</label>
+                                <div class="form-input" style="background:var(--neutral)">Ahmad Razif</div>
+                            </div>
+                            <div class="form-group full">
+                                <label class="form-label">Issue Description</label>
+                                <textarea class="form-textarea" style="background:var(--neutral)"
+                                    readonly>pH level reading was 6.2 (below acceptable range 7.2–7.8). Water appeared slightly cloudy. Chemical dosing required immediately.</textarea>
+                            </div>
+                            <div class="form-group full">
+                                <label class="form-label">Assign Task To <span class="req">*</span></label>
+                                <select class="form-select">
+                                    <option value="">Select staff to handle this task</option>
+                                    <option>Eugene Choong Gian Ee</option>
+                                    <option>Ahmad Razif</option>
+                                    <option>Maintenance Team</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Priority</label>
+                                <select class="form-select">
+                                    <option selected>High</option>
+                                    <option>Medium</option>
+                                    <option>Low</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Target Completion</label>
+                                <input class="form-input" type="date">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-light btn-rounded" id="modal-cancel-btn">Close</button>
+                            <button class="btn btn-primary btn-rounded" id="assign-btn" onclick="window.location.href='tasksheet-newrequests.html';">Assign Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TASK MODAL end -->
+
+    <script>
+        let completed = 0, total = 5, statuses = {};
+        function setStatus(num, st, btn) {
+            const card = document.getElementById('item-' + num);
+            const detail = document.getElementById('detail-' + num);
+            card.className = 'check-item-card ' + (st === 'ok' ? 'status-ok' : 'status-issue');
+            card.querySelectorAll('.status-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            if (st === 'issue') detail.classList.add('open'); else detail.classList.remove('open');
+            if (!statuses[num]) { completed++; statuses[num] = st; }
+            document.getElementById('progress-text').textContent = completed + ' / ' + total;
+            document.getElementById('exec-progress').style.width = ((completed / total) * 100) + '%';
+        }
+        function submitChecklist() {
+            if (completed < total) { alert('Please complete all 5 checklist items before submitting.'); return; }
+            if (Object.values(statuses).includes('issue')) {
+                document.getElementById('task-modal').classList.add('open');
+            } else {
+                alert('Inspection submitted successfully!');
+                window.location.href = 'checklist-listing.html';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

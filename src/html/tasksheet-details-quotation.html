@@ -54,15 +54,22 @@
                             <div class="main-task">
                                 <a href="#" onclick="history.back(); return false;" class="back-link">&larr; BACK</a>
             
-                                <div class="detail-head">
+                                <div class="detail-head align-items-center">
                                     <div>
                                         <div class="task-id-row">
                                             <span class="task-no">#OT1620</span>
                                             <span class="pill-tag quotation">&bull; Quotation</span>
                                             <span class="pill-tag urgent">Urgent &bull; 3-day</span>
-                                            <span class="pill-tag due-pill">Due 29 Sept 2026</span>
+                                            <span class="pill-tag due-pill">Due 29 Sep 2026</span>
+                                            <span class="pill-tag outline">Updated 28 Aug 2026</span>
                                         </div>
                                         <h3>Ceiling leak in Block C lift lobby</h3>
+                                    </div>
+                                    <div class="task-share-committee">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label mt-0 mr-2 mb-2" for="customSwitch1">Share to Committee</label>
+                                        </div>
                                     </div>
                                 </div>
             
@@ -78,15 +85,67 @@
                                                     <div class="tl-item">
                                                         <div class="tl-icon done">&check;</div>
                                                         <div class="tl-box">
+                                                            <button class="btn btn-light btn-rounded btn-sm float-right" data-toggle="modal" data-target="#update-rs"><i class="uil uil-edit-alt"></i></button>
                                                             <div class="tl-title">Request submitted</div>
-                                                            <div class="tl-meta">by Aisyah Binti (A-12-3) - 28 Aug 2026</div>
+                                                            <div class="tl-meta">by Aisyah Binti (A-12-3) - 28 Aug 2026, 04:16 pm</div>
                                                             <div class="tl-desc">Water dripping from ceiling near the lift lobby
                                                                 after heavy rain. Tiles
                                                                 are getting
                                                                 stained and floor is slippery — safety concern for residents.</div>
-                                                            <div class="photo-previews">
-                                                                <div class="photo-thumb"><i data-feather="image"></i></div>
-                                                                <div class="photo-thumb"><i data-feather="image"></i></div>
+                                                            <!-- Middle: Task Photo Thumbnails -->
+                                                            <div class="task-photos-details-pg" data-extra-photos='["assets/images/tasks/ceiling-leak-3.jpg"]'>
+                                                        
+                                                                <button type="button" class="task-photo"
+                                                                    onclick="openTaskGallery(event, this, 0)">
+                                                                    <img src="assets/images/tasks/ceiling-leak-1.jpg">
+                                                                </button>
+                                                        
+                                                                <button type="button" class="task-photo"
+                                                                    onclick="openTaskGallery(event, this, 1)">
+                                                                    <img src="assets/images/tasks/ceiling-leak-2.jpg">
+                                                                    <span class="more-photos-overlay">+1</span>
+                                                                </button>
+                                                                
+                                                            </div>
+                                                            <!-- Image Gallery Modal -->
+                                                            <div id="taskGalleryModal"
+                                                                class="task-gallery-modal"
+                                                                role="dialog"
+                                                                aria-modal="true"
+                                                                aria-label="Task photo gallery"
+                                                                aria-hidden="true">
+
+                                                                <button type="button"
+                                                                        class="gallery-close"
+                                                                        aria-label="Close gallery"
+                                                                        onclick="closeTaskGallery()">
+                                                                    &times;
+                                                                </button>
+
+                                                                <button type="button"
+                                                                        class="gallery-nav gallery-prev"
+                                                                        aria-label="Previous photo"
+                                                                        onclick="changeTaskPhoto(-1)">
+                                                                    &#10094;
+                                                                </button>
+
+                                                                <div class="gallery-content">
+                                                                    <img id="galleryMainImage" src="" alt="Task photo">
+
+                                                                    <div class="gallery-caption">
+                                                                        <span id="galleryPhotoCount">Photo 1 of 5</span>
+                                                                        <span id="galleryPhotoName">Ceiling leak</span>
+                                                                    </div>
+
+                                                                    <div id="galleryThumbnails" class="gallery-thumbnails"></div>
+                                                                </div>
+
+                                                                <button type="button"
+                                                                        class="gallery-nav gallery-next"
+                                                                        aria-label="Next photo"
+                                                                        onclick="changeTaskPhoto(1)">
+                                                                    &#10095;
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,8 +153,9 @@
                                                     <div class="tl-item">
                                                         <div class="tl-icon done">&check;</div>
                                                         <div class="tl-box">
-                                                            <div class="tl-title">Accepted / delegated</div>
-                                                            <div class="tl-meta">Accepted by Yong Siang</div>
+                                                            <button class="btn btn-light btn-rounded btn-sm float-right" data-toggle="modal" data-target="#delegateModal"><i class="uil uil-edit-alt"></i></button>
+                                                            <div class="tl-title">Accepted / assigned</div>
+                                                            <div class="tl-meta">Accepted by Yong Siang - 28 Aug 2026, 05:16 pm; Assigned to Yong Siang - 28 Aug 2026, 06:16 pm</div>
                                                         </div>
                                                     </div>
 
@@ -134,7 +194,7 @@
                                         <div class="panel">
                                             <div class="panel-h">
                                                 <h3>Details</h3>
-                                                <span class="status-pill new">Plumbing</span>
+                                                <span class="pct">Plumbing</span>
                                             </div>
                                             <div class="panel-b">
                                                 <div class="detail-list">
@@ -144,7 +204,11 @@
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Submitted on</span>
-                                                        <span class="detail-val">28 Aug 2026</span>
+                                                        <span class="detail-val">28 Aug 2026, 04:16 pm</span>
+                                                    </div>
+                                                    <div class="detail-item">
+                                                        <span class="detail-lbl">Link to unit</span>
+                                                        <span class="detail-val">A-12-3</span>
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Location</span>
@@ -152,7 +216,7 @@
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Due date</span>
-                                                        <span class="detail-val" style="color:var(--muted);">Not set</span>
+                                                        <span class="detail-val">29 Sep 2026</span>
                                                     </div>
                                                     <div class="detail-item">
                                                         <span class="detail-lbl">Assigned to</span>
@@ -197,49 +261,51 @@
                                                 <span class="pct">3</span>
                                             </div>
                                             <div class="panel-b">
-                                                <!-- Activity Log Item -->
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
-                                                        <div class="act-text">Marked this job as requiring quotations.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                <div class="activityscroll">
+                                                    <!-- Activity Log Item -->
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
                                                         </div>
-                                                        <div class="act-text">Started work.</div>
-                                                    </div>
-                                                </div>
-                                            
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today</div>
+                                                            <div class="act-text">Marked this job as requiring quotations.</div>
                                                         </div>
-                                                        <div class="act-text">Set due date to 29 Sept 2026 and marked urgent
-                                                            (3-day).</div>
+                                                    </div>
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                            </div>
+                                                            <div class="act-text">Started work.</div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> &middot; staff &middot; today
+                                                            </div>
+                                                            <div class="act-text">Set due date to 29 Sep 2026 and marked urgent
+                                                                (3-day).</div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="act-item">
+                                                        <div class="act-icon-check">
+                                                            <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
+                                                        </div>
+                                                        <div class="act-content">
+                                                            <div><span class="act-user">Yong Siang</span> · staff · today</div>
+                                                            <div class="act-text">Accepted the task.</div>
+                                                        </div>
                                                     </div>
                                                 </div>
-            
-                                                <div class="act-item">
-                                                    <div class="act-icon-check">
-                                                        <span class="pill-tag accepted"><i class="uil uil-check"></i></span>
-                                                    </div>
-                                                    <div class="act-content">
-                                                        <div><span class="act-user">Yong Siang</span> · staff · today</div>
-                                                        <div class="act-text">Accepted the task.</div>
-                                                    </div>
-                                                </div>
-            
+                
                                                 <!-- Comment Input Row -->
                                                 <div class="act-input-row">
                                                     <img src="assets/images/users/avatar-7.jpg"
@@ -274,6 +340,233 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+            <!-- update RS -->
+            <div class="main-task">
+                 <div class="modal fade" id="update-rs" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Request submitted
+                                    <div class="font-sm text-muted font-weight-normal">#OT1620</div>
+                                </h5>
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBackBtn">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mt-2 mb-2">
+                                <div class="modal-card">
+                                    <form id="newTaskForm" onsubmit="event.preventDefault(); closeModal();">
+                                        <div class="form-group">
+                                            <label class="form-label">Subject <span class="req">*</span></label>
+                                            <input type="text" class="form-control" placeholder="" value="Ceiling leak in Block C lift lobby" required>
+                                        </div>
+                            
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label class="form-label">Category</label>
+                                                <select class="form-control form-select">
+                                                    <option value="General">General</option>
+                                                    <option value="Renovation">Renovation</option>
+                                                    <option value="Security">Security</option>
+                                                    <option value="Electrical">Electrical</option>
+                                                    <option value="Plumbing" selected>Plumbing</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">Link to Unit</label>
+                                                <select class="form-control form-select" data-plugin="customselect" multiple>
+                                                    <option value="A-1-1" selected>A-12-3</option>
+                                                    <option value="A-1-2">A-1-2</option>
+                                                    <option value="A-1-3">A-1-3</option>
+                                                    <option value="A-1-4">A-1-4</option>
+                                                    <option value="A-1-5">A-1-5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label">Location of issue</label>
+                                                <input type="text" class="form-control" placeholder="Block / floor / area" value="Block C, Ground Floor lobby">
+                                        </div>
+                            
+                                        <div class="form-group">
+                                            <label class="form-label">Description <span class="req">*</span></label>
+                                            <textarea class="form-control" rows="4" placeholder="Describe the issue or work needed..."
+                                                required>
+Water dripping from ceiling near the lift lobby after heavy rain. Tiles are getting stained and floor is slippery — safety concern for residents.</textarea>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                            <label class="form-label">Attach photos</label>
+                                            <div class="photo-upload-box" onclick="document.getElementById('taskPhotoInput').click()">
+                                                <i data-feather="camera"></i>
+                                                <span class="upload-text">Click to attach photos of the issue</span>
+                                                <input type="file" id="taskPhotoInput" style="display:none;" accept="image/*" multiple>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-0 pt-0">
+                                            <div class="col-auto col-sm-12 col-lg-6">
+                                                <div class="card mb-2 shadow-none border-grayform">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/tasks/ceiling-leak-1.jpg"
+                                                                    class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Enlarge">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold"><span id="fileName" class="file-name">pic1.jpg</span></a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-auto col-sm-12 col-lg-6">
+                                                <div class="card mb-2 shadow-none border-grayform">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/tasks/ceiling-leak-2.jpg"
+                                                                    class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Enlarge">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold" alt=""><span id="fileName" class="file-name">pic2longlonglonglongfilenamelonglongfilename.jpg</span></a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-auto col-sm-12 col-lg-6">
+                                                <div class="card mb-2 shadow-none border-grayform">
+                                                    <div class="p-1 px-2">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-auto">
+                                                                <img src="assets/images/tasks/ceiling-leak-3.jpg"
+                                                                    class="avatar-sm rounded cursor-pointer" alt="file-image" onclick="openPopup(this.src)" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Enlarge">
+                                                            </div>
+                                                            <div class="col pl-0">
+                                                                <a href="javascript:void(0);"
+                                                                    class="text-muted font-weight-bold" alt=""><span id="fileName" class="file-name">pic3.jpg</span></a>
+                                                                <p class="mb-0">2.3 MB</p>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Download"
+                                                                    class="btn btn-link text-muted btn-lg p-0">
+                                                                    <i class='uil uil-cloud-download font-size-14'></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" data-toggle="tooltip"
+                                                                    data-placement="bottom" title="Delete"
+                                                                    class="btn btn-link text-danger btn-lg p-0">
+                                                                    <i class='uil uil-multiply font-size-14'></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="popup" id="popup" onclick="closePopup()"><img id="popup-img"></div>
+                                        </div>
+                        
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-rounded" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- update RS end -->
+
+            <!-- update Accepted / assigned -->
+            <div class="main-task">
+                <div class="modal fade" id="delegateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Assign task
+                                    <div class="font-sm text-muted font-weight-normal">Assign <span id="modalTaskId">#OT1620</span>
+                                        to a site staff member(s)</div>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBtn">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mt-2 mb-2">
+                                <form id="delegateForm">
+            
+                                    <!-- Delegate To Field -->
+                                    <div class="form-group">
+                                        <label for="delegateToSelect" class="form-label">
+                                            Assign to <span class="required-asterisk">*</span>
+                                        </label>
+                                        <select id="delegateToSelect" class="form-control" multiple="multiple" required>
+                                            <option selected>Yong Siang</option>
+                                            <option value="staff1">John Doe</option>
+                                            <option value="staff2">Jane Smith</option>
+                                            <option value="staff3">Alex Johnson</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Note Field -->
+                                    <div class="form-group">
+                                        <label for="delegateNote" class="form-label">Note (optional)</label>
+                                        <textarea id="delegateNote" class="form-control"
+                                            placeholder="Any instructions for the assignee..." rows="4"></textarea>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-rounded" data-dismiss="modal">
+                                    <i class="uil uil-arrow-up-right"></i>
+                                    Assign
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- update Accepted / assigned end-->
             
 
         </div>
@@ -407,7 +700,7 @@
                                 </div>
         
                                 <div class="form-group">
-                                    <label class="form-label">Quoted amount</label>
+                                    <label class="form-label">Quoted amount (RM)</label>
                                     <input type="text" class="form-control active-blue-focus" value="4000">
                                 </div>
                             </div>
@@ -500,6 +793,191 @@
             }
             });
         }
+        </script>
+
+        <script>
+            $('#technicianSelect').select2({
+                placeholder: 'Select in-house technician...',
+                width: '100%',
+                dropdownParent: $('#startWorkModal')
+            });
+
+            $('#assignedStaffSelect').select2({
+                placeholder: 'Select staff(s)...',
+                width: '100%',
+                dropdownParent: $('#startWorkModal')
+            });
+        </script>
+
+        <script>
+
+            let taskGalleryImages = [];
+            let taskGalleryIndex = 0;
+            let previousFocusedElement = null;
+
+            function openTaskGallery(event, thumbnail, index) {
+                // Prevent the task card from navigating to its details page.
+                event.preventDefault();
+                event.stopPropagation();
+
+                const photoContainer = thumbnail.closest('.task-photos-details-pg');
+
+                // Get every photo belonging to this task.
+                // For more than three photos, include extra image URLs
+                // in the data-extra-photos attribute as shown below.
+                taskGalleryImages = Array.from(
+                    photoContainer.querySelectorAll('.task-photo img')
+                ).map(img => ({
+                    src: img.src,
+                    alt: img.alt || ''
+                }));
+
+                const extraPhotos = photoContainer.dataset.extraPhotos;
+
+                if (extraPhotos) {
+                    try {
+                        const extras = JSON.parse(extraPhotos);
+
+                        extras.forEach(src => {
+                            taskGalleryImages.push({
+                                src: src,
+                                alt: ''
+                            });
+                        });
+                    } catch (error) {
+                        console.error('Invalid extra photo list:', error);
+                    }
+                }
+
+                if (!taskGalleryImages.length) return;
+
+                previousFocusedElement = thumbnail;
+                taskGalleryIndex = Math.min(index, taskGalleryImages.length - 1);
+
+                const modal = document.getElementById('taskGalleryModal');
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+
+                renderTaskGallery();
+
+                modal.querySelector('.gallery-close').focus();
+            }
+
+            function renderTaskGallery() {
+                const image = document.getElementById('galleryMainImage');
+                const counter = document.getElementById('galleryPhotoCount');
+                const caption = document.getElementById('galleryPhotoName');
+                const thumbnailContainer =
+                    document.getElementById('galleryThumbnails');
+
+                const current = taskGalleryImages[taskGalleryIndex];
+
+                image.src = current.src;
+                image.alt = current.alt;
+
+                counter.textContent =
+                    `Photo ${taskGalleryIndex + 1} of ${taskGalleryImages.length}`;
+
+                caption.textContent = current.alt;
+
+                thumbnailContainer.innerHTML = '';
+
+                taskGalleryImages.forEach((photo, index) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'gallery-thumb' +
+                        (index === taskGalleryIndex ? ' active' : '');
+                    button.setAttribute('aria-label', `View photo ${index + 1}`);
+
+                    const thumb = document.createElement('img');
+                    thumb.src = photo.src;
+                    thumb.alt = '';
+
+                    button.appendChild(thumb);
+
+                    button.addEventListener('click', () => {
+                        taskGalleryIndex = index;
+                        renderTaskGallery();
+                    });
+
+                    thumbnailContainer.appendChild(button);
+                });
+
+                document.querySelector('.gallery-prev').hidden =
+                    taskGalleryImages.length <= 1;
+
+                document.querySelector('.gallery-next').hidden =
+                    taskGalleryImages.length <= 1;
+            }
+
+            function changeTaskPhoto(direction) {
+                if (!taskGalleryImages.length) return;
+
+                taskGalleryIndex =
+                    (taskGalleryIndex + direction + taskGalleryImages.length)
+                    % taskGalleryImages.length;
+
+                renderTaskGallery();
+            }
+
+            function closeTaskGallery() {
+                const modal = document.getElementById('taskGalleryModal');
+
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+
+                if (previousFocusedElement) {
+                    previousFocusedElement.focus();
+                }
+            }
+
+            // Close when clicking the dark background.
+            document.getElementById('taskGalleryModal')
+                .addEventListener('click', function (event) {
+                    if (event.target === this) {
+                        closeTaskGallery();
+                    }
+                });
+
+            // Keyboard navigation.
+            document.addEventListener('keydown', function (event) {
+                const modal = document.getElementById('taskGalleryModal');
+
+                if (!modal.classList.contains('is-open')) return;
+
+                if (event.key === 'Escape') {
+                    closeTaskGallery();
+                } else if (event.key === 'ArrowLeft') {
+                    changeTaskPhoto(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeTaskPhoto(1);
+                }
+            });
+
+        </script>
+
+        <script>
+            function openPopup(src) {
+                document.getElementById('popup-img').src = src;
+                document.getElementById('popup').style.display = 'flex';
+            }
+            
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+            
+            updateButtons();
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                $('#delegateToSelect').select2({
+                    placeholder: 'Select staff(s)...',
+                    width: '100%'
+                });
+            });
         </script>
 
 

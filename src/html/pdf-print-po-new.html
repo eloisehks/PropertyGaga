@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Purchase Order PO-2000 · Perbadanan Pengurusan Villa Sri Kenanga</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+
+.pdf-po {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+.pdf-po {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      background: #F1F4F9
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #111827;
+      font-size: 9pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact
+    }
+
+    .mono {
+      font-family: 'DM Mono', ui-monospace, monospace
+    }
+
+    .num {
+      font-family: 'DM Mono', ui-monospace, monospace;
+      text-align: right;
+      white-space: nowrap
+    }
+
+    /* ---------- A4 sheet ---------- */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      background: #fff;
+      position: relative;
+      padding: 13mm 14mm 12mm;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(17, 24, 39, .08), 0 8px 24px rgba(17, 24, 39, .06)
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 4px;
+      background: #1D4ED8
+    }
+
+    /* ---------- Header ---------- */
+    .hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10mm
+    }
+
+    .org {
+      display: flex;
+      gap: 4mm;
+      align-items: flex-start
+    }
+
+    .logo {
+      width: 14mm;
+      height: 14mm;
+      border-radius: 8px;
+      background: #1D4ED8;
+      color: #fff;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 800 11pt 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: .5px
+    }
+
+    .logo-img {
+      /* width: 20mm; */
+      width:20mm !important;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      img {
+        width:20mm !important;
+      }
+    }
+
+    .org h1 {
+      font: 700 13pt/1.2 'Plus Jakarta Sans', sans-serif;
+      color: #111827;
+      margin-bottom: 1.2mm
+    }
+
+    .org p {
+      color: #374151;
+      font-size: 8.2pt;
+      line-height: 1.5
+    }
+
+    .org .reg {
+      color: #6B7280;
+      font-size: 7.6pt
+    }
+
+    .doc {
+      text-align: right;
+      flex: none
+    }
+
+    .doc h2 {
+      font: 800 17pt/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: .6px;
+      color: #1E3A8A
+    }
+
+    .doc .no {
+      margin-top: 2.2mm;
+      font-size: 8.2pt;
+      color: #6B7280
+    }
+
+    .doc .no b {
+      font: 500 10.5pt 'DM Mono', monospace;
+      color: #111827;
+      margin-left: 1.5mm
+    }
+
+    .copy {
+      display: inline-block;
+      margin-top: 2.2mm;
+      padding: 1mm 3mm;
+      border: 1px solid #1D4ED8;
+      border-radius: 6px;
+      color: #1D4ED8;
+      font: 700 7pt 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 1.2px;
+      text-transform: uppercase
+    }
+
+    .rule {
+      height: 0;
+      border-top: 1.2px solid #111827;
+      margin: 5mm 0 4.5mm
+    }
+
+    /* ---------- Meta + amount ---------- */
+    .meta-wrap {
+      display: grid;
+      grid-template-columns: 1fr 52mm;
+      gap: 5mm;
+      align-items: stretch
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      overflow: hidden
+    }
+
+    .meta div {
+      padding: 2.2mm 3mm;
+      border-right: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB
+    }
+
+    .meta div:nth-child(3n) {
+      border-right: none
+    }
+
+    .meta div:nth-last-child(-n+3) {
+      border-bottom: none
+    }
+
+    .lbl {
+      display: block;
+      font: 600 6.6pt 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      color: #6B7280;
+      margin-bottom: .6mm
+    }
+
+    .val {
+      font-size: 8.6pt;
+      font-weight: 500;
+      color: #111827
+    }
+
+    .val.mono {
+      font-size: 8.4pt
+    }
+
+    .empty {
+      color: #9CA3AF
+    }
+
+    .amount {
+      background: #1D4ED8;
+      color: #fff;
+      border-radius: 8px;
+      padding: 4mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .amount .lbl {
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .amount .cur {
+      font: 500 8.5pt 'DM Mono', monospace;
+      opacity: .85
+    }
+
+    .amount .big {
+      font: 500 16pt/1.15 'DM Mono', monospace;
+      letter-spacing: -.3px
+    }
+
+    .amount .due {
+      margin-top: 2mm;
+      padding-top: 2mm;
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      font-size: 7.4pt;
+      opacity: .9
+    }
+
+    /* ---------- Parties ---------- */
+    .parties {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 4mm;
+      margin-top: 5mm
+    }
+
+    .party {
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 3mm 3.4mm
+    }
+
+    .party.vendor {
+      border-color: #C7D6FA;
+      background: #EEF3FE
+    }
+
+    .party .lbl {
+      color: #1D4ED8;
+      margin-bottom: 1.4mm
+    }
+
+    .party h3 {
+      font: 700 9.4pt 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 1mm
+    }
+
+    .party p {
+      font-size: 8pt;
+      color: #374151;
+      line-height: 1.5
+    }
+
+    .party .kv {
+      display: grid;
+      grid-template-columns: 17mm 1fr;
+      font-size: 7.8pt;
+      margin-top: 1.2mm;
+      row-gap: .3mm
+    }
+
+    .party .kv span:nth-child(odd) {
+      color: #6B7280
+    }
+
+    /* ---------- Line items ---------- */
+    table.items {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5mm;
+      font-size: 8.4pt
+    }
+
+    .items thead th {
+      background: #111827;
+      color: #fff;
+      font: 600 7pt 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 2.4mm 2mm;
+      text-align: left;
+      white-space: nowrap
+    }
+
+    .items thead th:first-child {
+      border-radius: 6px 0 0 6px
+    }
+
+    .items thead th:last-child {
+      border-radius: 0 6px 6px 0
+    }
+
+    .items thead th.r {
+      text-align: right
+    }
+
+    .items thead th.c {
+      text-align: center
+    }
+
+    .items td {
+      padding: 2.6mm 2mm;
+      border-bottom: 1px solid #E5E7EB;
+      vertical-align: top
+    }
+
+    .items td.c {
+      text-align: center
+    }
+
+    .items .desc b {
+      display: block;
+      font-weight: 600;
+      color: #111827
+    }
+
+    .items .desc small {
+      display: block;
+      color: #6B7280;
+      font-size: 7.4pt;
+      margin-top: .5mm
+    }
+
+    .tag {
+      display: inline-block;
+      background: #F1F4F9;
+      border: 1px solid #E5E7EB;
+      border-radius: 4px;
+      padding: .3mm 1.6mm;
+      font-size: 7.2pt;
+      color: #374151;
+      white-space: nowrap
+    }
+
+    .items tr.filler td {
+      height: 7mm;
+      border-bottom: 1px dashed #E5E7EB
+    }
+
+    /* ---------- Summary ---------- */
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 66mm;
+      gap: 6mm;
+      margin-top: 4mm
+    }
+
+    .words {
+      background: #F1F4F9;
+      border-radius: 8px;
+      padding: 3mm 3.4mm;
+      margin-bottom: 3mm
+    }
+
+    .words p {
+      font-weight: 600;
+      font-size: 8.6pt
+    }
+
+    .notes p {
+      font-size: 8pt;
+      color: #374151
+    }
+
+    .totals {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.6pt
+    }
+
+    .totals td {
+      padding: 1.5mm 0
+    }
+
+    .totals td:first-child {
+      color: #6B7280
+    }
+
+    .totals tr.grand td {
+      border-top: 0px solid #111827;
+      padding-top: 2.4mm;
+      font: 700 10pt 'Plus Jakarta Sans', sans-serif;
+      color: #111827
+    }
+
+    .totals tr.grand td.num {
+      font: 500 11pt 'DM Mono', monospace
+    }
+
+    /* ---------- Terms ---------- */
+    .terms {
+      margin-top: 5mm;
+      border-top: 1px solid #E5E7EB;
+      padding-top: 3mm
+    }
+
+    .terms ol {
+      columns: 2;
+      column-gap: 7mm;
+      padding-left: 4mm;
+      font-size: 7.1pt;
+      color: #374151;
+      line-height: 1.5
+    }
+
+    .terms li {
+      break-inside: avoid;
+      margin-bottom: .8mm;
+      padding-left: .5mm
+    }
+
+    /* ---------- Signatures ---------- */
+    .signs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6mm;
+      margin-top: auto;
+      padding-top: 6mm
+    }
+
+    .sign .box {
+      height: 15mm;
+      border-bottom: 1px solid #111827;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 1mm
+    }
+
+    .sign .box.stamp {
+      border: 1px dashed #D1D5DB;
+      border-bottom: 1px solid #111827;
+      border-radius: 6px 6px 0 0;
+      justify-content: center;
+      align-items: center;
+      color: #C0C5CE;
+      font-size: 7pt;
+      letter-spacing: .6px;
+      text-transform: uppercase
+    }
+
+    .sign .who {
+      margin-top: 1.4mm;
+      font-size: 7.8pt
+    }
+
+    .sign .who b {
+      display: block;
+      font: 700 8pt 'Plus Jakarta Sans', sans-serif
+    }
+
+    .sign .who span {
+      color: #6B7280
+    }
+
+    .esig {
+      font: 500 8pt 'DM Mono', monospace;
+      color: #1D4ED8
+    }
+
+    /* ---------- Footer ---------- */
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5mm;
+      padding-top: 2.4mm;
+      border-top: 1px solid #E5E7EB;
+      font-size: 6.9pt;
+      color: #6B7280
+    }
+
+    .foot b {
+      color: #374151;
+      font-weight: 600
+    }
+
+    /* ---------- Print ---------- */
+    @page {
+      size: A4;
+      margin: 0
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: #fff
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+        height: 297mm
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+        break-after: auto
+      }
+    }
+
+    @media screen and (max-width:820px) {
+      .page {
+        transform-origin: top left
+      }
+    }
+
+   }
+  </style>
+</head>
+
+<body>
+  <div class="pdf-po">
+    <section class="page" data-copy="Original · Vendor Copy">
+      <!-- Header -->
+      <header class="hdr">
+        <div class="org">
+          <!-- NOTE - if logo uploaded first option to be executed -->
+          <div class="logo-img"><img src="assets/images/propertygaga/logo-dummy.png" alt="" class="responsiveimg"/></div>
+          <div class="logo">VSK</div>
+          <div>
+            <h1>Perbadanan Pengurusan Villa Sri Kenanga</h1>
+            <p>No. 6, Jalan Batu Uban<br />11700 Malaysia</p>
+            <p>Tel: <span class="empty">—</span>  ·  Fax: <span class="empty">—</span>  ·  Email: <span
+                class="empty">—</span></p>
+            <p class="reg">Reg. No.: <span class="empty">—</span>  ·  SST No.: <span class="empty">—</span></p>
+          </div>
+        </div>
+        <div class="doc">
+          <h2>PURCHASE ORDER</h2>
+          <div class="no">PO No.<b>PO-2000</b></div>
+          <div><span class="copy js-copy">Original · Vendor Copy</span></div>
+        </div>
+      </header>
+      <div class="rule"></div>
+      <!-- Meta + amount -->
+      <div class="meta-wrap">
+        <div class="meta">
+          <div><span class="lbl">Quotation Ref.</span><span class="val empty">—</span></div>
+          <div><span class="lbl">Issue Date</span><span class="val">31 Oct 2026</span></div>
+          <div><span class="lbl">Issued By</span><span class="val">Eugene Choong Gian Ee</span></div>
+        </div>
+        <div class="amount">
+          <span class="lbl">Total Order Amount</span>
+          <span class="cur">RM</span>
+          <span class="big">15,800.00</span>
+          <span class="due">Incl. tax · 1 line item</span>
+        </div>
+      </div>
+      <!-- Parties -->
+      <div class="parties">
+        <div class="party vendor">
+          <span class="lbl">Vendor / Supplier</span>
+          <h3>RenoBina Solutions</h3>
+          <p class="empty">Vendor address</p>
+          <div class="kv">
+            <span>Attn.</span><span class="empty">—</span>
+            <span>Tel / Email</span><span class="empty">—</span>
+            <span>Reg. No.</span><span class="empty">—</span>
+            <span>Vendor ID</span><span class="empty">—</span>
+          </div>
+        </div>
+        <div class="party">
+          <span class="lbl">Bill To</span>
+          <h3>Perbadanan Pengurusan Villa Sri Kenanga</h3>
+          <p>Management Office<br />No. 6, Jalan Batu Uban<br />11700 Malaysia</p>
+        </div>
+
+      </div>
+      <!-- Line items -->
+      <table class="items">
+        <thead>
+          <tr>
+            <th class="c" style="width:7mm">No.</th>
+            <th>Description</th>
+            <th style="width:25mm">Category</th>
+            <th class="c" style="width:10mm">Qty</th>
+            <th class="c" style="width:11mm">UOM</th>
+            <th class="r" style="width:22mm">Unit Price</th>
+            <th class="r" style="width:15mm">Disc.</th>
+            <th class="r" style="width:13mm">Tax</th>
+            <th class="r" style="width:23mm">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c mono">1</td>
+            <td class="desc"><b>Repair of HDPE Lining Water Tank</b><small>As per vendor quotation</small></td>
+            <td><span class="tag">Repairs &amp; Maint</span></td>
+            <td class="c mono">1</td>
+            <td class="c">Lot</td>
+            <td class="num">15,800.00</td>
+            <td class="num">0.00</td>
+            <td class="num">0.00</td>
+            <td class="num"><b>15,800.00</b></td>
+          </tr>
+          <tr class="filler">
+            <td colspan="9"></td>
+          </tr>
+          <tr class="filler">
+            <td colspan="9"></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Summary -->
+      <div class="summary">
+        <div>
+          <div class="notes">
+            <span class="lbl">Notes / Special Instructions</span>
+            <p>Please quote the PO number on all invoices, delivery orders and correspondence. Work to be coordinated
+              with
+              the Management Office before commencement.</p>
+          </div>
+        </div>
+        <table class="totals">
+          <tr class="grand">
+            <td>Grand Total (RM)</td>
+            <td class="num">15,800.00</td>
+          </tr>
+        </table>
+      </div>
+      <!-- Terms -->
+      <div class="terms">
+        <span class="lbl">Terms &amp; Conditions</span>
+        <ol>
+          <li>This Purchase Order is valid only when signed by an authorised signatory of the Management Corporation.
+          </li>
+          <li>The PO number must appear on all invoices, delivery orders and correspondence. Invoices without it may be
+            returned.</li>
+          <li>Goods and services must match the description, quantity and price stated. Any variation needs written
+            approval before work proceeds.</li>
+          <li>Payment will be made according to the payment terms above, after the work is completed, inspected and
+            accepted.</li>
+          <li>The Management Corporation may reject defective goods or unsatisfactory work at the vendor's cost.</li>
+          <li>The vendor shall comply with the building's house rules, safety requirements and working hours while on
+            site.</li>
+          <li>The Management Corporation may cancel this order, in whole or in part, if delivery or completion is not
+            made
+            by the required date.</li>
+          <li>This order is governed by the laws of Malaysia.</li>
+        </ol>
+      </div>
+      <!-- Signatures -->
+      <div class="signs">
+        <div class="sign">
+          <div class="box"><span class="esig">Issued electronically</span></div>
+          <div class="who"><b>Prepared By</b>Eugene Choong Gian Ee<br /><span>Date: 31 Oct 2026</span></div>
+        </div>
+        <div class="sign">
+          <div class="box"></div>
+          <div class="who"><b>Approved By</b>Name: <span>_______________________</span><br /><span>Designation /
+              Date:</span></div>
+        </div>
+        <div class="sign">
+          <div class="box stamp">Company Stamp</div>
+          <div class="who"><b>Vendor Acceptance</b>RenoBina Solutions<br /><span>Name / Signature / Date:</span></div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="foot">
+        <span>Computer-generated document. Created by <b>Eugene Choong Gian Ee</b> on 31 Oct 2026, 04:52 PM</span>
+        <span class="mono">PO-2000 · Page <span class="js-pg">1</span> of <span class="js-pgs">2</span></span>
+      </footer>
+    </section>
+    <script>
+      // Duplicate the sheet to make the Office Copy (same pattern as a carbon-copy PO set)
+      (function () {
+        var first = document.querySelector('.page');
+        var office = first.cloneNode(true);
+        office.setAttribute('data-copy', 'Office Copy');
+        office.querySelector('.js-copy').textContent = 'Office Copy';
+        first.parentNode.insertBefore(office, first.nextSibling);
+        var pages = document.querySelectorAll('.page');
+        pages.forEach(function (p, i) {
+          p.querySelector('.js-pg').textContent = i + 1;
+          p.querySelector('.js-pgs').textContent = pages.length;
+        });
+      })();
+    </script>
+  </div>
+</body>
+
+</html>
